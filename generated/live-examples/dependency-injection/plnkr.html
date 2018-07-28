@@ -1,0 +1,1082 @@
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="http://plnkr.co/edit/?p=preview" target="_self"><input type="hidden" name="files[app/app.component.ts]" value="import { Component, Inject } from '@angular/core';
+
+import { APP_CONFIG, AppConfig } from './app.config';
+import { Logger } from './logger.service';
+import { UserService } from './user.service';
+
+@Component({
+  selector: 'app-root',
+  template:  `
+    <h1>{{title}}</h1>
+    <app-car></app-car>
+    <app-injectors></app-injectors>
+    <app-tests></app-tests>
+    <h2>User</h2>
+    <p id=&quot;user&quot;>
+      {{userInfo}}
+      <button (click)=&quot;nextUser()&quot;>Next User</button>
+    <p>
+    <app-heroes id=&quot;authorized&quot; *ngIf=&quot;isAuthorized&quot;></app-heroes>
+    <app-heroes id=&quot;unauthorized&quot; *ngIf=&quot;!isAuthorized&quot;></app-heroes>
+    <app-providers></app-providers>
+  `,
+  providers: [Logger]
+})
+export class AppComponent {
+  title: string;
+
+  constructor(
+    @Inject(APP_CONFIG) config: AppConfig,
+    private userService: UserService) {
+    this.title = config.title;
+  }
+
+  get isAuthorized() { return this.user.isAuthorized; }
+  nextUser()         { this.userService.getNewUser(); }
+  get user()         { return this.userService.user; }
+
+  get userInfo()     {
+    return `Current user, ${this.user.name}, is ` +
+           `${this.isAuthorized ? '' : 'not'} authorized. `;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/app.config.ts]" value="import { InjectionToken } from '@angular/core';
+
+export let APP_CONFIG = new InjectionToken<AppConfig>('app.config');
+
+export interface AppConfig {
+  apiEndpoint: string;
+  title: string;
+}
+
+export const HERO_DI_CONFIG: AppConfig = {
+  apiEndpoint: 'api.heroes.com',
+  title: 'Dependency Injection'
+};
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { CarComponent } from './car/car.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroListComponent } from './heroes/hero-list.component';
+import { InjectorComponent } from './injector.component';
+import { TestComponent } from './test.component';
+import { APP_CONFIG, HERO_DI_CONFIG }    from './app.config';
+import { UserService } from './user.service';
+import {
+  ProvidersComponent,
+  Provider1Component,
+  Provider3Component,
+  Provider4Component,
+  Provider5Component,
+  Provider6aComponent,
+  Provider6bComponent,
+  Provider7Component,
+  Provider8Component,
+  Provider9Component,
+  Provider10Component,
+} from './providers.component';
+
+@NgModule({
+  imports: [
+    BrowserModule
+  ],
+  declarations: [
+    AppComponent,
+    CarComponent,
+    HeroesComponent,
+    HeroListComponent,
+    InjectorComponent,
+    TestComponent,
+    ProvidersComponent,
+    Provider1Component,
+    Provider3Component,
+    Provider4Component,
+    Provider5Component,
+    Provider6aComponent,
+    Provider6bComponent,
+    Provider7Component,
+    Provider8Component,
+    Provider9Component,
+    Provider10Component,
+  ],
+  providers: [
+    UserService,
+    { provide: APP_CONFIG, useValue: HERO_DI_CONFIG }
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/car/car-creations.ts]" value="// Examples with car and engine variations
+
+import { Car, Engine, Tires } from './car';
+
+///////// example 1 ////////////
+export function simpleCar() {
+  // Simple car with 4 cylinders and Flintstone tires.
+  let car = new Car(new Engine(), new Tires());
+  car.description = 'Simple';
+  return car;
+}
+
+
+///////// example 2 ////////////
+  class Engine2 {
+    constructor(public cylinders: number) { }
+  }
+export function superCar() {
+  // Super car with 12 cylinders and Flintstone tires.
+  let bigCylinders = 12;
+  let car = new Car(new Engine2(bigCylinders), new Tires());
+  car.description = 'Super';
+  return car;
+}
+
+/////////// example 3 //////////
+  class MockEngine extends Engine { cylinders = 8; }
+  class MockTires  extends Tires  { make = 'YokoGoodStone'; }
+
+export function testCar() {
+  // Test car with 8 cylinders and YokoGoodStone tires.
+  let car = new Car(new MockEngine(), new MockTires());
+  car.description = 'Test';
+  return car;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/car/car-factory.ts]" value="import { Engine, Tires, Car } from './car';
+
+// BAD pattern!
+export class CarFactory {
+  createCar() {
+    let car = new Car(this.createEngine(), this.createTires());
+    car.description = 'Factory';
+    return car;
+  }
+
+  createEngine() {
+    return new Engine();
+  }
+
+  createTires() {
+    return new Tires();
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/car/car-injector.ts]" value="import { ReflectiveInjector } from '@angular/core';
+
+import { Car, Engine, Tires } from './car';
+import { Logger }             from '../logger.service';
+
+export function useInjector() {
+  let injector: ReflectiveInjector;
+  /*
+  // Cannot instantiate an ReflectiveInjector like this!
+  let injector = new ReflectiveInjector([Car, Engine, Tires]);
+  */
+  injector = ReflectiveInjector.resolveAndCreate([Car, Engine, Tires]);
+  let car = injector.get(Car);
+  car.description = 'Injector';
+
+  injector = ReflectiveInjector.resolveAndCreate([Logger]);
+  let logger = injector.get(Logger);
+  logger.log('Injector car.drive() said: ' + car.drive());
+  return car;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/car/car-no-di.ts]" value="// Car without DI
+import { Engine, Tires } from './car';
+
+export class Car {
+
+  public engine: Engine;
+  public tires: Tires;
+  public description = 'No DI';
+
+  constructor() {
+    this.engine = new Engine();
+    this.tires = new Tires();
+  }
+
+  // Method using the engine and tires
+  drive() {
+    return `${this.description} car with ` +
+      `${this.engine.cylinders} cylinders and ${this.tires.make} tires.`;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/car/car.component.ts]" value="import { Component } from '@angular/core';
+
+import { Car, Engine, Tires }  from './car';
+import { Car as CarNoDi }      from './car-no-di';
+import { CarFactory }          from './car-factory';
+
+import { testCar,
+         simpleCar,
+         superCar }           from './car-creations';
+
+import { useInjector }        from './car-injector';
+
+
+@Component({
+  selector: 'app-car',
+  template: `
+  <h2>Cars</h2>
+  <div id=&quot;di&quot;>{{car.drive()}}</div>
+  <div id=&quot;nodi&quot;>{{noDiCar.drive()}}</div>
+  <div id=&quot;injector&quot;>{{injectorCar.drive()}}</div>
+  <div id=&quot;factory&quot;>{{factoryCar.drive()}}</div>
+  <div id=&quot;simple&quot;>{{simpleCar.drive()}}</div>
+  <div id=&quot;super&quot;>{{superCar.drive()}}</div>
+  <div id=&quot;test&quot;>{{testCar.drive()}}</div>
+  `,
+  providers: [Car, Engine, Tires]
+})
+export class CarComponent {
+  factoryCar  = (new CarFactory).createCar();
+  injectorCar = useInjector();
+  noDiCar     = new CarNoDi;
+  simpleCar   = simpleCar();
+  superCar    = superCar();
+  testCar     = testCar();
+
+  constructor(public car: Car) {}
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/car/car.ts]" value="import { Injectable } from '@angular/core';
+
+export class Engine {
+  public cylinders = 4;
+}
+
+export class Tires {
+  public make  = 'Flintstone';
+  public model = 'Square';
+}
+
+@Injectable()
+export class Car {
+  public description = 'DI';
+
+  constructor(public engine: Engine, public tires: Tires) { }
+
+  // Method using the engine and tires
+  drive() {
+    return `${this.description} car with ` +
+      `${this.engine.cylinders} cylinders and ${this.tires.make} tires.`;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/heroes/hero-list.component.ts]" value="/* tslint:disable:one-line */
+import { Component }   from '@angular/core';
+
+import { Hero }        from './hero';
+import { HeroService } from './hero.service';
+
+@Component({
+  selector: 'app-hero-list',
+  template: `
+  <div *ngFor=&quot;let hero of heroes&quot;>
+    {{hero.id}} - {{hero.name}}
+    ({{hero.isSecret ? 'secret' : 'public'}})
+  </div>
+  `,
+})
+export class HeroListComponent {
+  heroes: Hero[];
+
+  constructor(heroService: HeroService)
+  {
+    this.heroes = heroService.getHeroes();
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/heroes/hero.service.provider.ts]" value="/* tslint:disable:one-line */
+import { HeroService } from './hero.service';
+import { Logger }      from '../logger.service';
+import { UserService } from '../user.service';
+
+let heroServiceFactory = (logger: Logger, userService: UserService) => {
+  return new HeroService(logger, userService.user.isAuthorized);
+};
+
+export let heroServiceProvider =
+  { provide: HeroService,
+    useFactory: heroServiceFactory,
+    deps: [Logger, UserService]
+  };
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/heroes/hero.service.ts]" value="import { Injectable } from '@angular/core';
+
+import { HEROES }     from './mock-heroes';
+import { Logger }     from '../logger.service';
+
+@Injectable()
+export class HeroService {
+  constructor(
+    private logger: Logger,
+    private isAuthorized: boolean) { }
+
+  getHeroes() {
+    let auth = this.isAuthorized ? 'authorized ' : 'unauthorized';
+    this.logger.log(`Getting heroes for ${auth} user.`);
+    return HEROES.filter(hero => this.isAuthorized || !hero.isSecret);
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/heroes/hero.ts]" value="export class Hero {
+  id: number;
+  name: string;
+  isSecret = false;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/heroes/heroes.component.ts]" value="import { Component }          from '@angular/core';
+
+import { heroServiceProvider } from './hero.service.provider';
+
+@Component({
+  selector: 'app-heroes',
+  template: `
+  <h2>Heroes</h2>
+  <app-hero-list></app-hero-list>
+  `,
+  providers: [heroServiceProvider]
+})
+export class HeroesComponent { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/heroes/mock-heroes.ts]" value="import { Hero } from './hero';
+
+export const HEROES: Hero[] = [
+  { id: 11, isSecret: false, name: 'Mr. Nice' },
+  { id: 12, isSecret: false, name: 'Narco' },
+  { id: 13, isSecret: false, name: 'Bombasto' },
+  { id: 14, isSecret: false, name: 'Celeritas' },
+  { id: 15, isSecret: false, name: 'Magneta' },
+  { id: 16, isSecret: false, name: 'RubberMan' },
+  { id: 17, isSecret: false, name: 'Dynama' },
+  { id: 18, isSecret: true,  name: 'Dr IQ' },
+  { id: 19, isSecret: true,  name: 'Magma' },
+  { id: 20, isSecret: true,  name: 'Tornado' }
+];
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/injector.component.ts]" value="import { Component, Injector, OnInit } from '@angular/core';
+
+import { Car, Engine, Tires }   from './car/car';
+import { Hero }                 from './heroes/hero';
+import { HeroService }          from './heroes/hero.service';
+import { heroServiceProvider }  from './heroes/hero.service.provider';
+import { Logger }               from './logger.service';
+
+@Component({
+  selector: 'app-injectors',
+  template: `
+  <h2>Other Injections</h2>
+  <div id=&quot;car&quot;>{{car.drive()}}</div>
+  <div id=&quot;hero&quot;>{{hero.name}}</div>
+  <div id=&quot;rodent&quot;>{{rodent}}</div>
+  `,
+  providers: [Car, Engine, Tires, heroServiceProvider, Logger]
+})
+export class InjectorComponent implements OnInit {
+  car: Car;
+
+  heroService: HeroService;
+  hero: Hero;
+
+  constructor(private injector: Injector) { }
+
+  ngOnInit() {
+    this.car = this.injector.get(Car);
+    this.heroService = this.injector.get(HeroService);
+    this.hero = this.heroService.getHeroes()[0];
+  }
+
+  get rodent() {
+    let rousDontExist = `R.O.U.S.'s? I don't think they exist!`;
+    return this.injector.get(ROUS, rousDontExist);
+  }
+}
+
+/**
+ * R.O.U.S. - Rodents Of Unusual Size
+ * // https://www.youtube.com/watch?v=BOv5ZjAOpC8
+ */
+class ROUS { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/logger.service.ts]" value="import { Injectable } from '@angular/core';
+
+@Injectable()
+export class Logger {
+  logs: string[] = []; // capture logs for testing
+
+  log(message: string) {
+    this.logs.push(message);
+    console.log(message);
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/providers.component.ts]" value="/* tslint:disable:one-line:check-open-brace*/
+// Examples of provider arrays
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
+
+import { APP_CONFIG, AppConfig,
+         HERO_DI_CONFIG }       from './app.config';
+
+import { HeroService }          from './heroes/hero.service';
+import { heroServiceProvider }  from './heroes/hero.service.provider';
+import { Logger }               from './logger.service';
+import { UserService }    from './user.service';
+
+let template = '{{log}}';
+
+//////////////////////////////////////////
+@Component({
+  selector: 'provider-1',
+  template: template,
+  providers: [Logger]
+})
+export class Provider1Component {
+  log: string;
+  constructor(logger: Logger) {
+    logger.log('Hello from logger provided with Logger class');
+    this.log = logger.logs[0];
+  }
+}
+
+//////////////////////////////////////////
+@Component({
+  selector: 'provider-3',
+  template: template,
+  providers:
+    [{ provide: Logger, useClass: Logger }]
+})
+export class Provider3Component {
+  log: string;
+  constructor(logger: Logger) {
+    logger.log('Hello from logger provided with useClass:Logger');
+    this.log = logger.logs[0];
+  }
+}
+
+//////////////////////////////////////////
+class BetterLogger extends Logger {}
+
+@Component({
+  selector: 'provider-4',
+  template: template,
+  providers:
+    [{ provide: Logger, useClass: BetterLogger }]
+})
+export class Provider4Component {
+  log: string;
+  constructor(logger: Logger) {
+    logger.log('Hello from logger provided with useClass:BetterLogger');
+    this.log = logger.logs[0];
+  }
+}
+
+//////////////////////////////////////////
+@Injectable()
+class EvenBetterLogger extends Logger {
+  constructor(private userService: UserService) { super(); }
+
+  log(message: string) {
+    let name = this.userService.user.name;
+    super.log(`Message to ${name}: ${message}`);
+  }
+}
+
+@Component({
+  selector: 'provider-5',
+  template: template,
+  providers:
+    [ UserService,
+      { provide: Logger, useClass: EvenBetterLogger }]
+})
+export class Provider5Component {
+  log: string;
+  constructor(logger: Logger) {
+    logger.log('Hello from EvenBetterlogger');
+    this.log = logger.logs[0];
+  }
+}
+
+//////////////////////////////////////////
+class NewLogger extends Logger {}
+class OldLogger {
+  logs: string[] = [];
+  log(message: string) {
+    throw new Error('Should not call the old logger!');
+  };
+}
+
+@Component({
+  selector: 'provider-6a',
+  template: template,
+  providers:
+    [ NewLogger,
+      // Not aliased! Creates two instances of `NewLogger`
+      { provide: OldLogger, useClass: NewLogger}]
+})
+export class Provider6aComponent {
+  log: string;
+  constructor(newLogger: NewLogger, oldLogger: OldLogger) {
+    if (newLogger === oldLogger) {
+      throw new Error('expected the two loggers to be different instances');
+    }
+    oldLogger.log('Hello OldLogger (but we want NewLogger)');
+    // The newLogger wasn't called so no logs[]
+    // display the logs of the oldLogger.
+    this.log = newLogger.logs[0] || oldLogger.logs[0];
+  }
+}
+
+@Component({
+  selector: 'provider-6b',
+  template: template,
+  providers:
+    [ NewLogger,
+      // Alias OldLogger w/ reference to NewLogger
+      { provide: OldLogger, useExisting: NewLogger}]
+})
+export class Provider6bComponent {
+  log: string;
+  constructor(newLogger: NewLogger, oldLogger: OldLogger) {
+    if (newLogger !== oldLogger) {
+      throw new Error('expected the two loggers to be the same instance');
+    }
+    oldLogger.log('Hello from NewLogger (via aliased OldLogger)');
+    this.log = newLogger.logs[0];
+  }
+}
+
+//////////////////////////////////////////
+// An object in the shape of the logger service
+let silentLogger = {
+  logs: ['Silent logger says &quot;Shhhhh!&quot;. Provided via &quot;useValue&quot;'],
+  log: () => {}
+};
+
+@Component({
+  selector: 'provider-7',
+  template: template,
+  providers:
+    [{ provide: Logger, useValue: silentLogger }]
+})
+export class Provider7Component {
+  log: string;
+  constructor(logger: Logger) {
+    logger.log('Hello from logger provided with useValue');
+    this.log = logger.logs[0];
+  }
+}
+/////////////////
+
+@Component({
+  selector: 'provider-8',
+  template: template,
+  providers: [heroServiceProvider, Logger, UserService]
+})
+export class Provider8Component {
+  // must be true else this component would have blown up at runtime
+  log = 'Hero service injected successfully via heroServiceProvider';
+
+  constructor(heroService: HeroService) { }
+}
+
+/////////////////
+@Component({
+  selector: 'provider-9',
+  template: template,
+  /*
+   // FAIL! Can't use interface as provider token
+   [{ provide: AppConfig, useValue: HERO_DI_CONFIG })]
+   */
+  providers: [{ provide: APP_CONFIG, useValue: HERO_DI_CONFIG }]
+})
+export class Provider9Component implements OnInit {
+  log: string;
+  /*
+   // FAIL! Can't inject using the interface as the parameter type
+   constructor(private config: AppConfig){ }
+   */
+  constructor(@Inject(APP_CONFIG) private config: AppConfig) { }
+
+  ngOnInit() {
+     this.log = 'APP_CONFIG Application title is ' + this.config.title;
+  }
+}
+//////////////////////////////////////////
+// Sample providers 1 to 7 illustrate a required logger dependency.
+// Optional logger, can be null
+import { Optional } from '@angular/core';
+
+let some_message = 'Hello from the injected logger';
+
+@Component({
+  selector: 'provider-10',
+  template: template,
+  providers: [{ provide: Logger, useValue: null }]
+})
+export class Provider10Component implements OnInit {
+  log: string;
+  constructor(@Optional() private logger: Logger) {
+    if (this.logger) {
+      this.logger.log(some_message);
+    }
+  }
+
+  ngOnInit() {
+    this.log = this.logger ? this.logger.logs[0] : 'Optional logger was not available';
+  }
+}
+
+/////////////////
+@Component({
+  selector: 'app-providers',
+  template: `
+  <h2>Provider variations</h2>
+  <div id=&quot;p1&quot;><provider-1></provider-1></div>
+  <div id=&quot;p3&quot;><provider-3></provider-3></div>
+  <div id=&quot;p4&quot;><provider-4></provider-4></div>
+  <div id=&quot;p5&quot;><provider-5></provider-5></div>
+  <div id=&quot;p6a&quot;><provider-6a></provider-6a></div>
+  <div id=&quot;p6b&quot;><provider-6b></provider-6b></div>
+  <div id=&quot;p7&quot;><provider-7></provider-7></div>
+  <div id=&quot;p8&quot;><provider-8></provider-8></div>
+  <div id=&quot;p9&quot;><provider-9></provider-9></div>
+  <div id=&quot;p10&quot;><provider-10></provider-10></div>
+  `
+})
+export class ProvidersComponent { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/test.component.ts]" value="/* tslint:disable */
+// Simulate a simple test
+// Reader should look to the testing chapter for the real thing
+
+import { Component }           from '@angular/core';
+
+import { HeroService }         from './heroes/hero.service';
+import { HeroListComponent }   from './heroes/hero-list.component';
+
+@Component({
+  selector: 'app-tests',
+  template: `
+    <h2>Tests</h2>
+    <p id=&quot;tests&quot;>Tests {{results.pass}}: {{results.message}}</p>
+  `
+})
+export class TestComponent {
+  results = runTests();
+}
+
+/////////////////////////////////////
+function runTests() {
+
+  let expectedHeroes = [{name: 'A'}, {name: 'B'}]
+  let mockService = <HeroService> {getHeroes: () => expectedHeroes }
+
+  it('should have heroes when HeroListComponent created', () => {
+    let hlc = new HeroListComponent(mockService);
+    expect(hlc.heroes.length).toEqual(expectedHeroes.length);
+  });
+
+  return testResults;
+}
+
+//////////////////////////////////
+// Fake Jasmine infrastructure
+var testName: string;
+var testResults: {pass: string; message: string};
+
+function expect(actual: any) {
+  return {
+    toEqual: function(expected: any){
+      testResults = actual === expected ?
+        {pass: 'passed', message: testName} :
+        {pass: 'failed', message: `${testName}; expected ${actual} to equal ${expected}.`};
+    }
+  };
+}
+
+function it(label: string, test: () => void) {
+  testName = label;
+  test();
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/user.service.ts]" value="import { Injectable } from '@angular/core';
+
+export class User {
+  constructor(
+    public name: string,
+    public isAuthorized = false) { }
+}
+
+// Todo: get the user; don't 'new' it.
+let alice = new User('Alice', true);
+let bob = new User('Bob', false);
+
+@Injectable()
+export class UserService {
+  user = bob;  // initial user is Bob
+
+  // swap users
+  getNewUser() {
+    return this.user = this.user === bob ? alice : bob;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[styles.css]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <title>Dependency Injection</title>
+    <script>document.write('<base href=&quot;' + document.location + '&quot; />');</script>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  
+    <link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;>
+    <script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;></script>
+    <script src=&quot;https://unpkg.com/zone.js@0.7.4?main=browser&quot;></script>
+    <script src=&quot;https://unpkg.com/systemjs@0.19.39/dist/system.src.js&quot;></script>
+    <script src=&quot;systemjs.config.js&quot;></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    </head>
+    
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="dependency"><input type="hidden" name="tags[3]" value="di"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular Example - Dependency Injection"><input type="hidden" name="files[systemjs.config.js]" value="/**
+ * WEB ANGULAR VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      // Copy of compiler options in standard tsconfig.json
+      &quot;target&quot;: &quot;es5&quot;,
+      &quot;module&quot;: &quot;commonjs&quot;,
+      &quot;moduleResolution&quot;: &quot;node&quot;,
+      &quot;sourceMap&quot;: true,
+      &quot;emitDecoratorMetadata&quot;: true,
+      &quot;experimentalDecorators&quot;: true,
+      &quot;lib&quot;: [&quot;es2015&quot;, &quot;dom&quot;],
+      &quot;noImplicitAny&quot;: true,
+      &quot;suppressImplicitAnyIndexErrors&quot;: true
+    },
+    meta: {
+      'typescript': {
+        &quot;exports&quot;: &quot;ts&quot;
+      }
+    },
+    paths: {
+      // paths serve as alias
+      'npm:': 'https://unpkg.com/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      'app': 'app',
+
+      // angular bundles
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
+      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+
+      // other libraries
+      'rxjs':                      'npm:rxjs@5.0.1',
+      'tslib':                     'npm:tslib/tslib.js',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ts':                        'npm:plugin-typescript@5.2.7/lib/plugin.js',
+      'typescript':                'npm:typescript@2.3.2/lib/typescript.js',
+
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.ts',
+        defaultExtension: 'ts',
+        meta: {
+          './*.ts': {
+            loader: 'systemjs-angular-loader.js'
+          }
+        }
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      }
+    }
+  });
+
+})(this);
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+"><input type="hidden" name="files[systemjs-angular-loader.js]" value="var templateUrlRegex = /templateUrl\s*:(\s*['&quot;`](.*?)['&quot;`]\s*)/gm;
+var stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
+var stringRegex = /(['`&quot;])((?:[^\\]\\\1|.)*?)\1/g;
+
+module.exports.translate = function(load){
+  if (load.source.indexOf('moduleId') != -1) return load;
+
+  var url = document.createElement('a');
+  url.href = load.address;
+
+  var basePathParts = url.pathname.split('/');
+
+  basePathParts.pop();
+  var basePath = basePathParts.join('/');
+
+  var baseHref = document.createElement('a');
+  baseHref.href = this.baseURL;
+  baseHref = baseHref.pathname;
+
+  if (!baseHref.startsWith('/base/')) { // it is not karma
+    basePath = basePath.replace(baseHref, '');
+  }
+
+  load.source = load.source
+    .replace(templateUrlRegex, function(match, quote, url){
+      var resolvedUrl = url;
+
+      if (url.startsWith('.')) {
+        resolvedUrl = basePath + url.substr(1);
+      }
+
+      return 'templateUrl: &quot;' + resolvedUrl + '&quot;';
+    })
+    .replace(stylesRegex, function(match, relativeUrls) {
+      var urls = [];
+
+      while ((match = stringRegex.exec(relativeUrls)) !== null) {
+        if (match[2].startsWith('.')) {
+          urls.push('&quot;' + basePath + match[2].substr(1) + '&quot;');
+        } else {
+          urls.push('&quot;' + match[2] + '&quot;');
+        }
+      }
+
+      return &quot;styleUrls: [&quot; + urls.join(', ') + &quot;]&quot;;
+    });
+
+  return load;
+};
+"></form><script>document.getElementById("mainForm").submit();</script></body></html>

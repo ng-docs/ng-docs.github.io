@@ -1,0 +1,1626 @@
+<html lang="en"><head></head><body>
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/app/admin/admin-dashboard.component.ts]" value="import { Component, OnInit }    from '@angular/core';
+import { ActivatedRoute }       from '@angular/router';
+import { Observable }           from 'rxjs';
+import { map }                  from 'rxjs/operators';
+
+import { SelectivePreloadingStrategy } from '../selective-preloading-strategy';
+
+
+@Component({
+  template:  `
+    <p>Dashboard</p>
+
+    <p>Session ID: {{ sessionId | async }}</p>
+    <a id=&quot;anchor&quot;></a>
+    <p>Token: {{ token | async }}</p>
+
+    Preloaded Modules
+    <ul>
+      <li *ngFor=&quot;let module of modules&quot;>{{ module }}</li>
+    </ul>
+  `
+})
+export class AdminDashboardComponent implements OnInit {
+  sessionId: Observable<string>;
+  token: Observable<string>;
+  modules: string[];
+
+  constructor(
+    private route: ActivatedRoute,
+    private preloadStrategy: SelectivePreloadingStrategy
+  ) {
+    this.modules = preloadStrategy.preloadedModules;
+  }
+
+  ngOnInit() {
+    // Capture the session ID if available
+    this.sessionId = this.route
+      .queryParamMap
+      .pipe(map(params => params.get('session_id') || 'None'));
+
+    // Capture the fragment if available
+    this.token = this.route
+      .fragment
+      .pipe(map(fragment => fragment || 'None'));
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/admin/admin-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AdminComponent }           from './admin.component';
+import { AdminDashboardComponent }  from './admin-dashboard.component';
+import { ManageCrisesComponent }    from './manage-crises.component';
+import { ManageHeroesComponent }    from './manage-heroes.component';
+
+import { AuthGuard }                from '../auth-guard.service';
+
+const adminRoutes: Routes = [
+  {
+    path: '',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        canActivateChild: [AuthGuard],
+        children: [
+          { path: 'crises', component: ManageCrisesComponent },
+          { path: 'heroes', component: ManageHeroesComponent },
+          { path: '', component: AdminDashboardComponent }
+        ]
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(adminRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AdminRoutingModule {}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/admin/admin.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  template:  `
+    <h3>ADMIN</h3>
+    <nav>
+      <a routerLink=&quot;./&quot; routerLinkActive=&quot;active&quot;
+        [routerLinkActiveOptions]=&quot;{ exact: true }&quot;>Dashboard</a>
+      <a routerLink=&quot;./crises&quot; routerLinkActive=&quot;active&quot;>Manage Crises</a>
+      <a routerLink=&quot;./heroes&quot; routerLinkActive=&quot;active&quot;>Manage Heroes</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `
+})
+export class AdminComponent {
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/admin/admin.module.ts]" value="import { NgModule }       from '@angular/core';
+import { CommonModule }   from '@angular/common';
+
+import { AdminComponent }           from './admin.component';
+import { AdminDashboardComponent }  from './admin-dashboard.component';
+import { ManageCrisesComponent }    from './manage-crises.component';
+import { ManageHeroesComponent }    from './manage-heroes.component';
+
+import { AdminRoutingModule }       from './admin-routing.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    AdminRoutingModule
+  ],
+  declarations: [
+    AdminComponent,
+    AdminDashboardComponent,
+    ManageCrisesComponent,
+    ManageHeroesComponent
+  ]
+})
+export class AdminModule {}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/admin/manage-crises.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  template:  `
+    <p>Manage your crises here</p>
+  `
+})
+export class ManageCrisesComponent { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/admin/manage-heroes.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  template:  `
+    <p>Manage your heroes here</p>
+  `
+})
+export class ManageHeroesComponent { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/animations.ts]" value="import { animate, state, style, transition, trigger } from '@angular/animations';
+
+// Component transition animations
+export const slideInDownAnimation =
+  trigger('routeAnimation', [
+    state('*',
+      style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })
+    ),
+    transition(':enter', [
+      style({
+        opacity: 0,
+        transform: 'translateX(-100%)'
+      }),
+      animate('0.2s ease-in')
+    ]),
+    transition(':leave', [
+      animate('0.5s ease-out', style({
+        opacity: 0,
+        transform: 'translateY(100%)'
+      }))
+    ])
+  ]);
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { ComposeMessageComponent }  from './compose-message.component';
+import { PageNotFoundComponent }    from './not-found.component';
+
+import { CanDeactivateGuard }       from './can-deactivate-guard.service';
+import { AuthGuard }                from './auth-guard.service';
+import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
+
+const appRoutes: Routes = [
+  {
+    path: 'compose',
+    component: ComposeMessageComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'admin',
+    loadChildren: 'app/admin/admin.module#AdminModule',
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'crisis-center',
+    loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
+    data: { preload: true }
+  },
+  { path: '',   redirectTo: '/superheroes', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      {
+        enableTracing: true, // <-- debugging purposes only
+        preloadingStrategy: SelectivePreloadingStrategy,
+
+      }
+    )
+  ],
+  exports: [
+    RouterModule
+  ],
+  providers: [
+    CanDeactivateGuard,
+    SelectivePreloadingStrategy
+  ]
+})
+export class AppRoutingModule { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1 class=&quot;title&quot;>Angular Router</h1>
+    <nav>
+      <a routerLink=&quot;/crisis-center&quot; routerLinkActive=&quot;active&quot;>Crisis Center</a>
+      <a routerLink=&quot;/superheroes&quot; routerLinkActive=&quot;active&quot;>Heroes</a>
+      <a routerLink=&quot;/admin&quot; routerLinkActive=&quot;active&quot;>Admin</a>
+      <a routerLink=&quot;/login&quot; routerLinkActive=&quot;active&quot;>Login</a>
+      <a [routerLink]=&quot;[{ outlets: { popup: ['compose'] } }]&quot;>Contact</a>
+    </nav>
+    <router-outlet></router-outlet>
+    <router-outlet name=&quot;popup&quot;></router-outlet>
+  `
+})
+export class AppComponent {
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { Router } from '@angular/router';
+
+import { AppComponent }            from './app.component';
+import { AppRoutingModule }        from './app-routing.module';
+
+import { HeroesModule }            from './heroes/heroes.module';
+import { ComposeMessageComponent } from './compose-message.component';
+import { LoginRoutingModule }      from './login-routing.module';
+import { LoginComponent }          from './login.component';
+import { PageNotFoundComponent }   from './not-found.component';
+
+import { DialogService }           from './dialog.service';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HeroesModule,
+    LoginRoutingModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
+  ],
+  declarations: [
+    AppComponent,
+    ComposeMessageComponent,
+    LoginComponent,
+    PageNotFoundComponent
+  ],
+  providers: [
+    DialogService
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {
+  // Diagnostic only: inspect router configuration
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/auth-guard.service.ts]" value="import { Injectable }       from '@angular/core';
+import {
+  CanActivate, Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  CanActivateChild,
+  NavigationExtras,
+  CanLoad, Route
+}                           from '@angular/router';
+import { AuthService }      from './auth.service';
+
+@Injectable()
+export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    let url: string = state.url;
+
+    return this.checkLogin(url);
+  }
+
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    return this.canActivate(route, state);
+  }
+
+  canLoad(route: Route): boolean {
+    let url = `/${route.path}`;
+
+    return this.checkLogin(url);
+  }
+
+  checkLogin(url: string): boolean {
+    if (this.authService.isLoggedIn) { return true; }
+
+    // Store the attempted URL for redirecting
+    this.authService.redirectUrl = url;
+
+    // Create a dummy session id
+    let sessionId = 123456789;
+
+    // Set our navigation extras object
+    // that contains our global query params and fragment
+    let navigationExtras: NavigationExtras = {
+      queryParams: { 'session_id': sessionId },
+      fragment: 'anchor'
+    };
+
+    // Navigate to the login page with extras
+    this.router.navigate(['/login'], navigationExtras);
+    return false;
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/auth.service.ts]" value="import { Injectable } from '@angular/core';
+
+import { Observable, of } from 'rxjs';
+import { tap, delay } from 'rxjs/operators';
+
+@Injectable()
+export class AuthService {
+  isLoggedIn = false;
+
+  // store the URL so we can redirect after logging in
+  redirectUrl: string;
+
+  login(): Observable<boolean> {
+    return of(true).pipe(
+      delay(1000),
+      tap(val => this.isLoggedIn = true)
+    );
+  }
+
+  logout(): void {
+    this.isLoggedIn = false;
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/can-deactivate-guard.service.ts]" value="import { Injectable }    from '@angular/core';
+import { CanDeactivate } from '@angular/router';
+import { Observable }    from 'rxjs';
+
+export interface CanComponentDeactivate {
+ canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
+}
+
+@Injectable()
+export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
+  canDeactivate(component: CanComponentDeactivate) {
+    return component.canDeactivate ? component.canDeactivate() : true;
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/compose-message.component.ts]" value="import { Component, HostBinding } from '@angular/core';
+import { Router }                 from '@angular/router';
+
+import { slideInDownAnimation }   from './animations';
+
+@Component({
+  templateUrl: './compose-message.component.html',
+  styles: [ ':host { position: relative; bottom: 10%; }' ],
+  animations: [ slideInDownAnimation ]
+})
+export class ComposeMessageComponent {
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
+
+  details: string;
+  message: string;
+  sending = false;
+
+  constructor(private router: Router) {}
+
+  send() {
+    this.sending = true;
+    this.details = 'Sending Message...';
+
+    setTimeout(() => {
+      this.sending = false;
+      this.closePopup();
+    }, 1000);
+  }
+
+  cancel() {
+    this.closePopup();
+  }
+
+  closePopup() {
+    // Providing a `null` value to the named outlet
+    // clears the contents of the named outlet
+    this.router.navigate([{ outlets: { popup: null }}]);
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis-center-home.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  template: `
+    <p>Welcome to the Crisis Center</p>
+  `
+})
+export class CrisisCenterHomeComponent { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis-center-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { CrisisCenterHomeComponent } from './crisis-center-home.component';
+import { CrisisListComponent }       from './crisis-list.component';
+import { CrisisCenterComponent }     from './crisis-center.component';
+import { CrisisDetailComponent }     from './crisis-detail.component';
+
+import { CanDeactivateGuard }     from '../can-deactivate-guard.service';
+import { CrisisDetailResolver }   from './crisis-detail-resolver.service';
+
+const crisisCenterRoutes: Routes = [
+  {
+    path: '',
+    component: CrisisCenterComponent,
+    children: [
+      {
+        path: '',
+        component: CrisisListComponent,
+        children: [
+          {
+            path: ':id',
+            component: CrisisDetailComponent,
+            canDeactivate: [CanDeactivateGuard],
+            resolve: {
+              crisis: CrisisDetailResolver
+            }
+          },
+          {
+            path: '',
+            component: CrisisCenterHomeComponent
+          }
+        ]
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(crisisCenterRoutes)
+  ],
+  exports: [
+    RouterModule
+  ],
+  providers: [
+    CrisisDetailResolver
+  ]
+})
+export class CrisisCenterRoutingModule { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis-center.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  template:  `
+    <h2>CRISIS CENTER</h2>
+    <router-outlet></router-outlet>
+  `
+})
+export class CrisisCenterComponent { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis-center.module.ts]" value="import { NgModule }       from '@angular/core';
+import { FormsModule }    from '@angular/forms';
+import { CommonModule }   from '@angular/common';
+
+import { CrisisService }        from './crisis.service';
+
+import { CrisisCenterComponent }     from './crisis-center.component';
+import { CrisisListComponent }       from './crisis-list.component';
+import { CrisisCenterHomeComponent } from './crisis-center-home.component';
+import { CrisisDetailComponent }     from './crisis-detail.component';
+
+import { CrisisCenterRoutingModule } from './crisis-center-routing.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    CrisisCenterRoutingModule
+  ],
+  declarations: [
+    CrisisCenterComponent,
+    CrisisListComponent,
+    CrisisCenterHomeComponent,
+    CrisisDetailComponent
+  ],
+  providers: [
+    CrisisService
+  ]
+})
+export class CrisisCenterModule {}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis-detail-resolver.service.ts]" value="import { Injectable }             from '@angular/core';
+import { Router, Resolve, RouterStateSnapshot,
+         ActivatedRouteSnapshot } from '@angular/router';
+import { Observable }             from 'rxjs';
+import { map, take }              from 'rxjs/operators';
+
+import { Crisis, CrisisService }  from './crisis.service';
+
+@Injectable()
+export class CrisisDetailResolver implements Resolve<Crisis> {
+  constructor(private cs: CrisisService, private router: Router) {}
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Crisis> {
+    let id = route.paramMap.get('id');
+
+    return this.cs.getCrisis(id).pipe(
+      take(1),
+      map(crisis => {
+        if (crisis) {
+          return crisis;
+        } else { // id not found
+          this.router.navigate(['/crisis-center']);
+          return null;
+        }
+      })
+    );
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis-detail.component.ts]" value="import { Component, OnInit, HostBinding } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { slideInDownAnimation }   from '../animations';
+import { Crisis }         from './crisis.service';
+import { DialogService }  from '../dialog.service';
+
+@Component({
+  template: `
+  <div *ngIf=&quot;crisis&quot;>
+    <h3>&quot;{{ editName }}&quot;</h3>
+    <div>
+      <label>Id: </label>{{ crisis.id }}</div>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)]=&quot;editName&quot; placeholder=&quot;name&quot;/>
+    </div>
+    <p>
+      <button (click)=&quot;save()&quot;>Save</button>
+      <button (click)=&quot;cancel()&quot;>Cancel</button>
+    </p>
+  </div>
+  `,
+  styles: ['input {width: 20em}'],
+  animations: [ slideInDownAnimation ]
+})
+export class CrisisDetailComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
+
+  crisis: Crisis;
+  editName: string;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    public dialogService: DialogService
+  ) {}
+
+  ngOnInit() {
+    this.route.data
+      .subscribe((data: { crisis: Crisis }) => {
+        this.editName = data.crisis.name;
+        this.crisis = data.crisis;
+      });
+  }
+
+  cancel() {
+    this.gotoCrises();
+  }
+
+  save() {
+    this.crisis.name = this.editName;
+    this.gotoCrises();
+  }
+
+  canDeactivate(): Observable<boolean> | boolean {
+    // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
+    if (!this.crisis || this.crisis.name === this.editName) {
+      return true;
+    }
+    // Otherwise ask the user with the dialog service and return its
+    // observable which resolves to true or false when the user decides
+    return this.dialogService.confirm('Discard changes?');
+  }
+
+  gotoCrises() {
+    let crisisId = this.crisis ? this.crisis.id : null;
+    // Pass along the crisis id if available
+    // so that the CrisisListComponent can select that crisis.
+    // Add a totally useless `foo` parameter for kicks.
+    // Relative navigation back to the crises
+    this.router.navigate(['../', { id: crisisId, foo: 'foo' }], { relativeTo: this.route });
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis-list.component.ts]" value="import { Component, OnInit }        from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+
+import { Crisis, CrisisService } from './crisis.service';
+import { Observable }            from 'rxjs';
+import { switchMap }             from 'rxjs/operators';
+
+@Component({
+  template: `
+    <ul class=&quot;items&quot;>
+      <li *ngFor=&quot;let crisis of crises$ | async&quot;
+        [class.selected]=&quot;crisis.id === selectedId&quot;>
+        <a [routerLink]=&quot;[crisis.id]&quot;>
+          <span class=&quot;badge&quot;>{{ crisis.id }}</span>{{ crisis.name }}
+        </a>
+      </li>
+    </ul>
+
+    <router-outlet></router-outlet>
+  `
+})
+export class CrisisListComponent implements OnInit {
+  crises$: Observable<Crisis[]>;
+  selectedId: number;
+
+  constructor(
+    private service: CrisisService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.crises$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => {
+        this.selectedId = +params.get('id');
+        return this.service.getCrises();
+      })
+    );
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/crisis-center/crisis.service.ts]" value="import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export class Crisis {
+  constructor(public id: number, public name: string) { }
+}
+
+const CRISES = [
+  new Crisis(1, 'Dragon Burning Cities'),
+  new Crisis(2, 'Sky Rains Great White Sharks'),
+  new Crisis(3, 'Giant Asteroid Heading For Earth'),
+  new Crisis(4, 'Procrastinators Meeting Delayed Again'),
+];
+
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class CrisisService {
+  static nextCrisisId = 100;
+  private crises$: BehaviorSubject<Crisis[]> = new BehaviorSubject<Crisis[]>(CRISES);
+
+  getCrises() { return this.crises$; }
+
+  getCrisis(id: number | string) {
+    return this.getCrises().pipe(
+      map(crises => crises.find(crisis => crisis.id === +id))
+    );
+  }
+
+  addCrisis(name: string) {
+    name = name.trim();
+    if (name) {
+      let crisis = new Crisis(CrisisService.nextCrisisId++, name);
+      CRISES.push(crisis);
+      this.crises$.next(CRISES);
+    }
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/dialog.service.ts]" value="import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
+/**
+ * Async modal dialog service
+ * DialogService makes this app easier to test by faking this service.
+ * TODO: better modal implementation that doesn't use window.confirm
+ */
+@Injectable()
+export class DialogService {
+  /**
+   * Ask user to confirm an action. `message` explains the action and choices.
+   * Returns observable resolving to `true`=confirm or `false`=cancel
+   */
+  confirm(message?: string): Observable<boolean> {
+    const confirmation = window.confirm(message || 'Is it OK?');
+
+    return of(confirmation);
+  };
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/heroes/hero-detail.component.ts]" value="import { switchMap } from 'rxjs/operators';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { slideInDownAnimation } from '../animations';
+
+import { Hero, HeroService }  from './hero.service';
+
+@Component({
+  template: `
+  <h2>HEROES</h2>
+  <div *ngIf=&quot;hero$ | async as hero&quot;>
+    <h3>&quot;{{ hero.name }}&quot;</h3>
+    <div>
+      <label>Id: </label>{{ hero.id }}</div>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)]=&quot;hero.name&quot; placeholder=&quot;name&quot;/>
+    </div>
+    <p>
+      <button (click)=&quot;gotoHeroes(hero)&quot;>Back</button>
+    </p>
+  </div>
+  `,
+  animations: [ slideInDownAnimation ]
+})
+export class HeroDetailComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
+
+  hero$: Observable<Hero>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: HeroService
+  ) {}
+
+  ngOnInit() {
+    this.hero$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.service.getHero(params.get('id')))
+    );
+  }
+
+  gotoHeroes(hero: Hero) {
+    let heroId = hero ? hero.id : null;
+    // Pass along the hero id if available
+    // so that the HeroList component can select that hero.
+    // Include a junk 'foo' property for fun.
+    this.router.navigate(['/heroes', { id: heroId, foo: 'foo' }]);
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/heroes/hero-list.component.ts]" value="// TODO: Feature Componetized like CrisisCenter
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+
+import { Hero, HeroService }  from './hero.service';
+
+@Component({
+  template: `
+    <h2>HEROES</h2>
+    <ul class=&quot;items&quot;>
+      <li *ngFor=&quot;let hero of heroes$ | async&quot;
+        [class.selected]=&quot;hero.id === selectedId&quot;>
+        <a [routerLink]=&quot;['/hero', hero.id]&quot;>
+          <span class=&quot;badge&quot;>{{ hero.id }}</span>{{ hero.name }}
+        </a>
+      </li>
+    </ul>
+
+    <button routerLink=&quot;/sidekicks&quot;>Go to sidekicks</button>
+  `
+})
+export class HeroListComponent implements OnInit {
+  heroes$: Observable<Hero[]>;
+
+  private selectedId: number;
+
+  constructor(
+    private service: HeroService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.heroes$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => {
+        // (+) before `params.get()` turns the string into a number
+        this.selectedId = +params.get('id');
+        return this.service.getHeroes();
+      })
+    );
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/heroes/hero.service.ts]" value="import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export class Hero {
+  constructor(public id: number, public name: string) { }
+}
+
+const HEROES = [
+  new Hero(11, 'Mr. Nice'),
+  new Hero(12, 'Narco'),
+  new Hero(13, 'Bombasto'),
+  new Hero(14, 'Celeritas'),
+  new Hero(15, 'Magneta'),
+  new Hero(16, 'RubberMan')
+];
+
+@Injectable()
+export class HeroService {
+  getHeroes() { return of(HEROES); }
+
+  getHero(id: number | string) {
+    return this.getHeroes().pipe(
+      // (+) before `id` turns the string into a number
+      map(heroes => heroes.find(hero => hero.id === +id))
+    );
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/heroes/heroes-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { HeroListComponent }    from './hero-list.component';
+import { HeroDetailComponent }  from './hero-detail.component';
+
+const heroesRoutes: Routes = [
+  { path: 'heroes', redirectTo: '/superheroes' },
+  { path: 'hero/:id', redirectTo: '/superhero/:id' },
+  { path: 'superheroes',  component: HeroListComponent },
+  { path: 'superhero/:id', component: HeroDetailComponent }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(heroesRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class HeroRoutingModule { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/heroes/heroes.module.ts]" value="import { NgModule }       from '@angular/core';
+import { CommonModule }   from '@angular/common';
+import { FormsModule }    from '@angular/forms';
+
+import { HeroListComponent }    from './hero-list.component';
+import { HeroDetailComponent }  from './hero-detail.component';
+
+import { HeroService } from './hero.service';
+
+import { HeroRoutingModule } from './heroes-routing.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    HeroRoutingModule
+  ],
+  declarations: [
+    HeroListComponent,
+    HeroDetailComponent
+  ],
+  providers: [ HeroService ]
+})
+export class HeroesModule {}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/login-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard }            from './auth-guard.service';
+import { AuthService }          from './auth.service';
+import { LoginComponent }       from './login.component';
+
+const loginRoutes: Routes = [
+  { path: 'login', component: LoginComponent }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(loginRoutes)
+  ],
+  exports: [
+    RouterModule
+  ],
+  providers: [
+    AuthGuard,
+    AuthService
+  ]
+})
+export class LoginRoutingModule {}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/login.component.ts]" value="import { Component }        from '@angular/core';
+import { Router,
+         NavigationExtras } from '@angular/router';
+import { AuthService }      from './auth.service';
+
+@Component({
+  template: `
+    <h2>LOGIN</h2>
+    <p>{{message}}</p>
+    <p>
+      <button (click)=&quot;login()&quot;  *ngIf=&quot;!authService.isLoggedIn&quot;>Login</button>
+      <button (click)=&quot;logout()&quot; *ngIf=&quot;authService.isLoggedIn&quot;>Logout</button>
+    </p>`
+})
+export class LoginComponent {
+  message: string;
+
+  constructor(public authService: AuthService, public router: Router) {
+    this.setMessage();
+  }
+
+  setMessage() {
+    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
+  }
+
+  login() {
+    this.message = 'Trying to log in ...';
+
+    this.authService.login().subscribe(() => {
+      this.setMessage();
+      if (this.authService.isLoggedIn) {
+        // Get the redirect URL from our auth service
+        // If no redirect has been set, use the default
+        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
+
+        // Set our navigation extras object
+        // that passes on our global query params and fragment
+        let navigationExtras: NavigationExtras = {
+          queryParamsHandling: 'preserve',
+          preserveFragment: true
+        };
+
+        // Redirect the user
+        this.router.navigate([redirect], navigationExtras);
+      }
+    });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.setMessage();
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/not-found.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  template: '<h2>Page not found</h2>'
+})
+export class PageNotFoundComponent {}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/selective-preloading-strategy.ts]" value="import { Injectable } from '@angular/core';
+import { PreloadingStrategy, Route } from '@angular/router';
+import { Observable, of } from 'rxjs';
+
+@Injectable()
+export class SelectivePreloadingStrategy implements PreloadingStrategy {
+  preloadedModules: string[] = [];
+
+  preload(route: Route, load: () => Observable<any>): Observable<any> {
+    if (route.data &amp;&amp; route.data['preload']) {
+      // add the route path to the preloaded module array
+      this.preloadedModules.push(route.path);
+
+      // log the route path to the console
+      console.log('Preloaded: ' + route.path);
+
+      return load();
+    } else {
+      return of(null);
+    }
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * In development mode, to ignore zone related error stack frames such as
+ * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can
+ * import the following file, but please comment it out in production mode
+ * because it will have performance impact when throw error
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/docs/ts/latest/guide/browser-support.html
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE9, IE10 and IE11 requires all of the following polyfills. **/
+// import 'core-js/es6/symbol';
+// import 'core-js/es6/object';
+// import 'core-js/es6/function';
+// import 'core-js/es6/parse-int';
+// import 'core-js/es6/parse-float';
+// import 'core-js/es6/number';
+// import 'core-js/es6/math';
+// import 'core-js/es6/string';
+// import 'core-js/es6/date';
+// import 'core-js/es6/array';
+// import 'core-js/es6/regexp';
+// import 'core-js/es6/map';
+// import 'core-js/es6/weak-map';
+// import 'core-js/es6/set';
+
+/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/** IE10 and IE11 requires the following for the Reflect API. */
+// import 'core-js/es6/reflect';
+
+
+/** Evergreen browsers require these. **/
+// Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
+import 'core-js/es7/reflect';
+
+
+/**
+ * Required to support Web Animations `@angular/platform-browser/animations`.
+ * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
+ **/
+// import 'web-animations-js';
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ */
+
+ // (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+ // (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ // (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+
+ /*
+ * in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ * with the following flag, it will bypass `zone.js` patch for IE/Edge
+ */
+// (window as any).__Zone_enable_cross_context_check = true;
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js/dist/zone';  // Included with Angular CLI.
+
+
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/assets/app.css]" value="/* items class */
+.items {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 24em;
+}
+.items li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.items li a {
+  display: block;
+  text-decoration: none;
+}
+.items li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.items li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+.items li.selected:hover {
+  background-color: #BBD8DC;
+}
+.items .text {
+  position: relative;
+  top: -3px;
+}
+.items .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/compose-message.component.html]" value="<h3>Contact Crisis Center</h3>
+<div *ngIf=&quot;details&quot;>
+  {{ details }}
+</div>
+<div>
+  <div>
+    <label>Message: </label>
+  </div>
+  <div>
+    <textarea [(ngModel)]=&quot;message&quot; rows=&quot;10&quot; cols=&quot;35&quot; [disabled]=&quot;sending&quot;></textarea>
+  </div>
+</div>
+<p *ngIf=&quot;!sending&quot;>
+  <button (click)=&quot;send()&quot;>Send</button>
+  <button (click)=&quot;cancel()&quot;>Cancel</button>
+</p>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <!-- Set the base href -->
+    <base href=&quot;/&quot;>
+    <title>Angular Router</title>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/app.css&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;root&quot;: &quot;&quot;,
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;src/tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              {
+                &quot;glob&quot;: &quot;favicon.ico&quot;,
+                &quot;input&quot;: &quot;src&quot;,
+                &quot;output&quot;: &quot;/&quot;
+              },
+              {
+                &quot;glob&quot;: &quot;**/*&quot;,
+                &quot;input&quot;: &quot;src/assets&quot;,
+                &quot;output&quot;: &quot;/assets&quot;
+              }
+            ],
+            &quot;styles&quot;: [
+              {
+                &quot;input&quot;: &quot;src/styles.css&quot;
+              }
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;extractCss&quot;: true,
+              &quot;namedChunks&quot;: false,
+              &quot;aot&quot;: true,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;src/tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;src/karma.conf.js&quot;,
+            &quot;styles&quot;: [
+              {
+                &quot;input&quot;: &quot;styles.css&quot;
+              }
+            ],
+            &quot;scripts&quot;: [],
+            &quot;assets&quot;: [
+              {
+                &quot;glob&quot;: &quot;favicon.ico&quot;,
+                &quot;input&quot;: &quot;src/&quot;,
+                &quot;output&quot;: &quot;/&quot;
+              },
+              {
+                &quot;glob&quot;: &quot;**/*&quot;,
+                &quot;input&quot;: &quot;src/assets&quot;,
+                &quot;output&quot;: &quot;/assets&quot;
+              }
+            ]
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;src/tsconfig.app.json&quot;,
+              &quot;src/tsconfig.spec.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        }
+      }
+    },
+    &quot;angular.io-example-e2e&quot;: {
+      &quot;root&quot;: &quot;e2e/&quot;,
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;architect&quot;: {
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: &quot;e2e/tsconfig.e2e.json&quot;,
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        }
+      }
+    }
+  }
+}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="router"><input type="hidden" name="description" value="Angular Example - Router"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^6.0.0&quot;,&quot;@angular/common&quot;:&quot;^6.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^6.0.0&quot;,&quot;@angular/core&quot;:&quot;^6.0.0&quot;,&quot;@angular/forms&quot;:&quot;^6.0.0&quot;,&quot;@angular/http&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^6.0.0&quot;,&quot;@angular/router&quot;:&quot;^6.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.0.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;^0.8.24&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.3.1&quot;}"></form>
+    <script>
+      var embedded = 'ctl=1';
+      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+      if (isEmbedded) {
+        var form = document.getElementById('mainForm');
+        var action = form.action;
+        var actionHasParams = action.indexOf('?') > -1;
+        var symbol = actionHasParams ? '&' : '?'
+        form.action = form.action + symbol + embedded;
+      }
+      document.getElementById("mainForm").submit();
+    </script>
+    </body></html>

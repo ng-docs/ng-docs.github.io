@@ -1,0 +1,551 @@
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="https://embed.plnkr.co?show=preview" target="_self"><input type="hidden" name="entries[app/app.component.ts][content]" value="import { Component }       from '@angular/core';
+
+import { QuestionService } from './question.service';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div>
+      <h2>Job Application for Heroes</h2>
+      <app-dynamic-form [questions]=&quot;questions&quot;></app-dynamic-form>
+    </div>
+  `,
+  providers:  [QuestionService]
+})
+export class AppComponent {
+  questions: any[];
+
+  constructor(service: QuestionService) {
+    this.questions = service.getQuestions();
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/app.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/app.module.ts][content]" value="import { BrowserModule }                from '@angular/platform-browser';
+import { ReactiveFormsModule }          from '@angular/forms';
+import { NgModule }                     from '@angular/core';
+
+import { AppComponent }                 from './app.component';
+import { DynamicFormComponent }         from './dynamic-form.component';
+import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
+
+@NgModule({
+  imports: [ BrowserModule, ReactiveFormsModule ],
+  declarations: [ AppComponent, DynamicFormComponent, DynamicFormQuestionComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {
+  constructor() {
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/app.module.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/dynamic-form-question.component.ts][content]" value="import { Component, Input } from '@angular/core';
+import { FormGroup }        from '@angular/forms';
+
+import { QuestionBase }     from './question-base';
+
+@Component({
+  selector: 'app-question',
+  templateUrl: './dynamic-form-question.component.html'
+})
+export class DynamicFormQuestionComponent {
+  @Input() question: QuestionBase<any>;
+  @Input() form: FormGroup;
+  get isValid() { return this.form.controls[this.question.key].valid; }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/dynamic-form-question.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/dynamic-form.component.ts][content]" value="import { Component, Input, OnInit }  from '@angular/core';
+import { FormGroup }                 from '@angular/forms';
+
+import { QuestionBase }              from './question-base';
+import { QuestionControlService }    from './question-control.service';
+
+@Component({
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  providers: [ QuestionControlService ]
+})
+export class DynamicFormComponent implements OnInit {
+
+  @Input() questions: QuestionBase<any>[] = [];
+  form: FormGroup;
+  payLoad = '';
+
+  constructor(private qcs: QuestionControlService) {  }
+
+  ngOnInit() {
+    this.form = this.qcs.toFormGroup(this.questions);
+  }
+
+  onSubmit() {
+    this.payLoad = JSON.stringify(this.form.value);
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/dynamic-form.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/question-base.ts][content]" value="export class QuestionBase<T>{
+  value: T;
+  key: string;
+  label: string;
+  required: boolean;
+  order: number;
+  controlType: string;
+
+  constructor(options: {
+      value?: T,
+      key?: string,
+      label?: string,
+      required?: boolean,
+      order?: number,
+      controlType?: string
+    } = {}) {
+    this.value = options.value;
+    this.key = options.key || '';
+    this.label = options.label || '';
+    this.required = !!options.required;
+    this.order = options.order === undefined ? 1 : options.order;
+    this.controlType = options.controlType || '';
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/question-base.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/question-control.service.ts][content]" value="import { Injectable }   from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { QuestionBase } from './question-base';
+
+@Injectable()
+export class QuestionControlService {
+  constructor() { }
+
+  toFormGroup(questions: QuestionBase<any>[] ) {
+    let group: any = {};
+
+    questions.forEach(question => {
+      group[question.key] = question.required ? new FormControl(question.value || '', Validators.required)
+                                              : new FormControl(question.value || '');
+    });
+    return new FormGroup(group);
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/question-control.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/question-dropdown.ts][content]" value="import { QuestionBase } from './question-base';
+
+export class DropdownQuestion extends QuestionBase<string> {
+  controlType = 'dropdown';
+  options: {key: string, value: string}[] = [];
+
+  constructor(options: {} = {}) {
+    super(options);
+    this.options = options['options'] || [];
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/question-dropdown.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/question-textbox.ts][content]" value="import { QuestionBase } from './question-base';
+
+export class TextboxQuestion extends QuestionBase<string> {
+  controlType = 'textbox';
+  type: string;
+
+  constructor(options: {} = {}) {
+    super(options);
+    this.type = options['type'] || '';
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/question-textbox.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/question.service.ts][content]" value="import { Injectable }       from '@angular/core';
+
+import { DropdownQuestion } from './question-dropdown';
+import { QuestionBase }     from './question-base';
+import { TextboxQuestion }  from './question-textbox';
+
+@Injectable()
+export class QuestionService {
+
+  // Todo: get from a remote source of question metadata
+  // Todo: make asynchronous
+  getQuestions() {
+
+    let questions: QuestionBase<any>[] = [
+
+      new DropdownQuestion({
+        key: 'brave',
+        label: 'Bravery Rating',
+        options: [
+          {key: 'solid',  value: 'Solid'},
+          {key: 'great',  value: 'Great'},
+          {key: 'good',   value: 'Good'},
+          {key: 'unproven', value: 'Unproven'}
+        ],
+        order: 3
+      }),
+
+      new TextboxQuestion({
+        key: 'firstName',
+        label: 'First name',
+        value: 'Bombasto',
+        required: true,
+        order: 1
+      }),
+
+      new TextboxQuestion({
+        key: 'emailAddress',
+        label: 'Email',
+        type: 'email',
+        order: 2
+      })
+    ];
+
+    return questions.sort((a, b) => a.order - b.order);
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/question.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[main.ts][content]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[main.ts][encoding]" value="utf8"><input type="hidden" name="entries[assets/sample.css][content]" value=".errorMessage{
+  color:red;
+}
+
+.form-row{
+  margin-top: 10px;
+}
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[assets/sample.css][encoding]" value="utf8"><input type="hidden" name="entries[styles.css][content]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[styles.css][encoding]" value="utf8"><input type="hidden" name="entries[app/dynamic-form-question.component.html][content]" value="<div [formGroup]=&quot;form&quot;>
+  <label [attr.for]=&quot;question.key&quot;>{{question.label}}</label>
+
+  <div [ngSwitch]=&quot;question.controlType&quot;>
+
+    <input *ngSwitchCase=&quot;'textbox'&quot; [formControlName]=&quot;question.key&quot;
+            [id]=&quot;question.key&quot; [type]=&quot;question.type&quot;>
+
+    <select [id]=&quot;question.key&quot; *ngSwitchCase=&quot;'dropdown'&quot; [formControlName]=&quot;question.key&quot;>
+      <option *ngFor=&quot;let opt of question.options&quot; [value]=&quot;opt.key&quot;>{{opt.value}}</option>
+    </select>
+
+  </div> 
+
+  <div class=&quot;errorMessage&quot; *ngIf=&quot;!isValid&quot;>{{question.label}} is required</div>
+</div>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[app/dynamic-form-question.component.html][encoding]" value="utf8"><input type="hidden" name="entries[app/dynamic-form.component.html][content]" value="<div>
+  <form (ngSubmit)=&quot;onSubmit()&quot; [formGroup]=&quot;form&quot;>
+
+    <div *ngFor=&quot;let question of questions&quot; class=&quot;form-row&quot;>
+      <app-question [question]=&quot;question&quot; [form]=&quot;form&quot;></app-question>
+    </div>
+
+    <div class=&quot;form-row&quot;>
+      <button type=&quot;submit&quot; [disabled]=&quot;!form.valid&quot;>Save</button>
+    </div>
+  </form>
+
+  <div *ngIf=&quot;payLoad&quot; class=&quot;form-row&quot;>
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[app/dynamic-form.component.html][encoding]" value="utf8"><input type="hidden" name="entries[index.html][content]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <meta charset=&quot;UTF-8&quot;>
+    <script>document.write('<base href=&quot;' + document.location + '&quot; />');</script>
+    <title>Dynamic Form</title>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/sample.css&quot;>
+  
+    <link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;>
+    <script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;></script>
+    <script src=&quot;https://unpkg.com/zone.js@0.7.4?main=browser&quot;></script>
+    <script src=&quot;https://unpkg.com/systemjs@0.19.39/dist/system.src.js&quot;></script>
+    <script src=&quot;systemjs.config.js&quot;></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    </head>
+    
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[index.html][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="cookbook"><input type="hidden" name="title" value="Angular Example - Dynamic Form"><input type="hidden" name="source[type]" value="Dynamic Form"><input type="hidden" name="source[url]" value="https://angular.io"><input type="hidden" name="entries[systemjs.config.js][content]" value="/**
+ * WEB ANGULAR VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      // Copy of compiler options in standard tsconfig.json
+      &quot;target&quot;: &quot;es5&quot;,
+      &quot;module&quot;: &quot;commonjs&quot;,
+      &quot;moduleResolution&quot;: &quot;node&quot;,
+      &quot;sourceMap&quot;: true,
+      &quot;emitDecoratorMetadata&quot;: true,
+      &quot;experimentalDecorators&quot;: true,
+      &quot;lib&quot;: [&quot;es2015&quot;, &quot;dom&quot;],
+      &quot;noImplicitAny&quot;: true,
+      &quot;suppressImplicitAnyIndexErrors&quot;: true
+    },
+    meta: {
+      'typescript': {
+        &quot;exports&quot;: &quot;ts&quot;
+      }
+    },
+    paths: {
+      // paths serve as alias
+      'npm:': 'https://unpkg.com/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      'app': 'app',
+
+      // angular bundles
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
+      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+
+      // other libraries
+      'rxjs':                      'npm:rxjs@5.0.1',
+      'tslib':                     'npm:tslib/tslib.js',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ts':                        'npm:plugin-typescript@5.2.7/lib/plugin.js',
+      'typescript':                'npm:typescript@2.3.2/lib/typescript.js',
+
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.ts',
+        defaultExtension: 'ts',
+        meta: {
+          './*.ts': {
+            loader: 'systemjs-angular-loader.js'
+          }
+        }
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      }
+    }
+  });
+
+})(this);
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+"><input type="hidden" name="entries[systemjs.config.js][encoding]" value="utf8"><input type="hidden" name="entries[systemjs-angular-loader.js][content]" value="var templateUrlRegex = /templateUrl\s*:(\s*['&quot;`](.*?)['&quot;`]\s*)/gm;
+var stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
+var stringRegex = /(['`&quot;])((?:[^\\]\\\1|.)*?)\1/g;
+
+module.exports.translate = function(load){
+  if (load.source.indexOf('moduleId') != -1) return load;
+
+  var url = document.createElement('a');
+  url.href = load.address;
+
+  var basePathParts = url.pathname.split('/');
+
+  basePathParts.pop();
+  var basePath = basePathParts.join('/');
+
+  var baseHref = document.createElement('a');
+  baseHref.href = this.baseURL;
+  baseHref = baseHref.pathname;
+
+  if (!baseHref.startsWith('/base/')) { // it is not karma
+    basePath = basePath.replace(baseHref, '');
+  }
+
+  load.source = load.source
+    .replace(templateUrlRegex, function(match, quote, url){
+      var resolvedUrl = url;
+
+      if (url.startsWith('.')) {
+        resolvedUrl = basePath + url.substr(1);
+      }
+
+      return 'templateUrl: &quot;' + resolvedUrl + '&quot;';
+    })
+    .replace(stylesRegex, function(match, relativeUrls) {
+      var urls = [];
+
+      while ((match = stringRegex.exec(relativeUrls)) !== null) {
+        if (match[2].startsWith('.')) {
+          urls.push('&quot;' + basePath + match[2].substr(1) + '&quot;');
+        } else {
+          urls.push('&quot;' + match[2] + '&quot;');
+        }
+      }
+
+      return &quot;styleUrls: [&quot; + urls.join(', ') + &quot;]&quot;;
+    });
+
+  return load;
+};
+"><input type="hidden" name="entries[systemjs-angular-loader.js][encoding]" value="utf8"></form><script>document.getElementById("mainForm").submit();</script></body></html>

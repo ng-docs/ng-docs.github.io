@@ -1,0 +1,531 @@
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="http://plnkr.co/edit/?p=preview" target="_self"><input type="hidden" name="files[app/app.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `<app-hero-form-template></app-hero-form-template>
+             <hr>
+             <app-hero-form-reactive></app-hero-form-reactive>`
+})
+export class AppComponent { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/app.module.ts]" value="import { NgModule }      from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent }           from './app.component';
+import { HeroFormTemplateComponent } from './template/hero-form-template.component';
+import { HeroFormReactiveComponent } from './reactive/hero-form-reactive.component';
+import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
+
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  declarations: [
+    AppComponent,
+    HeroFormTemplateComponent,
+    HeroFormReactiveComponent,
+    ForbiddenValidatorDirective
+  ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/reactive/hero-form-reactive.component.ts]" value="/* tslint:disable: member-ordering forin */
+import { Component, OnInit }                  from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { forbiddenNameValidator } from '../shared/forbidden-name.directive';
+
+@Component({
+  selector: 'app-hero-form-reactive',
+  templateUrl: './hero-form-reactive.component.html'
+})
+export class HeroFormReactiveComponent implements OnInit {
+
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+
+  hero = {name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0]};
+
+  heroForm: FormGroup;
+
+  ngOnInit(): void {
+    this.heroForm = new FormGroup({
+      'name': new FormControl(this.hero.name, [
+        Validators.required,
+        Validators.minLength(4),
+        forbiddenNameValidator(/bob/i) // <-- Here's how you pass in the custom validator.
+      ]),
+      'alterEgo': new FormControl(this.hero.alterEgo),
+      'power': new FormControl(this.hero.power, Validators.required)
+    });
+  }
+
+  get name() { return this.heroForm.get('name'); }
+
+  get power() { return this.heroForm.get('power'); }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/shared/forbidden-name.directive.ts]" value="import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators } from '@angular/forms';
+
+/** A hero's name can't match the given regular expression */
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} => {
+    const forbidden = nameRe.test(control.value);
+    return forbidden ? {'forbiddenName': {value: control.value}} : null;
+  };
+}
+
+@Directive({
+  selector: '[appForbiddenName]',
+  providers: [{provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true}]
+})
+export class ForbiddenValidatorDirective implements Validator {
+  @Input() forbiddenName: string;
+
+  validate(control: AbstractControl): {[key: string]: any} {
+    return this.forbiddenName ? forbiddenNameValidator(new RegExp(this.forbiddenName, 'i'))(control)
+                              : null;
+  }
+}
+
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/template/hero-form-template.component.ts]" value="/* tslint:disable: member-ordering */
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-form-template',
+  templateUrl: './hero-form-template.component.html'
+})
+export class HeroFormTemplateComponent {
+
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+
+  hero = {name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0]};
+
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[assets/forms.css]" value="
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[styles.css]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/reactive/hero-form-reactive.component.html]" value="<div class=&quot;container&quot;>
+
+  <h1>Reactive Form</h1>
+
+  <form [formGroup]=&quot;heroForm&quot; #formDir=&quot;ngForm&quot;>
+
+    <div [hidden]=&quot;formDir.submitted&quot;>
+
+      <div class=&quot;form-group&quot;>
+
+        <label for=&quot;name&quot;>Name</label>
+        <input id=&quot;name&quot; class=&quot;form-control&quot;
+               formControlName=&quot;name&quot; required >
+
+        <div *ngIf=&quot;name.invalid &amp;&amp; (name.dirty || name.touched)&quot;
+             class=&quot;alert alert-danger&quot;>
+
+          <div *ngIf=&quot;name.errors.required&quot;>
+            Name is required.
+          </div>
+          <div *ngIf=&quot;name.errors.minlength&quot;>
+            Name must be at least 4 characters long.
+          </div>
+          <div *ngIf=&quot;name.errors.forbiddenName&quot;>
+            Name cannot be Bob.
+          </div>
+        </div>
+      </div>
+
+      <div class=&quot;form-group&quot;>
+        <label for=&quot;alterEgo&quot;>Alter Ego</label>
+        <input id=&quot;alterEgo&quot; class=&quot;form-control&quot;
+            formControlName=&quot;alterEgo&quot;  >
+      </div>
+
+      <div class=&quot;form-group&quot;>
+        <label for=&quot;power&quot;>Hero Power</label>
+        <select id=&quot;power&quot; class=&quot;form-control&quot;
+            formControlName=&quot;power&quot; required >
+          <option *ngFor=&quot;let p of powers&quot; [value]=&quot;p&quot;>{{p}}</option>
+        </select>
+
+        <div *ngIf=&quot;power.invalid &amp;&amp; power.touched&quot; class=&quot;alert alert-danger&quot;>
+          <div *ngIf=&quot;power.errors.required&quot;>Power is required.</div>
+        </div>
+      </div>
+
+      <button type=&quot;submit&quot; class=&quot;btn btn-default&quot;
+             [disabled]=&quot;heroForm.invalid&quot;>Submit</button>
+      <button type=&quot;button&quot; class=&quot;btn btn-default&quot;
+             (click)=&quot;formDir.resetForm({})&quot;>Reset</button>
+    </div>
+  </form>
+
+  <div class=&quot;submitted-message&quot; *ngIf=&quot;formDir.submitted&quot;>
+    <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
+    <button (click)=&quot;formDir.resetForm({})&quot;>Add new hero</button>
+  </div>
+</div>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[app/template/hero-form-template.component.html]" value="<div class=&quot;container&quot;>
+
+  <h1>Template-Driven Form</h1>
+  <form #heroForm=&quot;ngForm&quot;>
+    <div [hidden]=&quot;heroForm.submitted&quot;>
+
+      <div class=&quot;form-group&quot;>
+        <label for=&quot;name&quot;>Name</label>
+        <input id=&quot;name&quot; name=&quot;name&quot; class=&quot;form-control&quot;
+               required minlength=&quot;4&quot; forbiddenName=&quot;bob&quot;
+               [(ngModel)]=&quot;hero.name&quot; #name=&quot;ngModel&quot; >
+
+        <div *ngIf=&quot;name.invalid &amp;&amp; (name.dirty || name.touched)&quot;
+             class=&quot;alert alert-danger&quot;>
+
+          <div *ngIf=&quot;name.errors.required&quot;>
+            Name is required.
+          </div>
+          <div *ngIf=&quot;name.errors.minlength&quot;>
+            Name must be at least 4 characters long.
+          </div>
+          <div *ngIf=&quot;name.errors.forbiddenName&quot;>
+            Name cannot be Bob.
+          </div>
+
+        </div>
+      </div>
+
+      <div class=&quot;form-group&quot;>
+        <label for=&quot;alterEgo&quot;>Alter Ego</label>
+        <input id=&quot;alterEgo&quot; class=&quot;form-control&quot;
+               name=&quot;alterEgo&quot; [(ngModel)]=&quot;hero.alterEgo&quot; >
+      </div>
+
+      <div class=&quot;form-group&quot;>
+        <label for=&quot;power&quot;>Hero Power</label>
+        <select id=&quot;power&quot; name=&quot;power&quot; class=&quot;form-control&quot;
+                required [(ngModel)]=&quot;hero.power&quot; #power=&quot;ngModel&quot; >
+          <option *ngFor=&quot;let p of powers&quot; [value]=&quot;p&quot;>{{p}}</option>
+        </select>
+
+        <div *ngIf=&quot;power.errors &amp;&amp; power.touched&quot; class=&quot;alert alert-danger&quot;>
+          <div *ngIf=&quot;power.errors.required&quot;>Power is required.</div>
+        </div>
+      </div>
+
+      <button type=&quot;submit&quot; class=&quot;btn btn-default&quot;
+              [disabled]=&quot;heroForm.invalid&quot;>Submit</button>
+      <button type=&quot;button&quot; class=&quot;btn btn-default&quot;
+              (click)=&quot;heroForm.resetForm({})&quot;>Reset</button>
+    </div>
+
+    <div class=&quot;submitted-message&quot; *ngIf=&quot;heroForm.submitted&quot;>
+      <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
+      <button (click)=&quot;heroForm.resetForm({})&quot;>Add new hero</button>
+    </div>
+  </form>
+
+</div>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[index.html]" value="<html lang=&quot;en&quot;>
+  <head>
+    <title>Hero Form with Validation</title>
+    <script>document.write('<base href=&quot;' + document.location + '&quot; />');</script>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/forms.css&quot;>
+  
+    <link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;>
+    <script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;></script>
+    <script src=&quot;https://unpkg.com/zone.js@0.7.4?main=browser&quot;></script>
+    <script src=&quot;https://unpkg.com/systemjs@0.19.39/dist/system.src.js&quot;></script>
+    <script src=&quot;systemjs.config.js&quot;></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    </head>
+    
+
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
+
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular Example - Validation"><input type="hidden" name="files[systemjs.config.js]" value="/**
+ * WEB ANGULAR VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      // Copy of compiler options in standard tsconfig.json
+      &quot;target&quot;: &quot;es5&quot;,
+      &quot;module&quot;: &quot;commonjs&quot;,
+      &quot;moduleResolution&quot;: &quot;node&quot;,
+      &quot;sourceMap&quot;: true,
+      &quot;emitDecoratorMetadata&quot;: true,
+      &quot;experimentalDecorators&quot;: true,
+      &quot;lib&quot;: [&quot;es2015&quot;, &quot;dom&quot;],
+      &quot;noImplicitAny&quot;: true,
+      &quot;suppressImplicitAnyIndexErrors&quot;: true
+    },
+    meta: {
+      'typescript': {
+        &quot;exports&quot;: &quot;ts&quot;
+      }
+    },
+    paths: {
+      // paths serve as alias
+      'npm:': 'https://unpkg.com/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      'app': 'app',
+
+      // angular bundles
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
+      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+
+      // other libraries
+      'rxjs':                      'npm:rxjs@5.0.1',
+      'tslib':                     'npm:tslib/tslib.js',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ts':                        'npm:plugin-typescript@5.2.7/lib/plugin.js',
+      'typescript':                'npm:typescript@2.3.2/lib/typescript.js',
+
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.ts',
+        defaultExtension: 'ts',
+        meta: {
+          './*.ts': {
+            loader: 'systemjs-angular-loader.js'
+          }
+        }
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      }
+    }
+  });
+
+})(this);
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+"><input type="hidden" name="files[systemjs-angular-loader.js]" value="var templateUrlRegex = /templateUrl\s*:(\s*['&quot;`](.*?)['&quot;`]\s*)/gm;
+var stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
+var stringRegex = /(['`&quot;])((?:[^\\]\\\1|.)*?)\1/g;
+
+module.exports.translate = function(load){
+  if (load.source.indexOf('moduleId') != -1) return load;
+
+  var url = document.createElement('a');
+  url.href = load.address;
+
+  var basePathParts = url.pathname.split('/');
+
+  basePathParts.pop();
+  var basePath = basePathParts.join('/');
+
+  var baseHref = document.createElement('a');
+  baseHref.href = this.baseURL;
+  baseHref = baseHref.pathname;
+
+  if (!baseHref.startsWith('/base/')) { // it is not karma
+    basePath = basePath.replace(baseHref, '');
+  }
+
+  load.source = load.source
+    .replace(templateUrlRegex, function(match, quote, url){
+      var resolvedUrl = url;
+
+      if (url.startsWith('.')) {
+        resolvedUrl = basePath + url.substr(1);
+      }
+
+      return 'templateUrl: &quot;' + resolvedUrl + '&quot;';
+    })
+    .replace(stylesRegex, function(match, relativeUrls) {
+      var urls = [];
+
+      while ((match = stringRegex.exec(relativeUrls)) !== null) {
+        if (match[2].startsWith('.')) {
+          urls.push('&quot;' + basePath + match[2].substr(1) + '&quot;');
+        } else {
+          urls.push('&quot;' + match[2] + '&quot;');
+        }
+      }
+
+      return &quot;styleUrls: [&quot; + urls.join(', ') + &quot;]&quot;;
+    });
+
+  return load;
+};
+"></form><script>document.getElementById("mainForm").submit();</script></body></html>

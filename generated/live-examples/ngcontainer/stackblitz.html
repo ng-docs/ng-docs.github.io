@@ -1,0 +1,809 @@
+<html lang="en"><head></head><body>
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+
+import { heroes } from './hero';
+
+@Component({
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  heroes = heroes;
+  hero = this.heroes[0];
+  heroTraits = ['honest', 'brave', 'considerate'];
+
+  // flags for the table
+
+  attrDirs = true;
+  strucDirs = true;
+  divNgIf = false;
+
+  showId = true;
+  showDefaultTraits = true;
+  showSad = true;
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { ContentComponent } from './content.component';
+import { heroComponents } from './hero.components';
+
+@NgModule({
+  imports: [ BrowserModule, FormsModule ],
+  declarations: [
+    AppComponent,
+    ContentComponent,
+    heroComponents
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/content.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'content-comp',
+  template:
+    `<div>
+      <ng-content></ng-content>
+    </div>`,
+  styles: [ `
+    div { border: medium dashed green; padding: 1em; width: 150px; text-align: center}
+  `]
+})
+export class ContentComponent { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero.components.ts]" value="import { Component, Input } from '@angular/core';
+
+import { Hero } from './hero';
+
+@Component({
+  selector: 'happy-hero',
+  template: `Wow. You like {{hero.name}}. What a happy hero ... just like you.`
+})
+export class HappyHeroComponent {
+  @Input() hero: Hero;
+}
+
+@Component({
+  selector: 'sad-hero',
+  template: `You like {{hero.name}}? Such a sad hero. Are you sad too?`
+})
+export class SadHeroComponent {
+  @Input() hero: Hero;
+}
+
+@Component({
+  selector: 'confused-hero',
+  template: `Are you as confused as {{hero.name}}?`
+})
+export class ConfusedHeroComponent {
+  @Input() hero: Hero;
+}
+
+@Component({
+  selector: 'unknown-hero',
+  template: `{{message}}`
+})
+export class UnknownHeroComponent {
+  @Input() hero: Hero;
+  get message() {
+    return this.hero &amp;&amp; this.hero.name
+      ? `${this.hero.name} is strange and mysterious.`
+      : 'Are you feeling indecisive?';
+  }
+}
+
+export const heroComponents = [
+  HappyHeroComponent,
+  SadHeroComponent,
+  ConfusedHeroComponent,
+  UnknownHeroComponent
+];
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero.ts]" value="export class Hero {
+  id: number;
+  name: string;
+  emotion?: string;
+}
+
+export const heroes: Hero[] = [
+  { id: 1, name: 'Mr. Nice', emotion: 'happy' },
+  { id: 2, name: 'Narco', emotion: 'sad' },
+  { id: 3, name: 'Windstorm', emotion: 'confused' },
+  { id: 4, name: 'Magneta' }
+];
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * In development mode, to ignore zone related error stack frames such as
+ * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can
+ * import the following file, but please comment it out in production mode
+ * because it will have performance impact when throw error
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/docs/ts/latest/guide/browser-support.html
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE9, IE10 and IE11 requires all of the following polyfills. **/
+// import 'core-js/es6/symbol';
+// import 'core-js/es6/object';
+// import 'core-js/es6/function';
+// import 'core-js/es6/parse-int';
+// import 'core-js/es6/parse-float';
+// import 'core-js/es6/number';
+// import 'core-js/es6/math';
+// import 'core-js/es6/string';
+// import 'core-js/es6/date';
+// import 'core-js/es6/array';
+// import 'core-js/es6/regexp';
+// import 'core-js/es6/map';
+// import 'core-js/es6/weak-map';
+// import 'core-js/es6/set';
+
+/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/** IE10 and IE11 requires the following for the Reflect API. */
+// import 'core-js/es6/reflect';
+
+
+/** Evergreen browsers require these. **/
+// Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
+import 'core-js/es7/reflect';
+
+
+/**
+ * Required to support Web Animations `@angular/platform-browser/animations`.
+ * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
+ **/
+// import 'web-animations-js';
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ */
+
+ // (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+ // (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ // (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+
+ /*
+ * in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ * with the following flag, it will bypass `zone.js` patch for IE/Edge
+ */
+// (window as any).__Zone_enable_cross_context_check = true;
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js/dist/zone';  // Included with Angular CLI.
+
+
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.css]" value="button {
+  min-width: 100px;
+  font-size: 100%;
+}
+
+code,
+.code {
+  background-color: #eee;
+  color: black;
+  font-family: Courier, sans-serif;
+  font-size: 85%;
+}
+
+div.code {
+  width: 400px;
+}
+
+.heroic {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+hr {
+  margin: 40px 0;
+}
+
+td,
+th {
+  text-align: left;
+  vertical-align: top;
+}
+
+p span {
+  color: red;
+  font-size: 70%;
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>&amp;lt;ng-container&amp;gt;</h1>
+
+<div *ngIf=&quot;hero&quot;>{{hero.name}}</div>
+
+<hr>
+
+<h3>&amp;lt;ng-container&amp;gt; and CSS</h3>
+<p>Examples demonstrating issues with rigid CSS styles.</p>
+
+<button (click)=&quot;hero = hero ? null : heroes[0]&quot;>Toggle hero</button>
+
+<h4>#1 &amp;lt;ng-container&amp;gt; and &amp;lt;p&amp;gt;</h4>
+<p>
+  I turned the corner
+  <ng-container *ngIf=&quot;hero&quot;>
+    and saw {{hero.name}}. I waved
+  </ng-container>
+  and continued on my way.
+</p>
+<p>
+  I turned the corner
+  <span *ngIf=&quot;hero&quot;>
+    and saw {{hero.name}}. I waved
+  </span>
+  and continued on my way.
+</p>
+
+<h4>#2 &amp;lt;ng-container&amp;gt; and &amp;lt;p&amp;gt;</h4>
+
+<div *ngIf=&quot;hero&quot;>
+  <p>
+    {{hero.name}} is
+    <ng-container *ngFor=&quot;let trait of heroTraits; let first=first; let last=last&quot;>
+      <ng-container *ngIf=&quot;!first&quot;>,</ng-container>
+      <ng-container *ngIf=&quot;last&quot;>and</ng-container>
+      {{trait}}
+    </ng-container>.
+  </p>
+
+  <p>
+    {{hero.name}} is
+    <span *ngFor=&quot;let trait of heroTraits; let first=first; let last=last&quot;>
+      <span *ngIf=&quot;!first&quot;>,</span>
+      <span *ngIf=&quot;last&quot;>and</span>
+      {{trait}}
+    </span>.
+  </p>
+
+<br>
+
+<h4>#3 &amp;lt;ng-container&amp;gt; and &amp;lt;p&amp;gt;</h4>
+    <p>
+      <label><input type=&quot;checkbox&quot; [checked]=&quot;showId&quot; (change)=&quot;showId=!showId&quot;>Show ID</label>
+    </p>
+
+  <div>
+    The <code>hero.id</code> in the &amp;lt;span&amp;gt;
+    is caught by the <span>p-span</span> CSS:
+    <p>
+      <span *ngIf=&quot;showId&quot;>
+        Id: ({{hero.id}})
+      </span>
+      Name: {{hero.name}}
+    </p>
+  </div>
+
+  <div>
+    The <code>hero.id</code> in the &amp;lt;ng-container&amp;gt;
+    is unaffected by the <span>p-span</span> CSS:
+    <p>
+      <ng-container *ngIf=&quot;showId&quot;>
+        Id: ({{hero.id}})
+      </ng-container>
+      Name: {{hero.name}}
+    </p>
+  </div>
+
+  <div>
+    The <code>hero.id</code> in the &amp;lt;ng-template *ngIf&amp;gt; disappears:
+    <p>
+      <ng-template *ngIf=&quot;showId&quot;>
+        Id: ({{hero.id}})
+      </ng-template>
+      Name: {{hero.name}}
+    </p>
+  </div>
+
+  <div>
+    The <code>hero.id</code> in the &amp;lt;ng-template [ngIf]&amp;gt;
+    is unaffected by the <span>p-span</span> CSS:
+    <p>
+      <ng-template [ngIf]=&quot;showId&quot;>
+        Id: ({{hero.id}})
+      </ng-template>
+      Name: {{hero.name}}
+    </p>
+  </div>
+
+</div>
+
+<hr>
+
+<h3>&amp;lt;ng-container&amp;gt; and layout-sensitive elements</h3>
+<p>
+  Examples demonstrating issues with layout-sensitive elements
+  such as &amp;lt;select&amp;gt; and &amp;lt;table&amp;gt;.
+</p>
+
+<h4>#1 &amp;lt;ng-container&amp;gt; and &amp;lt;options&amp;gt;</h4>
+
+<p><i>&amp;lt;select&amp;gt; with &amp;lt;span&amp;gt;</i></p>
+<div>
+  Pick your favorite hero
+  (<label><input type=&quot;checkbox&quot; checked (change)=&quot;showSad=!showSad&quot;>show sad</label>)
+</div>
+<select [(ngModel)]=&quot;hero&quot;>
+  <span *ngFor=&quot;let h of heroes&quot;>
+    <span *ngIf=&quot;showSad || h?.emotion !== 'sad'&quot;>
+      <option [ngValue]=&quot;h&quot;>{{h.name}} ({{h?.emotion}})</option>
+    </span>
+  </span>
+</select>
+
+<p><i>&amp;lt;select&amp;gt; with &amp;lt;ng-container&amp;gt;</i></p>
+<div>
+  Pick your favorite hero
+  (<label><input type=&quot;checkbox&quot; checked (change)=&quot;showSad=!showSad&quot;>show sad</label>)
+</div>
+<select [(ngModel)]=&quot;hero&quot;>
+  <ng-container *ngFor=&quot;let h of heroes&quot;>
+    <ng-container *ngIf=&quot;showSad || h?.emotion !== 'sad'&quot;>
+      <option [ngValue]=&quot;h&quot;>{{h.name}} ({{h?.emotion}})</option>
+    </ng-container>
+  </ng-container>
+</select>
+
+<br><br><br><br>
+
+<h4>#2 &amp;lt;ng-container&amp;gt; and &amp;lt;options&amp;gt;</h4>
+<p>
+  <label (change)=&quot;traitPicker.value=showDefaultTraits ? 'loyal' : heroTraits[0]&quot;>
+    <input type=&quot;checkbox&quot;
+          [checked]=&quot;showDefaultTraits&quot;
+          (change)=&quot;showDefaultTraits=!showDefaultTraits&quot;>Show default traits
+  </label>
+</p>
+
+<p>Options with &amp;lt;ng-container&amp;gt;</p>
+
+<select #traitPicker>
+  <ng-container *ngIf=&quot;showDefaultTraits&quot;>
+    <!-- Default traits -->
+    <option value=&quot;loyal&quot;>LOYAL</option>
+    <option value=&quot;clean&quot;>CLEAN</option>
+    <option value=&quot;reverent&quot;>REVERENT</option>
+  </ng-container>
+  <option *ngFor=&quot;let trait of heroTraits&quot; [value]=&quot;trait&quot;>
+    {{ trait | uppercase }}
+  </option>
+</select>
+
+
+<p>Options with &amp;lt;span&amp;gt;</p>
+<select>
+  <!-- Default traits are always excluded because intermediate <span> is illegal -->
+  <span *ngIf=&quot;showDefaultTraits&quot;>
+    <option value=&quot;loyal&quot;>LOYAL</option>
+    <option value=&quot;clean&quot;>CLEAN</option>
+    <option value=&quot;reverent&quot;>REVERENT</option>
+  </span>
+  <option *ngFor=&quot;let trait of heroTraits&quot; [value]=&quot;trait&quot;>
+    {{ trait | uppercase }}
+  </option>
+</select>
+
+<br>
+
+<h4>&amp;lt;ng-container&amp;gt; and &amp;lt;table&amp;gt;</h4>
+<p>
+  <label><input type=&quot;checkbox&quot; checked (change)=&quot;attrDirs=!attrDirs&quot;>Attribute directives</label>
+  <label><input type=&quot;checkbox&quot; checked (change)=&quot;strucDirs=!strucDirs&quot;>Structural directives</label>
+  <label><input type=&quot;checkbox&quot; (change)=&quot;divNgIf=!divNgIf&quot;>div with *ngIf</label>
+</p>
+
+<table>
+  <tr>
+    <th width=&quot;20%&quot;>Directive</th>
+    <th width=&quot;10%&quot;>Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr *ngIf=&quot;attrDirs&quot;>
+    <td>NgClass</td><td>A</td><td>Add or remove multiple CSS classes.</td>
+  </tr>
+
+<ng-container *ngIf=&quot;divNgIf&quot;>
+  <div *ngIf=&quot;strucDirs&quot;>
+    <tr>
+      <td>xxx</td><td>S</td><td>div with *ngIf formats crazy.</td>
+    </tr>
+    <tr>
+      <td>yyy</td><td>S</td><td>div with *ngIf formats crazy.</td>
+    </tr>
+  </div>
+</ng-container>
+
+  <ng-container *ngIf=&quot;strucDirs&quot;>
+    <tr>
+      <td>NgFor</td><td>S</td><td>Repeat the template for each item in a list.</td>
+    </tr>
+    <tr>
+      <td>NgIf</td><td>S</td><td>Add or remove DOM elements.</td>
+    </tr>
+  </ng-container>
+
+  <ng-container *ngIf=&quot;attrDirs&quot;>
+    <tr>
+      <td>NgStyle</td><td>A</td><td>Add or remove multiple style attributes.</td>
+    </tr>
+  </ng-container>
+
+  <tr *ngIf=&quot;strucDirs&quot;>
+    <td>NgSwitch</td><td>S</td><td>Include in DOM if case matches the switch value.</td>
+  </tr>
+
+</table>
+
+<hr>
+
+<h3>Do not confuse &amp;lt;ng-container&amp;gt; with &amp;lt;ng-content&amp;gt;</h3>
+
+<p>&amp;lt;ng-container&amp;gt;Inside ng-container&amp;lt;/ng-container&amp;gt;</p>
+<ng-container>Inside ng-container</ng-container>
+
+<p>&amp;lt;ng-content&amp;gt;this is an Angular parse error&amp;lt;/ng-content&amp;gt;</p>
+<!--  <ng-content>this is an Angular parse error</ng-content>  -->
+<div class=&quot;code&quot;>Template parse errors:<br>
+&amp;lt;ng-content&amp;gt; element cannot have content.</div>
+
+<p>Demo of &amp;lt;/ng-content&amp;gt;</p>
+<content-comp>
+  Projected content
+</content-comp>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <title>Angular &amp;lt;ng-container&amp;gt;</title>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <body>
+    <my-app>Loading...</my-apps>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;root&quot;: &quot;&quot;,
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;src/tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              {
+                &quot;glob&quot;: &quot;favicon.ico&quot;,
+                &quot;input&quot;: &quot;src&quot;,
+                &quot;output&quot;: &quot;/&quot;
+              },
+              {
+                &quot;glob&quot;: &quot;**/*&quot;,
+                &quot;input&quot;: &quot;src/assets&quot;,
+                &quot;output&quot;: &quot;/assets&quot;
+              }
+            ],
+            &quot;styles&quot;: [
+              {
+                &quot;input&quot;: &quot;src/styles.css&quot;
+              }
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;extractCss&quot;: true,
+              &quot;namedChunks&quot;: false,
+              &quot;aot&quot;: true,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;src/tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;src/karma.conf.js&quot;,
+            &quot;styles&quot;: [
+              {
+                &quot;input&quot;: &quot;styles.css&quot;
+              }
+            ],
+            &quot;scripts&quot;: [],
+            &quot;assets&quot;: [
+              {
+                &quot;glob&quot;: &quot;favicon.ico&quot;,
+                &quot;input&quot;: &quot;src/&quot;,
+                &quot;output&quot;: &quot;/&quot;
+              },
+              {
+                &quot;glob&quot;: &quot;**/*&quot;,
+                &quot;input&quot;: &quot;src/assets&quot;,
+                &quot;output&quot;: &quot;/assets&quot;
+              }
+            ]
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;src/tsconfig.app.json&quot;,
+              &quot;src/tsconfig.spec.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        }
+      }
+    },
+    &quot;angular.io-example-e2e&quot;: {
+      &quot;root&quot;: &quot;e2e/&quot;,
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;architect&quot;: {
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: &quot;e2e/tsconfig.e2e.json&quot;,
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        }
+      }
+    }
+  }
+}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="ngcontainer"><input type="hidden" name="tags[3]" value="structural"><input type="hidden" name="tags[4]" value="directives"><input type="hidden" name="description" value="Angular Example - <ng-container>"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^6.0.0&quot;,&quot;@angular/common&quot;:&quot;^6.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^6.0.0&quot;,&quot;@angular/core&quot;:&quot;^6.0.0&quot;,&quot;@angular/forms&quot;:&quot;^6.0.0&quot;,&quot;@angular/http&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^6.0.0&quot;,&quot;@angular/router&quot;:&quot;^6.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.0.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;^0.8.24&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.3.1&quot;}"></form>
+    <script>
+      var embedded = 'ctl=1';
+      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+      if (isEmbedded) {
+        var form = document.getElementById('mainForm');
+        var action = form.action;
+        var actionHasParams = action.indexOf('?') > -1;
+        var symbol = actionHasParams ? '&' : '?'
+        form.action = form.action + symbol + embedded;
+      }
+      document.getElementById("mainForm").submit();
+    </script>
+    </body></html>

@@ -1,0 +1,558 @@
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="https://embed.plnkr.co?show=preview" target="_self"><input type="hidden" name="entries[app/app.component.ts][content]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <app-hero-list></app-hero-list>
+    <app-sales-tax></app-sales-tax>
+  `
+})
+export class AppComponent { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/app.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/app.module.ts][content]" value="import { BrowserModule }       from '@angular/platform-browser';
+import { FormsModule }         from '@angular/forms';
+import { NgModule }     from '@angular/core';
+import { AppComponent } from './app.component';
+import { HeroDetailComponent } from './hero-detail.component';
+import { HeroListComponent }   from './hero-list.component';
+import { SalesTaxComponent }   from './sales-tax.component';
+import { HeroService }         from './hero.service';
+import { BackendService }      from './backend.service';
+import { Logger }              from './logger.service';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  declarations: [
+    AppComponent,
+    HeroDetailComponent,
+    HeroListComponent,
+    SalesTaxComponent
+  ],
+  providers: [
+    BackendService,
+    HeroService,
+    Logger
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/app.module.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/backend.service.ts][content]" value="import { Injectable, Type } from '@angular/core';
+
+import { Logger } from './logger.service';
+import { Hero } from './hero';
+
+const HEROES = [
+        new Hero('Windstorm', 'Weather mastery'),
+        new Hero('Mr. Nice', 'Killing them with kindness'),
+        new Hero('Magneta', 'Manipulates metallic objects')
+      ];
+
+@Injectable()
+export class BackendService {
+  constructor(private logger: Logger) {}
+
+  getAll(type: Type<any>): PromiseLike<any[]> {
+    if (type === Hero) {
+      // TODO get from the database
+      return Promise.resolve<Hero[]>(HEROES);
+    }
+    let err = new Error('Cannot get object of this type');
+    this.logger.error(err);
+    throw err;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/backend.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-detail.component.ts][content]" value="import { Component, Input } from '@angular/core';
+
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-detail',
+  templateUrl: './hero-detail.component.html'
+})
+export class HeroDetailComponent {
+  @Input() hero: Hero;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-detail.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-list.component.ts][content]" value="import { Component, OnInit }   from '@angular/core';
+
+import { Hero }                from './hero';
+import { HeroService }         from './hero.service';
+
+@Component({
+  selector:    'app-hero-list',
+  templateUrl: './hero-list.component.html',
+  providers:  [ HeroService ]
+})
+export class HeroListComponent implements OnInit {
+  heroes: Hero[];
+  selectedHero: Hero;
+
+  constructor(private service: HeroService) { }
+
+  ngOnInit() {
+    this.heroes = this.service.getHeroes();
+  }
+
+  selectHero(hero: Hero) { this.selectedHero = hero; }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-list.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero.service.ts][content]" value="import { Injectable } from '@angular/core';
+
+import { Hero } from './hero';
+import { BackendService } from './backend.service';
+import { Logger } from './logger.service';
+
+@Injectable()
+export class HeroService {
+  private heroes: Hero[] = [];
+
+  constructor(
+    private backend: BackendService,
+    private logger: Logger) { }
+
+  getHeroes() {
+    this.backend.getAll(Hero).then( (heroes: Hero[]) => {
+      this.logger.log(`Fetched ${heroes.length} heroes.`);
+      this.heroes.push(...heroes); // fill cache
+    });
+    return this.heroes;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero.ts][content]" value="let nextId = 1;
+
+export class Hero {
+  id: number;
+  constructor(
+    public name: string,
+    public power?: string) {
+      this.id = nextId++;
+    }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/logger.service.ts][content]" value="import { Injectable } from '@angular/core';
+
+@Injectable()
+export class Logger {
+  log(msg: any)   { console.log(msg); }
+  error(msg: any) { console.error(msg); }
+  warn(msg: any)  { console.warn(msg); }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/logger.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/mini-app.ts][content]" value="// A mini-application
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class Logger {
+  log(message: string) { console.log(message); }
+}
+
+import { Component } from '@angular/core';
+
+@Component({
+ selector: 'my-app',
+ template: 'Welcome to Angular'
+})
+export class AppComponent {
+  constructor(logger: Logger) {
+    logger.log('Let the fun begin!');
+  }
+}
+
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+@NgModule({
+  imports:      [ BrowserModule ],
+  providers:    [ Logger ],
+  declarations: [ AppComponent ],
+  exports:      [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/mini-app.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/sales-tax.component.ts][content]" value="import { Component }       from '@angular/core';
+
+import { SalesTaxService } from './sales-tax.service';
+import { TaxRateService }  from './tax-rate.service';
+
+@Component({
+  selector:    'app-sales-tax',
+  template: `
+    <h2>Sales Tax Calculator</h2>
+    Amount: <input #amountBox (change)=&quot;0&quot;>
+
+    <div *ngIf=&quot;amountBox.value&quot;>
+    The sales tax is
+     {{ getTax(amountBox.value) | currency:'USD':true:'1.2-2' }}
+    </div>
+  `,
+  providers: [SalesTaxService, TaxRateService]
+})
+export class SalesTaxComponent {
+  constructor(private salesTaxService: SalesTaxService) { }
+
+  getTax(value: string | number) {
+    return this.salesTaxService.getVAT(value);
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/sales-tax.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/sales-tax.service.ts][content]" value="import { Injectable } from '@angular/core';
+
+import { TaxRateService } from './tax-rate.service';
+
+@Injectable()
+export class SalesTaxService {
+  constructor(private rateService: TaxRateService) { }
+
+  getVAT(value: string | number) {
+    let amount = (typeof value === 'string') ?
+      parseFloat(value) : value;
+    return (amount || 0) * this.rateService.getRate('VAT');
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/sales-tax.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/tax-rate.service.ts][content]" value="import { Injectable } from '@angular/core';
+
+@Injectable()
+export class TaxRateService {
+  getRate(rateName: string) { return 0.10; } // 10% everywhere
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/tax-rate.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[main.ts][content]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[main.ts][encoding]" value="utf8"><input type="hidden" name="entries[styles.css][content]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[styles.css][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-detail.component.html][content]" value="<hr>
+<h4>{{hero.name}} Detail</h4>
+<div>Id: {{hero.id}}</div>
+<div>Name:
+  <input [(ngModel)]=&quot;hero.name&quot;>
+</div>
+<div>Power:<input [(ngModel)]=&quot;hero.power&quot;></div>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[app/hero-detail.component.html][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-list.component.html][content]" value="<h2>Hero List</h2>
+
+<p><i>Pick a hero from the list</i></p>
+<ul>
+  <li *ngFor=&quot;let hero of heroes&quot; (click)=&quot;selectHero(hero)&quot;>
+    {{hero.name}}
+  </li>
+</ul>
+
+<app-hero-detail *ngIf=&quot;selectedHero&quot; [hero]=&quot;selectedHero&quot;></app-hero-detail>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[app/hero-list.component.html][encoding]" value="utf8"><input type="hidden" name="entries[index.html][content]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <title>Architecture of Angular</title>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <script>document.write('<base href=&quot;' + document.location + '&quot; />');</script>
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[index.html][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="title" value="Angular Example - Intro to Angular"><input type="hidden" name="source[type]" value="Intro to Angular"><input type="hidden" name="source[url]" value="https://angular.io"><input type="hidden" name="entries[systemjs.config.js][content]" value="/**
+ * WEB ANGULAR VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      // Copy of compiler options in standard tsconfig.json
+      &quot;target&quot;: &quot;es5&quot;,
+      &quot;module&quot;: &quot;commonjs&quot;,
+      &quot;moduleResolution&quot;: &quot;node&quot;,
+      &quot;sourceMap&quot;: true,
+      &quot;emitDecoratorMetadata&quot;: true,
+      &quot;experimentalDecorators&quot;: true,
+      &quot;lib&quot;: [&quot;es2015&quot;, &quot;dom&quot;],
+      &quot;noImplicitAny&quot;: true,
+      &quot;suppressImplicitAnyIndexErrors&quot;: true
+    },
+    meta: {
+      'typescript': {
+        &quot;exports&quot;: &quot;ts&quot;
+      }
+    },
+    paths: {
+      // paths serve as alias
+      'npm:': 'https://unpkg.com/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      'app': 'app',
+
+      // angular bundles
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
+      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+
+      // other libraries
+      'rxjs':                      'npm:rxjs@5.0.1',
+      'tslib':                     'npm:tslib/tslib.js',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ts':                        'npm:plugin-typescript@5.2.7/lib/plugin.js',
+      'typescript':                'npm:typescript@2.3.2/lib/typescript.js',
+
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.ts',
+        defaultExtension: 'ts',
+        meta: {
+          './*.ts': {
+            loader: 'systemjs-angular-loader.js'
+          }
+        }
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      }
+    }
+  });
+
+})(this);
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+"><input type="hidden" name="entries[systemjs.config.js][encoding]" value="utf8"><input type="hidden" name="entries[systemjs-angular-loader.js][content]" value="var templateUrlRegex = /templateUrl\s*:(\s*['&quot;`](.*?)['&quot;`]\s*)/gm;
+var stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
+var stringRegex = /(['`&quot;])((?:[^\\]\\\1|.)*?)\1/g;
+
+module.exports.translate = function(load){
+  if (load.source.indexOf('moduleId') != -1) return load;
+
+  var url = document.createElement('a');
+  url.href = load.address;
+
+  var basePathParts = url.pathname.split('/');
+
+  basePathParts.pop();
+  var basePath = basePathParts.join('/');
+
+  var baseHref = document.createElement('a');
+  baseHref.href = this.baseURL;
+  baseHref = baseHref.pathname;
+
+  if (!baseHref.startsWith('/base/')) { // it is not karma
+    basePath = basePath.replace(baseHref, '');
+  }
+
+  load.source = load.source
+    .replace(templateUrlRegex, function(match, quote, url){
+      var resolvedUrl = url;
+
+      if (url.startsWith('.')) {
+        resolvedUrl = basePath + url.substr(1);
+      }
+
+      return 'templateUrl: &quot;' + resolvedUrl + '&quot;';
+    })
+    .replace(stylesRegex, function(match, relativeUrls) {
+      var urls = [];
+
+      while ((match = stringRegex.exec(relativeUrls)) !== null) {
+        if (match[2].startsWith('.')) {
+          urls.push('&quot;' + basePath + match[2].substr(1) + '&quot;');
+        } else {
+          urls.push('&quot;' + match[2] + '&quot;');
+        }
+      }
+
+      return &quot;styleUrls: [&quot; + urls.join(', ') + &quot;]&quot;;
+    });
+
+  return load;
+};
+"><input type="hidden" name="entries[systemjs-angular-loader.js][encoding]" value="utf8"></form><script>document.getElementById("mainForm").submit();</script></body></html>

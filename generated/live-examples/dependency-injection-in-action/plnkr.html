@@ -1,0 +1,1090 @@
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="http://plnkr.co/edit/?p=preview" target="_self"><input type="hidden" name="files[app/app-routing.module.ts]" value="import { NgModule } from '@angular/core';
+import { Routes, RouterModule }  from '@angular/router';
+
+const routes: Routes = [];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  providers: [],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/app.component.ts]" value="import { Component } from '@angular/core';
+
+import { LoggerService }      from './logger.service';
+import { UserContextService } from './user-context.service';
+import { UserService }        from './user.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  providers: [ LoggerService, UserContextService, UserService ]
+})
+export class AppComponent {
+
+  private userId = 1;
+
+  constructor(logger: LoggerService, public userContext: UserContextService) {
+    userContext.loadUser(this.userId);
+    logger.logInfo('AppComponent initialized');
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/app.module.ts]" value="import { BrowserModule }                from '@angular/platform-browser';
+import { FormsModule }                  from '@angular/forms';
+import { HttpModule }                   from '@angular/http';
+
+// import { AppRoutingModule }             from './app-routing.module';
+import { LocationStrategy,
+         HashLocationStrategy }         from '@angular/common';
+import { NgModule }                     from '@angular/core';
+
+import { HeroData }                     from './hero-data';
+import { InMemoryWebApiModule }         from 'angular-in-memory-web-api';
+
+
+import { AppComponent }                 from './app.component';
+import { HeroBioComponent }             from './hero-bio.component';
+import { HeroBiosComponent,
+         HeroBiosAndContactsComponent } from './hero-bios.component';
+import { HeroOfTheMonthComponent }      from './hero-of-the-month.component';
+import { HeroContactComponent }         from './hero-contact.component';
+import { HeroesBaseComponent,
+         SortedHeroesComponent }        from './sorted-heroes.component';
+import { HighlightDirective }           from './highlight.directive';
+import { ParentFinderComponent,
+         AlexComponent,
+         AliceComponent,
+         CarolComponent,
+         ChrisComponent,
+         CraigComponent,
+         CathyComponent,
+         BarryComponent,
+         BethComponent,
+         BobComponent }                 from './parent-finder.component';
+
+const declarations = [
+    AppComponent,
+    HeroBiosComponent, HeroBiosAndContactsComponent, HeroBioComponent,
+    HeroesBaseComponent, SortedHeroesComponent,
+    HeroOfTheMonthComponent, HeroContactComponent,
+    HighlightDirective,
+    ParentFinderComponent,
+];
+
+const a_components = [AliceComponent, AlexComponent ];
+
+const b_components = [ BarryComponent, BethComponent, BobComponent ];
+
+const c_components = [
+  CarolComponent, ChrisComponent, CraigComponent,
+  CathyComponent
+];
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(HeroData)
+    // AppRoutingModule TODO: add routes
+  ],
+  declarations: [
+    declarations,
+    a_components,
+    b_components,
+    c_components,
+  ],
+  bootstrap: [ AppComponent ],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ]
+})
+export class AppModule { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/date-logger.service.ts]" value="/* tslint:disable:one-line*/
+import { Injectable }    from '@angular/core';
+
+import { LoggerService } from './logger.service';
+
+@Injectable()
+export class DateLoggerService extends LoggerService
+{
+  logInfo(msg: any)  { super.logInfo(stamp(msg)); }
+  logDebug(msg: any) { super.logInfo(stamp(msg)); }
+  logError(msg: any) { super.logError(stamp(msg)); }
+}
+
+function stamp(msg: any) { return msg + ' at ' + new Date(); }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero-bio.component.ts]" value="import { Component, Input, OnInit } from '@angular/core';
+
+import { HeroCacheService }         from './hero-cache.service';
+
+@Component({
+  selector: 'app-hero-bio',
+  template: `
+    <h4>{{hero.name}}</h4>
+    <ng-content></ng-content>
+    <textarea cols=&quot;25&quot; [(ngModel)]=&quot;hero.description&quot;></textarea>`,
+  providers: [HeroCacheService]
+})
+
+export class HeroBioComponent implements OnInit  {
+  @Input() heroId: number;
+
+  constructor(private heroCache: HeroCacheService) { }
+
+  ngOnInit() { this.heroCache.fetchCachedHero(this.heroId); }
+
+  get hero() { return this.heroCache.hero; }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero-bios.component.ts]" value="import { Component }             from '@angular/core';
+
+import { HeroService }          from './hero.service';
+import { LoggerService }        from './logger.service';
+
+//////// HeroBiosComponent ////
+@Component({
+  selector: 'app-hero-bios',
+  template: `
+    <app-hero-bio [heroId]=&quot;1&quot;></app-hero-bio>
+    <app-hero-bio [heroId]=&quot;2&quot;></app-hero-bio>
+    <app-hero-bio [heroId]=&quot;3&quot;></app-hero-bio>`,
+  providers: [HeroService]
+})
+export class HeroBiosComponent {
+  constructor(logger: LoggerService) {
+    logger.logInfo('Creating HeroBiosComponent');
+  }
+}
+
+//////// HeroBiosAndContactsComponent ////
+@Component({
+  selector: 'app-hero-bios-and-contacts',
+  template: `
+    <app-hero-bio [heroId]=&quot;1&quot;> <app-hero-contact></app-hero-contact> </app-hero-bio>
+    <app-hero-bio [heroId]=&quot;2&quot;> <app-hero-contact></app-hero-contact> </app-hero-bio>
+    <app-hero-bio [heroId]=&quot;3&quot;> <app-hero-contact></app-hero-contact> </app-hero-bio>`,
+  providers: [HeroService]
+})
+export class HeroBiosAndContactsComponent {
+  constructor(logger: LoggerService) {
+    logger.logInfo('Creating HeroBiosAndContactsComponent');
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero-cache.service.ts]" value="import { Injectable }  from '@angular/core';
+
+import { Hero }        from './hero';
+import { HeroService } from './hero.service';
+
+@Injectable()
+export class HeroCacheService {
+  hero: Hero;
+  constructor(private heroService: HeroService) {}
+
+  fetchCachedHero(id: number) {
+    if (!this.hero) {
+      this.hero = this.heroService.getHeroById(id);
+    }
+    return this.hero;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero-contact.component.ts]" value="import { Component, Host, Optional } from '@angular/core';
+
+import { HeroCacheService } from './hero-cache.service';
+import { LoggerService }    from './logger.service';
+
+@Component({
+  selector: 'app-hero-contact',
+  template: `
+  <div>Phone #: {{phoneNumber}}
+  <span *ngIf=&quot;hasLogger&quot;>!!!</span></div>`
+})
+export class HeroContactComponent {
+
+  hasLogger = false;
+
+  constructor(
+      @Host() // limit to the host component's instance of the HeroCacheService
+      private heroCache: HeroCacheService,
+
+      @Host()     // limit search for logger; hides the application-wide logger
+      @Optional() // ok if the logger doesn't exist
+      private loggerService: LoggerService
+  ) {
+    if (loggerService) {
+      this.hasLogger = true;
+      loggerService.logInfo('HeroContactComponent can log!');
+    }
+  }
+
+  get phoneNumber() { return this.heroCache.hero.phone; }
+
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero-data.ts]" value="import { Hero } from './hero';
+
+export class HeroData {
+  createDb() {
+    let heroes = [
+      new Hero(1, 'Windstorm'),
+      new Hero(2, 'Bombasto'),
+      new Hero(3, 'Magneta'),
+      new Hero(4, 'Tornado')
+    ];
+    return {heroes};
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero-of-the-month.component.ts]" value="/* tslint:disable:one-line*/
+import { InjectionToken } from '@angular/core';
+
+export const TITLE = new InjectionToken<string>('title');
+
+import { Component, Inject } from '@angular/core';
+
+import { DateLoggerService } from './date-logger.service';
+import { Hero }              from './hero';
+import { HeroService }       from './hero.service';
+import { LoggerService }     from './logger.service';
+import { MinimalLogger }     from './minimal-logger.service';
+import { RUNNERS_UP,
+         runnersUpFactory }  from './runners-up';
+
+const someHero = new Hero(42, 'Magma', 'Had a great month!', '555-555-5555');
+
+@Component({
+  selector: 'app-hero-of-the-month',
+  templateUrl: './hero-of-the-month.component.html',
+  providers: [
+    { provide: Hero,          useValue:    someHero },
+    { provide: TITLE,         useValue:   'Hero of the Month' },
+    { provide: HeroService,   useClass:    HeroService },
+    { provide: LoggerService, useClass:    DateLoggerService },
+    { provide: MinimalLogger, useExisting: LoggerService },
+    { provide: RUNNERS_UP,    useFactory:  runnersUpFactory(2), deps: [Hero, HeroService] }
+  ]
+})
+export class HeroOfTheMonthComponent {
+  logs: string[] = [];
+
+  constructor(
+      logger: MinimalLogger,
+      public heroOfTheMonth: Hero,
+      @Inject(RUNNERS_UP) public runnersUp: string,
+      @Inject(TITLE) public title: string)
+  {
+    this.logs = logger.logs;
+    logger.logInfo('starting up');
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero.service.ts]" value="import { Injectable } from '@angular/core';
+import { Hero }       from './hero';
+
+@Injectable()
+export class HeroService {
+
+  // TODO move to database
+  private heroes: Array<Hero> = [
+    new Hero(1, 'RubberMan', 'Hero of many talents', '123-456-7899'),
+    new Hero(2, 'Magma', 'Hero of all trades', '555-555-5555'),
+    new Hero(3, 'Mr. Nice', 'The name says it all', '111-222-3333')
+ ];
+
+  getHeroById(id: number): Hero {
+    return this.heroes.find(hero => hero.id === id);
+  }
+
+  getAllHeroes(): Array<Hero> {
+    return this.heroes;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/hero.ts]" value="export class Hero {
+  constructor(
+    public id: number,
+    public name: string,
+    public description?: string,
+    public phone?: string) {
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/highlight.directive.ts]" value="import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+
+  @Input('appHighlight') highlightColor: string;
+
+  private el: HTMLElement;
+
+  constructor(el: ElementRef) {
+    this.el = el.nativeElement;
+  }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.highlight(this.highlightColor || 'cyan');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.highlight(null);
+  }
+
+  private highlight(color: string) {
+    this.el.style.backgroundColor = color;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/logger.service.ts]" value="import { Injectable } from '@angular/core';
+
+@Injectable()
+export class LoggerService {
+  logs: string[] = [];
+
+  logInfo(msg: any)  { this.log(`INFO: ${msg}`); }
+  logDebug(msg: any) { this.log(`DEBUG: ${msg}`); }
+  logError(msg: any) { this.log(`ERROR: ${msg}`, true); }
+
+  private log(msg: any, isErr = false) {
+    this.logs.push(msg);
+    isErr ? console.error(msg) : console.log(msg);
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/minimal-logger.service.ts]" value="// Class used as a &quot;narrowing&quot; interface that exposes a minimal logger
+// Other members of the actual implementation are invisible
+export abstract class MinimalLogger {
+  logs: string[];
+  logInfo: (msg: string) => void;
+}
+
+/*
+// Transpiles to:
+  var MinimalLogger = (function () {
+    function MinimalLogger() {}
+    return MinimalLogger;
+  }());
+  exports(&quot;MinimalLogger&quot;, MinimalLogger);
+*/
+
+// See http://stackoverflow.com/questions/43154832/unexpected-token-export-in-angular-app-with-systemjs-and-typescript/
+export const _ = 0;
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/parent-finder.component.ts]" value="/* tslint:disable:no-unused-variable component-selector-name one-line check-open-brace */
+/* tslint:disable:*/
+import { Component, forwardRef, Optional, SkipSelf } from '@angular/core';
+
+// A component base class (see AlexComponent)
+export abstract class Base { name = 'Count Basie'; }
+
+// Marker class, used as an interface
+export abstract class Parent { name: string; }
+
+const DifferentParent = Parent;
+
+// Helper method to provide the current component instance in the name of a `parentType`.
+// The `parentType` defaults to `Parent` when omitting the second parameter.
+const provideParent =
+  (component: any, parentType?: any) => {
+    return { provide: parentType || Parent, useExisting: forwardRef(() => component) };
+  };
+
+// Simpler syntax version that always provides the component in the name of `Parent`.
+const provideTheParent =
+  (component: any) => {
+    return { provide: Parent, useExisting: forwardRef(() => component) };
+  };
+
+
+///////// C - Child //////////
+const templateC = `
+  <div class=&quot;c&quot;>
+    <h3>{{name}}</h3>
+    <p>My parent is {{parent?.name}}</p>
+  </div>`;
+
+@Component({
+  selector: 'carol',
+  template: templateC
+})
+export class CarolComponent {
+  name= 'Carol';
+  constructor( @Optional() public parent: Parent ) { }
+}
+
+@Component({
+  selector: 'chris',
+  template: templateC
+})
+export class ChrisComponent {
+  name= 'Chris';
+  constructor( @Optional() public parent: Parent ) { }
+}
+
+//////  Craig ///////////
+/**
+ * Show we cannot inject a parent by its base class.
+ */
+@Component({
+  selector: 'craig',
+  template: `
+  <div class=&quot;c&quot;>
+    <h3>Craig</h3>
+    {{alex ? 'Found' : 'Did not find'}} Alex via the base class.
+  </div>`
+})
+export class CraigComponent {
+  constructor( @Optional() public alex: Base ) { }
+}
+
+//////// B - Parent /////////
+const templateB = `
+  <div class=&quot;b&quot;>
+    <div>
+      <h3>{{name}}</h3>
+      <p>My parent is {{parent?.name}}</p>
+    </div>
+    <carol></carol>
+    <chris></chris>
+  </div>`;
+
+@Component({
+  selector:   'barry',
+  template:   templateB,
+  providers:  [{ provide: Parent, useExisting: forwardRef(() => BarryComponent) }]
+})
+export class BarryComponent implements Parent {
+  name = 'Barry';
+  constructor( @SkipSelf() @Optional() public parent: Parent ) { }
+}
+
+@Component({
+  selector:   'bob',
+  template:   templateB,
+  providers:  [ provideParent(BobComponent) ]
+})
+export class BobComponent implements Parent {
+  name= 'Bob';
+  constructor( @SkipSelf() @Optional() public parent: Parent ) { }
+}
+
+@Component({
+  selector:   'beth',
+  template:   templateB,
+  providers:  [ provideParent(BethComponent, DifferentParent) ]
+})
+export class BethComponent implements Parent {
+  name= 'Beth';
+  constructor( @SkipSelf() @Optional() public parent: Parent ) { }
+}
+
+///////// A - Grandparent //////
+
+@Component({
+  selector: 'alex',
+  template: `
+    <div class=&quot;a&quot;>
+      <h3>{{name}}</h3>
+      <cathy></cathy>
+      <craig></craig>
+      <carol></carol>
+    </div>`,
+  providers: [{ provide: Parent, useExisting: forwardRef(() => AlexComponent) }],
+})
+// Todo: Add `... implements Parent` to class signature
+export class AlexComponent extends Base
+{
+  name= 'Alex';
+}
+
+/////
+
+@Component({
+  selector: 'alice',
+  template: `
+    <div class=&quot;a&quot;>
+      <h3>{{name}}</h3>
+      <barry></barry>
+      <beth></beth>
+      <bob></bob>
+      <carol></carol>
+    </div> `,
+  providers:  [ provideParent(AliceComponent) ]
+})
+export class AliceComponent implements Parent
+{
+  name= 'Alice';
+}
+
+//////  Cathy ///////////
+/**
+ * Show we can inject a parent by component type
+ */
+@Component({
+  selector: 'cathy',
+  template: `
+  <div class=&quot;c&quot;>
+    <h3>Cathy</h3>
+    {{alex ? 'Found' : 'Did not find'}} Alex via the component class.<br>
+  </div>`
+})
+export class CathyComponent {
+  constructor( @Optional() public alex: AlexComponent ) { }
+}
+
+///////// ParentFinder //////
+@Component({
+  selector: 'app-parent-finder',
+  template: `
+    <h2>Parent Finder</h2>
+    <alex></alex>
+    <alice></alice>`
+})
+export class ParentFinderComponent { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/runners-up.ts]" value="import { InjectionToken } from '@angular/core';
+
+import { Hero }        from './hero';
+import { HeroService } from './hero.service';
+
+export const RUNNERS_UP = new InjectionToken<string>('RunnersUp');
+
+export function runnersUpFactory(take: number) {
+  return (winner: Hero, heroService: HeroService): string => {
+    /* ... */
+    return heroService
+          .getAllHeroes()
+          .filter((hero) => hero.name !== winner.name)
+          .map(hero => hero.name)
+          .slice(0, Math.max(0, take))
+          .join(', ');
+  };
+};
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/sorted-heroes.component.ts]" value="import { Component, OnInit } from '@angular/core';
+
+import { Hero }              from './hero';
+import { HeroService }       from './hero.service';
+
+/////// HeroesBaseComponent /////
+@Component({
+  selector: 'app-unsorted-heroes',
+  template: `<div *ngFor=&quot;let hero of heroes&quot;>{{hero.name}}</div>`,
+  providers: [HeroService]
+})
+export class HeroesBaseComponent implements OnInit {
+  constructor(private heroService: HeroService) { }
+
+  heroes: Array<Hero>;
+
+  ngOnInit() {
+    this.heroes = this.heroService.getAllHeroes();
+    this.afterGetHeroes();
+  }
+
+  // Post-process heroes in derived class override.
+  protected afterGetHeroes() {}
+
+}
+
+/////// SortedHeroesComponent /////
+@Component({
+  selector: 'app-sorted-heroes',
+  template: `<div *ngFor=&quot;let hero of heroes&quot;>{{hero.name}}</div>`,
+  providers: [HeroService]
+})
+export class SortedHeroesComponent extends HeroesBaseComponent {
+  constructor(heroService: HeroService) {
+    super(heroService);
+  }
+
+  protected afterGetHeroes() {
+    this.heroes = this.heroes.sort((h1, h2) => {
+      return h1.name < h2.name ? -1 :
+            (h1.name > h2.name ? 1 : 0);
+    });
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/user-context.service.ts]" value="import { Injectable }    from '@angular/core';
+
+import { LoggerService } from './logger.service';
+import { UserService }   from './user.service';
+
+@Injectable()
+export class UserContextService {
+  name: string;
+  role: string;
+  loggedInSince: Date;
+
+  constructor(private userService: UserService, private loggerService: LoggerService) {
+    this.loggedInSince = new Date();
+  }
+
+  loadUser(userId: number) {
+    let user = this.userService.getUserById(userId);
+    this.name = user.name;
+    this.role = user.role;
+
+    this.loggerService.logDebug('loaded User');
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/user.service.ts]" value="import { Injectable } from '@angular/core';
+
+@Injectable()
+export class UserService {
+
+  getUserById(userId: number): any {
+    return {name: 'Bombasto', role: 'Admin'};
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[assets/sample.css]" value=".di-component{
+  padding: 10px;
+  width:300px;
+  margin-bottom: 10px;
+}
+div[myHighlight] {
+  padding: 2px 8px;
+}
+
+/* Parent Finder */
+.a, .b, .c {
+  margin: 6px 2px 6px;
+  padding: 4px 6px;
+}
+.a {
+  border: solid 2px black;
+}
+.b {
+  background: lightblue;
+  border: solid 1px darkblue;
+  display: flex;
+}
+.c {
+  background: pink;
+  border: solid 1px red;
+}
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[styles.css]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[app/app.component.html]" value="<h1>DI Cookbook</h1>
+<div class=&quot;di-component&quot;>
+  <h3>Logged in user</h3>
+  <div>Name: {{userContext.name}}</div>
+  <div>Role: {{userContext.role}}</div>
+</div>
+
+<div class=&quot;di-component&quot;>
+  <h3>Hero Bios</h3>
+  <app-hero-bios></app-hero-bios>
+</div>
+
+<div id=&quot;highlight&quot;  class=&quot;di-component&quot;  appHighlight>
+  <h3>Hero Bios and Contacts</h3>
+  <div appHighlight=&quot;yellow&quot;>
+    <app-hero-bios-and-contacts></app-hero-bios-and-contacts>
+  </div>
+</div>
+
+<div class=&quot;di-component&quot;>
+  <app-hero-of-the-month></app-hero-of-the-month>
+</div>
+
+<div class=&quot;di-component&quot;>
+  <h3>Unsorted Heroes</h3>
+  <app-unsorted-heroes></app-unsorted-heroes>
+</div>
+
+<div class=&quot;di-component&quot;>
+  <h3>Sorted Heroes</h3>
+  <app-sorted-heroes></app-sorted-heroes>
+</div>
+
+<div class=&quot;di-component&quot;>
+  <app-parent-finder></app-parent-finder>
+</div>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[app/hero-of-the-month.component.html]" value="<h3>{{title}}</h3>
+<div>Winner: <strong>{{heroOfTheMonth.name}}</strong></div>
+<div>Reason for award: <strong>{{heroOfTheMonth.description}}</strong></div>
+<div>Runners-up: <strong id=&quot;rups1&quot;>{{runnersUp}}</strong></div>
+
+<p>Logs:</p>
+<div id=&quot;logs&quot;>
+  <div *ngFor=&quot;let log of logs&quot;>{{log}}</div>
+</div>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <script>document.write('<base href=&quot;' + document.location + '&quot; />');</script>
+    <meta charset=&quot;UTF-8&quot;>
+    <title>Dependency Injection</title>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/sample.css&quot;>
+  
+    <link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;>
+    <script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;></script>
+    <script src=&quot;https://unpkg.com/zone.js@0.7.4?main=browser&quot;></script>
+    <script src=&quot;https://unpkg.com/systemjs@0.19.39/dist/system.src.js&quot;></script>
+    <script src=&quot;systemjs.config.js&quot;></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    </head>
+    
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="cookbook"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular Example - Dependency Injection"><input type="hidden" name="files[systemjs.config.js]" value="/**
+ * WEB ANGULAR VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      // Copy of compiler options in standard tsconfig.json
+      &quot;target&quot;: &quot;es5&quot;,
+      &quot;module&quot;: &quot;commonjs&quot;,
+      &quot;moduleResolution&quot;: &quot;node&quot;,
+      &quot;sourceMap&quot;: true,
+      &quot;emitDecoratorMetadata&quot;: true,
+      &quot;experimentalDecorators&quot;: true,
+      &quot;lib&quot;: [&quot;es2015&quot;, &quot;dom&quot;],
+      &quot;noImplicitAny&quot;: true,
+      &quot;suppressImplicitAnyIndexErrors&quot;: true
+    },
+    meta: {
+      'typescript': {
+        &quot;exports&quot;: &quot;ts&quot;
+      }
+    },
+    paths: {
+      // paths serve as alias
+      'npm:': 'https://unpkg.com/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      'app': 'app',
+
+      // angular bundles
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
+      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+
+      // other libraries
+      'rxjs':                      'npm:rxjs@5.0.1',
+      'tslib':                     'npm:tslib/tslib.js',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ts':                        'npm:plugin-typescript@5.2.7/lib/plugin.js',
+      'typescript':                'npm:typescript@2.3.2/lib/typescript.js',
+
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.ts',
+        defaultExtension: 'ts',
+        meta: {
+          './*.ts': {
+            loader: 'systemjs-angular-loader.js'
+          }
+        }
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      }
+    }
+  });
+
+})(this);
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+"><input type="hidden" name="files[systemjs-angular-loader.js]" value="var templateUrlRegex = /templateUrl\s*:(\s*['&quot;`](.*?)['&quot;`]\s*)/gm;
+var stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
+var stringRegex = /(['`&quot;])((?:[^\\]\\\1|.)*?)\1/g;
+
+module.exports.translate = function(load){
+  if (load.source.indexOf('moduleId') != -1) return load;
+
+  var url = document.createElement('a');
+  url.href = load.address;
+
+  var basePathParts = url.pathname.split('/');
+
+  basePathParts.pop();
+  var basePath = basePathParts.join('/');
+
+  var baseHref = document.createElement('a');
+  baseHref.href = this.baseURL;
+  baseHref = baseHref.pathname;
+
+  if (!baseHref.startsWith('/base/')) { // it is not karma
+    basePath = basePath.replace(baseHref, '');
+  }
+
+  load.source = load.source
+    .replace(templateUrlRegex, function(match, quote, url){
+      var resolvedUrl = url;
+
+      if (url.startsWith('.')) {
+        resolvedUrl = basePath + url.substr(1);
+      }
+
+      return 'templateUrl: &quot;' + resolvedUrl + '&quot;';
+    })
+    .replace(stylesRegex, function(match, relativeUrls) {
+      var urls = [];
+
+      while ((match = stringRegex.exec(relativeUrls)) !== null) {
+        if (match[2].startsWith('.')) {
+          urls.push('&quot;' + basePath + match[2].substr(1) + '&quot;');
+        } else {
+          urls.push('&quot;' + match[2] + '&quot;');
+        }
+      }
+
+      return &quot;styleUrls: [&quot; + urls.join(', ') + &quot;]&quot;;
+    });
+
+  return load;
+};
+"></form><script>document.getElementById("mainForm").submit();</script></body></html>

@@ -1,0 +1,498 @@
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="https://embed.plnkr.co?show=preview" target="_self"><input type="hidden" name="entries[app/app.module.ts][content]" value="import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { HeroAppComponent } from './hero-app.component';
+import { HeroAppMainComponent } from './hero-app-main.component';
+import { HeroDetailsComponent } from './hero-details.component';
+import { HeroControlsComponent } from './hero-controls.component';
+import { QuestSummaryComponent } from './quest-summary.component';
+import { HeroTeamComponent } from './hero-team.component';
+
+@NgModule({
+  imports: [ BrowserModule ],
+  declarations: [
+    HeroAppComponent,
+    HeroAppMainComponent,
+    HeroDetailsComponent,
+    HeroControlsComponent,
+    QuestSummaryComponent,
+    HeroTeamComponent
+  ],
+  bootstrap: [ HeroAppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/app.module.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-app-main.component.ts][content]" value="import { Component, Input } from '@angular/core';
+
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-main',
+  template: `
+    <app-quest-summary></app-quest-summary>
+    <app-hero-details [hero]=&quot;hero&quot; [class.active]=&quot;hero.active&quot;>
+      <app-hero-controls [hero]=&quot;hero&quot;></app-hero-controls>
+    </app-hero-details>
+  `
+})
+export class HeroAppMainComponent {
+  @Input() hero: Hero;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-app-main.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-app.component.ts][content]" value="import { Component, HostBinding } from '@angular/core';
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1>Tour of Heroes</h1>
+    <app-hero-main [hero]=hero></app-hero-main>`,
+  styles: ['h1 { font-weight: normal; }']
+})
+export class HeroAppComponent {
+  hero = new Hero(
+    'Human Torch',
+    ['Mister Fantastic', 'Invisible Woman', 'Thing']
+  );
+
+  @HostBinding('class') get themeClass() {
+    return 'theme-light';
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-app.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-controls.component.ts][content]" value="import { Component, Input } from '@angular/core';
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-controls',
+  template: `
+    <style>
+      button {
+        background-color: white;
+        border: 1px solid #777;
+      }
+    </style>
+    <h3>Controls</h3>
+    <button (click)=&quot;activate()&quot;>Activate</button>
+  `
+})
+export class HeroControlsComponent {
+  @Input() hero: Hero;
+
+  activate() {
+    this.hero.active = true;
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-controls.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-details.component.ts][content]" value="import { Component, Input } from '@angular/core';
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-details',
+  template: `
+    <h2>{{hero.name}}</h2>
+    <app-hero-team [hero]=hero></app-hero-team>
+    <ng-content></ng-content>
+  `,
+  styleUrls: ['./hero-details.component.css']
+})
+export class HeroDetailsComponent {
+  @Input() hero: Hero;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-details.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-team.component.ts][content]" value="import { Component, Input } from '@angular/core';
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-team',
+  template: `
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/hero-team.component.css&quot;>
+    <h3>Team</h3>
+    <ul>
+      <li *ngFor=&quot;let member of hero.team&quot;>
+        {{member}}
+      </li>
+    </ul>`
+})
+export class HeroTeamComponent {
+  @Input() hero: Hero;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-team.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero.ts][content]" value="export class Hero {
+  active: boolean;
+
+  constructor(public name: string,
+              public team: string[]) {
+  }
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/quest-summary.component.ts][content]" value="/* tslint:disable:no-unused-variable */
+import { Component, ViewEncapsulation } from '@angular/core';
+
+@Component({
+  selector: 'app-quest-summary',
+  templateUrl: './quest-summary.component.html',
+  styleUrls:  ['./quest-summary.component.css']
+})
+export class QuestSummaryComponent { }
+/*
+  // warning: few browsers support shadow DOM encapsulation at this time
+  encapsulation: ViewEncapsulation.Native
+*/
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/quest-summary.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[main.ts][content]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[main.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-details-box.css][content]" value=":host {
+  padding: 10px;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-details-box.css][encoding]" value="utf8"><input type="hidden" name="entries[app/hero-details.component.css][content]" value="@import 'hero-details-box.css';
+
+:host {
+  display: block;
+  border: 1px solid black;
+}
+
+:host(.active) {
+  border-width: 3px;
+}
+
+:host-context(.theme-light) h2 {
+  background-color: #eef;
+}
+
+:host /deep/ h3 {
+  font-style: italic;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/hero-details.component.css][encoding]" value="utf8"><input type="hidden" name="entries[app/quest-summary.component.css][content]" value=":host {
+  display: block;
+  background-color: green;
+  color: white;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[app/quest-summary.component.css][encoding]" value="utf8"><input type="hidden" name="entries[assets/hero-team.component.css][content]" value="li {
+  list-style-type: square;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[assets/hero-team.component.css][encoding]" value="utf8"><input type="hidden" name="entries[styles.css][content]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="entries[styles.css][encoding]" value="utf8"><input type="hidden" name="entries[app/quest-summary.component.html][content]" value="<p>No quests in progress</p>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[app/quest-summary.component.html][encoding]" value="utf8"><input type="hidden" name="entries[index.html][content]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+ <head>
+    <meta charset=&quot;UTF-8&quot;>
+    <title>Component Styles</title>
+    <script>document.write('<base href=&quot;' + document.location + '&quot; />');</script>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  
+    <link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;>
+    <script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;></script>
+    <script src=&quot;https://unpkg.com/zone.js@0.7.4?main=browser&quot;></script>
+    <script src=&quot;https://unpkg.com/systemjs@0.19.39/dist/system.src.js&quot;></script>
+    <script src=&quot;systemjs.config.js&quot;></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    </head>
+    
+
+  <body>
+    <h1 style=&quot;visibility: hidden;&quot;>External H1 Title for E2E test</h1>
+    <app-root></app-root>
+    <button style=&quot;visibility: hidden;&quot;>External button for E2E test</button>
+    <ul style=&quot;visibility: hidden;&quot;>
+      <li>External list for E2E test</li>
+    </ul>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="entries[index.html][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="CSS"><input type="hidden" name="title" value="Angular Example - Component Styles"><input type="hidden" name="source[type]" value="Component Styles"><input type="hidden" name="source[url]" value="https://angular.io"><input type="hidden" name="entries[systemjs.config.js][content]" value="/**
+ * WEB ANGULAR VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      // Copy of compiler options in standard tsconfig.json
+      &quot;target&quot;: &quot;es5&quot;,
+      &quot;module&quot;: &quot;commonjs&quot;,
+      &quot;moduleResolution&quot;: &quot;node&quot;,
+      &quot;sourceMap&quot;: true,
+      &quot;emitDecoratorMetadata&quot;: true,
+      &quot;experimentalDecorators&quot;: true,
+      &quot;lib&quot;: [&quot;es2015&quot;, &quot;dom&quot;],
+      &quot;noImplicitAny&quot;: true,
+      &quot;suppressImplicitAnyIndexErrors&quot;: true
+    },
+    meta: {
+      'typescript': {
+        &quot;exports&quot;: &quot;ts&quot;
+      }
+    },
+    paths: {
+      // paths serve as alias
+      'npm:': 'https://unpkg.com/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      'app': 'app',
+
+      // angular bundles
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
+      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+
+      // other libraries
+      'rxjs':                      'npm:rxjs@5.0.1',
+      'tslib':                     'npm:tslib/tslib.js',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ts':                        'npm:plugin-typescript@5.2.7/lib/plugin.js',
+      'typescript':                'npm:typescript@2.3.2/lib/typescript.js',
+
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.ts',
+        defaultExtension: 'ts',
+        meta: {
+          './*.ts': {
+            loader: 'systemjs-angular-loader.js'
+          }
+        }
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      }
+    }
+  });
+
+})(this);
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+"><input type="hidden" name="entries[systemjs.config.js][encoding]" value="utf8"><input type="hidden" name="entries[systemjs-angular-loader.js][content]" value="var templateUrlRegex = /templateUrl\s*:(\s*['&quot;`](.*?)['&quot;`]\s*)/gm;
+var stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
+var stringRegex = /(['`&quot;])((?:[^\\]\\\1|.)*?)\1/g;
+
+module.exports.translate = function(load){
+  if (load.source.indexOf('moduleId') != -1) return load;
+
+  var url = document.createElement('a');
+  url.href = load.address;
+
+  var basePathParts = url.pathname.split('/');
+
+  basePathParts.pop();
+  var basePath = basePathParts.join('/');
+
+  var baseHref = document.createElement('a');
+  baseHref.href = this.baseURL;
+  baseHref = baseHref.pathname;
+
+  if (!baseHref.startsWith('/base/')) { // it is not karma
+    basePath = basePath.replace(baseHref, '');
+  }
+
+  load.source = load.source
+    .replace(templateUrlRegex, function(match, quote, url){
+      var resolvedUrl = url;
+
+      if (url.startsWith('.')) {
+        resolvedUrl = basePath + url.substr(1);
+      }
+
+      return 'templateUrl: &quot;' + resolvedUrl + '&quot;';
+    })
+    .replace(stylesRegex, function(match, relativeUrls) {
+      var urls = [];
+
+      while ((match = stringRegex.exec(relativeUrls)) !== null) {
+        if (match[2].startsWith('.')) {
+          urls.push('&quot;' + basePath + match[2].substr(1) + '&quot;');
+        } else {
+          urls.push('&quot;' + match[2] + '&quot;');
+        }
+      }
+
+      return &quot;styleUrls: [&quot; + urls.join(', ') + &quot;]&quot;;
+    });
+
+  return load;
+};
+"><input type="hidden" name="entries[systemjs-angular-loader.js][encoding]" value="utf8"></form><script>document.getElementById("mainForm").submit();</script></body></html>
