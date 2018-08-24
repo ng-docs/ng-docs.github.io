@@ -1,5 +1,0 @@
-{
-  "id": "about",
-  "title": "Angular Contributors",
-  "contents": "\n<div class=\"content\">\n<h1 translation-origin=\"off\" class=\"title center no-toc\" id=\"angular-contributors\">Angular Contributors<a title=\"Link to this heading\" class=\"header-link\" aria-hidden=\"true\" href=\"about#angular-contributors\"><i class=\"material-icons\">link</i></a></h1>\n<h2 translation-origin=\"off\" id=\"building-for-the-future\">Building For the Future<a title=\"Link to this heading\" class=\"header-link\" aria-hidden=\"true\" href=\"about#building-for-the-future\"><i class=\"material-icons\">link</i></a></h2>\n<p translation-origin=\"off\">Angular is built by a team of engineers who share a passion for\n  making web development feel effortless. We believe that writing\n  beautiful apps should be joyful and fun. We're building a\n  platform for the future.</p>\n<p translation-origin=\"off\"><aio-contributor-list></aio-contributor-list></p>\n\n</div>\n<!-- links to this doc:\n-->\n<!-- links from this doc:\n - about#angular-contributors\n - about#building-for-the-future\n-->"
-}
