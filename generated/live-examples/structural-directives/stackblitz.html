@@ -1,0 +1,807 @@
+<html lang="en"><head></head><body>
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+
+import { Hero, heroes } from './hero';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: [ './app.component.css' ]
+})
+export class AppComponent {
+  heroes = heroes;
+  hero = this.heroes[0];
+
+  condition = false;
+  logs: string[] = [];
+  showSad = true;
+  status = 'ready';
+
+  trackById(index: number, hero: Hero): number { return hero.id; }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule }      from '@angular/core';
+import { FormsModule }   from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent }         from './app.component';
+import { heroSwitchComponents } from './hero-switch.components';
+import { UnlessDirective }    from './unless.directive';
+
+@NgModule({
+  imports: [ BrowserModule, FormsModule ],
+  declarations: [
+    AppComponent,
+    heroSwitchComponents,
+    UnlessDirective
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero-switch.components.ts]" value="import { Component, Input } from '@angular/core';
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-happy-hero',
+  template: `Wow. You like {{hero.name}}. What a happy hero ... just like you.`
+})
+export class HappyHeroComponent {
+  @Input() hero: Hero;
+}
+
+@Component({
+  selector: 'app-sad-hero',
+  template: `You like {{hero.name}}? Such a sad hero. Are you sad too?`
+})
+export class SadHeroComponent {
+  @Input() hero: Hero;
+}
+
+@Component({
+  selector: 'app-confused-hero',
+  template: `Are you as confused as {{hero.name}}?`
+})
+export class ConfusedHeroComponent {
+  @Input() hero: Hero;
+}
+
+@Component({
+  selector: 'app-unknown-hero',
+  template: `{{message}}`
+})
+export class UnknownHeroComponent {
+  @Input() hero: Hero;
+  get message() {
+    return this.hero &amp;&amp; this.hero.name ?
+      `${this.hero.name} is strange and mysterious.` :
+      'Are you feeling indecisive?';
+  }
+}
+
+export const heroSwitchComponents =
+  [ HappyHeroComponent, SadHeroComponent, ConfusedHeroComponent, UnknownHeroComponent ];
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero.ts]" value="export class Hero {
+  id: number;
+  name: string;
+  emotion?: string;
+}
+
+export const heroes: Hero[] = [
+  { id: 1, name: 'Mr. Nice',  emotion: 'happy'},
+  { id: 2, name: 'Narco',     emotion: 'sad' },
+  { id: 3, name: 'Windstorm', emotion: 'confused' },
+  { id: 4, name: 'Magneta'}
+];
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/unless.directive.ts]" value="import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+
+/**
+ * Add the template content to the DOM unless the condition is true.
+ *
+ * If the expression assigned to `appUnless` evaluates to a truthy value
+ * then the templated elements are removed removed from the DOM,
+ * the templated elements are (re)inserted into the DOM.
+ *
+ * <div *ngUnless=&quot;errorCount&quot; class=&quot;success&quot;>
+ *   Congrats! Everything is great!
+ * </div>
+ *
+ * ### Syntax
+ *
+ * - `<div *appUnless=&quot;condition&quot;>...</div>`
+ * - `<ng-template [appUnless]=&quot;condition&quot;><div>...</div></ng-template>`
+ *
+ */
+@Directive({ selector: '[appUnless]'})
+export class UnlessDirective {
+  private hasView = false;
+
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef) { }
+
+  @Input() set appUnless(condition: boolean) {
+    if (!condition &amp;&amp; !this.hasView) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
+      this.hasView = true;
+    } else if (condition &amp;&amp; this.hasView) {
+      this.viewContainer.clear();
+      this.hasView = false;
+    }
+  }
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * In development mode, to ignore zone related error stack frames such as
+ * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can
+ * import the following file, but please comment it out in production mode
+ * because it will have performance impact when throw error
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/docs/ts/latest/guide/browser-support.html
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE9, IE10 and IE11 requires all of the following polyfills. **/
+// import 'core-js/es6/symbol';
+// import 'core-js/es6/object';
+// import 'core-js/es6/function';
+// import 'core-js/es6/parse-int';
+// import 'core-js/es6/parse-float';
+// import 'core-js/es6/number';
+// import 'core-js/es6/math';
+// import 'core-js/es6/string';
+// import 'core-js/es6/date';
+// import 'core-js/es6/array';
+// import 'core-js/es6/regexp';
+// import 'core-js/es6/map';
+// import 'core-js/es6/weak-map';
+// import 'core-js/es6/set';
+
+/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/** IE10 and IE11 requires the following for the Reflect API. */
+// import 'core-js/es6/reflect';
+
+
+/** Evergreen browsers require these. **/
+// Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
+import 'core-js/es7/reflect';
+
+
+/**
+ * Required to support Web Animations `@angular/platform-browser/animations`.
+ * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
+ **/
+// import 'web-animations-js';
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ */
+
+ // (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+ // (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ // (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+
+ /*
+ * in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ * with the following flag, it will bypass `zone.js` patch for IE/Edge
+ */
+// (window as any).__Zone_enable_cross_context_check = true;
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js/dist/zone';  // Included with Angular CLI.
+
+
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.css]" value="button {
+  min-width: 100px;
+  font-size: 100%;
+}
+
+.box {
+  border: 1px solid gray;
+  max-width: 600px;
+  padding: 4px;
+}
+.choices {
+  font-style: italic;
+}
+
+code, .code {
+  background-color: #eee;
+  color: black;
+  font-family: Courier, sans-serif;
+  font-size: 85%;
+}
+
+div.code {
+  width: 400px;
+}
+
+.heroic {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+hr {
+  margin: 40px 0
+}
+
+.odd {
+  background-color:  palegoldenrod;
+}
+
+td, th {
+  text-align: left;
+  vertical-align: top;
+}
+
+p span { color: red; font-size: 70%; }
+
+.unless {
+  border: 2px solid;
+  padding: 6px;
+}
+
+p.unless {
+  width: 500px;
+}
+
+button.a, span.a, .unless.a {
+  color: red;
+  border-color: gold;
+  background-color: yellow;
+  font-size: 100%;
+}
+
+button.b, span.b, .unless.b {
+  color: black;
+  border-color: green;
+  background-color: lightgreen;
+  font-size: 100%;
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>Structural Directives</h1>
+
+<p>Conditional display of hero</p>
+
+<blockquote>
+<div *ngIf=&quot;hero&quot; class=&quot;name&quot;>{{hero.name}}</div>
+</blockquote>
+
+<p>List of heroes</p>
+
+<ul>
+  <li *ngFor=&quot;let hero of heroes&quot;>{{hero.name}}</li>
+</ul>
+
+
+<hr>
+
+<h2 id=&quot;ngIf&quot;>NgIf</h2>
+
+<p *ngIf=&quot;true&quot;>
+  Expression is true and ngIf is true.
+  This paragraph is in the DOM.
+</p>
+<p *ngIf=&quot;false&quot;>
+  Expression is false and ngIf is false.
+  This paragraph is not in the DOM.
+</p>
+
+<p [style.display]=&quot;'block'&quot;>
+  Expression sets display to &quot;block&quot;.
+  This paragraph is visible.
+</p>
+<p [style.display]=&quot;'none'&quot;>
+  Expression sets display to &quot;none&quot;.
+  This paragraph is hidden but still in the DOM.
+</p>
+
+<h4>NgIf with template</h4>
+<p>&amp;lt;ng-template&amp;gt; element</p>
+<ng-template [ngIf]=&quot;hero&quot;>
+  <div class=&quot;name&quot;>{{hero.name}}</div>
+</ng-template>
+
+<hr>
+
+<h2 id=&quot;ng-container&quot;>&amp;lt;ng-container&amp;gt;</h2>
+
+<h4>*ngIf with a &amp;lt;ng-container&amp;gt;</h4>
+
+<button (click)=&quot;hero = hero ? null : heroes[0]&quot;>Toggle hero</button>
+
+<p>
+  I turned the corner
+  <ng-container *ngIf=&quot;hero&quot;>
+    and saw {{hero.name}}. I waved
+  </ng-container>
+  and continued on my way.
+</p>
+<p>
+  I turned the corner
+  <span *ngIf=&quot;hero&quot;>
+    and saw {{hero.name}}. I waved
+  </span>
+  and continued on my way.
+</p>
+
+<p><i>&amp;lt;select&amp;gt; with &amp;lt;span&amp;gt;</i></p>
+<div>
+  Pick your favorite hero
+  (<label><input type=&quot;checkbox&quot; checked (change)=&quot;showSad = !showSad&quot;>show sad</label>)
+</div>
+<select [(ngModel)]=&quot;hero&quot;>
+  <span *ngFor=&quot;let h of heroes&quot;>
+    <span *ngIf=&quot;showSad || h.emotion !== 'sad'&quot;>
+      <option [ngValue]=&quot;h&quot;>{{h.name}} ({{h.emotion}})</option>
+    </span>
+  </span>
+</select>
+
+<p><i>&amp;lt;select&amp;gt; with &amp;lt;ng-container&amp;gt;</i></p>
+<div>
+  Pick your favorite hero
+  (<label><input type=&quot;checkbox&quot; checked (change)=&quot;showSad = !showSad&quot;>show sad</label>)
+</div>
+<select [(ngModel)]=&quot;hero&quot;>
+  <ng-container *ngFor=&quot;let h of heroes&quot;>
+    <ng-container *ngIf=&quot;showSad || h.emotion !== 'sad'&quot;>
+      <option [ngValue]=&quot;h&quot;>{{h.name}} ({{h.emotion}})</option>
+    </ng-container>
+  </ng-container>
+</select>
+<br><br>
+
+<hr>
+
+<h2 id=&quot;ngFor&quot;>NgFor</h2>
+
+<div class=&quot;box&quot;>
+
+<p class=&quot;code&quot;>&amp;lt;div *ngFor=&quot;let hero of heroes; let i=index; let odd=odd; trackBy: trackById&quot; [class.odd]=&quot;odd&quot;&amp;gt;</p>
+<div *ngFor=&quot;let hero of heroes; let i=index; let odd=odd; trackBy: trackById&quot; [class.odd]=&quot;odd&quot;>
+  ({{i}}) {{hero.name}}
+</div>
+
+<p class=&quot;code&quot;>&amp;lt;ng-template ngFor let-hero [ngForOf]=&quot;heroes&quot; let-i=&quot;index&quot; let-odd=&quot;odd&quot; [ngForTrackBy]=&quot;trackById&quot;/&amp;gt;</p>
+<ng-template ngFor let-hero [ngForOf]=&quot;heroes&quot; let-i=&quot;index&quot; let-odd=&quot;odd&quot; [ngForTrackBy]=&quot;trackById&quot;>
+  <div [class.odd]=&quot;odd&quot;>({{i}}) {{hero.name}}</div>
+</ng-template>
+
+</div>
+<hr>
+
+<h2 id=&quot;ngSwitch&quot;>NgSwitch</h2>
+
+<div>Pick your favorite hero</div>
+<p>
+  <label *ngFor=&quot;let h of heroes&quot;>
+    <input type=&quot;radio&quot; name=&quot;heroes&quot; [(ngModel)]=&quot;hero&quot; [value]=&quot;h&quot;>{{h.name}}
+  </label>
+  <label><input type=&quot;radio&quot; name=&quot;heroes&quot; (click)=&quot;hero = null&quot;>None of the above</label>
+</p>
+
+<h4>NgSwitch</h4>
+
+<div [ngSwitch]=&quot;hero?.emotion&quot;>
+  <app-happy-hero    *ngSwitchCase=&quot;'happy'&quot;    [hero]=&quot;hero&quot;></app-happy-hero>
+  <app-sad-hero      *ngSwitchCase=&quot;'sad'&quot;      [hero]=&quot;hero&quot;></app-sad-hero>
+  <app-confused-hero *ngSwitchCase=&quot;'app-confused'&quot; [hero]=&quot;hero&quot;></app-confused-hero>
+  <app-unknown-hero  *ngSwitchDefault           [hero]=&quot;hero&quot;></app-unknown-hero>
+</div>
+
+<h4>NgSwitch with &amp;lt;ng-template&amp;gt;</h4>
+<div [ngSwitch]=&quot;hero?.emotion&quot;>
+  <ng-template [ngSwitchCase]=&quot;'happy'&quot;>
+    <app-happy-hero [hero]=&quot;hero&quot;></app-happy-hero>
+  </ng-template>
+  <ng-template [ngSwitchCase]=&quot;'sad'&quot;>
+    <app-sad-hero [hero]=&quot;hero&quot;></app-sad-hero>
+  </ng-template>
+  <ng-template [ngSwitchCase]=&quot;'confused'&quot;>
+    <app-confused-hero [hero]=&quot;hero&quot;></app-confused-hero>
+  </ng-template >
+  <ng-template ngSwitchDefault>
+    <app-unknown-hero [hero]=&quot;hero&quot;></app-unknown-hero>
+  </ng-template>
+</div>
+
+<hr>
+
+<h2>&amp;lt;ng-template&amp;gt;</h2>
+<p>Hip!</p>
+<ng-template>
+  <p>Hip!</p>
+</ng-template>
+<p>Hooray!</p>
+
+<hr>
+
+<h2 id=&quot;appUnless&quot;>UnlessDirective</h2>
+<p>
+  The condition is currently
+  <span [ngClass]=&quot;{ 'a': !condition, 'b': condition, 'unless': true }&quot;>{{condition}}</span>.
+  <button
+    (click)=&quot;condition = !condition&quot;
+    [ngClass] = &quot;{ 'a': condition, 'b': !condition }&quot; >
+    Toggle condition to {{condition ? 'false' : 'true'}}
+  </button>
+</p>
+<p *appUnless=&quot;condition&quot; class=&quot;unless a&quot;>
+  (A) This paragraph is displayed because the condition is false.
+</p>
+
+<p *appUnless=&quot;!condition&quot; class=&quot;unless b&quot;>
+  (B) Although the condition is true,
+  this paragraph is displayed because appUnless is set to false.
+</p>
+
+
+<h4>UnlessDirective with template</h4>
+
+<p *appUnless=&quot;condition&quot;>Show this sentence unless the condition is true.</p>
+
+<p *appUnless=&quot;condition&quot; class=&quot;code unless&quot;>
+  (A) &amp;lt;p *appUnless=&quot;condition&quot; class=&quot;code unless&quot;&amp;gt;
+</p>
+
+<ng-template [appUnless]=&quot;condition&quot;>
+  <p class=&quot;code unless&quot;>
+    (A) &amp;lt;ng-template [appUnless]=&quot;condition&quot;&amp;gt;
+  </p>
+</ng-template>
+
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <title>Angular Structural Directives</title>
+    <base href=&quot;/&quot;>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;root&quot;: &quot;&quot;,
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;src/tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              {
+                &quot;glob&quot;: &quot;favicon.ico&quot;,
+                &quot;input&quot;: &quot;src&quot;,
+                &quot;output&quot;: &quot;/&quot;
+              },
+              {
+                &quot;glob&quot;: &quot;**/*&quot;,
+                &quot;input&quot;: &quot;src/assets&quot;,
+                &quot;output&quot;: &quot;/assets&quot;
+              }
+            ],
+            &quot;styles&quot;: [
+              {
+                &quot;input&quot;: &quot;src/styles.css&quot;
+              }
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;extractCss&quot;: true,
+              &quot;namedChunks&quot;: false,
+              &quot;aot&quot;: true,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;src/tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;src/karma.conf.js&quot;,
+            &quot;styles&quot;: [
+              {
+                &quot;input&quot;: &quot;styles.css&quot;
+              }
+            ],
+            &quot;scripts&quot;: [],
+            &quot;assets&quot;: [
+              {
+                &quot;glob&quot;: &quot;favicon.ico&quot;,
+                &quot;input&quot;: &quot;src/&quot;,
+                &quot;output&quot;: &quot;/&quot;
+              },
+              {
+                &quot;glob&quot;: &quot;**/*&quot;,
+                &quot;input&quot;: &quot;src/assets&quot;,
+                &quot;output&quot;: &quot;/assets&quot;
+              }
+            ]
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;src/tsconfig.app.json&quot;,
+              &quot;src/tsconfig.spec.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        }
+      }
+    },
+    &quot;angular.io-example-e2e&quot;: {
+      &quot;root&quot;: &quot;e2e/&quot;,
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;architect&quot;: {
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: &quot;e2e/tsconfig.e2e.json&quot;,
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        }
+      }
+    }
+  }
+}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="structural"><input type="hidden" name="tags[3]" value="directives"><input type="hidden" name="tags[4]" value="template"><input type="hidden" name="tags[5]" value="ngIf"><input type="hidden" name="tags[6]" value="ngSwitch"><input type="hidden" name="tags[7]" value="ngFor"><input type="hidden" name="description" value="Angular Example - Structural directives"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^6.0.0&quot;,&quot;@angular/common&quot;:&quot;^6.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^6.0.0&quot;,&quot;@angular/core&quot;:&quot;^6.0.0&quot;,&quot;@angular/forms&quot;:&quot;^6.0.0&quot;,&quot;@angular/http&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^6.0.0&quot;,&quot;@angular/router&quot;:&quot;^6.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.0.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;^0.8.24&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.3.1&quot;}"></form>
+    <script>
+      var embedded = 'ctl=1';
+      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+      if (isEmbedded) {
+        var form = document.getElementById('mainForm');
+        var action = form.action;
+        var actionHasParams = action.indexOf('?') > -1;
+        var symbol = actionHasParams ? '&' : '?'
+        form.action = form.action + symbol + embedded;
+      }
+      document.getElementById("mainForm").submit();
+    </script>
+    </body></html>
