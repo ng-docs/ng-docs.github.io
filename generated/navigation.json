@@ -545,6 +545,16 @@
       "url": "api"
     },
     {
+      "title": "互助问答",
+      "tooltip": "github 上的中文互助问答区",
+      "url": "https://github.com/ng-docs/ng-docs.github.io/issues"
+    },
+    {
+      "title": "Material 组件库",
+      "tooltip": "Angular Material 组件库的中文文档",
+      "url": "https://material.angular.cn"
+    },
+    {
       "url": "guide/change-log",
       "title": "Change Log",
       "tooltip": "Angular Documentation Change Log",
@@ -672,12 +682,12 @@
     "prerelease": [
       "local"
     ],
-    "build": "sha.739d61dbf",
+    "build": "sha.ad4a674b6",
     "version": "6.1.1-local",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "6.1.1-local+sha.739d61dbf",
+    "full": "6.1.1-local+sha.ad4a674b6",
     "branch": "master",
-    "commitSHA": "739d61dbfa2272303c521c3de1c20208441c6481"
+    "commitSHA": "ad4a674b65170e373e66ebc9e3c32c0d8ee73875"
   }
 }
