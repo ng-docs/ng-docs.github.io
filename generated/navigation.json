@@ -550,9 +550,14 @@
       "url": "https://github.com/ng-docs/ng-docs.github.io/issues"
     },
     {
-      "title": "Material 组件库",
+      "title": "官方 Material 组件库",
       "tooltip": "Angular Material 组件库的中文文档",
       "url": "https://material.angular.cn"
+    },
+    {
+      "title": "ng-zorro 组件库",
+      "tooltip": "Ant Design 的 Angular 实现，服务于企业级后台产品。",
+      "url": "https://ng.ant.design/"
     },
     {
       "url": "guide/change-log",
@@ -682,12 +687,12 @@
     "prerelease": [
       "local"
     ],
-    "build": "sha.ad4a674b6",
+    "build": "sha.9ad449865",
     "version": "6.1.1-local",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "6.1.1-local+sha.ad4a674b6",
+    "full": "6.1.1-local+sha.9ad449865",
     "branch": "master",
-    "commitSHA": "ad4a674b65170e373e66ebc9e3c32c0d8ee73875"
+    "commitSHA": "9ad4498655186b8ae0461bad7478cfd1a973a877"
   }
 }
