@@ -545,6 +545,11 @@
       "url": "api"
     },
     {
+      "title": "-",
+      "tooltip": "分割线",
+      "divider": true
+    },
+    {
       "title": "互助问答",
       "tooltip": "github 上的中文互助问答区",
       "url": "https://github.com/ng-docs/ng-docs.github.io/issues"
@@ -687,12 +692,12 @@
     "prerelease": [
       "local"
     ],
-    "build": "sha.9ad449865",
+    "build": "sha.9e94c2a11",
     "version": "6.1.1-local",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "6.1.1-local+sha.9ad449865",
+    "full": "6.1.1-local+sha.9e94c2a11",
     "branch": "master",
-    "commitSHA": "9ad4498655186b8ae0461bad7478cfd1a973a877"
+    "commitSHA": "9e94c2a1191e0ca6c5e537558e3df75c3b2e752e"
   }
 }
