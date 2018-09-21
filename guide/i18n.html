@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="internationalization-i18n">Internationalization (i18n)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#internationalization-i18n"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="internationalization-i18n">国际化（i18n）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#internationalization-i18n"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="internationalization-i18n">Internationalization (i18n)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#internationalization-i18n"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="internationalization-i18n">国际化（i18n）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#internationalization-i18n"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Application internationalization is a many-faceted area of development, focused on making
 applications available and user-friendly to a worldwide audience. This page describes Angular's
 internationalization (i18n) tools, which can help you make your app available in multiple languages.</p>
@@ -819,8 +819,8 @@ internationalization (i18n) tools, which can help you make your app available in
 an AOT-compiled app, translated into French.</p>
 <p translation-result="">可以把这个翻译为法语版的 AOT 应用<live-example downloadonly="" name="i18n">i18n 例子</live-example>作为一个简单的例子。</p>
 <a id="angular-i18n"></a>
-<h2 translation-origin="off" id="angular-and-i18n">Angular and i18n<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#angular-and-i18n"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="angular-and-i18n">Angular 与 i18n<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#angular-and-i18n"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="angular-and-i18n">Angular and i18n<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#angular-and-i18n"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="angular-and-i18n">Angular 与 i18n<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#angular-and-i18n"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular simplifies the following aspects of internationalization:</p>
 <p translation-result="">Angular 简化了国际化工作的下列几个方面：</p>
 <ul>
@@ -845,8 +845,8 @@ an AOT-compiled app, translated into French.</p>
 CLI generates most of the boilerplate necessary to write your app in multiple languages.</p>
 <p translation-result="">本文档集中讲解 <a href="https://cli.angular.io/"><strong>Angular CLI</strong></a> 项目，Angular CLI 为它生成了写多语言应用时必须的大部分样板代码。</p>
 <a id="setting-up-locale"></a>
-<h2 translation-origin="off" id="setting-up-the-locale-of-your-app">Setting up the locale of your app<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#setting-up-the-locale-of-your-app"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="setting-up-the-locale-of-your-app">为你的应用设置地区（locale）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#setting-up-the-locale-of-your-app"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="setting-up-the-locale-of-your-app">Setting up the locale of your app<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#setting-up-the-locale-of-your-app"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="setting-up-the-locale-of-your-app">为你的应用设置地区（locale）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#setting-up-the-locale-of-your-app"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A locale is an identifier (id) that refers to a set of user preferences that tend to be shared
 within a region of the world, such as country. This document refers to a locale identifier as a
 "locale" or "locale id".</p>
@@ -879,10 +879,10 @@ import { <a href="/api/platform-browser/BrowserModule" class="code-anchor">Brows
 import { AppComponent } from '../src/app/app.component';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> ],
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
   providers: [ { provide: <a href="/api/core/LOCALE_ID" class="code-anchor">LOCALE_ID</a>, useValue: 'fr' } ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
 })
 export class AppModule { }
 
@@ -1025,8 +1025,8 @@ Chinese Traditional Hong Kong
 </tr>
 </tbody>
 </table>
-<h2 translation-origin="off" id="i18n-pipes">i18n pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#i18n-pipes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="i18n-pipes">i18n 管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#i18n-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="i18n-pipes">i18n pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#i18n-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="i18n-pipes">i18n 管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#i18n-pipes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular pipes can help you with internationalization: the <code><a href="/api/common/DatePipe" class="code-anchor">DatePipe</a></code>, <code><a href="/api/common/CurrencyPipe" class="code-anchor">CurrencyPipe</a></code>, <code><a href="/api/common/DecimalPipe" class="code-anchor">DecimalPipe</a></code>
 and <code><a href="/api/common/PercentPipe" class="code-anchor">PercentPipe</a></code> use locale data to format data based on the <code><a href="/api/core/LOCALE_ID" class="code-anchor">LOCALE_ID</a></code>.</p>
 <p translation-result="">Angular 的管道可以帮助你进行国际化：<code><a href="/api/common/DatePipe" class="code-anchor">DatePipe</a></code>、<code><a href="/api/common/CurrencyPipe" class="code-anchor">CurrencyPipe</a></code>、<code><a href="/api/common/DecimalPipe" class="code-anchor">DecimalPipe</a></code> 和 <code><a href="/api/common/PercentPipe" class="code-anchor">PercentPipe</a></code> 都使用本地化数据来根据 <code><a href="/api/core/LOCALE_ID" class="code-anchor">LOCALE_ID</a></code> 格式化数据。</p>
@@ -1042,7 +1042,7 @@ The CLI imports the locale data for you when you use the parameter <code>--confi
 import { <a href="/api/common/registerLocaleData" class="code-anchor">registerLocaleData</a> } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
-// the second parameter 'fr' is <a href="api/animations/AnimationQueryOptions#optional" class="code-anchor">optional</a>
+// the second parameter 'fr' is <a href="/api/animations/AnimationQueryOptions#optional" class="code-anchor">optional</a>
 <a href="/api/common/registerLocaleData" class="code-anchor">registerLocaleData</a>(localeFr, 'fr');
 
 </code-example>
@@ -1075,8 +1075,8 @@ import localeFrExtra from '@angular/common/locales/extra/fr';
 <a href="http://cldr.unicode.org/" title="CLDR">Common Locale Data Repository (CLDR)</a>.</p>
 <p translation-result="">  Angular 中使用的所有本地化数据都是从 Unicode 联盟的<a href="http://cldr.unicode.org/" title="CLDR">常用本地化数据仓库 (CLDR)</a> 中提取的。</p>
 </div>
-<h2 translation-origin="off" id="template-translations">Template translations<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#template-translations"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="template-translations">模板翻译<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#template-translations"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="template-translations">Template translations<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#template-translations"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="template-translations">模板翻译<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#template-translations"><i class="material-icons">link</i></a></h2>
 <div class="alert is-helpful">
 <p translation-origin="off">  This document refers to a unit of translatable text as "text," a "message", or a
 "text message."</p>
@@ -1108,8 +1108,8 @@ in the target language.</p>
 <p translation-origin="off">You need to build and deploy a separate version of the app for each supported language.</p>
 <p translation-result="">你可以为每种支持的语言构建和部署单独的应用程序版本。</p>
 <a id="i18n-attribute"></a>
-<h3 translation-origin="off" id="mark-text-with-the-i18n-attribute">Mark text with the i18n attribute<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#mark-text-with-the-i18n-attribute"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="mark-text-with-the-i18n-attribute">使用 <code>i18n</code> 属性标记文本<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#mark-text-with-the-i18n-attribute"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="mark-text-with-the-i18n-attribute">Mark text with the i18n attribute<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#mark-text-with-the-i18n-attribute"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="mark-text-with-the-i18n-attribute">使用 <code>i18n</code> 属性标记文本<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#mark-text-with-the-i18n-attribute"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The Angular <code>i18n</code> attribute marks translatable content. Place it on every element tag whose fixed
 text is to be translated.</p>
 <p translation-result="">Angular的<code>i18n</code>属性是可翻译内容的标记。
@@ -1133,8 +1133,8 @@ After translation, the compiler removes it. It is not an Angular directive.</p>
 翻译之后，编译器就会移除它。它不是 Angular 指令。</p>
 </div>
 <a id="help-translator"></a>
-<h3 translation-origin="off" id="help-the-translator-with-a-description-and-meaning">Help the translator with a description and meaning<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#help-the-translator-with-a-description-and-meaning"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="help-the-translator-with-a-description-and-meaning">用描述和意图来帮助翻译人员<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#help-the-translator-with-a-description-and-meaning"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="help-the-translator-with-a-description-and-meaning">Help the translator with a description and meaning<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#help-the-translator-with-a-description-and-meaning"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="help-the-translator-with-a-description-and-meaning">用描述和意图来帮助翻译人员<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#help-the-translator-with-a-description-and-meaning"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To translate a text message accurately, the translator may need additional information or context.</p>
 <p translation-result="">要想翻译的更准确，翻译人员可能需要待翻译文本的额外信息或场景说明。</p>
 <p translation-origin="off">You can add a description of the text message as the value of the <code>i18n</code> attribute, as shown in the
@@ -1165,8 +1165,8 @@ similar text messages with different meanings, they are extracted separately. If
 text messages with different descriptions (not different meanings), then they are extracted only once.</p>
 <p translation-result="">Angular 的提取工具会在翻译源文件中保留<strong>含义</strong>和<strong>描述</strong>，以支持符合特定上下文的翻译。但它只会使用含义和文本消息的组合来为待翻译文本生成明确的 id。如果你有两个相同的文本消息，但是含义不同，它们就会被分别提取。如果你有两个相同的文本消息，但是描述不同（但含义相同），它们就只会提取一次。</p>
 <a id="custom-id"></a>
-<h3 translation-origin="off" id="set-a-custom-id-for-persistence-and-maintenance">Set a custom id for persistence and maintenance<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#set-a-custom-id-for-persistence-and-maintenance"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="set-a-custom-id-for-persistence-and-maintenance">设置一个自定义的 <code>id</code> 来提升可搜索性和可维护性<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#set-a-custom-id-for-persistence-and-maintenance"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="set-a-custom-id-for-persistence-and-maintenance">Set a custom id for persistence and maintenance<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#set-a-custom-id-for-persistence-and-maintenance"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="set-a-custom-id-for-persistence-and-maintenance">设置一个自定义的 <code>id</code> 来提升可搜索性和可维护性<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#set-a-custom-id-for-persistence-and-maintenance"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The angular i18n extractor tool generates a file with a translation unit entry for each <code>i18n</code>
 attribute in a template. By default, it assigns each translation unit a unique id such as this one:</p>
 <p translation-result="">Angular 的 <code>i18n</code> 提取工具会为模板中每个带有 <code>i18n</code> 属性的元素生成一个<em>翻译单元（translation unit）</em>条目，并保存到一个文件中。默认情况下，它为每个翻译单元指定一个唯一的 <code>id</code>，就像这样：</p>
@@ -1197,8 +1197,8 @@ custom id.</p>
 Therefore, you do not need to update the translation. This approach makes maintenance easier.</p>
 <p translation-result="">自定义 id 是永久性的，翻译工具待翻译文本发生变化时不会修改它。
 因此，你不必修改翻译结果。这种方式可以让维护变得更简单。</p>
-<h4 translation-origin="off" id="use-a-custom-id-with-a-description">Use a custom id with a description<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#use-a-custom-id-with-a-description"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="use-a-custom-id-with-a-description">在描述中使用自定义 id<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#use-a-custom-id-with-a-description"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="use-a-custom-id-with-a-description">Use a custom id with a description<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#use-a-custom-id-with-a-description"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="use-a-custom-id-with-a-description">在描述中使用自定义 id<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#use-a-custom-id-with-a-description"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You can use a custom id in combination with a description by including both in the value of the
 <code>i18n</code> attribute. In the example below, the <code>i18n</code> attribute value includes a description, followed
 by the custom <code>id</code>:</p>
@@ -1214,8 +1214,8 @@ by the custom <code>id</code>:</p>
 &#x3C;h1 i18n="site header|An introduction header for this sample@@introductionHeader">Hello i18n!&#x3C;/h1>
 
 </code-example>
-<h4 translation-origin="off" id="define-unique-custom-ids">Define unique custom ids<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#define-unique-custom-ids"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="define-unique-custom-ids">定义唯一的自定义 ID<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#define-unique-custom-ids"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="define-unique-custom-ids">Define unique custom ids<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#define-unique-custom-ids"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="define-unique-custom-ids">定义唯一的自定义 ID<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#define-unique-custom-ids"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Be sure to define custom ids that are unique. If you use the same id for two different text messages,
 only the first one is extracted, and its translation is used in place of both original text messages.</p>
 <p translation-result="">要确保自定义 id 是唯一的。如果你对两个<em>不同的</em>文本块使用了同一个 id，那么就只有一个会被提取出来，然后其翻译结果会被用于全部原始文本消息。</p>
@@ -1233,7 +1233,7 @@ only the first one is extracted, and its translation is used in place of both or
 <code-example language="xml">
   &#x3C;trans-unit id="myId" datatype="html">
     &#x3C;source>Hello&#x3C;/source>
-    &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a> <a href="/api/animations/state" class="code-anchor">state</a>="new">Bonjour&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+    &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a> <a href="/api/animations/state" class="code-anchor">state</a>="new">Bonjour&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
   &#x3C;/trans-unit>
 </code-example>
 <p translation-origin="off">Because the custom id is the same, both of the elements in the resulting translation contain
@@ -1247,8 +1247,8 @@ the same text, <code>Bonjour</code>:</p>
   &#x3C;p>Bonjour&#x3C;/p>
 </code-example>
 <a id="no-element"></a>
-<h3 translation-origin="off" id="translate-text-without-creating-an-element">Translate text without creating an element<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-text-without-creating-an-element"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="translate-text-without-creating-an-element">翻译文本，而不必创建元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-text-without-creating-an-element"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="translate-text-without-creating-an-element">Translate text without creating an element<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-text-without-creating-an-element"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="translate-text-without-creating-an-element">翻译文本，而不必创建元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-text-without-creating-an-element"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">If there is a section of text that you would like to translate, you can wrap it in a <code>&#x3C;span></code> tag.
 However, if you don't want to create a new DOM element merely to facilitate translation,
 you can wrap the text in an <code>&#x3C;ng-container></code> element.
@@ -1260,8 +1260,8 @@ The <code>&#x3C;ng-container></code> is transformed into an html comment:</p>
 
 </code-example>
 <a id="translate-attributes"></a>
-<h2 translation-origin="off" id="add-i18n-translation-attributes">Add i18n translation attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#add-i18n-translation-attributes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="add-i18n-translation-attributes">添加 <em>i18n</em> 翻译属性<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#add-i18n-translation-attributes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="add-i18n-translation-attributes">Add i18n translation attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#add-i18n-translation-attributes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="add-i18n-translation-attributes">添加 <em>i18n</em> 翻译属性<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#add-i18n-translation-attributes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You also can translate attributes.
 For example, assume that your template has an image with a <code>title</code> attribute:</p>
 <p translation-result="">你还可以翻译属性。
@@ -1287,8 +1287,8 @@ where <code>x</code> is the name of the attribute to translate. The following ex
 syntax.</p>
 <p translation-result="">你也同样可以使用 <code>i18n-x="&#x3C;meaning>|&#x3C;description>@@&#x3C;id>"</code> 语法来指定一个含义和描述。</p>
 <a id="plural-ICU"></a>
-<h2 translation-origin="off" id="translate-singular-and-plural">Translate singular and plural<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-singular-and-plural"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="translate-singular-and-plural">翻译单数与复数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-singular-and-plural"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="translate-singular-and-plural">Translate singular and plural<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-singular-and-plural"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="translate-singular-and-plural">翻译单数与复数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-singular-and-plural"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Different languages have different pluralization rules.</p>
 <p translation-result="">不同的语言有不同的单复数规则。</p>
 <p translation-origin="off">Suppose that you want to say that something was "updated x minutes ago".
@@ -1374,8 +1374,8 @@ for two, three, or any other number if the pluralization rules were different. F
 <p translation-result="">  你可以在翻译结果中使用插值表达式和 HTML 标记。</p>
 </div>
 <a id="select-ICU"></a>
-<h2 translation-origin="off" id="select-among-alternative-text-messages">Select among alternative text messages<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#select-among-alternative-text-messages"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="select-among-alternative-text-messages">在候选文本中选择<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#select-among-alternative-text-messages"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="select-among-alternative-text-messages">Select among alternative text messages<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#select-among-alternative-text-messages"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="select-among-alternative-text-messages">在候选文本中选择<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#select-among-alternative-text-messages"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">If your template needs to display different text messages depending on the value of a variable, you
 need to translate all of those alternative text messages.</p>
 <p translation-result="">如果你的模板中需要根据某个变量的值显示出不同的文本消息，你还需要对所有这些候选文本进行翻译。</p>
@@ -1393,8 +1393,8 @@ The message maps those values to the appropriate translations:</p>
 
 </code-example>
 <a id="nesting-ICUS"></a>
-<h2 translation-origin="off" id="nesting-plural-and-select-icu-expressions">Nesting plural and select ICU expressions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#nesting-plural-and-select-icu-expressions"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="nesting-plural-and-select-icu-expressions">把"复数"与"选择"表达式嵌套在一起<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#nesting-plural-and-select-icu-expressions"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="nesting-plural-and-select-icu-expressions">Nesting plural and select ICU expressions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#nesting-plural-and-select-icu-expressions"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="nesting-plural-and-select-icu-expressions">把"复数"与"选择"表达式嵌套在一起<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#nesting-plural-and-select-icu-expressions"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You can also nest different ICU expressions together, as shown in this example:</p>
 <p translation-result="">你也可以把不同的 ICU 表达式嵌套在一起，比如：</p>
 <code-example path="i18n/src/app/app.component.html" region="i18n-nested" title="src/app/app.component.html">
@@ -1406,8 +1406,8 @@ The message maps those values to the appropriate translations:</p>
 
 </code-example>
 <a id="ng-xi18n"></a>
-<h2 translation-origin="off" id="create-a-translation-source-file-with-ng-xi18n">Create a translation source file with <em>ng xi18n</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#create-a-translation-source-file-with-ng-xi18n"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="create-a-translation-source-file-with-emng-xi18nem">使用 <em>ng-xi18n</em> 工具创建翻译源文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#create-a-translation-source-file-with-emng-xi18nem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="create-a-translation-source-file-with-ng-xi18n">Create a translation source file with <em>ng xi18n</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#create-a-translation-source-file-with-ng-xi18n"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="create-a-translation-source-file-with-emng-xi18nem">使用 <em>ng-xi18n</em> 工具创建翻译源文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#create-a-translation-source-file-with-emng-xi18nem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Use the <code>ng xi18n</code> command provided by the CLI to extract the text messages marked with <code>i18n</code> into
 a translation source file.</p>
 <p translation-result="">使用 CLI 提供的 <code>ng xi18n</code> 命令来将带 <code>i18n</code> 标记的文本消息提取到一个翻译源文件中。</p>
@@ -1439,8 +1439,8 @@ For more information, see the <a href="https://github.com/angular/angular-cli/tr
 </ul>
 </div>
 <a id="other-formats"></a>
-<h3 translation-origin="off" id="other-translation-formats">Other translation formats<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#other-translation-formats"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="other-translation-formats">其它翻译格式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#other-translation-formats"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="other-translation-formats">Other translation formats<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#other-translation-formats"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="other-translation-formats">其它翻译格式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#other-translation-formats"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular i18n tooling supports three translation formats:</p>
 <p translation-result="">Angular 的 i18n 工具支持三种翻译格式：</p>
 <ul>
@@ -1473,14 +1473,14 @@ ng xi18n  --i18n-format=xmb
 <p translation-result="">  XLIFF 文件带有 .xlf 扩展名。XMB 格式会生成 .xmb 格式的源文件，但使用 .xtb（XML 翻译包）格式的翻译文件。</p>
 </div>
 <a id="ng-xi18n-options"></a>
-<h3 translation-origin="off" id="other-options">Other options<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#other-options"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="other-options">其它选项<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#other-options"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="other-options">Other options<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#other-options"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="other-options">其它选项<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#other-options"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can specify the output path used by the CLI to extract your translation source file with
 the parameter <code>--output-path</code>:</p>
 <p translation-result="">你还可以使用 <code>--output-path</code> 参数在 CLI 提取翻译源文件时指定输出路径：</p>
 <code-example language="sh" class="code-shell">
 
-  ng xi18n --output-path <a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>
+  ng xi18n --output-path <a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>
 
 </code-example>
 <p translation-origin="off">You can change the name of the translation source file that is generated by the extraction tool with
@@ -1502,8 +1502,8 @@ the parameter <code>--outFile</code>:</p>
 file. This information is not used by Angular, but external translation tools may need it.</p>
 <p translation-result="">该提取工具会用这个地区标识把本地化信息添加到你的翻译源文件中。这个信息对 Angular 来说没用，不过外部翻译工具可能会需要它。</p>
 <a id="translate"></a>
-<h2 translation-origin="off" id="translate-text-messages">Translate text messages<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-text-messages"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="translate-text-messages">翻译文本信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-text-messages"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="translate-text-messages">Translate text messages<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-text-messages"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="translate-text-messages">翻译文本信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-text-messages"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <code>ng xi18n</code> command generates a translation source file named <code>messages.xlf</code> in the project <code>src</code>
 folder.</p>
 <p translation-result=""><code>ng xi18n</code> 命令会在项目根目录生成一个名为 <code>messages.xlf</code> 的翻译源文件。</p>
@@ -1512,8 +1512,8 @@ translation files. The example in this guide creates a French translation file.<
 <p translation-result="">下一步是将英文模板文本翻译到指定语言的翻译文件。
 这个例子中创建了一个法语翻译文件。</p>
 <a id="localization-folder"></a>
-<h3 translation-origin="off" id="create-a-localization-folder">Create a localization folder<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#create-a-localization-folder"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="create-a-localization-folder">新建一个本土化目录<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#create-a-localization-folder"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="create-a-localization-folder">Create a localization folder<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#create-a-localization-folder"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="create-a-localization-folder">新建一个本土化目录<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#create-a-localization-folder"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Most apps are translated into more than one other language. For this reason, it is standard practice
 for the project structure to reflect the entire internationalization effort.</p>
 <p translation-result="">大多数应用都要被翻译成多种其它语言，因此，为全部国际化工作做适当的调整项目目录结构是一种标准实践。</p>
@@ -1526,11 +1526,11 @@ internationalization files, there.</p>
 closely related terms</a>.</p>
 <p translation-result="">  本土化和国际化是<a href="https://en.wikipedia.org/wiki/Internationalization_and_localization" target="_blank">不同但是很相近的概念</a>。</p>
 </div>
-<p translation-origin="off">This guide follows that approach. It has a <code><a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code> folder under <code>src/</code>.
+<p translation-origin="off">This guide follows that approach. It has a <code><a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code> folder under <code>src/</code>.
 Assets within that folder have a filename extension that matches their associated locale.</p>
-<p translation-result="">本指南遵循了这种方式。在<code>src/</code>目录下，有一个专门的<code><a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code>目录，该目录中的文件都带一个与相关地区匹配的扩展名。</p>
-<h3 translation-origin="off" id="create-the-translation-files">Create the translation files<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#create-the-translation-files"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="create-the-translation-files">创建翻译文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#create-the-translation-files"><i class="material-icons">link</i></a></h3>
+<p translation-result="">本指南遵循了这种方式。在<code>src/</code>目录下，有一个专门的<code><a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code>目录，该目录中的文件都带一个与相关地区匹配的扩展名。</p>
+<h3 translation-origin="off" id="create-the-translation-files">Create the translation files<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#create-the-translation-files"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="create-the-translation-files">创建翻译文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#create-the-translation-files"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">For each translation source file, there must be at least one language translation file for the
 resulting translation.</p>
 <p translation-result="">对每个翻译文件来说，都必须至少有一个语言的翻译文件作为翻译结果。</p>
@@ -1542,8 +1542,8 @@ resulting translation.</p>
 <p translation-result="">复制一份 <code>messages.xlf</code> 文件。</p>
 </li>
 <li>
-<p translation-origin="off">Put the copy in the <code><a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code> folder.</p>
-<p translation-result="">把这个副本放进 <code><a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code> 目录下。</p>
+<p translation-origin="off">Put the copy in the <code><a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code> folder.</p>
+<p translation-result="">把这个副本放进 <code><a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a></code> 目录下。</p>
 </li>
 <li>
 <p translation-origin="off">Rename the copy to <code>messages.fr.xlf</code> for the French language translation.</p>
@@ -1553,8 +1553,8 @@ resulting translation.</p>
 <p translation-origin="off">If you were translating to other languages, you would repeat these steps for each target language.</p>
 <p translation-result="">如果你要翻译为其他语言，那就为每一个目标语种重复上述步骤。</p>
 <a id="translate-text-nodes"></a>
-<h3 translation-origin="off" id="translate-text-nodes">Translate text nodes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-text-nodes"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="translate-text-nodes">翻译文本节点<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-text-nodes"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="translate-text-nodes">Translate text nodes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-text-nodes"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="translate-text-nodes">翻译文本节点<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-text-nodes"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">In a large translation project, you would send the <code>messages.fr.xlf</code> file to a French translator who
 would enter the translations using an XLIFF file editor.</p>
 <p translation-result="">在现实世界中，<code>messages.fr.xlf</code> 文件会被发给法语翻译，他们会使用某种 XLIFF 文件编辑器来翻译它。</p>
@@ -1571,7 +1571,7 @@ would enter the translations using an XLIFF file editor.</p>
 &#x3C;trans-unit id="introductionHeader" datatype="html">
   &#x3C;source>Hello i18n!&#x3C;/source>
   &#x3C;note priority="1" from="description">An introduction header for this sample&#x3C;/note>
-  &#x3C;note priority="1" from="meaning"><a href="api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
+  &#x3C;note priority="1" from="meaning"><a href="/api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1579,17 +1579,17 @@ would enter the translations using an XLIFF file editor.</p>
 <code>i18n</code> attribute earlier in this guide.</p>
 <p translation-result="">这个 XML 元素表示前面你加过 <code>i18n</code> 属性的那个打招呼用的 <code>&#x3C;h1></code> 标签。</p>
 <p translation-origin="off">Note that the translation unit <code>id=introductionHeader</code> is derived from the
-<a href="guide/i18n#custom-id" title="Set a custom id">custom <code>id</code></a> that you set earlier, but
+<a href="/guide/i18n#custom-id" title="Set a custom id">custom <code>id</code></a> that you set earlier, but
 without the <code>@@</code> prefix required in the source HTML.</p>
-<p translation-result="">注意这个 <code>id=introductionHeader</code> 的翻译单元是来自你以前设置过的<a href="guide/i18n#custom-id" title="Set a custom id">自定义 <code>id</code></a>的。但是并没有源 HTML 所需的 <code>@@</code> 前缀。</p>
+<p translation-result="">注意这个 <code>id=introductionHeader</code> 的翻译单元是来自你以前设置过的<a href="/guide/i18n#custom-id" title="Set a custom id">自定义 <code>id</code></a>的。但是并没有源 HTML 所需的 <code>@@</code> 前缀。</p>
 </blockquote>
 <ol start="2">
 <li>
-<p translation-origin="off">Duplicate the <code>&#x3C;source/></code> tag, rename it <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code>, and then replace its content with the French
+<p translation-origin="off">Duplicate the <code>&#x3C;source/></code> tag, rename it <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code>, and then replace its content with the French
 greeting. If you were working with a more complex translation, you could use the the information
 and context provided by the source, description, and meaning elements to guide your selection of
 the appropriate French translation.</p>
-<p translation-result=""> 复制 <code>&#x3C;source/></code> 标记，把它改名为 <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code>，并把它的内容改为法语版的 “greeting”。
+<p translation-result=""> 复制 <code>&#x3C;source/></code> 标记，把它改名为 <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code>，并把它的内容改为法语版的 “greeting”。
 如果你要做的是更复杂的翻译，可能会使用由源文本、描述信息和含义等提供的信息和上下文来给出更恰当的法语翻译。</p>
 </li>
 </ol>
@@ -1597,9 +1597,9 @@ the appropriate French translation.</p>
 <code-example path="i18n/doc-files/messages.fr.xlf.html" region="translated-hello" title="src/locale/messages.fr.xlf (<trans-unit>, after translation)" linenums="false">
 &#x3C;trans-unit id="introductionHeader" datatype="html">
   &#x3C;source>Hello i18n!&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Bonjour i18n !&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Bonjour i18n !&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
   &#x3C;note priority="1" from="description">An introduction header for this sample&#x3C;/note>
-  &#x3C;note priority="1" from="meaning"><a href="api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
+  &#x3C;note priority="1" from="meaning"><a href="/api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1614,11 +1614,11 @@ the appropriate French translation.</p>
 <code-example path="i18n/doc-files/messages.fr.xlf.html" region="translated-other-nodes" title="src/locale/messages.fr.xlf (<trans-unit>)" linenums="false">
 &#x3C;trans-unit id="ba0cc104d3d69bf669f97b8d96a4c5d8d9559aa3" datatype="html">
   &#x3C;source>I don&#x26;apos;t output any element&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Je n'affiche aucun élément&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Je n'affiche aucun élément&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 &#x3C;trans-unit id="701174153757adf13e7c24a248c8a873ac9f5193" datatype="html">
   &#x3C;source>Angular logo&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Logo d'Angular&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Logo d'Angular&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1627,15 +1627,15 @@ the appropriate French translation.</p>
 <p translation-origin="off">  <strong>The Angular i18n tools generated the ids for these translation units. Don't change them.</strong>
 Each <code>id</code> depends upon the content of the template text and its assigned meaning.
 If you change either the text or the meaning, then the <code>id</code> changes.
-For more information, see the <strong><a href="guide/i18n#custom-id">translation file maintenance discussion</a></strong>.</p>
+For more information, see the <strong><a href="/guide/i18n#custom-id">translation file maintenance discussion</a></strong>.</p>
 <p translation-result="">  <strong>Angular 的 i18n 工具会为这些翻译单元生成一些 id，不要修改它们。</strong>
 每个 <code>id</code> 都是根据模板文本的内容及其含义来生成的。
 无论你修改了文本还是含义，它们的 <code>id</code> 都会改变。
-要了解更多信息，参见 <strong><a href="guide/i18n#custom-id">关于翻译文件可维护性的讨论</a></strong>。</p>
+要了解更多信息，参见 <strong><a href="/guide/i18n#custom-id">关于翻译文件可维护性的讨论</a></strong>。</p>
 </div>
 <a id="translate-plural-select"></a>
-<h2 translation-origin="off" id="translate-plural-and-select-expressions">Translate plural and select expressions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-plural-and-select-expressions"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="translate-plural-and-select-expressions">翻译复数（plural）和选择（select）表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-plural-and-select-expressions"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="translate-plural-and-select-expressions">Translate plural and select expressions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-plural-and-select-expressions"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="translate-plural-and-select-expressions">翻译复数（plural）和选择（select）表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-plural-and-select-expressions"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off"><em>Plural</em> and <em>select</em> ICU expressions are extracted separately, so they require special attention
 when preparing for translation.</p>
 <p translation-result=""><em>复数</em>和<em>选择</em>的 ICU 表达式都是分别提取的，所以在准备翻译时，它们需要格外注意。</p>
@@ -1645,14 +1645,14 @@ must be just below the translation unit for the logo.</p>
 <p translation-result="">你要从原始模板中其它地方识别出来的翻译单元来找到这些表达式之间的联系。
 比如在这个例子中，你知道 <code>select</code> 一定会出现在 logo 的翻译单元的紧下方。</p>
 <a id="translate-plural"></a>
-<h3 translation-origin="off" id="translate-plural">Translate <em>plural</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-plural"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="translate-empluralem">翻译<em>复数</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-empluralem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="translate-plural">Translate <em>plural</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-plural"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="translate-empluralem">翻译<em>复数</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-empluralem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To translate a <code>plural</code>, translate its ICU format match values:</p>
 <p translation-result="">要翻译一个复数，就要翻译它的 ICU 格式中匹配的值：</p>
 <code-example path="i18n/doc-files/messages.fr.xlf.html" region="translated-plural" title="src/locale/messages.fr.xlf (<trans-unit>)" linenums="false">
 &#x3C;trans-unit id="5a134dee893586d02bffc9611056b9cadf9abfad" datatype="html">
   &#x3C;source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {&#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes ago} }&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1660,8 +1660,8 @@ must be just below the translation unit for the logo.</p>
 <a href="http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html">CLDR plural rules</a>.)</p>
 <p translation-result="">你可以添加或删除复数的情况，每种语言都有自己的基数规则。（参见 <a href="http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html">CLDR 复数规则</a>）。</p>
 <a id="translate-select"></a>
-<h3 translation-origin="off" id="translate-select">Translate <em>select</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-select"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="translate-emselectem">翻译<em>选择</em>（select）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-emselectem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="translate-select">Translate <em>select</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-select"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="translate-emselectem">翻译<em>选择</em>（select）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-emselectem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Below is the content of our example <code>select</code> ICU expression in the component template:</p>
 <p translation-result="">下面是组件模板中的 ICU 表达式 <code>select</code> 的例子：</p>
 <code-example path="i18n/src/app/app.component.html" region="i18n-select" title="src/app/app.component.html" linenums="false">
@@ -1683,7 +1683,7 @@ the placeholder, the ICU expression will not be present in your translated app.<
 &#x3C;/trans-unit>
 &#x3C;trans-unit id="f99f34ac9bd4606345071bd813858dec29f3b7d1" datatype="html">
   &#x3C;source>The author is &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>L'auteur est &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>L'auteur est &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1693,7 +1693,7 @@ Translate that as well.</p>
 <code-example path="i18n/doc-files/messages.fr.xlf.html" region="translate-select-2" title="src/locale/messages.fr.xlf (<trans-unit>)" linenums="false">
 &#x3C;trans-unit id="eff74b75ab7364b6fa888f1cbfae901aaaf02295" datatype="html">
   &#x3C;source>{VAR_SELECT, select, male {male} female {female} other {other} }&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1703,17 +1703,17 @@ Translate that as well.</p>
 &#x3C;/trans-unit>
 &#x3C;trans-unit id="f99f34ac9bd4606345071bd813858dec29f3b7d1" datatype="html">
   &#x3C;source>The author is &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>L'auteur est &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>L'auteur est &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 &#x3C;trans-unit id="eff74b75ab7364b6fa888f1cbfae901aaaf02295" datatype="html">
   &#x3C;source>{VAR_SELECT, select, male {male} female {female} other {other} }&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
 <a id="translate-nested"></a>
-<h3 translation-origin="off" id="translate-a-nested-expression">Translate a nested expression<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-a-nested-expression"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="translate-a-nested-expression">翻译嵌套的表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#translate-a-nested-expression"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="translate-a-nested-expression">Translate a nested expression<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-a-nested-expression"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="translate-a-nested-expression">翻译嵌套的表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#translate-a-nested-expression"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A nested expression is similar to the previous examples. As in the previous example, there are
 two translation units. The first one contains the text outside of the nested expression:</p>
 <p translation-result="">嵌套的表达式和前一节没有什么不同。就像上一个例子中那样，这里有<em>两个</em>翻译单元。
@@ -1721,7 +1721,7 @@ two translation units. The first one contains the text outside of the nested exp
 <code-example path="i18n/doc-files/messages.fr.xlf.html" region="translate-nested-1" title="src/locale/messages.fr.xlf (<trans-unit>)" linenums="false">
 &#x3C;trans-unit id="972cb0cf3e442f7b1c00d7dab168ac08d6bdf20c" datatype="html">
   &#x3C;source>Updated: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Mis à jour: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Mis à jour: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1730,7 +1730,7 @@ two translation units. The first one contains the text outside of the nested exp
 <code-example path="i18n/doc-files/messages.fr.xlf.html" region="translate-nested-2" title="src/locale/messages.fr.xlf (<trans-unit>)" linenums="false">
 &#x3C;trans-unit id="7151c2e67748b726f0864fc443861d45df21d706" datatype="html">
   &#x3C;source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {&#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes ago by {VAR_SELECT, select, male {male} female {female} other {other} }} }&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1739,11 +1739,11 @@ two translation units. The first one contains the text outside of the nested exp
 <code-example path="i18n/doc-files/messages.fr.xlf.html" region="translate-nested" title="src/locale/messages.fr.xlf (<trans-unit>)" linenums="false">
 &#x3C;trans-unit id="972cb0cf3e442f7b1c00d7dab168ac08d6bdf20c" datatype="html">
   &#x3C;source>Updated: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Mis à jour: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Mis à jour: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 &#x3C;trans-unit id="7151c2e67748b726f0864fc443861d45df21d706" datatype="html">
   &#x3C;source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {&#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes ago by {VAR_SELECT, select, male {male} female {female} other {other} }} }&#x3C;/source>
-  &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+  &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
 &#x3C;/trans-unit>
 
 </code-example>
@@ -1751,13 +1751,13 @@ two translation units. The first one contains the text outside of the nested exp
 into the app.</p>
 <p translation-result="">整个模板的翻译就完成了。下一节会讲如何翻译结果加载到应用程序中。</p>
 <a id="app-pre-translation"></a>
-<h3 translation-origin="off" id="the-app-and-its-translation-file">The app and its translation file<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#the-app-and-its-translation-file"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="the-app-and-its-translation-file">应用及其翻译文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#the-app-and-its-translation-file"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="the-app-and-its-translation-file">The app and its translation file<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#the-app-and-its-translation-file"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="the-app-and-its-translation-file">应用及其翻译文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#the-app-and-its-translation-file"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The sample app and its translation file are now as follows:</p>
 <p translation-result="">下面是例子应用及其翻译文件：</p>
 <code-tabs>
   <code-pane title="src/app/app.component.html" path="i18n/src/app/app.component.html">
-&#x3C;h1 i18n="<a href="api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome|An introduction header for this sample@@introductionHeader">
+&#x3C;h1 i18n="<a href="/api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome|An introduction header for this sample@@introductionHeader">
   Hello i18n!
 &#x3C;/h1>
 
@@ -1813,9 +1813,9 @@ import { <a href="/api/platform-browser/BrowserModule" class="code-anchor">Brows
 import { AppComponent } from './app.component';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> ],
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
 })
 export class AppModule { }
 
@@ -1838,48 +1838,48 @@ if (environment.production) {
 </code-pane>
   <code-pane title="src/locale/messages.fr.xlf" path="i18n/doc-files/messages.fr.xlf.html">
 &#x3C;?xml version="1.0" encoding="UTF-8" ?>
-&#x3C;xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:<a href="api/platform-server/PlatformConfig#document" class="code-anchor">document</a>:1.2">
+&#x3C;xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:<a href="/api/platform-server/PlatformConfig#document" class="code-anchor">document</a>:1.2">
   &#x3C;file source-language="en" datatype="plaintext" original="ng2.template">
     &#x3C;body>
       &#x3C;trans-unit id="introductionHeader" datatype="html">
         &#x3C;source>Hello i18n!&#x3C;/source>
         &#x3C;note priority="1" from="description">An introduction header for this sample&#x3C;/note>
-        &#x3C;note priority="1" from="meaning"><a href="api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
+        &#x3C;note priority="1" from="meaning"><a href="/api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="introductionHeader" datatype="html">
         &#x3C;source>Hello i18n!&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Bonjour i18n !&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Bonjour i18n !&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
         &#x3C;note priority="1" from="description">An introduction header for this sample&#x3C;/note>
-        &#x3C;note priority="1" from="meaning"><a href="api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
+        &#x3C;note priority="1" from="meaning"><a href="/api/common/http/HttpEventType#User" class="code-anchor">User</a> welcome&#x3C;/note>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="ba0cc104d3d69bf669f97b8d96a4c5d8d9559aa3" datatype="html">
         &#x3C;source>I don&#x26;apos;t output any element&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Je n'affiche aucun élément&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Je n'affiche aucun élément&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="701174153757adf13e7c24a248c8a873ac9f5193" datatype="html">
         &#x3C;source>Angular logo&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Logo d'Angular&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Logo d'Angular&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="5a134dee893586d02bffc9611056b9cadf9abfad" datatype="html">
         &#x3C;source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {&#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes ago} }&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
       &#x3C;/trans-unit>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="f99f34ac9bd4606345071bd813858dec29f3b7d1" datatype="html">
         &#x3C;source>The author is &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>L'auteur est &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>L'auteur est &#x3C;x id="ICU" equiv-text="{gender, select, male {...} female {...} other {...}}"/>&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="eff74b75ab7364b6fa888f1cbfae901aaaf02295" datatype="html">
         &#x3C;source>{VAR_SELECT, select, male {male} female {female} other {other} }&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="972cb0cf3e442f7b1c00d7dab168ac08d6bdf20c" datatype="html">
         &#x3C;source>Updated: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Mis à jour: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>Mis à jour: &#x3C;x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/>&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
       &#x3C;/trans-unit>
       &#x3C;trans-unit id="7151c2e67748b726f0864fc443861d45df21d706" datatype="html">
         &#x3C;source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {&#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes ago by {VAR_SELECT, select, male {male} female {female} other {other} }} }&#x3C;/source>
-        &#x3C;<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }&#x3C;/<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
+        &#x3C;<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> une minute} other {il y <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> &#x3C;x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }&#x3C;/<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>>
       &#x3C;/trans-unit>
     &#x3C;/body>
   &#x3C;/file>
@@ -1890,8 +1890,8 @@ if (environment.production) {
 </code-pane>
 </code-tabs>
 <a id="merge"></a>
-<h2 translation-origin="off" id="merge-the-completed-translation-file-into-the-app">Merge the completed translation file into the app<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#merge-the-completed-translation-file-into-the-app"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="merge-the-completed-translation-file-into-the-app">合并已经翻译的文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#merge-the-completed-translation-file-into-the-app"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="merge-the-completed-translation-file-into-the-app">Merge the completed translation file into the app<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#merge-the-completed-translation-file-into-the-app"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="merge-the-completed-translation-file-into-the-app">合并已经翻译的文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#merge-the-completed-translation-file-into-the-app"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">To merge the translated text into component templates, compile the app with the completed
 translation file. Provide the Angular compiler with three translation-specific pieces of information:</p>
 <p translation-result="">要把已经翻译的文件合并到组件模板，就要用翻译过的文件编译应用。
@@ -1918,17 +1918,17 @@ the JIT compiler or the AOT compiler.</p>
 <p translation-result="">你如何提供这些信息取决于你使用的是JIT（即时）编译器还是AOT（预先）编译器。</p>
 <ul>
 <li>
-<p translation-origin="off">With <a href="guide/i18n#merge-aot">AOT</a>, you pass the information as a configuration</p>
-<p translation-result=""> 使用<a href="guide/i18n#merge-aot">AOT</a>时，用配置项传入这些信息。</p>
+<p translation-origin="off">With <a href="/guide/i18n#merge-aot">AOT</a>, you pass the information as a configuration</p>
+<p translation-result=""> 使用<a href="/guide/i18n#merge-aot">AOT</a>时，用配置项传入这些信息。</p>
 </li>
 <li>
-<p translation-origin="off">With <a href="guide/i18n#merge-jit">JIT</a>, you provide the information at bootstrap time.</p>
-<p translation-result=""> 使用<a href="guide/i18n#merge-jit">JIT</a>时，在引导时提供。</p>
+<p translation-origin="off">With <a href="/guide/i18n#merge-jit">JIT</a>, you provide the information at bootstrap time.</p>
+<p translation-result=""> 使用<a href="/guide/i18n#merge-jit">JIT</a>时，在引导时提供。</p>
 </li>
 </ul>
 <a id="merge-aot"></a>
-<h3 translation-origin="off" id="merge-with-the-aot-compiler">Merge with the AOT compiler<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#merge-with-the-aot-compiler"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="merge-with-the-aot-compiler">使用 AOT 编译器合并<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#merge-with-the-aot-compiler"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="merge-with-the-aot-compiler">Merge with the AOT compiler<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#merge-with-the-aot-compiler"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="merge-with-the-aot-compiler">使用 AOT 编译器合并<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#merge-with-the-aot-compiler"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The AOT (<em>Ahead-of-Time</em>) compiler is part of a build process that produces a small, fast,
 ready-to-run application package.</p>
 <p translation-result="">AOT（<em>预先</em>）编译器是构建过程的一部分，它可以生成又小又快，直接可用的应用包。</p>
@@ -1960,7 +1960,7 @@ detection or url parameters.</p>
     "fr": {
       "aot": true,
       "outputPath": "dist/my-project-fr/",
-      "i18nFile": "src/<a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf",
+      "i18nFile": "src/<a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf",
       "i18nFormat": "xlf",
       "i18nLocale": "fr",
       ...
@@ -2007,7 +2007,7 @@ your <code>angular.json</code>.</p>
     "vendorChunk": false,
     "buildOptimizer": true,
     "outputPath": "dist/my-project-fr/",
-    "i18nFile": "src/<a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf",
+    "i18nFile": "src/<a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf",
     "i18nFormat": "xlf",
     "i18nLocale": "fr",
     "i18nMissingTranslation": "error"
@@ -2017,11 +2017,11 @@ your <code>angular.json</code>.</p>
 </code-example>
 <p translation-origin="off">The same configuration options can also be provided through the CLI with your existing <code>production</code> configuration.</p>
 <code-example language="sh" class="code-shell">
-  ng build --prod --i18n-file src/<a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf --i18n-format xlf --i18n-locale fr
+  ng build --prod --i18n-file src/<a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf --i18n-format xlf --i18n-locale fr
 </code-example>
 <a id="merge-jit"></a>
-<h3 translation-origin="off" id="merge-with-the-jit-compiler">Merge with the JIT compiler<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#merge-with-the-jit-compiler"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="merge-with-the-jit-compiler">用 JIT 编译器合并<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#merge-with-the-jit-compiler"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="merge-with-the-jit-compiler">Merge with the JIT compiler<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#merge-with-the-jit-compiler"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="merge-with-the-jit-compiler">用 JIT 编译器合并<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#merge-with-the-jit-compiler"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The JIT compiler compiles the app in the browser as the app loads.
 Translation with the JIT compiler is a dynamic process of:</p>
 <p translation-result="">JIT（即时）编译器在应用程序加载时，在浏览器中编译应用。
@@ -2074,7 +2074,7 @@ if (environment.production) {
 // use the require method provided by webpack
 declare const require;
 // we use the webpack raw-loader to return the content as <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> string
-const translations = require(`raw-loader!./<a href="api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf`);
+const translations = require(`raw-loader!./<a href="/api/common/NgLocaleLocalization#locale" class="code-anchor">locale</a>/messages.fr.xlf`);
 
 <a href="/api/platform-browser-dynamic/platformBrowserDynamic" class="code-anchor">platformBrowserDynamic</a>().bootstrapModule(AppModule, {
   providers: [
@@ -2094,22 +2094,22 @@ import { <a href="/api/platform-browser/BrowserModule" class="code-anchor">Brows
 import { AppComponent } from '../src/app/app.component';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> ],
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
   providers: [ { provide: <a href="/api/core/LOCALE_ID" class="code-anchor">LOCALE_ID</a>, useValue: 'fr' } ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
 })
 export class AppModule { }
 
 
 </code-example>
 <a id="missing-translation"></a>
-<h3 translation-origin="off" id="report-missing-translations">Report missing translations<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#report-missing-translations"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="report-missing-translations">汇报缺失的翻译<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/i18n#report-missing-translations"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="report-missing-translations">Report missing translations<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#report-missing-translations"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="report-missing-translations">汇报缺失的翻译<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/i18n#report-missing-translations"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">By default, when a translation is missing, the build succeeds but generates a warning such as
-<code>Missing translation for <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> "foo"</code>. You can configure the level of warning that is generated by
+<code>Missing translation for <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> "foo"</code>. You can configure the level of warning that is generated by
 the Angular compiler:</p>
-<p translation-result="">默认情况下，如果缺少了某个翻译文件，构建工具会成功但给出警告（如<code>Missing translation for <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> "foo"</code>）。你可以配置 Angular 编译器生成的警告级别：</p>
+<p translation-result="">默认情况下，如果缺少了某个翻译文件，构建工具会成功但给出警告（如<code>Missing translation for <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> "foo"</code>）。你可以配置 Angular 编译器生成的警告级别：</p>
 <ul>
 <li>
 <p translation-origin="off">Error: throw an error. If you are using AOT compilation, the build will fail. If you are using JIT
@@ -2148,7 +2148,7 @@ import { AppModule } from './app/app.module';
 // ...
 
 <a href="/api/platform-browser-dynamic/platformBrowserDynamic" class="code-anchor">platformBrowserDynamic</a>().bootstrapModule(AppModule, {
-  missingTranslation: <a href="api/core/MissingTranslationStrategy#Error" class="code-anchor">MissingTranslationStrategy.Error</a>,
+  missingTranslation: <a href="/api/core/MissingTranslationStrategy#Error" class="code-anchor">MissingTranslationStrategy.Error</a>,
   providers: [
     // ...
   ]

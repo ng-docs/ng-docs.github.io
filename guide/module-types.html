@@ -808,10 +808,10 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="types-of-feature-modules">Types of Feature Modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/module-types#types-of-feature-modules"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="types-of-feature-modules">特性模块的分类<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/module-types#types-of-feature-modules"><i class="material-icons">link</i></a></h1>
-<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/module-types#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-5">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/module-types#prerequisites-5"><i class="material-icons">link</i></a></h4>
+<h1 translation-origin="off" id="types-of-feature-modules">Types of Feature Modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/module-types#types-of-feature-modules"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="types-of-feature-modules">特性模块的分类<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/module-types#types-of-feature-modules"><i class="material-icons">link</i></a></h1>
+<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/module-types#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-5">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/module-types#prerequisites-5"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A basic understanding of the following concepts:</p>
 <p translation-result="">对下列概念有基本的理解：</p>
 <ul>
@@ -879,7 +879,7 @@ typical characteristics, in real world apps, you may see hybrids.</p>
 <p translation-origin="off">     They typically have a top component that acts as the feature root and private, supporting sub-components descend from it.</p>
 <p translation-result="">     它们通常会有一个顶级组件来充当该特性的根组件，并且通常是私有的。用来支持它的各级子组件。</p>
 <p translation-origin="off">     Domain feature modules consist mostly of declarations. Only the top component is exported.</p>
-<p translation-result="">     领域特性模块大部分由 <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 组成，只有顶级组件会被导出。</p>
+<p translation-result="">     领域特性模块大部分由 <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 组成，只有顶级组件会被导出。</p>
 <p translation-origin="off">     Domain feature modules rarely have providers. When they do, the lifetime of the provided services should be the same as the lifetime of the module.</p>
 <p translation-result="">     领域特性模块很少会有服务提供商。如果有，那么这些服务的生命周期必须和该模块的生命周期完全相同。</p>
 <p translation-origin="off">     Domain feature modules are typically imported exactly once by a larger feature module.</p>
@@ -902,7 +902,7 @@ typical characteristics, in real world apps, you may see hybrids.</p>
 <p translation-result="">     带路由的特性模块不会导出任何东西，因为它们的组件永远不会出现在外部组件的模板中。</p>
 <p translation-origin="off">     A lazy-loaded routed feature module should not be imported by any module. Doing so would trigger an eager load, defeating the purpose of lazy loading.That means you won’t see them mentioned among the <code>AppModule</code> imports. An eager loaded routed feature module must be imported by another module so that the compiler learns about its components.</p>
 <p translation-result="">     惰性加载的路由特性模块不应该被任何模块导入。如果那样做就会导致它被立即加载，破坏了惰性加载的设计用途。
-也就是说你应该永远不会看到它们在 <code>AppModule</code> 的 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 中被引用。
+也就是说你应该永远不会看到它们在 <code>AppModule</code> 的 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 中被引用。
 立即加载的路由特性模块必须被其它模块导入，以便编译器能了解它所包含的组件。</p>
 <p translation-origin="off">     Routed feature modules rarely have providers for reasons explained in <a href="//guide/lazy-loading-ngmodules">Lazy Loading Feature Modules</a>. When they do, the lifetime of the provided services should be the same as the lifetime of the module. Don't provide application-wide singleton services in a routed feature module or in a module that the routed module imports.</p>
 <p translation-result="">     路由特性模块很少会有服务提供商，原因参见<a href="//guide/lazy-loading-ngmodules">惰性加载的特性模块</a>中的解释。如果那样做，那么它所提供的服务的生命周期必须与该模块的生命周期完全相同。不要在路由特性模块或被路由特性模块所导入的模块中提供全应用级的单例服务。</p>
@@ -925,7 +925,7 @@ typical characteristics, in real world apps, you may see hybrids.</p>
      </li>
      <li>
 <p translation-origin="off">         Adds router configuration to the module's imports.</p>
-<p translation-result="">         把路由配置添加到该模块的 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 中。</p>
+<p translation-result="">         把路由配置添加到该模块的 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 中。</p>
      </li>
      <li>
 <p translation-origin="off">         Adds guard and resolver service providers to the module's providers.</p>
@@ -934,7 +934,7 @@ typical characteristics, in real world apps, you may see hybrids.</p>
      <li>
 <p translation-origin="off">         The name of the routing module should parallel the name of its companion module, using the suffix "Routing". For example, <code>FooModule</code> in <code>foo.module.ts</code> has a routing module named <code>FooRoutingModule</code> in <code>foo-routing.module.ts</code>. If the companion module is the root <code>AppModule</code>, the <code>AppRoutingModule</code> adds router configuration to its imports with <code>RouterModule.forRoot(routes)</code>. All other routing modules are children that import <code>RouterModule.forChild(routes)</code>.</p>
 <p translation-result="">         路由模块应该与其配套模块同名，但是加上“Routing”后缀。比如，<code>foo.module.ts</code> 中的 <code>FooModule</code> 就有一个位于 <code>foo-routing.module.ts</code> 文件中的 <code>FooRoutingModule</code> 路由模块。
-如果其配套模块是根模块 <code>AppModule</code>，<code>AppRoutingModule</code> 就要使用 <code>RouterModule.forRoot(routes)</code> 来把路由器配置添加到它的 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 中。
+如果其配套模块是根模块 <code>AppModule</code>，<code>AppRoutingModule</code> 就要使用 <code>RouterModule.forRoot(routes)</code> 来把路由器配置添加到它的 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 中。
 所有其它路由模块都是子模块，要使用 <code>RouterModule.forChild(routes)</code>。</p>
      </li>
      <li>
@@ -989,7 +989,7 @@ typical characteristics, in real world apps, you may see hybrids.</p>
    </th>
    <th style="vertical-align: top">
 <p translation-origin="off">     Declarations</p>
-<p translation-result="">     声明 <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code></p>
+<p translation-result="">     声明 <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code></p>
    </th>
    <th style="vertical-align: top">
 <p translation-origin="off">     Providers</p>
@@ -1114,8 +1114,8 @@ typical characteristics, in real world apps, you may see hybrids.</p>
  </tr>
 </tbody></table>
 <hr>
-<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/module-types#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="more-on-ngmodules-2">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/module-types#more-on-ngmodules-2"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/module-types#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="more-on-ngmodules-2">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/module-types#more-on-ngmodules-2"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You may also be interested in the following:</p>
 <p translation-result="">你可能还对下列内容感兴趣：</p>
 <ul>

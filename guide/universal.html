@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="angular-universal-server-side-rendering">Angular Universal: server-side rendering<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#angular-universal-server-side-rendering"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="angular-universal-server-side-rendering">Angular Universal：服务端渲染<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#angular-universal-server-side-rendering"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="angular-universal-server-side-rendering">Angular Universal: server-side rendering<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#angular-universal-server-side-rendering"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="angular-universal-server-side-rendering">Angular Universal：服务端渲染<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#angular-universal-server-side-rendering"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">This guide describes <strong>Angular Universal</strong>, a technology that runs your Angular application on the server.</p>
 <p translation-result="">本指南讲的是<strong>Angular Universal（统一平台）</strong>，一项在服务端运行 Angular 应用的技术。</p>
 <p translation-origin="off">A normal Angular application executes in the <em>browser</em>, rendering pages in the DOM in response to user actions.</p>
@@ -826,13 +826,13 @@ Meanwhile, the browser downloads the full client version and switches to it auto
 <p translation-result="">本指南讲的是一个 Universal 的范例应用，它启动得和在服务端渲染好的页面一样快。
 稍后，浏览器就会下载完整的客户端版本，并在代码加载完之后自动切换过去。</p>
 <div class="alert is-helpful">
-<p translation-origin="off"><a href="generated/zips/universal/universal.zip">Download the finished sample code</a>,
+<p translation-origin="off"><a href="/generated/zips/universal/universal.zip">Download the finished sample code</a>,
 which runs in a <a href="https://expressjs.com/">Node.js® Express</a> server.</p>
-<p translation-result="">你可以<a href="generated/zips/universal/universal.zip">下载最终的范例代码</a>，并将其运行在一个 <a href="https://expressjs.com/">Node.js® Express</a> 服务器中。</p>
+<p translation-result="">你可以<a href="/generated/zips/universal/universal.zip">下载最终的范例代码</a>，并将其运行在一个 <a href="https://expressjs.com/">Node.js® Express</a> 服务器中。</p>
 </div>
 <a id="why-do-it"></a>
-<h3 translation-origin="off" id="why-universal">Why Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#why-universal"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="why-universal">为何需要 Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#why-universal"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="why-universal">Why Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#why-universal"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="why-universal">为何需要 Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#why-universal"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">There are three main reasons to create a Universal version of your app.</p>
 <p translation-result="">有三个主要的理由来为你的应用创建一个 Universal 版本。</p>
 <ol>
@@ -851,8 +851,8 @@ which runs in a <a href="https://expressjs.com/">Node.js® Express</a> server.</
 </ol>
 <a id="seo"></a>
 <a id="web-crawlers"></a>
-<h4 translation-origin="off" id="facilitate-web-crawlers">Facilitate web crawlers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#facilitate-web-crawlers"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="facilitate-web-crawlers">帮助网络爬虫<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#facilitate-web-crawlers"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="facilitate-web-crawlers">Facilitate web crawlers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#facilitate-web-crawlers"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="facilitate-web-crawlers">帮助网络爬虫<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#facilitate-web-crawlers"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Google, Bing, Facebook, Twitter and other social media sites rely on web crawlers to index your application content and make that content searchable on the web.</p>
 <p translation-result="">Google、Bing、Facebook、Twitter 和其它社交媒体网站都依赖网络爬虫去索引你的应用内容，并且让它的内容可以通过网络搜索到。</p>
 <p translation-origin="off">These web crawlers may be unable to navigate and index your highly-interactive, Angular application as a human user could do.</p>
@@ -865,8 +865,8 @@ It also makes a site preview available since each URL returns a fully-rendered p
 <a href="https://static.googleusercontent.com/media/www.google.com/en//webmasters/docs/search-engine-optimization-starter-guide.pdf">Search Engine Optimization (SEO)</a>.</p>
 <p translation-result="">启用对网络爬虫的支持通常也称作<a href="https://static.googleusercontent.com/media/www.google.com/en//webmasters/docs/search-engine-optimization-starter-guide.pdf">搜索引擎优化 (SEO)</a>。</p>
 <a id="no-javascript"></a>
-<h4 translation-origin="off" id="performance-on-mobile-and-low-performance-devices">Performance on mobile and low performance devices<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#performance-on-mobile-and-low-performance-devices"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="performance-on-mobile-and-low-performance-devices">提升手机和低功耗设备上的性能<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#performance-on-mobile-and-low-performance-devices"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="performance-on-mobile-and-low-performance-devices">Performance on mobile and low performance devices<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#performance-on-mobile-and-low-performance-devices"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="performance-on-mobile-and-low-performance-devices">提升手机和低功耗设备上的性能<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#performance-on-mobile-and-low-performance-devices"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Some devices don't support JavaScript or execute JavaScript so poorly that the user experience is unacceptable.
 For these cases, you may require a server-rendered, no-JavaScript version of the app.
 This version, however limited, may be the only practical alternative for
@@ -875,8 +875,8 @@ people who otherwise would not be able to use the app at all.</p>
 对于这些情况，你可能会需要该应用的服务端渲染的、无 JavaScript 的版本。
 虽然有一些限制，不过这个版本可能是那些完全没办法使用该应用的人的唯一选择。</p>
 <a id="startup-performance"></a>
-<h4 translation-origin="off" id="show-the-first-page-quickly">Show the first page quickly<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#show-the-first-page-quickly"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="show-the-first-page-quickly">快速显示第一页<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#show-the-first-page-quickly"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="show-the-first-page-quickly">Show the first page quickly<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#show-the-first-page-quickly"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="show-the-first-page-quickly">快速显示第一页<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#show-the-first-page-quickly"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Displaying the first page quickly can be critical for user engagement.</p>
 <p translation-result="">快速显示第一页对于吸引用户是至关重要的。</p>
 <p translation-origin="off"><a href="https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/">53% of mobile site visits are abandoned</a> if pages take longer than 3 seconds to load.
@@ -885,20 +885,20 @@ Your app may have to launch faster to engage these users before they decide to d
 你的应用要启动得更快一点，以便在用户决定做别的事情之前吸引他们的注意力。</p>
 <p translation-origin="off">With Angular Universal, you can generate landing pages for the app that look like the complete app.
 The pages are pure HTML, and can display even if JavaScript is disabled.
-The pages do not handle browser events, but they <em>do</em> support navigation through the site using <a href="guide/router.html#router-link">routerLink</a>.</p>
+The pages do not handle browser events, but they <em>do</em> support navigation through the site using <a href="/guide/router.html#router-link">routerLink</a>.</p>
 <p translation-result="">使用 Angular Universal，你可以为应用生成“着陆页”，它们看起来就和完整的应用一样。
 这些着陆页是纯 HTML，并且即使 JavaScript 被禁用了也能显示。
-这些页面不会处理浏览器事件，不过它们<em>可以</em>用 <a href="guide/router.html#router-link">routerLink</a> 在这个网站中导航。</p>
+这些页面不会处理浏览器事件，不过它们<em>可以</em>用 <a href="/guide/router.html#router-link">routerLink</a> 在这个网站中导航。</p>
 <p translation-origin="off">In practice, you'll serve a static version of the landing page to hold the user's attention.
-At the same time, you'll load the full Angular app behind it in the manner <a href="guide/universal#transition">explained below</a>.
+At the same time, you'll load the full Angular app behind it in the manner <a href="/guide/universal#transition">explained below</a>.
 The user perceives near-instant performance from the landing page
 and gets the full interactive experience after the full app loads.</p>
 <p translation-result="">在实践中，你可能要使用一个着陆页的静态版本来保持用户的注意力。
-同时，你也会在幕后加载完整的 Angular 应用，就像<a href="guide/universal#transition">稍后解释的那样</a>。
+同时，你也会在幕后加载完整的 Angular 应用，就像<a href="/guide/universal#transition">稍后解释的那样</a>。
 用户会觉得着陆页几乎是立即出现的，而当完整的应用加载完之后，又可以获得完整的交互体验。</p>
 <a id="how-does-it-work"></a>
-<h3 translation-origin="off" id="how-it-works">How it works<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#how-it-works"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="how-it-works-1">工作原理<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#how-it-works-1"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="how-it-works">How it works<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#how-it-works"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="how-it-works-1">工作原理<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#how-it-works-1"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To make a Universal app, you install the <code>platform-server</code> package.
 The <code>platform-server</code> package has server implementations of the DOM, <code>XMLHttpRequest</code>, and other low-level features that do not rely on a browser.</p>
 <p translation-result="">要制作一个 Universal 应用，就要安装 <code>platform-server</code> 包。
@@ -921,13 +921,13 @@ Each request results in the appropriate view for the requested route.</p>
 <p translation-result=""><code><a href="/api/platform-server/renderModuleFactory" class="code-anchor">renderModuleFactory</a></code> 在模板中的 <code>&#x3C;app></code> 标记中渲染出哪个视图，并为客户端创建一个完成的 HTML 页面。</p>
 <p translation-origin="off">Finally, the server returns the rendered page to the client.</p>
 <p translation-result="">最后，服务器就会把渲染好的页面返回给客户端。</p>
-<h3 translation-origin="off" id="working-around-the-browser-apis">Working around the browser APIs<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#working-around-the-browser-apis"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="working-around-the-browser-apis">使用浏览器 API<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#working-around-the-browser-apis"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="working-around-the-browser-apis">Working around the browser APIs<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#working-around-the-browser-apis"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="working-around-the-browser-apis">使用浏览器 API<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#working-around-the-browser-apis"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Because a Universal <code>platform-server</code> app doesn't execute in the browser, you may have to work around some of the browser APIs and capabilities that are missing on the server.</p>
 <p translation-result="">由于 Universal 的 <code>platform-server</code> 应用并没有运行在浏览器中，因此那些与浏览器 API 有关的工作都没法在这个服务器中使用。</p>
-<p translation-origin="off">You won't be able reference browser-only native objects such as <code>window</code>, <code><a href="api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code>, <code>navigator</code> or <code><a href="api/core/ComponentRef#location" class="code-anchor">location</a></code>.
+<p translation-origin="off">You won't be able reference browser-only native objects such as <code>window</code>, <code><a href="/api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code>, <code>navigator</code> or <code><a href="/api/core/ComponentRef#location" class="code-anchor">location</a></code>.
 If you don't need them on the server-rendered page, side-step them with conditional logic.</p>
-<p translation-result="">你不能引用浏览器独有的原生对象，比如 <code>window</code>、<code><a href="api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code>、<code>navigator</code> 或 <code><a href="api/core/ComponentRef#location" class="code-anchor">location</a></code>。
+<p translation-result="">你不能引用浏览器独有的原生对象，比如 <code>window</code>、<code><a href="/api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code>、<code>navigator</code> 或 <code><a href="/api/core/ComponentRef#location" class="code-anchor">location</a></code>。
 如果你在服务端渲染的页面中不需要它们，就可以使用条件逻辑跳过它们。</p>
 <p translation-origin="off">Alternatively, look for an injectable Angular abstraction over the object you need such as <code><a href="/api/common/Location" class="code-anchor">Location</a></code> or <code>Document</code>;
 it may substitute adequately for the specific API that you're calling.
@@ -941,11 +941,11 @@ This is a good argument for making the app <a href="/guide/router">routeable</a>
 Universal 应用应该仅仅根据客户端过来的请求决定要渲染的内容。
 把该应用做成<a href="/guide/router">可路由的</a>，就是一种好方案。</p>
 <p translation-origin="off">Because the user of a server-rendered page can't do much more than click links,
-you should <a href="guide/universal#transition">swap in the real client app</a> as quickly as possible for a proper interactive experience.</p>
-<p translation-result="">由于服务端渲染页面的用户只能点击链接，所以你应该尽快让它<a href="guide/universal#transition">切换到真正的客户端应用</a>，以提供正常的交互体验。</p>
+you should <a href="/guide/universal#transition">swap in the real client app</a> as quickly as possible for a proper interactive experience.</p>
+<p translation-result="">由于服务端渲染页面的用户只能点击链接，所以你应该尽快让它<a href="/guide/universal#transition">切换到真正的客户端应用</a>，以提供正常的交互体验。</p>
 <a id="the-example"></a>
-<h2 translation-origin="off" id="the-example">The example<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#the-example"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="the-example">例子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#the-example"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="the-example">The example<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#the-example"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="the-example">例子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#the-example"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <em>Tour of Heroes</em> tutorial is the foundation for the Universal sample described in this guide.</p>
 <p translation-result="">《英雄指南》教程是本章所讲的 Universal 范例的基础。</p>
 <p translation-origin="off">The core application files are mostly untouched, with a few exceptions described below.
@@ -1004,13 +1004,13 @@ This guide covers them in the sections below.</p>
 <p translation-result="">那些标有 <code>*</code> 的文件都是新的，而不是来自原来的范例应用。
 本文稍后的部分会涉及它们。</p>
 <a id="preparation"></a>
-<h2 translation-origin="off" id="preparation">Preparation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#preparation"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="preparation">准备工作<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#preparation"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off">Download the <a href="generated/zips/toh-pt6/toh-pt6.zip">Tour of Heroes</a> project and install the dependencies from it.</p>
-<p translation-result="">下载<a href="generated/zips/toh-pt6/toh-pt6.zip">《英雄指南》</a>项目，并为它安装依赖。</p>
+<h2 translation-origin="off" id="preparation">Preparation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#preparation"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="preparation">准备工作<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#preparation"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off">Download the <a href="/generated/zips/toh-pt6/toh-pt6.zip">Tour of Heroes</a> project and install the dependencies from it.</p>
+<p translation-result="">下载<a href="/generated/zips/toh-pt6/toh-pt6.zip">《英雄指南》</a>项目，并为它安装依赖。</p>
 <a id="install-the-tools"></a>
-<h3 translation-origin="off" id="install-the-tools">Install the tools<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#install-the-tools"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="install-the-tools">安装工具<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#install-the-tools"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="install-the-tools">Install the tools<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#install-the-tools"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="install-the-tools">安装工具<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#install-the-tools"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To get started, install these packages.</p>
 <p translation-result="">在开始之前，要安装下列包。</p>
 <ul>
@@ -1037,8 +1037,8 @@ This guide covers them in the sections below.</p>
 npm install --save @angular/platform-server @nguniversal/module-map-ngfactory-loader ts-loader @nguniversal/express-engine
 </code-example>
 <a id="transition"></a>
-<h2 translation-origin="off" id="modify-the-client-app">Modify the client app<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#modify-the-client-app"><i class="material-icons">link</i></a></h2>
-<h3 translation-result="" id="修改客户端应用">修改客户端应用<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#修改客户端应用"><i class="material-icons">link</i></a></h3>
+<h2 translation-origin="off" id="modify-the-client-app">Modify the client app<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#modify-the-client-app"><i class="material-icons">link</i></a></h2>
+<h3 translation-result="" id="修改客户端应用">修改客户端应用<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#修改客户端应用"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A Universal app can act as a dynamic, content-rich "splash screen" that engages the user.
 It gives the appearance of a near-instant application.</p>
 <p translation-result="">Universal 应用可以扮演一个动态的、内容丰富的 “封面页”，以吸引用户。
@@ -1050,8 +1050,8 @@ Once loaded, Angular transitions from the static server-rendered page to the dyn
 <p translation-origin="off">You must make a few changes to your application code to support both server-side rendering and the transition to the client app.</p>
 <p translation-result="">你要对应用代码做少量修改，以支持服务端渲染，并无缝转换成客户端应用。</p>
 <a id="root-app-module"></a>
-<h3 translation-origin="off" id="the-root-appmodule">The root <code>AppModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#the-root-appmodule"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="the-root-codeappmodulecode">根模块 <code>AppModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#the-root-codeappmodulecode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="the-root-appmodule">The root <code>AppModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#the-root-appmodule"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="the-root-codeappmodulecode">根模块 <code>AppModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#the-root-codeappmodulecode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Open file <code>src/app/app.module.ts</code> and find the <code><a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a></code> import in the <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> metadata.
 Replace that import with this one:</p>
 <p translation-result="">打开 <code>src/app/app.module.ts</code> 文件，并在 <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 的元数据中找到对 <code><a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a></code> 的导入。
@@ -1072,15 +1072,15 @@ import { <a href="/api/common/isPlatformBrowser" class="code-anchor">isPlatformB
   constructor(
     @<a href="/api/core/Inject" class="code-anchor">Inject</a>(<a href="/api/core/PLATFORM_ID" class="code-anchor">PLATFORM_ID</a>) private platformId: Object,
     @<a href="/api/core/Inject" class="code-anchor">Inject</a>(<a href="/api/core/APP_ID" class="code-anchor">APP_ID</a>) private appId: string) {
-    const <a href="api/core/testing/TestBed#platform" class="code-anchor">platform</a> = <a href="/api/common/isPlatformBrowser" class="code-anchor">isPlatformBrowser</a>(platformId) ?
+    const <a href="/api/core/testing/TestBed#platform" class="code-anchor">platform</a> = <a href="/api/common/isPlatformBrowser" class="code-anchor">isPlatformBrowser</a>(platformId) ?
       'in the <a href="/api/animations/browser" class="code-anchor">browser</a>' : 'on the server';
-    console.log(`Running ${<a href="api/core/testing/TestBed#platform" class="code-anchor">platform</a>} with appId=${appId}`);
+    console.log(`Running ${<a href="/api/core/testing/TestBed#platform" class="code-anchor">platform</a>} with appId=${appId}`);
   }
 
 </code-example>
 <a id="cli-output"></a>
-<h3 translation-origin="off" id="build-destination">Build Destination<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#build-destination"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="build-destination">构建目标<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#build-destination"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="build-destination">Build Destination<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#build-destination"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="build-destination">构建目标<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#build-destination"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A Universal app is distributed in two parts: the server-side code that serves up the initial application, and the client-side code that's loaded in dynamically.</p>
 <p translation-result="">Universal 应用分为两个部分：提供初始应用的服务端代码，以及动态加载的客户端代码。</p>
 <p translation-origin="off">The Angular CLI outputs the client-side code in the <code>dist</code> directory by default, so you modify the <code>outputPath</code> for the <strong>build</strong> target in the <code>angular.json</code> to keep the client-side build outputs separate from the server-side code. The client-side build output will be served by the Express server.</p>
@@ -1098,8 +1098,8 @@ import { <a href="/api/common/isPlatformBrowser" class="code-anchor">isPlatformB
 ...
 </code-example>
 <a id="http-urls"></a>
-<h3 translation-origin="off" id="absolute-http-urls">Absolute HTTP URLs<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#absolute-http-urls"><i class="material-icons">link</i></a></h3>
-<h4 translation-result="" id="在-http-中使用绝对地址">在 HTTP 中使用绝对地址<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#在-http-中使用绝对地址"><i class="material-icons">link</i></a></h4>
+<h3 translation-origin="off" id="absolute-http-urls">Absolute HTTP URLs<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#absolute-http-urls"><i class="material-icons">link</i></a></h3>
+<h4 translation-result="" id="在-http-中使用绝对地址">在 HTTP 中使用绝对地址<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#在-http-中使用绝对地址"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The tutorial's <code>HeroService</code> and <code>HeroSearchService</code> delegate to the Angular <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> module to fetch application data.
 These services send requests to <em>relative</em> URLs such as <code>api/heroes</code>.</p>
 <p translation-result="">教程中的 <code>HeroService</code> 和 <code>HeroSearchService</code> 都委托了 Angular 的 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 模块来获取应用数据。
@@ -1130,18 +1130,18 @@ constructor(
 <p translation-origin="off">You don't provide <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code> in the browser version, so the <code>heroesUrl</code> remains relative.</p>
 <p translation-result="">在浏览器版本中，你不用提供 <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code>，因此 <code>heroesUrl</code> 仍然是相对的。</p>
 <div class="alert is-helpful">
-<p translation-origin="off">You can ignore <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code> in the browser if you've specified <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code> in the <code>index.html</code>
+<p translation-origin="off">You can ignore <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code> in the browser if you've specified <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code> in the <code>index.html</code>
 to satisfy the router's need for a base address, as the tutorial sample does.</p>
-<p translation-result="">如果你在 <code>index.html</code> 中为了满足路由器的需求已经指定过了 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code>，那就可以在浏览器中忽略 <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code>。参见教程的例子。</p>
+<p translation-result="">如果你在 <code>index.html</code> 中为了满足路由器的需求已经指定过了 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code>，那就可以在浏览器中忽略 <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code>。参见教程的例子。</p>
 </div>
 <a id="server-code"></a>
-<h2 translation-origin="off" id="server-code">Server code<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#server-code"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="server-code">服务端代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#server-code"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="server-code">Server code<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#server-code"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="server-code">服务端代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#server-code"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">To run an Angular Universal application, you'll need a server that accepts client requests and returns rendered pages.</p>
 <p translation-result="">要想运行 Angular 的 Universal 应用，你需要一个服务器，用它来接受客户端的请求，并返回渲染好的页面。</p>
 <a id="app-server-module"></a>
-<h3 translation-origin="off" id="app-server-module">App server module<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#app-server-module"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="app-server-module">服务端应用模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#app-server-module"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="app-server-module">App server module<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#app-server-module"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="app-server-module">服务端应用模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#app-server-module"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The app server module class (conventionally named <code>AppServerModule</code>) is an Angular module that wraps the application's root module (<code>AppModule</code>) so that Universal can mediate between your application and the server.
 <code>AppServerModule</code> also tells Angular how to bootstrap your application when running as a Universal app.</p>
 <p translation-result="">服务端应用模块（习惯上叫作 <code>AppServerModule</code>）是一个 Angular 模块，它包装了应用的根模块 <code>AppModule</code>，以便 Universal 可以在你的应用和服务器之间进行协调。
@@ -1157,7 +1157,7 @@ import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     AppModule,
     <a href="/api/platform-server/ServerModule" class="code-anchor">ServerModule</a>,
     ModuleMapLoaderModule
@@ -1165,7 +1165,7 @@ import { AppComponent } from './app.component';
   providers: [
     // Add universal-only providers here
   ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ],
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ],
 })
 export class AppServerModule {}
 
@@ -1178,8 +1178,8 @@ export class AppServerModule {}
 <p translation-origin="off">This is also the place to register providers that are specific to running your app under Universal.</p>
 <p translation-result="">这里还可以注册那些在 Universal 环境下运行应用时特有的服务提供商。</p>
 <a id="app-server-entry-point"></a>
-<h3 translation-origin="off" id="app-server-entry-point">App server entry point<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#app-server-entry-point"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="app-server-entry-point">应用服务器的入口点<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#app-server-entry-point"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="app-server-entry-point">App server entry point<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#app-server-entry-point"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="app-server-entry-point">应用服务器的入口点<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#app-server-entry-point"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <code>Angular CLI</code> uses the <code>AppServerModule</code> to build the server-side bundle.</p>
 <p translation-result="">Angular CLI 使用 <code>AppServerModule</code> 来构建服务端发布包。</p>
 <p translation-origin="off">Create a <code>main.server.ts</code> file in the <code>src/</code> directory that exports the <code>AppServerModule</code>:</p>
@@ -1192,10 +1192,10 @@ export { AppServerModule } from './app/app.server.module';
 <p translation-origin="off">The <code>main.server.ts</code> will be referenced later to add a <code>server</code> target to the <code>Angular CLI</code> configuration.</p>
 <p translation-result="">稍后，这个 <code>main.server.ts</code> 文件将会被引用，以便往 Angular CLI 的配置中添加一个名为 <code>server</code> 的目标（target）。</p>
 <a id="web-server"></a>
-<h3 translation-origin="off" id="universal-web-server">Universal web server<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-web-server"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="universal-web-server">Universal Web 服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-web-server"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">A <em>Universal</em> web server responds to application <em>page</em> requests with static HTML rendered by the <a href="guide/universal#universal-engine">Universal template engine</a>.</p>
-<p translation-result=""><em>Universal</em> Web 服务器负责响应对本应用的<em>页面</em>请求。它使用的是由 <a href="guide/universal#universal-engine">Universal 模板引擎</a>渲染出的 HTML。</p>
+<h3 translation-origin="off" id="universal-web-server">Universal web server<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-web-server"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="universal-web-server">Universal Web 服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-web-server"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">A <em>Universal</em> web server responds to application <em>page</em> requests with static HTML rendered by the <a href="/guide/universal#universal-engine">Universal template engine</a>.</p>
+<p translation-result=""><em>Universal</em> Web 服务器负责响应对本应用的<em>页面</em>请求。它使用的是由 <a href="/guide/universal#universal-engine">Universal 模板引擎</a>渲染出的 HTML。</p>
 <p translation-origin="off">It receives and responds to HTTP requests from clients (usually browsers).
 It serves static assets such as scripts, css, and images.
 It may respond to data requests, perhaps directly or as a proxy to a separate data server.</p>
@@ -1240,7 +1240,7 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 
 app.engine('html', ngExpressEngine({
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: AppServerModuleNgFactory,
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: AppServerModuleNgFactory,
   providers: [
     provideModuleMap(LAZY_MODULE_MAP)
   ]
@@ -1277,13 +1277,13 @@ just as you would for a normal Angular application server.</p>
 如果你要把它作为正式的 Angular 应用服务器，别忘了添加中间件来对用户进行认证和授权。</p>
 </div>
 <a id="universal-engine"></a>
-<h4 translation-origin="off" id="universal-template-engine">Universal template engine<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-template-engine"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="universal-template-engine">Universal 模板引擎<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-template-engine"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="universal-template-engine">Universal template engine<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-template-engine"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="universal-template-engine">Universal 模板引擎<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-template-engine"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The important bit in this file is the <code>ngExpressEngine</code> function:</p>
 <p translation-result="">这个文件中最重要的部分是 <code>ngExpressEngine</code> 函数：</p>
 <code-example path="universal/server.ts" title="server.ts" region="ngExpressEngine">
 app.engine('html', ngExpressEngine({
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: AppServerModuleNgFactory,
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: AppServerModuleNgFactory,
   providers: [
     provideModuleMap(LAZY_MODULE_MAP)
   ]
@@ -1294,32 +1294,32 @@ app.engine('html', ngExpressEngine({
 You'll call that function within a <em>template engine</em> that's appropriate for your server stack.</p>
 <p translation-result=""><code>ngExpressEngine</code> 是对 Universal 的 <code><a href="/api/platform-server/renderModuleFactory" class="code-anchor">renderModuleFactory</a></code> 函数的封装。它会把客户端请求转换成服务端渲染的 HTML 页面。
 你还要在某个适用于你服务端技术栈的<em>模板引擎</em>中调用这个函数。</p>
-<p translation-origin="off">The first parameter is the <code>AppServerModule</code> that you wrote <a href="guide/universal#app-server-module">earlier</a>.
+<p translation-origin="off">The first parameter is the <code>AppServerModule</code> that you wrote <a href="/guide/universal#app-server-module">earlier</a>.
 It's the bridge between the Universal server-side renderer and your application.</p>
-<p translation-result="">第一个参数是你<a href="guide/universal#app-server-module">以前</a>写过的 <code>AppServerModule</code>。
+<p translation-result="">第一个参数是你<a href="/guide/universal#app-server-module">以前</a>写过的 <code>AppServerModule</code>。
 它是 Universal 服务端渲染器和你的应用之间的桥梁。</p>
 <p translation-origin="off">The second parameter is the <code>extraProviders</code>. It is an optional Angular dependency injection providers, applicable when running on this server.</p>
 <p translation-result="">第二个参数是 <code>extraProviders</code>。它是在这个服务器上运行时才需要的一些可选的 Angular 依赖注入提供商。</p>
 <a id="provide-origin"></a>
 <p translation-origin="off">You supply <code>extraProviders</code> when your app needs information that can only be determined by the currently running server instance.</p>
 <p translation-result="">当你的应用需要那些只有当运行在服务器实例中才需要的信息时，就要提供 <code>extraProviders</code> 参数。</p>
-<p translation-origin="off">The required information in this case is the running server's origin, provided under the <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code> token, so that the app can <a href="guide/universal#http-urls">calculate absolute HTTP URLs</a>.</p>
-<p translation-result="">这里所需的信息就是正在运行的服务器的源地址，它通过 <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code> 令牌提供，以便应用可以 <a href="guide/universal#http-urls">计算出 HTTP URL 的绝对地址</a>。</p>
+<p translation-origin="off">The required information in this case is the running server's origin, provided under the <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code> token, so that the app can <a href="/guide/universal#http-urls">calculate absolute HTTP URLs</a>.</p>
+<p translation-result="">这里所需的信息就是正在运行的服务器的源地址，它通过 <code><a href="/api/common/APP_BASE_HREF" class="code-anchor">APP_BASE_HREF</a></code> 令牌提供，以便应用可以 <a href="/guide/universal#http-urls">计算出 HTTP URL 的绝对地址</a>。</p>
 <p translation-origin="off">The <code>ngExpressEngine</code> function returns a <em>promise</em> that resolves to the rendered page.</p>
 <p translation-result=""><code>ngExpressEngine</code> 函数返回了一个会解析成渲染好的页面的<em>承诺（Promise）</em>。</p>
 <p translation-origin="off">It's up to your engine to decide what to do with that page.
-<em>This engine's</em> promise callback returns the rendered page to the <a href="guide/universal#web-server">web server</a>,
+<em>This engine's</em> promise callback returns the rendered page to the <a href="/guide/universal#web-server">web server</a>,
 which then forwards it to the client in the HTTP response.</p>
 <p translation-result="">接下来你的引擎要决定拿这个页面做点什么。
-<em>现在这个引擎</em>的回调函数中，把渲染好的页面返回给了 <a href="guide/universal#web-server">Web 服务器</a>，然后服务器通过 HTTP 响应把它转发给了客户端。</p>
+<em>现在这个引擎</em>的回调函数中，把渲染好的页面返回给了 <a href="/guide/universal#web-server">Web 服务器</a>，然后服务器通过 HTTP 响应把它转发给了客户端。</p>
 <div class="alert is-helpful">
 <p translation-origin="off">  This wrappers are very useful to hide the complexity of the <code><a href="/api/platform-server/renderModuleFactory" class="code-anchor">renderModuleFactory</a></code>. There are more wrappers for different backend technologies
 at the <a href="https://github.com/angular/universal">Universal repository</a>.</p>
 <p translation-result="">  这个包装器对于隐藏 <code><a href="/api/platform-server/renderModuleFactory" class="code-anchor">renderModuleFactory</a></code> 的复杂性非常有帮助。
 在 <a href="https://github.com/angular/universal">Universal 代码库中</a>还有更多针对其它后端技术的包装器。</p>
 </div>
-<h4 translation-origin="off" id="filter-request-urls">Filter request URLs<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#filter-request-urls"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="filter-request-urls">过滤请求的 URL<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#filter-request-urls"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="filter-request-urls">Filter request URLs<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#filter-request-urls"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="filter-request-urls">过滤请求的 URL<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#filter-request-urls"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The web server must distinguish <em>app page requests</em> from other kinds of requests.</p>
 <p translation-result="">Web 服务器必须把<em>对应用页面的请求</em>和其它类型的请求区分开。</p>
 <p translation-origin="off">It's not as simple as intercepting a request to the root address <code>/</code>.
@@ -1394,14 +1394,14 @@ app.get('*', (req, res) => {
 });
 
 </code-example>
-<h4 translation-origin="off" id="serve-static-files-safely">Serve static files safely<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#serve-static-files-safely"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="serve-static-files-safely">安全的提供静态文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#serve-static-files-safely"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="serve-static-files-safely">Serve static files safely<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#serve-static-files-safely"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="serve-static-files-safely">安全的提供静态文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#serve-static-files-safely"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A single <code>app.use()</code> treats all other URLs as requests for static assets
 such as JavaScript, image, and style files.</p>
 <p translation-result="">单独的 <code>app.use()</code> 会处理所有其它 URL，比如对 JavaScript 、图片和样式表等静态资源的请求。</p>
-<p translation-origin="off">To ensure that clients can only download the files that they are <em>permitted</em> to see, you will <a href="guide/universal#universal-webpack-configuration">put all client-facing asset files in the <code>/dist</code> folder</a>
+<p translation-origin="off">To ensure that clients can only download the files that they are <em>permitted</em> to see, you will <a href="/guide/universal#universal-webpack-configuration">put all client-facing asset files in the <code>/dist</code> folder</a>
 and will only honor requests for files from the <code>/dist</code> folder.</p>
-<p translation-result="">要保证客户端只能下载那些<em>允许</em>他们访问的文件，你应该<a href="guide/universal#universal-webpack-configuration">把所有面向客户端的资源文件都放在 <code>/dist</code> 目录下</a>，并且只允许客户端请求来自 <code>/dist</code> 目录下的文件。</p>
+<p translation-result="">要保证客户端只能下载那些<em>允许</em>他们访问的文件，你应该<a href="/guide/universal#universal-webpack-configuration">把所有面向客户端的资源文件都放在 <code>/dist</code> 目录下</a>，并且只允许客户端请求来自 <code>/dist</code> 目录下的文件。</p>
 <p translation-origin="off">The following express code routes all remaining requests to <code>/dist</code>; it returns a <code>404 - NOT FOUND</code> if the file is not found.</p>
 <p translation-result="">下列 Express 代码会把剩下的所有请求都路由到 <code>/dist</code> 目录下，如果文件未找到，就会返回 <code>404 - NOT FOUND</code>。</p>
 <code-example path="universal/server.ts" title="server.ts (static files)" region="static" linenums="false">
@@ -1410,13 +1410,13 @@ app.get('*.*', express.static(join(DIST_FOLDER, '<a href="/api/animations/browse
 
 </code-example>
 <a id="universal-configuration"></a>
-<h2 translation-origin="off" id="configure-for-universal">Configure for Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#configure-for-universal"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="configure-for-universal">配置 Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#configure-for-universal"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="configure-for-universal">Configure for Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#configure-for-universal"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="configure-for-universal">配置 Universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#configure-for-universal"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The server application requires its own build configuration.</p>
 <p translation-result="">这个服务端应用需要自己的构建配置。</p>
 <a id="universal-typescript-configuration"></a>
-<h3 translation-origin="off" id="universal-typescript-configuration">Universal TypeScript configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-typescript-configuration"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="universal-typescript-configuration">Universal 的 TypeScript 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-typescript-configuration"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="universal-typescript-configuration">Universal TypeScript configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-typescript-configuration"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="universal-typescript-configuration">Universal 的 TypeScript 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-typescript-configuration"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Create a <code>tsconfig.server.json</code> file in the project root directory to configure TypeScript and AOT compilation of the universal app.</p>
 <p translation-result="">在项目的根目录下创建一个 <code>tsconfig.server.json</code> 文件来配置 TypeScript 和这个 Universal 应用的 AOT 编译选项。</p>
 <code-example path="universal/src/tsconfig.server.json" title="src/tsconfig.server.json">
@@ -1458,8 +1458,8 @@ app.get('*.*', express.static(join(DIST_FOLDER, '<a href="/api/animations/browse
 </li>
 </ul>
 <a id="universal-webpack-configuration"></a>
-<h3 translation-origin="off" id="universal-webpack-configuration">Universal Webpack configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-webpack-configuration"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="universal-webpack-configuration">Universal 的 Webpack 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-webpack-configuration"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="universal-webpack-configuration">Universal Webpack configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-webpack-configuration"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="universal-webpack-configuration">Universal 的 Webpack 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-webpack-configuration"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Universal applications doesn't need any extra Webpack configuration, the CLI takes care of that for you,
 but since the server is a typescript application, you will use Webpack to transpile it.</p>
 <p translation-result="">Universal 应用不需要任何额外的 Webpack 配置，CLI 会帮你处理它们，但是由于这个服务器是 TypeScript 应用，所以你要使用 Webpack 来转译它。</p>
@@ -1471,8 +1471,8 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: { server: './server.ts' },
-  <a href="api/router/Route#resolve" class="code-anchor">resolve</a>: { extensions: ['.js', '.ts'] },
-  <a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>: 'node',
+  <a href="/api/router/Route#resolve" class="code-anchor">resolve</a>: { extensions: ['.js', '.ts'] },
+  <a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>: 'node',
   mode: 'none',
   // this makes sure we include node_modules and other 3rd party libraries
   externals: [/node_modules/],
@@ -1488,7 +1488,7 @@ module.exports = {
     // for 'WARNING Critical dependency: the request of <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> dependency is an expression'
     new webpack.ContextReplacementPlugin(
       /(.+)?angular(\\|\/)core(.+)?/,
-      path.join(__dirname, 'src'), // <a href="api/core/ComponentRef#location" class="code-anchor">location</a> of your src
+      path.join(__dirname, 'src'), // <a href="/api/core/ComponentRef#location" class="code-anchor">location</a> of your src
       {} // <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> map of your routes
     ),
     new webpack.ContextReplacementPlugin(
@@ -1504,8 +1504,8 @@ module.exports = {
 <p translation-origin="off"><strong>Webpack configuration</strong> is a rich topic beyond the scope of this guide.</p>
 <p translation-result=""><strong>Webpack</strong> 配置超出了本文的讨论范围。</p>
 <a id="universal-cli-configuration"></a>
-<h3 translation-origin="off" id="angular-cli-configuration">Angular CLI configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#angular-cli-configuration"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="angular-cli-configuration">Angular CLI 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#angular-cli-configuration"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="angular-cli-configuration">Angular CLI configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#angular-cli-configuration"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="angular-cli-configuration">Angular CLI 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#angular-cli-configuration"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The CLI provides builders for different types of <strong>targets</strong>. Commonly known targets such as <code>build</code> and <code>serve</code> already exist in the <code>angular.json</code> configuration. To target a server-side build, add a <code>server</code> target to the <code>architect</code> configuration object.</p>
 <p translation-result="">CLI 提供了针对不同<strong>目标</strong>的构建器。常见的目标，如 <code>build</code> 和 <code>serve</code> 都已经存在于 <code>angular.json</code> 的配置中了。要指定一个服务端渲染的构建，请在 <code>architect</code> 配置对象中添加一个 <code>server</code> 目标。</p>
 <ul>
@@ -1536,8 +1536,8 @@ module.exports = {
   ...
 }
 </code-example>
-<h2 translation-origin="off" id="build-and-run-with-universal">Build and run with universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#build-and-run-with-universal"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="build-and-run-with-universal">使用 Universal 构建和运行<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#build-and-run-with-universal"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="build-and-run-with-universal">Build and run with universal<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#build-and-run-with-universal"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="build-and-run-with-universal">使用 Universal 构建和运行<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#build-and-run-with-universal"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Now that you've created the TypeScript and Webpack config files and configured the Angular CLI, you can build and run the Universal application.</p>
 <p translation-result="">现在，你已经创建了 TypeScript 和 Webpack 的配置文件并配置好了 Angular CLI，可以构建并运行这个 Universal 应用了。</p>
 <p translation-origin="off">First add the <em>build</em> and <em>serve</em> commands to the <code>scripts</code> section of the <code>package.json</code>:</p>
@@ -1553,8 +1553,8 @@ module.exports = {
 }
 </code-example>
 <a id="build"></a>
-<h4 translation-origin="off" id="build">Build<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#build"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="build">构建<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#build"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="build">Build<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#build"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="build">构建<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#build"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">From the command prompt, type</p>
 <p translation-result="">在命令行提示中输入</p>
 <code-example format="." language="bash">
@@ -1565,8 +1565,8 @@ Webpack transpiles the <code>server.ts</code> file into Javascript.</p>
 <p translation-result="">Angular CLI 就会把这个 Universal 应用编译进两个目录：<code><a href="/api/animations/browser" class="code-anchor">browser</a></code> 和 <code>server</code>。
 Webpack 会把 <code>server.ts</code> 文件转译成 JavaScript。</p>
 <a id="serve"></a>
-<h4 translation-origin="off" id="serve">Serve<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#serve"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="serve">启动服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#serve"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="serve">Serve<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#serve"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="serve">启动服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#serve"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">After building the application, start the server.</p>
 <p translation-result="">构建完应用之后，启动服务器。</p>
 <code-example format="." language="bash">
@@ -1577,8 +1577,8 @@ npm run serve:ssr
 <code-example format="." language="bash">
 Node server listening on http://localhost:4000
 </code-example>
-<h2 translation-origin="off" id="universal-in-action">Universal in action<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-in-action"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="universal-in-action">Universal 实战<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#universal-in-action"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="universal-in-action">Universal in action<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-in-action"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="universal-in-action">Universal 实战<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#universal-in-action"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Open a browser to <a href="http://localhost:4000/">http://localhost:4000/</a>.
 You should see the familiar Tour of Heroes dashboard page.</p>
 <p translation-result="">打开浏览器，访问 <a href="http://localhost:4000/%E3%80%82">http://localhost:4000/。</a>
@@ -1617,8 +1617,8 @@ and move the output into the <code>dist/</code> folder,
 a step you'll take in just a moment.</p>
 <p translation-result="">直到你编译出客户端应用，并把它们的输出移到 <code>dist/</code> 目录下，这个客户端应用才会就绪。
 你自己稍微花点时间完成这步就可以了。</p>
-<h2 translation-origin="off" id="throttling">Throttling<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#throttling"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="throttling">限流<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#throttling"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="throttling">Throttling<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#throttling"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="throttling">限流<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#throttling"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The transition from the server-rendered app to the client app happens quickly on a development machine.
 You can simulate a slower network to see the transition more clearly and
 better appreciate the launch-speed advantage of a universal app running on a low powered, poorly connected device.</p>
@@ -1633,8 +1633,8 @@ The server-rendered app still launches quickly but the full client app may take 
 <p translation-result="">随便试一个 “3G” 速度。
 服务端渲染的应用将会立即启动，不过加载完整的客户端应用可能要花几秒钟。</p>
 <a id="summary"></a>
-<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#summary"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="summary-8">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/universal#summary-8"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#summary"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="summary-8">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/universal#summary-8"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">This guide showed you how to take an existing Angular application and make it into a Universal app that does server-side rendering.
 It also explained some of the key reasons for doing so.</p>
 <p translation-result="">本文为你演示了如何把一个现有 Angular 应用转换成支持服务端渲染的 Universal 应用。

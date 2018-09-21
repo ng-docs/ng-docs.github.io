@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="component-interaction">Component Interaction<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#component-interaction"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="component-interaction">组件之间的交互<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#component-interaction"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="component-interaction">Component Interaction<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#component-interaction"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="component-interaction">组件之间的交互<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#component-interaction"><i class="material-icons">link</i></a></h1>
 <a id="top"></a>
 <p translation-origin="off">This cookbook contains recipes for common component communication scenarios
 in which two or more components share information.</p>
@@ -845,11 +845,11 @@ in which two or more components share information.</p>
 <p translation-origin="off"><strong>See the <live-example name="component-interaction"></live-example></strong>.</p>
 <p translation-result=""><strong>参见<live-example name="component-interaction"></live-example></strong>。</p>
 <a id="parent-to-child"></a>
-<h2 translation-origin="off" id="pass-data-from-parent-to-child-with-input-binding">Pass data from parent to child with input binding<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#pass-data-from-parent-to-child-with-input-binding"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="pass-data-from-parent-to-child-with-input-binding">通过输入型绑定把数据从父组件传到子组件。<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#pass-data-from-parent-to-child-with-input-binding"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="pass-data-from-parent-to-child-with-input-binding">Pass data from parent to child with input binding<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="pass-data-from-parent-to-child-with-input-binding">通过输入型绑定把数据从父组件传到子组件。<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off"><code>HeroChildComponent</code> has two <strong><em>input properties</em></strong>,
-typically adorned with <a href="guide/template-syntax#inputs-outputs">@Input decorations</a>.</p>
-<p translation-result=""><code>HeroChildComponent</code> 有两个<strong><em>输入型属性</em></strong>，它们通常带<a href="guide/template-syntax#inputs-outputs">@Input 装饰器</a>。</p>
+typically adorned with <a href="/guide/template-syntax#inputs-outputs">@Input decorations</a>.</p>
+<p translation-result=""><code>HeroChildComponent</code> 有两个<strong><em>输入型属性</em></strong>，它们通常带<a href="/guide/template-syntax#inputs-outputs">@Input 装饰器</a>。</p>
 <code-example path="component-interaction/src/app/hero-child.component.ts" title="component-interaction/src/app/hero-child.component.ts">
 import { <a href="/api/core/Component" class="code-anchor">Component</a>, <a href="/api/core/Input" class="code-anchor">Input</a> } from '@angular/core';
 
@@ -857,7 +857,7 @@ import { Hero } from './hero';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-child',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h3>{{hero.name}} says:&#x3C;/h3>
     &#x3C;p>I, {{hero.name}}, am at your service, {{masterName}}.&#x3C;/p>
   `
@@ -881,7 +881,7 @@ import { HEROES } from './hero';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-parent',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>{{master}} controls {{heroes.length}} heroes&#x3C;/h2>
     &#x3C;app-hero-child *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes"
       [hero]="hero"
@@ -900,8 +900,8 @@ export class HeroParentComponent {
 <figure>
   <img src="generated/images/guide/component-interaction/parent-to-child.png" alt="Parent-to-child" width="272" height="267">
 </figure>
-<h3 translation-origin="off" class="no-toc" id="test-it">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="test-it">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="test-it">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="test-it">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">E2E test that all children were instantiated and displayed as expected:</p>
 <p translation-result="">端到端测试，用于确保所有的子组件都像所期待的那样被初始化并显示出来。</p>
 <code-example path="component-interaction/e2e/src/app.e2e-spec.ts" region="parent-to-child" title="component-interaction/e2e/src/app.e2e-spec.ts">
@@ -909,7 +909,7 @@ export class HeroParentComponent {
 let _heroNames = ['Mr. IQ', 'Magneta', 'Bombasto'];
 let _masterName = 'Master';
 
-it('should pass <a href="api/core/DebugElement#properties" class="code-anchor">properties</a> to children properly', function () {
+it('should pass <a href="/api/core/DebugElement#properties" class="code-anchor">properties</a> to children properly', function () {
   let parent = element.all(by.tagName('app-hero-parent')).get(0);
   let heroes = parent.all(by.tagName('app-hero-child'));
 
@@ -923,11 +923,11 @@ it('should pass <a href="api/core/DebugElement#properties" class="code-anchor">p
 // ...
 
 </code-example>
-<p translation-origin="off"><a href="guide/component-interaction#top">Back to top</a></p>
-<p translation-result=""><a href="guide/component-interaction#top">回到顶部</a></p>
+<p translation-origin="off"><a href="/guide/component-interaction#top">Back to top</a></p>
+<p translation-result=""><a href="/guide/component-interaction#top">回到顶部</a></p>
 <a id="parent-to-child-setter"></a>
-<h2 translation-origin="off" id="intercept-input-property-changes-with-a-setter">Intercept input property changes with a setter<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#intercept-input-property-changes-with-a-setter"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="intercept-input-property-changes-with-a-setter">通过 setter 截听输入属性值的变化<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#intercept-input-property-changes-with-a-setter"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="intercept-input-property-changes-with-a-setter">Intercept input property changes with a setter<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#intercept-input-property-changes-with-a-setter"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="intercept-input-property-changes-with-a-setter">通过 setter 截听输入属性值的变化<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#intercept-input-property-changes-with-a-setter"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Use an input property setter to intercept and act upon a value from the parent.</p>
 <p translation-result="">使用一个输入属性的 setter，以拦截父组件中值的变化，并采取行动。</p>
 <p translation-origin="off">The setter of the <code>name</code> input property in the child <code>NameChildComponent</code>
@@ -938,7 +938,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a>, <a hre
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-name-child',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;h3>"{{name}}"&#x3C;/h3>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;h3>"{{name}}"&#x3C;/h3>'
 })
 export class NameChildComponent {
   private _name = '';
@@ -959,7 +959,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-name-parent',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;h2>Master controls {{names.length}} names&#x3C;/h2>
   &#x3C;app-name-child *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let name of names" [name]="name">&#x3C;/app-name-child>
   `
@@ -973,8 +973,8 @@ export class NameParentComponent {
 <figure>
   <img src="generated/images/guide/component-interaction/setter.png" alt="Parent-to-child-setter" width="322" height="193">
 </figure>
-<h3 translation-origin="off" class="no-toc" id="test-it-1">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-1"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="test-it-1">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-1"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="test-it-1">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-1"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="test-it-1">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-1"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">E2E tests of input property setter with empty and non-empty names:</p>
 <p translation-result="">端到端测试：输入属性的 setter，分别使用空名字和非空名字。</p>
 <code-example path="component-interaction/e2e/src/app.e2e-spec.ts" region="parent-to-child-setter" title="component-interaction/e2e/src/app.e2e-spec.ts">
@@ -985,8 +985,8 @@ it('should display trimmed, non-empty names', function () {
   let parent = element.all(by.tagName('app-name-parent')).get(0);
   let hero = parent.all(by.tagName('app-name-child')).get(_nonEmptyNameIndex);
 
-  let <a href="api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a> = hero.element(by.tagName('h3')).getText();
-  expect(<a href="api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a>).toEqual(_nonEmptyName);
+  let <a href="/api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a> = hero.element(by.tagName('h3')).getText();
+  expect(<a href="/api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a>).toEqual(_nonEmptyName);
 });
 
 it('should replace empty name with default name', function () {
@@ -995,17 +995,17 @@ it('should replace empty name with default name', function () {
   let parent = element.all(by.tagName('app-name-parent')).get(0);
   let hero = parent.all(by.tagName('app-name-child')).get(_emptyNameIndex);
 
-  let <a href="api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a> = hero.element(by.tagName('h3')).getText();
-  expect(<a href="api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a>).toEqual(_defaultName);
+  let <a href="/api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a> = hero.element(by.tagName('h3')).getText();
+  expect(<a href="/api/core/ReflectiveKey#displayName" class="code-anchor">displayName</a>).toEqual(_defaultName);
 });
 // ...
 
 </code-example>
-<p translation-origin="off"><a href="guide/component-interaction#top">Back to top</a></p>
-<p translation-result=""><a href="guide/component-interaction#top">回到顶部</a></p>
+<p translation-origin="off"><a href="/guide/component-interaction#top">Back to top</a></p>
+<p translation-result=""><a href="/guide/component-interaction#top">回到顶部</a></p>
 <a id="parent-to-child-on-changes"></a>
-<h2 translation-origin="off" id="intercept-input-property-changes-with-ngonchanges">Intercept input property changes with <em>ngOnChanges()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#intercept-input-property-changes-with-ngonchanges"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="intercept-input-property-changes-with-emngonchangesem">通过<em>ngOnChanges()</em>来截听输入属性值的变化<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#intercept-input-property-changes-with-emngonchangesem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="intercept-input-property-changes-with-ngonchanges">Intercept input property changes with <em>ngOnChanges()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#intercept-input-property-changes-with-ngonchanges"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="intercept-input-property-changes-with-emngonchangesem">通过<em>ngOnChanges()</em>来截听输入属性值的变化<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#intercept-input-property-changes-with-emngonchangesem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Detect and act upon changes to input property values with the <code>ngOnChanges()</code> method of the <code><a href="/api/core/OnChanges" class="code-anchor">OnChanges</a></code> lifecycle hook interface.</p>
 <p translation-result="">使用 <code><a href="/api/core/OnChanges" class="code-anchor">OnChanges</a></code> 生命周期钩子接口的 <code>ngOnChanges()</code> 方法来监测输入属性值的变化并做出回应。</p>
 <div class="alert is-helpful">
@@ -1014,30 +1014,30 @@ it('should replace empty name with default name', function () {
 <p translation-origin="off">Learn about <code>ngOnChanges()</code> in the <a href="/guide/lifecycle-hooks">LifeCycle Hooks</a> chapter.</p>
 <p translation-result="">学习关于 <code>ngOnChanges()</code> 的更多知识，参见<a href="/guide/lifecycle-hooks">生命周期钩子</a>一章。</p>
 </div>
-<p translation-origin="off">This <code>VersionChildComponent</code> detects changes to the <code><a href="api/core/Version#major" class="code-anchor">major</a></code> and <code><a href="api/core/Version#minor" class="code-anchor">minor</a></code> input properties and composes a log message reporting these changes:</p>
-<p translation-result="">这个 <code>VersionChildComponent</code> 会监测输入属性 <code><a href="api/core/Version#major" class="code-anchor">major</a></code> 和 <code><a href="api/core/Version#minor" class="code-anchor">minor</a></code> 的变化，并把这些变化编写成日志以报告这些变化。</p>
+<p translation-origin="off">This <code>VersionChildComponent</code> detects changes to the <code><a href="/api/core/Version#major" class="code-anchor">major</a></code> and <code><a href="/api/core/Version#minor" class="code-anchor">minor</a></code> input properties and composes a log message reporting these changes:</p>
+<p translation-result="">这个 <code>VersionChildComponent</code> 会监测输入属性 <code><a href="/api/core/Version#major" class="code-anchor">major</a></code> 和 <code><a href="/api/core/Version#minor" class="code-anchor">minor</a></code> 的变化，并把这些变化编写成日志以报告这些变化。</p>
 <code-example path="component-interaction/src/app/version-child.component.ts" title="component-interaction/src/app/version-child.component.ts">
 import { <a href="/api/core/Component" class="code-anchor">Component</a>, <a href="/api/core/Input" class="code-anchor">Input</a>, <a href="/api/core/OnChanges" class="code-anchor">OnChanges</a>, <a href="/api/core/SimpleChange" class="code-anchor">SimpleChange</a> } from '@angular/core';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-version-child',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
-    &#x3C;h3><a href="/api/core/Version" class="code-anchor">Version</a> {{<a href="api/core/Version#major" class="code-anchor">major</a>}}.{{<a href="api/core/Version#minor" class="code-anchor">minor</a>}}&#x3C;/h3>
-    &#x3C;h4>Change <a href="api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>:&#x3C;/h4>
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
+    &#x3C;h3><a href="/api/core/Version" class="code-anchor">Version</a> {{<a href="/api/core/Version#major" class="code-anchor">major</a>}}.{{<a href="/api/core/Version#minor" class="code-anchor">minor</a>}}&#x3C;/h3>
+    &#x3C;h4>Change <a href="/api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>:&#x3C;/h4>
     &#x3C;ul>
       &#x3C;li *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let change of changeLog">{{change}}&#x3C;/li>
     &#x3C;/ul>
   `
 })
 export class VersionChildComponent implements <a href="/api/core/OnChanges" class="code-anchor">OnChanges</a> {
-  @<a href="/api/core/Input" class="code-anchor">Input</a>() <a href="api/core/Version#major" class="code-anchor">major</a>: number;
-  @<a href="/api/core/Input" class="code-anchor">Input</a>() <a href="api/core/Version#minor" class="code-anchor">minor</a>: number;
+  @<a href="/api/core/Input" class="code-anchor">Input</a>() <a href="/api/core/Version#major" class="code-anchor">major</a>: number;
+  @<a href="/api/core/Input" class="code-anchor">Input</a>() <a href="/api/core/Version#minor" class="code-anchor">minor</a>: number;
   changeLog: string[] = [];
 
-  ngOnChanges(<a href="api/core/QueryList#changes" class="code-anchor">changes</a>: {[propKey: string]: <a href="/api/core/SimpleChange" class="code-anchor">SimpleChange</a>}) {
-    let <a href="api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>: string[] = [];
-    for (let propName in <a href="api/core/QueryList#changes" class="code-anchor">changes</a>) {
-      let changedProp = <a href="api/core/QueryList#changes" class="code-anchor">changes</a>[propName];
+  ngOnChanges(<a href="/api/core/QueryList#changes" class="code-anchor">changes</a>: {[propKey: string]: <a href="/api/core/SimpleChange" class="code-anchor">SimpleChange</a>}) {
+    let <a href="/api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>: string[] = [];
+    for (let propName in <a href="/api/core/QueryList#changes" class="code-anchor">changes</a>) {
+      let changedProp = <a href="/api/core/QueryList#changes" class="code-anchor">changes</a>[propName];
       let to = JSON.stringify(changedProp.currentValue);
       if (changedProp.isFirstChange()) {
         log.push(`Initial value of ${propName} set to ${to}`);
@@ -1051,23 +1051,23 @@ export class VersionChildComponent implements <a href="/api/core/OnChanges" clas
 }
 
 </code-example>
-<p translation-origin="off">The <code>VersionParentComponent</code> supplies the <code><a href="api/core/Version#minor" class="code-anchor">minor</a></code> and <code><a href="api/core/Version#major" class="code-anchor">major</a></code> values and binds buttons to methods that change them.</p>
-<p translation-result=""><code>VersionParentComponent</code> 提供 <code><a href="api/core/Version#minor" class="code-anchor">minor</a></code> 和 <code><a href="api/core/Version#major" class="code-anchor">major</a></code> 值，把修改它们值的方法绑定到按钮上。</p>
+<p translation-origin="off">The <code>VersionParentComponent</code> supplies the <code><a href="/api/core/Version#minor" class="code-anchor">minor</a></code> and <code><a href="/api/core/Version#major" class="code-anchor">major</a></code> values and binds buttons to methods that change them.</p>
+<p translation-result=""><code>VersionParentComponent</code> 提供 <code><a href="/api/core/Version#minor" class="code-anchor">minor</a></code> 和 <code><a href="/api/core/Version#major" class="code-anchor">major</a></code> 值，把修改它们值的方法绑定到按钮上。</p>
 <code-example path="component-interaction/src/app/version-parent.component.ts" title="component-interaction/src/app/version-parent.component.ts">
 import { <a href="/api/core/Component" class="code-anchor">Component</a> } from '@angular/core';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-version-parent',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>Source code version&#x3C;/h2>
-    &#x3C;button (click)="newMinor()">New <a href="api/core/Version#minor" class="code-anchor">minor</a> version&#x3C;/button>
-    &#x3C;button (click)="newMajor()">New <a href="api/core/Version#major" class="code-anchor">major</a> version&#x3C;/button>
-    &#x3C;app-version-child [<a href="api/core/Version#major" class="code-anchor">major</a>]="<a href="api/core/Version#major" class="code-anchor">major</a>" [<a href="api/core/Version#minor" class="code-anchor">minor</a>]="<a href="api/core/Version#minor" class="code-anchor">minor</a>">&#x3C;/app-version-child>
+    &#x3C;button (click)="newMinor()">New <a href="/api/core/Version#minor" class="code-anchor">minor</a> version&#x3C;/button>
+    &#x3C;button (click)="newMajor()">New <a href="/api/core/Version#major" class="code-anchor">major</a> version&#x3C;/button>
+    &#x3C;app-version-child [<a href="/api/core/Version#major" class="code-anchor">major</a>]="<a href="/api/core/Version#major" class="code-anchor">major</a>" [<a href="/api/core/Version#minor" class="code-anchor">minor</a>]="<a href="/api/core/Version#minor" class="code-anchor">minor</a>">&#x3C;/app-version-child>
   `
 })
 export class VersionParentComponent {
-  <a href="api/core/Version#major" class="code-anchor">major</a> = 1;
-  <a href="api/core/Version#minor" class="code-anchor">minor</a> = 23;
+  <a href="/api/core/Version#major" class="code-anchor">major</a> = 1;
+  <a href="/api/core/Version#minor" class="code-anchor">minor</a> = 23;
 
   newMinor() {
     this.minor++;
@@ -1085,8 +1085,8 @@ export class VersionParentComponent {
 <figure>
   <img src="generated/images/guide/component-interaction/parent-to-child-on-changes.gif" alt="Parent-to-child-onchanges" width="481" height="264">
 </figure>
-<h3 translation-origin="off" class="no-toc" id="test-it-2">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-2"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="test-it-2">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-2"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="test-it-2">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-2"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="test-it-2">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-2"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Test that <strong><em>both</em></strong> input properties are set initially and that button clicks trigger
 the expected <code>ngOnChanges</code> calls and values:</p>
 <p translation-result="">测试确保<strong><em>这两个</em></strong>输入属性值都被初始化了，当点击按钮后，<code>ngOnChanges</code> 应该被调用，属性的值也符合预期。</p>
@@ -1097,7 +1097,7 @@ it('should set expected initial values', function () {
   let actual = getActual();
 
   let initialLabel = '<a href="/api/core/Version" class="code-anchor">Version</a> 1.23';
-  let initialLog = 'Initial value of <a href="api/core/Version#major" class="code-anchor">major</a> set to 1, Initial value of <a href="api/core/Version#minor" class="code-anchor">minor</a> set to 23';
+  let initialLog = 'Initial value of <a href="/api/core/Version#major" class="code-anchor">major</a> set to 1, Initial value of <a href="/api/core/Version#minor" class="code-anchor">minor</a> set to 23';
 
   expect(actual.label).toBe(initialLabel);
   expect(actual.count).toBe(1);
@@ -1113,7 +1113,7 @@ it('should set expected values after clicking \'Minor\' twice', function () {
       let actual = getActual();
 
       let labelAfter2Minor = '<a href="/api/core/Version" class="code-anchor">Version</a> 1.25';
-      let logAfter2Minor = '<a href="api/core/Version#minor" class="code-anchor">minor</a> changed from 24 to 25';
+      let logAfter2Minor = '<a href="/api/core/Version#minor" class="code-anchor">minor</a> changed from 24 to 25';
 
       expect(actual.label).toBe(labelAfter2Minor);
       expect(actual.count).toBe(3);
@@ -1130,7 +1130,7 @@ it('should set expected values after clicking \'Major\' once', function () {
     let actual = getActual();
 
     let labelAfterMajor = '<a href="/api/core/Version" class="code-anchor">Version</a> 2.0';
-    let logAfterMajor = '<a href="api/core/Version#major" class="code-anchor">major</a> changed from 1 to 2, <a href="api/core/Version#minor" class="code-anchor">minor</a> changed from 25 to 0';
+    let logAfterMajor = '<a href="/api/core/Version#major" class="code-anchor">major</a> changed from 1 to 2, <a href="/api/core/Version#minor" class="code-anchor">minor</a> changed from 25 to 0';
 
     expect(actual.label).toBe(labelAfterMajor);
     expect(actual.count).toBe(4);
@@ -1147,30 +1147,30 @@ function getActual() {
   return {
     label: label,
     logs: logs,
-    <a href="api/common/NgForOfContext#count" class="code-anchor">count</a>: logs.count()
+    <a href="/api/common/NgForOfContext#count" class="code-anchor">count</a>: logs.count()
   };
 }
 // ...
 
 </code-example>
-<p translation-origin="off"><a href="guide/component-interaction#top">Back to top</a></p>
-<p translation-result=""><a href="guide/component-interaction#top">回到顶部</a></p>
+<p translation-origin="off"><a href="/guide/component-interaction#top">Back to top</a></p>
+<p translation-result=""><a href="/guide/component-interaction#top">回到顶部</a></p>
 <a id="child-to-parent"></a>
-<h2 translation-origin="off" id="parent-listens-for-child-event">Parent listens for child event<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-listens-for-child-event"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="parent-listens-for-child-event">父组件监听子组件的事件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-listens-for-child-event"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="parent-listens-for-child-event">Parent listens for child event<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-listens-for-child-event"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="parent-listens-for-child-event">父组件监听子组件的事件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-listens-for-child-event"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The child component exposes an <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> property with which it <code>emits</code> events when something happens.
 The parent binds to that event property and reacts to those events.</p>
 <p translation-result="">子组件暴露一个 <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> 属性，当事件发生时，子组件利用该属性 <code>emits</code>(向上弹射)事件。父组件绑定到这个事件属性，并在事件发生时作出回应。</p>
 <p translation-origin="off">The child's <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> property is an <strong><em>output property</em></strong>,
-typically adorned with an <a href="guide/template-syntax#inputs-outputs">@Output decoration</a>
+typically adorned with an <a href="/guide/template-syntax#inputs-outputs">@Output decoration</a>
 as seen in this <code>VoterComponent</code>:</p>
-<p translation-result="">子组件的 <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> 属性是一个<strong>输出属性</strong>，通常带有<a href="guide/template-syntax#inputs-outputs">@Output 装饰器</a>，就像在 <code>VoterComponent</code> 中看到的。</p>
+<p translation-result="">子组件的 <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> 属性是一个<strong>输出属性</strong>，通常带有<a href="/guide/template-syntax#inputs-outputs">@Output 装饰器</a>，就像在 <code>VoterComponent</code> 中看到的。</p>
 <code-example path="component-interaction/src/app/voter.component.ts" title="component-interaction/src/app/voter.component.ts">
 import { <a href="/api/core/Component" class="code-anchor">Component</a>, <a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a>, <a href="/api/core/Input" class="code-anchor">Input</a>, <a href="/api/core/Output" class="code-anchor">Output</a> } from '@angular/core';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-voter',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h4>{{name}}&#x3C;/h4>
     &#x3C;button (click)="vote(true)"  [disabled]="didVote">Agree&#x3C;/button>
     &#x3C;button (click)="vote(false)" [disabled]="didVote">Disagree&#x3C;/button>
@@ -1198,7 +1198,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> }      
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-vote-taker',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>Should mankind colonize the Universe?&#x3C;/h2>
     &#x3C;h3>Agree: {{agreed}}, Disagree: {{disagreed}}&#x3C;/h3>
     &#x3C;app-voter *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let voter of voters"
@@ -1224,8 +1224,8 @@ and the method processes it:</p>
 <figure>
   <img src="generated/images/guide/component-interaction/child-to-parent.gif" alt="Child-to-parent" width="418" height="342">
 </figure>
-<h3 translation-origin="off" class="no-toc" id="test-it-3">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-3"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="test-it-3">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-3"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="test-it-3">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-3"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="test-it-3">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-3"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Test that clicking the <em>Agree</em> and <em>Disagree</em> buttons update the appropriate counters:</p>
 <p translation-result="">测试确保点击 <em>Agree</em> 和 <em>Disagree</em> 按钮时，计数器被正确更新。</p>
 <code-example path="component-interaction/e2e/src/app.e2e-spec.ts" region="child-to-parent" title="component-interaction/e2e/src/app.e2e-spec.ts">
@@ -1258,10 +1258,10 @@ it('should process Disagree vote', function () {
 // ...
 
 </code-example>
-<p translation-origin="off"><a href="guide/component-interaction#top">Back to top</a></p>
-<p translation-result=""><a href="guide/component-interaction#top">回到顶部</a></p>
-<h2 translation-origin="off" id="parent-interacts-with-child-via-local-variable">Parent interacts with child via <em>local variable</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-interacts-with-child-via-local-variable"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="parent-interacts-with-child-via-emlocal-variableem">父组件与子组件通过<em>本地变量</em>互动<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-interacts-with-child-via-emlocal-variableem"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off"><a href="/guide/component-interaction#top">Back to top</a></p>
+<p translation-result=""><a href="/guide/component-interaction#top">回到顶部</a></p>
+<h2 translation-origin="off" id="parent-interacts-with-child-via-local-variable">Parent interacts with child via <em>local variable</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-interacts-with-child-via-local-variable"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="parent-interacts-with-child-via-emlocal-variableem">父组件与子组件通过<em>本地变量</em>互动<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-interacts-with-child-via-emlocal-variableem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A parent component cannot use data binding to read child properties
 or invoke child methods. You can do both
 by creating a template reference variable for the child element
@@ -1278,12 +1278,12 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a>, <a hre
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-countdown-timer',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;p>{{<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}}&#x3C;/p>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;p>{{<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}}&#x3C;/p>'
 })
 export class CountdownTimerComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a>, <a href="/api/core/OnDestroy" class="code-anchor">OnDestroy</a> {
 
   intervalId = 0;
-  <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = '';
+  <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = '';
   seconds = 11;
 
   clearTimer() { clearInterval(this.intervalId); }
@@ -1321,14 +1321,14 @@ import { CountdownTimerComponent }  from './countdown-timer.component';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-countdown-parent-lv',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;h3>Countdown to Liftoff (via local variable)&#x3C;/h3>
   &#x3C;button (click)="timer.start()">Start&#x3C;/button>
   &#x3C;button (click)="timer.stop()">Stop&#x3C;/button>
   &#x3C;div class="seconds">{{timer.seconds}}&#x3C;/div>
   &#x3C;app-countdown-timer #timer>&#x3C;/app-countdown-timer>
   `,
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['../assets/demo.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['../assets/demo.css']
 })
 export class CountdownLocalVarParentComponent { }
 
@@ -1349,8 +1349,8 @@ uses interpolation to display the child's <code>seconds</code> property.</p>
   <img src="generated/images/guide/component-interaction/countdown-timer-anim.gif" alt="countdown timer" width="212" height="172">
 </figure>
 <a id="countdown-tests"></a>
-<h3 translation-origin="off" class="no-toc" id="test-it-4">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-4"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="test-it-4">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-4"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="test-it-4">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-4"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="test-it-4">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-4"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Test that the seconds displayed in the parent template
 match the seconds displayed in the child's status message.
 Test also that clicking the <em>Stop</em> button pauses the countdown timer:</p>
@@ -1359,10 +1359,10 @@ Test also that clicking the <em>Stop</em> button pauses the countdown timer:</p>
 // ...
 it('timer and parent seconds should match', function () {
   let parent = element(by.tagName(parentTag));
-  let <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = parent.element(by.tagName('app-countdown-timer')).getText();
-  browser.sleep(10); // give `seconds` <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> chance to catchup with `<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>`
+  let <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = parent.element(by.tagName('app-countdown-timer')).getText();
+  browser.sleep(10); // give `seconds` <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> chance to catchup with `<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>`
   let seconds = parent.element(by.className('seconds')).getText();
-  expect(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>).toContain(seconds);
+  expect(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>).toContain(seconds);
 });
 
 it('should stop the countdown', function () {
@@ -1370,18 +1370,18 @@ it('should stop the countdown', function () {
   let stopButton = parent.all(by.tagName('button')).get(1);
 
   stopButton.click().then(function() {
-    let <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = parent.element(by.tagName('app-countdown-timer')).getText();
-    expect(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>).toContain('Holding');
+    let <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = parent.element(by.tagName('app-countdown-timer')).getText();
+    expect(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>).toContain('Holding');
   });
 });
 // ...
 
 </code-example>
-<p translation-origin="off"><a href="guide/component-interaction#top">Back to top</a></p>
-<p translation-result=""><a href="guide/component-interaction#top">回到顶部</a></p>
+<p translation-origin="off"><a href="/guide/component-interaction#top">Back to top</a></p>
+<p translation-result=""><a href="/guide/component-interaction#top">回到顶部</a></p>
 <a id="parent-to-view-child"></a>
-<h2 translation-origin="off" id="parent-calls-an-viewchild">Parent calls an <em>@ViewChild()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-calls-an-viewchild"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="parent-calls-an-emviewchildem">父组件调用<em>@ViewChild()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-calls-an-emviewchildem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="parent-calls-an-viewchild">Parent calls an <em>@ViewChild()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-calls-an-viewchild"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="parent-calls-an-emviewchildem">父组件调用<em>@ViewChild()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-calls-an-emviewchildem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <em>local variable</em> approach is simple and easy. But it is limited because
 the parent-child wiring must be done entirely within the parent template.
 The parent component <em>itself</em> has no access to the child.</p>
@@ -1393,11 +1393,11 @@ must read or write child component values or must call child component methods.<
 <strong><em>inject</em></strong> the child component into the parent as a <em>ViewChild</em>.</p>
 <p translation-result="">当父组件<em>类</em>需要这种访问时，可以把子组件作为 <em>ViewChild</em>，<strong><em>注入</em></strong>到父组件里面。</p>
 <p translation-origin="off">The following example illustrates this technique with the same
-<a href="guide/component-interaction#countdown-timer-example">Countdown Timer</a> example.
+<a href="/guide/component-interaction#countdown-timer-example">Countdown Timer</a> example.
 Neither its appearance nor its behavior will change.
-The child <a href="guide/component-interaction#countdown-timer-example">CountdownTimerComponent</a> is the same as well.</p>
-<p translation-result="">下面的例子用与<a href="guide/component-interaction#countdown-timer-example">倒计时</a>相同的范例来解释这种技术。
-它的外观或行为没有变化。子组件<a href="guide/component-interaction#countdown-timer-example">CountdownTimerComponent</a>也和原来一样。</p>
+The child <a href="/guide/component-interaction#countdown-timer-example">CountdownTimerComponent</a> is the same as well.</p>
+<p translation-result="">下面的例子用与<a href="/guide/component-interaction#countdown-timer-example">倒计时</a>相同的范例来解释这种技术。
+它的外观或行为没有变化。子组件<a href="/guide/component-interaction#countdown-timer-example">CountdownTimerComponent</a>也和原来一样。</p>
 <div class="alert is-helpful">
 <p translation-origin="off">The switch from the <em>local variable</em> to the <em>ViewChild</em> technique
 is solely for the purpose of demonstration.</p>
@@ -1412,14 +1412,14 @@ import { CountdownTimerComponent }  from './countdown-timer.component';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-countdown-parent-vc',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;h3>Countdown to Liftoff (via <a href="/api/core/ViewChild" class="code-anchor">ViewChild</a>)&#x3C;/h3>
   &#x3C;button (click)="start()">Start&#x3C;/button>
   &#x3C;button (click)="stop()">Stop&#x3C;/button>
   &#x3C;div class="seconds">{{ seconds() }}&#x3C;/div>
   &#x3C;app-countdown-timer>&#x3C;/app-countdown-timer>
   `,
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['../assets/demo.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['../assets/demo.css']
 })
 export class CountdownViewChildParentComponent implements <a href="/api/core/AfterViewInit" class="code-anchor">AfterViewInit</a> {
 
@@ -1465,15 +1465,15 @@ in the same cycle. The app has to <em>wait one turn</em> before it can display t
 <p translation-origin="off">Use <code>setTimeout()</code> to wait one tick and then revise the <code>seconds()</code> method so
 that it takes future values from the timer component.</p>
 <p translation-result="">使用 <code>setTimeout()</code> 来等下一轮，然后改写 <code>seconds()</code> 方法，这样它接下来就会从注入的这个计时器组件里获取秒数的值。</p>
-<h3 translation-origin="off" class="no-toc" id="test-it-5">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-5"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="test-it-5">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-5"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">Use <a href="guide/component-interaction#countdown-tests">the same countdown timer tests</a> as before.</p>
-<p translation-result="">使用和之前<a href="guide/component-interaction#countdown-tests">一样的倒计时测试</a>。</p>
-<p translation-origin="off"><a href="guide/component-interaction#top">Back to top</a></p>
-<p translation-result=""><a href="guide/component-interaction#top">回到顶部</a></p>
+<h3 translation-origin="off" class="no-toc" id="test-it-5">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-5"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="test-it-5">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-5"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">Use <a href="/guide/component-interaction#countdown-tests">the same countdown timer tests</a> as before.</p>
+<p translation-result="">使用和之前<a href="/guide/component-interaction#countdown-tests">一样的倒计时测试</a>。</p>
+<p translation-origin="off"><a href="/guide/component-interaction#top">Back to top</a></p>
+<p translation-result=""><a href="/guide/component-interaction#top">回到顶部</a></p>
 <a id="bidirectional-service"></a>
-<h2 translation-origin="off" id="parent-and-children-communicate-via-a-service">Parent and children communicate via a service<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-and-children-communicate-via-a-service"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="parent-and-children-communicate-via-a-service">父组件和子组件通过服务来通讯<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#parent-and-children-communicate-via-a-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="parent-and-children-communicate-via-a-service">Parent and children communicate via a service<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-and-children-communicate-via-a-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="parent-and-children-communicate-via-a-service">父组件和子组件通过服务来通讯<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#parent-and-children-communicate-via-a-service"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A parent component and its children share a service whose interface enables bi-directional communication
 <em>within the family</em>.</p>
 <p translation-result="">父组件和它的子组件共享同一个服务，利用该服务<em>在家庭内部</em>实现双向通讯。</p>
@@ -1497,7 +1497,7 @@ export class MissionService {
   missionAnnounced$ = this.missionAnnouncedSource.asObservable();
   missionConfirmed$ = this.missionConfirmedSource.asObservable();
 
-  // Service <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> commands
+  // Service <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> commands
   announceMission(mission: string) {
     this.missionAnnouncedSource.next(mission);
   }
@@ -1518,7 +1518,7 @@ import { MissionService }     from './mission.service';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-mission-control',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>Mission Control&#x3C;/h2>
     &#x3C;button (click)="announce()">Announce mission&#x3C;/button>
     &#x3C;app-astronaut *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let astronaut of astronauts"
@@ -1566,7 +1566,7 @@ import { Subscription }   from 'rxjs';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-astronaut',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;p>
       {{astronaut}}: &#x3C;strong>{{mission}}&#x3C;/strong>
       &#x3C;button
@@ -1582,7 +1582,7 @@ export class AstronautComponent implements <a href="/api/core/OnDestroy" class="
   mission = '&#x3C;no mission announced>';
   confirmed = false;
   announced = false;
-  <a href="api/service-worker/SwPush#subscription" class="code-anchor">subscription</a>: Subscription;
+  <a href="/api/service-worker/SwPush#subscription" class="code-anchor">subscription</a>: Subscription;
 
   constructor(private missionService: MissionService) {
     this.subscription = missionService.missionAnnounced$.subscribe(
@@ -1606,11 +1606,11 @@ export class AstronautComponent implements <a href="/api/core/OnDestroy" class="
 
 </code-example>
 <div class="alert is-helpful">
-<p translation-origin="off">Notice that this example captures the <code><a href="api/service-worker/SwPush#subscription" class="code-anchor">subscription</a></code> and <code><a href="api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> when the <code>AstronautComponent</code> is destroyed.
+<p translation-origin="off">Notice that this example captures the <code><a href="/api/service-worker/SwPush#subscription" class="code-anchor">subscription</a></code> and <code><a href="/api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> when the <code>AstronautComponent</code> is destroyed.
 This is a memory-leak guard step. There is no actual risk in this app because the
 lifetime of a <code>AstronautComponent</code> is the same as the lifetime of the app itself.
 That <em>would not</em> always be true in a more complex application.</p>
-<p translation-result="">注意，这个例子保存了 <code><a href="api/service-worker/SwPush#subscription" class="code-anchor">subscription</a></code> 变量，并在 <code>AstronautComponent</code> 被销毁时调用 <code><a href="api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> 退订。
+<p translation-result="">注意，这个例子保存了 <code><a href="/api/service-worker/SwPush#subscription" class="code-anchor">subscription</a></code> 变量，并在 <code>AstronautComponent</code> 被销毁时调用 <code><a href="/api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> 退订。
 这是一个用于防止内存泄漏的保护措施。实际上，在这个应用程序中并没有这个风险，因为 <code>AstronautComponent</code> 的生命期和应用程序的生命期一样长。但在更复杂的应用程序环境中就不一定了。</p>
 <p translation-origin="off">You don't add this guard to the <code>MissionControlComponent</code> because, as the parent,
 it controls the lifetime of the <code>MissionService</code>.</p>
@@ -1623,8 +1623,8 @@ facilitated by the service:</p>
 <figure>
   <img src="generated/images/guide/component-interaction/bidirectional-service.gif" alt="bidirectional-service" width="310" height="346">
 </figure>
-<h3 translation-origin="off" class="no-toc" id="test-it-6">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-6"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="test-it-6">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-interaction#test-it-6"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="test-it-6">Test it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-6"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="test-it-6">测试一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-interaction#test-it-6"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Tests click buttons of both the parent <code>MissionControlComponent</code> and the <code>AstronautComponent</code> children
 and verify that the history meets expectations:</p>
 <p translation-result="">测试确保点击父组件 <code>MissionControlComponent</code> 和子组件 <code>AstronautComponent</code> 两个的组件的按钮时，<em>History</em> 日志和预期的一样。</p>
@@ -1665,8 +1665,8 @@ function testConfirmMission(buttonIndex: number, expectedLogCount: number, astro
 // ...
 
 </code-example>
-<p translation-origin="off"><a href="guide/component-interaction#top">Back to top</a></p>
-<p translation-result=""><a href="guide/component-interaction#top">回到顶部</a></p>
+<p translation-origin="off"><a href="/guide/component-interaction#top">Back to top</a></p>
+<p translation-result=""><a href="/guide/component-interaction#top">回到顶部</a></p>
 
 </div>
 <!-- links to this doc:

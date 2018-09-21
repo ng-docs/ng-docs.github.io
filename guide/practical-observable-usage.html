@@ -808,12 +808,12 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="practical-observable-usage">Practical observable usage<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/practical-observable-usage#practical-observable-usage"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="practical-observable-usage">可观察对象用法实战<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/practical-observable-usage#practical-observable-usage"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="practical-observable-usage">Practical observable usage<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/practical-observable-usage#practical-observable-usage"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="practical-observable-usage">可观察对象用法实战<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/practical-observable-usage#practical-observable-usage"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Here are some examples of domains in which observables are particularly useful.</p>
 <p translation-result="">这里示范了一些在某种领域中可观察对象会特别有用的例子。</p>
-<h2 translation-origin="off" id="type-ahead-suggestions">Type-ahead suggestions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/practical-observable-usage#type-ahead-suggestions"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="type-ahead-suggestions">输入提示（type-ahead）建议<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/practical-observable-usage#type-ahead-suggestions"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="type-ahead-suggestions">Type-ahead suggestions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/practical-observable-usage#type-ahead-suggestions"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="type-ahead-suggestions">输入提示（type-ahead）建议<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/practical-observable-usage#type-ahead-suggestions"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Observables can simplify the implementation of type-ahead suggestions. Typically, a type-ahead has to do a series of separate tasks:</p>
 <p translation-result="">可观察对象可以简化输入提示建议的实现方式。典型的输入提示要完成一系列独立的任务：</p>
 <ul>
@@ -862,8 +862,8 @@ typeahead.subscribe(data => {
 
 
 </code-example>
-<h2 translation-origin="off" id="exponential-backoff">Exponential backoff<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/practical-observable-usage#exponential-backoff"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="exponential-backoff">指数化退避<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/practical-observable-usage#exponential-backoff"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="exponential-backoff">Exponential backoff<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/practical-observable-usage#exponential-backoff"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="exponential-backoff">指数化退避<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/practical-observable-usage#exponential-backoff"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Exponential backoff is a technique in which you retry an API after failure, making the time in between retries longer after each consecutive failure, with a maximum number of retries after which the request is considered to have failed. This can be quite complex to implement with promises and other methods of tracking AJAX calls. With observables, it is very easy:</p>
 <p translation-result="">指数化退避是一种失败后重试 API 的技巧，它会在每次连续的失败之后让重试时间逐渐变长，超过最大重试次数之后就会彻底放弃。
 如果使用承诺和其它跟踪 AJAX 调用的方法会非常复杂，而使用可观察对象，这非常简单：</p>

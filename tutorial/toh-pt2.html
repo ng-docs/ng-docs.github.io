@@ -808,14 +808,14 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="display-a-heroes-list">Display a Heroes List<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#display-a-heroes-list"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="display-a-heroes-list">显示英雄列表<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#display-a-heroes-list"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="display-a-heroes-list">Display a Heroes List<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#display-a-heroes-list"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="display-a-heroes-list">显示英雄列表<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#display-a-heroes-list"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">In this page, you'll expand the Tour of Heroes app to display a list of heroes, and
 allow users to select a hero and display the hero's details.</p>
 <p translation-result="">本页中，你将扩展《英雄指南》应用，让它显示一个英雄列表，
 并允许用户选择一个英雄，查看该英雄的详细信息。</p>
-<h2 translation-origin="off" id="create-mock-heroes">Create mock heroes<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#create-mock-heroes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="create-mock-heroes">创建模拟（mock）的英雄数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#create-mock-heroes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="create-mock-heroes">Create mock heroes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#create-mock-heroes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="create-mock-heroes">创建模拟（mock）的英雄数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#create-mock-heroes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You'll need some heroes to display.</p>
 <p translation-result="">你需要一些英雄数据以供显示。</p>
 <p translation-origin="off">Eventually you'll get them from a remote data server.
@@ -846,8 +846,8 @@ export const HEROES: Hero[] = [
 
 
 </code-example>
-<h2 translation-origin="off" id="displaying-heroes">Displaying heroes<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#displaying-heroes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="displaying-heroes">显示这些英雄<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#displaying-heroes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="displaying-heroes">Displaying heroes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#displaying-heroes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="displaying-heroes">显示这些英雄<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#displaying-heroes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You're about to display the list of heroes at the top of the <code>HeroesComponent</code>.</p>
 <p translation-result="">你要在 <code>HeroesComponent</code> 的顶部显示这个英雄列表。</p>
 <p translation-origin="off">Open the <code>HeroesComponent</code> class file and import the mock <code>HEROES</code>.</p>
@@ -862,8 +862,8 @@ import { HEROES } from '../mock-heroes';
 heroes = HEROES;
 
 </code-example>
-<h3 translation-origin="off" id="list-heroes-with-ngfor">List heroes with <em>*ngFor</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#list-heroes-with-ngfor"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="list-heroes-with-emngforem">使用 <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 列出这些英雄<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#list-heroes-with-emngforem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="list-heroes-with-ngfor">List heroes with <em>*ngFor</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#list-heroes-with-ngfor"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="list-heroes-with-emngforem">使用 <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 列出这些英雄<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#list-heroes-with-emngforem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Open the <code>HeroesComponent</code> template file and make the following changes:</p>
 <p translation-result="">打开 <code>HeroesComponent</code> 的模板文件，并做如下修改：</p>
 <ul>
@@ -901,9 +901,9 @@ heroes = HEROES;
 &#x3C;li *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes">
 
 </code-example>
-<p translation-origin="off">The <a href="guide/template-syntax#ngFor"><code>*ngFor</code></a> is Angular's <em>repeater</em> directive.
+<p translation-origin="off">The <a href="/guide/template-syntax#ngFor"><code>*ngFor</code></a> is Angular's <em>repeater</em> directive.
 It repeats the host element for each element in a list.</p>
-<p translation-result=""><a href="guide/template-syntax#ngFor"><code>*ngFor</code></a> 是一个 Angular 的复写器（repeater）指令。
+<p translation-result=""><a href="/guide/template-syntax#ngFor"><code>*ngFor</code></a> 是一个 Angular 的复写器（repeater）指令。
 它会为列表中的每项数据复写它的宿主元素。</p>
 <p translation-origin="off">In this example</p>
 <p translation-result="">在这个例子中</p>
@@ -928,14 +928,14 @@ It repeats the host element for each element in a list.</p>
 <p translation-origin="off">After the browser refreshes, the list of heroes appears.</p>
 <p translation-result="">浏览器刷新之后，英雄列表出现了。</p>
 <a id="styles"></a>
-<h3 translation-origin="off" id="style-the-heroes">Style the heroes<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#style-the-heroes"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="style-the-heroes">给英雄们“美容”<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#style-the-heroes"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="style-the-heroes">Style the heroes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#style-the-heroes"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="style-the-heroes">给英雄们“美容”<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#style-the-heroes"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The heroes list should be attractive and should respond visually when users
 hover over and select a hero from the list.</p>
 <p translation-result="">英雄列表应该富有吸引力，并且当用户把鼠标移到某个英雄上和从列表中选中某个英雄时，应该给出视觉反馈。</p>
-<p translation-origin="off">In the <a href="tutorial/toh-pt0#app-wide-styles">first tutorial</a>, you set the basic styles for the entire application in <code>styles.css</code>.
+<p translation-origin="off">In the <a href="/tutorial/toh-pt0#app-wide-styles">first tutorial</a>, you set the basic styles for the entire application in <code>styles.css</code>.
 That stylesheet didn't include styles for this list of heroes.</p>
-<p translation-result="">在<a href="tutorial/toh-pt0#app-wide-styles">教程的第一章</a>，你曾在 <code>styles.css</code> 中为整个应用设置了一些基础的样式。
+<p translation-result="">在<a href="/tutorial/toh-pt0#app-wide-styles">教程的第一章</a>，你曾在 <code>styles.css</code> 中为整个应用设置了一些基础的样式。
 但那个样式表并不包含英雄列表所需的样式。</p>
 <p translation-origin="off">You could add more styles to <code>styles.css</code> and keep growing that stylesheet as you add components.</p>
 <p translation-result="">固然，你可以把更多样式加入到 <code>styles.css</code>，并且放任它随着你添加更多组件而不断膨胀。</p>
@@ -945,48 +945,48 @@ and the CSS —together in one place.</p>
 <p translation-origin="off">This approach makes it easier to re-use the component somewhere else
 and deliver the component's intended appearance even if the global styles are different.</p>
 <p translation-result="">这种方式让你在其它地方复用该组件更加容易，并且即使全局样式和这里不一样，组件也仍然具有期望的外观。</p>
-<p translation-origin="off">You define private styles either inline in the <code>@<a href="api/core/Component#styles" class="code-anchor">Component.styles</a></code> array or
-as stylesheet file(s) identified in the <code>@<a href="api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> array.</p>
-<p translation-result="">你可以用多种方式定义私有样式，或者内联在 <code>@<a href="api/core/Component#styles" class="code-anchor">Component.styles</a></code> 数组中，或者在 <code>@<a href="api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> 所指出的样式表文件中。</p>
+<p translation-origin="off">You define private styles either inline in the <code>@<a href="/api/core/Component#styles" class="code-anchor">Component.styles</a></code> array or
+as stylesheet file(s) identified in the <code>@<a href="/api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> array.</p>
+<p translation-result="">你可以用多种方式定义私有样式，或者内联在 <code>@<a href="/api/core/Component#styles" class="code-anchor">Component.styles</a></code> 数组中，或者在 <code>@<a href="/api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> 所指出的样式表文件中。</p>
 <p translation-origin="off">When the CLI generated the <code>HeroesComponent</code>, it created an empty <code>heroes.component.css</code> stylesheet for the <code>HeroesComponent</code>
-and pointed to it in <code>@<a href="api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> like this.</p>
-<p translation-result="">当 CLI 生成 <code>HeroesComponent</code> 时，它也同时为 <code>HeroesComponent</code> 创建了空白的 <code>heroes.component.css</code> 样式表文件，并且让 <code>@<a href="api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> 指向它，就像这样：</p>
+and pointed to it in <code>@<a href="/api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> like this.</p>
+<p translation-result="">当 CLI 生成 <code>HeroesComponent</code> 时，它也同时为 <code>HeroesComponent</code> 创建了空白的 <code>heroes.component.css</code> 样式表文件，并且让 <code>@<a href="/api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> 指向它，就像这样：</p>
 <code-example path="toh-pt2/src/app/heroes/heroes.component.ts" region="metadata" title="src/app/heroes/heroes.component.ts (@Component)">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
 })
 
 </code-example>
 <p translation-origin="off">Open the <code>heroes.component.css</code> file and paste in the private CSS styles for the <code>HeroesComponent</code>.
-You'll find them in the <a href="tutorial/toh-pt2#final-code-review">final code review</a> at the bottom of this guide.</p>
+You'll find them in the <a href="/tutorial/toh-pt2#final-code-review">final code review</a> at the bottom of this guide.</p>
 <p translation-result="">打开 <code>heroes.component.css</code> 文件，并且把 <code>HeroesComponent</code> 的私有 CSS 样式粘贴进去。
-你可以在本指南底部的<a href="tutorial/toh-pt2#final-code-review">查看最终代码</a>中找到它们。</p>
+你可以在本指南底部的<a href="/tutorial/toh-pt2#final-code-review">查看最终代码</a>中找到它们。</p>
 <div class="alert is-important">
 <p translation-origin="off">Styles and stylesheets identified in <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> metadata are scoped to that specific component.
 The <code>heroes.component.css</code> styles apply only to the <code>HeroesComponent</code> and don't affect the outer HTML or the HTML in any other component.</p>
 <p translation-result=""><code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 元数据中指定的样式和样式表都是局限于该组件的。
 <code>heroes.component.css</code> 中的样式只会作用于 <code>HeroesComponent</code>，既不会影响到组件外的 HTML，也不会影响到其它组件中的 HTML。</p>
 </div>
-<h2 translation-origin="off" id="masterdetail">Master/Detail<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#masterdetail"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="masterdetail">主从结构<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#masterdetail"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="masterdetail">Master/Detail<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#masterdetail"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="masterdetail">主从结构<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#masterdetail"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">When the user clicks a hero in the <strong>master</strong> list,
 the component should display the selected hero's <strong>details</strong> at the bottom of the page.</p>
 <p translation-result="">当用户在<strong>主</strong>列表中点击一个英雄时，该组件应该在页面底部显示所选英雄的<strong>详情</strong>。</p>
 <p translation-origin="off">In this section, you'll listen for the hero item click event
 and update the hero detail.</p>
 <p translation-result="">在本节，你将监听英雄条目的点击事件，并更新英雄的详情。</p>
-<h3 translation-origin="off" id="add-a-click-event-binding">Add a click event binding<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#add-a-click-event-binding"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-a-click-event-binding">添加 <code>click</code> 事件绑定<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#add-a-click-event-binding"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-a-click-event-binding">Add a click event binding<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#add-a-click-event-binding"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-a-click-event-binding">添加 <code>click</code> 事件绑定<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#add-a-click-event-binding"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Add a click event binding to the <code>&#x3C;li></code> like this:</p>
 <p translation-result="">再往 <code>&#x3C;li></code> 元素上插入一句点击事件的绑定代码：</p>
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="selectedHero-click" title="heroes.component.html (template excerpt)" linenums="false">
 &#x3C;li *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes" (click)="onSelect(hero)">
 
 </code-example>
-<p translation-origin="off">This is an example of Angular's <a href="guide/template-syntax#event-binding">event binding</a> syntax.</p>
-<p translation-result="">这是 Angular <a href="guide/template-syntax#event-binding">事件绑定</a> 语法的例子。</p>
+<p translation-origin="off">This is an example of Angular's <a href="/guide/template-syntax#event-binding">event binding</a> syntax.</p>
+<p translation-result="">这是 Angular <a href="/guide/template-syntax#event-binding">事件绑定</a> 语法的例子。</p>
 <p translation-origin="off">The parentheses around <code>click</code> tell Angular to listen for the <code>&#x3C;li></code> element's  <code>click</code> event.
 When the user clicks in the <code>&#x3C;li></code>, Angular executes the <code>onSelect(hero)</code> expression.</p>
 <p translation-result=""><code>click</code> 外面的圆括号会让 Angular 监听这个 <code>&#x3C;li></code> 元素的 <code>click</code> 事件。
@@ -996,8 +996,8 @@ Angular calls it with the <code>hero</code> object displayed in the clicked <cod
 the same <code>hero</code> defined previously in the <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> expression.</p>
 <p translation-result=""><code>onSelect()</code> 是 <code>HeroesComponent</code> 上的一个方法，你很快就要写它。
 Angular 会把所点击的 <code>&#x3C;li></code> 上的 <code>hero</code> 对象传给它，这个 <code>hero</code> 也就是前面在 <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 表达式中定义的那个。</p>
-<h3 translation-origin="off" id="add-the-click-event-handler">Add the click event handler<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#add-the-click-event-handler"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-the-click-event-handler">添加 <code>click</code> 事件处理器<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#add-the-click-event-handler"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-the-click-event-handler">Add the click event handler<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#add-the-click-event-handler"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-the-click-event-handler">添加 <code>click</code> 事件处理器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#add-the-click-event-handler"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Rename the component's <code>hero</code> property to <code>selectedHero</code> but don't assign it.
 There is no <em>selected hero</em> when the application starts.</p>
 <p translation-result="">把该组件的 <code>hero</code> 属性改名为 <code>selectedHero</code>，但不要为它赋值。
@@ -1013,8 +1013,8 @@ onSelect(hero: Hero): void {
 }
 
 </code-example>
-<h3 translation-origin="off" id="update-the-details-template">Update the details template<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#update-the-details-template"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="update-the-details-template">修改详情模板<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#update-the-details-template"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="update-the-details-template">Update the details template<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#update-the-details-template"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="update-the-details-template">修改详情模板<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#update-the-details-template"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The template still refers to the component's old <code>hero</code> property which no longer exists.
 Rename <code>hero</code> to <code>selectedHero</code>.</p>
 <p translation-result="">该模板引用的仍然是老的 <code>hero</code> 属性，但它已经不存在了。
@@ -1029,14 +1029,14 @@ Rename <code>hero</code> to <code>selectedHero</code>.</p>
 &#x3C;/div>
 
 </code-example>
-<h3 translation-origin="off" id="hide-empty-details-with-ngif">Hide empty details with <em>*ngIf</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#hide-empty-details-with-ngif"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="hide-empty-details-with-emngifem">使用 <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 隐藏空白的详情<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#hide-empty-details-with-emngifem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="hide-empty-details-with-ngif">Hide empty details with <em>*ngIf</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#hide-empty-details-with-ngif"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="hide-empty-details-with-emngifem">使用 <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 隐藏空白的详情<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#hide-empty-details-with-emngifem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">After the browser refreshes, the application is broken.</p>
 <p translation-result="">刷新浏览器，应用挂了。</p>
 <p translation-origin="off">Open the browser developer tools and look in the console for an error message like this:</p>
 <p translation-result="">打开浏览器的开发者工具，它的控制台中显示出如下错误信息：</p>
 <code-example language="sh" class="code-shell">
-  HeroesComponent.html:3 ERROR TypeError: Cannot <a href="api/core/Query#read" class="code-anchor">read</a> property 'name' of undefined
+  HeroesComponent.html:3 ERROR TypeError: Cannot <a href="/api/core/Query#read" class="code-anchor">read</a> property 'name' of undefined
 </code-example>
 <p translation-origin="off">Now click one of the list items.
 The app seems to be working again.
@@ -1044,14 +1044,14 @@ The heroes appear in a list and details about the clicked hero appear at the bot
 <p translation-result="">现在，从列表中随便点击一个条目。
 应用又正常了。
 英雄们显示在列表中，并且所点英雄的详情也显示在了页面的下方。</p>
-<h4 translation-origin="off" id="what-happened">What happened?<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#what-happened"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="what-happened">怎么回事？<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#what-happened"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="what-happened">What happened?<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#what-happened"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="what-happened">怎么回事？<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#what-happened"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">When the app starts, the <code>selectedHero</code> is <code>undefined</code> <em>by design</em>.</p>
 <p translation-result="">当应用启动时，<code>selectedHero</code> 是 <code>undefined</code>，<em>设计如此</em>。</p>
 <p translation-origin="off">Binding expressions in the template that refer to properties of <code>selectedHero</code> — expressions like <code>{{selectedHero.name}}</code> — <em>must fail</em> because there is no selected hero.</p>
 <p translation-result="">但模板中的绑定表达式引用了 <code>selectedHero</code> 的属性（表达式为 <code>{{selectedHero.name}}</code>），这必然会失败，因为你还没选过英雄呢。</p>
-<h4 translation-origin="off" id="the-fix">The fix<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#the-fix"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="the-fix">修复<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#the-fix"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="the-fix">The fix<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#the-fix"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="the-fix">修复<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#the-fix"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The component should only display the selected hero details if the <code>selectedHero</code> exists.</p>
 <p translation-result="">该组件应该只有当 <code>selectedHero</code> 存在时才显示所选英雄的详情。</p>
 <p translation-origin="off">Wrap the hero detail HTML in a <code>&#x3C;div></code>.
@@ -1082,15 +1082,15 @@ Click a hero and its details appear.</p>
 <p translation-result="">浏览器刷新之后，英雄名字的列表又出现了。
 详情部分仍然是空。
 点击一个英雄，它的详情就出现了。</p>
-<h4 translation-origin="off" id="why-it-works">Why it works<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#why-it-works"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="why-it-works">为什么改好了？<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#why-it-works"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="why-it-works">Why it works<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#why-it-works"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="why-it-works">为什么改好了？<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#why-it-works"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">When <code>selectedHero</code> is undefined, the <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> removes the hero detail from the DOM. There are no <code>selectedHero</code> bindings to worry about.</p>
 <p translation-result="">当 <code>selectedHero</code> 为 <code>undefined</code> 时，<code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 从 DOM 中移除了英雄详情。因此也就不用担心 <code>selectedHero</code> 的绑定了。</p>
 <p translation-origin="off">When the user picks a hero, <code>selectedHero</code> has a value and
 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> puts the hero detail into the DOM.</p>
 <p translation-result="">当用户选择一个英雄时，<code>selectedHero</code> 也就有了值，并且 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 把英雄的详情放回到 DOM 中。</p>
-<h3 translation-origin="off" id="style-the-selected-hero">Style the selected hero<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#style-the-selected-hero"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="style-the-selected-hero">给所选英雄添加样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#style-the-selected-hero"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="style-the-selected-hero">Style the selected hero<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#style-the-selected-hero"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="style-the-selected-hero">给所选英雄添加样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#style-the-selected-hero"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">It's difficult to identify the <em>selected hero</em> in the list when all <code>&#x3C;li></code> elements look alike.</p>
 <p translation-result="">所有的 <code>&#x3C;li></code> 元素看起来都是一样的，因此很难从列表中识别出<em>所选英雄</em>。</p>
 <p translation-origin="off">If the user clicks "Magneta", that hero should render with a distinctive but subtle background color like this:</p>
@@ -1098,13 +1098,13 @@ Click a hero and its details appear.</p>
 <figure>
   <img src="generated/images/guide/toh/heroes-list-selected.png" alt="Selected hero" width="165" height="129">
 </figure>
-<p translation-origin="off">That <em>selected hero</em> coloring is the work of the <code>.selected</code> CSS class in the <a href="tutorial/toh-pt2#styles">styles you added earlier</a>.
+<p translation-origin="off">That <em>selected hero</em> coloring is the work of the <code>.selected</code> CSS class in the <a href="/tutorial/toh-pt2#styles">styles you added earlier</a>.
 You just have to apply the <code>.selected</code> class to the <code>&#x3C;li></code> when the user clicks it.</p>
-<p translation-result=""><em>所选英雄</em>的颜色来自于<a href="tutorial/toh-pt2#styles">你前面添加的样式</a>中的 CSS 类 <code>.selected</code>。
+<p translation-result=""><em>所选英雄</em>的颜色来自于<a href="/tutorial/toh-pt2#styles">你前面添加的样式</a>中的 CSS 类 <code>.selected</code>。
 所以你只要在用户点击一个 <code>&#x3C;li></code> 时把 <code>.selected</code> 类应用到该元素上就可以了。</p>
-<p translation-origin="off">The Angular <a href="guide/template-syntax#class-binding">class binding</a> makes it easy to add and remove a CSS class conditionally.
+<p translation-origin="off">The Angular <a href="/guide/template-syntax#class-binding">class binding</a> makes it easy to add and remove a CSS class conditionally.
 Just add <code>[class.some-css-class]="some-condition"</code> to the element you want to style.</p>
-<p translation-result="">Angular 的 <a href="guide/template-syntax#class-binding">CSS 类绑定</a>机制让根据条件添加或移除一个 CSS 类变得很容易。
+<p translation-result="">Angular 的 <a href="/guide/template-syntax#class-binding">CSS 类绑定</a>机制让根据条件添加或移除一个 CSS 类变得很容易。
 只要把 <code>[class.some-css-class]="some-condition"</code> 添加到你要施加样式的元素上就可以了。</p>
 <p translation-origin="off">Add the following <code>[class.selected]</code> binding to  the <code>&#x3C;li></code> in the <code>HeroesComponent</code> template:</p>
 <p translation-result="">在 <code>HeroesComponent</code> 模板中的 <code>&#x3C;li></code> 元素上添加 <code>[class.selected]</code> 绑定，代码如下：</p>
@@ -1125,8 +1125,8 @@ Just add <code>[class.some-css-class]="some-condition"</code> to the element you
 
 </code-example>
 <a id="final-code-review"></a>
-<h2 translation-origin="off" id="final-code-review">Final code review<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#final-code-review"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="final-code-review-2">查看最终代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#final-code-review-2"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="final-code-review">Final code review<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#final-code-review"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="final-code-review-2">查看最终代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#final-code-review-2"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Your app should look like this <live-example></live-example>. </p>
 <p translation-result="">你的应用现在变成了这样：<live-example></live-example>。</p>
 <p translation-origin="off">Here are the code files discussed on this page, including the <code>HeroesComponent</code> styles.</p>
@@ -1140,7 +1140,7 @@ import { HEROES } from '../mock-heroes';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
 })
 export class HeroesComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
 
@@ -1201,7 +1201,7 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
 }
 .heroes li {
   cursor: pointer;
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
   left: 0;
   background-color: #EEE;
   margin: .5em;
@@ -1219,7 +1219,7 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
   left: .1em;
 }
 .heroes .text {
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
   top: -3px;
 }
 .heroes .badge {
@@ -1229,7 +1229,7 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
   padding: 0.8em 0.7em 0 0.7em;
   background-color: #607D8B;
   line-height: 1em;
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
   left: -1px;
   top: -4px;
   height: 1.8em;
@@ -1240,8 +1240,8 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
 
 </code-pane>
 </code-tabs>
-<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#summary"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="summary-12">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt2#summary-12"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#summary"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="summary-12">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt2#summary-12"><i class="material-icons">link</i></a></h2>
 <ul>
 <li>
 <p translation-origin="off">The Tour of Heroes app displays a list of heroes in a Master/Detail view.</p>

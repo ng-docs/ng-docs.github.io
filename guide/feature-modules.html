@@ -808,12 +808,12 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="feature-modules">Feature Modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#feature-modules"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="feature-modules">特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#feature-modules"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="feature-modules">Feature Modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#feature-modules"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="feature-modules">特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#feature-modules"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Feature modules are NgModules for the purpose of  organizing code.</p>
 <p translation-result="">特性模块是用来对代码进行组织的模块。</p>
-<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-2">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#prerequisites-2"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-2">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#prerequisites-2"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A basic understanding of the following:</p>
 <p translation-result="">对下列知识有基本的了解：</p>
 <ul>
@@ -843,8 +843,8 @@ directives, and managing the size of the root module.</p>
 <p translation-result="">随着应用的增长，你可能需要组织与特定应用有关的代码。
 这将帮你把特性划出清晰的边界。使用特性模块，你可以把与特定的功能或特性有关的代码从其它代码中分离出来。
 为应用勾勒出清晰的边界，有助于开发人员之间、小组之间的协作，有助于分离各个指令，并帮助管理根模块的大小。</p>
-<h2 translation-origin="off" id="feature-modules-vs-root-modules">Feature modules vs. root modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#feature-modules-vs-root-modules"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="feature-modules-vs-root-modules">特性模块 vs. 根模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#feature-modules-vs-root-modules"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="feature-modules-vs-root-modules">Feature modules vs. root modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#feature-modules-vs-root-modules"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="feature-modules-vs-root-modules">特性模块 vs. 根模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#feature-modules-vs-root-modules"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A feature module is an organizational best practice, as opposed to a concept of the core Angular API. A feature module delivers a cohesive set of functionality focused on a
 specific application need such as a user workflow, routing, or forms.
 While you can do everything within the root module, feature modules
@@ -854,8 +854,8 @@ the services it provides and the components, directives, and
 pipes that it shares.</p>
 <p translation-result="">与核心的 Angular API 的概念相反，特性模块是最佳的组织方式。特性模块提供了聚焦于特定应用需求的一组功能，比如用户工作流、路由或表单。
 虽然你也可以用根模块做完所有事情，不过特性模块可以帮助你把应用划分成一些聚焦的功能区。特性模块通过它提供的服务以及共享出的组件、指令和管道来与根模块和其它模块合作。</p>
-<h2 translation-origin="off" id="how-to-make-a-feature-module">How to make a feature module<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#how-to-make-a-feature-module"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="how-to-make-a-feature-module">如何制作特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#how-to-make-a-feature-module"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="how-to-make-a-feature-module">How to make a feature module<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#how-to-make-a-feature-module"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="how-to-make-a-feature-module">如何制作特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#how-to-make-a-feature-module"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Assuming you already have a CLI generated app, create a feature
 module using the CLI by entering the following command in the
 root project directory. Replace <code>CustomerDashboard</code> with the
@@ -871,10 +871,10 @@ import { <a href="/api/core/NgModule" class="code-anchor">NgModule</a> } from '@
 import { <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a> } from '@angular/common';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a>
   ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: []
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: []
 })
 export class CustomerDashboardModule { }
 </code-example>
@@ -882,9 +882,9 @@ export class CustomerDashboardModule { }
 <p translation-result="">无论根模块还是特性模块，其 NgModule 结构都是一样的。在 CLI 生成的特性模块中，在文件顶部有两个 JavaScript 的导入语句：第一个导入了 <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code>，它像根模块中一样让你能使用 <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 装饰器；第二个导入了 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code>，它提供了很多像 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 和 <code><a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 这样的常用指令。
 特性模块导入 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code>，而不是 <code><a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a></code>，后者只应该在根模块中导入一次。
 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> 只包含常用指令的信息，比如 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 和 <code><a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code>，它们在大多数模板中都要用到，而 <code><a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a></code> 为浏览器所做的应用配置只会使用一次。</p>
-<p translation-origin="off">The <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array is available for you to add declarables, which
+<p translation-origin="off">The <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array is available for you to add declarables, which
 are components, directives, and pipes that belong exclusively to this particular module. To add a component, enter the following command at the command line where <code>customer-dashboard</code> is the directory where the CLI generated the feature module and <code>CustomerDashboard</code> is the name of the component:</p>
-<p translation-result=""><code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组让你能添加专属于这个模块的可声明对象（组件、指令和管道）。
+<p translation-result=""><code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组让你能添加专属于这个模块的可声明对象（组件、指令和管道）。
 要添加组件，就在命令行中输入如下命令，这里的 <code>customer-dashboard</code> 是一个目录，CLI 会把特性模块生成在这里，而 <code>CustomerDashboard</code> 就是该组件的名字：</p>
 <code-example language="sh">
 ng generate component customer-dashboard/CustomerDashboard
@@ -895,22 +895,22 @@ ng generate component customer-dashboard/CustomerDashboard
 // import the new component
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a>
   ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
     CustomerDashboardComponent
   ],
 })
 
 
 </code-example>
-<p translation-origin="off">The <code>CustomerDashboardComponent</code> is now in the JavaScript import list at the top and added to the <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array, which lets Angular know to associate this new component with this feature module.</p>
-<p translation-result=""><code>CustomerDashboardComponent</code> 出现在了顶部的 JavaScript 导入列表里，并且被添加到了 <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组中，它会让 Angular 把新组件和这个特性模块联系起来。</p>
-<h2 translation-origin="off" id="importing-a-feature-module">Importing a feature module<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#importing-a-feature-module"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="importing-a-feature-module">导入特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#importing-a-feature-module"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off">To incorporate the feature module into your app, you have to let the root module, <code>app.module.ts</code>, know about it. Notice the <code>CustomerDashboardModule</code> export at the bottom of <code>customer-dashboard.module.ts</code>. This exposes it so that other modules can get to it. To import it into the <code>AppModule</code>, add it to the imports in <code>app.module.ts</code> and to the <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> array:</p>
-<p translation-result="">要想把这个特性模块包含进应用中，你还得让根模块 <code>app.module.ts</code> 知道它。注意，在 <code>customer-dashboard.module.ts</code> 的底部导出了 <code>CustomerDashboardModule</code>。这样就把它暴露出来，以便其它模块可以拿到它。要想把它导入到 <code>AppModule</code> 中，就把它加入 <code>app.module.ts</code> 的导入表中，并将其加入 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 数组：</p>
+<p translation-origin="off">The <code>CustomerDashboardComponent</code> is now in the JavaScript import list at the top and added to the <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array, which lets Angular know to associate this new component with this feature module.</p>
+<p translation-result=""><code>CustomerDashboardComponent</code> 出现在了顶部的 JavaScript 导入列表里，并且被添加到了 <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组中，它会让 Angular 把新组件和这个特性模块联系起来。</p>
+<h2 translation-origin="off" id="importing-a-feature-module">Importing a feature module<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#importing-a-feature-module"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="importing-a-feature-module">导入特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#importing-a-feature-module"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off">To incorporate the feature module into your app, you have to let the root module, <code>app.module.ts</code>, know about it. Notice the <code>CustomerDashboardModule</code> export at the bottom of <code>customer-dashboard.module.ts</code>. This exposes it so that other modules can get to it. To import it into the <code>AppModule</code>, add it to the imports in <code>app.module.ts</code> and to the <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> array:</p>
+<p translation-result="">要想把这个特性模块包含进应用中，你还得让根模块 <code>app.module.ts</code> 知道它。注意，在 <code>customer-dashboard.module.ts</code> 的底部导出了 <code>CustomerDashboardModule</code>。这样就把它暴露出来，以便其它模块可以拿到它。要想把它导入到 <code>AppModule</code> 中，就把它加入 <code>app.module.ts</code> 的导入表中，并将其加入 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 数组：</p>
 <code-example path="feature-modules/src/app/app.module.ts" region="app-module" title="src/app/app.module.ts" linenums="false">
 import { <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> } from '@angular/platform-browser';
 import { <a href="/api/core/NgModule" class="code-anchor">NgModule</a> } from '@angular/core';
@@ -918,30 +918,30 @@ import { <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> } 
 import { <a href="/api/http/HttpModule" class="code-anchor">HttpModule</a> } from '@angular/http';
 
 import { AppComponent } from './app.component';
-// import the feature module here so you can add it to the <a href="api/core/NgModule#imports" class="code-anchor">imports</a> array below
+// import the feature module here so you can add it to the <a href="/api/core/NgModule#imports" class="code-anchor">imports</a> array below
 import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
 
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
     AppComponent
   ],
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>,
     <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a>,
     <a href="/api/http/HttpModule" class="code-anchor">HttpModule</a>,
     CustomerDashboardModule // add the feature module here
   ],
   providers: [],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [AppComponent]
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [AppComponent]
 })
 export class AppModule { }
 
 </code-example>
 <p translation-origin="off">Now the <code>AppModule</code> knows about the feature module. If you were to add any service providers to the feature module, <code>AppModule</code> would know about those too, as would any other feature modules. However, NgModules don’t expose their components.</p>
 <p translation-result="">现在 <code>AppModule</code> 知道这个特性模块了。如果你往该特性模块中加入过任何服务提供商，<code>AppModule</code> 也同样会知道它，其它模块中也一样。不过，NgModule 并不会暴露出它们的组件。</p>
-<h2 translation-origin="off" id="rendering-a-feature-modules-component-template">Rendering a feature module’s component template<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#rendering-a-feature-modules-component-template"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="rendering-a-feature-modules-component-template">渲染特性模块的组件模板<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#rendering-a-feature-modules-component-template"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="rendering-a-feature-modules-component-template">Rendering a feature module’s component template<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#rendering-a-feature-modules-component-template"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="rendering-a-feature-modules-component-template">渲染特性模块的组件模板<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#rendering-a-feature-modules-component-template"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">When the CLI generated the <code>CustomerDashboardComponent</code> for the feature module, it included a template, <code>customer-dashboard.component.html</code>, with the following markup:</p>
 <p translation-result="">当 CLI 为这个特性模块生成 <code>CustomerDashboardComponent</code> 时，还包含一个模板 <code>customer-dashboard.component.html</code>，它带有如下页面脚本：</p>
 <code-example path="feature-modules/src/app/customer-dashboard/customer-dashboard/customer-dashboard.component.html" region="feature-template" title="src/app/customer-dashboard/customer-dashboard/customer-dashboard.component.html" linenums="false">
@@ -950,11 +950,11 @@ export class AppModule { }
 &#x3C;/p>
 
 </code-example>
-<p translation-origin="off">To see this HTML in the <code>AppComponent</code>, you first have to export the <code>CustomerDashboardComponent</code> in the <code>CustomerDashboardModule</code>. In <code>customer-dashboard.module.ts</code>, just beneath the <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array, add an <code><a href="api/core/NgModule#exports" class="code-anchor">exports</a></code> array containing <code>CustomerDashboardModule</code>:</p>
+<p translation-origin="off">To see this HTML in the <code>AppComponent</code>, you first have to export the <code>CustomerDashboardComponent</code> in the <code>CustomerDashboardModule</code>. In <code>customer-dashboard.module.ts</code>, just beneath the <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array, add an <code><a href="/api/core/NgModule#exports" class="code-anchor">exports</a></code> array containing <code>CustomerDashboardModule</code>:</p>
 <p translation-result="">要想在 <code>AppComponent</code> 中查看这些 HTML，你首先要在 <code>CustomerDashboardModule</code> 中导出 <code>CustomerDashboardComponent</code>。
-在 <code>customer-dashboard.module.ts</code> 中，<code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组的紧下方，加入一个包含 <code>CustomerDashboardModule</code> 的 <code><a href="api/core/NgModule#exports" class="code-anchor">exports</a></code> 数组：</p>
+在 <code>customer-dashboard.module.ts</code> 中，<code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组的紧下方，加入一个包含 <code>CustomerDashboardModule</code> 的 <code><a href="/api/core/NgModule#exports" class="code-anchor">exports</a></code> 数组：</p>
 <code-example path="feature-modules/src/app/customer-dashboard/customer-dashboard.module.ts" region="component-exports" title="src/app/customer-dashboard/customer-dashboard.module.ts" linenums="false">
-<a href="api/core/NgModule#exports" class="code-anchor">exports</a>: [
+<a href="/api/core/NgModule#exports" class="code-anchor">exports</a>: [
   CustomerDashboardComponent
 ]
 
@@ -976,8 +976,8 @@ export class AppModule { }
  <img src="generated/images/guide/feature-modules/feature-module.png" alt="feature module component" width="594" height="408">
 </figure>
 <hr>
-<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="more-on-ngmodules">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/feature-modules#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="more-on-ngmodules">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/feature-modules#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You may also be interested in the following:</p>
 <p translation-result="">你可能还对下列内容感兴趣：</p>
 <ul>

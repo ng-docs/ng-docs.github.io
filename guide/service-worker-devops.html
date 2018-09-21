@@ -808,13 +808,13 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="service-worker-in-production">Service worker in production<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-in-production"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="service-worker-in-production">生产环境下的 Service Worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-in-production"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="service-worker-in-production">Service worker in production<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-in-production"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="service-worker-in-production">生产环境下的 Service Worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-in-production"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">This page is a reference for deploying and supporting production apps that use the Angular service worker. It explains how the Angular service worker fits into the larger production environment, the service worker's behavior under various conditions, and available recourses and fail-safes.</p>
 <p translation-result="">本页讲的是如何使用 Angular Service Worker 发布和支持生产环境下的应用。
 它解释了 Angular Service Worker 如何满足大规模生产环境的需求、Service Worker 在多种条件下有哪些行为以及有哪些可用的资源和故障保护机制。</p>
-<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-13">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#prerequisites-13"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-13">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#prerequisites-13"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A basic understanding of the following:</p>
 <p translation-result="">对下列知识有基本的了解：</p>
 <ul>
@@ -824,21 +824,21 @@
 </li>
 </ul>
 <hr>
-<h2 translation-origin="off" id="service-worker-and-caching-of-app-resources">Service worker and caching of app resources<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-and-caching-of-app-resources"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="service-worker-and-caching-of-app-resources">Service Worker 与应用资源的缓存<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-and-caching-of-app-resources"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="service-worker-and-caching-of-app-resources">Service worker and caching of app resources<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-and-caching-of-app-resources"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="service-worker-and-caching-of-app-resources">Service Worker 与应用资源的缓存<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-and-caching-of-app-resources"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Conceptually, you can imagine the Angular service worker as a forward cache or a CDN edge that is installed in the end user's web browser. The service worker's job is to satisfy requests made by the Angular app for resources or data from a local cache, without needing to wait for the network. Like any cache, it has rules for how content is expired and updated.</p>
 <p translation-result="">从概念上说，你可以把 Angular Service Worker 想象成一个转发式缓存或装在最终用户浏览器中的 CDN 边缘。
 Service Worker 的工作是从本地缓存中满足 Angular 应用对资源或数据的请求，而不用等待网络。
 和所有缓存一样，它有一些规则来决定内容该如何过期或更新。</p>
 <a id="versions"></a>
-<h3 translation-origin="off" id="app-versions">App versions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#app-versions"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="app-versions">应用的版本<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#app-versions"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">In the context of an Angular service worker, a "version" is a collection of resources that represent a specific build of the Angular app. Whenever a new build of the app is deployed, the service worker treats that build as a new version of the app. This is true even if only a single file is updated. At any given time, the service worker may have multiple versions of the app in its cache and it may be serving them simultaneously. For more information, see the <a href="guide/service-worker-devops#tabs">App tabs</a> section below.</p>
+<h3 translation-origin="off" id="app-versions">App versions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#app-versions"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="app-versions">应用的版本<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#app-versions"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">In the context of an Angular service worker, a "version" is a collection of resources that represent a specific build of the Angular app. Whenever a new build of the app is deployed, the service worker treats that build as a new version of the app. This is true even if only a single file is updated. At any given time, the service worker may have multiple versions of the app in its cache and it may be serving them simultaneously. For more information, see the <a href="/guide/service-worker-devops#tabs">App tabs</a> section below.</p>
 <p translation-result="">在 Angular Service Worker 的语境下，“版本”是指用来表示 Angular 应用的某一次构建成果的一组资源。
 当应用的一个新的构建发布时，Service Worker 就把它看做此应用的一个新版本。
 就算只修改了一个文件，也同样如此。
 在任何一个给定的时间，Service Worker 可能会在它的缓存中拥有此应用的多个版本，这几个版本也都能用于提供服务。
-要了解更多，参见稍后的 <a href="guide/service-worker-devops#tabs">App 选项卡</a>。</p>
+要了解更多，参见稍后的 <a href="/guide/service-worker-devops#tabs">App 选项卡</a>。</p>
 <p translation-origin="off">To preserve app integrity, the Angular service worker groups all files into a version together. The files grouped into a version usually include HTML, JS, and CSS files. Grouping of these files is essential for integrity because HTML, JS, and CSS files frequently refer to each other and depend on specific content. For example, an <code>index.html</code> file might have a <code>&#x3C;script></code> tag that references <code>bundle.js</code> and it might attempt to call a function <code>startApp()</code> from within that script. Any time this version of <code>index.html</code> is served, the corresponding <code>bundle.js</code> must be served with it. For example, assume that the <code>startApp()</code> function is renamed to <code>runApp()</code> in both files. In this scenario, it is not valid to serve the old <code>index.html</code>, which calls <code>startApp()</code>, along with the new bundle, which defines <code>runApp()</code>.</p>
 <p translation-result="">要保持应用的整体性，Angular Service Worker 会用所有的文件共同组成一个版本。
 组成版本的这些文件通常包括 HTML、JS 和 CSS 文件。把这些文件分成一组是至关重要的，因为它们会互相引用，并且依赖于一些特定内容。
@@ -865,16 +865,16 @@ treat the active set of files as a new version.</p>
 <p translation-origin="off">With the versioning behavior of the Angular service worker, an application
 server can ensure that the Angular app always has a consistent set of files.</p>
 <p translation-result="">借助 Angular Service Worker 的这种版本控制行为，应用服务器就可以确保这个 Angular 应用中的这组文件始终保持一致。</p>
-<h4 translation-origin="off" id="update-checks">Update checks<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#update-checks"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="update-checks">更新检测<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#update-checks"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="update-checks">Update checks<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#update-checks"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="update-checks">更新检测<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#update-checks"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Every time the user opens or refreshes the application, the Angular service worker
 checks for updates to the app by looking for updates to the <code>ngsw.json</code> manifest. If
 an update is found, it is downloaded and cached automatically, and will be served
 the next time the application is loaded.</p>
 <p translation-result="">每当用户打开或刷新应用程序时，Angular Service Worker 都会通过查看清单（manifest）文件 “ngsw.json” 的更新来检查该应用程序的更新。
 如果它找到了更新，就会自动下载并缓存这个版本，并在下次加载应用程序时提供。</p>
-<h3 translation-origin="off" id="resource-integrity">Resource integrity<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#resource-integrity"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="resource-integrity">资源整体性<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#resource-integrity"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="resource-integrity">Resource integrity<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#resource-integrity"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="resource-integrity">资源整体性<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#resource-integrity"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">One of the potential side effects of long caching is inadvertently
 caching an invalid resource. In a normal HTTP cache, a hard refresh
 or cache expiration limits the negative effects of caching an invalid
@@ -920,8 +920,8 @@ if the risk of serving invalid, broken, or outdated content is high.</p>
 反之，也可能发生没有更新资源，却更新了 <code>ngsw.json</code> 的情况。</p>
 </li>
 </ul>
-<h4 translation-origin="off" id="unhashed-content">Unhashed content<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#unhashed-content"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="unhashed-content">不带哈希的内容<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#unhashed-content"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="unhashed-content">Unhashed content<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#unhashed-content"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="unhashed-content">不带哈希的内容<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#unhashed-content"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The only resources that have hashes in the <code>ngsw.json</code>
 manifest are resources that were present in the <code>dist</code>
 directory at the time the manifest was built. Other
@@ -943,13 +943,13 @@ configured lifetimes.</p>
 也就是说，当被缓存资源的 HTTP 缓存头指出该资源已过期时，Angular Service Worker 将继续提供内容，并尝试在后台刷新资源。
 这样，那些被破坏的非哈希资源留在缓存中的时间就不会超出为它配置的生命周期。</p>
 <a id="tabs"></a>
-<h3 translation-origin="off" id="app-tabs">App tabs<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#app-tabs"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="app-tabs">App 选项卡<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#app-tabs"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="app-tabs">App tabs<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#app-tabs"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="app-tabs">App 选项卡<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#app-tabs"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">It can be problematic for an app if the version of resources
 it's receiving changes suddenly or without warning. See the
-<a href="guide/service-worker-devops#versions">Versions</a> section above
+<a href="/guide/service-worker-devops#versions">Versions</a> section above
 for a description of such issues.</p>
-<p translation-result="">如果应用程序的资源版本突然发生了变化或没有给出警告，就可能会有问题。有关这些问题的描述，请参阅前面的 <a href="guide/service-worker-devops#versions">版本</a> 部分。</p>
+<p translation-result="">如果应用程序的资源版本突然发生了变化或没有给出警告，就可能会有问题。有关这些问题的描述，请参阅前面的 <a href="/guide/service-worker-devops#versions">版本</a> 部分。</p>
 <p translation-origin="off">The Angular service worker provides a guarantee: a running app
 will continue to run the same version of the app. If another
 instance of the app is opened in a new web browser tab, then
@@ -1000,8 +1000,8 @@ of a running app are normal events:</p>
 <p translation-result=""> 该页面通过 <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> 服务请求立即激活这个更新。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="service-worker-updates">Service worker updates<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-updates"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="service-worker-updates">Service Worker 更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-updates"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="service-worker-updates">Service worker updates<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-updates"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="service-worker-updates">Service Worker 更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-updates"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The Angular service worker is a small script that runs in web browsers.
 From time to time, the service worker will be updated with bug
 fixes and feature improvements.</p>
@@ -1019,8 +1019,8 @@ the app will be refreshed transparently from the network.</p>
 <p translation-result="">Angular Service Worker 的大部分更新对应用程序来说都是透明的 - 旧缓存仍然有效，其内容仍然能正常使用。
 但是，在 Angular Service Worker 中可能偶尔会有错误修复或新功能，需要让旧的缓存失效。
 这时，应用程序就从会网络上透明地进行刷新。</p>
-<h2 translation-origin="off" id="debugging-the-angular-service-worker">Debugging the Angular service worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#debugging-the-angular-service-worker"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="debugging-the-angular-service-worker">调试 Angular Service Worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#debugging-the-angular-service-worker"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="debugging-the-angular-service-worker">Debugging the Angular service worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#debugging-the-angular-service-worker"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="debugging-the-angular-service-worker">调试 Angular Service Worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#debugging-the-angular-service-worker"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Occasionally, it may be necessary to examine the Angular service
 worker in a running state to investigate issues or to ensure that
 it is operating as designed. Browsers provide built-in tools for
@@ -1028,8 +1028,8 @@ debugging service workers and the Angular service worker itself
 includes useful debugging features.</p>
 <p translation-result="">偶尔，可能会需要检查运行中的 Angular Service Worker，以调查问题或确保它在按设计运行。
 浏览器提供了用于调试 Service Worker 的内置工具，而且 Angular Service Worker 本身也包含了一些有用的调试功能。</p>
-<h3 translation-origin="off" id="locating-and-analyzing-debugging-information">Locating and analyzing debugging information<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#locating-and-analyzing-debugging-information"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="locating-and-analyzing-debugging-information">定位并分析调试信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#locating-and-analyzing-debugging-information"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="locating-and-analyzing-debugging-information">Locating and analyzing debugging information<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#locating-and-analyzing-debugging-information"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="locating-and-analyzing-debugging-information">定位并分析调试信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#locating-and-analyzing-debugging-information"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The Angular service worker exposes debugging information under
 the <code>ngsw/</code> virtual directory. Currently, the single exposed URL
 is <code>ngsw/<a href="/api/animations/state" class="code-anchor">state</a></code>. Here is an example of this debug page's contents:</p>
@@ -1040,24 +1040,24 @@ is <code>ngsw/<a href="/api/animations/state" class="code-anchor">state</a></cod
 NGSW Debug Info:
 
 Driver <a href="/api/animations/state" class="code-anchor">state</a>: NORMAL ((nominal))
-Latest manifest <a href="api/common/PlatformLocation#hash" class="code-anchor">hash</a>: eea7f5f464f90789b621170af5a569d6be077e5c
-Last <a href="api/forms/NgModel#update" class="code-anchor">update</a> check: never
+Latest manifest <a href="/api/common/PlatformLocation#hash" class="code-anchor">hash</a>: eea7f5f464f90789b621170af5a569d6be077e5c
+Last <a href="/api/forms/NgModel#update" class="code-anchor">update</a> check: never
 
 === <a href="/api/core/Version" class="code-anchor">Version</a> eea7f5f464f90789b621170af5a569d6be077e5c ===
 
 Clients: 7b79a015-69af-4d3d-9ae6-95ba90c79486, 5bc08295-aaf2-42f3-a4cc-9e4ef9100f65
 
 === Idle Task Queue ===
-Last <a href="api/forms/NgModel#update" class="code-anchor">update</a> <a href="/api/core/testing/tick" class="code-anchor">tick</a>: 1s496u
-Last <a href="api/forms/NgModel#update" class="code-anchor">update</a> run: never
+Last <a href="/api/forms/NgModel#update" class="code-anchor">update</a> <a href="/api/core/testing/tick" class="code-anchor">tick</a>: 1s496u
+Last <a href="/api/forms/NgModel#update" class="code-anchor">update</a> run: never
 Task queue:
 
- * init post-load (<a href="api/forms/NgModel#update" class="code-anchor">update</a>, cleanup)
+ * init post-load (<a href="/api/forms/NgModel#update" class="code-anchor">update</a>, cleanup)
 
-Debug <a href="api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>:
+Debug <a href="/api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>:
 </code-example>
-<h4 translation-origin="off" id="driver-state">Driver state<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#driver-state"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="driver-state">驱动程序的状态<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#driver-state"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="driver-state">Driver state<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#driver-state"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="driver-state">驱动程序的状态<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#driver-state"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The first line indicates the driver state:</p>
 <p translation-result="">第一行表示驱动程序的状态：</p>
 <code-example>
@@ -1090,24 +1090,24 @@ network, running as little service worker code as possible.</p>
 <p translation-origin="off">In both cases, the parenthetical annotation provides the
 error that caused the service worker to enter the degraded state.</p>
 <p translation-result="">在这两种情况下，后面的括号注解中都会提供导致 Service Worker 进入降级状态的错误信息。</p>
-<h4 translation-origin="off" id="latest-manifest-hash">Latest manifest hash<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#latest-manifest-hash"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="latest-manifest-hash">最新清单的哈希<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#latest-manifest-hash"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="latest-manifest-hash">Latest manifest hash<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#latest-manifest-hash"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="latest-manifest-hash">最新清单的哈希<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#latest-manifest-hash"><i class="material-icons">link</i></a></h4>
 <code-example>
-Latest manifest <a href="api/common/PlatformLocation#hash" class="code-anchor">hash</a>: eea7f5f464f90789b621170af5a569d6be077e5c
+Latest manifest <a href="/api/common/PlatformLocation#hash" class="code-anchor">hash</a>: eea7f5f464f90789b621170af5a569d6be077e5c
 </code-example>
 <p translation-origin="off">This is the SHA1 hash of the most up-to-date version of the app that the service worker knows about.</p>
 <p translation-result="">这是 Service Worker 所知道的应用最新版本的 SHA1 哈希值。</p>
-<h4 translation-origin="off" id="last-update-check">Last update check<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#last-update-check"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="last-update-check">最后一次更新检查<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#last-update-check"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="last-update-check">Last update check<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#last-update-check"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="last-update-check">最后一次更新检查<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#last-update-check"><i class="material-icons">link</i></a></h4>
 <code-example>
-Last <a href="api/forms/NgModel#update" class="code-anchor">update</a> check: never
+Last <a href="/api/forms/NgModel#update" class="code-anchor">update</a> check: never
 </code-example>
 <p translation-origin="off">This indicates the last time the service worker checked for a new version, or update, of the app. <code>never</code> indicates that the service worker has never checked for an update.</p>
 <p translation-result="">这表示 Service Worker 最后一次检查应用程序的新版本或更新的时间。“never” 表示 Service Worker 从未检查过更新。</p>
 <p translation-origin="off">In this example debug file, the update check is currently scheduled, as explained the next section.</p>
 <p translation-result="">在这个调试文件范例中，这次更新检查目前是已排期的，如下一节所述。</p>
-<h4 translation-origin="off" id="version">Version<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#version"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="version">版本<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#version"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="version">Version<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#version"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="version">版本<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#version"><i class="material-icons">link</i></a></h4>
 <code-example>
 === <a href="/api/core/Version" class="code-anchor">Version</a> eea7f5f464f90789b621170af5a569d6be077e5c ===
 
@@ -1121,15 +1121,15 @@ API in the browser.</p>
 <p translation-result="">在这个例子中，Service Worker 拥有一个版本的应用程序缓存并用它服务于两个不同的选项卡。
 请注意，这个版本哈希值是上面列出的“最新清单的哈希”。
 它的两个客户运行的都是最新版本。每个客户都用浏览器中 <code>Clients</code> API的 ID 列了出来。</p>
-<h4 translation-origin="off" id="idle-task-queue">Idle task queue<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#idle-task-queue"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="idle-task-queue">空闲任务队列<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#idle-task-queue"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="idle-task-queue">Idle task queue<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#idle-task-queue"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="idle-task-queue">空闲任务队列<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#idle-task-queue"><i class="material-icons">link</i></a></h4>
 <code-example>
 === Idle Task Queue ===
-Last <a href="api/forms/NgModel#update" class="code-anchor">update</a> <a href="/api/core/testing/tick" class="code-anchor">tick</a>: 1s496u
-Last <a href="api/forms/NgModel#update" class="code-anchor">update</a> run: never
+Last <a href="/api/forms/NgModel#update" class="code-anchor">update</a> <a href="/api/core/testing/tick" class="code-anchor">tick</a>: 1s496u
+Last <a href="/api/forms/NgModel#update" class="code-anchor">update</a> run: never
 Task queue:
 
- * init post-load (<a href="api/forms/NgModel#update" class="code-anchor">update</a>, cleanup)
+ * init post-load (<a href="/api/forms/NgModel#update" class="code-anchor">update</a>, cleanup)
 </code-example>
 <p translation-origin="off">The Idle Task Queue is the queue of all pending tasks that happen
 in the background in the service worker. If there are any tasks
@@ -1147,15 +1147,15 @@ which the queue might be processed.</p>
 <p translation-result="">最后的 tick/run 计数器给出了与特定事件发生有关的空闲队列中的时间。
 “Last update run” 计数器显示的是上次执行空闲任务的时间。
 “Last update tick” 显示的是自上次事件以来可能要处理的队列的时间。</p>
-<h4 translation-origin="off" id="debug-log">Debug log<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#debug-log"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="debug-log">调试日志<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#debug-log"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="debug-log">Debug log<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#debug-log"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="debug-log">调试日志<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#debug-log"><i class="material-icons">link</i></a></h4>
 <code-example>
-Debug <a href="api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>:
+Debug <a href="/api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>:
 </code-example>
 <p translation-origin="off">Errors that occur within the service worker will be logged here.</p>
 <p translation-result="">在 Service Worker 中出现的任何错误都会记录在这里。</p>
-<h3 translation-origin="off" id="developer-tools">Developer Tools<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#developer-tools"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="developer-tools">开发者工具<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#developer-tools"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="developer-tools">Developer Tools<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#developer-tools"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="developer-tools">开发者工具<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#developer-tools"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Browsers such as Chrome provide developer tools for interacting
 with service workers. Such tools can be powerful when used properly,
 but there are a few things to keep in mind.</p>
@@ -1178,8 +1178,8 @@ out of date. Right click the Cache Storage title and refresh the caches.</p>
 <p translation-origin="off">Stopping and starting the service worker in the Service Worker
 pane triggers a check for updates.</p>
 <p translation-result="">在 Service Worker 页停止并重新启动这个 Service Worker 将会触发一次更新检查。</p>
-<h2 translation-origin="off" id="service-worker-safety">Service Worker Safety<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-safety"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="service-worker-safety">Service Worker 的安全性<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#service-worker-safety"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="service-worker-safety">Service Worker Safety<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-safety"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="service-worker-safety">Service Worker 的安全性<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#service-worker-safety"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Like any complex system, bugs or broken configurations can cause
 the Angular service worker to act in unforeseen ways. While its
 design attempts to minimize the impact of such problems, the
@@ -1188,8 +1188,8 @@ an administrator ever needs to deactivate the service worker quickly.</p>
 <p translation-result="">像任何复杂的系统一样，错误或损坏的配置可能会导致 Angular Service Worker 以不可预知的方式工作。
 虽然它在设计时就尝试将此类问题的影响降至最低，但是，如果管理员需要快速停用 Service Worker，
 Angular Service Worker 也包含多种故障保护机制。</p>
-<h3 translation-origin="off" id="fail-safe">Fail-safe<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#fail-safe"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="fail-safe">故障保护机制<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#fail-safe"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="fail-safe">Fail-safe<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#fail-safe"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="fail-safe">故障保护机制<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#fail-safe"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To deactivate the service worker, remove or rename the
 <code>ngsw-config.json</code> file. When the service worker's request
 for <code>ngsw.json</code> returns a <code>404</code>, then the service worker
@@ -1197,7 +1197,7 @@ removes all of its caches and de-registers itself,
 essentially self-destructing.</p>
 <p translation-result="">要停用 Service Worker，请删除或重命名 <code>ngsw-config.json</code> 文件。
 当 Service Worker 对 <code>ngsw.json</code> 的请求返回 <code>404</code> 时，Service Worker 就会删除它的所有缓存并注销自己，本质上就是自毁。</p>
-<h3 translation-origin="off" id="safety-worker">Safety Worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#safety-worker"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="safety-worker">Safety Worker<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#safety-worker"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Also included in the <code>@angular/service-worker</code> NPM package is a small
 script <code>safety-worker.js</code>, which when loaded will unregister itself
 from the browser. This script can be used as a last resort to get rid
@@ -1220,8 +1220,8 @@ old Service Worker URL forever.</p>
 as well as any other Service Workers which might have been served in
 the past on your site.</p>
 <p translation-result="">这个脚本可以用来停用 <code>@angular/service-worker</code> 以及任何其它以前在你的站点上提供过的 Service Worker。</p>
-<h2 translation-origin="off" id="more-on-angular-service-workers">More on Angular service workers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#more-on-angular-service-workers"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="more-on-angular-service-workers-1">关于 Angular Service Worker 的更多信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-devops#more-on-angular-service-workers-1"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="more-on-angular-service-workers">More on Angular service workers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#more-on-angular-service-workers"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="more-on-angular-service-workers-1">关于 Angular Service Worker 的更多信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-devops#more-on-angular-service-workers-1"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You may also be interested in the following:</p>
 <p translation-result="">你可能还对下列内容感兴趣：</p>
 <ul>

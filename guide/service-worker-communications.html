@@ -808,12 +808,12 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="service-worker-communication">Service worker communication<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#service-worker-communication"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="service-worker-communication">与 Service Worker 通讯<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#service-worker-communication"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="service-worker-communication">Service worker communication<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#service-worker-communication"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="service-worker-communication">与 Service Worker 通讯<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#service-worker-communication"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Importing <code><a href="/api/service-worker/ServiceWorkerModule" class="code-anchor">ServiceWorkerModule</a></code> into your <code>AppModule</code> doesn't just register the service worker, it also provides a few services you can use to interact with the service worker and control the caching of your app.</p>
 <p translation-result="">把 <code><a href="/api/service-worker/ServiceWorkerModule" class="code-anchor">ServiceWorkerModule</a></code> 导入到你的 <code>AppModule</code> 中不仅会注册 Service Worker，还会提供一些服务，让你能和 Service Worker 通讯，并控制你的应用缓存。</p>
-<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-11">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#prerequisites-11"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-11">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#prerequisites-11"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A basic understanding of the following:</p>
 <p translation-result="">对下列知识有基本的了解：</p>
 <ul>
@@ -823,8 +823,8 @@
 </li>
 </ul>
 <hr>
-<h2 translation-origin="off" id="swupdate-service"><code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> service<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#swupdate-service"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="codeswupdatecode-service"><code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> 服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#codeswupdatecode-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="swupdate-service"><code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> service<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#swupdate-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="codeswupdatecode-service"><code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> 服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#codeswupdatecode-service"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> service gives you access to events that indicate when the service worker has discovered an available update for your app or when it has activated such an update—meaning it is now serving content from that update to your app.</p>
 <p translation-result=""><code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> 服务让你能访问一些事件，这些事件会指出 Service Worker 何时发现了可用的更新或者一个更新何时可以被激活 —— 这意味着它现在可以通过更新后的版本提供服务了。</p>
 <p translation-origin="off">The <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> service supports four separate operations:</p>
@@ -847,10 +847,10 @@
 <p translation-result=""> 要求 Service Worker 为当前页面激活该应用的最新版本。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="available-and-activated-updates">Available and activated updates<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#available-and-activated-updates"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="available-and-activated-updates">有可用更新及已激活更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#available-and-activated-updates"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">The two update events, <code><a href="api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> and <code><a href="api/service-worker/SwUpdate#activated" class="code-anchor">activated</a></code>, are <code>Observable</code> properties of <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code>:</p>
-<p translation-result="">这两个更新事件 <code><a href="api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> 和 <code><a href="api/service-worker/SwUpdate#activated" class="code-anchor">activated</a></code>，都是 <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> 的 <code>Observable</code> 属性：</p>
+<h3 translation-origin="off" id="available-and-activated-updates">Available and activated updates<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#available-and-activated-updates"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="available-and-activated-updates">有可用更新及已激活更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#available-and-activated-updates"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">The two update events, <code><a href="/api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> and <code><a href="/api/service-worker/SwUpdate#activated" class="code-anchor">activated</a></code>, are <code>Observable</code> properties of <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code>:</p>
+<p translation-result="">这两个更新事件 <code><a href="/api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> 和 <code><a href="/api/service-worker/SwUpdate#activated" class="code-anchor">activated</a></code>，都是 <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> 的 <code>Observable</code> 属性：</p>
 <code-example path="service-worker-getting-started/src/app/log-update.service.ts" linenums="false" title="log-update.service.ts" region="sw-update">
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()
 export class LogUpdateService {
@@ -858,7 +858,7 @@ export class LogUpdateService {
   constructor(updates: <a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a>) {
     updates.available.subscribe(event => {
       console.log('current version is', event.current);
-      console.log('<a href="api/service-worker/SwUpdate#available" class="code-anchor">available</a> version is', event.available);
+      console.log('<a href="/api/service-worker/SwUpdate#available" class="code-anchor">available</a> version is', event.available);
     });
     updates.activated.subscribe(event => {
       console.log('old version was', event.previous);
@@ -870,12 +870,12 @@ export class LogUpdateService {
 </code-example>
 <p translation-origin="off">You can use these events to notify the user of a pending update or to refresh their pages when the code they are running is out of date.</p>
 <p translation-result="">你可以使用这些事件来通知用户有一个待做更新或当它们运行的代码已经过期时刷新页面。</p>
-<h3 translation-origin="off" id="checking-for-updates">Checking for updates<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#checking-for-updates"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="checking-for-updates">检查更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#checking-for-updates"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="checking-for-updates">Checking for updates<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#checking-for-updates"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="checking-for-updates">检查更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#checking-for-updates"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">It's possible to ask the service worker to check if any updates have been deployed to the server. You might choose to do this if you have a site that changes frequently or want updates to happen on a schedule.</p>
 <p translation-result="">可以要求 Service Worker 检查是否有任何更新已经发布到了服务器上。如果你的站点更新非常频繁，或者希望它按照计划进行定时更新，你就可以用它来实现。</p>
-<p translation-origin="off">Do this with the <code><a href="api/service-worker/SwUpdate#checkForUpdate" class="code-anchor">checkForUpdate()</a></code> method:</p>
-<p translation-result="">通过调用 <code><a href="api/service-worker/SwUpdate#checkForUpdate" class="code-anchor">checkForUpdate()</a></code> 方法来实现：</p>
+<p translation-origin="off">Do this with the <code><a href="/api/service-worker/SwUpdate#checkForUpdate" class="code-anchor">checkForUpdate()</a></code> method:</p>
+<p translation-result="">通过调用 <code><a href="/api/service-worker/SwUpdate#checkForUpdate" class="code-anchor">checkForUpdate()</a></code> 方法来实现：</p>
 <code-example path="service-worker-getting-started/src/app/check-for-update.service.ts" linenums="false" title="check-for-update.service.ts" region="sw-check-update">
 import { interval } from 'rxjs';
 
@@ -888,13 +888,13 @@ export class CheckForUpdateService {
 }
 
 </code-example>
-<p translation-origin="off">This method returns a <code>Promise</code> which indicates that the update check has completed successfully, though it does not indicate whether an update was discovered as a result of the check. Even if one is found, the service worker must still successfully download the changed files, which can fail. If successful, the <code><a href="api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> event will indicate availability of a new version of the app.</p>
+<p translation-origin="off">This method returns a <code>Promise</code> which indicates that the update check has completed successfully, though it does not indicate whether an update was discovered as a result of the check. Even if one is found, the service worker must still successfully download the changed files, which can fail. If successful, the <code><a href="/api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> event will indicate availability of a new version of the app.</p>
 <p translation-result="">该方法返回一个用来表示检查更新已经成功完成的 <code>Promise</code>，不过它不会指出是否确实发现了一个更新。
-即使找到了一个，Service Worker 还必须成功下载更新过的文件，而这可能会失败。如果成功了，就会通过一个 <code><a href="api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> 事件来表明当前应用有一个可用的新版本。</p>
-<h3 translation-origin="off" id="forcing-update-activation">Forcing update activation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#forcing-update-activation"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="forcing-update-activation">强制激活更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#forcing-update-activation"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">If the current tab needs to be updated to the latest app version immediately, it can ask to do so with the <code><a href="api/service-worker/SwUpdate#activateUpdate" class="code-anchor">activateUpdate()</a></code> method:</p>
-<p translation-result="">如果当前页需要立即更新到最新的应用版本，可以通过 <code><a href="api/service-worker/SwUpdate#activateUpdate" class="code-anchor">activateUpdate()</a></code> 方法来要求立即这么做：</p>
+即使找到了一个，Service Worker 还必须成功下载更新过的文件，而这可能会失败。如果成功了，就会通过一个 <code><a href="/api/service-worker/SwUpdate#available" class="code-anchor">available</a></code> 事件来表明当前应用有一个可用的新版本。</p>
+<h3 translation-origin="off" id="forcing-update-activation">Forcing update activation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#forcing-update-activation"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="forcing-update-activation">强制激活更新<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#forcing-update-activation"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">If the current tab needs to be updated to the latest app version immediately, it can ask to do so with the <code><a href="/api/service-worker/SwUpdate#activateUpdate" class="code-anchor">activateUpdate()</a></code> method:</p>
+<p translation-result="">如果当前页需要立即更新到最新的应用版本，可以通过 <code><a href="/api/service-worker/SwUpdate#activateUpdate" class="code-anchor">activateUpdate()</a></code> 方法来要求立即这么做：</p>
 <code-example path="service-worker-getting-started/src/app/prompt-update.service.ts" linenums="false" title="prompt-update.service.ts" region="sw-activate">
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()
 export class PromptUpdateService {
@@ -911,8 +911,8 @@ export class PromptUpdateService {
 </code-example>
 <p translation-origin="off">Doing this could break lazy-loading into currently running apps, especially if the lazy-loaded chunks use filenames with hashes, which change every version.</p>
 <p translation-result="">这可能会让惰性加载的模块进入当前正在运行的应用中，特别是如果惰性加载的模块文件名中使用了哈希时，这将会改变每一个版本。</p>
-<h2 translation-origin="off" id="more-on-angular-service-workers">More on Angular service workers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#more-on-angular-service-workers"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="more-on-angular-service-workers">关于 Angular Service Worker 的更多信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-communications#more-on-angular-service-workers"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="more-on-angular-service-workers">More on Angular service workers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#more-on-angular-service-workers"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="more-on-angular-service-workers">关于 Angular Service Worker 的更多信息<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-communications#more-on-angular-service-workers"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You may also be interested in the following:</p>
 <p translation-result="">你可能还对下列内容感兴趣：</p>
 <ul>

@@ -808,10 +808,10 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="service-worker-configuration">Service worker configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#service-worker-configuration"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="service-worker-configuration">Service Worker 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#service-worker-configuration"><i class="material-icons">link</i></a></h1>
-<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-12">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#prerequisites-12"><i class="material-icons">link</i></a></h4>
+<h1 translation-origin="off" id="service-worker-configuration">Service worker configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#service-worker-configuration"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="service-worker-configuration">Service Worker 配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#service-worker-configuration"><i class="material-icons">link</i></a></h1>
+<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-12">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#prerequisites-12"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A basic understanding of the following:</p>
 <p translation-result="">对下列知识有基本的了解：</p>
 <ul>
@@ -829,7 +829,7 @@ it with the <code>ngsw-config</code> tool:</p>
 CLI 会在 <code>ng build --prod</code> 期间处理配置文件。
 如果想手动处理，你可以使用 <code>ngsw-config</code> 工具：</p>
 <code-example language="sh">
-ngsw-config dist src/ngsw-config.json /base/<a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>
+ngsw-config dist src/ngsw-config.json /base/<a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>
 </code-example>
 <p translation-origin="off">The configuration file uses the JSON format. All file paths must begin with <code>/</code>, which is the deployment directory—usually <code>dist</code> in CLI projects.</p>
 <p translation-result="">该配置文件使用 JSON 格式。
@@ -873,17 +873,17 @@ ngsw-config dist src/ngsw-config.json /base/<a href="api/router/RouterLinkWithHr
 </ul>
 <p translation-origin="off">Each section of the configuration file is described below.</p>
 <p translation-result="">下面讲讲配置文件中的每一节。</p>
-<h2 translation-origin="off" id="appdata"><code>appData</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#appdata"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="appdata"><code>appData</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#appdata"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">This section enables you to pass any data you want that describes this particular version of the app.
 The <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> service includes that data in the update notifications. Many apps use this section to provide additional information for the display of UI popups, notifying users of the available update.</p>
 <p translation-result="">本节允许你传递用来描述这个特定应用版本的任何数据。
 <code><a href="/api/service-worker/SwUpdate" class="code-anchor">SwUpdate</a></code> 服务会在更新通知中包含这些数据。
 许多应用会使用本节来提供 UI 弹窗时要显示的附加信息，以通知用户有可用的更新。</p>
 <a id="index-file"></a>
-<h2 translation-origin="off" id="index"><code>index</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#index"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="index"><code>index</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#index"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Specifies the file that serves as the index page to satisfy navigation requests. Usually this is <code>/index.html</code>.</p>
 <p translation-result="">指定用来充当索引页的文件以满足导航请求。通常是<code>/index.html</code>。</p>
-<h2 translation-origin="off" id="assetgroups"><code>assetGroups</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#assetgroups"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="assetgroups"><code>assetGroups</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#assetgroups"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off"><em>Assets</em> are resources that are part of the app version that update along with the app. They can include resources loaded from the page's origin as well as third-party resources loaded from CDNs and other external URLs. As not all such external URLs may be known at build time, URL patterns can be matched.</p>
 <p translation-result=""><em>资产（Assets）</em>是与应用一起更新的应用版本的一部分。
 它们可以包含从页面的同源地址加载的资源以及从 CDN 和其它外部 URL 加载的第三方资源。
@@ -917,10 +917,10 @@ interface AssetGroup {
   };
 }
 </code-example>
-<h3 translation-origin="off" id="name"><code>name</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#name"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="name"><code>name</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#name"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A <code>name</code> is mandatory. It identifies this particular group of assets between versions of the configuration.</p>
 <p translation-result=""><code>name</code> 是强制性的。它用来标识该配置文件版本中这个特定的资产组。</p>
-<h3 translation-origin="off" id="installmode"><code>installMode</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#installmode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="installmode"><code>installMode</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#installmode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <code>installMode</code> determines how these resources are initially cached. The <code>installMode</code> can be either of two values:</p>
 <p translation-result=""><code>installMode</code> 决定了这些资源最初的缓存方式。<code>installMode</code> 可以取如下两个值之一：</p>
 <ul>
@@ -936,7 +936,7 @@ interface AssetGroup {
 这对于像为不同分辨率提供的图片之类的资源很有用，那样 Service Worker 就只会为特定的屏幕和设备方向缓存正确的资源。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="updatemode"><code>updateMode</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#updatemode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="updatemode"><code>updateMode</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#updatemode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">For resources already in the cache, the <code>updateMode</code> determines the caching behavior when a new version of the app is discovered. Any resources in the group that have changed since the previous version are updated in accordance with <code>updateMode</code>.</p>
 <p translation-result="">对于已经存在于缓存中的资源，<code>updateMode</code> 会决定在发现了新版本应用后的缓存行为。
 自上一版本以来更改过的所有组中资源都会根据 <code>updateMode</code> 进行更新。</p>
@@ -951,7 +951,7 @@ interface AssetGroup {
 <code>lazy</code> 这个 <code>updateMode</code> 只有在 <code>installMode</code> 也同样是 <code>lazy</code> 时才有效。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="resources"><code>resources</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#resources"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="resources"><code>resources</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#resources"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This section describes the resources to cache, broken up into three groups.</p>
 <p translation-result="">本节描述要缓存的资源，分为三组。</p>
 <ul>
@@ -973,7 +973,7 @@ interface AssetGroup {
 <strong>（不支持 glob 的逆模式）</strong></p>
 </li>
 </ul>
-<h2 translation-origin="off" id="datagroups"><code>dataGroups</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#datagroups"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="datagroups"><code>dataGroups</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#datagroups"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Unlike asset resources, data requests are not versioned along with the app. They're cached according to manually-configured policies that are more useful for situations such as API requests and other data dependencies.</p>
 <p translation-result="">与这些资产性（asset）资源不同，数据请求不会随应用一起版本化。
 它们会根据手动配置的策略进行缓存，这些策略对 API 请求和所依赖的其它数据等情况会更有用。</p>
@@ -992,15 +992,15 @@ export interface DataGroup {
   };
 }
 </code-example>
-<h3 translation-origin="off" id="name-1"><code>name</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#name-1"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="name-1"><code>name</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#name-1"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Similar to <code>assetGroups</code>, every data group has a <code>name</code> which uniquely identifies it.</p>
 <p translation-result="">和 <code>assetGroups</code> 下类似，每个数据组也都有一个 <code>name</code> ，用作它的唯一标识。</p>
-<h3 translation-origin="off" id="urls"><code>urls</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#urls"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="urls"><code>urls</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#urls"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A list of URL patterns. URLs that match these patterns will be cached according to this data group's policy.<br>
 <em>(Negative glob patterns are not supported and <code>?</code> will be matched literally; i.e. it will not match any character other than <code>?</code>.)</em></p>
 <p translation-result="">一个 URL 模式的列表。匹配这些模式的 URL 将会根据该数据组的策略进行缓存。<br>
 <strong>（不支持 glob 中的逆模式）</strong></p>
-<h3 translation-origin="off" id="version"><code>version</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#version"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="version"><code>version</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#version"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Occasionally APIs change formats in a way that is not backward-compatible. A new version of the app may not be compatible with the old API format and thus may not be compatible with existing cached resources from that API.</p>
 <p translation-result="">API 有时可能会以不向后兼容的方式更改格式。
 新版本的应用可能与旧的 API 格式不兼容，因此也就与该 API 中目前已缓存的资源不兼容。</p>
@@ -1008,13 +1008,13 @@ export interface DataGroup {
 <p translation-result=""><code>version</code> 提供了一种机制，用于指出这些被缓存的资源已经通过不向后兼容的方式进行了更新，并且旧的缓存条目（即来自以前版本的缓存条目）应该被丢弃。</p>
 <p translation-origin="off"><code>version</code> is an integer field and defaults to <code>0</code>.</p>
 <p translation-result=""><code>version</code> 是个整型字段，默认为 <code>0</code>。</p>
-<h3 translation-origin="off" id="cacheconfig"><code>cacheConfig</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#cacheconfig"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="cacheconfig"><code>cacheConfig</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#cacheconfig"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This section defines the policy by which matching requests will be cached.</p>
 <p translation-result="">本节定义了对匹配上的请求进行缓存时的策略。</p>
-<h4 translation-origin="off" id="maxsize"><code>maxSize</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#maxsize"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="maxsize"><code>maxSize</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#maxsize"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">(required) The maximum number of entries, or responses, in the cache. Open-ended caches can grow in unbounded ways and eventually exceed storage quotas, calling for eviction.</p>
 <p translation-result="">（必需）缓存的最大条目数或响应数。开放式缓存可以无限增长，并最终超过存储配额，建议适时清理。</p>
-<h4 translation-origin="off" id="maxage"><code>maxAge</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#maxage"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="maxage"><code>maxAge</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#maxage"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">(required) The <code>maxAge</code> parameter indicates how long responses are allowed to remain in the cache before being considered invalid and evicted. <code>maxAge</code> is a duration string, using the following unit suffixes:</p>
 <p translation-result="">（必需）<code>maxAge</code> 参数表示在响应因失效而要清除之前允许在缓存中留存的时间。<code>maxAge</code> 是一个表示持续时间的字符串，可使用以下单位作为后缀：</p>
 <ul>
@@ -1041,11 +1041,11 @@ export interface DataGroup {
 </ul>
 <p translation-origin="off">For example, the string <code>3d12h</code> will cache content for up to three and a half days.</p>
 <p translation-result="">比如，字符串 <code>3d12h</code> 规定此内容最多缓存三天半。</p>
-<h4 translation-origin="off" id="timeout"><code>timeout</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#timeout"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="timeout"><code>timeout</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#timeout"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">This duration string specifies the network timeout. The network timeout is how long the Angular service worker will wait for the network to respond before using a cached response, if configured to do so.</p>
 <p translation-result="">这个表示持续时间的字符串用于指定网络超时时间。
 如果配置了它，Angular Service Worker 在开始使用缓存之前就会先等待网络给出响应，这个等待时间就是网络超时时间。</p>
-<h4 translation-origin="off" id="strategy"><code>strategy</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#strategy"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="strategy"><code>strategy</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#strategy"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The Angular service worker can use either of two caching strategies for data resources.</p>
 <p translation-result="">Angular Service Worker 可以使用两种缓存策略之一来获取数据资源。</p>
 <ul>
@@ -1059,13 +1059,13 @@ export interface DataGroup {
 <p translation-result=""> <code>freshness</code> 为数据的即时性而优化，优先从网络获取请求的数据。只有当网络超时时，请求才会根据 <code>timeout</code> 的设置回退到缓存中。这对于那些频繁变化的资源很有用，例如账户余额。</p>
 </li>
 </ul>
-<h2 translation-origin="off" id="navigationurls"><code>navigationUrls</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#navigationurls"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="navigationurls"><code>navigationUrls</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#navigationurls"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">This optional section enables you to specify a custom list of URLs that will be redirected to the index file.</p>
 <p translation-result="">这个可选节让你可以指定一个自定义的 URL 列表，它们都会被重定向到索引文件。</p>
-<h3 translation-origin="off" id="handling-navigation-requests">Handling navigation requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#handling-navigation-requests"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="handling-navigation-requests">处理导航请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#handling-navigation-requests"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">The ServiceWorker will redirect navigation requests that don't match any <code>asset</code> or <code>data</code> group to the specified <a href="guide/service-worker-config#index-file">index file</a>. A request is considered to be a navigation request if:</p>
-<p translation-result="">对于没有匹配上任何 <code>asset</code> 或 <code>data</code> 组的导航请求，ServiceWorker 会把它们重定向到指定的<a href="guide/service-worker-config#index-file">索引文件</a>。下列请求将会视为导航请求：</p>
+<h3 translation-origin="off" id="handling-navigation-requests">Handling navigation requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#handling-navigation-requests"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="handling-navigation-requests">处理导航请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#handling-navigation-requests"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">The ServiceWorker will redirect navigation requests that don't match any <code>asset</code> or <code>data</code> group to the specified <a href="/guide/service-worker-config#index-file">index file</a>. A request is considered to be a navigation request if:</p>
+<p translation-result="">对于没有匹配上任何 <code>asset</code> 或 <code>data</code> 组的导航请求，ServiceWorker 会把它们重定向到指定的<a href="/guide/service-worker-config#index-file">索引文件</a>。下列请求将会视为导航请求：</p>
 <ol>
 <li>
 <p translation-origin="off">Its <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/mode">mode</a> is <code>navigation</code>.</p>
@@ -1092,12 +1092,12 @@ export interface DataGroup {
 <p translation-result="">URL 中不能包含 <code>__</code>。</p>
 </li>
 </ol>
-<h3 translation-origin="off" id="matching-navigation-request-urls">Matching navigation request URLs<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#matching-navigation-request-urls"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="matching-navigation-request-urls">匹配导航请求的 URL<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/service-worker-config#matching-navigation-request-urls"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="matching-navigation-request-urls">Matching navigation request URLs<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#matching-navigation-request-urls"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="matching-navigation-request-urls">匹配导航请求的 URL<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/service-worker-config#matching-navigation-request-urls"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">While these default criteria are fine in most cases, it is sometimes desirable to configure different rules. For example, you may want to ignore specific routes (that are not part of the Angular app) and pass them through to the server.</p>
 <p translation-result="">虽然这些默认条件在大多数情况下都挺好用，不过有时还是要配置一些不同的规则。比如，你可能希望忽略一些特定的路由（它们可能不是 Angular 应用的一部分），而是把它们透传给服务器。</p>
-<p translation-origin="off">This field contains an array of URLs and <a href="guide/service-worker-config#glob-patterns">glob-like</a> URL patterns that will be matched at runtime. It can contain both negative patterns (i.e. patterns starting with <code>!</code>) and non-negative patterns and URLs.</p>
-<p translation-result="">该字段包含一个将要在运行期间匹配的 URL 和 <a href="guide/service-worker-config#glob-patterns">类似 glob 的</a> URL模式。
+<p translation-origin="off">This field contains an array of URLs and <a href="/guide/service-worker-config#glob-patterns">glob-like</a> URL patterns that will be matched at runtime. It can contain both negative patterns (i.e. patterns starting with <code>!</code>) and non-negative patterns and URLs.</p>
+<p translation-result="">该字段包含一个将要在运行期间匹配的 URL 和 <a href="/guide/service-worker-config#glob-patterns">类似 glob 的</a> URL模式。
 它既可以包含正向模式也可以包含反向模式（比如用 <code>!</code> 开头的模式）。</p>
 <p translation-origin="off">Only requests whose URLs match <em>any</em> of the non-negative URLs/patterns and <em>none</em> of the negative ones will be considered navigation requests. The URL query will be ignored when matching.</p>
 <p translation-result="">只有那些能匹配<strong>任意</strong>正向 URL 或 URL 模式并且<strong>不匹配任何一个</strong>反向模式的 URL 才会视为导航请求。当匹配时，这些 URL 查询将会被忽略。</p>

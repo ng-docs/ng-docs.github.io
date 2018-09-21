@@ -808,7 +808,7 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="httpclient">HttpClient<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#httpclient"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="httpclient">HttpClient<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#httpclient"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Most front-end applications communicate with backend services over the HTTP protocol. Modern browsers support two different APIs for making HTTP requests: the <code>XMLHttpRequest</code> interface and the <code>fetch()</code> API.</p>
 <p translation-result="">大多数前端应用都需要通过 HTTP 协议与后端服务器通讯。现代浏览器支持使用两种不同的 API 发起 HTTP 请求：<code>XMLHttpRequest</code> 接口和 <code>fetch()</code> API。</p>
 <p translation-origin="off">The <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> in <code>@angular/common/http</code> offers a simplified client HTTP API for Angular applications
@@ -827,10 +827,10 @@ The replacement service simulates the behavior of a REST-like backend.</p>
 <p translation-result="">该应用代码并不需要数据服务器。
 它基于 <a href="https://github.com/angular/in-memory-web-api/blob/master/README.md">Angular <em>in-memory-web-api</em></a> 库，该库会替换 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 模块中的 <code><a href="/api/common/http/HttpBackend" class="code-anchor">HttpBackend</a></code>。用于替换的这个服务会模拟 REST 风格的后端的行为。</p>
 <p translation-origin="off">Look at the <code>AppModule</code> <em>imports</em> to see how it is configured.</p>
-<p translation-result="">到 <code>AppModule</code> 的 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 中查看这个库是如何配置的。</p>
+<p translation-result="">到 <code>AppModule</code> 的 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 中查看这个库是如何配置的。</p>
 </div>
-<h2 translation-origin="off" id="setup">Setup<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#setup"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="setup-2">准备工作<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#setup-2"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="setup">Setup<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#setup"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="setup-2">准备工作<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#setup-2"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Before you can use the <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code>, you need to import the Angular <code><a href="/api/common/http/HttpClientModule" class="code-anchor">HttpClientModule</a></code>.
 Most apps do so in the root <code>AppModule</code>.</p>
 <p translation-result="">要想使用 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code>，就要先导入 Angular 的 <code><a href="/api/common/http/HttpClientModule" class="code-anchor">HttpClientModule</a></code>。大多数应用都会在根模块 <code>AppModule</code> 中导入它。</p>
@@ -840,15 +840,15 @@ import { <a href="/api/platform-browser/BrowserModule" class="code-anchor">Brows
 import { <a href="/api/common/http/HttpClientModule" class="code-anchor">HttpClientModule</a> } from '@angular/common/http';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>,
     // import <a href="/api/common/http/HttpClientModule" class="code-anchor">HttpClientModule</a> after BrowserModule.
     <a href="/api/common/http/HttpClientModule" class="code-anchor">HttpClientModule</a>,
   ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
     AppComponent,
   ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
 })
 export class AppModule {}
 
@@ -866,8 +866,8 @@ export class ConfigService {
 }
 
 </code-example>
-<h2 translation-origin="off" id="getting-json-data">Getting JSON data<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#getting-json-data"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="getting-json-data">获取 JSON 数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#getting-json-data"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="getting-json-data">Getting JSON data<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#getting-json-data"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="getting-json-data">获取 JSON 数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#getting-json-data"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Applications often request JSON data from the server.
 For example, the app might need a configuration file on the server, <code>config.json</code>,
 that specifies resource URLs.</p>
@@ -906,15 +906,15 @@ showConfig() {
 </code-example>
 <p translation-origin="off">Because the service method returns an <code>Observable</code> of configuration data,
 the component <strong>subscribes</strong> to the method's return value.
-The subscription callback copies the data fields into the component's <code><a href="api/router/Router#config" class="code-anchor">config</a></code> object,
+The subscription callback copies the data fields into the component's <code><a href="/api/router/Router#config" class="code-anchor">config</a></code> object,
 which is data-bound in the component template for display.</p>
 <p translation-result="">这个服务方法返回配置数据的 <code>Observable</code> 对象，所以组件要<strong>订阅（subscribe）</strong> 该方法的返回值。
-订阅时的回调函数会把这些数据字段复制到组件的 <code><a href="api/router/Router#config" class="code-anchor">config</a></code> 对象中，它会在组件的模板中绑定，以供显示。</p>
-<h3 translation-origin="off" id="why-write-a-service">Why write a service<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#why-write-a-service"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="why-write-a-service">为什么要写服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#why-write-a-service"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">This example is so simple that it is tempting to write the <code><a href="api/http/Http#get" class="code-anchor">Http.get()</a></code> inside the
+订阅时的回调函数会把这些数据字段复制到组件的 <code><a href="/api/router/Router#config" class="code-anchor">config</a></code> 对象中，它会在组件的模板中绑定，以供显示。</p>
+<h3 translation-origin="off" id="why-write-a-service">Why write a service<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#why-write-a-service"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="why-write-a-service">为什么要写服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#why-write-a-service"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">This example is so simple that it is tempting to write the <code><a href="/api/http/Http#get" class="code-anchor">Http.get()</a></code> inside the
 component itself and skip the service.</p>
-<p translation-result="">这个例子太简单，所以它也可以在组件本身的代码中调用 <code><a href="api/http/Http#get" class="code-anchor">Http.get()</a></code>，而不用借助服务。</p>
+<p translation-result="">这个例子太简单，所以它也可以在组件本身的代码中调用 <code><a href="/api/http/Http#get" class="code-anchor">Http.get()</a></code>，而不用借助服务。</p>
 <p translation-origin="off">However, data access rarely stays this simple.
 You typically post-process the data, add error handling, and maybe some retry logic to
 cope with intermittent connectivity.</p>
@@ -929,8 +929,8 @@ encapsulating data access in a separate service and delegating to that service i
 the component, even in simple cases like this one.</p>
 <p translation-result="">这就是为什么最佳实践中要求把数据展现逻辑从数据访问逻辑中拆分出去，也就是说把数据访问逻辑包装进一个单独的服务中，
 并且在组件中把数据访问逻辑委托给这个服务。就算是这么简单的应用也要如此。</p>
-<h3 translation-origin="off" id="type-checking-the-response">Type-checking the response<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#type-checking-the-response"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="type-checking-the-response">带类型检查的响应<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#type-checking-the-response"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="type-checking-the-response">Type-checking the response<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#type-checking-the-response"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="type-checking-the-response">带类型检查的响应<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#type-checking-the-response"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The subscribe callback above requires bracket notation to extract the data values.</p>
 <p translation-result="">该订阅的回调需要用通过括号中的语句来提取数据的值。</p>
 <code-example path="http/src/app/config/config.component.ts" region="v1_callback" linenums="false">
@@ -942,8 +942,8 @@ the component, even in simple cases like this one.</p>
 </code-example>
 <p translation-origin="off">You can't write <code>data.heroesUrl</code> because TypeScript correctly complains that the <code>data</code> object from the service does not have a <code>heroesUrl</code> property. </p>
 <p translation-result="">你没法写成 <code>data.heroesUrl</code> ，因为 TypeScript 会报告说来自服务器的 <code>data</code> 对象中没有名叫 <code>heroesUrl</code> 的属性。</p>
-<p translation-origin="off">The <code><a href="" class="code-anchor">HttpClient.get()</a></code> method parsed the JSON server response into the anonymous <code>Object</code> type. It doesn't know what the shape of that object is.</p>
-<p translation-result="">这是因为 <code><a href="" class="code-anchor">HttpClient.get()</a></code> 方法把 JSON 响应体解析成了匿名的 <code>Object</code> 类型。它不知道该对象的具体形态如何。</p>
+<p translation-origin="off">The <code><a href="/" class="code-anchor">HttpClient.get()</a></code> method parsed the JSON server response into the anonymous <code>Object</code> type. It doesn't know what the shape of that object is.</p>
+<p translation-result="">这是因为 <code><a href="/" class="code-anchor">HttpClient.get()</a></code> 方法把 JSON 响应体解析成了匿名的 <code>Object</code> 类型。它不知道该对象的具体形态如何。</p>
 <p translation-origin="off">You can tell <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> the type of the response to make consuming the output easier and more obvious.</p>
 <p translation-result="">你可以告诉 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 该响应体的类型，以便让对这种输出的消费更容易、更明确。</p>
 <p translation-origin="off">First, define an interface with the correct shape:</p>
@@ -955,8 +955,8 @@ export interface Config {
 }
 
 </code-example>
-<p translation-origin="off">Then, specify that interface as the <code><a href="" class="code-anchor">HttpClient.get()</a></code> call's type parameter in the service:</p>
-<p translation-result="">然后，在服务器中把该接口指定为 <code><a href="" class="code-anchor">HttpClient.get()</a></code> 调用的类型参数。</p>
+<p translation-origin="off">Then, specify that interface as the <code><a href="/" class="code-anchor">HttpClient.get()</a></code> call's type parameter in the service:</p>
+<p translation-result="">然后，在服务器中把该接口指定为 <code><a href="/" class="code-anchor">HttpClient.get()</a></code> 调用的类型参数。</p>
 <code-example path="http/src/app/config/config.service.ts" region="getConfig_2" title="app/config/config.service.ts (getConfig v.2)" linenums="false">
 getConfig() {
   // now returns an Observable of Config
@@ -968,7 +968,7 @@ getConfig() {
 easier and safer to consume:</p>
 <p translation-result="">修改后的组件方法，其回调函数中获取一个带类型的对象，它易于使用，且消费起来更安全：</p>
 <code-example path="http/src/app/config/config.component.ts" region="v2" title="app/config/config.component.ts (showConfig v.2)" linenums="false">
-<a href="api/router/Router#config" class="code-anchor">config</a>: Config;
+<a href="/api/router/Router#config" class="code-anchor">config</a>: Config;
 
 showConfig() {
   this.configService.getConfig()
@@ -977,8 +977,8 @@ showConfig() {
 }
 
 </code-example>
-<h3 translation-origin="off" id="reading-the-full-response">Reading the full response<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#reading-the-full-response"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="reading-the-full-response">读取完整的响应体<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#reading-the-full-response"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="reading-the-full-response">Reading the full response<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#reading-the-full-response"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="reading-the-full-response">读取完整的响应体<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#reading-the-full-response"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The response body doesn't return all the data you may need. Sometimes servers return special headers or status codes to indicate certain conditions that are important to the application workflow. </p>
 <p translation-result="">响应体可能并不包含你需要的全部信息。有时候服务器会返回一个特殊的响应头或状态码，以标记出特定的条件，因此读取它们可能是必要的。</p>
 <p translation-origin="off">Tell <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> that you want the full response with the <code>observe</code> option:</p>
@@ -990,8 +990,8 @@ getConfigResponse(): Observable&#x3C;<a href="/api/common/http/HttpResponse" cla
 }
 
 </code-example>
-<p translation-origin="off">Now <code><a href="" class="code-anchor">HttpClient.get()</a></code> returns an <code>Observable</code> of typed <code><a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a></code> rather than just the JSON data.</p>
-<p translation-result="">现在 <code><a href="" class="code-anchor">HttpClient.get()</a></code> 会返回一个 <code><a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a></code> 类型的 <code>Observable</code>，而不只是 JSON 数据。</p>
+<p translation-origin="off">Now <code><a href="/" class="code-anchor">HttpClient.get()</a></code> returns an <code>Observable</code> of typed <code><a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a></code> rather than just the JSON data.</p>
+<p translation-result="">现在 <code><a href="/" class="code-anchor">HttpClient.get()</a></code> 会返回一个 <code><a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a></code> 类型的 <code>Observable</code>，而不只是 JSON 数据。</p>
 <p translation-origin="off">The component's <code>showConfigResponse()</code> method displays the response headers as well as the configuration:</p>
 <p translation-result="">该组件的 <code>showConfigResponse()</code> 方法会像显示配置数据一样显示响应头：</p>
 <code-example path="http/src/app/config/config.component.ts" region="showConfigResponse" title="app/config/config.component.ts (showConfigResponse)" linenums="false">
@@ -1000,7 +1000,7 @@ showConfigResponse() {
     // resp is of type `<a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a>&#x3C;Config>`
     .subscribe(resp => {
       // display its headers
-      const <a href="api/router/ParamMap#keys" class="code-anchor">keys</a> = resp.headers.keys();
+      const <a href="/api/router/ParamMap#keys" class="code-anchor">keys</a> = resp.headers.keys();
       this.headers = keys.map(key =>
         `${key}: ${resp.headers.get(key)}`);
 
@@ -1012,8 +1012,8 @@ showConfigResponse() {
 </code-example>
 <p translation-origin="off">As you can see, the response object has a <code>body</code> property of the correct type.</p>
 <p translation-result="">如你所见，该响应对象具有一个带有正确类型的 <code>body</code> 属性。</p>
-<h2 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#error-handling"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="error-handling-1">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#error-handling-1"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#error-handling"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="error-handling-1">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#error-handling-1"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">What happens if the request fails on the server, or if a poor network connection prevents it from even reaching the server? <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> will return an <em>error</em> object instead of a successful response.</p>
 <p translation-result="">如果这个请求导致了服务器错误怎么办？甚至，在烂网络下请求都没到服务器该怎么办？<code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 就会返回一个错误（error）而不再是成功的响应。</p>
 <p translation-origin="off">You <em>could</em> handle in the component by adding a second callback to the <code>.subscribe()</code>:</p>
@@ -1033,8 +1033,8 @@ But displaying the raw error object returned by <code><a href="/api/common/http/
 <p translation-result="">在数据访问失败时给用户一些反馈，确实是个好主意。
 不过，直接显示由 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 返回的原始错误数据还远远不够。</p>
 <a id="error-details"></a>
-<h3 translation-origin="off" id="getting-error-details">Getting error details<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#getting-error-details"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="getting-error-details">获取错误详情<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#getting-error-details"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="getting-error-details">Getting error details<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#getting-error-details"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="getting-error-details">获取错误详情<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#getting-error-details"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Detecting that an error occurred is one thing.
 Interpreting that error and composing a user-friendly response is a bit more involved.</p>
 <p translation-result="">检测错误的发生是第一步，不过如果知道具体发生了什么错误才会更有用。上面例子中传给回调函数的 <code>err</code> 参数的类型是 <code><a href="/api/common/http/HttpErrorResponse" class="code-anchor">HttpErrorResponse</a></code>，它包含了这个错误中一些很有用的信息。</p>
@@ -1061,16 +1061,16 @@ private handleError(error: <a href="/api/common/http/HttpErrorResponse" class="c
       `Backend returned code ${error.status}, ` +
       `body was: ${error.error}`);
   }
-  // return an observable with <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> user-facing error <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
+  // return an observable with <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> user-facing error <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
   return throwError(
     'Something bad happened; please try again later.');
 };
 
 </code-example>
-<p translation-origin="off">Notice that this handler returns an RxJS <a href="guide/http#rxjs"><code>ErrorObservable</code></a> with a user-friendly error message.
+<p translation-origin="off">Notice that this handler returns an RxJS <a href="/guide/http#rxjs"><code>ErrorObservable</code></a> with a user-friendly error message.
 Consumers of the service expect service methods to return an <code>Observable</code> of some kind,
 even a "bad" one.</p>
-<p translation-result="">注意，该处理器返回一个带有用户友好的错误信息的 RxJS <a href="guide/http#rxjs"><code>ErrorObservable</code></a> 对象。
+<p translation-result="">注意，该处理器返回一个带有用户友好的错误信息的 RxJS <a href="/guide/http#rxjs"><code>ErrorObservable</code></a> 对象。
 该服务的消费者期望服务的方法返回某种形式的 <code>Observable</code>，就算是“错误的”也可以。</p>
 <p translation-origin="off">Now you take the <code>Observables</code> returned by the <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> methods
 and <em>pipe them through</em> to the error handler.</p>
@@ -1084,15 +1084,15 @@ getConfig() {
 }
 
 </code-example>
-<h3 translation-origin="off" id="retry"><code>retry()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#retry"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="retry"><code>retry()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#retry"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Sometimes the error is transient and will go away automatically if you try again.
 For example, network interruptions are common in mobile scenarios, and trying again
 may produce a successful result.</p>
 <p translation-result="">有时候，错误只是临时性的，只要重试就可能会自动消失。
 比如，在移动端场景中可能会遇到网络中断的情况，只要重试一下就能拿到正确的结果。</p>
-<p translation-origin="off">The <a href="guide/http#rxjs">RxJS library</a> offers several <em>retry</em> operators that are worth exploring.
+<p translation-origin="off">The <a href="/guide/http#rxjs">RxJS library</a> offers several <em>retry</em> operators that are worth exploring.
 The simplest is called <code>retry()</code> and it automatically re-subscribes to a failed <code>Observable</code> a specified number of times. <em>Re-subscribing</em> to the result of an <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> method call has the effect of reissuing the HTTP request.</p>
-<p translation-result=""><a href="guide/http#rxjs">RxJS 库</a>提供了几个 <code>retry</code> 操作符，它们值得仔细看看。
+<p translation-result=""><a href="/guide/http#rxjs">RxJS 库</a>提供了几个 <code>retry</code> 操作符，它们值得仔细看看。
 其中最简单的是 <code>retry()</code>，它可以对失败的 <code>Observable</code> 自动重新订阅几次。对 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 方法调用的结果进行<em>重新订阅</em>会导致重新发起 HTTP 请求。</p>
 <p translation-origin="off"><em>Pipe</em> it onto the <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> method result just before the error handler.</p>
 <p translation-result="">把它插入到 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 方法结果的<em>管道</em>中，就放在错误处理器的紧前面。</p>
@@ -1107,8 +1107,8 @@ getConfig() {
 
 </code-example>
 <a id="rxjs"></a>
-<h2 translation-origin="off" id="observables-and-operators">Observables and operators<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#observables-and-operators"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="observables-and-operators">可观察对象 (Observable) 与操作符 (operator)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#observables-and-operators"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="observables-and-operators">Observables and operators<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#observables-and-operators"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="observables-and-operators">可观察对象 (Observable) 与操作符 (operator)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#observables-and-operators"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The previous sections of this guide referred to RxJS <code>Observables</code> and operators such as <code>catchError</code> and <code>retry</code>.
 You will encounter more RxJS artifacts as you continue below.</p>
 <p translation-result="">本章的前一节中引用了 RxJS 的 <code>Observable</code> 和 <code>operator</code>，比如 <code>catchError</code> 和 <code>retry</code>。
@@ -1129,8 +1129,8 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 </code-example>
-<h2 translation-origin="off" id="requesting-non-json-data">Requesting non-JSON data<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#requesting-non-json-data"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="requesting-non-json-data">请求非 JSON 格式的数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#requesting-non-json-data"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="requesting-non-json-data">Requesting non-JSON data<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#requesting-non-json-data"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="requesting-non-json-data">请求非 JSON 格式的数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#requesting-non-json-data"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Not all APIs return JSON data. In this next example,
 a <code>DownloaderService</code> method reads a text file from the server
 and logs the file contents, before returning those contents to the caller
@@ -1152,8 +1152,8 @@ getTextFile(filename: string) {
 }
 
 </code-example>
-<p translation-origin="off"><code><a href="" class="code-anchor">HttpClient.get()</a></code> returns a string rather than the default JSON because of the <code>responseType</code> option.</p>
-<p translation-result="">这里的 <code><a href="" class="code-anchor">HttpClient.get()</a></code> 返回字符串而不是默认的 JSON 对象，因为它的 <code>responseType</code> 选项是 <code>'text'</code>。</p>
+<p translation-origin="off"><code><a href="/" class="code-anchor">HttpClient.get()</a></code> returns a string rather than the default JSON because of the <code>responseType</code> option.</p>
+<p translation-result="">这里的 <code><a href="/" class="code-anchor">HttpClient.get()</a></code> 返回字符串而不是默认的 JSON 对象，因为它的 <code>responseType</code> 选项是 <code>'text'</code>。</p>
 <p translation-origin="off">The RxJS <code>tap</code> operator (as in "wiretap") lets the code inspect good and error values passing through the observable without disturbing them. </p>
 <p translation-result="">RxJS 的 <code>tap</code> 操作符（可看做 wiretap - 窃听），让这段代码探查由可观察对象传过来的正确值和错误值，而不用打扰它们。</p>
 <p translation-origin="off">A <code>download()</code> method in the <code>DownloaderComponent</code> initiates the request by subscribing to the service method.</p>
@@ -1165,8 +1165,8 @@ download() {
 }
 
 </code-example>
-<h2 translation-origin="off" id="sending-data-to-the-server">Sending data to the server<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#sending-data-to-the-server"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="sending-data-to-the-server">把数据发送到服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#sending-data-to-the-server"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="sending-data-to-the-server">Sending data to the server<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#sending-data-to-the-server"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="sending-data-to-the-server">把数据发送到服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#sending-data-to-the-server"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">In addition to fetching data from the server, <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> supports mutating requests, that is, sending data to the server with other HTTP methods such as PUT, POST, and DELETE.</p>
 <p translation-result="">除了从服务器获取数据之外，<code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 还支持修改型的请求，也就是说，通过 <code>PUT</code>、<code>POST</code>、<code>DELETE</code> 这样的 HTTP 方法把数据发送到服务器。</p>
 <p translation-origin="off">The sample app for this guide includes a simplified version of the "Tour of Heroes" example
@@ -1174,8 +1174,8 @@ that fetches heroes and enables users to add, delete, and update them.</p>
 <p translation-result="">本指南中的这个范例应用包括一个简化版本的《英雄指南》，它会获取英雄数据，并允许用户添加、删除和修改它们。</p>
 <p translation-origin="off">The following sections excerpt methods of the sample's <code>HeroesService</code>.</p>
 <p translation-result="">下面的这些章节中包括该范例的 <code>HeroesService</code> 中的一些方法片段。</p>
-<h3 translation-origin="off" id="adding-headers">Adding headers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#adding-headers"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="adding-headers">添加请求头<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#adding-headers"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="adding-headers">Adding headers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#adding-headers"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="adding-headers">添加请求头<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#adding-headers"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Many servers require extra headers for save operations.
 For example, they may require a "Content-Type" header to explicitly declare
 the MIME type of the request body.
@@ -1197,8 +1197,8 @@ const httpOptions = {
 };
 
 </code-example>
-<h3 translation-origin="off" id="making-a-post-request">Making a POST request<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#making-a-post-request"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="making-a-post-request">发起一个 POST 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#making-a-post-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="making-a-post-request">Making a POST request<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#making-a-post-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="making-a-post-request">发起一个 POST 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#making-a-post-request"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Apps often POST data to a server. They POST when submitting a form.
 In the following example, the <code>HeroesService</code> posts when adding a hero to the database.</p>
 <p translation-result="">应用经常把数据 <code>POST</code> 到服务器。它们会在提交表单时进行 <code>POST</code>。
@@ -1213,10 +1213,10 @@ addHero (hero: Hero): Observable&#x3C;Hero> {
 }
 
 </code-example>
-<p translation-origin="off">The <code><a href="" class="code-anchor">HttpClient.post()</a></code> method is similar to <code>get()</code> in that it has a type parameter
+<p translation-origin="off">The <code><a href="/" class="code-anchor">HttpClient.post()</a></code> method is similar to <code>get()</code> in that it has a type parameter
 (you're expecting the server to return the new hero)
 and it takes a resource URL.</p>
-<p translation-result=""><code><a href="" class="code-anchor">HttpClient.post()</a></code> 方法像 <code>get()</code> 一样也有类型参数（你会希望服务器返回一个新的英雄对象），它包含一个资源 URL。</p>
+<p translation-result=""><code><a href="/" class="code-anchor">HttpClient.post()</a></code> 方法像 <code>get()</code> 一样也有类型参数（你会希望服务器返回一个新的英雄对象），它包含一个资源 URL。</p>
 <p translation-origin="off">It takes two more parameters:</p>
 <p translation-result="">它还接受另外两个参数：</p>
 <ol>
@@ -1225,12 +1225,12 @@ and it takes a resource URL.</p>
 <p translation-result=""><code>hero</code> - 要 <code>POST</code> 的请求体数据。</p>
 </li>
 <li>
-<p translation-origin="off"><code>httpOptions</code> - the method options which, in this case, <a href="guide/http#adding-headers">specify required headers</a>.</p>
-<p translation-result=""><code>httpOptions</code> - 这个例子中，该方法的选项<a href="guide/http#adding-headers">指定了所需的请求头</a>。</p>
+<p translation-origin="off"><code>httpOptions</code> - the method options which, in this case, <a href="/guide/http#adding-headers">specify required headers</a>.</p>
+<p translation-result=""><code>httpOptions</code> - 这个例子中，该方法的选项<a href="/guide/http#adding-headers">指定了所需的请求头</a>。</p>
 </li>
 </ol>
-<p translation-origin="off">Of course it catches errors in much the same manner <a href="guide/http#error-details">described above</a>.</p>
-<p translation-result="">当然，它捕获错误的方式很像<a href="guide/http#error-details">前面描述的</a>操作方式。</p>
+<p translation-origin="off">Of course it catches errors in much the same manner <a href="/guide/http#error-details">described above</a>.</p>
+<p translation-result="">当然，它捕获错误的方式很像<a href="/guide/http#error-details">前面描述的</a>操作方式。</p>
 <p translation-origin="off">The <code>HeroesComponent</code> initiates the actual POST operation by subscribing to
 the <code>Observable</code> returned by this service method.</p>
 <p translation-result=""><code>HeroesComponent</code> 通过订阅该服务方法返回的 <code>Observable</code> 发起了一次实际的 <code>POST</code> 操作。</p>
@@ -1242,8 +1242,8 @@ this.heroesService.addHero(newHero)
 <p translation-origin="off">When the server responds successfully with the newly added hero, the component adds
 that hero to the displayed <code>heroes</code> list.</p>
 <p translation-result="">当服务器成功做出响应时，会带有这个新创建的英雄，然后该组件就会把这个英雄添加到正在显示的 <code>heroes</code> 列表中。</p>
-<h3 translation-origin="off" id="making-a-delete-request">Making a DELETE request<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#making-a-delete-request"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="making-a-delete-request">发起 <code>DELETE</code> 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#making-a-delete-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="making-a-delete-request">Making a DELETE request<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#making-a-delete-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="making-a-delete-request">发起 <code>DELETE</code> 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#making-a-delete-request"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This application deletes a hero with the <code>HttpClient.delete</code> method by passing the hero's id
 in the request URL.</p>
 <p translation-result="">该应用可以把英雄的 id 传给 <code>HttpClient.delete</code> 方法的请求 URL 来删除一个英雄。</p>
@@ -1309,14 +1309,14 @@ req.subscribe();
 // 2 requests made.
 </code-example>
 </div>
-<h3 translation-origin="off" id="making-a-put-request">Making a PUT request<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#making-a-put-request"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="making-a-put-request">发起 PUT 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#making-a-put-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="making-a-put-request">Making a PUT request<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#making-a-put-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="making-a-put-request">发起 PUT 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#making-a-put-request"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">An app will send a PUT request to completely replace a resource with updated data.
 The following <code>HeroesService</code> example is just like the POST example.</p>
 <p translation-result="">应用可以发送 PUT 请求，来使用修改后的数据完全替换掉一个资源。
 下面的 <code>HeroesService</code> 例子和 POST 的例子很像。</p>
 <code-example path="http/src/app/heroes/heroes.service.ts" region="updateHero" title="app/heroes/heroes.service.ts (updateHero)" linenums="false">
-/** PUT: <a href="api/forms/NgModel#update" class="code-anchor">update</a> the hero on the server. Returns the updated hero upon success. */
+/** PUT: <a href="/api/forms/NgModel#update" class="code-anchor">update</a> the hero on the server. Returns the updated hero upon success. */
 updateHero (hero: Hero): Observable&#x3C;Hero> {
   return this.http.put&#x3C;Hero>(this.heroesUrl, hero, httpOptions)
     .pipe(
@@ -1325,25 +1325,25 @@ updateHero (hero: Hero): Observable&#x3C;Hero> {
 }
 
 </code-example>
-<p translation-origin="off">For the reasons <a href="guide/http#always-subscribe">explained above</a>, the caller (<code>HeroesComponent.update()</code> in this case) must <code>subscribe()</code> to the observable returned from the <code><a href="" class="code-anchor">HttpClient.put()</a></code>
+<p translation-origin="off">For the reasons <a href="/guide/http#always-subscribe">explained above</a>, the caller (<code>HeroesComponent.update()</code> in this case) must <code>subscribe()</code> to the observable returned from the <code><a href="/" class="code-anchor">HttpClient.put()</a></code>
 in order to initiate the request.</p>
-<p translation-result="">因为<a href="guide/http#always-subscribe">前面解释过的</a>原因，调用者（这里是 <code>HeroesComponent.update()</code>）必须 <code>subscribe()</code> 由 <code><a href="" class="code-anchor">HttpClient.put()</a></code> 返回的可观察对象，以发起这个调用。</p>
-<h2 translation-origin="off" id="advanced-usage">Advanced usage<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#advanced-usage"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="advanced-usage">高级用法<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#advanced-usage"><i class="material-icons">link</i></a></h2>
+<p translation-result="">因为<a href="/guide/http#always-subscribe">前面解释过的</a>原因，调用者（这里是 <code>HeroesComponent.update()</code>）必须 <code>subscribe()</code> 由 <code><a href="/" class="code-anchor">HttpClient.put()</a></code> 返回的可观察对象，以发起这个调用。</p>
+<h2 translation-origin="off" id="advanced-usage">Advanced usage<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#advanced-usage"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="advanced-usage">高级用法<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#advanced-usage"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">We have discussed the basic HTTP functionality in <code>@angular/common/http</code>, but sometimes you need to do more than make simple requests and get data back.</p>
 <p translation-result="">我们已经讨论了 <code>@angular/common/http</code> 的基本 HTTP 功能，但有时候除了单纯发起请求和取回数据之外，你还要再做点别的。</p>
-<h3 translation-origin="off" id="configuring-the-request">Configuring the request<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#configuring-the-request"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="configuring-the-request">配置请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#configuring-the-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="configuring-the-request">Configuring the request<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#configuring-the-request"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="configuring-the-request">配置请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#configuring-the-request"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Other aspects of an outgoing request can be configured via the options object
 passed as the last argument to the <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> method.</p>
 <p translation-result="">待发送请求的其它方面可以通过传给 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 方法最后一个参数中的配置对象进行配置。</p>
-<p translation-origin="off">You <a href="guide/http#adding-headers">saw earlier</a> that the <code>HeroesService</code> sets the default headers by
+<p translation-origin="off">You <a href="/guide/http#adding-headers">saw earlier</a> that the <code>HeroesService</code> sets the default headers by
 passing an options object (<code>httpOptions</code>) to its save methods.
 You can do more.</p>
-<p translation-result=""><a href="guide/http#adding-headers">以前你曾在</a> <code>HeroesService</code> 中通过在其保存方法中传入配置对象 <code>httpOptions</code> 设置过默认头。
+<p translation-result=""><a href="/guide/http#adding-headers">以前你曾在</a> <code>HeroesService</code> 中通过在其保存方法中传入配置对象 <code>httpOptions</code> 设置过默认头。
 你还可以做更多。</p>
-<h4 translation-origin="off" id="update-headers">Update headers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#update-headers"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="update-headers">修改这些头<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#update-headers"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="update-headers">Update headers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#update-headers"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="update-headers">修改这些头<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#update-headers"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You can't directly modify the existing headers within the previous options
 object because instances of the <code><a href="/api/common/http/HttpHeaders" class="code-anchor">HttpHeaders</a></code> class are immutable.</p>
 <p translation-result="">你没法直接修改前述配置对象中的现有头，因为这个 <code><a href="/api/common/http/HttpHeaders" class="code-anchor">HttpHeaders</a></code> 类的实例是不可变的。</p>
@@ -1359,18 +1359,18 @@ httpOptions.headers =
   httpOptions.headers.set('Authorization', 'my-new-auth-token');
 
 </code-example>
-<h4 translation-origin="off" id="url-parameters">URL Parameters<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#url-parameters"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="url-parameters">URL 参数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#url-parameters"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="url-parameters">URL Parameters<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#url-parameters"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="url-parameters">URL 参数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#url-parameters"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Adding URL search parameters works a similar way.
 Here is a <code>searchHeroes</code> method that queries for heroes whose names contain the search term.</p>
 <p translation-result="">添加 URL 搜索参数也与此类似。
 这里的 <code>searchHeroes</code> 方法会查询名字中包含搜索词的英雄列表。</p>
 <code-example path="http/src/app/heroes/heroes.service.ts" region="searchHeroes" linenums="false">
-/* GET heroes whose name contains <a href="api/common/PlatformLocation#search" class="code-anchor">search</a> term */
+/* GET heroes whose name contains <a href="/api/common/PlatformLocation#search" class="code-anchor">search</a> term */
 searchHeroes(term: string): Observable&#x3C;Hero[]> {
   term = term.trim();
 
-  // Add safe, <a href="api/core/SecurityContext#URL" class="code-anchor">URL</a> encoded <a href="api/common/PlatformLocation#search" class="code-anchor">search</a> parameter if there is <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> <a href="api/common/PlatformLocation#search" class="code-anchor">search</a> term
+  // Add safe, <a href="/api/core/SecurityContext#URL" class="code-anchor">URL</a> encoded <a href="/api/common/PlatformLocation#search" class="code-anchor">search</a> parameter if there is <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> <a href="/api/common/PlatformLocation#search" class="code-anchor">search</a> term
   const options = term ?
    { params: new <a href="/api/common/http/HttpParams" class="code-anchor">HttpParams</a>().set('name', term) } : {};
 
@@ -1385,8 +1385,8 @@ searchHeroes(term: string): Observable&#x3C;Hero[]> {
 <p translation-result="">如果有搜索词，这段代码就会构造一个包含进行过 URL 编码的搜索词的选项对象。如果这个搜索词是“foo”，这个 GET 请求的 URL 就会是 <code>api/heroes/?name=foo</code>。</p>
 <p translation-origin="off">The <code><a href="/api/common/http/HttpParams" class="code-anchor">HttpParams</a></code> are immutable so you'll have to use the <code>set()</code> method to update the options.</p>
 <p translation-result=""><code><a href="/api/common/http/HttpParams" class="code-anchor">HttpParams</a></code> 是不可变的，所以你也要使用 <code>set()</code> 方法来修改这些选项。</p>
-<h3 translation-origin="off" id="debouncing-requests">Debouncing requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#debouncing-requests"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="debouncing-requests">请求的防抖（debounce）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#debouncing-requests"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="debouncing-requests">Debouncing requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#debouncing-requests"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="debouncing-requests">请求的防抖（debounce）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#debouncing-requests"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The sample includes an <em>npm package search</em> feature.</p>
 <p translation-result="">这个例子还包含了<em>搜索 npm 包</em>的特性。</p>
 <p translation-origin="off">When the user enters a name in a search-box, the <code>PackageSearchComponent</code> sends
@@ -1395,7 +1395,7 @@ a search request for a package with that name to the NPM web API.</p>
 <p translation-origin="off">Here's a pertinent excerpt from the template:</p>
 <p translation-result="">下面是模板中的相关代码片段：</p>
 <code-example path="http/src/app/package-search/package-search.component.html" region="search" title="app/package-search/package-search.component.html (search)">
-&#x3C;input (keyup)="<a href="api/common/PlatformLocation#search" class="code-anchor">search</a>($event.target.value)" id="name" placeholder="Search"/>
+&#x3C;input (keyup)="<a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>($event.target.value)" id="name" placeholder="Search"/>
 
 &#x3C;ul>
   &#x3C;li *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let package of packages$ | <a href="/api/core/testing/async" class="code-anchor">async</a>">
@@ -1405,8 +1405,8 @@ a search request for a package with that name to the NPM web API.</p>
 &#x3C;/ul>
 
 </code-example>
-<p translation-origin="off">The <code>(keyup)</code> event binding sends every keystroke to the component's <code><a href="api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> method.</p>
-<p translation-result=""><code>(keyup)</code> 事件绑定把每次击键都发送给了组件的 <code><a href="api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> 方法。</p>
+<p translation-origin="off">The <code>(keyup)</code> event binding sends every keystroke to the component's <code><a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> method.</p>
+<p translation-result=""><code>(keyup)</code> 事件绑定把每次击键都发送给了组件的 <code><a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> 方法。</p>
 <p translation-origin="off">Sending a request for every keystroke could be expensive.
 It's better to wait until the user stops typing and then send a request.
 That's easy to implement with RxJS operators, as shown in this excerpt.</p>
@@ -1418,7 +1418,7 @@ withRefresh = false;
 packages$: Observable&#x3C;NpmPackageInfo[]>;
 private searchText$ = new Subject&#x3C;string>();
 
-<a href="api/common/PlatformLocation#search" class="code-anchor">search</a>(packageName: string) {
+<a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>(packageName: string) {
   this.searchText$.next(packageName);
 }
 
@@ -1438,10 +1438,10 @@ constructor(private searchService: PackageSearchService) { }
 <p translation-origin="off">The <code>searchText$</code> is the sequence of search-box values coming from the user.
 It's defined as an RxJS <code>Subject</code>, which means it is a multicasting <code>Observable</code>
 that can also produce values for itself by calling <code>next(value)</code>,
-as happens in the <code><a href="api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> method.</p>
+as happens in the <code><a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> method.</p>
 <p translation-result=""><code>searchText$</code> 是一个序列，包含用户输入到搜索框中的所有值。
 它定义成了 RxJS 的 <code>Subject</code> 对象，这表示它是一个多播 <code>Observable</code>，同时还可以自行调用 <code>next(value)</code> 来产生值。
-<code><a href="api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> 方法中就是这么做的。</p>
+<code><a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> 方法中就是这么做的。</p>
 <p translation-origin="off">Rather than forward every <code>searchText</code> value directly to the injected <code>PackageSearchService</code>,
 the code in <code>ngOnInit()</code> <em>pipes</em> search values through three operators:</p>
 <p translation-result="">除了把每个 <code>searchText</code> 的值都直接转发给 <code>PackageSearchService</code> 之外，<code>ngOnInit()</code> 中的代码还通过下列三个操作符对这些搜索值进行<em>管道</em>处理：</p>
@@ -1467,10 +1467,10 @@ and displays search results as they arrive.</p>
 <p translation-origin="off">A search value reaches the service only if it's a new value and the user has stopped typing.</p>
 <p translation-result="">这样，只有当用户停止了输入且搜索值和以前不一样的时候，搜索值才会传给服务。</p>
 <div class="alert is-helpful">
-<p translation-origin="off">The <code>withRefresh</code> option is explained <a href="guide/http#cache-refresh">below</a>.</p>
-<p translation-result=""><a href="guide/http#cache-refresh">稍后</a> 解释了这个 <code>withRefresh</code> 选项。</p>
+<p translation-origin="off">The <code>withRefresh</code> option is explained <a href="/guide/http#cache-refresh">below</a>.</p>
+<p translation-result=""><a href="/guide/http#cache-refresh">稍后</a> 解释了这个 <code>withRefresh</code> 选项。</p>
 </div>
-<h4 translation-origin="off" id="switchmap"><em>switchMap()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#switchmap"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="switchmap"><em>switchMap()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#switchmap"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <code>switchMap()</code> operator has three important characteristics.</p>
 <p translation-result="">这个 <code>switchMap()</code> 操作符有三个重要的特征：</p>
 <ol>
@@ -1496,8 +1496,8 @@ consider moving it to a utility function or into the <code>PackageSearchService<
 <p translation-result="">如果你觉得将来会复用这些防抖逻辑，
 可以把它移到单独的工具函数中，或者移到 <code>PackageSearchService</code> 中。</p>
 </div>
-<h3 translation-origin="off" id="intercepting-requests-and-responses">Intercepting requests and responses<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#intercepting-requests-and-responses"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="intercepting-requests-and-responses">拦截请求和响应<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#intercepting-requests-and-responses"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="intercepting-requests-and-responses">Intercepting requests and responses<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#intercepting-requests-and-responses"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="intercepting-requests-and-responses">拦截请求和响应<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#intercepting-requests-and-responses"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off"><em>HTTP Interception</em> is a major feature of <code>@angular/common/http</code>.
 With interception, you declare <em>interceptors</em> that inspect and transform HTTP requests from your application to the server.
 The same interceptors may also inspect and transform the server's responses on their way back to the application.
@@ -1511,8 +1511,8 @@ Multiple interceptors form a <em>forward-and-backward</em> chain of request/resp
 <p translation-origin="off">Without interception, developers would have to implement these tasks <em>explicitly</em>
 for each <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> method call.</p>
 <p translation-result="">如果没有拦截机制，那么开发人员将不得不对每次 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 调用<em>显式</em>实现这些任务。</p>
-<h4 translation-origin="off" id="write-an-interceptor">Write an interceptor<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#write-an-interceptor"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="write-an-interceptor">编写拦截器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#write-an-interceptor"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="write-an-interceptor">Write an interceptor<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#write-an-interceptor"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="write-an-interceptor">编写拦截器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#write-an-interceptor"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">To implement an interceptor, declare a class that implements the <code>intercept()</code> method of the <code><a href="/api/common/http/HttpInterceptor" class="code-anchor">HttpInterceptor</a></code> interface.</p>
 <p translation-result="">要实现拦截器，就要实现一个实现了 <code><a href="/api/common/http/HttpInterceptor" class="code-anchor">HttpInterceptor</a></code> 接口中的 <code>intercept()</code> 方法的类。</p>
 <p translation-origin="off"> Here is a do-nothing <em>noop</em> interceptor that simply passes the request through without touching it:</p>
@@ -1548,25 +1548,25 @@ export abstract class <a href="/api/common/http/HttpHandler" class="code-anchor"
   abstract handle(req: <a href="/api/common/http/HttpRequest" class="code-anchor">HttpRequest</a>&#x3C;any>): Observable&#x3C;<a href="/api/common/http/HttpEvent" class="code-anchor">HttpEvent</a>&#x3C;any>>;
 }
 </code-example>
-<p translation-origin="off">Like <code>intercept()</code>, the <code>handle()</code> method transforms an HTTP request into an <code>Observable</code> of <a href="guide/http#httpevents"><code>HttpEvents</code></a> which ultimately include the server's response. The <code>intercept()</code> method could inspect that observable and alter it before returning it to the caller.</p>
-<p translation-result="">像 <code>intercept()</code> 一样，<code>handle()</code> 方法也会把 HTTP 请求转换成 <a href="guide/http#httpevents"><code>HttpEvents</code></a> 组成的 <code>Observable</code>，它最终包含的是来自服务器的响应。
+<p translation-origin="off">Like <code>intercept()</code>, the <code>handle()</code> method transforms an HTTP request into an <code>Observable</code> of <a href="/guide/http#httpevents"><code>HttpEvents</code></a> which ultimately include the server's response. The <code>intercept()</code> method could inspect that observable and alter it before returning it to the caller.</p>
+<p translation-result="">像 <code>intercept()</code> 一样，<code>handle()</code> 方法也会把 HTTP 请求转换成 <a href="/guide/http#httpevents"><code>HttpEvents</code></a> 组成的 <code>Observable</code>，它最终包含的是来自服务器的响应。
 <code>intercept()</code> 函数可以检查这个可观察对象，并在把它返回给调用者之前修改它。</p>
 <p translation-origin="off">This <em>no-op</em> interceptor simply calls <code>next.handle()</code> with the original request and returns the observable without doing a thing.</p>
 <p translation-result="">这个<em>无操作的</em>拦截器，会直接使用原始的请求调用 <code>next.handle()</code>，并返回它返回的可观察对象，而不做任何后续处理。</p>
-<h4 translation-origin="off" id="the-next-object">The <em>next</em> object<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#the-next-object"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="the-emnextem-object"><code>next</code> 对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#the-emnextem-object"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="the-next-object">The <em>next</em> object<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#the-next-object"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="the-emnextem-object"><code>next</code> 对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#the-emnextem-object"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <code>next</code> object represents the next interceptor in the chain of interceptors.
 The final <code>next</code> in the chain is the <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> backend handler that sends the request to the server and receives the server's response.</p>
 <p translation-result=""><code>next</code> 对象表示拦截器链表中的下一个拦截器。
 这个链表中的最后一个 <code>next</code> 对象就是 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 的后端处理器（backend handler），它会把请求发给服务器，并接收服务器的响应。</p>
 <p translation-origin="off">Most interceptors call <code>next.handle()</code> so that the request flows through to the next interceptor and, eventually, the backend handler.
-An interceptor <em>could</em> skip calling <code>next.handle()</code>, short-circuit the chain, and <a href="guide/http#caching">return its own <code>Observable</code></a> with an artificial server response. </p>
+An interceptor <em>could</em> skip calling <code>next.handle()</code>, short-circuit the chain, and <a href="/guide/http#caching">return its own <code>Observable</code></a> with an artificial server response. </p>
 <p translation-result="">大多数的拦截器都会调用 <code>next.handle()</code>，以便这个请求流能走到下一个拦截器，并最终传给后端处理器。
-拦截器也<em>可以</em>不调用 <code>next.handle()</code>，使这个链路短路，并返回一个带有人工构造出来的服务器响应的 <a href="guide/http#caching">自己的 <code>Observable</code></a>。</p>
+拦截器也<em>可以</em>不调用 <code>next.handle()</code>，使这个链路短路，并返回一个带有人工构造出来的服务器响应的 <a href="/guide/http#caching">自己的 <code>Observable</code></a>。</p>
 <p translation-origin="off">This is a common middleware pattern found in frameworks such as Express.js.</p>
 <p translation-result="">这是一种常见的中间件模式，在像 Express.js 这样的框架中也会找到它。</p>
-<h4 translation-origin="off" id="provide-the-interceptor">Provide the interceptor<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#provide-the-interceptor"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="provide-the-interceptor">提供这个拦截器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#provide-the-interceptor"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="provide-the-interceptor">Provide the interceptor<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#provide-the-interceptor"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="provide-the-interceptor">提供这个拦截器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#provide-the-interceptor"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <code>NoopInterceptor</code> is a service managed by Angular's <a href="/guide/dependency-injection">dependency injection (DI)</a> system.
 Like other services, you must provide the interceptor class before the app can use it.</p>
 <p translation-result="">这个 <code>NoopInterceptor</code> 就是一个由 Angular <a href="/guide/dependency-injection">依赖注入 (DI)</a>系统管理的服务。
@@ -1594,10 +1594,10 @@ that injects an array of values, rather than a single value.</p>
 <p translation-origin="off">You <em>could</em> add this provider directly to the providers array of the <code>AppModule</code>.
 However, it's rather verbose and there's a good chance that
 you'll create more interceptors and provide them in the same way.
-You must also pay <a href="guide/http#interceptor-order">close attention to the order</a>
+You must also pay <a href="/guide/http#interceptor-order">close attention to the order</a>
 in which you provide these interceptors.</p>
 <p translation-result="">你<em>也可以</em>直接把这个提供商添加到 <code>AppModule</code> 中的提供商数组中，不过那样会非常啰嗦。况且，你将来还会用这种方式创建更多的拦截器并提供它们。
-你还要<a href="guide/http#interceptor-order">特别注意提供这些拦截器的顺序</a>。</p>
+你还要<a href="/guide/http#interceptor-order">特别注意提供这些拦截器的顺序</a>。</p>
 <p translation-origin="off">Consider creating a "barrel" file that gathers all the interceptor providers into an <code>httpInterceptorProviders</code> array, starting with this first one, the <code>NoopInterceptor</code>.</p>
 <p translation-result="">认真考虑创建一个封装桶（barrel）文件，用于把所有拦截器都收集起来，一起提供给 <code>httpInterceptorProviders</code> 数组，可以先从这个 <code>NoopInterceptor</code> 开始。</p>
 <code-example path="http/src/app/http-interceptors/index.ts" region="interceptor-providers" title="app/http-interceptors/index.ts" linenums="false">
@@ -1627,8 +1627,8 @@ you won't have to revisit the <code>AppModule</code>.</p>
 <p translation-origin="off">There are many more interceptors in the complete sample code.</p>
 <p translation-result="">在完整版的范例代码中还有更多的拦截器。</p>
 </div>
-<h4 translation-origin="off" id="interceptor-order">Interceptor order<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#interceptor-order"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="interceptor-order">拦截器的顺序<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#interceptor-order"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="interceptor-order">Interceptor order<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#interceptor-order"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="interceptor-order">拦截器的顺序<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#interceptor-order"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Angular applies interceptors in the order that you provide them.
 If you provide interceptors <em>A</em>, then <em>B</em>, then <em>C</em>,  requests will flow in <em>A->B->C</em> and
 responses will flow out <em>C->B->A</em>.</p>
@@ -1639,7 +1639,7 @@ responses will flow out <em>C->B->A</em>.</p>
 If you need to enable and disable an interceptor dynamically, you'll have to build that capability into the interceptor itself.</p>
 <p translation-result="">以后你就再也不能修改这些顺序或移除某些拦截器了。
 如果你需要动态启用或禁用某个拦截器，那就要在那个拦截器中自行实现这个功能。</p>
-<h4 translation-origin="off" id="httpevents"><em>HttpEvents</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#httpevents"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="httpevents"><em>HttpEvents</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#httpevents"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You may have expected the <code>intercept()</code> and <code>handle()</code> methods to return observables of <code><a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a>&#x3C;any></code> as most <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> methods do.</p>
 <p translation-result="">你可能会期望 <code>intercept()</code> 和 <code>handle()</code> 方法会像大多数 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 中的方法那样返回 <code><a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a>&#x3C;any></code> 的可观察对象。</p>
 <p translation-origin="off">Instead they return observables of <code><a href="/api/common/http/HttpEvent" class="code-anchor">HttpEvent</a>&#x3C;any></code>.</p>
@@ -1654,8 +1654,8 @@ will see all of these events.
 Your interceptor should return <em>every event untouched</em> unless it has a <em>compelling reason to do otherwise</em>.</p>
 <p translation-result="">但那些要检查和修改来自 <code>next.handle()</code> 的响应体的拦截器希望看到所有这些事件。
 所以，你的拦截器应该返回<em>你没碰过的所有事件</em>，除非你<em>有充分的理由不这么做</em>。</p>
-<h4 translation-origin="off" id="immutability">Immutability<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#immutability"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="immutability">不可变性<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#immutability"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="immutability">Immutability<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#immutability"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="immutability">不可变性<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#immutability"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Although interceptors are capable of mutating requests and responses,
 the <code><a href="/api/common/http/HttpRequest" class="code-anchor">HttpRequest</a></code> and <code><a href="/api/common/http/HttpResponse" class="code-anchor">HttpResponse</a></code> instance properties are <code>readonly</code>,
 rendering them largely immutable.</p>
@@ -1687,8 +1687,8 @@ return next.handle(secureReq);
 </code-example>
 <p translation-origin="off">The <code>clone()</code> method's hash argument allows you to mutate specific properties of the request while copying the others.</p>
 <p translation-result="">这个 <code>clone()</code> 方法的哈希型参数允许你在复制出克隆体的同时改变该请求的某些特定属性。</p>
-<h5 translation-origin="off" id="the-request-body">The request body<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#the-request-body"><i class="material-icons">link</i></a></h5>
-<h5 translation-result="" id="the-request-body">请求体<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#the-request-body"><i class="material-icons">link</i></a></h5>
+<h5 translation-origin="off" id="the-request-body">The request body<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#the-request-body"><i class="material-icons">link</i></a></h5>
+<h5 translation-result="" id="the-request-body">请求体<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#the-request-body"><i class="material-icons">link</i></a></h5>
 <p translation-origin="off">The <code>readonly</code> assignment guard can't prevent deep updates and, in particular,
 it can't prevent you from modifying a property of a request body object.</p>
 <p translation-result=""><code>readonly</code> 这种赋值保护，无法防范深修改（修改子对象的属性），也不能防范你修改请求体对象中的属性。</p>
@@ -1707,8 +1707,8 @@ const newReq = req.clone({ body: newBody });
 return next.handle(newReq);
 
 </code-example>
-<h5 translation-origin="off" id="clearing-the-request-body">Clearing the request body<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#clearing-the-request-body"><i class="material-icons">link</i></a></h5>
-<h5 translation-result="" id="clearing-the-request-body">清空请求体<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#clearing-the-request-body"><i class="material-icons">link</i></a></h5>
+<h5 translation-origin="off" id="clearing-the-request-body">Clearing the request body<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#clearing-the-request-body"><i class="material-icons">link</i></a></h5>
+<h5 translation-result="" id="clearing-the-request-body">清空请求体<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#clearing-the-request-body"><i class="material-icons">link</i></a></h5>
 <p translation-origin="off">Sometimes you need to clear the request body rather than replace it.
 If you set the cloned request body to <code>undefined</code>, Angular assumes you intend to leave the body as is.
 That is not what you want.
@@ -1722,8 +1722,8 @@ If you set the cloned request body to <code>null</code>, Angular knows you inten
   newReq = req.clone({ body: undefined }); // preserve original body
   newReq = req.clone({ body: null }); // clear the body
 </code-example>
-<h4 translation-origin="off" id="set-default-headers">Set default headers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#set-default-headers"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="set-default-headers">设置默认请求头<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#set-default-headers"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="set-default-headers">Set default headers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#set-default-headers"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="set-default-headers">设置默认请求头<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#set-default-headers"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Apps often use an interceptor to set default headers on outgoing requests. </p>
 <p translation-result="">应用通常会使用拦截器来设置外发请求的默认请求头。</p>
 <p translation-origin="off">The sample app has an <code>AuthService</code> that produces an authorization token.
@@ -1740,7 +1740,7 @@ export class AuthInterceptor implements <a href="/api/common/http/HttpIntercepto
   constructor(private auth: AuthService) {}
 
   intercept(req: <a href="/api/common/http/HttpRequest" class="code-anchor">HttpRequest</a>&#x3C;any>, next: <a href="/api/common/http/HttpHandler" class="code-anchor">HttpHandler</a>) {
-    // <a href="api/http/RequestMethod#Get" class="code-anchor">Get</a> the auth token from the service.
+    // <a href="/api/http/RequestMethod#Get" class="code-anchor">Get</a> the auth token from the service.
     const authToken = this.auth.getAuthorizationToken();
 
     // Clone the request and replace the original headers with
@@ -1779,8 +1779,8 @@ const authReq = req.clone({ setHeaders: { Authorization: authToken } });
 <p translation-result=""> XSRF 防护</p>
 </li>
 </ul>
-<h4 translation-origin="off" id="logging">Logging<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#logging"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="logging">记日志<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#logging"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="logging">Logging<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#logging"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="logging">记日志<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#logging"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Because interceptors can process the request and response <em>together</em>, they can do things like time and log
 an entire HTTP operation. </p>
 <p translation-result="">因为拦截器可以<em>同时</em>处理请求和响应，所以它们也可以对整个 HTTP 操作进行计时和记录日志。</p>
@@ -1828,8 +1828,8 @@ and reports the outcome to the <code>MessageService</code>.</p>
 RxJS 的 <code>finalize</code> 操作符无论在响应成功还是失败时都会调用（这是必须的），然后把结果汇报给 <code>MessageService</code>。</p>
 <p translation-origin="off">Neither <code>tap</code> nor <code>finalize</code> touch the values of the observable stream returned to the caller.</p>
 <p translation-result="">在这个可观察对象的流中，无论是 <code>tap</code> 还是 <code>finalize</code> 接触过的值，都会照常发送给调用者。</p>
-<h4 translation-origin="off" id="caching">Caching<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#caching"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="caching">缓存<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#caching"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="caching">Caching<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#caching"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="caching">缓存<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#caching"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Interceptors can handle requests by themselves, without forwarding to <code>next.handle()</code>.</p>
 <p translation-result="">拦截器还可以自行处理这些请求，而不用转发给 <code>next.handle()</code>。</p>
 <p translation-origin="off">For example, you might decide to cache certain requests and responses to improve performance.
@@ -1869,7 +1869,7 @@ the cached response, by-passing the <code>next</code> handler (and all other int
 <a id="send-request"></a>
 <code-example path="http/src/app/http-interceptors/caching-interceptor.ts" region="send-request">
 /**
- * <a href="api/http/RequestMethod#Get" class="code-anchor">Get</a> server response observable by sending request to `next()`.
+ * <a href="/api/http/RequestMethod#Get" class="code-anchor">Get</a> server response observable by sending request to `next()`.
  * Will add the response to the cache on the way out.
  */
 function sendRequest(
@@ -1877,7 +1877,7 @@ function sendRequest(
   next: <a href="/api/common/http/HttpHandler" class="code-anchor">HttpHandler</a>,
   cache: RequestCache): Observable&#x3C;<a href="/api/common/http/HttpEvent" class="code-anchor">HttpEvent</a>&#x3C;any>> {
 
-  // No headers allowed in npm <a href="api/common/PlatformLocation#search" class="code-anchor">search</a> request
+  // No headers allowed in npm <a href="/api/common/PlatformLocation#search" class="code-anchor">search</a> request
   const noHeaderReq = req.clone({ headers: new <a href="/api/common/http/HttpHeaders" class="code-anchor">HttpHeaders</a>() });
 
   return next.handle(noHeaderReq).pipe(
@@ -1891,9 +1891,9 @@ function sendRequest(
 }
 
 </code-example>
-<p translation-origin="off">The <code>sendRequest</code> function creates a <a href="guide/http#immutability">request clone</a> without headers
+<p translation-origin="off">The <code>sendRequest</code> function creates a <a href="/guide/http#immutability">request clone</a> without headers
 because the npm api forbids them.</p>
-<p translation-result=""><code>sendRequest</code> 函数创建了一个不带请求头的<a href="guide/http#immutability">请求克隆体</a>，因为 npm API 不会接受它们。</p>
+<p translation-result=""><code>sendRequest</code> 函数创建了一个不带请求头的<a href="/guide/http#immutability">请求克隆体</a>，因为 npm API 不会接受它们。</p>
 <p translation-origin="off">It forwards that request to <code>next.handle()</code> which ultimately calls the server and
 returns the server's response.</p>
 <p translation-result="">它会把这个请求转发给 <code>next.handle()</code>，它最终会调用服务器，并且返回服务器的响应。</p>
@@ -1909,12 +1909,12 @@ to the application caller. </p>
 some of their <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> requests actually return cached responses.</p>
 <p translation-result="">数据服务，比如 <code>PackageSearchService</code>，并不知道它们收到的某些 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 请求实际上是从缓存的请求中返回来的。</p>
 <a id="cache-refresh"></a>
-<h4 translation-origin="off" id="return-a-multi-valued-observable">Return a multi-valued <em>Observable</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#return-a-multi-valued-observable"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="return-a-multi-valued-emobservableem">返回多值可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#return-a-multi-valued-emobservableem"><i class="material-icons">link</i></a></h4>
-<p translation-origin="off">The <code><a href="" class="code-anchor">HttpClient.get()</a></code> method normally returns an <em>observable</em>
+<h4 translation-origin="off" id="return-a-multi-valued-observable">Return a multi-valued <em>Observable</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#return-a-multi-valued-observable"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="return-a-multi-valued-emobservableem">返回多值可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#return-a-multi-valued-emobservableem"><i class="material-icons">link</i></a></h4>
+<p translation-origin="off">The <code><a href="/" class="code-anchor">HttpClient.get()</a></code> method normally returns an <em>observable</em>
 that either emits the data or an error.
 Some folks describe it as a "<em>one and done</em>" observable.</p>
-<p translation-result=""><code><a href="" class="code-anchor">HttpClient.get()</a></code> 方法正常情况下只会返回一个<em>可观察对象</em>，它或者发出数据，或者发出错误。
+<p translation-result=""><code><a href="/" class="code-anchor">HttpClient.get()</a></code> 方法正常情况下只会返回一个<em>可观察对象</em>，它或者发出数据，或者发出错误。
 有些人说它是“一次性完成”的可观察对象。</p>
 <p translation-origin="off">But an interceptor can change this to an <em>observable</em> that emits more than once.</p>
 <p translation-result="">但是拦截器也可以把这个修改成发出多个值的<em>可观察对象</em>。</p>
@@ -1940,18 +1940,18 @@ return cachedResponse ?
 <div class="alert is-helpful">
 <p translation-origin="off">A checkbox on the <code>PackageSearchComponent</code> toggles a <code>withRefresh</code> flag,
 which is one of the arguments to <code>PackageSearchService.search()</code>.
-That <code><a href="api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> method creates the custom <code>x-refresh</code> header
-and adds it to the request before calling <code><a href="" class="code-anchor">HttpClient.get()</a></code>.</p>
+That <code><a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> method creates the custom <code>x-refresh</code> header
+and adds it to the request before calling <code><a href="/" class="code-anchor">HttpClient.get()</a></code>.</p>
 <p translation-result=""><code>PackageSearchComponent</code> 中的一个检查框会切换 <code>withRefresh</code> 标识，
 它是 <code>PackageSearchService.search()</code> 的参数之一。
-<code><a href="api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> 方法创建了自定义的 <code>x-refresh</code> 头，并在调用 <code><a href="" class="code-anchor">HttpClient.get()</a></code> 前把它添加到请求里。</p>
+<code><a href="/api/common/PlatformLocation#search" class="code-anchor">search</a>()</code> 方法创建了自定义的 <code>x-refresh</code> 头，并在调用 <code><a href="/" class="code-anchor">HttpClient.get()</a></code> 前把它添加到请求里。</p>
 </div>
 <p translation-origin="off">The revised <code>CachingInterceptor</code> sets up a server request
 whether there's a cached value or not,
-using the same <code>sendRequest()</code> method described <a href="guide/http#send-request">above</a>.
+using the same <code>sendRequest()</code> method described <a href="/guide/http#send-request">above</a>.
 The <code>results$</code> observable will make the request when subscribed.</p>
 <p translation-result="">修改后的 <code>CachingInterceptor</code> 会发起一个服务器请求，而不管有没有缓存的值。
-就像 <a href="guide/http#send-request">前面</a> 的 <code>sendRequest()</code> 方法一样进行订阅。
+就像 <a href="/guide/http#send-request">前面</a> 的 <code>sendRequest()</code> 方法一样进行订阅。
 在订阅 <code>results$</code> 可观察对象时，就会发起这个请求。</p>
 <p translation-origin="off">If there's no cached value, the interceptor returns <code>results$</code>.</p>
 <p translation-result="">如果没有缓存的值，拦截器直接返回 <code>result$</code>。</p>
@@ -1963,8 +1963,8 @@ Subscribers see a sequence of <em>two</em> responses.</p>
 <p translation-result="">如果有缓存的值，这些代码就会把缓存的响应加入到 <code>result$</code> 的管道中，使用重组后的可观察对象进行处理，并发出两次。
 先立即发出一次缓存的响应体，然后发出来自服务器的响应。
 订阅者将会看到一个包含这<em>两个</em>响应的序列。</p>
-<h3 translation-origin="off" id="listening-to-progress-events">Listening to progress events<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#listening-to-progress-events"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="listening-to-progress-events">监听进度事件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#listening-to-progress-events"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="listening-to-progress-events">Listening to progress events<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#listening-to-progress-events"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="listening-to-progress-events">监听进度事件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#listening-to-progress-events"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Sometimes applications transfer large amounts of data and those transfers can take a long time.
 File uploads are a typical example.
 Give the users a better experience by providing feedback on the progress of such transfers.</p>
@@ -1972,11 +1972,11 @@ Give the users a better experience by providing feedback on the progress of such
 典型的例子是文件上传。
 可以通过在传输过程中提供进度反馈，来提升用户体验。</p>
 <p translation-origin="off">To make a request with progress events enabled, you can create an instance of <code><a href="/api/common/http/HttpRequest" class="code-anchor">HttpRequest</a></code>
-with the <code><a href="api/common/http/HttpRequest#reportProgress" class="code-anchor">reportProgress</a></code> option set true to enable tracking of progress events.</p>
-<p translation-result="">要想开启进度事件的响应，你可以创建一个把 <code><a href="api/common/http/HttpRequest#reportProgress" class="code-anchor">reportProgress</a></code> 选项设置为 <code>true</code> 的 <code><a href="/api/common/http/HttpRequest" class="code-anchor">HttpRequest</a></code> 实例，以开启进度跟踪事件。</p>
+with the <code><a href="/api/common/http/HttpRequest#reportProgress" class="code-anchor">reportProgress</a></code> option set true to enable tracking of progress events.</p>
+<p translation-result="">要想开启进度事件的响应，你可以创建一个把 <code><a href="/api/common/http/HttpRequest#reportProgress" class="code-anchor">reportProgress</a></code> 选项设置为 <code>true</code> 的 <code><a href="/api/common/http/HttpRequest" class="code-anchor">HttpRequest</a></code> 实例，以开启进度跟踪事件。</p>
 <code-example path="http/src/app/uploader/uploader.service.ts" region="upload-request" title="app/uploader/uploader.service.ts (upload request)">
 const req = new <a href="/api/common/http/HttpRequest" class="code-anchor">HttpRequest</a>('POST', '/upload/file', file, {
-  <a href="api/common/http/HttpRequest#reportProgress" class="code-anchor">reportProgress</a>: true
+  <a href="/api/common/http/HttpRequest#reportProgress" class="code-anchor">reportProgress</a>: true
 });
 
 </code-example>
@@ -1984,16 +1984,16 @@ const req = new <a href="/api/common/http/HttpRequest" class="code-anchor">HttpR
 <p translation-origin="off">Every progress event triggers change detection, so only turn them on if you truly intend to report progress in the UI.</p>
 <p translation-result="">每个进度事件都会触发变更检测，所以，你应该只有当确实希望在 UI 中报告进度时才打开这个选项。</p>
 </div>
-<p translation-origin="off">Next, pass this request object to the <code><a href="" class="code-anchor">HttpClient.request()</a></code> method, which
+<p translation-origin="off">Next, pass this request object to the <code><a href="/" class="code-anchor">HttpClient.request()</a></code> method, which
 returns an <code>Observable</code> of <code>HttpEvents</code>, the same events processed by interceptors:</p>
-<p translation-result="">接下来，把这个请求对象传给 <code><a href="" class="code-anchor">HttpClient.request()</a></code> 方法，它返回一个 <code>HttpEvents</code> 的 <code>Observable</code>，同样也可以在拦截器中处理这些事件。</p>
+<p translation-result="">接下来，把这个请求对象传给 <code><a href="/" class="code-anchor">HttpClient.request()</a></code> 方法，它返回一个 <code>HttpEvents</code> 的 <code>Observable</code>，同样也可以在拦截器中处理这些事件。</p>
 <code-example path="http/src/app/uploader/uploader.service.ts" region="upload-body" title="app/uploader/uploader.service.ts (upload body)" linenums="false">
 // The `HttpClient.request` API produces <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> raw event stream
 // which includes start (sent), progress, and response events.
 return this.http.request(req).pipe(
   map(event => this.getEventMessage(event, file)),
-  tap(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> => this.showProgress(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>)),
-  last(), // return last (completed) <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> to caller
+  tap(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> => this.showProgress(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>)),
+  last(), // return last (completed) <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> to caller
   catchError(this.handleError(file))
 );
 
@@ -2001,18 +2001,18 @@ return this.http.request(req).pipe(
 <p translation-origin="off">The <code>getEventMessage</code> method interprets each type of <code><a href="/api/common/http/HttpEvent" class="code-anchor">HttpEvent</a></code> in the event stream.</p>
 <p translation-result=""><code>getEventMessage</code> 方法会解释事件流中的每一个 <code><a href="/api/common/http/HttpEvent" class="code-anchor">HttpEvent</a></code> 类型。</p>
 <code-example path="http/src/app/uploader/uploader.service.ts" region="getEventMessage" title="app/uploader/uploader.service.ts (getEventMessage)" linenums="false">
-/** Return distinct <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> for sent, upload progress, &#x26; response events */
+/** Return distinct <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> for sent, upload progress, &#x26; response events */
 private getEventMessage(event: <a href="/api/common/http/HttpEvent" class="code-anchor">HttpEvent</a>&#x3C;any>, file: File) {
   switch (event.type) {
-    case <a href="api/common/http/HttpEventType#Sent" class="code-anchor">HttpEventType.Sent</a>:
+    case <a href="/api/common/http/HttpEventType#Sent" class="code-anchor">HttpEventType.Sent</a>:
       return `Uploading file "${file.name}" of size ${file.size}.`;
 
-    case <a href="api/common/http/HttpEventType#UploadProgress" class="code-anchor">HttpEventType.UploadProgress</a>:
-      // Compute and show the % <a href="api/core/ApplicationInitStatus#done" class="code-anchor">done</a>:
+    case <a href="/api/common/http/HttpEventType#UploadProgress" class="code-anchor">HttpEventType.UploadProgress</a>:
+      // Compute and show the % <a href="/api/core/ApplicationInitStatus#done" class="code-anchor">done</a>:
       const percentDone = Math.round(100 * event.loaded / event.total);
       return `File "${file.name}" is ${percentDone}% uploaded.`;
 
-    case <a href="api/common/http/HttpEventType#Response" class="code-anchor">HttpEventType.Response</a>:
+    case <a href="/api/common/http/HttpEventType#Response" class="code-anchor">HttpEventType.Response</a>:
       return `File "${file.name}" was completely uploaded!`;
 
     default:
@@ -2029,8 +2029,8 @@ by returning an observable of simulated events.</p>
 <p translation-result="">这个范例应用中并没有一个用来接收上传的文件的真实的服务器。
 <code>app/http-interceptors/upload-interceptor.ts</code> 中的 <code>UploadInterceptor</code> 会拦截并短路掉上传请求，改为返回一个带有各个模拟事件的可观察对象。</p>
 </div>
-<h2 translation-origin="off" id="security-xsrf-protection">Security: XSRF Protection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#security-xsrf-protection"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="security-xsrf-protection">安全：XSRF 防护<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#security-xsrf-protection"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="security-xsrf-protection">Security: XSRF Protection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#security-xsrf-protection"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="security-xsrf-protection">安全：XSRF 防护<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#security-xsrf-protection"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off"><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">Cross-Site Request Forgery (XSRF)</a> is an attack technique by which the attacker can trick an authenticated user into unknowingly executing actions on your website. <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> supports a <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery#Cookie-to-Header_Token">common mechanism</a> used to prevent XSRF attacks. When performing HTTP requests, an interceptor reads a token from a cookie, by default <code>XSRF-TOKEN</code>, and sets it as an HTTP header, <code>X-XSRF-TOKEN</code>. Since only code that runs on your domain could read the cookie, the backend can be certain that the HTTP request came from your client application and not an attacker.</p>
 <p translation-result=""><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">跨站请求伪造 (XSRF)</a>是一个攻击技术，它能让攻击者假冒一个已认证的用户在你的网站上执行未知的操作。<code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 支持一种<a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery#Cookie-to-Header_Token">通用的机制</a>来防范 XSRF 攻击。当执行 HTTP 请求时，一个拦截器会从 cookie 中读取 XSRF 令牌（默认名字为 <code>XSRF-TOKEN</code>），并且把它设置为一个 HTTP 头 <code>X-XSRF-TOKEN</code>，由于只有运行在你自己的域名下的代码才能读取这个 cookie，因此后端可以确认这个 HTTP 请求真的来自你的客户端应用，而不是攻击者。</p>
 <p translation-origin="off">By default, an interceptor sends this cookie on all mutating requests (POST, etc.)
@@ -2050,13 +2050,13 @@ the header is present on all eligible requests.
 If not, Angular's default protection will be ineffective.</p>
 <p translation-result=""><em>注意，<code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 支持的只是 XSRF 防护方案的客户端这一半。</em> 你的后端服务必须配置为给页面设置 cookie ，并且要验证请求头，以确保全都是合法的请求。否则，Angular 默认的这种防护措施就会失效。</p>
 </div>
-<h3 translation-origin="off" id="configuring-custom-cookieheader-names">Configuring custom cookie/header names<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#configuring-custom-cookieheader-names"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="configuring-custom-cookieheader-names">配置自定义 cookie/header 名称<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#configuring-custom-cookieheader-names"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="configuring-custom-cookieheader-names">Configuring custom cookie/header names<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#configuring-custom-cookieheader-names"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="configuring-custom-cookieheader-names">配置自定义 cookie/header 名称<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#configuring-custom-cookieheader-names"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">If your backend service uses different names for the XSRF token cookie or header,
-use <code><a href="api/common/http/HttpClientXsrfModule#withOptions" class="code-anchor">HttpClientXsrfModule.withOptions()</a></code> to override the defaults.</p>
+use <code><a href="/api/common/http/HttpClientXsrfModule#withOptions" class="code-anchor">HttpClientXsrfModule.withOptions()</a></code> to override the defaults.</p>
 <p translation-result="">如果你的后端服务中对 XSRF 令牌的 cookie 或 头使用了不一样的名字，就要使用 <code>HttpClientXsrfModule.withConfig()</code> 来覆盖掉默认值。</p>
 <code-example path="http/src/app/app.module.ts" region="xsrf" linenums="false">
-<a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+<a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
   <a href="/api/common/http/HttpClientModule" class="code-anchor">HttpClientModule</a>,
   HttpClientXsrfModule.withOptions({
     cookieName: 'My-Xsrf-Cookie',
@@ -2065,15 +2065,15 @@ use <code><a href="api/common/http/HttpClientXsrfModule#withOptions" class="code
 ],
 
 </code-example>
-<h2 translation-origin="off" id="testing-http-requests">Testing HTTP requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#testing-http-requests"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="testing-http-requests">测试 HTTP 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#testing-http-requests"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="testing-http-requests">Testing HTTP requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#testing-http-requests"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="testing-http-requests">测试 HTTP 请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#testing-http-requests"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Like any external dependency, the HTTP backend needs to be mocked
 so your tests can simulate interaction with a remote server.
 The <code>@angular/common/http/testing</code> library makes
 setting up such mocking straightforward.</p>
 <p translation-result="">如同所有的外部依赖一样，HTTP 后端也需要在良好的测试实践中被 Mock 掉。<code>@angular/common/http</code> 提供了一个测试库 <code>@angular/common/http/testing</code>，它让你可以直截了当的进行这种 Mock 。</p>
-<h3 translation-origin="off" id="mocking-philosophy">Mocking philosophy<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#mocking-philosophy"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="mocking-philosophy">Mock 方法论<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#mocking-philosophy"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="mocking-philosophy">Mocking philosophy<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#mocking-philosophy"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="mocking-philosophy">Mock 方法论<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#mocking-philosophy"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular's HTTP testing library is designed for a pattern of testing wherein
 the the app executes code and makes requests first.</p>
 <p translation-result="">Angular 的 HTTP 测试库是专为其中的测试模式而设计的。在这种模式下，会首先在应用中执行代码并发起请求。</p>
@@ -2094,8 +2094,8 @@ There are also tests of an application data service that call <code><a href="/ap
 <p translation-result="">本章所讲的这些测试位于 <code>src/testing/http-client.spec.ts</code> 中。
 在 <code>src/app/heroes/heroes.service.spec.ts</code> 中还有一些测试，用于测试那些调用了 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 的数据服务。</p>
 </div>
-<h3 translation-origin="off" id="setup-1">Setup<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#setup-1"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="setup-3">环境设置<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#setup-3"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="setup-1">Setup<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#setup-1"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="setup-3">环境设置<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#setup-3"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To begin testing calls to <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code>,
 import the <code><a href="/api/common/http/testing/HttpClientTestingModule" class="code-anchor">HttpClientTestingModule</a></code> and the mocking controller, <code><a href="/api/common/http/testing/HttpTestingController" class="code-anchor">HttpTestingController</a></code>,
 along with the other symbols your tests require.</p>
@@ -2104,7 +2104,7 @@ along with the other symbols your tests require.</p>
 // <a href="/api/http/Http" class="code-anchor">Http</a> testing module and mocking controller
 import { <a href="/api/common/http/testing/HttpClientTestingModule" class="code-anchor">HttpClientTestingModule</a>, <a href="/api/common/http/testing/HttpTestingController" class="code-anchor">HttpTestingController</a> } from '@angular/common/http/testing';
 
-// <a href="api/common/Plural#Other" class="code-anchor">Other</a> <a href="api/core/NgModule#imports" class="code-anchor">imports</a>
+// <a href="/api/common/Plural#Other" class="code-anchor">Other</a> <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>
 import { <a href="/api/core/testing/TestBed" class="code-anchor">TestBed</a> } from '@angular/core/testing';
 import { <a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a>, <a href="/api/common/http/HttpErrorResponse" class="code-anchor">HttpErrorResponse</a> } from '@angular/common/http';
 
@@ -2120,7 +2120,7 @@ describe('<a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/common/http/testing/HttpClientTestingModule" class="code-anchor">HttpClientTestingModule</a> ]
+      <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [ <a href="/api/common/http/testing/HttpClientTestingModule" class="code-anchor">HttpClientTestingModule</a> ]
     });
 
     // <a href="/api/core/Inject" class="code-anchor">Inject</a> the http service and test controller for each test
@@ -2136,8 +2136,8 @@ describe('<a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</
 <p translation-origin="off">This setup also calls <code>TestBed.get()</code> to inject the <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> service and the mocking controller
 so they can be referenced during the tests.</p>
 <p translation-result="">这种设置还会调用 <code>TestBed.get()</code>，来获取注入的 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 服务和模拟对象的控制器 <code><a href="/api/common/http/testing/HttpTestingController" class="code-anchor">HttpTestingController</a></code>，以便在测试期间引用它们。</p>
-<h3 translation-origin="off" id="expecting-and-answering-requests">Expecting and answering requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#expecting-and-answering-requests"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="expecting-and-answering-requests">期待并回复请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#expecting-and-answering-requests"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="expecting-and-answering-requests">Expecting and answering requests<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#expecting-and-answering-requests"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="expecting-and-answering-requests">期待并回复请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#expecting-and-answering-requests"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Now you can write a test that expects a GET Request to occur and provides a mock response. </p>
 <p translation-result="">现在，你就可以编写测试，等待 GET 请求并给出模拟响应。</p>
 <code-example path="http/src/testing/http-client.spec.ts" region="get-test" title="app/testing/http-client.spec.ts(httpClient.get)" linenums="false">
@@ -2152,7 +2152,7 @@ it('can test HttpClient.get', () => {
     );
 
   // The following `expectOne()` will match the request's URL.
-  // If no requests or <a href="/api/forms/SelectMultipleControlValueAccessor" class="code-anchor">multiple</a> requests matched that <a href="api/core/SecurityContext#URL" class="code-anchor">URL</a>
+  // If no requests or <a href="/api/forms/SelectMultipleControlValueAccessor" class="code-anchor">multiple</a> requests matched that <a href="/api/core/SecurityContext#URL" class="code-anchor">URL</a>
   // `expectOne()` would throw.
   const req = httpTestingController.expectOne('/data');
 
@@ -2177,8 +2177,8 @@ afterEach(() => {
 });
 
 </code-example>
-<h4 translation-origin="off" id="custom-request-expectations">Custom request expectations<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#custom-request-expectations"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="custom-request-expectations">自定义对请求的预期<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#custom-request-expectations"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="custom-request-expectations">Custom request expectations<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#custom-request-expectations"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="custom-request-expectations">自定义对请求的预期<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#custom-request-expectations"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">If matching by URL isn't sufficient, it's possible to implement your own matching function.
 For example, you could look for an outgoing request that has an authorization header:</p>
 <p translation-result="">如果仅根据 URL 匹配还不够，你还可以自行实现匹配函数。
@@ -2190,18 +2190,18 @@ const req = httpTestingController.expectOne(
 );
 
 </code-example>
-<p translation-origin="off">As with the previous <code><a href="api/common/http/testing/HttpTestingController#expectOne" class="code-anchor">expectOne()</a></code>,
+<p translation-origin="off">As with the previous <code><a href="/api/common/http/testing/HttpTestingController#expectOne" class="code-anchor">expectOne()</a></code>,
 the test will fail if 0 or 2+ requests satisfy this predicate.</p>
 <p translation-result="">和前面根据 URL 进行测试时一样，如果零或两个以上的请求匹配上了这个期待，它就会抛出异常。</p>
-<h4 translation-origin="off" id="handling-more-than-one-request">Handling more than one request<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#handling-more-than-one-request"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="handling-more-than-one-request">处理一个以上的请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#handling-more-than-one-request"><i class="material-icons">link</i></a></h4>
-<p translation-origin="off">If you need to respond to duplicate requests in your test, use the <code><a href="api/common/http/testing/HttpTestingController#match" class="code-anchor">match()</a></code> API instead of <code><a href="api/common/http/testing/HttpTestingController#expectOne" class="code-anchor">expectOne()</a></code>.
+<h4 translation-origin="off" id="handling-more-than-one-request">Handling more than one request<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#handling-more-than-one-request"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="handling-more-than-one-request">处理一个以上的请求<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#handling-more-than-one-request"><i class="material-icons">link</i></a></h4>
+<p translation-origin="off">If you need to respond to duplicate requests in your test, use the <code><a href="/api/common/http/testing/HttpTestingController#match" class="code-anchor">match()</a></code> API instead of <code><a href="/api/common/http/testing/HttpTestingController#expectOne" class="code-anchor">expectOne()</a></code>.
 It takes the same arguments but returns an array of matching requests.
 Once returned, these requests are removed from future matching and
 you are responsible for flushing and verifying them.</p>
-<p translation-result="">如果你需要在测试中对重复的请求进行响应，可以使用 <code><a href="api/common/http/testing/HttpTestingController#match" class="code-anchor">match()</a></code> API 来代替 <code><a href="api/common/http/testing/HttpTestingController#expectOne" class="code-anchor">expectOne()</a></code>，它的参数不变，但会返回一个与这些请求相匹配的数组。一旦返回，这些请求就会从将来要匹配的列表中移除，你要自己验证和刷新（flush）它。</p>
+<p translation-result="">如果你需要在测试中对重复的请求进行响应，可以使用 <code><a href="/api/common/http/testing/HttpTestingController#match" class="code-anchor">match()</a></code> API 来代替 <code><a href="/api/common/http/testing/HttpTestingController#expectOne" class="code-anchor">expectOne()</a></code>，它的参数不变，但会返回一个与这些请求相匹配的数组。一旦返回，这些请求就会从将来要匹配的列表中移除，你要自己验证和刷新（flush）它。</p>
 <code-example path="http/src/testing/http-client.spec.ts" region="multi-request" linenums="false">
-// get all pending requests that match the given <a href="api/core/SecurityContext#URL" class="code-anchor">URL</a>
+// get all pending requests that match the given <a href="/api/core/SecurityContext#URL" class="code-anchor">URL</a>
 const requests = httpTestingController.match(testUrl);
 expect(requests.length).toEqual(3);
 
@@ -2211,8 +2211,8 @@ requests[1].flush([testData[0]]);
 requests[2].flush(testData);
 
 </code-example>
-<h3 translation-origin="off" id="testing-for-errors">Testing for errors<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#testing-for-errors"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="testing-for-errors">测试对错误的预期<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/http#testing-for-errors"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="testing-for-errors">Testing for errors<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#testing-for-errors"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="testing-for-errors">测试对错误的预期<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/http#testing-for-errors"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You should test the app's defenses against HTTP requests that fail.</p>
 <p translation-result="">你还要测试应用对于 HTTP 请求失败时的防护。</p>
 <p translation-origin="off">Call <code>request.flush()</code> with an error message, as seen in the following example.</p>
@@ -2225,7 +2225,7 @@ it('can test for 404 error', () => {
     data => fail('should have failed with the 404 error'),
     (error: <a href="/api/common/http/HttpErrorResponse" class="code-anchor">HttpErrorResponse</a>) => {
       expect(error.status).toEqual(404, 'status');
-      expect(error.error).toEqual(emsg, '<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>');
+      expect(error.error).toEqual(emsg, '<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>');
     }
   );
 
@@ -2245,7 +2245,7 @@ it('can test for network error', () => {
   httpClient.get&#x3C;<a href="/api/router/Data" class="code-anchor">Data</a>[]>(testUrl).subscribe(
     data => fail('should have failed with the network error'),
     (error: <a href="/api/common/http/HttpErrorResponse" class="code-anchor">HttpErrorResponse</a>) => {
-      expect(error.error.message).toEqual(emsg, '<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>');
+      expect(error.error.message).toEqual(emsg, '<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>');
     }
   );
 
@@ -2254,7 +2254,7 @@ it('can test for network error', () => {
   // Create mock ErrorEvent, raised when something goes wrong at the network level.
   // <a href="/api/http/Connection" class="code-anchor">Connection</a> timeout, DNS error, offline, etc
   const mockError = new ErrorEvent('Network error', {
-    <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: emsg,
+    <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: emsg,
   });
 
   // Respond with mock error

@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="observables">Observables<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#observables"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="observables">可观察对象（Observable）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#observables"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="observables">Observables<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#observables"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="observables">可观察对象（Observable）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#observables"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Observables provide support for passing messages between publishers and subscribers in your application. Observables offer significant benefits over other techniques for event handling, asynchronous programming, and handling multiple values.</p>
 <p translation-result="">可观察对象支持在应用中的发布者和订阅者之间传递消息。
 在需要进行事件处理、异步编程和处理多个值的时候，可观察对象相对其它技术有着显著的优点。</p>
@@ -821,16 +821,16 @@
 由于准备（setup）和清场（teardown）的逻辑都是由可观察对象自己处理的，因此你的应用代码只管订阅并消费这些值就可以了，做完之后，取消订阅。无论这个流是击键流、HTTP 响应流还是定时器，对这些值进行监听和停止监听的接口都是一样的。</p>
 <p translation-origin="off">Because of these advantages, observables are used extensively within Angular, and are recommended for app development as well.</p>
 <p translation-result="">由于这些优点，可观察对象在 Angular 中得到广泛使用，也同样建议应用开发者好好使用它。</p>
-<h2 translation-origin="off" id="basic-usage-and-terms">Basic usage and terms<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#basic-usage-and-terms"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="basic-usage-and-terms">基本用法和词汇<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#basic-usage-and-terms"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="basic-usage-and-terms">Basic usage and terms<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#basic-usage-and-terms"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="basic-usage-and-terms">基本用法和词汇<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#basic-usage-and-terms"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">As a publisher, you create an <code>Observable</code> instance that defines a <em>subscriber</em> function. This is the function that is executed when a consumer calls the <code>subscribe()</code> method. The subscriber function defines how to obtain or generate values or messages to be published.</p>
 <p translation-result="">作为发布者，你创建一个 <code>Observable</code> 的实例，其中定义了一个<em>订阅者（subscriber）</em>函数。
 当有消费者调用 <code>subscribe()</code> 方法时，这个函数就会执行。
 订阅者函数用于定义“如何获取或生成那些要发布的值或消息”。</p>
-<p translation-origin="off">To execute the observable you have created and begin receiving notifications, you call its <code>subscribe()</code> method, passing an <em>observer</em>.  This is a JavaScript object that defines the handlers for the notifications you receive. The <code>subscribe()</code> call returns a <code>Subscription</code> object that has an <code><a href="api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> method, which you call to stop receiving notifications.</p>
+<p translation-origin="off">To execute the observable you have created and begin receiving notifications, you call its <code>subscribe()</code> method, passing an <em>observer</em>.  This is a JavaScript object that defines the handlers for the notifications you receive. The <code>subscribe()</code> call returns a <code>Subscription</code> object that has an <code><a href="/api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> method, which you call to stop receiving notifications.</p>
 <p translation-result="">要执行所创建的可观察对象，并开始从中接收通知，你就要调用它的 <code>subscribe()</code> 方法，并传入一个<em>观察者（observer）</em>。
 这是一个 JavaScript 对象，它定义了你收到的这些消息的处理器（handler）。
-<code>subscribe()</code> 调用会返回一个 <code>Subscription</code> 对象，该对象具有一个 <code><a href="api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> 方法。
+<code>subscribe()</code> 调用会返回一个 <code>Subscription</code> 对象，该对象具有一个 <code><a href="/api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> 方法。
 当调用该方法时，你就会停止接收通知。</p>
 <p translation-origin="off">Here's an example that demonstrates the basic usage model by showing how an observable could be used to provide geolocation updates.</p>
 <p translation-result="">下面这个例子中示范了这种基本用法，它展示了如何使用可观察对象来对当前地理位置进行更新。</p>
@@ -839,7 +839,7 @@
 // Create an Observable that will start listening to geolocation updates
 // when <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> consumer subscribes.
 const locations = new Observable((observer) => {
-  // <a href="api/http/RequestMethod#Get" class="code-anchor">Get</a> the next and error callbacks. These will be passed in when
+  // <a href="/api/http/RequestMethod#Get" class="code-anchor">Get</a> the next and error callbacks. These will be passed in when
   // the consumer subscribes.
   const {next, error} = observer;
   let watchId;
@@ -848,7 +848,7 @@ const locations = new Observable((observer) => {
   if ('geolocation' in navigator) {
     watchId = navigator.geolocation.watchPosition(next, error);
   } else {
-    error('Geolocation not <a href="api/service-worker/SwUpdate#available" class="code-anchor">available</a>');
+    error('Geolocation not <a href="/api/service-worker/SwUpdate#available" class="code-anchor">available</a>');
   }
 
   // When the consumer unsubscribes, clean up data ready for next subscription.
@@ -857,16 +857,16 @@ const locations = new Observable((observer) => {
 
 // Call subscribe() to start listening for updates.
 const locationsSubscription = locations.subscribe({
-  next(<a href="api/router/Scroll#position" class="code-anchor">position</a>) { console.log('Current Position: ', <a href="api/router/Scroll#position" class="code-anchor">position</a>); },
+  next(<a href="/api/router/Scroll#position" class="code-anchor">position</a>) { console.log('Current Position: ', <a href="/api/router/Scroll#position" class="code-anchor">position</a>); },
   error(msg) { console.log('Error Getting <a href="/api/common/Location" class="code-anchor">Location</a>: ', msg); }
 });
 
-// Stop listening for <a href="api/core/ComponentRef#location" class="code-anchor">location</a> after 10 seconds
+// Stop listening for <a href="/api/core/ComponentRef#location" class="code-anchor">location</a> after 10 seconds
 setTimeout(() => { locationsSubscription.unsubscribe(); }, 10000);
 
 </code-example>
-<h2 translation-origin="off" id="defining-observers">Defining observers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#defining-observers"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="defining-observers">定义观察者<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#defining-observers"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="defining-observers">Defining observers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#defining-observers"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="defining-observers">定义观察者<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#defining-observers"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A handler for receiving observable notifications implements the <code>Observer</code> interface. It is an object that defines callback methods to handle the three types of notifications that an observable can send:</p>
 <p translation-result="">用于接收可观察对象通知的处理器要实现 <code>Observer</code> 接口。这个对象定义了一些回调函数来处理可观察对象可能会发来的三种通知：</p>
 <table>
@@ -918,8 +918,8 @@ Optional. A handler for the execution-complete notification. Delayed values can 
 </table>
 <p translation-origin="off">An observer object can define any combination of these handlers. If you don't supply a handler for a notification type, the observer ignores notifications of that type.</p>
 <p translation-result="">观察者对象可以定义这三种处理器的任意组合。如果你不为某种通知类型提供处理器，这个观察者就会忽略相应类型的通知。</p>
-<h2 translation-origin="off" id="subscribing">Subscribing<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#subscribing"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="subscribing">订阅<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#subscribing"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="subscribing">Subscribing<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#subscribing"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="subscribing">订阅<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#subscribing"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">An <code>Observable</code> instance begins publishing values only when someone subscribes to it. You subscribe by calling the <code>subscribe()</code> method of the instance, passing an observer object to receive the notifications.</p>
 <p translation-result="">只有当有人订阅 <code>Observable</code> 的实例时，它才会开始发布值。
 订阅时要先调用该实例的 <code>subscribe()</code> 方法，并把一个观察者对象传给它，用来接收通知。</p>
@@ -977,8 +977,8 @@ myObservable.subscribe(
 <p translation-origin="off">Note that a <code>next()</code> function could receive, for instance, message strings, or event objects, numeric values, or structures, depending on context. As a general term, we refer to data published by an observable as a <em>stream</em>. Any type of value can be represented with an observable, and the values are published as a stream.</p>
 <p translation-result="">注意，<code>next()</code> 函数可以接受消息字符串、事件对象、数字值或各种结构，具体类型取决于上下文。
 为了更通用一点，我们把由可观察对象发布出来的数据统称为<em>流</em>。任何类型的值都可以表示为可观察对象，而这些值会被发布为一个流。</p>
-<h2 translation-origin="off" id="creating-observables">Creating observables<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#creating-observables"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="creating-observables">创建可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#creating-observables"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="creating-observables">Creating observables<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#creating-observables"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="creating-observables">创建可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#creating-observables"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Use the <code>Observable</code> constructor to create an observable stream of any type. The constructor takes as its argument the subscriber function to run when the observable’s <code>subscribe()</code> method executes. A subscriber function receives an <code>Observer</code> object, and can publish values to the observer's <code>next()</code> method.</p>
 <p translation-result="">使用 <code>Observable</code> 构造函数可以创建任何类型的可观察流。
 当执行可观察对象的 <code>subscribe()</code> 方法时，这个构造函数就会把它接收到的参数作为订阅函数来运行。
@@ -1021,16 +1021,16 @@ sequence.subscribe({
 <p translation-result="">如果要略微加强这个例子，我们可以创建一个用来发布事件的可观察对象。在这个例子中，订阅函数是用内联方式定义的。</p>
 <code-example path="observables/src/creating.ts" region="fromevent" title="Create with custom fromEvent function">
 
-function fromEvent(<a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>, <a href="api/core/HostListener#eventName" class="code-anchor">eventName</a>) {
+function fromEvent(<a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>, <a href="/api/core/HostListener#eventName" class="code-anchor">eventName</a>) {
   return new Observable((observer) => {
     const handler = (e) => observer.next(e);
 
-    // Add the event handler to the <a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>
-    target.addEventListener(<a href="api/core/HostListener#eventName" class="code-anchor">eventName</a>, handler);
+    // Add the event handler to the <a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>
+    target.addEventListener(<a href="/api/core/HostListener#eventName" class="code-anchor">eventName</a>, handler);
 
     return () => {
-      // Detach the event handler from the <a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>
-      target.removeEventListener(<a href="api/core/HostListener#eventName" class="code-anchor">eventName</a>, handler);
+      // Detach the event handler from the <a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>
+      target.removeEventListener(<a href="/api/core/HostListener#eventName" class="code-anchor">eventName</a>, handler);
     };
   });
 }
@@ -1044,7 +1044,7 @@ function fromEvent(<a href="api/router/RouterLinkWithHref#target" class="code-an
 const ESC_KEY = 27;
 const nameInput = document.getElementById('name') as HTMLInputElement;
 
-const <a href="api/service-worker/SwPush#subscription" class="code-anchor">subscription</a> = fromEvent(nameInput, 'keydown')
+const <a href="/api/service-worker/SwPush#subscription" class="code-anchor">subscription</a> = fromEvent(nameInput, 'keydown')
   .subscribe((e: KeyboardEvent) => {
     if (e.keyCode === ESC_KEY) {
       nameInput.value = '';
@@ -1053,13 +1053,13 @@ const <a href="api/service-worker/SwPush#subscription" class="code-anchor">subsc
 
 
 </code-example>
-<h2 translation-origin="off" id="multicasting">Multicasting<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#multicasting"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="multicasting">多播<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#multicasting"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="multicasting">Multicasting<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#multicasting"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="multicasting">多播<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#multicasting"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A typical observable creates a new, independent execution for each subscribed observer. When an observer subscribes, the observable wires up an event handler and delivers values to that observer. When a second observer subscribes, the observable then wires up a new event handler and delivers values to that second observer in a separate execution. </p>
 <p translation-result="">典型的可观察对象会为每一个观察者创建一次新的、独立的执行。
 当观察者进行订阅时，该可观察对象会连上一个事件处理器，并且向那个观察者发送一些值。当第二个观察者订阅时，这个可观察对象就会连上一个新的事件处理器，并独立执行一次，把这些值发送给第二个可观察对象。</p>
 <p translation-origin="off">Sometimes, instead of starting an independent execution for each subscriber, you want each subscription to get the same values—even if values have already started emitting. This might be the case with something like an observable of clicks on the document object.</p>
-<p translation-result="">有时候，不应该对每一个订阅者都独立执行一次，你可能会希望每次订阅都得到同一批值 —— 即使是那些你已经发送过的。这在某些情况下有用，比如用来发送 <code><a href="api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code> 上的点击事件的可观察对象。</p>
+<p translation-result="">有时候，不应该对每一个订阅者都独立执行一次，你可能会希望每次订阅都得到同一批值 —— 即使是那些你已经发送过的。这在某些情况下有用，比如用来发送 <code><a href="/api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code> 上的点击事件的可观察对象。</p>
 <p translation-origin="off"><em>Multicasting</em> is the practice of broadcasting to a list of multiple subscribers in a single execution. With a multicasting observable, you don't register multiple listeners on the document, but instead re-use the first listener and send values out to each subscriber.</p>
 <p translation-result=""><em>多播</em>用来让可观察对象在一次执行中同时广播给多个订阅者。借助支持多播的可观察对象，你不必注册多个监听器，而是复用第一个（<code>next</code>）监听器，并且把值发送给各个订阅者。</p>
 <p translation-origin="off">When creating an observable you should determine how you want that observable to be used and whether or not you want to multicast its values. </p>
@@ -1145,7 +1145,7 @@ setTimeout(() => {
 
 function multicastSequenceSubscriber() {
   const seq = [1, 2, 3];
-  // Keep track of each observer (one for every active <a href="api/service-worker/SwPush#subscription" class="code-anchor">subscription</a>)
+  // Keep track of each observer (one for every active <a href="/api/service-worker/SwPush#subscription" class="code-anchor">subscription</a>)
   const observers = [];
   // Still <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> single timeoutId because there will only ever be one
   // set of values being generated, multicasted to each subscriber
@@ -1155,7 +1155,7 @@ function multicastSequenceSubscriber() {
   // function is invoked)
   return (observer) => {
     observers.push(observer);
-    // When this is the first <a href="api/service-worker/SwPush#subscription" class="code-anchor">subscription</a>, start the <a href="/api/animations/sequence" class="code-anchor">sequence</a>
+    // When this is the first <a href="/api/service-worker/SwPush#subscription" class="code-anchor">subscription</a>, start the <a href="/api/animations/sequence" class="code-anchor">sequence</a>
     if (observers.length === 1) {
       timeoutId = doSequence({
         next(val) {
@@ -1173,7 +1173,7 @@ function multicastSequenceSubscriber() {
       unsubscribe() {
         // Remove from the observers array so it's no longer notified
         observers.splice(observers.indexOf(observer), 1);
-        // If there's no more <a href="api/core/DebugNode#listeners" class="code-anchor">listeners</a>, do cleanup
+        // If there's no more <a href="/api/core/DebugNode#listeners" class="code-anchor">listeners</a>, do cleanup
         if (observers.length === 0) {
           clearTimeout(timeoutId);
         }
@@ -1227,8 +1227,8 @@ setTimeout(() => {
    Multicasting observables take a bit more setup, but they can be useful for certain applications. Later we will look at tools that simplify the process of multicasting, allowing you to take any observable and make it multicasting.
 <p translation-result="">   虽然支持多播的可观察对象需要做更多的准备工作，但对某些应用来说，这非常有用。稍后我们会介绍一些简化多播的工具，它们让你能接收任何可观察对象，并把它变成支持多播的。</p>
 </div>
-<h2 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#error-handling"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="error-handling-2">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables#error-handling-2"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#error-handling"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="error-handling-2">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables#error-handling-2"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Because observables produce values asynchronously, try/catch will not effectively catch errors. Instead, you handle errors by specifying an <code>error</code> callback on the observer. Producing an error also causes the observable to clean up subscriptions and stop producing values. An observable can  either produce values (calling the <code>next</code> callback), or it can complete, calling either the <code>complete</code> or <code>error</code> callback.</p>
 <p translation-result="">由于可观察对象会异步生成值，所以用 <code>try/catch</code> 是无法捕获错误的。你应该在观察者中指定一个 <code>error</code> 回调来处理错误。发生错误时还会导致可观察对象清理现有的订阅，并且停止生成值。可观察对象可以生成值（调用 <code>next</code> 回调），也可以调用 <code>complete</code> 或 <code>error</code> 回调来主动结束。</p>
 <code-example>

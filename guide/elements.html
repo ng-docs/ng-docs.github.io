@@ -808,14 +808,14 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="angular-elements-overview">Angular Elements Overview<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#angular-elements-overview"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="angular-elements-overview">Angular 元素（Elements）概览<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#angular-elements-overview"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="angular-elements-overview">Angular Elements Overview<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#angular-elements-overview"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="angular-elements-overview">Angular 元素（Elements）概览<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#angular-elements-overview"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off"><em>Angular elements</em> are Angular components packaged as <em>custom elements</em>, a web standard for defining new HTML elements in a framework-agnostic way.</p>
 <p translation-result=""><em>Angular 元素</em>就是打包成<em>自定义元素</em>的 Angular 组件。所谓自定义元素就是一套与具体框架无关的用于定义新 HTML 元素的 Web 标准。</p>
-<p translation-origin="off"><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom elements</a> are a Web Platform feature currently supported by Chrome, Opera, and Safari, and available in other browsers through polyfills (see <a href="guide/elements#browser-support">Browser Support</a>).
+<p translation-origin="off"><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom elements</a> are a Web Platform feature currently supported by Chrome, Opera, and Safari, and available in other browsers through polyfills (see <a href="/guide/elements#browser-support">Browser Support</a>).
 A custom element extends HTML by allowing you to define a tag whose content is created and controlled by JavaScript code.
 The browser maintains a <code>CustomElementRegistry</code> of defined custom elements (also called Web Components), which maps an instantiable JavaScript class to an HTML tag.</p>
-<p translation-result=""><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">自定义元素</a>这项特性目前受到了 Chrome、Opera 和 Safari 的支持，在其它浏览器中也能通过腻子脚本（参见<a href="guide/elements#browser-support">浏览器支持</a>）加以支持。
+<p translation-result=""><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">自定义元素</a>这项特性目前受到了 Chrome、Opera 和 Safari 的支持，在其它浏览器中也能通过腻子脚本（参见<a href="/guide/elements#browser-support">浏览器支持</a>）加以支持。
 自定义元素扩展了 HTML，它允许你定义一个由 JavaScript 代码创建和控制的标签。
 浏览器会维护一个自定义元素（也叫 Web Components）的注册表 <code>CustomElementRegistry</code>，它把一个可实例化的 JavaScript 类映射到 HTML 标签上。</p>
 <p translation-origin="off">The <code>@angular/elements</code> package exports a <code><a href="/api/elements/createCustomElement" class="code-anchor">createCustomElement</a>()</code> API that provides a bridge from Angular's component interface and change detection functionality to the built-in DOM API. </p>
@@ -833,8 +833,8 @@ Angular 框架的一个小型的、自包含的版本将会作为服务注入进
 要了解这个开发方向的更多内容，参见<a href="https://www.youtube.com/watch?v=Z1gLFPLVJjY&#x26;t=4s">这个视频演讲</a>。</p>
 </div>
 <p translation-result="">把组件转换成自定义元素会让所需的 Angular 基础设施也可用在浏览器中。创建自定义元素非常简单直接，它会自动把你的组件视图对接到变更检测和数据绑定机制，会把 Angular 的功能映射到原生 HTML 中的等价物。</p>
-<h2 translation-origin="off" id="using-custom-elements">Using custom elements<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#using-custom-elements"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="using-custom-elements">使用自定义元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#using-custom-elements"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="using-custom-elements">Using custom elements<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#using-custom-elements"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="using-custom-elements">使用自定义元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#using-custom-elements"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Custom elements bootstrap themselves - they start automatically when they are added to the DOM, and are automatically destroyed when removed from the DOM. Once a custom element is added to the DOM for any page, it looks and behaves like any other HTML element, and does not require any special knowledge of Angular terms or usage conventions.  </p>
 <p translation-result="">自定义元素会自举启动 —— 它们在添加到 DOM 中时就会自行启动自己，并在从 DOM 中移除时自行销毁自己。一旦自定义元素添加到了任何页面的 DOM 中，它的外观和行为就和其它的 HTML 元素一样了，不需要对 Angular 的术语或使用约定有任何特殊的了解。</p>
 <ul>
@@ -853,14 +853,14 @@ Angular 框架的一个小型的、自包含的版本将会作为服务注入进
 你所要告诉你的内容提供者的一切，就是这个自定义元素的语法。他们不需要了解关于 Angular 的任何知识，也不需要了解你的组件的数据结构或实现。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="how-it-works">How it works<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#how-it-works"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="how-it-works">工作原理<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#how-it-works"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="how-it-works">How it works<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#how-it-works"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="how-it-works">工作原理<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#how-it-works"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Use the <code><a href="/api/elements/createCustomElement" class="code-anchor">createCustomElement</a>()</code> function to convert a component into a class that can be registered with the browser as a custom element.
 After you register your configured class with the browser's custom-element registry, you can use the new element just like a built-in HTML element in content that you add directly into the DOM: </p>
 <p translation-result="">使用 <code><a href="/api/elements/createCustomElement" class="code-anchor">createCustomElement</a>()</code> 函数来把组件转换成一个可注册成浏览器中自定义元素的类。
 注册完这个配置好的类之后，你就可以在内容中像内置 HTML 元素一样使用这个新元素了，比如直接把它加到 DOM 中：</p>
 <code-example>
-&#x3C;my-popup <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>="Use Angular!">&#x3C;/my-popup>
+&#x3C;my-popup <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>="Use Angular!">&#x3C;/my-popup>
 </code-example>
 <p translation-origin="off">When your custom element is placed on a page, the browser creates an instance of the registered class and adds it to the DOM. The content is provided by the component's template, which  uses Angular template syntax, and is rendered using the component and DOM data. Input properties in the component correspond to input attributes for the element. </p>
 <p translation-result="">当你的自定义元素放进页面中时，浏览器会创建一个已注册类的实例。其内容是由组件模板提供的，它使用 Angular 模板语法，并且使用组件和 DOM 数据进行渲染。组件的输入属性（Property）对应于该元素的输入属性（Attribute）。</p>
@@ -868,8 +868,8 @@ After you register your configured class with the browser's custom-element regis
 <img src="generated/images/guide/elements/customElement1.png" alt="Custom element in browser" class="left" width="600" height="360">
 </figure>
 <hr class="clear">
-<h2 translation-origin="off" id="transforming-components-to-custom-elements">Transforming components to custom elements<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#transforming-components-to-custom-elements"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="transforming-components-to-custom-elements">把组件转换成自定义元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#transforming-components-to-custom-elements"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="transforming-components-to-custom-elements">Transforming components to custom elements<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#transforming-components-to-custom-elements"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="transforming-components-to-custom-elements">把组件转换成自定义元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#transforming-components-to-custom-elements"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular provides the <code><a href="/api/elements/createCustomElement" class="code-anchor">createCustomElement</a>()</code> function for converting an Angular component,
 together with its dependencies, to a custom element. The function collects the component's
 observable properties, along with the Angular functionality the browser needs to
@@ -886,8 +886,8 @@ When the browser encounters the tag for the registered element, it uses the cons
 <figure>
 <img src="generated/images/guide/elements/createElement.png" alt="Transform a component to a custom element" class="left" width="600" height="387">  
 </figure>
-<h3 translation-origin="off" id="mapping">Mapping<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#mapping"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="mapping">映射<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#mapping"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="mapping">Mapping<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#mapping"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="mapping">映射<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#mapping"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A custom element <em>hosts</em> an Angular component, providing a bridge between the data and logic defined in the component and standard DOM APIs. Component properties and logic maps directly into HTML attributes and the browser's event system.</p>
 <p translation-result=""><em>寄宿</em>着 Angular 组件的自定义元素在组件中定义的"数据及逻辑"和标准的 DOM API 之间建立了一座桥梁。组件的属性和逻辑会直接映射到 HTML 属性和浏览器的事件系统中。</p>
 <ul>
@@ -907,8 +907,8 @@ When the browser encounters the tag for the registered element, it uses the cons
 <p translation-origin="off">For more information, see Web Component documentation for <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events#Creating_custom_events">Creating custom events</a>.</p>
 <p translation-result="">要了解更多，请参见 Web Components 的文档：<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events#Creating_custom_events">Creating custom events</a>。</p>
 <a id="browser-support"></a>
-<h2 translation-origin="off" id="browser-support-for-custom-elements">Browser support for custom elements<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#browser-support-for-custom-elements"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="browser-support-for-custom-elements">自定义元素的浏览器支持<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#browser-support-for-custom-elements"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="browser-support-for-custom-elements">Browser support for custom elements<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#browser-support-for-custom-elements"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="browser-support-for-custom-elements">自定义元素的浏览器支持<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#browser-support-for-custom-elements"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The recently-developed <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">custom elements</a> Web Platform feature is currently supported natively in a number of browsers. Support is pending or planned in other browsers. </p>
 <p translation-result="">最近开发的 Web 平台特性：<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">自定义元素</a>目前在一些浏览器中实现了原生支持，而其它浏览器或者尚未决定，或者已经制订了计划。</p>
 <table>
@@ -968,8 +968,8 @@ When the browser encounters the tag for the registered element, it uses the cons
   </td>
 </tr>
 </tbody></table>
-<p translation-origin="off">In browsers that support Custom Elements natively, the specification requires developers use ES2015 classes to define Custom Elements - developers can opt-in to this by setting the <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>: "es2015"</code> property in their project's <code>tsconfig.json</code>. As Custom Element and ES2015 support may not be available in all browsers, developers can instead choose to use a polyfill to support older browsers and ES5 code.</p>
-<p translation-result="">对于原生支持了自定义元素的浏览器，该规范要求开发人员使用 ES2016 的类来定义自定义元素 —— 开发人员可以在项目的 <code>tsconfig.json</code> 中设置 <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a>: "es2015"</code> 属性来满足这一要求。并不是所有浏览器都支持自定义元素和 ES2015，开发人员也可以选择使用腻子脚本来让它支持老式浏览器和 ES5 的代码。</p>
+<p translation-origin="off">In browsers that support Custom Elements natively, the specification requires developers use ES2015 classes to define Custom Elements - developers can opt-in to this by setting the <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>: "es2015"</code> property in their project's <code>tsconfig.json</code>. As Custom Element and ES2015 support may not be available in all browsers, developers can instead choose to use a polyfill to support older browsers and ES5 code.</p>
+<p translation-result="">对于原生支持了自定义元素的浏览器，该规范要求开发人员使用 ES2016 的类来定义自定义元素 —— 开发人员可以在项目的 <code>tsconfig.json</code> 中设置 <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a>: "es2015"</code> 属性来满足这一要求。并不是所有浏览器都支持自定义元素和 ES2015，开发人员也可以选择使用腻子脚本来让它支持老式浏览器和 ES5 的代码。</p>
 <p translation-origin="off">Use the <a href="https://cli.angular.io/">Angular CLI</a> to automatically set up your project with the correct polyfill: <code>ng add @angular/elements --name=*your_project_name*</code>.</p>
 <p translation-result="">使用 <a href="https://cli.angular.io/">Angular CLI</a> 可以自动为你的项目添加正确的腻子脚本：<code>ng add @angular/elements --name=*your_project_name*</code>。</p>
 <ul>
@@ -982,8 +982,8 @@ When the browser encounters the tag for the registered element, it uses the cons
 <p translation-result=""> 要了解 Angular 浏览器支持的更多信息，参见<a href="/guide/browser-support">浏览器支持</a>。</p>
 </li>
 </ul>
-<h2 translation-origin="off" id="example-a-popup-service">Example: A Popup Service<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#example-a-popup-service"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="example-a-popup-service">范例：弹窗服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/elements#example-a-popup-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="example-a-popup-service">Example: A Popup Service<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#example-a-popup-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="example-a-popup-service">范例：弹窗服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/elements#example-a-popup-service"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Previously, when you wanted to add a component to an app at runtime, you had to define a <em>dynamic component</em>. The app module would have to list your dynamic component under <code>entryComponents</code>, so that the app wouldn't expect it to be present at startup, and then you would have to load it, attach it to an element in the DOM, and wire up all of the dependencies, change detection, and event handling, as described in <a href="/guide/dynamic-component-loader">Dynamic Component Loader</a>.</p>
 <p translation-result="">以前，如果你要在运行期间把一个组件添加到应用中，就不得不定义<em>动态组件</em>。你还要把动态组件添加到模块的 <code>entryComponents</code> 列表中，以便应用在启动时能找到它，然后还要加载它、把它附加到 DOM 中的元素上，并且装配所有的依赖、变更检测和事件处理，详见<a href="/guide/dynamic-component-loader">动态组件加载器</a>。</p>
 <p translation-origin="off">Using an Angular custom element makes the process much simpler and more transparent, by providing all of the infrastructure and framework automatically—all you have to do is define the kind of event handling you want. (You do still have to exclude the component from compilation, if you are not going to use it in your app.)</p>
@@ -1018,11 +1018,11 @@ import { <a href="/api/animations/animate" class="code-anchor">animate</a>, <a h
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-popup',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
-    &#x3C;span>Popup: {{<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}}&#x3C;/span>
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
+    &#x3C;span>Popup: {{<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}}&#x3C;/span>
     &#x3C;button (click)="closed.next()">&#x26;#x2716;&#x3C;/button>
   `,
-  <a href="api/core/Directive#host" class="code-anchor">host</a>: {
+  <a href="/api/core/Directive#host" class="code-anchor">host</a>: {
     '[@<a href="/api/animations/state" class="code-anchor">state</a>]': '<a href="/api/animations/state" class="code-anchor">state</a>',
   },
   animations: [
@@ -1033,8 +1033,8 @@ import { <a href="/api/animations/animate" class="code-anchor">animate</a>, <a h
     ])
   ],
   styles: [`
-    :<a href="api/core/Directive#host" class="code-anchor">host</a> {
-      <a href="api/router/Scroll#position" class="code-anchor">position</a>: absolute;
+    :<a href="/api/core/Directive#host" class="code-anchor">host</a> {
+      <a href="/api/router/Scroll#position" class="code-anchor">position</a>: absolute;
       bottom: 0;
       left: 0;
       right: 0;
@@ -1057,11 +1057,11 @@ export class PopupComponent {
   private <a href="/api/animations/state" class="code-anchor">state</a>: 'opened' | 'closed' = 'closed';
 
   @<a href="/api/core/Input" class="code-anchor">Input</a>()
-  set <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
-    this._message = <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>;
+  set <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
+    this._message = <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>;
     this.state = 'opened';
   }
-  get <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>(): string { return this._message; }
+  get <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>(): string { return this._message; }
   _message: string;
 
   @<a href="/api/core/Output" class="code-anchor">Output</a>()
@@ -1082,16 +1082,16 @@ import { PopupComponent } from './popup.component';
 export class PopupService {
   constructor(private injector: <a href="/api/core/Injector" class="code-anchor">Injector</a>,
               private applicationRef: <a href="/api/core/ApplicationRef" class="code-anchor">ApplicationRef</a>,
-              private <a href="api/core/NgModuleRef#componentFactoryResolver" class="code-anchor">componentFactoryResolver</a>: <a href="/api/core/ComponentFactoryResolver" class="code-anchor">ComponentFactoryResolver</a>) {}
+              private <a href="/api/core/NgModuleRef#componentFactoryResolver" class="code-anchor">componentFactoryResolver</a>: <a href="/api/core/ComponentFactoryResolver" class="code-anchor">ComponentFactoryResolver</a>) {}
 
   // Previous dynamic-loading method required you to set up infrastructure
   // before adding the popup to the DOM.
-  showAsComponent(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
+  showAsComponent(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
     // Create element
     const popup = document.createElement('popup-component');
 
     // Create the component and wire it up with the element
-    const <a href="api/core/ResolvedReflectiveFactory#factory" class="code-anchor">factory</a> = this.componentFactoryResolver.resolveComponentFactory(PopupComponent);
+    const <a href="/api/core/ResolvedReflectiveFactory#factory" class="code-anchor">factory</a> = this.componentFactoryResolver.resolveComponentFactory(PopupComponent);
     const popupComponentRef = factory.create(this.injector, [], popup);
 
     // Attach to the view so that the change detector knows to run
@@ -1103,23 +1103,23 @@ export class PopupService {
       this.applicationRef.detachView(popupComponentRef.hostView);
     });
 
-    // Set the <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
-    popupComponentRef.instance.message = <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>;
+    // Set the <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
+    popupComponentRef.instance.message = <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>;
 
     // Add to the DOM
     document.body.appendChild(popup);
   }
 
   // This uses the new custom-element method to add the popup to the DOM.
-  showAsElement(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
+  showAsElement(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
     // Create element
     const popupEl: <a href="/api/elements/NgElement" class="code-anchor">NgElement</a> &#x26; <a href="/api/elements/WithProperties" class="code-anchor">WithProperties</a>&#x3C;PopupComponent> = document.createElement('popup-element') as any;
 
     // Listen to the close event
     popupEl.addEventListener('closed', () => document.body.removeChild(popupEl));
 
-    // Set the <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
-    popupEl.message = <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>;
+    // Set the <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
+    popupEl.message = <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>;
 
     // Add to the DOM
     document.body.appendChild(popupEl);
@@ -1143,10 +1143,10 @@ import { PopupService } from './popup.service';
 // because it will be added dynamically.
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [<a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, <a href="/api/platform-browser/animations/BrowserAnimationsModule" class="code-anchor">BrowserAnimationsModule</a>],
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [<a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, <a href="/api/platform-browser/animations/BrowserAnimationsModule" class="code-anchor">BrowserAnimationsModule</a>],
   providers: [PopupService],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [AppComponent, PopupComponent],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [AppComponent],
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [AppComponent, PopupComponent],
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [AppComponent],
   entryComponents: [PopupComponent],
 })
 export class AppModule {
@@ -1163,7 +1163,7 @@ import { PopupComponent } from './popup.component';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-root',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #input value="Message">
     &#x3C;button (click)="popup.showAsComponent(input.value)">Show as component&#x3C;/button>
     &#x3C;button (click)="popup.showAsElement(input.value)">Show as element&#x3C;/button>

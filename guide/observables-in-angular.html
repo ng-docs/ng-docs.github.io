@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="observables-in-angular">Observables in Angular<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#observables-in-angular"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="observables-in-angular">Angular 中的可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#observables-in-angular"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="observables-in-angular">Observables in Angular<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#observables-in-angular"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="observables-in-angular">Angular 中的可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#observables-in-angular"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Angular makes use of observables as an interface to handle a variety of common asynchronous operations. For example:</p>
 <p translation-result="">Angular 使用可观察对象作为处理各种常用异步操作的接口。比如：</p>
 <ul>
@@ -826,10 +826,10 @@
 <p translation-result=""> 路由器和表单模块使用可观察对象来监听对用户输入事件的响应。</p>
 </li>
 </ul>
-<h2 translation-origin="off" id="event-emitter">Event emitter<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#event-emitter"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="event-emitter">事件发送器 <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#event-emitter"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off">Angular provides an <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> class that is used when publishing values from a component through the <code>@<a href="/api/core/Output" class="code-anchor">Output</a>()</code> decorator. <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> extends <code>Observable</code>, adding an <code><a href="api/core/EventEmitter#emit" class="code-anchor">emit()</a></code> method so it can send arbitrary values. When you call <code><a href="api/core/EventEmitter#emit" class="code-anchor">emit()</a></code>, it passes the emitted value to the <code>next()</code> method of any subscribed observer.</p>
-<p translation-result="">Angular 提供了一个 <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> 类，它用来从组件的 <code>@<a href="/api/core/Output" class="code-anchor">Output</a>()</code> 属性中发布一些值。<code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> 扩展了 <code>Observable</code>，并添加了一个 <code><a href="api/core/EventEmitter#emit" class="code-anchor">emit()</a></code> 方法，这样它就可以发送任意值了。当你调用 <code><a href="api/core/EventEmitter#emit" class="code-anchor">emit()</a></code> 时，就会把所发送的值传给订阅上来的观察者的 <code>next()</code> 方法。</p>
+<h2 translation-origin="off" id="event-emitter">Event emitter<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#event-emitter"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="event-emitter">事件发送器 <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#event-emitter"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off">Angular provides an <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> class that is used when publishing values from a component through the <code>@<a href="/api/core/Output" class="code-anchor">Output</a>()</code> decorator. <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> extends <code>Observable</code>, adding an <code><a href="/api/core/EventEmitter#emit" class="code-anchor">emit()</a></code> method so it can send arbitrary values. When you call <code><a href="/api/core/EventEmitter#emit" class="code-anchor">emit()</a></code>, it passes the emitted value to the <code>next()</code> method of any subscribed observer.</p>
+<p translation-result="">Angular 提供了一个 <code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> 类，它用来从组件的 <code>@<a href="/api/core/Output" class="code-anchor">Output</a>()</code> 属性中发布一些值。<code><a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a></code> 扩展了 <code>Observable</code>，并添加了一个 <code><a href="/api/core/EventEmitter#emit" class="code-anchor">emit()</a></code> 方法，这样它就可以发送任意值了。当你调用 <code><a href="/api/core/EventEmitter#emit" class="code-anchor">emit()</a></code> 时，就会把所发送的值传给订阅上来的观察者的 <code>next()</code> 方法。</p>
 <p translation-origin="off">A good example of usage can be found on the <a href="https://angular.io/api/core/EventEmitter">EventEmitter</a> documentation. Here is the example component that listens for open and close events:</p>
 <p translation-result="">这种用法的例子参见 <a href="https://angular.cn/api/core/EventEmitter">EventEmitter</a> 文档。下面这个范例组件监听了 <code>open</code> 和 <code>close</code> 事件：</p>
 <p translation-origin="off"><code>&#x3C;zippy (open)="onOpen($event)" (close)="onClose($event)">&#x3C;/zippy></code></p>
@@ -839,7 +839,7 @@
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'zippy',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;div class="zippy">
     &#x3C;div (click)="toggle()">Toggle&#x3C;/div>
     &#x3C;div [hidden]="!visible">
@@ -864,7 +864,7 @@ export class ZippyComponent {
 
 
 </code-example>
-<h2 translation-origin="off" id="http">HTTP<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#http"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="http">HTTP<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#http"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular’s <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> returns observables from HTTP method calls. For instance, <code>http.get(‘/api’)</code> returns an observable. This provides several advantages over promise-based HTTP APIs:</p>
 <p translation-result="">Angular 的 <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> 从 HTTP 方法调用中返回了可观察对象。例如，<code>http.get(‘/api’)</code> 就会返回可观察对象。相对于基于承诺（Promise）的 HTTP API，它有一系列优点：</p>
 <ul>
@@ -873,8 +873,8 @@ export class ZippyComponent {
 <p translation-result=""> 可观察对象不会修改服务器的响应（和在承诺上串联起来的 <code>.then()</code> 调用一样）。反之，你可以使用一系列操作符来按需转换这些值。</p>
 </li>
 <li>
-<p translation-origin="off">HTTP requests are cancellable through the <code><a href="api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> method.</p>
-<p translation-result=""> HTTP 请求是可以通过 <code><a href="api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> 方法来取消的。</p>
+<p translation-origin="off">HTTP requests are cancellable through the <code><a href="/api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> method.</p>
+<p translation-result=""> HTTP 请求是可以通过 <code><a href="/api/service-worker/SwPush#unsubscribe" class="code-anchor">unsubscribe()</a></code> 方法来取消的。</p>
 </li>
 <li>
 <p translation-origin="off">Requests can be configured to get progress event updates.</p>
@@ -885,8 +885,8 @@ export class ZippyComponent {
 <p translation-result=""> 失败的请求很容易重试。</p>
 </li>
 </ul>
-<h2 translation-origin="off" id="async-pipe">Async pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#async-pipe"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="async-pipe">Async 管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#async-pipe"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="async-pipe">Async pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#async-pipe"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="async-pipe">Async 管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#async-pipe"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <a href="https://angular.io/api/common/AsyncPipe">AsyncPipe</a> subscribes to an observable or promise and returns the latest value it has emitted. When a new value is emitted, the pipe marks the component to be checked for changes.</p>
 <p translation-result=""><a href="https://angular.cn/api/common/AsyncPipe">AsyncPipe</a> 会订阅一个可观察对象或承诺，并返回其发出的最后一个值。当发出新值时，该管道就会把这个组件标记为需要进行变更检查的（译注：因此可能导致刷新界面）。</p>
 <p translation-origin="off">The following example binds the <code>time</code> observable to the component's view. The observable continuously updates the view with the current time.</p>
@@ -895,7 +895,7 @@ export class ZippyComponent {
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'async-observable-pipe',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div>&#x3C;code>observable|async&#x3C;/code>:
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div>&#x3C;code>observable|async&#x3C;/code>:
        <a href="/api/common/Time" class="code-anchor">Time</a>: {{ time | async }}&#x3C;/div>`
 })
 export class AsyncObservablePipeComponent {
@@ -906,11 +906,11 @@ export class AsyncObservablePipeComponent {
 
 
 </code-example>
-<h2 translation-origin="off" id="router">Router<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#router"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="router-1">路由器 (router)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#router-1"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off"><a href="https://angular.io/api/router/Router#events"><code>Router.events</code></a> provides events as observables. You can use the <code><a href="api/core/QueryList#filter" class="code-anchor">filter()</a></code> operator from RxJS to look for events of interest, and subscribe to them in order to make decisions based on the sequence of events in the navigation process. Here's an example:</p>
+<h2 translation-origin="off" id="router">Router<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#router"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="router-1">路由器 (router)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#router-1"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off"><a href="https://angular.io/api/router/Router#events"><code>Router.events</code></a> provides events as observables. You can use the <code><a href="/api/core/QueryList#filter" class="code-anchor">filter()</a></code> operator from RxJS to look for events of interest, and subscribe to them in order to make decisions based on the sequence of events in the navigation process. Here's an example:</p>
 <p translation-result=""><a href="https://angular.cn/api/router/Router#events"><code>Router.events</code></a> 以可观察对象的形式提供了其事件。
-你可以使用 RxJS 中的 <code><a href="api/core/QueryList#filter" class="code-anchor">filter()</a></code> 操作符来找到感兴趣的事件，并且订阅它们，以便根据浏览过程中产生的事件序列作出决定。
+你可以使用 RxJS 中的 <code><a href="/api/core/QueryList#filter" class="code-anchor">filter()</a></code> 操作符来找到感兴趣的事件，并且订阅它们，以便根据浏览过程中产生的事件序列作出决定。
 例子如下：</p>
 <code-example path="observables-in-angular/src/main.ts" title="Router events" region="router">
 
@@ -920,7 +920,7 @@ import { filter } from 'rxjs/operators';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-routable',
   templateUrl: './routable.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./routable.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./routable.component.css']
 })
 export class Routable1Component implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
 
@@ -949,21 +949,21 @@ import { <a href="/api/router/ActivatedRoute" class="code-anchor">ActivatedRoute
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-routable',
   templateUrl: './routable.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./routable.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./routable.component.css']
 })
 export class Routable2Component implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
-  constructor(private <a href="api/router/RouterOutlet#activatedRoute" class="code-anchor">activatedRoute</a>: <a href="/api/router/ActivatedRoute" class="code-anchor">ActivatedRoute</a>) {}
+  constructor(private <a href="/api/router/RouterOutlet#activatedRoute" class="code-anchor">activatedRoute</a>: <a href="/api/router/ActivatedRoute" class="code-anchor">ActivatedRoute</a>) {}
 
   ngOnInit() {
     this.activatedRoute.url
-      .subscribe(url => console.log('The <a href="api/core/SecurityContext#URL" class="code-anchor">URL</a> changed to: ' + url));
+      .subscribe(url => console.log('The <a href="/api/core/SecurityContext#URL" class="code-anchor">URL</a> changed to: ' + url));
   }
 }
 
 
 </code-example>
-<h2 translation-origin="off" id="reactive-forms">Reactive forms<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#reactive-forms"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="reactive-forms-1">响应式表单 (reactive forms)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/observables-in-angular#reactive-forms-1"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="reactive-forms">Reactive forms<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#reactive-forms"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="reactive-forms-1">响应式表单 (reactive forms)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/observables-in-angular#reactive-forms-1"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Reactive forms have properties that use observables to monitor form control values. The <a href="https://angular.io/api/forms/FormControl"><code>FormControl</code></a> properties <code>valueChanges</code> and <code>statusChanges</code> contain observables that raise change events. Subscribing to an observable form-control property is a way of triggering application logic within the component class. For example:</p>
 <p translation-result="">响应式表单具有一些属性，它们使用可观察对象来监听表单控件的值。
 <a href="https://angular.cn/api/forms/FormControl"><code>FormControl</code></a> 的 <code>valueChanges</code> 属性和 <code>statusChanges</code> 属性包含了会发出变更事件的可观察对象。订阅可观察的表单控件属性是在组件类中触发应用逻辑的途径之一。比如：</p>
@@ -973,7 +973,7 @@ import { <a href="/api/forms/FormGroup" class="code-anchor">FormGroup</a> } from
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: 'MyComponent Template'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: 'MyComponent Template'
 })
 export class MyComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
   nameChangeLog: string[] = [];

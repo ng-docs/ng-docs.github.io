@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="the-rxjs-library">The RxJS library<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#the-rxjs-library"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="the-rxjs-library">RxJS 库<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#the-rxjs-library"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="the-rxjs-library">The RxJS library<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#the-rxjs-library"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="the-rxjs-library">RxJS 库<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#the-rxjs-library"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Reactive programming is an asynchronous programming paradigm concerned with data streams and the propagation of change (<a href="https://en.wikipedia.org/wiki/Reactive_programming">Wikipedia</a>). RxJS (Reactive Extensions for JavaScript) is a library for reactive programming using observables that makes it easier to compose asynchronous or callback-based code (<a href="http://reactivex.io/rxjs/">RxJS Docs</a>).</p>
 <p translation-result="">响应式编程是一种面向数据流和变更传播的异步编程范式（<a href="https://zh.wikipedia.org/wiki/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B">Wikipedia</a>）。RxJS（响应式扩展的 JavaScript 版）是一个使用可观察对象进行响应式编程的库，它让组合异步代码和基于回调的代码变得更简单 (<a href="http://reactivex.io/rxjs/">RxJS Docs</a>)。</p>
 <p translation-origin="off">RxJS provides an implementation of the <code>Observable</code> type, which is needed until the type becomes part of the language and until browsers support it. The library also provides utility functions for creating and working with observables. These utility functions can be used for:</p>
@@ -836,8 +836,8 @@
 <p translation-result=""> 组合多个流</p>
 </li>
 </ul>
-<h2 translation-origin="off" id="observable-creation-functions">Observable creation functions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#observable-creation-functions"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="observable-creation-functions">创建可观察对象的函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#observable-creation-functions"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="observable-creation-functions">Observable creation functions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#observable-creation-functions"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="observable-creation-functions">创建可观察对象的函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#observable-creation-functions"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">RxJS offers a number of functions that can be used to create new observables. These functions can simplify the process of creating observables from things such as events, timers, promises, and so on. For example:</p>
 <p translation-result="">RxJS 提供了一些用来创建可观察对象的函数。这些函数可以简化根据某些东西创建可观察对象的过程，比如事件、定时器、承诺等等。比如：</p>
 <code-example path="rx-library/src/simple-creation.ts" region="promise" title="Create an observable from a promise">
@@ -877,7 +877,7 @@ const el = document.getElementById('my-element');
 const mouseMoves = fromEvent(el, 'mousemove');
 
 // Subscribe to start listening for mouse-move events
-const <a href="api/service-worker/SwPush#subscription" class="code-anchor">subscription</a> = mouseMoves.subscribe((evt: MouseEvent) => {
+const <a href="/api/service-worker/SwPush#subscription" class="code-anchor">subscription</a> = mouseMoves.subscribe((evt: MouseEvent) => {
   // Log coords of mouse movements
   console.log(`Coords: ${evt.clientX} X ${evt.clientY}`);
 
@@ -901,10 +901,10 @@ apiData.subscribe(res => console.log(res.status, res.response));
 
 
 </code-example>
-<h2 translation-origin="off" id="operators">Operators<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#operators"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="operators">操作符<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#operators"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off">Operators are functions that build on the observables foundation to enable sophisticated manipulation of collections. For example, RxJS defines operators such as <code><a href="api/core/QueryList#map" class="code-anchor">map()</a></code>, <code><a href="api/core/QueryList#filter" class="code-anchor">filter()</a></code>, <code>concat()</code>, and <code>flatMap()</code>.</p>
-<p translation-result="">操作符是基于可观察对象构建的一些对集合进行复杂操作的函数。RxJS 定义了一些操作符，比如 <code><a href="api/core/QueryList#map" class="code-anchor">map()</a></code>、<code><a href="api/core/QueryList#filter" class="code-anchor">filter()</a></code>、<code>concat()</code> 和 <code>flatMap()</code>。</p>
+<h2 translation-origin="off" id="operators">Operators<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#operators"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="operators">操作符<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#operators"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off">Operators are functions that build on the observables foundation to enable sophisticated manipulation of collections. For example, RxJS defines operators such as <code><a href="/api/core/QueryList#map" class="code-anchor">map()</a></code>, <code><a href="/api/core/QueryList#filter" class="code-anchor">filter()</a></code>, <code>concat()</code>, and <code>flatMap()</code>.</p>
+<p translation-result="">操作符是基于可观察对象构建的一些对集合进行复杂操作的函数。RxJS 定义了一些操作符，比如 <code><a href="/api/core/QueryList#map" class="code-anchor">map()</a></code>、<code><a href="/api/core/QueryList#filter" class="code-anchor">filter()</a></code>、<code>concat()</code> 和 <code>flatMap()</code>。</p>
 <p translation-origin="off">Operators take configuration options, and they return a function that takes a source observable. When executing this returned function, the operator observes the source observable’s emitted values, transforms them, and returns a new observable of those transformed values. Here is a simple example:</p>
 <p translation-result="">操作符接受一些配置项，然后返回一个以来源可观察对象为参数的函数。当执行这个返回的函数时，这个操作符会观察来源可观察对象中发出的值，转换它们，并返回由转换后的值组成的新的可观察对象。下面是一个简单的例子：</p>
 <code-example path="rx-library/src/operators.ts" title="Map operator">
@@ -968,8 +968,8 @@ squareOdd.subscribe(x => console.log(x));
 
 
 </code-example>
-<h3 translation-origin="off" id="common-operators">Common operators<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#common-operators"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="common-operators">常用操作符<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#common-operators"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="common-operators">Common operators<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#common-operators"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="common-operators">常用操作符<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#common-operators"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">RxJS provides many operators, but only a handful are used frequently. For a list of operators and usage samples, visit the <a href="https://rxjs-dev.firebaseapp.com/api">RxJS API Documentation</a>.</p>
 <p translation-result="">RxJS 提供了很多操作符，不过只有少数是常用的。
 下面是一个常用操作符的列表和用法范例，参见 <a href="https://rxjs-dev.firebaseapp.com/api">RxJS API 文档</a>。</p>
@@ -1085,10 +1085,10 @@ Multicasting
 </tr>
 </tbody>
 </table>
-<h2 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#error-handling"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="error-handling-3">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#error-handling-3"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off">In addition to the <code><a href="api/common/http/testing/TestRequest#error" class="code-anchor">error()</a></code> handler that you provide on subscription, RxJS provides the <code>catchError</code> operator that lets you handle known errors in the observable recipe.</p>
-<p translation-result="">除了可以在订阅时提供 <code><a href="api/common/http/testing/TestRequest#error" class="code-anchor">error()</a></code> 处理器外，RxJS 还提供了 <code>catchError</code> 操作符，它允许你在管道中处理已知错误。</p>
+<h2 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#error-handling"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="error-handling-3">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#error-handling-3"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off">In addition to the <code><a href="/api/common/http/testing/TestRequest#error" class="code-anchor">error()</a></code> handler that you provide on subscription, RxJS provides the <code>catchError</code> operator that lets you handle known errors in the observable recipe.</p>
+<p translation-result="">除了可以在订阅时提供 <code><a href="/api/common/http/testing/TestRequest#error" class="code-anchor">error()</a></code> 处理器外，RxJS 还提供了 <code>catchError</code> 操作符，它允许你在管道中处理已知错误。</p>
 <p translation-origin="off">For instance, suppose you have an observable that makes an API request and maps to the response from the server. If the server returns an error or the value doesn’t exist, an error is produced. If you catch this error and supply a default value, your stream continues to process values rather than erroring out.</p>
 <p translation-result="">假设你有一个可观察对象，它发起 API 请求，然后对服务器返回的响应进行映射。如果服务器返回了错误或值不存在，就会生成一个错误。如果你捕获这个错误并提供了一个默认值，流就会继续处理这些值，而不会报错。</p>
 <p translation-origin="off">Here's an example of using the <code>catchError</code> operator to do this:</p>
@@ -1116,8 +1116,8 @@ apiData.subscribe({
 
 
 </code-example>
-<h3 translation-origin="off" id="retry-failed-observable">Retry failed observable<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#retry-failed-observable"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="retry-failed-observable">重试失败的可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#retry-failed-observable"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="retry-failed-observable">Retry failed observable<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#retry-failed-observable"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="retry-failed-observable">重试失败的可观察对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#retry-failed-observable"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Where the <code>catchError</code> operator provides a simple path of recovery, the <code>retry</code> operator lets you retry a failed request.</p>
 <p translation-result=""><code>catchError</code> 提供了一种简单的方式进行恢复，而 <code>retry</code> 操作符让你可以尝试失败的请求。</p>
 <p translation-origin="off">Use the <code>retry</code> operator before the <code>catchError</code> operator. It resubscribes to the original source observable, which can then re-run the full sequence of actions that resulted in the error. If this includes an HTTP request, it will retry that HTTP request.</p>
@@ -1151,8 +1151,8 @@ apiData.subscribe({
 <p translation-origin="off">   Do not retry <strong>authentication</strong> requests, since these should only be initiated by user action. We don't want to lock out user accounts with repeated login requests that the user has not initiated.</p>
 <p translation-result="">   不要重试<strong>登录认证</strong>请求，这些请求只应该由用户操作触发。我们肯定不会希望自动重复发送登录请求导致用户的账号被锁定。</p>
 </div>
-<h2 translation-origin="off" id="naming-conventions-for-observables">Naming conventions for observables<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#naming-conventions-for-observables"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="naming-conventions-for-observables">可观察对象的命名约定<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/rx-library#naming-conventions-for-observables"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="naming-conventions-for-observables">Naming conventions for observables<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#naming-conventions-for-observables"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="naming-conventions-for-observables">可观察对象的命名约定<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/rx-library#naming-conventions-for-observables"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Because Angular applications are mostly written in TypeScript, you will typically know when a variable is an observable. Although the Angular framework does not enforce a naming convention for observables, you will often see observables named with a trailing “$” sign.</p>
 <p translation-result="">由于 Angular 的应用几乎都是用 TypeScript 写的，你通常会希望知道某个变量是否可观察对象。虽然 Angular 框架并没有针对可观察对象的强制性命名约定，不过你经常会看到可观察对象的名字以“$”符号结尾。</p>
 <p translation-origin="off">This can be useful when scanning through code and looking for observable values. Also, if you want a property to store the most recent value from an observable, it can be convenient to simply use the same name with or without the “$”.</p>

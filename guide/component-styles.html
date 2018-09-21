@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="component-styles">Component Styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#component-styles"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="component-styles">组件样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#component-styles"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="component-styles">Component Styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#component-styles"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="component-styles">组件样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#component-styles"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Angular applications are styled with standard CSS. That means you can apply
 everything you know about CSS stylesheets, selectors, rules, and media queries
 directly to Angular applications.</p>
@@ -822,8 +822,8 @@ with components, enabling a more modular design than regular stylesheets.</p>
 <p translation-result="">本章将会讲解如何加载和使用这些<em>组件样式</em>。</p>
 <p translation-origin="off">You can run the <live-example></live-example> in Stackblitz and download the code from there.</p>
 <p translation-result="">你可以运行<live-example></live-example>，在 Stackblitz 中试用并下载本页的代码。</p>
-<h2 translation-origin="off" id="using-component-styles">Using component styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#using-component-styles"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="using-component-styles">使用组件样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#using-component-styles"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="using-component-styles">Using component styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#using-component-styles"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="using-component-styles">使用组件样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#using-component-styles"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">For every Angular component you write, you may define not only an HTML template,
 but also the CSS styles that go with that template,
 specifying any selectors, rules, and media queries that you need.</p>
@@ -838,7 +838,7 @@ Usually you give it one string, as in the following example:</p>
 <code-example path="component-styles/src/app/hero-app.component.ts" title="src/app/hero-app.component.ts" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-root',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h1>Tour of Heroes&#x3C;/h1>
     &#x3C;app-hero-main [hero]="hero">&#x3C;/app-hero-main>
   `,
@@ -849,8 +849,8 @@ export class HeroAppComponent {
 }
 
 </code-example>
-<h2 translation-origin="off" id="style-scope">Style scope<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#style-scope"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="style-scope">范围化的样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#style-scope"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="style-scope">Style scope<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#style-scope"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="style-scope">范围化的样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#style-scope"><i class="material-icons">link</i></a></h2>
 <div class="alert is-critical">
 <p translation-origin="off">The styles specified in <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> metadata <em>apply only within the template of that component</em>.</p>
 <p translation-result="">在 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 的元数据中指定的样式只会对该组件的模板生效。</p>
@@ -888,52 +888,52 @@ whole application to find where else the code is used.</p>
 </li>
 </ul>
 <a id="special-selectors"></a>
-<h2 translation-origin="off" id="special-selectors">Special selectors<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#special-selectors"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="special-selectors">特殊的选择器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#special-selectors"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="special-selectors">Special selectors<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#special-selectors"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="special-selectors">特殊的选择器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#special-selectors"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Component styles have a few special <em>selectors</em> from the world of shadow DOM style scoping
 (described in the <a href="https://www.w3.org/TR/css-scoping-1">CSS Scoping Module Level 1</a> page on the
 <a href="https://www.w3.org">W3C</a> site).
 The following sections describe these selectors.</p>
 <p translation-result="">组件样式中有一些从影子(Shadow) DOM 样式范围领域（记录在<a href="https://www.w3.org">W3C</a>的<a href="https://www.w3.org/TR/css-scoping-1">CSS Scoping Module Level 1</a>中） 引入的特殊<em>选择器</em>：</p>
-<h3 translation-origin="off" id="host">:host<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#host"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="host">:host 选择器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#host"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">Use the <code>:<a href="api/core/Directive#host" class="code-anchor">host</a></code> pseudo-class selector to target styles in the element that <em>hosts</em> the component (as opposed to
+<h3 translation-origin="off" id="host">:host<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#host"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="host">:host 选择器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#host"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">Use the <code>:<a href="/api/core/Directive#host" class="code-anchor">host</a></code> pseudo-class selector to target styles in the element that <em>hosts</em> the component (as opposed to
 targeting elements <em>inside</em> the component's template).</p>
-<p translation-result="">使用 <code>:<a href="api/core/Directive#host" class="code-anchor">host</a></code> 伪类选择器，用来选择组件<em>宿主</em>元素中的元素（相对于组件模板<em>内部</em>的元素）。</p>
+<p translation-result="">使用 <code>:<a href="/api/core/Directive#host" class="code-anchor">host</a></code> 伪类选择器，用来选择组件<em>宿主</em>元素中的元素（相对于组件模板<em>内部</em>的元素）。</p>
 <code-example path="component-styles/src/app/hero-details.component.css" region="host" title="src/app/hero-details.component.css" linenums="false">
-:<a href="api/core/Directive#host" class="code-anchor">host</a> {
+:<a href="/api/core/Directive#host" class="code-anchor">host</a> {
   display: block;
   border: 1px solid black;
 }
 
 </code-example>
-<p translation-origin="off">The <code>:<a href="api/core/Directive#host" class="code-anchor">host</a></code> selector is the only way to target the host element. You can't reach
+<p translation-origin="off">The <code>:<a href="/api/core/Directive#host" class="code-anchor">host</a></code> selector is the only way to target the host element. You can't reach
 the host element from inside the component with other selectors because it's not part of the
 component's own template. The host element is in a parent component's template.</p>
-<p translation-result=""><code>:<a href="api/core/Directive#host" class="code-anchor">host</a></code> 选择是是把宿主元素作为目标的<em>唯一</em>方式。除此之外，你将没办法指定它，
+<p translation-result=""><code>:<a href="/api/core/Directive#host" class="code-anchor">host</a></code> 选择是是把宿主元素作为目标的<em>唯一</em>方式。除此之外，你将没办法指定它，
 因为宿主不是组件自身模板的一部分，而是父组件模板的一部分。</p>
 <p translation-origin="off">Use the <em>function form</em> to apply host styles conditionally by
-including another selector inside parentheses after <code>:<a href="api/core/Directive#host" class="code-anchor">host</a></code>.</p>
-<p translation-result="">要把宿主样式作为条件，就要像<em>函数</em>一样把其它选择器放在 <code>:<a href="api/core/Directive#host" class="code-anchor">host</a></code> 后面的括号中。</p>
+including another selector inside parentheses after <code>:<a href="/api/core/Directive#host" class="code-anchor">host</a></code>.</p>
+<p translation-result="">要把宿主样式作为条件，就要像<em>函数</em>一样把其它选择器放在 <code>:<a href="/api/core/Directive#host" class="code-anchor">host</a></code> 后面的括号中。</p>
 <p translation-origin="off">The next example targets the host element again, but only when it also has the <code>active</code> CSS class.</p>
 <p translation-result="">下一个例子再次把宿主元素作为目标，但是只有当它同时带有 <code>active</code> CSS 类的时候才会生效。</p>
 <code-example path="component-styles/src/app/hero-details.component.css" region="hostfunction" title="src/app/hero-details.component.css" linenums="false">
-:<a href="api/core/Directive#host" class="code-anchor">host</a>(.active) {
+:<a href="/api/core/Directive#host" class="code-anchor">host</a>(.active) {
   border-width: 3px;
 }
 
 </code-example>
-<h3 translation-origin="off" id="host-context">:host-context<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#host-context"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="host-context">:host-context 选择器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#host-context"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="host-context">:host-context<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#host-context"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="host-context">:host-context 选择器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#host-context"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Sometimes it's useful to apply styles based on some condition <em>outside</em> of a component's view.
 For example, a CSS theme class could be applied to the document <code>&#x3C;body></code> element, and
 you want to change how your component looks based on that.</p>
 <p translation-result="">有时候，基于某些来自组件视图<em>外部</em>的条件应用样式是很有用的。
 例如，在文档的 <code>&#x3C;body></code> 元素上可能有一个用于表示样式主题 (theme) 的 CSS 类，你应当基于它来决定组件的样式。</p>
 <p translation-origin="off">Use the <code>:host-context()</code> pseudo-class selector, which works just like the function
-form of <code>:<a href="api/core/Directive#host" class="code-anchor">host</a>()</code>. The <code>:host-context()</code> selector looks for a CSS class in any ancestor of the component host element,
+form of <code>:<a href="/api/core/Directive#host" class="code-anchor">host</a>()</code>. The <code>:host-context()</code> selector looks for a CSS class in any ancestor of the component host element,
 up to the document root. The <code>:host-context()</code> selector is useful when combined with another selector.</p>
-<p translation-result="">这时可以使用 <code>:host-context()</code> 伪类选择器。它也以类似 <code>:<a href="api/core/Directive#host" class="code-anchor">host</a>()</code> 形式使用。它在当前组件宿主元素的<em>祖先节点</em>中查找 CSS 类，
+<p translation-result="">这时可以使用 <code>:host-context()</code> 伪类选择器。它也以类似 <code>:<a href="/api/core/Directive#host" class="code-anchor">host</a>()</code> 形式使用。它在当前组件宿主元素的<em>祖先节点</em>中查找 CSS 类，
 直到文档的根节点为止。在与其它选择器组合使用时，它非常有用。</p>
 <p translation-origin="off">The following example applies a <code>background-color</code> style to all <code>&#x3C;h2></code> elements <em>inside</em> the component, only
 if some ancestor element has the CSS class <code>theme-light</code>.</p>
@@ -944,8 +944,8 @@ if some ancestor element has the CSS class <code>theme-light</code>.</p>
 }
 
 </code-example>
-<h3 translation-origin="off" id="deprecated-deep--and-ng-deep">(deprecated) <code>/deep/</code>, <code>>>></code>, and <code>::ng-deep</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#deprecated-deep--and-ng-deep"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="deprecated-codedeepcode-codecode-and-codeng-deepcode">已废弃 <code>/deep/</code>、<code>>>></code> 和 <code>::ng-deep</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#deprecated-codedeepcode-codecode-and-codeng-deepcode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="deprecated-deep--and-ng-deep">(deprecated) <code>/deep/</code>, <code>>>></code>, and <code>::ng-deep</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#deprecated-deep--and-ng-deep"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="deprecated-codedeepcode-codecode-and-codeng-deepcode">已废弃 <code>/deep/</code>、<code>>>></code> 和 <code>::ng-deep</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#deprecated-codedeepcode-codecode-and-codeng-deepcode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Component styles normally apply only to the HTML in the component's own template.</p>
 <p translation-result="">组件样式通常只会作用于组件自身的 HTML 上。</p>
 <p translation-origin="off">Use the <code>/deep/</code> shadow-piercing descendant combinator to force a style down through the child
@@ -957,7 +957,7 @@ children and content children of the component.</p>
 through this component to all of its child elements in the DOM.</p>
 <p translation-result="">这个例子以所有的 <code>&#x3C;h3></code> 元素为目标，从宿主元素到当前元素再到 DOM 中的所有子元素：</p>
 <code-example path="component-styles/src/app/hero-details.component.css" region="deep" title="src/app/hero-details.component.css" linenums="false">
-:<a href="api/core/Directive#host" class="code-anchor">host</a> /deep/ h3 {
+:<a href="/api/core/Directive#host" class="code-anchor">host</a> /deep/ h3 {
   font-style: italic;
 }
 
@@ -967,10 +967,10 @@ through this component to all of its child elements in the DOM.</p>
 <div class="alert is-important">
 <p translation-origin="off">Use <code>/deep/</code>, <code>>>></code> and <code>::ng-deep</code> only with <em>emulated</em> view encapsulation.
 Emulated is the default and most commonly used view encapsulation. For more information, see the
-<a href="guide/component-styles#view-encapsulation">Controlling view encapsulation</a> section.</p>
+<a href="/guide/component-styles#view-encapsulation">Controlling view encapsulation</a> section.</p>
 <p translation-result=""><code>/deep/</code> 和 <code>>>></code> 选择器只能被用在<strong>仿真 (emulated) </strong>模式下。
 这种方式是默认值，也是用得最多的方式。
-更多信息，见<a href="guide/component-styles#view-encapsulation">控制视图封装模式</a>一节。</p>
+更多信息，见<a href="/guide/component-styles#view-encapsulation">控制视图封装模式</a>一节。</p>
 </div>
 <div class="alert is-important">
 <p translation-origin="off">The shadow-piercing descendant combinator is deprecated and <a href="https://www.chromestatus.com/features/6750456638341120">support is being removed from major browsers</a> and tools.
@@ -981,14 +981,14 @@ Until then <code>::ng-deep</code> should be preferred for a broader compatibilit
 目前，建议先统一使用 <code>::ng-deep</code>，以便兼容将来的工具。</p>
 </div>
 <a id="loading-styles"></a>
-<h2 translation-origin="off" id="loading-component-styles">Loading component styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#loading-component-styles"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="loading-component-styles">把样式加载进组件中<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#loading-component-styles"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="loading-component-styles">Loading component styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#loading-component-styles"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="loading-component-styles">把样式加载进组件中<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#loading-component-styles"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">There are several ways to add styles to a component:</p>
 <p translation-result="">有几种方式把样式加入组件：</p>
 <ul>
 <li>
-<p translation-origin="off">By setting <code>styles</code> or <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> metadata.</p>
-<p translation-result=""> 设置 <code>styles</code> 或 <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 元数据</p>
+<p translation-origin="off">By setting <code>styles</code> or <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> metadata.</p>
+<p translation-result=""> 设置 <code>styles</code> 或 <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 元数据</p>
 </li>
 <li>
 <p translation-origin="off">Inline in the template HTML.</p>
@@ -1001,8 +1001,8 @@ Until then <code>::ng-deep</code> should be preferred for a broader compatibilit
 </ul>
 <p translation-origin="off">The scoping rules outlined earlier apply to each of these loading patterns.</p>
 <p translation-result="">上述作用域规则对所有这些加载模式都适用。</p>
-<h3 translation-origin="off" id="styles-in-component-metadata">Styles in component metadata<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#styles-in-component-metadata"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="styles-in-component-metadata">元数据中的样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#styles-in-component-metadata"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="styles-in-component-metadata">Styles in component metadata<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#styles-in-component-metadata"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="styles-in-component-metadata">元数据中的样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#styles-in-component-metadata"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can add a <code>styles</code> array property to the <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> decorator.</p>
 <p translation-result="">你可以给 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 装饰器添加一个 <code>styles</code> 数组型属性。</p>
 <p translation-origin="off">Each string in the array defines some CSS for this component.</p>
@@ -1010,7 +1010,7 @@ Until then <code>::ng-deep</code> should be preferred for a broader compatibilit
 <code-example path="component-styles/src/app/hero-app.component.ts" title="src/app/hero-app.component.ts (CSS inline)">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-root',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h1>Tour of Heroes&#x3C;/h1>
     &#x3C;app-hero-main [hero]="hero">&#x3C;/app-hero-main>
   `,
@@ -1032,20 +1032,20 @@ They are <em>not inherited</em> by any components nested within the template nor
 <code-example language="sh" class="code-shell">
 ng generate component hero-app --inline-style
 </code-example>
-<h3 translation-origin="off" id="style-files-in-component-metadata">Style files in component metadata<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#style-files-in-component-metadata"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="style-files-in-component-metadata">组件元数据中的样式文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#style-files-in-component-metadata"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">You can load styles from external CSS files by adding a <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> property
+<h3 translation-origin="off" id="style-files-in-component-metadata">Style files in component metadata<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#style-files-in-component-metadata"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="style-files-in-component-metadata">组件元数据中的样式文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#style-files-in-component-metadata"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">You can load styles from external CSS files by adding a <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> property
 to a component's <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> decorator:</p>
-<p translation-result="">你可以通过把外部 CSS 文件添加到 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 的 <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 属性中来加载外部样式。</p>
+<p translation-result="">你可以通过把外部 CSS 文件添加到 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 的 <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 属性中来加载外部样式。</p>
 <code-tabs>
   <code-pane title="src/app/hero-app.component.ts (CSS in file)" path="component-styles/src/app/hero-app.component.1.ts">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-root',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h1>Tour of Heroes&#x3C;/h1>
     &#x3C;app-hero-main [hero]="hero">&#x3C;/app-hero-main>
   `,
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./hero-app.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./hero-app.component.css']
 })
 export class HeroAppComponent {
 /* . . . */
@@ -1067,23 +1067,23 @@ They are <em>not inherited</em> by any components nested within the template nor
 它们<strong>既不会作用于模板中嵌入的任何组件</strong>，也不会作用于投影进来的组件（如 <code>ng-content</code> ）。</p>
 </div>
 <div class="alert is-helpful">
-<p translation-origin="off">  You can specify more than one styles file or even a combination of <code>styles</code> and <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>.</p>
-<p translation-result="">  你可以指定多个样式文件，甚至可以组合使用 <code><a href="/api/animations/style" class="code-anchor">style</a></code> 和 <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 方式。</p>
+<p translation-origin="off">  You can specify more than one styles file or even a combination of <code>styles</code> and <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>.</p>
+<p translation-result="">  你可以指定多个样式文件，甚至可以组合使用 <code><a href="/api/animations/style" class="code-anchor">style</a></code> 和 <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 方式。</p>
 </div>
-<p translation-origin="off">The CLI creates an empty styles file for you by default and references that file in the component's generated <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>.</p>
-<p translation-result="">CLI 会默认为你创建一个空白的样式表文件，并且在所生成组件的 <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 中引用该文件。</p>
+<p translation-origin="off">The CLI creates an empty styles file for you by default and references that file in the component's generated <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>.</p>
+<p translation-result="">CLI 会默认为你创建一个空白的样式表文件，并且在所生成组件的 <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 中引用该文件。</p>
 <code-example language="sh" class="code-shell">
 ng generate component hero-app
 </code-example>
-<h3 translation-origin="off" id="template-inline-styles">Template inline styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#template-inline-styles"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="template-inline-styles">模板内联样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#template-inline-styles"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="template-inline-styles">Template inline styles<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#template-inline-styles"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="template-inline-styles">模板内联样式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#template-inline-styles"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can embed CSS styles directly into the HTML template by putting them
 inside <code>&#x3C;<a href="/api/animations/style" class="code-anchor">style</a>></code> tags.</p>
 <p translation-result="">你也可以在组件的 HTML 模板中嵌入 <code>&#x3C;<a href="/api/animations/style" class="code-anchor">style</a>></code> 标签。</p>
 <code-example path="component-styles/src/app/hero-controls.component.ts" region="inlinestyles" title="src/app/hero-controls.component.ts">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-controls',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;<a href="/api/animations/style" class="code-anchor">style</a>>
       button {
         background-color: white;
@@ -1096,16 +1096,16 @@ inside <code>&#x3C;<a href="/api/animations/style" class="code-anchor">style</a>
 })
 
 </code-example>
-<h3 translation-origin="off" id="template-link-tags">Template link tags<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#template-link-tags"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="template-link-tags">模板中的 link 标签<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#template-link-tags"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="template-link-tags">Template link tags<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#template-link-tags"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="template-link-tags">模板中的 link 标签<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#template-link-tags"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can also write <code>&#x3C;link></code> tags into the component's HTML template.</p>
 <p translation-result="">你也可以在组件的 HTML 模板中写 <code>&#x3C;link></code> 标签。</p>
 <code-example path="component-styles/src/app/hero-team.component.ts" region="stylelink" title="src/app/hero-team.component.ts">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-team',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
-    &#x3C;!-- We must use <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> relative <a href="api/core/SecurityContext#URL" class="code-anchor">URL</a> so that the AOT compiler can find the stylesheet -->
-    &#x3C;link rel="stylesheet" <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="../assets/hero-team.component.css">
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
+    &#x3C;!-- We must use <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> relative <a href="/api/core/SecurityContext#URL" class="code-anchor">URL</a> so that the AOT compiler can find the stylesheet -->
+    &#x3C;link rel="stylesheet" <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="../assets/hero-team.component.css">
     &#x3C;h3>Team&#x3C;/h3>
     &#x3C;ul>
       &#x3C;li *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let member of hero.team">
@@ -1121,8 +1121,8 @@ inside <code>&#x3C;<a href="/api/animations/style" class="code-anchor">style</a>
 <p translation-origin="off">Once included, the CLI will include the stylesheet, whether the link tag's href URL is relative to the application root or the component file.</p>
 <p translation-result="">只要引用过，CLI 就会计入这个样式表，无论这个 link 标签的 href 指向的 URL 是相对于应用根目录的还是相对于组件文件的。</p>
 </div>
-<h3 translation-origin="off" id="css-imports">CSS @imports<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#css-imports"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="css-imports">CSS @imports 语法<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#css-imports"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="css-imports">CSS @imports<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#css-imports"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="css-imports">CSS @imports 语法<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#css-imports"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can also import CSS files into the CSS files using the standard CSS <code>@import</code> rule.
 For details, see <a href="https://developer.mozilla.org/en/docs/Web/CSS/@import"><code>@import</code></a>
 on the <a href="https://developer.mozilla.org">MDN</a> site.</p>
@@ -1135,24 +1135,24 @@ CSS 文件导入到 CSS 文件中。</p>
 @import './hero-details-box.css';
 
 </code-example>
-<h3 translation-origin="off" id="external-and-global-style-files">External and global style files<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#external-and-global-style-files"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="external-and-global-style-files">外部以及全局样式文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#external-and-global-style-files"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="external-and-global-style-files">External and global style files<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#external-and-global-style-files"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="external-and-global-style-files">外部以及全局样式文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#external-and-global-style-files"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">When building with the CLI, you must configure the <code>angular.json</code> to include <em>all external assets</em>, including external style files.</p>
 <p translation-result="">当使用 CLI 进行构建时，你必须配置 <code>angular.json</code> 文件，使其包含<em>所有外部资源</em>（包括外部的样式表文件）。</p>
 <p translation-origin="off">Register <strong>global</strong> style files in the <code>styles</code> section which, by default, is pre-configured with the global <code>styles.css</code> file.</p>
 <p translation-result="">在它的 <code>styles</code> 区注册这些<strong>全局</strong>样式文件，默认情况下，它会有一个预先配置的全局 <code>styles.css</code> 文件。</p>
 <p translation-origin="off">See the <a href="https://github.com/angular/angular-cli/wiki/stories-global-styles">CLI documentation</a> to learn more.</p>
 <p translation-result="">要了解更多，参见 <a href="https://github.com/angular/angular-cli/wiki/stories-global-styles">CLI 官方文档</a>。</p>
-<h3 translation-origin="off" id="non-css-style-files">Non-CSS style files<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#non-css-style-files"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="non-css-style-files">非 CSS 样式文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#non-css-style-files"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="non-css-style-files">Non-CSS style files<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#non-css-style-files"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="non-css-style-files">非 CSS 样式文件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#non-css-style-files"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">If you're building with the CLI,
-you can write style files in <a href="http://sass-lang.com/">sass</a>, <a href="http://lesscss.org/">less</a>, or <a href="http://stylus-lang.com/">stylus</a> and specify those files in the <code>@<a href="api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> metadata with the appropriate extensions (<code>.scss</code>, <code>.less</code>, <code>.styl</code>) as in the following example:</p>
-<p translation-result="">如果使用 CLI 进行构建，那么你可以用 <a href="http://sass-lang.com/">sass</a>、<a href="http://lesscss.org/">less</a> 或 <a href="http://stylus-lang.com/">stylus</a> 来编写样式，并使用相应的扩展名（<code>.scss</code>、<code>.less</code>、<code>.styl</code>）把它们指定到 <code>@<a href="api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> 元数据中。例子如下：</p>
+you can write style files in <a href="http://sass-lang.com/">sass</a>, <a href="http://lesscss.org/">less</a>, or <a href="http://stylus-lang.com/">stylus</a> and specify those files in the <code>@<a href="/api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> metadata with the appropriate extensions (<code>.scss</code>, <code>.less</code>, <code>.styl</code>) as in the following example:</p>
+<p translation-result="">如果使用 CLI 进行构建，那么你可以用 <a href="http://sass-lang.com/">sass</a>、<a href="http://lesscss.org/">less</a> 或 <a href="http://stylus-lang.com/">stylus</a> 来编写样式，并使用相应的扩展名（<code>.scss</code>、<code>.less</code>、<code>.styl</code>）把它们指定到 <code>@<a href="/api/core/Component#styleUrls" class="code-anchor">Component.styleUrls</a></code> 元数据中。例子如下：</p>
 <code-example>
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./app.component.scss']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./app.component.scss']
 })
 ...
 </code-example>
@@ -1164,12 +1164,12 @@ as explained in the <a href="https://github.com/angular/angular-cli/wiki/stories
 <p translation-result="">当使用 <code>ng generate component</code> 命令生成组件文件时，CLI 会默认生成一个空白的 CSS 样式文件（<code>.css</code>）。
 你可以配置 CLI，让它默认使用你喜欢的 CSS 预处理器，参见 <a href="https://github.com/angular/angular-cli/wiki/stories-css-preprocessors" title="CSS Preprocessor integration">CLI 官方文档</a> 中的解释。</p>
 <div class="alert is-important">
-<p translation-origin="off">Style strings added to the <code>@<a href="api/core/Component#styles" class="code-anchor">Component.styles</a></code> array <em>must be written in CSS</em> because the CLI cannot apply a preprocessor to inline styles.</p>
-<p translation-result="">添加到 <code>@<a href="api/core/Component#styles" class="code-anchor">Component.styles</a></code> 数组中的字符串<em>必须写成 CSS</em>，因为 CLI 没法对这些内联的样式使用任何 CSS 预处理器。</p>
+<p translation-origin="off">Style strings added to the <code>@<a href="/api/core/Component#styles" class="code-anchor">Component.styles</a></code> array <em>must be written in CSS</em> because the CLI cannot apply a preprocessor to inline styles.</p>
+<p translation-result="">添加到 <code>@<a href="/api/core/Component#styles" class="code-anchor">Component.styles</a></code> 数组中的字符串<em>必须写成 CSS</em>，因为 CLI 没法对这些内联的样式使用任何 CSS 预处理器。</p>
 </div>
 <a id="view-encapsulation"></a>
-<h2 translation-origin="off" id="view-encapsulation">View encapsulation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#view-encapsulation"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="view-encapsulation">控制视图的封装模式：原生 (Native)、仿真 (Emulated) 和无 (None)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#view-encapsulation"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="view-encapsulation">View encapsulation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#view-encapsulation"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="view-encapsulation">控制视图的封装模式：原生 (Native)、仿真 (Emulated) 和无 (None)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#view-encapsulation"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">As discussed earlier, component CSS styles are encapsulated into the component's view and don't
 affect the rest of the application.</p>
 <p translation-result="">像上面讨论过的一样，组件的 CSS 样式被封装进了自己的视图中，而不会影响到应用程序的其它部分。</p>
@@ -1180,30 +1180,30 @@ Choose from the following modes:</p>
 可选的封装模式一共有如下几种：</p>
 <ul>
 <li>
-<p translation-origin="off"><code><a href="api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> view encapsulation uses the browser's native shadow DOM implementation (see
+<p translation-origin="off"><code><a href="/api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> view encapsulation uses the browser's native shadow DOM implementation (see
 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM">Shadow DOM</a>
 on the <a href="https://developer.mozilla.org">MDN</a> site)
 to attach a shadow DOM to the component's host element, and then puts the component
 view inside that shadow DOM. The component's styles are included within the shadow DOM.</p>
-<p translation-result=""> <code><a href="api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> 模式使用浏览器原生的 Shadow DOM 实现（参见 <a href="https://developer.mozilla.org">MDN</a> 上的 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM">Shadow DOM</a>）来为组件的宿主元素附加一个 Shadow DOM。组件的视图被附加到这个 Shadow DOM 中，组件的样式也被包含在这个 Shadow DOM 中。(译注：不进不出，没有样式能进来，组件样式出不去。)</p>
+<p translation-result=""> <code><a href="/api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> 模式使用浏览器原生的 Shadow DOM 实现（参见 <a href="https://developer.mozilla.org">MDN</a> 上的 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM">Shadow DOM</a>）来为组件的宿主元素附加一个 Shadow DOM。组件的视图被附加到这个 Shadow DOM 中，组件的样式也被包含在这个 Shadow DOM 中。(译注：不进不出，没有样式能进来，组件样式出不去。)</p>
 </li>
 <li>
-<p translation-origin="off"><code><a href="api/core/ViewEncapsulation#Native" class="code-anchor">Native</a></code> view encapsulation uses a now deprecated version of the browser's native shadow DOM implementation - <a href="https://hayato.io/2016/shadowdomv1/">learn about the changes</a>.</p>
-<p translation-result=""> <code><a href="api/core/ViewEncapsulation#Native" class="code-anchor">Native</a></code> 视图包装模式使用浏览器原生 Shadow DOM 的一个废弃实现 —— <a href="https://hayato.io/2016/shadowdomv1/">参见变化详情</a>。</p>
+<p translation-origin="off"><code><a href="/api/core/ViewEncapsulation#Native" class="code-anchor">Native</a></code> view encapsulation uses a now deprecated version of the browser's native shadow DOM implementation - <a href="https://hayato.io/2016/shadowdomv1/">learn about the changes</a>.</p>
+<p translation-result=""> <code><a href="/api/core/ViewEncapsulation#Native" class="code-anchor">Native</a></code> 视图包装模式使用浏览器原生 Shadow DOM 的一个废弃实现 —— <a href="https://hayato.io/2016/shadowdomv1/">参见变化详情</a>。</p>
 </li>
 <li>
-<p translation-origin="off"><code><a href="api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code> view encapsulation (the default) emulates the behavior of shadow DOM by preprocessing
+<p translation-origin="off"><code><a href="/api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code> view encapsulation (the default) emulates the behavior of shadow DOM by preprocessing
 (and renaming) the CSS code to effectively scope the CSS to the component's view.
-For details, see <a href="guide/component-styles#inspect-generated-css">Appendix 1</a>.</p>
-<p translation-result=""> <code><a href="api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code> 模式（<strong>默认值</strong>）通过预处理（并改名）CSS 代码来模拟 Shadow DOM 的行为，以达到把 CSS 样式局限在组件视图中的目的。
-更多信息，见<a href="guide/component-styles#inspect-generated-css">附录 1</a> 。(译注：只进不出，全局样式能进来，组件样式出不去)</p>
+For details, see <a href="/guide/component-styles#inspect-generated-css">Appendix 1</a>.</p>
+<p translation-result=""> <code><a href="/api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code> 模式（<strong>默认值</strong>）通过预处理（并改名）CSS 代码来模拟 Shadow DOM 的行为，以达到把 CSS 样式局限在组件视图中的目的。
+更多信息，见<a href="/guide/component-styles#inspect-generated-css">附录 1</a> 。(译注：只进不出，全局样式能进来，组件样式出不去)</p>
 </li>
 <li>
-<p translation-origin="off"><code><a href="api/core/ViewEncapsulation#None" class="code-anchor">None</a></code> means that Angular does no view encapsulation.
+<p translation-origin="off"><code><a href="/api/core/ViewEncapsulation#None" class="code-anchor">None</a></code> means that Angular does no view encapsulation.
 Angular adds the CSS to the global styles.
 The scoping rules, isolations, and protections discussed earlier don't apply.
 This is essentially the same as pasting the component's styles into the HTML.</p>
-<p translation-result=""> <code><a href="api/core/ViewEncapsulation#None" class="code-anchor">None</a></code> 意味着 Angular 不使用视图封装。
+<p translation-result=""> <code><a href="/api/core/ViewEncapsulation#None" class="code-anchor">None</a></code> 意味着 Angular 不使用视图封装。
 Angular 会把 CSS 添加到全局样式中。而不会应用上前面讨论过的那些作用域规则、隔离和保护等。
 从本质上来说，这跟把组件的样式直接放进 HTML 是一样的。(译注：能进能出。)</p>
 </li>
@@ -1212,19 +1212,19 @@ Angular 会把 CSS 添加到全局样式中。而不会应用上前面讨论过�
 <p translation-result="">通过组件元数据中的 <code>encapsulation</code> 属性来设置组件封装模式：</p>
 <code-example path="component-styles/src/app/quest-summary.component.ts" region="encapsulation.native" title="src/app/quest-summary.component.ts" linenums="false">
 // warning: few browsers support shadow DOM encapsulation at this time
-encapsulation: <a href="api/core/ViewEncapsulation#Native" class="code-anchor">ViewEncapsulation.Native</a>
+encapsulation: <a href="/api/core/ViewEncapsulation#Native" class="code-anchor">ViewEncapsulation.Native</a>
 
 </code-example>
-<p translation-origin="off"><code><a href="api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> view encapsulation only works on browsers that have native support
+<p translation-origin="off"><code><a href="/api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> view encapsulation only works on browsers that have native support
 for shadow DOM (see <a href="https://caniuse.com/#feat=shadowdomv1">Shadow DOM v1</a> on the
 <a href="http://caniuse.com">Can I use</a> site). The support is still limited,
-which is why <code><a href="api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code> view encapsulation is the default mode and recommended
+which is why <code><a href="/api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code> view encapsulation is the default mode and recommended
 in most cases.</p>
-<p translation-result=""><code><a href="api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> 模式只适用于提供了原生 Shadow DOM 支持的浏览器（参见 <a href="http://caniuse.com/">Can I use</a> 上的 <a href="https://caniuse.com/#feat=shadowdomv1">Shadow DOM v1</a> 部分）。
-它仍然受到很多限制，这就是为什么仿真 (<code><a href="api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code>) 模式是默认选项，并建议将其用于大多数情况。</p>
+<p translation-result=""><code><a href="/api/core/ViewEncapsulation#ShadowDom" class="code-anchor">ShadowDom</a></code> 模式只适用于提供了原生 Shadow DOM 支持的浏览器（参见 <a href="http://caniuse.com/">Can I use</a> 上的 <a href="https://caniuse.com/#feat=shadowdomv1">Shadow DOM v1</a> 部分）。
+它仍然受到很多限制，这就是为什么仿真 (<code><a href="/api/core/ViewEncapsulation#Emulated" class="code-anchor">Emulated</a></code>) 模式是默认选项，并建议将其用于大多数情况。</p>
 <a id="inspect-generated-css"></a>
-<h2 translation-origin="off" id="inspecting-generated-css">Inspecting generated CSS<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#inspecting-generated-css"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="inspecting-generated-css">查看仿真 (Emulated) 模式下生成的 CSS<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/component-styles#inspecting-generated-css"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="inspecting-generated-css">Inspecting generated CSS<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#inspecting-generated-css"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="inspecting-generated-css">查看仿真 (Emulated) 模式下生成的 CSS<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/component-styles#inspecting-generated-css"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">When using emulated view encapsulation, Angular preprocesses
 all component styles so that they approximate the standard shadow CSS scoping rules.</p>
 <p translation-result="">当使用默认的仿真模式时，Angular 会对组件的所有样式进行预处理，让它们模仿出标准的 Shadow CSS 作用域规则。</p>

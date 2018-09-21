@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="dependency-injection">Dependency Injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#dependency-injection"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="dependency-injection-3">依赖注入<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#dependency-injection-3"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="dependency-injection">Dependency Injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#dependency-injection"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="dependency-injection-3">依赖注入<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#dependency-injection-3"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Dependency Injection is a powerful pattern for managing code dependencies.
 This cookbook explores many of the features of Dependency Injection (DI) in Angular.</p>
 <p translation-result="">依赖注入是一个用来管理代码依赖的强大模式。本文会讨论 Angular 依赖注入的许多特性。</p>
@@ -818,8 +818,8 @@ This cookbook explores many of the features of Dependency Injection (DI) in Angu
 of the code in this cookbook.</p>
 <p translation-result="">要获取本文的代码，<strong>参见<live-example name="dependency-injection-in-action"></live-example></strong>。</p>
 <a id="app-wide-dependencies"></a>
-<h2 translation-origin="off" id="application-wide-dependencies">Application-wide dependencies<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#application-wide-dependencies"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="application-wide-dependencies">应用程序全局依赖<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#application-wide-dependencies"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="application-wide-dependencies">Application-wide dependencies<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#application-wide-dependencies"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="application-wide-dependencies">应用程序全局依赖<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#application-wide-dependencies"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Register providers for dependencies used throughout the application
 in the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> decorator of the service itself. </p>
 <p translation-result="">在服务本身的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> 装饰器中注册那些将被应用程序全局使用的依赖提供商。</p>
@@ -831,7 +831,7 @@ import { HEROES }     from './mock-heroes';
   // we declare that this service should be created
   // by the root application injector.
 
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 export class HeroService {
   getHeroes() { return HEROES; }
@@ -839,10 +839,10 @@ export class HeroService {
 
 
 </code-example>
-<p translation-origin="off"><code><a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> here tells Angular that the root injector is responsible for creating an instance of the <code>HeroService</code>.
+<p translation-origin="off"><code><a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> here tells Angular that the root injector is responsible for creating an instance of the <code>HeroService</code>.
 Services that are provided this way are automatically made available to the entire
 application and don't need to be listed in any module.</p>
-<p translation-result="">这里的 <code><a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> 告诉 Angular，要由根注入器负责创建 <code>HeroService</code> 的实例。
+<p translation-result="">这里的 <code><a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> 告诉 Angular，要由根注入器负责创建 <code>HeroService</code> 的实例。
 所有用这种方式提供的服务，都会自动在整个应用中可用，而不必把它们显式列在任何模块中。</p>
 <p translation-origin="off">Service classes can act as their own providers which is why defining them in the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator
 is all the registration you need.</p>
@@ -850,18 +850,18 @@ is all the registration you need.</p>
 <div class="alert is-helpful">
 <p translation-origin="off">A <em>provider</em> is something that can create or deliver a service.
 Angular creates a service instance from a class provider by using <code>new</code>.
-Read more about providers in the <a href="guide/dependency-injection#register-providers-ngmodule">Dependency Injection</a>
+Read more about providers in the <a href="/guide/dependency-injection#register-providers-ngmodule">Dependency Injection</a>
 guide.</p>
 <p translation-result=""><em>提供商</em>是用来新建或者交付服务的。
 Angular 拿到“类提供商”之后，会通过 <code>new</code> 操作来新建服务实例。
-从<a href="guide/dependency-injection#register-providers-ngmodule">依赖注入</a>一章可以学到关于提供商的更多知识。</p>
+从<a href="/guide/dependency-injection#register-providers-ngmodule">依赖注入</a>一章可以学到关于提供商的更多知识。</p>
 </div>
 <p translation-origin="off">Now that you've registered these services,
 Angular can inject them into the constructor of <em>any</em> component or service, <em>anywhere</em> in the application.</p>
 <p translation-result="">现在你已经注册了这些服务，这样 Angular 就能在应用程序的<em>任何地方</em>，把它们注入到<em>任何</em>组件和服务的构造函数里。</p>
 <a id="external-module-configuration"></a>
-<h2 translation-origin="off" id="external-module-configuration">External module configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#external-module-configuration"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="external-module-configuration">外部模块配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#external-module-configuration"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="external-module-configuration">External module configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#external-module-configuration"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="external-module-configuration">外部模块配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#external-module-configuration"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">If a provider cannot be configured in the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator of the service, then register application-wide providers in the root <code>AppModule</code>, not in the <code>AppComponent</code>. Generally, register providers in the <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> rather than in the root application component.</p>
 <p translation-result="">如果某个提供商不是在服务的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 装饰器中配置的，那么就要在根模块 <code>AppModule</code> 中把它注册为全应用级的提供商，而不是在 <code>AppComponent</code> 中。
 一般来说，要在 <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 中注册提供商，而不是在应用程序根组件中。</p>
@@ -870,9 +870,9 @@ provided in a lazily-loaded context,
 or when you are configuring another application global service <em>before the application starts</em>.</p>
 <p translation-result="">下列情况下会用到这种方法：1. 当用户应该明确选择所用的服务时。2. 当你要在惰性加载的上下文中提供该服务时。3. 当你要在应用启动之前配置应用中的另一个全局服务时。</p>
 <p translation-origin="off">Here is an example of the case where the component router configuration includes a non-default
-<a href="guide/router#location-strategy">location strategy</a> by listing its provider
+<a href="/guide/router#location-strategy">location strategy</a> by listing its provider
 in the <code>providers</code> list of the <code>AppModule</code>.</p>
-<p translation-result="">下面的例子就属于这些情况，它为组件路由器配置了一个非默认的<a href="guide/router#location-strategy">地址策略（location strategy）</a>，并把它加入到 <code>AppModule</code> 的 <code>providers</code> 数组中。</p>
+<p translation-result="">下面的例子就属于这些情况，它为组件路由器配置了一个非默认的<a href="/guide/router#location-strategy">地址策略（location strategy）</a>，并把它加入到 <code>AppModule</code> 的 <code>providers</code> 数组中。</p>
 <code-example path="dependency-injection-in-action/src/app/app.module.ts" region="providers" title="src/app/app.module.ts (providers)" linenums="false">
 providers: [
   { provide: <a href="/api/common/LocationStrategy" class="code-anchor">LocationStrategy</a>, useClass: <a href="/api/common/HashLocationStrategy" class="code-anchor">HashLocationStrategy</a> }
@@ -881,8 +881,8 @@ providers: [
 </code-example>
 <a id="injectable"></a>
 <a id="nested-dependencies"></a>
-<h2 translation-origin="off" id="injectable-and-nested-service-dependencies"><em>@Injectable()</em> and nested service dependencies<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#injectable-and-nested-service-dependencies"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="eminjectableem-and-nested-service-dependencies"><em>@Injectable</em>和嵌套服务依赖<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#eminjectableem-and-nested-service-dependencies"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="injectable-and-nested-service-dependencies"><em>@Injectable()</em> and nested service dependencies<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#injectable-and-nested-service-dependencies"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="eminjectableem-and-nested-service-dependencies"><em>@Injectable</em>和嵌套服务依赖<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#eminjectableem-and-nested-service-dependencies"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The consumer of an injected service does not know how to create that service.
 It shouldn't care.
 It's the dependency injection's job to create and cache that service.</p>
@@ -931,8 +931,8 @@ and the framework does the rest.</p>
   <img src="generated/images/guide/dependency-injection-in-action/logged-in-user.png" alt="Logged In User" width="145" height="99">
 </figure>
 <a id="injectable-1"></a>
-<h3 translation-origin="off" id="injectable"><em>@Injectable()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#injectable"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="eminjectableem"><em>@Injectable()</em> 注解<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#eminjectableem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="injectable"><em>@Injectable()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#injectable"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="eminjectableem"><em>@Injectable()</em> 注解<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#eminjectableem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Notice the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code>decorator on the <code>UserContextService</code> class.</p>
 <p translation-result="">注意在 <code>UserContextService</code> 类里面的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> 装饰器。</p>
 <code-example path="dependency-injection-in-action/src/app/user-context.service.ts" region="injectable" title="user-context.service.ts (@Injectable)" linenums="false">
@@ -944,8 +944,8 @@ export class UserContextService {
 <p translation-origin="off">The <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator indicates that the Angular DI system is used to create one or more instances of <code>UserContextService</code>.</p>
 <p translation-result=""><code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 装饰器会向 Angular DI 系统指明应该为 <code>UserContextService</code> 创建一个实例还是多个实例。</p>
 <a id="service-scope"></a>
-<h2 translation-origin="off" id="limit-service-scope-to-a-component-subtree">Limit service scope to a component subtree<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#limit-service-scope-to-a-component-subtree"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="limit-service-scope-to-a-component-subtree">把服务作用域限制到一个组件支树<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#limit-service-scope-to-a-component-subtree"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="limit-service-scope-to-a-component-subtree">Limit service scope to a component subtree<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#limit-service-scope-to-a-component-subtree"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="limit-service-scope-to-a-component-subtree">把服务作用域限制到一个组件支树<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#limit-service-scope-to-a-component-subtree"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">All injected service dependencies are singletons meaning that,
 for a given dependency injector, there is only one instance of service.</p>
 <p translation-result="">所有被注入的服务依赖都是单例的，也就是说，在任意一个依赖注入器("injector")中，每个服务只有唯一的实例。</p>
@@ -972,7 +972,7 @@ Here, the <code>HeroService</code> is available to the <code>HeroesBaseComponent
 <code-example path="dependency-injection-in-action/src/app/sorted-heroes.component.ts" region="injection" title="src/app/sorted-heroes.component.ts (HeroesBaseComponent excerpt)">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-unsorted-heroes',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes">{{hero.name}}&#x3C;/div>`,
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes">{{hero.name}}&#x3C;/div>`,
   providers: [HeroService]
 })
 export class HeroesBaseComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
@@ -994,15 +994,15 @@ Each of these components has its own <code>HeroService</code> instance managing 
 这些组件每个都有自己的 <code>HeroService</code> 实例，用来管理独立的英雄库。</p>
 </div>
 <div class="alert is-helpful">
-<h3 translation-origin="off" id="take-a-break">Take a break!<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#take-a-break"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="take-a-break">休息一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#take-a-break"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="take-a-break">Take a break!<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#take-a-break"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="take-a-break">休息一下！<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#take-a-break"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This much Dependency Injection knowledge may be all that many Angular developers
 ever need to build their applications. It doesn't always have to be more complicated.</p>
 <p translation-result="">对一些 Angular 开发者来说，这么多依赖注入知识可能已经是它们需要知道的全部了。不是每个人都需要更复杂的用法。</p>
 </div>
 <a id="multiple-service-instances"></a>
-<h2 translation-origin="off" id="multiple-service-instances-sandboxing">Multiple service instances (sandboxing)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#multiple-service-instances-sandboxing"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="multiple-service-instances-sandboxing">多个服务实例(sandboxing)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#multiple-service-instances-sandboxing"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="multiple-service-instances-sandboxing">Multiple service instances (sandboxing)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#multiple-service-instances-sandboxing"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="multiple-service-instances-sandboxing">多个服务实例(sandboxing)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#multiple-service-instances-sandboxing"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Sometimes you want multiple instances of a service at <em>the same level of the component hierarchy</em>.</p>
 <p translation-result="">在<em>同一个级别的组件树</em>里，有时需要一个服务的多个实例。</p>
 <p translation-origin="off">A good example is a service that holds state for its companion component instance.
@@ -1018,7 +1018,7 @@ This is called <em>sandboxing</em> because each service and component instance h
 <code-example path="dependency-injection-in-action/src/app/hero-bios.component.ts" region="simple" title="ap/hero-bios.component.ts">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-bios',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;app-hero-bio [heroId]="1">&#x3C;/app-hero-bio>
     &#x3C;app-hero-bio [heroId]="2">&#x3C;/app-hero-bio>
     &#x3C;app-hero-bio [heroId]="3">&#x3C;/app-hero-bio>`,
@@ -1055,7 +1055,7 @@ by listing the <code>HeroCacheService</code> in its metadata <code>providers</co
 <code-example path="dependency-injection-in-action/src/app/hero-bio.component.ts" region="component" title="src/app/hero-bio.component.ts">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-bio',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h4>{{hero.name}}&#x3C;/h4>
     &#x3C;ng-content>&#x3C;/ng-content>
     &#x3C;<a href="/api/forms/DefaultValueAccessor" class="code-anchor">textarea</a> cols="25" [(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]="hero.description">&#x3C;/<a href="/api/forms/DefaultValueAccessor" class="code-anchor">textarea</a>>`,
@@ -1086,8 +1086,8 @@ and confirm that the three <code>HeroBioComponent</code> instances have their ow
 </figure>
 <a id="optional"></a>
 <a id="qualify-dependency-lookup"></a>
-<h2 translation-origin="off" id="qualify-dependency-lookup-with-optional-and-host">Qualify dependency lookup with <em>@Optional()</em> and <code>@<a href="/api/core/Host" class="code-anchor">Host</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#qualify-dependency-lookup-with-optional-and-host"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="qualify-dependency-lookup-with-emoptionalem-and-codehostcode">使用<em>@Optional()</em>和 <code>@<a href="/api/core/Host" class="code-anchor">Host</a>()</code> 装饰器来限定依赖查找方式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#qualify-dependency-lookup-with-emoptionalem-and-codehostcode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="qualify-dependency-lookup-with-optional-and-host">Qualify dependency lookup with <em>@Optional()</em> and <code>@<a href="/api/core/Host" class="code-anchor">Host</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#qualify-dependency-lookup-with-optional-and-host"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="qualify-dependency-lookup-with-emoptionalem-and-codehostcode">使用<em>@Optional()</em>和 <code>@<a href="/api/core/Host" class="code-anchor">Host</a>()</code> 装饰器来限定依赖查找方式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#qualify-dependency-lookup-with-emoptionalem-and-codehostcode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">As you now know, dependencies can be registered at any level in the component hierarchy.</p>
 <p translation-result="">你知道，依赖可以被注入到任何组件级别。</p>
 <p translation-origin="off">When a component requests a dependency, Angular starts with that component's injector and walks up the injector tree
@@ -1111,14 +1111,14 @@ The next example covers this second case.</p>
 <p translation-result="">宿主组件通常是申请这个依赖的组件。但当这个组件被投影(projected)进一个<em>父组件</em>后，这个父组件就变成了宿主。
 下一个例子会演示第二种情况。</p>
 <a id="demonstration"></a>
-<h3 translation-origin="off" id="demonstration">Demonstration<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#demonstration"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="demonstration">示范<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#demonstration"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">The <code>HeroBiosAndContactsComponent</code> is a revision of the <code>HeroBiosComponent</code> that you looked at <a href="guide/dependency-injection-in-action#hero-bios-component">above</a>.</p>
-<p translation-result=""><code>HeroBiosAndContactsComponent</code> 是<a href="guide/dependency-injection-in-action#hero-bios-component">前面</a>见过的 <code>HeroBiosComponent</code> 的修改版。</p>
+<h3 translation-origin="off" id="demonstration">Demonstration<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#demonstration"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="demonstration">示范<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#demonstration"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">The <code>HeroBiosAndContactsComponent</code> is a revision of the <code>HeroBiosComponent</code> that you looked at <a href="/guide/dependency-injection-in-action#hero-bios-component">above</a>.</p>
+<p translation-result=""><code>HeroBiosAndContactsComponent</code> 是<a href="/guide/dependency-injection-in-action#hero-bios-component">前面</a>见过的 <code>HeroBiosComponent</code> 的修改版。</p>
 <code-example path="dependency-injection-in-action/src/app/hero-bios.component.ts" region="hero-bios-and-contacts" title="src/app/hero-bios.component.ts (HeroBiosAndContactsComponent)">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-bios-and-contacts',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;app-hero-bio [heroId]="1"> &#x3C;app-hero-contact>&#x3C;/app-hero-contact> &#x3C;/app-hero-bio>
     &#x3C;app-hero-bio [heroId]="2"> &#x3C;app-hero-contact>&#x3C;/app-hero-contact> &#x3C;/app-hero-bio>
     &#x3C;app-hero-bio [heroId]="3"> &#x3C;app-hero-contact>&#x3C;/app-hero-contact> &#x3C;/app-hero-bio>`,
@@ -1134,7 +1134,7 @@ export class HeroBiosAndContactsComponent {
 <p translation-origin="off">Focus on the template:</p>
 <p translation-result="">注意看模板：</p>
 <code-example path="dependency-injection-in-action/src/app/hero-bios.component.ts" region="template" title="dependency-injection-in-action/src/app/hero-bios.component.ts" linenums="false">
-<a href="api/core/Component#template" class="code-anchor">template</a>: `
+<a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;app-hero-bio [heroId]="1"> &#x3C;app-hero-contact>&#x3C;/app-hero-contact> &#x3C;/app-hero-bio>
   &#x3C;app-hero-bio [heroId]="2"> &#x3C;app-hero-contact>&#x3C;/app-hero-contact> &#x3C;/app-hero-bio>
   &#x3C;app-hero-bio [heroId]="3"> &#x3C;app-hero-contact>&#x3C;/app-hero-contact> &#x3C;/app-hero-bio>`,
@@ -1146,7 +1146,7 @@ placing it in the <code>&#x3C;ng-content></code> slot of the <code>HeroBioCompon
 <p translation-result="">在 <code>&#x3C;hero-bio></code> 标签中是一个新的 <code>&#x3C;hero-contact></code> 元素。Angular 就会把相应的 <code>HeroContactComponent</code><em>投影</em>(<em>transclude</em>)进 <code>HeroBioComponent</code> 的视图里，
 将它放在 <code>HeroBioComponent</code> 模板的 <code>&#x3C;ng-content></code> 标签槽里。</p>
 <code-example path="dependency-injection-in-action/src/app/hero-bio.component.ts" region="template" title="src/app/hero-bio.component.ts (template)" linenums="false">
-<a href="api/core/Component#template" class="code-anchor">template</a>: `
+<a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;h4>{{hero.name}}&#x3C;/h4>
   &#x3C;ng-content>&#x3C;/ng-content>
   &#x3C;<a href="/api/forms/DefaultValueAccessor" class="code-anchor">textarea</a> cols="25" [(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]="hero.description">&#x3C;/<a href="/api/forms/DefaultValueAccessor" class="code-anchor">textarea</a>>`,
@@ -1162,7 +1162,7 @@ placing it in the <code>&#x3C;ng-content></code> slot of the <code>HeroBioCompon
 <code-example path="dependency-injection-in-action/src/app/hero-contact.component.ts" region="component" title="src/app/hero-contact.component.ts">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-contact',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;div>Phone #: {{phoneNumber}}
   &#x3C;span *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="hasLogger">!!!&#x3C;/span>&#x3C;/div>`
 })
@@ -1171,16 +1171,16 @@ export class HeroContactComponent {
   hasLogger = false;
 
   constructor(
-      @<a href="/api/core/Host" class="code-anchor">Host</a>() // <a href="api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> to the <a href="api/core/Directive#host" class="code-anchor">host</a> component's instance of the HeroCacheService
+      @<a href="/api/core/Host" class="code-anchor">Host</a>() // <a href="/api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> to the <a href="/api/core/Directive#host" class="code-anchor">host</a> component's instance of the HeroCacheService
       private heroCache: HeroCacheService,
 
-      @<a href="/api/core/Host" class="code-anchor">Host</a>()     // <a href="api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> <a href="api/common/PlatformLocation#search" class="code-anchor">search</a> for logger; hides the application-wide logger
+      @<a href="/api/core/Host" class="code-anchor">Host</a>()     // <a href="/api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> <a href="/api/common/PlatformLocation#search" class="code-anchor">search</a> for logger; hides the application-wide logger
       @<a href="/api/core/Optional" class="code-anchor">Optional</a>() // ok if the logger doesn't exist
       private loggerService: LoggerService
   ) {
     if (loggerService) {
       this.hasLogger = true;
-      loggerService.logInfo('HeroContactComponent can <a href="api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>!');
+      loggerService.logInfo('HeroContactComponent can <a href="/api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>!');
     }
   }
 
@@ -1192,10 +1192,10 @@ export class HeroContactComponent {
 <p translation-origin="off">Focus on the constructor parameters:</p>
 <p translation-result="">注意看构造函数的参数：</p>
 <code-example path="dependency-injection-in-action/src/app/hero-contact.component.ts" region="ctor-params" title="src/app/hero-contact.component.ts" linenums="false">
-@<a href="/api/core/Host" class="code-anchor">Host</a>() // <a href="api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> to the <a href="api/core/Directive#host" class="code-anchor">host</a> component's instance of the HeroCacheService
+@<a href="/api/core/Host" class="code-anchor">Host</a>() // <a href="/api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> to the <a href="/api/core/Directive#host" class="code-anchor">host</a> component's instance of the HeroCacheService
 private heroCache: HeroCacheService,
 
-@<a href="/api/core/Host" class="code-anchor">Host</a>()     // <a href="api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> <a href="api/common/PlatformLocation#search" class="code-anchor">search</a> for logger; hides the application-wide logger
+@<a href="/api/core/Host" class="code-anchor">Host</a>()     // <a href="/api/animations/AnimationQueryOptions#limit" class="code-anchor">limit</a> <a href="/api/common/PlatformLocation#search" class="code-anchor">search</a> for logger; hides the application-wide logger
 @<a href="/api/core/Optional" class="code-anchor">Optional</a>() // ok if the logger doesn't exist
 private loggerService: LoggerService
 
@@ -1234,8 +1234,8 @@ the application fails for lack of the required logger at the host component leve
 <br>
 <code>EXCEPTION: No provider for LoggerService! (HeroContactComponent -> LoggerService)</code></p>
 <a id="component-element"></a>
-<h2 translation-origin="off" id="inject-the-components-dom-element">Inject the component's DOM element<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#inject-the-components-dom-element"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="inject-the-components-dom-element">注入组件的 DOM 元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#inject-the-components-dom-element"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="inject-the-components-dom-element">Inject the component's DOM element<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#inject-the-components-dom-element"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="inject-the-components-dom-element">注入组件的 DOM 元素<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#inject-the-components-dom-element"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">On occasion you might need to access a component's corresponding DOM element.
 Although developers strive to avoid it, many visual effects and 3rd party tools, such as jQuery,
 require DOM access.</p>
@@ -1299,8 +1299,8 @@ first without a value (yielding the default color) and then with an assigned col
   <img src="generated/images/guide/dependency-injection-in-action/highlight.png" alt="Highlighted bios" width="318" height="196">
 </figure>
 <a id="providers"></a>
-<h2 translation-origin="off" id="define-dependencies-with-providers">Define dependencies with providers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#define-dependencies-with-providers"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="define-dependencies-with-providers">使用提供商来定义依赖<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#define-dependencies-with-providers"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="define-dependencies-with-providers">Define dependencies with providers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#define-dependencies-with-providers"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="define-dependencies-with-providers">使用提供商来定义依赖<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#define-dependencies-with-providers"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">This section demonstrates how to write providers that deliver dependent services.</p>
 <p translation-result="">本节将演示如何编写提供商来提供被依赖的服务。</p>
 <p translation-origin="off">Get a service from a dependency injector by giving it a <strong><em>token</em></strong>.</p>
@@ -1331,9 +1331,9 @@ A <em>provider</em> is a recipe for delivering a service associated with a <em>t
 <div class="alert is-helpful">
 <p translation-origin="off">If the injector doesn't have a provider for the requested <em>token</em>, it delegates the request
 to its parent injector, where the process repeats until there are no more injectors.
-If the search is futile, the injector throws an error—unless the request was <a href="guide/dependency-injection-in-action#optional">optional</a>.</p>
+If the search is futile, the injector throws an error—unless the request was <a href="/guide/dependency-injection-in-action#optional">optional</a>.</p>
 <p translation-result="">如果注入器无法根据令牌在自己内部找到对应的提供商，它便将请求移交给它的父级注入器，这个过程不断重复，直到没有更多注入器为止。
-如果没找到，注入器就抛出一个错误...除非这个请求是<a href="guide/dependency-injection-in-action#optional">可选的</a>。</p>
+如果没找到，注入器就抛出一个错误...除非这个请求是<a href="/guide/dependency-injection-in-action#optional">可选的</a>。</p>
 </div>
 <p translation-origin="off">A new injector has no providers.
 Angular initializes the injectors it creates with some providers it cares about.
@@ -1346,15 +1346,15 @@ providers: [ LoggerService, UserContextService, UserService ]
 
 </code-example>
 <a id="defining-providers"></a>
-<h3 translation-origin="off" id="defining-providers">Defining providers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#defining-providers"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="defining-providers">定义提供商<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#defining-providers"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="defining-providers">Defining providers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#defining-providers"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="defining-providers">定义提供商<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#defining-providers"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The simple way of defining providers in the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator of the class is recommended.</p>
 <p translation-result="">建议直接在服务类的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 装饰器中定义服务提供商。</p>
 <code-example path="dependency-injection/src/app/heroes/hero.service.0.ts" title="src/app/heroes/hero.service.0.ts" linenums="false">
 import { <a href="/api/core/Injectable" class="code-anchor">Injectable</a> } from '@angular/core';
 
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 export class HeroService {
   constructor() { }
@@ -1402,7 +1402,7 @@ import { RUNNERS_UP,
     { provide: HeroService,   useClass:    HeroService },
     { provide: LoggerService, useClass:    DateLoggerService },
     { provide: MinimalLogger, useExisting: LoggerService },
-    { provide: RUNNERS_UP,    useFactory:  runnersUpFactory(2), <a href="api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a>: [Hero, HeroService] }
+    { provide: RUNNERS_UP,    useFactory:  runnersUpFactory(2), <a href="/api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a>: [Hero, HeroService] }
   ]
 })
 export class HeroOfTheMonthComponent {
@@ -1421,16 +1421,16 @@ export class HeroOfTheMonthComponent {
 
 </code-example>
 <a id="provide"></a>
-<h4 translation-origin="off" id="the-provide-object-literal">The <em>provide</em> object literal<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#the-provide-object-literal"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="the-emprovideem-object-literal"><em>provide</em> 对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#the-emprovideem-object-literal"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="the-provide-object-literal">The <em>provide</em> object literal<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#the-provide-object-literal"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="the-emprovideem-object-literal"><em>provide</em> 对象<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#the-emprovideem-object-literal"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <code>provide</code> object literal takes a <em>token</em> and a <em>definition object</em>.
-The <em>token</em> is usually a class but <a href="guide/dependency-injection-in-action#tokens">it doesn't have to be</a>.</p>
-<p translation-result="">该 <code>provide</code> 对象需要一个<em>令牌</em>和一个<em>定义对象</em>。该<em>令牌</em>通常是一个类，但<a href="guide/dependency-injection-in-action#tokens">并非一定是</a></p>
+The <em>token</em> is usually a class but <a href="/guide/dependency-injection-in-action#tokens">it doesn't have to be</a>.</p>
+<p translation-result="">该 <code>provide</code> 对象需要一个<em>令牌</em>和一个<em>定义对象</em>。该<em>令牌</em>通常是一个类，但<a href="/guide/dependency-injection-in-action#tokens">并非一定是</a></p>
 <p translation-origin="off">The <em>definition</em> object has a required property that specifies how to create the singleton instance of the service. In this case, the property.</p>
 <p translation-result="">该<em>定义</em>对象有一个必填属性(即 <code>useValue</code>)，用来标识该提供商会如何新建和返回该服务的单例对象。</p>
 <a id="usevalue"></a>
-<h4 translation-origin="off" id="usevaluethe-value-provider">useValue—the <em>value provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#usevaluethe-value-provider"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="usevaluethe-emvalue-providerem">useValue - *值-提供商<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#usevaluethe-emvalue-providerem"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="usevaluethe-value-provider">useValue—the <em>value provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#usevaluethe-value-provider"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="usevaluethe-emvalue-providerem">useValue - *值-提供商<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#usevaluethe-emvalue-providerem"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Set the <code>useValue</code> property to a <strong><em>fixed value</em></strong> that the provider can return as the service instance (AKA, the "dependency object").</p>
 <p translation-result="">把一个<strong>*固定的值</strong>，也就是该提供商可以将其作为依赖对象返回的值，赋给 <code>useValue</code> 属性。</p>
 <p translation-origin="off">Use this technique to provide <em>runtime configuration constants</em> such as website base addresses and feature flags.
@@ -1451,10 +1451,10 @@ the second specifies a literal string resource:</p>
 and the consumer of the injected hero would want the type information.</p>
 <p translation-result=""><code>Hero</code> 提供商的令牌是一个类，这很合理，因为它提供的结果是一个 <code>Hero</code> 实例，并且被注入该英雄的消费者也需要知道它类型信息。</p>
 <p translation-origin="off">The <code>TITLE</code> provider token is <em>not a class</em>.
-It's a special kind of provider lookup key called an <a href="guide/dependency-injection-in-action#injection-token">InjectionToken</a>.
+It's a special kind of provider lookup key called an <a href="/guide/dependency-injection-in-action#injection-token">InjectionToken</a>.
 You can use an <code><a href="/api/core/InjectionToken" class="code-anchor">InjectionToken</a></code> for any kind of provider but it's particular
 helpful when the dependency is a simple value like a string, a number, or a function.</p>
-<p translation-result=""><code>TITLE</code> 提供商的令牌<em>不是一个类</em>。它是一个特别类型的提供商查询键，名叫<a href="guide/dependency-injection-in-action#injection-token">InjectionToken</a>.
+<p translation-result=""><code>TITLE</code> 提供商的令牌<em>不是一个类</em>。它是一个特别类型的提供商查询键，名叫<a href="/guide/dependency-injection-in-action#injection-token">InjectionToken</a>.
 你可以把 <code><a href="/api/core/InjectionToken" class="code-anchor">InjectionToken</a></code> 用作任何类型的提供商的令牌，但是它在依赖是简单类型（比如字符串、数字、函数）时会特别有帮助。</p>
 <p translation-origin="off">The value of a <em>value provider</em> must be defined <em>now</em>. You can't create the value later.
 Obviously the title string literal is immediately available.
@@ -1468,8 +1468,8 @@ const someHero = new Hero(42, 'Magma', 'Had <a href="/api/router/RouterLinkWithH
 <p translation-origin="off">The other providers create their values <em>lazily</em> when they're needed for injection.</p>
 <p translation-result="">其它提供商只在需要注入它们的时候才创建并<em>惰性加载</em>它们的值。</p>
 <a id="useclass"></a>
-<h4 translation-origin="off" id="useclassthe-class-provider">useClass—the <em>class provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#useclassthe-class-provider"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="useclassthe-emclass-providerem">useClass - <em>类-提供商</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#useclassthe-emclass-providerem"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="useclassthe-class-provider">useClass—the <em>class provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#useclassthe-class-provider"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="useclassthe-emclass-providerem">useClass - <em>类-提供商</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#useclassthe-emclass-providerem"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <code>useClass</code> provider creates and returns new instance of the specified class.</p>
 <p translation-result=""><code>userClass</code> 提供商创建并返回一个指定类的新实例。</p>
 <p translation-origin="off">Use this technique to <strong><em>substitute an alternative implementation</em></strong> for a common or default class.
@@ -1512,8 +1512,8 @@ function stamp(msg: any) { return msg + ' at ' + new Date(); }
 
 </code-example>
 <a id="useexisting"></a>
-<h4 translation-origin="off" id="useexistingthe-alias-provider"><em>useExisting</em>—the <em>alias provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#useexistingthe-alias-provider"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="emuseexistingemthe-emalias-providerem">useExisting - <em>别名-提供商</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#emuseexistingemthe-emalias-providerem"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="useexistingthe-alias-provider"><em>useExisting</em>—the <em>alias provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#useexistingthe-alias-provider"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="emuseexistingemthe-emalias-providerem">useExisting - <em>别名-提供商</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#emuseexistingemthe-emalias-providerem"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <code>useExisting</code> provider maps one token to another.
 In effect, the first token is an <strong><em>alias</em></strong> for the service associated with the second token,
 creating <strong><em>two ways to access the same service object</em></strong>.</p>
@@ -1527,11 +1527,11 @@ The following example shows aliasing for that purpose.</p>
 <p translation-result="">通过使用别名接口来把一个 API 变窄，是<em>一个</em>很重要的该技巧的使用例子。下面的例子中使用别名就是为了这个目的。</p>
 <p translation-origin="off">Imagine that the <code>LoggerService</code> had a large API, much larger than the actual three methods and a property.
 You might want to shrink that API surface to just the members you actually need.
-Here the <code>MinimalLogger</code> <a href="guide/dependency-injection-in-action#class-interface"><em>class-interface</em></a> reduces the API to two members:</p>
-<p translation-result="">想象一下如果 <code>LoggerService</code> 有个很大的 API 接口(虽然它其实只有三个方法，一个属性)，通过使用 <code>MinimalLogger</code><a href="guide/dependency-injection-in-action#class-interface"><em>类-接口</em></a>别名，就能成功的把这个 API 接口缩小到只暴露两个成员：</p>
+Here the <code>MinimalLogger</code> <a href="/guide/dependency-injection-in-action#class-interface"><em>class-interface</em></a> reduces the API to two members:</p>
+<p translation-result="">想象一下如果 <code>LoggerService</code> 有个很大的 API 接口(虽然它其实只有三个方法，一个属性)，通过使用 <code>MinimalLogger</code><a href="/guide/dependency-injection-in-action#class-interface"><em>类-接口</em></a>别名，就能成功的把这个 API 接口缩小到只暴露两个成员：</p>
 <code-example path="dependency-injection-in-action/src/app/minimal-logger.service.ts" title="src/app/minimal-logger.service.ts" linenums="false">
 // Class used as <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> "narrowing" interface that exposes <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> minimal logger
-// <a href="api/common/Plural#Other" class="code-anchor">Other</a> members of the actual implementation are invisible
+// <a href="/api/common/Plural#Other" class="code-anchor">Other</a> members of the actual implementation are invisible
 export abstract class MinimalLogger {
   logs: string[];
   logInfo: (msg: string) => void;
@@ -1560,7 +1560,7 @@ export class HeroOfTheMonthComponent {
 <figure>
   <img src="generated/images/guide/dependency-injection-in-action/minimal-logger-intellisense.png" alt="MinimalLogger restricted API" width="532" height="60">
 </figure>
-<p translation-origin="off">Behind the scenes, Angular actually sets the <code>logger</code> parameter to the full service registered under the <code>LoggingService</code> token which happens to be the <code>DateLoggerService</code> that was <a href="guide/dependency-injection-in-action#useclass">provided above</a>.</p>
+<p translation-origin="off">Behind the scenes, Angular actually sets the <code>logger</code> parameter to the full service registered under the <code>LoggingService</code> token which happens to be the <code>DateLoggerService</code> that was <a href="/guide/dependency-injection-in-action#useclass">provided above</a>.</p>
 <p translation-result="">实际上，Angular 确实想把 <code>logger</code> 参数设置为注入器里 <code>LoggerService</code> 的完整版本。只是在之前的提供商注册里使用了 <code>useClass</code>，
 所以该完整版本被 <code>DateLoggerService</code> 取代了。</p>
 <div class="alert is-helpful">
@@ -1571,13 +1571,13 @@ export class HeroOfTheMonthComponent {
 </figure>
 </div>
 <a id="usefactory"></a>
-<h4 translation-origin="off" id="usefactorythe-factory-provider"><em>useFactory</em>—the <em>factory provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#usefactorythe-factory-provider"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="emusefactoryemthe-emfactory-providerem">useFactory - <em>工厂-提供商</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#emusefactoryemthe-emfactory-providerem"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="usefactorythe-factory-provider"><em>useFactory</em>—the <em>factory provider</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#usefactorythe-factory-provider"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="emusefactoryemthe-emfactory-providerem">useFactory - <em>工厂-提供商</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#emusefactoryemthe-emfactory-providerem"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <code>useFactory</code> provider creates a dependency object by calling a factory function
 as in this example.</p>
 <p translation-result=""><code>useFactory</code> 提供商通过调用工厂函数来新建一个依赖对象，如下例所示。</p>
 <code-example path="dependency-injection-in-action/src/app/hero-of-the-month.component.ts" region="use-factory" title="dependency-injection-in-action/src/app/hero-of-the-month.component.ts">
-{ provide: RUNNERS_UP,    useFactory:  runnersUpFactory(2), <a href="api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a>: [Hero, HeroService] }
+{ provide: RUNNERS_UP,    useFactory:  runnersUpFactory(2), <a href="/api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a>: [Hero, HeroService] }
 
 </code-example>
 <p translation-origin="off">Use this technique to <strong><em>create a dependency object</em></strong>
@@ -1604,10 +1604,10 @@ export function runnersUpFactory(take: number) {
 <p translation-origin="off">That returned function takes a winning <code>Hero</code> and a <code>HeroService</code> as arguments.</p>
 <p translation-result="">这个返回的函数需要一个 <code>Hero</code> 和一个 <code>HeroService</code> 参数。</p>
 <p translation-origin="off">Angular supplies these arguments from injected values identified by
-the two <em>tokens</em> in the <code><a href="api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> array.
-The two <code><a href="api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> values are <em>tokens</em> that the injector uses
+the two <em>tokens</em> in the <code><a href="/api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> array.
+The two <code><a href="/api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> values are <em>tokens</em> that the injector uses
 to provide these factory function dependencies.</p>
-<p translation-result="">Angular 通过使用 <code><a href="api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> 数组中的两个<em>令牌</em>，来识别注入的值，用来提供这些参数。这两个 <code><a href="api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> 值是供注入器使用的<em>令牌</em>，用来提供工厂函数的依赖。</p>
+<p translation-result="">Angular 通过使用 <code><a href="/api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> 数组中的两个<em>令牌</em>，来识别注入的值，用来提供这些参数。这两个 <code><a href="/api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a></code> 值是供注入器使用的<em>令牌</em>，用来提供工厂函数的依赖。</p>
 <p translation-origin="off">After some undisclosed work, the function returns the string of names
 and Angular injects it into the <code>runnersUp</code> parameter of the <code>HeroOfTheMonthComponent</code>.</p>
 <p translation-result="">一些内部工作后，这个函数返回名字字符串，Angular 将其注入到 <code>HeroOfTheMonthComponent</code> 组件的 <code>runnersUp</code> 参数里。</p>
@@ -1619,8 +1619,8 @@ for the full source code.</p>
 <p translation-result="">该函数从 <code>HeroService</code> 获取英雄参赛者，从中取 <code>2</code> 个作为亚军，并把他们的名字拼接起来。请到<live-example name="dependency-injection-in-action"></live-example>查看全部原代码。</p>
 </div>
 <a id="tokens"></a>
-<h2 translation-origin="off" id="provider-token-alternatives-the-class-interface-and-injectiontoken">Provider token alternatives: the <em>class-interface</em> and <em>InjectionToken</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#provider-token-alternatives-the-class-interface-and-injectiontoken"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="provider-token-alternatives-the-emclass-interfaceem-and-eminjectiontokenem">备选提供商令牌：<em>类-接口</em>和 <em>InjectionToken</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#provider-token-alternatives-the-emclass-interfaceem-and-eminjectiontokenem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="provider-token-alternatives-the-class-interface-and-injectiontoken">Provider token alternatives: the <em>class-interface</em> and <em>InjectionToken</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#provider-token-alternatives-the-class-interface-and-injectiontoken"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="provider-token-alternatives-the-emclass-interfaceem-and-eminjectiontokenem">备选提供商令牌：<em>类-接口</em>和 <em>InjectionToken</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#provider-token-alternatives-the-emclass-interfaceem-and-eminjectiontokenem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular dependency injection is easiest when the provider <em>token</em> is a class
 that is also the type of the returned dependency object, or what you usually call the <em>service</em>.</p>
 <p translation-result="">Angular 依赖注入当<em>令牌</em>是类的时候是最简单的，该类同时也是返回的依赖对象的类型(通常直接称之为<em>服务</em>)。</p>
@@ -1629,8 +1629,8 @@ it doesn't have to be the same type as the returned object.
 That's the subject of the next section.</p>
 <p translation-result="">但令牌不一定都是类，就算它是一个类，它也不一定都返回类型相同的对象。这是下一节的主题。</p>
 <a id="class-interface"></a>
-<h3 translation-origin="off" id="class-interface">class-interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#class-interface"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="class-interface">类-接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#class-interface"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="class-interface">class-interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#class-interface"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="class-interface">类-接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#class-interface"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The previous <em>Hero of the Month</em> example used the <code>MinimalLogger</code> class
 as the token for a provider of a <code>LoggerService</code>.</p>
 <p translation-result="">前面的<em>月度英雄</em>的例子使用了 <code>MinimalLogger</code> 类作为 <code>LoggerService</code> 提供商的令牌。</p>
@@ -1642,7 +1642,7 @@ as the token for a provider of a <code>LoggerService</code>.</p>
 <p translation-result="">该 <code>MinimalLogger</code> 是一个抽象类。</p>
 <code-example path="dependency-injection-in-action/src/app/minimal-logger.service.ts" title="dependency-injection-in-action/src/app/minimal-logger.service.ts" linenums="false">
 // Class used as <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> "narrowing" interface that exposes <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> minimal logger
-// <a href="api/common/Plural#Other" class="code-anchor">Other</a> members of the actual implementation are invisible
+// <a href="/api/common/Plural#Other" class="code-anchor">Other</a> members of the actual implementation are invisible
 export abstract class MinimalLogger {
   logs: string[];
   logInfo: (msg: string) => void;
@@ -1668,8 +1668,8 @@ and you can <strong><em>use it as a provider token</em></strong> in the way you 
 Such a narrowing interface helps decouple the concrete class from its consumers.</p>
 <p translation-result=""><strong><em>类-接口</em></strong>应该<em>只</em>定义允许它的消费者调用的成员。窄的接口有助于解耦该类的具体实现和它的消费者。</p>
 <div class="alert is-helpful">
-<h4 translation-origin="off" id="why-minimallogger-is-a-class-and-not-a-typescript-interface">Why <em>MinimalLogger</em> is a class and not a TypeScript interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#why-minimallogger-is-a-class-and-not-a-typescript-interface"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="why-emminimalloggerem-is-a-class-and-not-a-typescript-interface">为什么 <em>MinimalLogger</em> 是一个类而不是一个 TypeScript 接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#why-emminimalloggerem-is-a-class-and-not-a-typescript-interface"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="why-minimallogger-is-a-class-and-not-a-typescript-interface">Why <em>MinimalLogger</em> is a class and not a TypeScript interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#why-minimallogger-is-a-class-and-not-a-typescript-interface"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="why-emminimalloggerem-is-a-class-and-not-a-typescript-interface">为什么 <em>MinimalLogger</em> 是一个类而不是一个 TypeScript 接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#why-emminimalloggerem-is-a-class-and-not-a-typescript-interface"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You can't use an interface as a provider token because
 interfaces are not JavaScript objects.
 They exist only in the TypeScript design space.
@@ -1689,15 +1689,15 @@ var MinimalLogger = (function () {
   function MinimalLogger() {}
   return MinimalLogger;
 }());
-<a href="api/core/NgModule#exports" class="code-anchor">exports</a>("MinimalLogger", MinimalLogger);
+<a href="/api/core/NgModule#exports" class="code-anchor">exports</a>("MinimalLogger", MinimalLogger);
 
 </code-example>
 <p translation-origin="off">Notice that it doesn't have a single member. It never grows no matter how many members you add to the class <em>as long as those members are typed but not implemented</em>. Look again at the TypeScript <code>MinimalLogger</code> class to confirm that it has no implementation.</p>
 <p translation-result="">注意，<strong><em>只要不实现它</em></strong>，不管添加多少成员，它永远不会增长大小。</p>
 </div>
 <a id="injection-token"></a>
-<h3 translation-origin="off" id="injectiontoken"><em>InjectionToken</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#injectiontoken"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="eminjectiontokenem"><em>InjectionToken</em> 值<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#eminjectiontokenem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="injectiontoken"><em>InjectionToken</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#injectiontoken"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="eminjectiontokenem"><em>InjectionToken</em> 值<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#eminjectiontokenem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Dependency objects can be simple values like dates, numbers and strings, or
 shapeless objects like arrays and functions.</p>
 <p translation-result="">依赖对象可以是一个简单的值，比如日期，数字和字符串，或者一个无形的对象，比如数组和函数。</p>
@@ -1712,7 +1712,7 @@ in the <em>title</em> value provider and in the <em>runnersUp</em> factory provi
 <p translation-result=""><code><a href="/api/core/InjectionToken" class="code-anchor">InjectionToken</a></code> 具有这些特征。在<em>Hero of the Month</em>例子中遇见它们两次，一个是 <em>title</em> 的值，一个是 <em>runnersUp</em> 工厂提供商。</p>
 <code-example path="dependency-injection-in-action/src/app/hero-of-the-month.component.ts" region="provide-injection-token" title="dependency-injection-in-action/src/app/hero-of-the-month.component.ts" linenums="false">
 { provide: TITLE,         useValue:   'Hero of the Month' },
-{ provide: RUNNERS_UP,    useFactory:  runnersUpFactory(2), <a href="api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a>: [Hero, HeroService] }
+{ provide: RUNNERS_UP,    useFactory:  runnersUpFactory(2), <a href="/api/core/ConstructorSansProvider#deps" class="code-anchor">deps</a>: [Hero, HeroService] }
 
 </code-example>
 <p translation-origin="off">You created the <code>TITLE</code> token like this:</p>
@@ -1728,8 +1728,8 @@ The token description is another developer aid.</p>
 <p translation-result="">类型参数，虽然是可选的，但可以向开发者和开发工具传达类型信息。
 而且这个令牌的描述信息也可以为开发者提供帮助。</p>
 <a id="di-inheritance"></a>
-<h2 translation-origin="off" id="inject-into-a-derived-class">Inject into a derived class<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#inject-into-a-derived-class"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="inject-into-a-derived-class">注入到派生类<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#inject-into-a-derived-class"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="inject-into-a-derived-class">Inject into a derived class<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#inject-into-a-derived-class"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="inject-into-a-derived-class">注入到派生类<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#inject-into-a-derived-class"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Take care when writing a component that inherits from another component.
 If the base component has injected dependencies,
 you must re-provide and re-inject them in the derived class
@@ -1748,7 +1748,7 @@ and displays them in the order they arrive from the database.</p>
 <code-example path="dependency-injection-in-action/src/app/sorted-heroes.component.ts" region="heroes-base" title="src/app/sorted-heroes.component.ts (HeroesBaseComponent)">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-unsorted-heroes',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes">{{hero.name}}&#x3C;/div>`,
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes">{{hero.name}}&#x3C;/div>`,
   providers: [HeroService]
 })
 export class HeroesBaseComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
@@ -1788,7 +1788,7 @@ then pass it down to the base class inside the constructor.</p>
 <code-example path="dependency-injection-in-action/src/app/sorted-heroes.component.ts" region="sorted-heroes" title="src/app/sorted-heroes.component.ts (SortedHeroesComponent)">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-sorted-heroes',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes">{{hero.name}}&#x3C;/div>`,
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `&#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of heroes">{{hero.name}}&#x3C;/div>`,
   providers: [HeroService]
 })
 export class SortedHeroesComponent extends HeroesBaseComponent {
@@ -1817,8 +1817,8 @@ so you'd be sorting the heroes array <em>before they arrived</em>. That produces
 <p translation-origin="off">These complications argue for <em>avoiding component inheritance</em>.</p>
 <p translation-result="">分析上面的这些复杂性是为了强调<em>避免使用组件继承</em>这一点。</p>
 <a id="find-parent"></a>
-<h2 translation-origin="off" id="find-a-parent-component-by-injection">Find a parent component by injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-a-parent-component-by-injection"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="find-a-parent-component-by-injection">通过注入来找到一个父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-a-parent-component-by-injection"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="find-a-parent-component-by-injection">Find a parent component by injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-a-parent-component-by-injection"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="find-a-parent-component-by-injection">通过注入来找到一个父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-a-parent-component-by-injection"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Application components often need to share information.
 More loosely coupled techniques such as data binding and service sharing
 are preferable. But sometimes it makes sense for one component
@@ -1841,8 +1841,8 @@ you can use Angular dependency injection to reach a parent component.</p>
 <p translation-origin="off">This section describes some techniques for doing that.</p>
 <p translation-result="">本章节描述了这项技术。</p>
 <a id="known-parent"></a>
-<h3 translation-origin="off" id="find-a-parent-component-of-known-type">Find a parent component of known type<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-a-parent-component-of-known-type"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="find-a-parent-component-of-known-type">找到已知类型的父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-a-parent-component-of-known-type"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="find-a-parent-component-of-known-type">Find a parent component of known type<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-a-parent-component-of-known-type"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="find-a-parent-component-of-known-type">找到已知类型的父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-a-parent-component-of-known-type"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You use standard class injection to acquire a parent component whose type you know.</p>
 <p translation-result="">你使用标准的类注入来获取已知类型的父组件。</p>
 <p translation-origin="off">In the following example, the parent <code>AlexComponent</code> has several children including a <code>CathyComponent</code>:</p>
@@ -1851,7 +1851,7 @@ you can use Angular dependency injection to reach a parent component.</p>
 <code-example path="dependency-injection-in-action/src/app/parent-finder.component.ts" region="alex-1" title="parent-finder.component.ts (AlexComponent v.1)" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'alex',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;div class="<a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a>">
       &#x3C;h3>{{name}}&#x3C;/h3>
       &#x3C;cathy>&#x3C;/cathy>
@@ -1871,7 +1871,7 @@ after injecting an <code>AlexComponent</code> into her constructor:</p>
 <code-example path="dependency-injection-in-action/src/app/parent-finder.component.ts" region="cathy" title="parent-finder.component.ts (CathyComponent)" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'cathy',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;div class="c">
     &#x3C;h3>Cathy&#x3C;/h3>
     {{alex ? 'Found' : 'Did not find'}} Alex via the component class.&#x3C;br>
@@ -1882,14 +1882,14 @@ export class CathyComponent {
 }
 
 </code-example>
-<p translation-origin="off">Notice that even though the <a href="guide/dependency-injection-in-action#optional">@Optional</a> qualifier
+<p translation-origin="off">Notice that even though the <a href="/guide/dependency-injection-in-action#optional">@Optional</a> qualifier
 is there for safety,
 the <live-example name="dependency-injection-in-action"></live-example>
 confirms that the <code>alex</code> parameter is set.</p>
-<p translation-result="">注意，这里为安全起见而添加了<a href="guide/dependency-injection-in-action#optional">@Optional</a>装饰器，<live-example name="dependency-injection-in-action"></live-example>显示 <code>alex</code> 参数确实被设置了。</p>
+<p translation-result="">注意，这里为安全起见而添加了<a href="/guide/dependency-injection-in-action#optional">@Optional</a>装饰器，<live-example name="dependency-injection-in-action"></live-example>显示 <code>alex</code> 参数确实被设置了。</p>
 <a id="base-parent"></a>
-<h3 translation-origin="off" id="cannot-find-a-parent-by-its-base-class">Cannot find a parent by its base class<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#cannot-find-a-parent-by-its-base-class"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="cannot-find-a-parent-by-its-base-class">无法通过它的基类找到一个父级<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#cannot-find-a-parent-by-its-base-class"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="cannot-find-a-parent-by-its-base-class">Cannot find a parent by its base class<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#cannot-find-a-parent-by-its-base-class"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="cannot-find-a-parent-by-its-base-class">无法通过它的基类找到一个父级<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#cannot-find-a-parent-by-its-base-class"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">What if you <em>don't</em> know the concrete parent component class?</p>
 <p translation-result="">如果<em>不</em>知道具体的父组件类名怎么办？</p>
 <p translation-origin="off">A re-usable component might be a child of multiple components.
@@ -1912,7 +1912,7 @@ There's no artifact to look for.</p>
 This example is examining <em>whether a component can
 inject its parent via the parent's base class</em>.</p>
 <p translation-result="">这并不是好的设计。问题是<em>一个组件是否能通过它父组件的基类来注入它的父组件呢</em>？</p>
-<p translation-origin="off">The sample's <code>CraigComponent</code> explores this question. <a href="guide/dependency-injection-in-action#alex">Looking back</a>,
+<p translation-origin="off">The sample's <code>CraigComponent</code> explores this question. <a href="/guide/dependency-injection-in-action#alex">Looking back</a>,
 you see that the <code>Alex</code> component <em>extends</em> (<em>inherits</em>) from a class named <code>Base</code>.</p>
 <p translation-result=""><code>CraigComponent</code> 例子探究了这个问题。[往回看 Alex]{guide/dependency-injection-in-action#alex}，你看到 <code>Alex</code> 组件<em>扩展</em>(<em>派生</em>)自一个叫 <code>Base</code> 的类。</p>
 <code-example path="dependency-injection-in-action/src/app/parent-finder.component.ts" region="alex-class-signature" title="parent-finder.component.ts (Alex class signature)" linenums="false">
@@ -1924,7 +1924,7 @@ export class AlexComponent extends Base
 <code-example path="dependency-injection-in-action/src/app/parent-finder.component.ts" region="craig" title="parent-finder.component.ts (CraigComponent)" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'craig',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;div class="c">
     &#x3C;h3>Craig&#x3C;/h3>
     {{alex ? 'Found' : 'Did not find'}} Alex via the base class.
@@ -1942,28 +1942,28 @@ confirms that the <code>alex</code> parameter is null.
 <p translation-result="">可惜这样不行。<live-example name="dependency-injection-in-action"></live-example>显示 <code>alex</code> 参数是 null。
 <em>不能通过基类注入父组件</em>。</p>
 <a id="class-interface-parent"></a>
-<h3 translation-origin="off" id="find-a-parent-by-its-class-interface">Find a parent by its class-interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-a-parent-by-its-class-interface"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="find-a-parent-by-its-class-interface">通过类-接口找到父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-a-parent-by-its-class-interface"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">You can find a parent component with a <a href="guide/dependency-injection-in-action#class-interface">class-interface</a>.</p>
-<p translation-result="">可以通过<a href="guide/dependency-injection-in-action#class-interface">类-接口</a>找到一个父组件。</p>
+<h3 translation-origin="off" id="find-a-parent-by-its-class-interface">Find a parent by its class-interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-a-parent-by-its-class-interface"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="find-a-parent-by-its-class-interface">通过类-接口找到父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-a-parent-by-its-class-interface"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">You can find a parent component with a <a href="/guide/dependency-injection-in-action#class-interface">class-interface</a>.</p>
+<p translation-result="">可以通过<a href="/guide/dependency-injection-in-action#class-interface">类-接口</a>找到一个父组件。</p>
 <p translation-origin="off">The parent must cooperate by providing an <em>alias</em> to itself in the name of a <em>class-interface</em> token.</p>
 <p translation-result="">该父组件必须通过提供一个与<em>类-接口</em>令牌同名的<em>别名</em>来与之合作。</p>
 <p translation-origin="off">Recall that Angular always adds a component instance to its own injector;
-that's why you could inject <em>Alex</em> into <em>Cathy</em> <a href="guide/dependency-injection-in-action#known-parent">earlier</a>.</p>
-<p translation-result="">请记住 Angular 总是从它自己的注入器添加一个组件实例；这就是为什么在<a href="guide/dependency-injection-in-action#known-parent">之前</a>可以 <em>Alex</em> 注入到 <em>Carol</em>。</p>
-<p translation-origin="off">Write an <a href="guide/dependency-injection-in-action#useexisting"><em>alias provider</em></a>—a <code>provide</code> object literal with a <code>useExisting</code>
+that's why you could inject <em>Alex</em> into <em>Cathy</em> <a href="/guide/dependency-injection-in-action#known-parent">earlier</a>.</p>
+<p translation-result="">请记住 Angular 总是从它自己的注入器添加一个组件实例；这就是为什么在<a href="/guide/dependency-injection-in-action#known-parent">之前</a>可以 <em>Alex</em> 注入到 <em>Carol</em>。</p>
+<p translation-origin="off">Write an <a href="/guide/dependency-injection-in-action#useexisting"><em>alias provider</em></a>—a <code>provide</code> object literal with a <code>useExisting</code>
 definition—that creates an <em>alternative</em> way to inject the same component instance
 and add that provider to the <code>providers</code> array of the <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> metadata for the <code>AlexComponent</code>:</p>
-<p translation-result="">编写一个<a href="guide/dependency-injection-in-action#useexisting"><em>别名提供商</em></a> &#x26;mdash；一个拥有 <code>useExisting</code> 定义的 <code>provide</code> 函数 —
+<p translation-result="">编写一个<a href="/guide/dependency-injection-in-action#useexisting"><em>别名提供商</em></a> &#x26;mdash；一个拥有 <code>useExisting</code> 定义的 <code>provide</code> 函数 —
 它新建一个<em>备选的</em>方式来注入同一个组件实例，并把这个提供商添加到 <code>AlexComponent</code> 的 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 元数据里的 <code>providers</code> 数组。</p>
 <a id="alex-providers"></a>
 <code-example path="dependency-injection-in-action/src/app/parent-finder.component.ts" region="alex-providers" title="parent-finder.component.ts (AlexComponent providers)" linenums="false">
 providers: [{ provide: Parent, useExisting: <a href="/api/core/forwardRef" class="code-anchor">forwardRef</a>(() => AlexComponent) }],
 
 </code-example>
-<p translation-origin="off"><a href="guide/dependency-injection-in-action#parent-token">Parent</a> is the provider's <em>class-interface</em> token.
-The <a href="guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a> breaks the circular reference you just created by having the <code>AlexComponent</code> refer to itself.</p>
-<p translation-result=""><a href="guide/dependency-injection-in-action#parent-token">Parent</a>是该提供商的<em>类-接口</em>令牌。<code>AlexComponent</code> 引用了自身，造成循环引用，使用<a href="guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a>打破了该循环。</p>
+<p translation-origin="off"><a href="/guide/dependency-injection-in-action#parent-token">Parent</a> is the provider's <em>class-interface</em> token.
+The <a href="/guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a> breaks the circular reference you just created by having the <code>AlexComponent</code> refer to itself.</p>
+<p translation-result=""><a href="/guide/dependency-injection-in-action#parent-token">Parent</a>是该提供商的<em>类-接口</em>令牌。<code>AlexComponent</code> 引用了自身，造成循环引用，使用<a href="/guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a>打破了该循环。</p>
 <p translation-origin="off"><em>Carol</em>, the third of <em>Alex</em>'s child components, injects the parent into its <code>parent</code> parameter,
 the same way you've done it before:</p>
 <p translation-result=""><em>Carol</em>，<em>Alex</em> 的第三个子组件，把父级注入到了自己的 <code>parent</code> 参数，和之前做的一样：</p>
@@ -1980,8 +1980,8 @@ export class CarolComponent {
   <img src="generated/images/guide/dependency-injection-in-action/alex.png" alt="Alex in action" width="302" height="374">
 </figure>
 <a id="parent-tree"></a>
-<h3 translation-origin="off" id="find-the-parent-in-a-tree-of-parents-with-skipself">Find the parent in a tree of parents with <em>@SkipSelf()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-the-parent-in-a-tree-of-parents-with-skipself"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="find-the-parent-in-a-tree-of-parents-with-emskipselfem">通过父级树找到父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#find-the-parent-in-a-tree-of-parents-with-emskipselfem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="find-the-parent-in-a-tree-of-parents-with-skipself">Find the parent in a tree of parents with <em>@SkipSelf()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-the-parent-in-a-tree-of-parents-with-skipself"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="find-the-parent-in-a-tree-of-parents-with-emskipselfem">通过父级树找到父组件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#find-the-parent-in-a-tree-of-parents-with-emskipselfem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Imagine one branch of a component hierarchy: <em>Alice</em> -> <em>Barry</em> -> <em>Carol</em>.
 Both <em>Alice</em> and <em>Barry</em> implement the <code>Parent</code> <em>class-interface</em>.</p>
 <p translation-result="">想象组件树中的一个分支为：<em>Alice</em> -> <em>Barry</em> -> <em>Carol</em>。<em>Alice</em> 和 <em>Barry</em> 都实现了这个 <code>Parent</code><em>类-接口</em>。</p>
@@ -2004,7 +2004,7 @@ const templateB = `
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector:   'barry',
-  <a href="api/core/Component#template" class="code-anchor">template</a>:   templateB,
+  <a href="/api/core/Component#template" class="code-anchor">template</a>:   templateB,
   providers:  [{ provide: Parent, useExisting: <a href="/api/core/forwardRef" class="code-anchor">forwardRef</a>(() => BarryComponent) }]
 })
 export class BarryComponent implements Parent {
@@ -2013,10 +2013,10 @@ export class BarryComponent implements Parent {
 }
 
 </code-example>
-<p translation-origin="off"><em>Barry</em>'s <code>providers</code> array looks just like <a href="guide/dependency-injection-in-action#alex-providers"><em>Alex</em>'s</a>.
-If you're going to keep writing <a href="guide/dependency-injection-in-action#useexisting"><em>alias providers</em></a> like this you should create a <a href="guide/dependency-injection-in-action#provideparent">helper function</a>.</p>
-<p translation-result=""><em>Barry</em> 的 <code>providers</code> 数组看起来很像<a href="guide/dependency-injection-in-action#alex-providers"><em>Alex</em> 的那个</a>.
-如果准备一直像这样编写<a href="guide/dependency-injection-in-action#useexisting"><em>别名提供商</em></a>的话，你应该建立一个<a href="guide/dependency-injection-in-action#provideparent">辅助函数</a>。</p>
+<p translation-origin="off"><em>Barry</em>'s <code>providers</code> array looks just like <a href="/guide/dependency-injection-in-action#alex-providers"><em>Alex</em>'s</a>.
+If you're going to keep writing <a href="/guide/dependency-injection-in-action#useexisting"><em>alias providers</em></a> like this you should create a <a href="/guide/dependency-injection-in-action#provideparent">helper function</a>.</p>
+<p translation-result=""><em>Barry</em> 的 <code>providers</code> 数组看起来很像<a href="/guide/dependency-injection-in-action#alex-providers"><em>Alex</em> 的那个</a>.
+如果准备一直像这样编写<a href="/guide/dependency-injection-in-action#useexisting"><em>别名提供商</em></a>的话，你应该建立一个<a href="/guide/dependency-injection-in-action#provideparent">辅助函数</a>。</p>
 <p translation-origin="off">For now, focus on <em>Barry</em>'s constructor:</p>
 <p translation-result="">眼下，请注意 <em>Barry</em> 的构造函数：</p>
 <code-tabs>
@@ -2055,10 +2055,10 @@ which <em>is</em> what parent means.</p>
   <img src="generated/images/guide/dependency-injection-in-action/alice.png" alt="Alice in action" width="298" height="631">
 </figure>
 <a id="parent-token"></a>
-<h3 translation-origin="off" id="the-parent-class-interface">The <em>Parent</em> class-interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#the-parent-class-interface"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="the-emparentem-class-interface"><em>Parent</em> 类-接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#the-emparentem-class-interface"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">You <a href="guide/dependency-injection-in-action#class-interface">learned earlier</a> that a <em>class-interface</em> is an abstract class used as an interface rather than as a base class.</p>
-<p translation-result="">你<a href="guide/dependency-injection-in-action#class-interface">以前学过</a>：<em>类-接口</em>是一个抽象类，被当成一个接口使用，而非基类。</p>
+<h3 translation-origin="off" id="the-parent-class-interface">The <em>Parent</em> class-interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#the-parent-class-interface"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="the-emparentem-class-interface"><em>Parent</em> 类-接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#the-emparentem-class-interface"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">You <a href="/guide/dependency-injection-in-action#class-interface">learned earlier</a> that a <em>class-interface</em> is an abstract class used as an interface rather than as a base class.</p>
+<p translation-result="">你<a href="/guide/dependency-injection-in-action#class-interface">以前学过</a>：<em>类-接口</em>是一个抽象类，被当成一个接口使用，而非基类。</p>
 <p translation-origin="off">The example defines a <code>Parent</code> <em>class-interface</em>.</p>
 <p translation-result="">这个例子定义了一个 <code>Parent</code><em>类-接口</em>。</p>
 <code-example path="dependency-injection-in-action/src/app/parent-finder.component.ts" region="parent" title="parent-finder.component.ts (Parent class-interface)" linenums="false">
@@ -2090,11 +2090,11 @@ It doesn't in this example <em>only</em> to demonstrate that the code will compi
 <p translation-result="">为了正确的代码风格，该 <code>AlexComponent</code><em>应该</em>实现 <code>Parent</code>。在这个例子里它没有这样，只是为了演示在没有该接口的情况下，该代码仍会被正确编译并运行。</p>
 </div>
 <a id="provideparent"></a>
-<h3 translation-origin="off" id="a-provideparent-helper-function">A <em>provideParent()</em> helper function<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#a-provideparent-helper-function"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="a-emprovideparentem-helper-function"><em>provideParent()</em>助手函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#a-emprovideparentem-helper-function"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="a-provideparent-helper-function">A <em>provideParent()</em> helper function<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#a-provideparent-helper-function"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="a-emprovideparentem-helper-function"><em>provideParent()</em>助手函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#a-emprovideparentem-helper-function"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Writing variations of the same parent <em>alias provider</em> gets old quickly,
-especially this awful mouthful with a <a href="guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a>:</p>
-<p translation-result="">编写父组件相同的各种<em>别名提供商</em>很快就会变得啰嗦，在用<a href="guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a>的时候尤其绕口：</p>
+especially this awful mouthful with a <a href="/guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a>:</p>
+<p translation-result="">编写父组件相同的各种<em>别名提供商</em>很快就会变得啰嗦，在用<a href="/guide/dependency-injection-in-action#forwardref"><em>forwardRef</em></a>的时候尤其绕口：</p>
 <code-example path="dependency-injection-in-action/src/app/parent-finder.component.ts" region="alex-providers" title="dependency-injection-in-action/src/app/parent-finder.component.ts" linenums="false">
 providers: [{ provide: Parent, useExisting: <a href="/api/core/forwardRef" class="code-anchor">forwardRef</a>(() => AlexComponent) }],
 
@@ -2136,8 +2136,8 @@ providers:  [ provideParent(BethComponent, DifferentParent) ]
 
 </code-example>
 <a id="forwardref"></a>
-<h2 translation-origin="off" id="break-circularities-with-a-forward-class-reference-forwardref">Break circularities with a forward class reference (<em>forwardRef</em>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#break-circularities-with-a-forward-class-reference-forwardref"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="break-circularities-with-a-forward-class-reference-emforwardrefem">使用一个前向引用(<em>forwardRef</em>)来打破循环<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/dependency-injection-in-action#break-circularities-with-a-forward-class-reference-emforwardrefem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="break-circularities-with-a-forward-class-reference-forwardref">Break circularities with a forward class reference (<em>forwardRef</em>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#break-circularities-with-a-forward-class-reference-forwardref"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="break-circularities-with-a-forward-class-reference-emforwardrefem">使用一个前向引用(<em>forwardRef</em>)来打破循环<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/dependency-injection-in-action#break-circularities-with-a-forward-class-reference-emforwardrefem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The order of class declaration matters in TypeScript.
 You can't refer directly to a class until it's been defined.</p>
 <p translation-result="">在 TypeScript 里面，类声明的顺序是很重要的。如果一个类尚未定义，就不能引用它。</p>

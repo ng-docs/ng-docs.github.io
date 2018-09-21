@@ -808,14 +808,14 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="deployment">Deployment<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#deployment"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="deployment">部署<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#deployment"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="deployment">Deployment<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#deployment"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="deployment">部署<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#deployment"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">This page describes techniques for deploying your Angular application to a remote server.</p>
 <p translation-result="">本章会描述在远程服务器上部署 Angular 应用的工具与技术。</p>
 <a id="dev-deploy"></a>
 <a id="copy-files"></a>
-<h2 translation-origin="off" id="simplest-deployment-possible">Simplest deployment possible<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#simplest-deployment-possible"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="simplest-deployment-possible">最简化的部署方式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#simplest-deployment-possible"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="simplest-deployment-possible">Simplest deployment possible<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#simplest-deployment-possible"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="simplest-deployment-possible">最简化的部署方式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#simplest-deployment-possible"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">For the simplest deployment, build for development and copy the output directory to a web server.</p>
 <p translation-result="">最简化的部署方式就是为开发环境构建，并把其输出复制到 Web 服务器上。</p>
 <ol>
@@ -831,25 +831,25 @@
 <p translation-result="">把输出目录（默认为 <code>dist/</code>）下的<em>每个文件</em>都复制到到服务器上的某个目录下。</p>
 </li>
 <li>
-<p translation-origin="off">If you copy the files into a server <em>sub-folder</em>, append the build flag, <code>--base-href</code> and set the <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> appropriately.<br><br></p>
-<p translation-result=""> 如果要把文件部署到服务器上的<em>某个子路径</em>下，构建时还要添加 <code>--base-href</code>（基地址）标识，并设置合适的 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code>。<br><br></p>
+<p translation-origin="off">If you copy the files into a server <em>sub-folder</em>, append the build flag, <code>--base-href</code> and set the <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> appropriately.<br><br></p>
+<p translation-result=""> 如果要把文件部署到服务器上的<em>某个子路径</em>下，构建时还要添加 <code>--base-href</code>（基地址）标识，并设置合适的 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code>。<br><br></p>
 <p translation-origin="off">For example, if the <code>index.html</code> is on the server at <code>/my/app/index.html</code>, set the <em>base href</em>  to
-<code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code> like this.</p>
-<p translation-result="">比如，如果 <code>index.html</code> 位于服务器上的 <code>/my/app/index.html</code> 路径下，就要把 <em>base href</em> 设置为 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code>，就像这样：</p>
+<code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code> like this.</p>
+<p translation-result="">比如，如果 <code>index.html</code> 位于服务器上的 <code>/my/app/index.html</code> 路径下，就要把 <em>base href</em> 设置为 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code>，就像这样：</p>
 <code-example language="none" class="code-shell">
   ng build --base-href=/my/app/
 </code-example>
-<p translation-origin="off">You'll see that the <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> is set properly in the generated <code>dist/index.html</code>.<br><br>
-If you copy to the server's root directory, omit this step and leave the <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> alone.<br><br>
-Learn more about the role of <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> <a href="guide/deployment#base-tag">below</a>.</p>
-<p translation-result="">你会看到在生成的 <code>dist/index.html</code> 中 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> 已经被设置好了。<br><br>
-如果复制到服务器的根目录下，就省略这个步骤，并且让 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> 保持原样。<br><br>
-要了解 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> 的作用，参见 <a href="guide/deployment#base-tag">下面</a> 的内容。</p>
+<p translation-origin="off">You'll see that the <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> is set properly in the generated <code>dist/index.html</code>.<br><br>
+If you copy to the server's root directory, omit this step and leave the <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> alone.<br><br>
+Learn more about the role of <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> <a href="/guide/deployment#base-tag">below</a>.</p>
+<p translation-result="">你会看到在生成的 <code>dist/index.html</code> 中 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> 已经被设置好了。<br><br>
+如果复制到服务器的根目录下，就省略这个步骤，并且让 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> 保持原样。<br><br>
+要了解 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>></code> 的作用，参见 <a href="/guide/deployment#base-tag">下面</a> 的内容。</p>
 </li>
 <li>
 <p translation-origin="off">Configure the server to redirect requests for missing files to <code>index.html</code>.
-Learn more about server-side redirects <a href="guide/deployment#fallback">below</a>.</p>
-<p translation-result="">   配置服务器，使其在找不到文件时把请求重定向到 <code>index.html</code>。要了解服务端重定向的更多知识，参见 <a href="guide/deployment#fallback">下面</a> 的内容。</p>
+Learn more about server-side redirects <a href="/guide/deployment#fallback">below</a>.</p>
+<p translation-result="">   配置服务器，使其在找不到文件时把请求重定向到 <code>index.html</code>。要了解服务端重定向的更多知识，参见 <a href="/guide/deployment#fallback">下面</a> 的内容。</p>
 </li>
 </ol>
 <p translation-origin="off">This is <em>not</em> a production deployment. It's not optimized and it won't be fast for users.
@@ -857,15 +857,15 @@ It might be good enough for sharing your progress and ideas internally with mana
 <p translation-result="">这不是生产级部署。它没有优化过，并且对用户来说也不够快。
 但是当你向经理、团队成员或其它利益相关者内部分享你的进度和想法时它是足够的。</p>
 <a id="optimize"></a>
-<h2 translation-origin="off" id="optimize-for-production">Optimize for production<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#optimize-for-production"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="optimize-for-production">为生产环境优化<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#optimize-for-production"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="optimize-for-production">Optimize for production<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#optimize-for-production"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="optimize-for-production">为生产环境优化<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#optimize-for-production"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Although deploying directly from the development environment works,
 you can generate an optimized build with additional CLI command line flags,
 starting with <code>--prod</code>.</p>
 <p translation-result="">虽然也可以直接用开发环境的设置进行部署，不过你也可以使用 CLI 命令的其它标志生成一个优化过的构建成果。
 先来看 <code>--prod</code>。</p>
-<h3 translation-origin="off" id="build-with---prod">Build with <em>--prod</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#build-with---prod"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="build-with-em--prodem">使用 <code>--prod</code> 构建。<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#build-with-em--prodem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="build-with---prod">Build with <em>--prod</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#build-with---prod"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="build-with-em--prodem">使用 <code>--prod</code> 构建。<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#build-with-em--prodem"><i class="material-icons">link</i></a></h3>
 <code-example language="none" class="code-shell">
   ng build --prod
 </code-example>
@@ -877,8 +877,8 @@ starting with <code>--prod</code>.</p>
 <p translation-result=""> <a href="/guide/aot-compiler">预(AOT)编译</a>：预编译 Angular 组件的模板。</p>
 </li>
 <li>
-<p translation-origin="off"><a href="guide/deployment#enable-prod-mode">Production mode</a>: deploys the production environment which enables <em>production mode</em>.</p>
-<p translation-result=""> <a href="guide/deployment#enable-prod-mode">生产模式</a>：启用生产模式部署到生产环境。</p>
+<p translation-origin="off"><a href="/guide/deployment#enable-prod-mode">Production mode</a>: deploys the production environment which enables <em>production mode</em>.</p>
+<p translation-result=""> <a href="/guide/deployment#enable-prod-mode">生产模式</a>：启用生产模式部署到生产环境。</p>
 </li>
 <li>
 <p translation-origin="off">Bundling: concatenates your many application and library files into a few bundles.</p>
@@ -897,8 +897,8 @@ starting with <code>--prod</code>.</p>
 <p translation-result=""> 消除死代码：移除未引用过的模块和未使用过的代码。</p>
 </li>
 </ul>
-<p translation-origin="off">The remaining <a href="guide/deployment#copy-files">copy deployment steps</a> are the same as before.</p>
-<p translation-result="">剩下的 <a href="guide/deployment#copy-files">拷贝部署步骤</a> 和以前的方式是一样的。</p>
+<p translation-origin="off">The remaining <a href="/guide/deployment#copy-files">copy deployment steps</a> are the same as before.</p>
+<p translation-result="">剩下的 <a href="/guide/deployment#copy-files">拷贝部署步骤</a> 和以前的方式是一样的。</p>
 <p translation-origin="off">You may further reduce bundle sizes by adding the <code>build-optimizer</code> flag.</p>
 <p translation-result="">你还可以添加 <code>build-optimizer</code> 标志来进一步缩减打包体积。</p>
 <code-example language="none" class="code-shell">
@@ -908,8 +908,8 @@ starting with <code>--prod</code>.</p>
 for details about available build options and what they do.</p>
 <p translation-result="">参见 <a href="https://github.com/angular/angular-cli/wiki/build">CLI 文档</a>，来了解可用的构建选项及其用途的详细信息。</p>
 <a id="enable-prod-mode"></a>
-<h3 translation-origin="off" id="enable-production-mode">Enable production mode<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#enable-production-mode"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="enable-production-mode">启用生产模式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#enable-production-mode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="enable-production-mode">Enable production mode<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#enable-production-mode"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="enable-production-mode">启用生产模式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#enable-production-mode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular apps run in development mode by default, as you can see by the following message on the browser
 console:</p>
 <p translation-result="">Angular 应用默认运行在开发模式下，正如在浏览器控制台中看到的如下信息：</p>
@@ -923,19 +923,19 @@ Look at the CLI-generated <code>main.ts</code> to see how this works.</p>
 <p translation-result="">为生产环境构建（或添加 <code>--environment=prod</code> 标志）可以启用<em>生产模式</em>。
 查看 CLI 自动生成的 <code>main.ts</code> 文件来了解它的工作原理。</p>
 <a id="lazy-loading"></a>
-<h3 translation-origin="off" id="lazy-loading">Lazy loading<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#lazy-loading"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="lazy-loading">惰性加载<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#lazy-loading"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="lazy-loading">Lazy loading<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#lazy-loading"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="lazy-loading">惰性加载<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#lazy-loading"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can dramatically reduce launch time by only loading the application modules that
 absolutely must be present when the app starts.</p>
 <p translation-result="">通过只加载应用启动时必须展示的那些应用模块，你可以显著缩减启动时间。</p>
 <p translation-origin="off">Configure the Angular Router to defer loading of all other modules (and their associated code), either by
-<a href="guide/router#preloading" title="Preloading">waiting until the app has launched</a>
-or by <a href="guide/router#asynchronous-routing" title="Lazy loading"><em>lazy loading</em></a>
+<a href="/guide/router#preloading" title="Preloading">waiting until the app has launched</a>
+or by <a href="/guide/router#asynchronous-routing" title="Lazy loading"><em>lazy loading</em></a>
 them on demand.</p>
-<p translation-result="">配置 Angular 路由器可以延迟加载所有其它模块（以及与它们相关的代码），无论是<a href="guide/router#preloading" title="Preloading">等应用启动</a>，
-还是在需要时才<a href="guide/router#asynchronous-routing" title="Lazy loading">惰性加载</a>。</p>
-<h4 translation-origin="off" id="dont-eagerly-import-something-from-a-lazy-loaded-module">Don't eagerly import something from a lazy loaded module<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#dont-eagerly-import-something-from-a-lazy-loaded-module"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="dont-eagerly-import-something-from-a-lazy-loaded-module">不要立即导入惰性加载模块中的任何东西<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#dont-eagerly-import-something-from-a-lazy-loaded-module"><i class="material-icons">link</i></a></h4>
+<p translation-result="">配置 Angular 路由器可以延迟加载所有其它模块（以及与它们相关的代码），无论是<a href="/guide/router#preloading" title="Preloading">等应用启动</a>，
+还是在需要时才<a href="/guide/router#asynchronous-routing" title="Lazy loading">惰性加载</a>。</p>
+<h4 translation-origin="off" id="dont-eagerly-import-something-from-a-lazy-loaded-module">Don't eagerly import something from a lazy loaded module<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#dont-eagerly-import-something-from-a-lazy-loaded-module"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="dont-eagerly-import-something-from-a-lazy-loaded-module">不要立即导入惰性加载模块中的任何东西<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#dont-eagerly-import-something-from-a-lazy-loaded-module"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">It's a common mistake.
 You've arranged to lazy load a module.
 But you unintentionally import it, with a JavaScript <code>import</code> statement,
@@ -957,8 +957,8 @@ You have to create these bundles manually.</p>
 which automatically recognizes lazy loaded <code>NgModules</code> and creates separate bundles for them.</p>
 <p translation-result="">CLI 会运行 <a href="https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack">Angular  AOT 编译 Webpack 插件</a>，它会自动识别出那些需要惰性加载的 <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code>，并为它们创建单独的文件包。</p>
 <a id="measure"></a>
-<h3 translation-origin="off" id="measure-performance">Measure performance<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#measure-performance"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="measure-performance">性能测量<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#measure-performance"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="measure-performance">Measure performance<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#measure-performance"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="measure-performance">性能测量<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#measure-performance"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can make better decisions about what to optimize and how when you have a clear and accurate understanding of
 what's making the application slow.
 The cause may not be what you think it is.
@@ -977,8 +977,8 @@ Chrome DevTools Network Performance page</a> is a good place to start learning a
 that can also help verify that your deployment was successful.</p>
 <p translation-result=""><a href="https://www.webpagetest.org/">WebPageTest</a>工具是另一个不错的选择，它能帮你验证你的部署是否成功了。</p>
 <a id="inspect-bundle"></a>
-<h3 translation-origin="off" id="inspect-the-bundles">Inspect the bundles<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#inspect-the-bundles"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="inspect-the-bundles">深入探查文件包（bundle）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#inspect-the-bundles"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="inspect-the-bundles">Inspect the bundles<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#inspect-the-bundles"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="inspect-the-bundles">深入探查文件包（bundle）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#inspect-the-bundles"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <a href="https://github.com/danvk/source-map-explorer/blob/master/README.md">source-map-explorer</a>
 tool is a great way to inspect the generated JavaScript bundles after a production build.</p>
 <p translation-result=""><a href="https://github.com/danvk/source-map-explorer/blob/master/README.md">source-map-explorer</a> 是在生产环境构建中深入探查所生成的文件包的好工具。</p>
@@ -1013,34 +1013,34 @@ showing exactly which classes are included in the bundle.</p>
   <img src="generated/images/guide/cli-quickstart/quickstart-sourcemap-explorer.png" alt="quickstart sourcemap explorer" width="767" height="401">
 </figure>
 <a id="base-tag"></a>
-<h2 translation-origin="off" id="the-base-tag">The <code>base</code> tag<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#the-base-tag"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="the-codebasecode-tag"><code>base</code> 标签<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#the-codebasecode-tag"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off">The HTML <a href="//guide/router"><em>&#x3C;base href="..."/></em></a>
+<h2 translation-origin="off" id="the-base-tag">The <code>base</code> tag<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#the-base-tag"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="the-codebasecode-tag"><code>base</code> 标签<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#the-codebasecode-tag"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off">The HTML <a href="//guide/router"><em>&#x3C;base href="/..."/></em></a>
 specifies a base path for resolving relative URLs to assets such as images, scripts, and style sheets.
-For example, given the <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code>, the browser resolves a URL such as <code>some/place/foo.jpg</code>
+For example, given the <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code>, the browser resolves a URL such as <code>some/place/foo.jpg</code>
 into a server request for <code>my/app/some/place/foo.jpg</code>.
 During navigation, the Angular router uses the <em>base href</em> as the base path to component, template, and module files.</p>
-<p translation-result="">HTML 中的<a href="//guide/router"><em>&#x3C;base href="..."/></em></a>用于指定一个解析相对路径的基地址，如图片、脚本和样式表。
-比如，指定 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code> 时，浏览器就会把 <code>some/place/foo.jpg</code> 这样的 URL 解析成到 <code>my/app/some/place/foo.jpg</code> 的服务端请求。
+<p translation-result="">HTML 中的<a href="//guide/router"><em>&#x3C;base href="/..."/></em></a>用于指定一个解析相对路径的基地址，如图片、脚本和样式表。
+比如，指定 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code> 时，浏览器就会把 <code>some/place/foo.jpg</code> 这样的 URL 解析成到 <code>my/app/some/place/foo.jpg</code> 的服务端请求。
 在浏览期间，Angular 路由器会使用<em>base href</em>作为组件、模板和模块文件的基地址。</p>
 <div class="alert is-helpful">
 <p translation-origin="off">See also the <a href="/api/common/APP_BASE_HREF" title="API: APP_BASE_HREF"><em>APP_BASE_HREF</em></a> alternative.</p>
 <p translation-result="">参见另一种备选方案<a href="/api/common/APP_BASE_HREF" title="API: APP_BASE_HREF"><em>APP_BASE_HREF</em></a>。</p>
 </div>
 <p translation-origin="off">In development, you typically start the server in the folder that holds <code>index.html</code>.
-That's the root folder and you'd add <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code> near the top of <code>index.html</code> because <code>/</code> is the root of the app.</p>
-<p translation-result="">在开发期间，你通常会在 <code>index.html</code> 所在的目录中启动服务器。这个目录就是根目录，因为 <code>/</code> 就是本应用的根，所以你要在 <code>index.html</code> 的顶部添加 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code>。</p>
+That's the root folder and you'd add <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code> near the top of <code>index.html</code> because <code>/</code> is the root of the app.</p>
+<p translation-result="">在开发期间，你通常会在 <code>index.html</code> 所在的目录中启动服务器。这个目录就是根目录，因为 <code>/</code> 就是本应用的根，所以你要在 <code>index.html</code> 的顶部添加 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/"></code>。</p>
 <p translation-origin="off">But on the shared or production server, you might serve the app from a subfolder.
 For example, when the URL to load the app is something like <code>http://www.mysite.com/my/app/</code>,
-the subfolder is <code>my/app/</code> and you should add <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code> to the server version of the <code>index.html</code>.</p>
+the subfolder is <code>my/app/</code> and you should add <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code> to the server version of the <code>index.html</code>.</p>
 <p translation-result="">但是在共享服务器或生产服务器上，你可能得从子目录下启动服务器。
-比如，当加载本应用的 URL 是 <code>http://www.mysite.com/my/app/</code> 时，子目录就是 <code>my/app/</code>，而你就要在服务器版的 <code>index.html</code> 中添加 <code>&#x3C;base <a href="api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code>。</p>
+比如，当加载本应用的 URL 是 <code>http://www.mysite.com/my/app/</code> 时，子目录就是 <code>my/app/</code>，而你就要在服务器版的 <code>index.html</code> 中添加 <code>&#x3C;base <a href="/api/router/RouterLinkWithHref#href" class="code-anchor">href</a>="/my/app/"></code>。</p>
 <p translation-origin="off">When the <code>base</code> tag is mis-configured, the app fails to load and the browser console displays <code>404 - Not Found</code> errors
 for the missing files. Look at where it <em>tried</em> to find those files and adjust the base tag appropriately.</p>
 <p translation-result="">当没有配置 <code>base</code> 标签时，加载应用就会失败，浏览器的控制台中会为这些缺失的文件显示一些 <code>404 - Not Found</code> 错误。
 看看浏览器<em>试图</em>从哪里找这些文件，然后调整出合适的 base 标签。</p>
-<h2 translation-origin="off" id="build-vs-serve"><em>build</em> vs. <em>serve</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#build-vs-serve"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="embuildem-vs-emserveem"><em>构建</em>与<em>服务</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#embuildem-vs-emserveem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="build-vs-serve"><em>build</em> vs. <em>serve</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#build-vs-serve"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="embuildem-vs-emserveem"><em>构建</em>与<em>服务</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#embuildem-vs-emserveem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You'll probably prefer <code>ng build</code> for deployments.</p>
 <p translation-result="">你会更喜欢用 <code>ng build</code> 进行部署。</p>
 <p translation-origin="off">The <strong>ng build</strong> command is intended for building the app and deploying the build artifacts elsewhere.
@@ -1073,13 +1073,13 @@ are automatically re-deploying changes to another server.</p>
 <p translation-result="">参见 <a href="https://github.com/angular/angular-cli/wiki/build">CLI 中的 <code>build</code> 主题</a>以了解详情以及其它选项。</p>
 <hr>
 <a id="server-configuration"></a>
-<h2 translation-origin="off" id="server-configuration">Server configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#server-configuration"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="server-configuration">服务端配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#server-configuration"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="server-configuration">Server configuration<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#server-configuration"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="server-configuration">服务端配置<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#server-configuration"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">This section covers changes you may have make to the server or to files deployed to the server.</p>
 <p translation-result="">这一节涵盖了你可能对服务器或准备部署到服务器的文件要做的那些修改。</p>
 <a id="fallback"></a>
-<h3 translation-origin="off" id="routed-apps-must-fallback-to-indexhtml">Routed apps must fallback to <code>index.html</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#routed-apps-must-fallback-to-indexhtml"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="routed-apps-must-fallback-to-codeindexhtmlcode">带路由的应用必须以 <code>index.html</code> 作为后备页面<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#routed-apps-must-fallback-to-codeindexhtmlcode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="routed-apps-must-fallback-to-indexhtml">Routed apps must fallback to <code>index.html</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#routed-apps-must-fallback-to-indexhtml"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="routed-apps-must-fallback-to-codeindexhtmlcode">带路由的应用必须以 <code>index.html</code> 作为后备页面<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#routed-apps-must-fallback-to-codeindexhtmlcode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular apps are perfect candidates for serving with a simple static HTML server.
 You don't need a server-side engine to dynamically compose application pages because
 Angular does that on the client-side.</p>
@@ -1111,16 +1111,16 @@ But it rejects <code>http://www.mysite.com/heroes/42</code> and returns a <code>
 configured to return <code>index.html</code> instead.</p>
 <p translation-result="">静态服务器会在收到对 <code>http://www.mysite.com/</code> 的请求时返回 <code>index.html</code>，但是会拒绝对 <code>http://www.mysite.com/heroes/42</code> 的请求，
 并返回一个 <code>404 - Not Found</code> 错误，除非，它被配置成了返回 <code>index.html</code>。</p>
-<h4 translation-origin="off" id="fallback-configuration-examples">Fallback configuration examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#fallback-configuration-examples"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="fallback-configuration-examples">后备页面配置范例<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#fallback-configuration-examples"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="fallback-configuration-examples">Fallback configuration examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#fallback-configuration-examples"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="fallback-configuration-examples">后备页面配置范例<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#fallback-configuration-examples"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">There is no single configuration that works for every server.
 The following sections describe configurations for some of the most popular servers.
 The list is by no means exhaustive, but should provide you with a good starting point.</p>
 <p translation-result="">没有一种配置可以适用于所有服务器。
 后面这些部分会描述对常见服务器的配置方式。
 这个列表虽然不够详尽，但可以为你提供一个良好的起点。</p>
-<h4 translation-origin="off" id="development-servers">Development servers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#development-servers"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="development-servers">开发服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#development-servers"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="development-servers">Development servers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#development-servers"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="development-servers">开发服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#development-servers"><i class="material-icons">link</i></a></h4>
 <ul>
 <li>
 <p translation-origin="off"><a href="https://github.com/johnpapa/lite-server">Lite-Server</a>: the default dev server installed with the
@@ -1139,8 +1139,8 @@ The list is by no means exhaustive, but should provide you with a good starting 
   </code-example>
 </li>
 </ul>
-<h4 translation-origin="off" id="production-servers">Production servers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#production-servers"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="production-servers">生产服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#production-servers"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="production-servers">Production servers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#production-servers"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="production-servers">生产服务器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#production-servers"><i class="material-icons">link</i></a></h4>
 <ul>
 <li>
 <p translation-origin="off"><a href="https://httpd.apache.org/">Apache</a>: add a
@@ -1216,8 +1216,8 @@ and to
 </li>
 </ul>
 <a id="cors"></a>
-<h3 translation-origin="off" id="requesting-services-from-a-different-server-cors">Requesting services from a different server (CORS)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#requesting-services-from-a-different-server-cors"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="requesting-services-from-a-different-server-cors">请求来自另一个服务器的服务（CORS）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/deployment#requesting-services-from-a-different-server-cors"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="requesting-services-from-a-different-server-cors">Requesting services from a different server (CORS)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#requesting-services-from-a-different-server-cors"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="requesting-services-from-a-different-server-cors">请求来自另一个服务器的服务（CORS）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/deployment#requesting-services-from-a-different-server-cors"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular developers may encounter a
 <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="Cross-origin resource sharing">
 <i>cross-origin resource sharing</i></a> error when making a service request (typically a data service request)

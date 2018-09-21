@@ -808,10 +808,10 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="authors-style-guide">Authors Style Guide<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#authors-style-guide"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="authors-style-guide">Authors Style Guide<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#authors-style-guide"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">This page presents design and layout guidelines for Angular documentation pages.  These guidelines should be followed by all guide page authors. Deviations must be approved by the documentation editor.</p>
-<p translation-origin="off">Most guide pages should have <a href="guide/docs-style-guide#from-code-samples">accompanying sample code</a> with
-<a href="guide/docs-style-guide#source-code-markup">special markup</a> for the code snippets on the page.
+<p translation-origin="off">Most guide pages should have <a href="/guide/docs-style-guide#from-code-samples">accompanying sample code</a> with
+<a href="/guide/docs-style-guide#source-code-markup">special markup</a> for the code snippets on the page.
 Code samples should adhere to the
 <a href="/guide/styleguide" title="Application Code Style Guide">style guide for Angular applications</a>
 because readers expect consistency.</p>
@@ -820,7 +820,7 @@ followed by the page markup for that example ... as shown here.</p>
 <code-example language="html">
   followed by the page markup for that example ... as shown here.
 </code-example>
-<h2 translation-origin="off" id="doc-generation-and-tooling">Doc generation and tooling<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#doc-generation-and-tooling"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="doc-generation-and-tooling">Doc generation and tooling<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#doc-generation-and-tooling"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">To make changes to the documentation pages and sample code, clone the <a href="https://github.com/angular/angular" title="Angular repo">Angular github repository</a> and go to the <code>aio/</code> folder.</p>
 <p translation-origin="off">The <a href="https://github.com/angular/angular/blob/master/aio/README.md" title="AIO ReadMe">aio/README.md</a> explains how to install and use the tools to edit and test your changes.</p>
 <p translation-origin="off">Here are a few essential commands for guide page authors.</p>
@@ -839,9 +839,9 @@ followed by the page markup for that example ... as shown here.</p>
 </li>
 </ol>
 <p translation-origin="off">You can combine <code>yarn docs-watch</code> and <code>yarn start</code> into one command with <code>yarn serve-and-sync</code>.</p>
-<h2 translation-origin="off" id="guide-pages">Guide pages<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#guide-pages"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="guide-pages">Guide pages<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#guide-pages"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off"> All but a few guide pages are <a href="https://daringfireball.net/projects/markdown/syntax" title="markdown">markdown</a> files with an <code>.md</code> extension.</p>
-<p translation-origin="off">Every guide page file is stored in the <code>content/guide</code> directory. Although the <a href="guide/docs-style-guide#navigation">side navigation</a> panel displays as a hierarchy, the directory is flat with no sub-folders.
+<p translation-origin="off">Every guide page file is stored in the <code>content/guide</code> directory. Although the <a href="/guide/docs-style-guide#navigation">side navigation</a> panel displays as a hierarchy, the directory is flat with no sub-folders.
 The flat folder approach allows us to shuffle the apparent navigation structure without moving page files or redirecting old page URLs.</p>
 <p translation-origin="off">The doc generation process consumes the markdown files in the <code>content/guide</code> directory and produces JSON files in the <code>src/generated/docs/guide</code> directory, which is also flat. Those JSON files contain a combination of document metadata and HTML content.</p>
 <p translation-origin="off">The reader requests a page by its Page URL. The doc viewer fetches the corresponding JSON file, interprets it, and renders it as fully-formed HTML page.</p>
@@ -853,7 +853,7 @@ The doc viewer translates URLs that begin <code>api/</code> into requests for do
 <p translation-origin="off"><em>Marketing</em> pages are similar to guide pages. They're located in the <code>content/marketing</code> directory. While they can be markdown files, they may be static HTML pages or dynamic HTML pages that render with JSON data.</p>
 <p translation-origin="off">Only a few people are authorized to write marketing pages. This style guide does not discuss creation or maintenance of marketing pages.</p>
 </div>
-<h2 translation-origin="off" id="markdown-and-html">Markdown and HTML<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#markdown-and-html"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="markdown-and-html">Markdown and HTML<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#markdown-and-html"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">While documentation guide pages ultimately render as HTML, almost all of them are written in <a href="https://daringfireball.net/projects/markdown/syntax" title="markdown">markdown</a>.</p>
 <p translation-origin="off">Markdown is easier to read and to edit than HTML. Many editors (including Visual Studio Code) can render markdown as you type it.</p>
 <p translation-origin="off">From time to time you'll have to step away from markdown and write a portion of the document in HTML. Markdown allows you to mix HTML and markdown in the same document.</p>
@@ -864,19 +864,19 @@ The doc viewer translates URLs that begin <code>api/</code> into requests for do
 <code-example language="html">
 &#x3C;div class="alert is-critical">
 
-  **Always** follow every opening and closing <a href="api/core/SecurityContext#HTML" class="code-anchor">HTML</a> tag with _a blank line_.
+  **Always** follow every opening and closing <a href="/api/core/SecurityContext#HTML" class="code-anchor">HTML</a> tag with _a blank line_.
 
 &#x3C;/div>
 </code-example>
 <div class="alert is-helpful">
 <p translation-origin="off">  It is customary but not required to <em>precede</em> the <em>closing HTML</em> tag with a blank line as well.</p>
 </div>
-<h2 translation-origin="off" id="title">Title<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#title"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="title">Title<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#title"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Every guide document must have a title.</p>
 <p translation-origin="off">The title should appear at the top of the physical page.
 Begin the title with the markdown <code>#</code> character. Alternatively, you can write the equivalent <code>&#x3C;h1></code>.</p>
 <code-example language="html">
-  # Authors <a href="api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide
+  # Authors <a href="/api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide
 </code-example>
 <p translation-origin="off"><strong>Only one title (<code>&#x3C;h1></code>) per document!</strong></p>
 <p translation-origin="off">Title text should be in "Title Case", which means that you use capital letters to start the first words and all <em>principal</em> words. Use lower case letters for <em>secondary</em> words such as "in", "of", and "the".</p>
@@ -884,24 +884,24 @@ Begin the title with the markdown <code>#</code> character. Alternatively, you c
   # The Meat of the Matter
 </code-example>
 <p translation-origin="off"><strong>Always follow the title with at least one blank line.</strong></p>
-<h2 translation-origin="off" id="sections">Sections<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#sections"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="sections">Sections<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#sections"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A typical document is divided into sections.</p>
 <p translation-origin="off">All section heading text should be in "Sentence case", which means the first word is capitalized and all other words are lower case.</p>
 <p translation-origin="off"><strong>Always follow the section heading with at least one blank line.</strong></p>
 <h2 translation-origin="off" class="no-toc" id="main-section-heading">
 Main section heading
-<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#main-section-heading"><i class="material-icons">link</i></a></h2>
+<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#main-section-heading"><i class="material-icons">link</i></a></h2>
 There are usually one or more main sections that may be further divided into secondary sections.
 <p translation-origin="off">Begin a main section heading with the markdown <code>##</code> characters. Alternatively, you can write the equivalent <code>&#x3C;h2></code> HTML tag.</p>
 <p translation-origin="off">The main section heading should be followed by a blank line and then the content for that heading.</p>
 <code-example language="html">
   ## Sections
 
-  A typical <a href="api/platform-server/PlatformConfig#document" class="code-anchor">document</a> is divided into sections.
+  A typical <a href="/api/platform-server/PlatformConfig#document" class="code-anchor">document</a> is divided into sections.
 </code-example>
 <h3 translation-origin="off" class="no-toc" id="secondary-section-heading">
 Secondary section heading
-<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#secondary-section-heading"><i class="material-icons">link</i></a></h3>
+<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#secondary-section-heading"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A secondary section heading is related to a main heading and <em>falls textually within</em> the bounds of that main heading.</p>
 <p translation-origin="off">Begin a secondary heading with the markdown <code>###</code> characters. Alternatively, you can write the equivalent <code>&#x3C;h3></code> HTML tag.</p>
 <p translation-origin="off">The secondary heading should be followed by a blank line and then the content for that heading.</p>
@@ -910,15 +910,15 @@ Secondary section heading
 
   A secondary section ...
 </code-example>
-<h4 translation-origin="off" id="additional-section-headings">Additional section headings<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#additional-section-headings"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="additional-section-headings">Additional section headings<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#additional-section-headings"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Try to minimize the heading depth, preferably only two. But more headings, such as this one, are permitted if they make sense.</p>
-<p translation-origin="off"><strong>N.B.</strong>:  The <a href="guide/docs-style-guide#table-of-contents">Table-of-contents</a> generator only considers main (<code>&#x3C;h2></code>) and secondary (<code>&#x3C;h3></code>) headings.</p>
+<p translation-origin="off"><strong>N.B.</strong>:  The <a href="/guide/docs-style-guide#table-of-contents">Table-of-contents</a> generator only considers main (<code>&#x3C;h2></code>) and secondary (<code>&#x3C;h3></code>) headings.</p>
 <code-example language="html">
   #### Additional section headings
 
   Try to minimize ...
 </code-example>
-<h2 translation-origin="off" id="table-of-contents">Table of contents<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#table-of-contents"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="table-of-contents">Table of contents<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#table-of-contents"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Most pages display a table of contents (TOC). The TOC appears in the right panel when the viewport is wide. When narrow, the TOC appears in an expandable/collapsible region near the top of the page.</p>
 <p translation-origin="off">You should not create your own TOC by hand. The TOC is generated automatically from the page's main and secondary section headers.</p>
 <p translation-origin="off">To exclude a heading from the TOC, create the heading as an <code>&#x3C;h2></code> or <code>&#x3C;h3></code> element with a class called 'no-toc'. You can't do this with markdown.</p>
@@ -933,7 +933,7 @@ This heading is not displayed in the TOC
 A guide without <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> TOC
 &#x3C;/h1>
 </code-example>
-<h2 translation-origin="off" id="navigation">Navigation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#navigation"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="navigation">Navigation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#navigation"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The navigation links at the top, left, and bottom of the screen are generated from the JSON configuration file, <code>content/navigation.json</code>.</p>
 <p translation-origin="off">The authority to change the <code>navigation.json</code> file is limited to a few core team members.
 But for a new guide page, you should suggest a navigation title and position in the left-side navigation panel called the "side nav".</p>
@@ -979,16 +979,16 @@ But for a new guide page, you should suggest a navigation title and position in 
 <div class="alert is-critical">
 <p translation-origin="off">The current guidelines allow for a three-level navigation structure with two header levels. Don't add a third header level.</p>
 </div>
-<h2 translation-origin="off" id="code-snippets">Code snippets<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-snippets"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="code-snippets">Code snippets<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-snippets"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Guides are rich in examples of working Angular code. Example code can be commands entered in a terminal window, a fragment of TypeScript or HTML, or an entire code file.</p>
-<p translation-origin="off">Whatever the source, the doc viewer renders them as "code snippets", either individually with the <a href="guide/docs-style-guide#code-example" title="code-example"><em>code-example</em></a> component or as a tabbed collection with the <a href="guide/docs-style-guide#code-tabs" title="code-tabs"><em>code-tabs</em></a> component.</p>
+<p translation-origin="off">Whatever the source, the doc viewer renders them as "code snippets", either individually with the <a href="/guide/docs-style-guide#code-example" title="code-example"><em>code-example</em></a> component or as a tabbed collection with the <a href="/guide/docs-style-guide#code-tabs" title="code-tabs"><em>code-tabs</em></a> component.</p>
 <a id="code-example"></a>
-<h3 translation-origin="off" id="code-example">Code example<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-example"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="code-example">Code example<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-example"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can display a simple, inline code snippet with the markdown backtick syntax.
 We generally prefer to display a code snippet with the Angular documentation <em>code-example</em> component
 represented by the <code>&#x3C;code-example></code> tag.</p>
-<h3 translation-origin="off" class="no-toc" id="inline-code-snippets">Inline code-snippets<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#inline-code-snippets"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">You should source code snippets <a href="guide/docs-style-guide#from-code-samples">from working sample code</a> when possible.
+<h3 translation-origin="off" class="no-toc" id="inline-code-snippets">Inline code-snippets<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#inline-code-snippets"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">You should source code snippets <a href="/guide/docs-style-guide#from-code-samples">from working sample code</a> when possible.
 But there are times when an inline snippet is the better choice.</p>
 <p translation-origin="off">For terminal input and output, put the content between <code>&#x3C;code-example></code> tags, set the CSS class to <code>code-shell</code>, and set the language attribute to <code>sh</code> as in this example.</p>
 <code-example language="sh" class="code-shell">
@@ -1005,7 +1005,7 @@ user input in a command shell or the <em>output</em> of some process.</p>
 <p translation-origin="off"><strong>Do not write inline code snippets</strong> unless you have a good reason and the editor's permission to do so.
 In all other cases, code snippets should be generated automatically from tested code samples.</p>
 <a id="from-code-samples"></a>
-<h3 translation-origin="off" class="no-toc" id="code-snippets-and-code-samples">Code snippets and code samples<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-snippets-and-code-samples"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="code-snippets-and-code-samples">Code snippets and code samples<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-snippets-and-code-samples"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">One of the documentation design goals is that guide page code snippets should be examples of real, working code.</p>
 <p translation-origin="off">We meet this goal by displaying code snippets that are derived directly from standalone code samples, written specifically for these guide pages.</p>
 <p translation-origin="off">The author of a guide page is responsible for the code sample that supports that page.
@@ -1016,7 +1016,7 @@ The author must also write end-to-end tests for the sample.</p>
 </div>
 <p translation-origin="off">The Angular CI process runs all end-to-end tests for every Angular PR. Angular re-tests the samples after every new version of a sample and every new version of Angular itself.</p>
 <p translation-origin="off">When possible, every snippet of code on a guide page should be derived from a code sample file. You tell the Angular documentation engine which code file - or fragment of a code file - to display by configuring <code>&#x3C;code-example></code> attributes.</p>
-<h4 translation-origin="off" id="code-snippet-from-a-file">Code snippet from a file<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-snippet-from-a-file"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="code-snippet-from-a-file">Code snippet from a file<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-snippet-from-a-file"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off"><em>This</em> "Authors Doc Style Guide" has its own sample application, located in the <code>content/examples/docs-style-guide</code> folder.</p>
 <p translation-origin="off">The following <em>code-example</em> displays the sample's <code>app.module.ts</code>.</p>
 <code-example path="docs-style-guide/src/app/app.module.ts" title="src/app/app.module.ts">
@@ -1027,9 +1027,9 @@ import { <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> } 
 import { AppComponent }  from './app.component';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>:    [ AppComponent ]
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> ],
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>:    [ AppComponent ]
 })
 export class AppModule { }
 
@@ -1061,7 +1061,7 @@ If you want to include an ignored code file in your project and display it in a 
   !my-guide/more-javascript*.js
 </code-example>
 </div>
-<h4 translation-origin="off" id="code-example-attributes">Code-example attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-example-attributes"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="code-example-attributes">Code-example attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-example-attributes"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You control the <em>code-example</em> output by setting one or more of its attributes:</p>
 <ul>
 <li>
@@ -1071,7 +1071,7 @@ If you want to include an ignored code file in your project and display it in a 
 <p translation-origin="off"><code>title</code>- the header of the code listing.</p>
 </li>
 <li>
-<p translation-origin="off"><code>region</code>- displays the source file fragment with that region name; regions are identified by <em>docregion</em> markup in the source file, as explained <a href="guide/docs-style-guide#region" title="Displaying a code fragment">below</a>.</p>
+<p translation-origin="off"><code>region</code>- displays the source file fragment with that region name; regions are identified by <em>docregion</em> markup in the source file, as explained <a href="/guide/docs-style-guide#region" title="Displaying a code fragment">below</a>.</p>
 </li>
 <li>
 <p translation-origin="off"><code>linenums</code>- value may be <code>true</code>, <code>false</code>, or a <code>number</code>. When not specified, line numbers are automatically displayed when there are greater than 10 lines of code. The rarely used <code>number</code> option starts line numbering at the given value. <code>linenums=4</code> sets the starting line number to 4.</p>
@@ -1087,18 +1087,18 @@ If you want to include an ignored code file in your project and display it in a 
 </li>
 </ul>
 <a id="region"></a>
-<h4 translation-origin="off" id="displaying-a-code-fragment">Displaying a code fragment<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#displaying-a-code-fragment"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="displaying-a-code-fragment">Displaying a code fragment<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#displaying-a-code-fragment"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Often you want to focus on a fragment of code within a sample code file. In this example, you focus on the <code>AppModule</code> class and its <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> metadata.</p>
 <code-example path="docs-style-guide/src/app/app.module.ts" region="class">
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>:    [ AppComponent ]
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> ],
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ AppComponent ],
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>:    [ AppComponent ]
 })
 export class AppModule { }
 
 </code-example>
-<p translation-origin="off">First you surround that fragment in the source file with a named <em>docregion</em> as described <a href="guide/docs-style-guide#source-code-markup">below</a>.
+<p translation-origin="off">First you surround that fragment in the source file with a named <em>docregion</em> as described <a href="/guide/docs-style-guide#source-code-markup">below</a>.
 Then you reference that <em>docregion</em> in the <code>region</code> attribute of the <code>&#x3C;code-example></code> like this</p>
 <code-example language="html">
 &#x3C;code-example
@@ -1119,12 +1119,12 @@ There's no need to repeat the header.</p>
 <p translation-origin="off">The line numbers disappeared. By default, the doc viewer omits line numbers when there are fewer than 10 lines of code; it adds line numbers after that. You can turn line numbers on or off explicitly by setting the <code>linenums</code> attribute.</p>
 </li>
 </ol>
-<h4 translation-origin="off" id="example-of-bad-code">Example of bad code<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#example-of-bad-code"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="example-of-bad-code">Example of bad code<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#example-of-bad-code"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Sometimes you want to display an example of bad code or bad design.</p>
 <p translation-origin="off">You should be careful. Readers don't always read carefully and are likely to copy and paste your example of bad code in their own applications. So don't display bad code often.</p>
 <p translation-origin="off">When you do, set the <code>class</code> to <code>avoid</code>. The code snippet will be framed in bright red to grab the reader's attention.</p>
 <p translation-origin="off">Here's the markup for an "avoid" example in the
-<a href="guide/styleguide#style-05-03" title="Style 05-03: components as elements"><em>Angular Style Guide</em></a>.</p>
+<a href="/guide/styleguide#style-05-03" title="Style 05-03: components as elements"><em>Angular Style Guide</em></a>.</p>
 <code-example language="html">
 &#x3C;code-example
   path="styleguide/src/05-03/app/heroes/shared/hero-button/hero-button.component.avoid.ts"
@@ -1143,13 +1143,13 @@ export class HeroButtonComponent {}
 
 </code-example>
 <a id="code-tabs"></a>
-<h3 translation-origin="off" id="code-tabs">Code Tabs<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-tabs"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="code-tabs">Code Tabs<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-tabs"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Code tabs display code much like <em>code examples</em> do.  The added advantage is that they can display multiple code samples within a tabbed interface.  Each tab is displayed using <em>code pane</em>.</p>
-<h4 translation-origin="off" id="code-tabs-attributes">Code-tabs attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-tabs-attributes"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="code-tabs-attributes">Code-tabs attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-tabs-attributes"><i class="material-icons">link</i></a></h4>
 <ul>
 <li><code>linenums</code>: The value can be <code>true</code>, <code>false</code> or a number indicating the starting line number. If not specified, line numbers are enabled only when code for a tab pane has greater than 10 lines of code.</li>
 </ul>
-<h4 translation-origin="off" id="code-pane-attributes">Code-pane attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#code-pane-attributes"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="code-pane-attributes">Code-pane attributes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#code-pane-attributes"><i class="material-icons">link</i></a></h4>
 <ul>
 <li><code>path</code> - a file in the content/examples folder</li>
 <li><code>title</code> - seen in the header of a tab</li>
@@ -1186,10 +1186,10 @@ import { Hero, HEROES } from './hero';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./app.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Authors <a href="api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide Sample';
+  title = 'Authors <a href="/api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide Sample';
   heroes = HEROES;
   selectedHero: Hero;
 
@@ -1247,7 +1247,7 @@ The <code>linenums</code> attribute in the second pane restores line numbering f
 &#x3C;/code-tabs>
 </code-example>
 <a id="source-code-markup"></a>
-<h2 translation-origin="off" id="source-code-markup">Source code markup<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#source-code-markup"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="source-code-markup">Source code markup<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#source-code-markup"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You must add special code snippet markup to sample source code files before they can be displayed by <code>&#x3C;code-example></code> and <code>&#x3C;code-tabs></code> components.</p>
 <div class="alert is-helpful">
 <p translation-origin="off">The sample source code for this page, located in <code>context/examples/docs-style-guide</code>, contains examples of every code snippet markup described in this section.</p>
@@ -1261,7 +1261,7 @@ The <code>linenums</code> attribute in the second pane restores line numbering f
 <p translation-origin="off">Different file types have different comment syntax so adjust accordingly.</p>
 <code-example language="html">
 &#x3C;!-- #docregion -->
-... some <a href="api/core/SecurityContext#HTML" class="code-anchor">HTML</a> ...
+... some <a href="/api/core/SecurityContext#HTML" class="code-anchor">HTML</a> ...
 &#x3C;!-- #enddocregion -->
 </code-example>
 <code-example>
@@ -1273,9 +1273,9 @@ The <code>linenums</code> attribute in the second pane restores line numbering f
 It also strips them from stackblitz and sample code downloads.</p>
 <div class="alert is-important">
 <p translation-origin="off">Code snippet markup is not supported in JSON files because comments are forbidden in JSON files.
-See <a href="guide/docs-style-guide#json-files">below</a> for details and workarounds.</p>
+See <a href="/guide/docs-style-guide#json-files">below</a> for details and workarounds.</p>
 </div>
-<h4 translation-origin="off" id="docregion"><em>#docregion</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#docregion"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="docregion"><em>#docregion</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#docregion"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The <em>#docregion</em> is the most important kind of code snippet markup.</p>
 <p translation-origin="off">The <code>&#x3C;code-example></code> and <code>&#x3C;code-tabs></code> components won't display a source code file unless it has a <em>#docregion</em>.</p>
 <p translation-origin="off">The <em>#docregion</em> comment begins a code snippet region.
@@ -1298,7 +1298,7 @@ if (environment.production) {
 
 </code-example>
 </div>
-<h4 translation-origin="off" id="named-docregions">Named <em>#docregions</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#named-docregions"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="named-docregions">Named <em>#docregions</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#named-docregions"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You'll often display multiple snippets from different fragments within the same file.
 You distinguish among them by giving each fragment its own <em>#docregion name</em> as follows.</p>
 <code-example>
@@ -1313,7 +1313,7 @@ You distinguish among them by giving each fragment its own <em>#docregion name</
   region="class">&#x3C;/code-example>
 </code-example>
 <p translation-origin="off">The <em>#docregion</em> with no name is the <em>default region</em>. Do <em>not</em> set the <code>region</code> attribute when referring to the default <em>#docregion</em>.</p>
-<h4 translation-origin="off" id="nested-docregions">Nested <em>#docregions</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#nested-docregions"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="nested-docregions">Nested <em>#docregions</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#nested-docregions"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You can nest <em>#docregions</em> within <em>#docregions</em></p>
 <code-example>
 // #docregion
@@ -1327,7 +1327,7 @@ You distinguish among them by giving each fragment its own <em>#docregion name</
 <div class="alert is-helpful">
 <p translation-origin="off">The <code>src/app/app.module.ts</code> file has a good example of a nested region.</p>
 </div>
-<h4 translation-origin="off" id="combining-fragments">Combining fragments<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#combining-fragments"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="combining-fragments">Combining fragments<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#combining-fragments"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You can combine several fragments from the same file into a single code snippet by defining
 multiple <em>#docregions</em> with the <em>same region name</em>.</p>
 <p translation-origin="off">Examine the <code>src/app/app.component.ts</code> file which defines two nested <em>#docregions</em>.</p>
@@ -1338,7 +1338,7 @@ multiple <em>#docregions</em> with the <em>same region name</em>.</p>
 // #docregion class, class-skeleton
 export class AppComponent {
 // #enddocregion class-skeleton
-  title = 'Authors <a href="api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide Sample';
+  title = 'Authors <a href="/api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide Sample';
   heroes = HEROES;
   selectedHero: Hero;
 
@@ -1353,7 +1353,7 @@ export class AppComponent {
 <code-tabs>
   <code-pane title="app.component.ts (class)" path="docs-style-guide/src/app/app.component.ts" region="class">
 export class AppComponent {
-  title = 'Authors <a href="api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide Sample';
+  title = 'Authors <a href="/api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide Sample';
   heroes = HEROES;
   selectedHero: Hero;
 
@@ -1380,7 +1380,7 @@ export class AppComponent {
 <p translation-origin="off">One <code>#docregion</code> comment mentions <strong><em>two</em></strong> region names as does an <code>#enddocregion</code> comment. This is a convenient way to start (or stop) multiple regions on the same code line. You could have put these comments on separate lines and many authors prefer to do so.</p>
 </li>
 </ul>
-<h4 translation-origin="off" id="json-files">JSON files<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#json-files"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="json-files">JSON files<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#json-files"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Code snippet markup is not supported for JSON files because comments are forbidden in JSON files.</p>
 <p translation-origin="off">You can display an entire JSON file by referring to it in the <code>src</code> attribute.
 But you can't display JSON fragments because you can't add <code>#docregion</code> tags to the file.</p>
@@ -1404,7 +1404,7 @@ But you can't display JSON fragments because you can't add <code>#docregion</cod
   path="docs-style-guide/package.1.json"
   title="package.json (selected scripts)">&#x3C;/code-example>
 </code-example>
-<h4 translation-origin="off" id="partial-file-naming">Partial file naming<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#partial-file-naming"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="partial-file-naming">Partial file naming<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#partial-file-naming"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Many guides tell a story. In that story, the app evolves incrementally, often with simplistic or incomplete code along the way.</p>
 <p translation-origin="off">To tell that story in code, you'll often need to create partial files or intermediate versions of the final source code file with fragments of code that don't appear in the final app.</p>
 <p translation-origin="off">Such partial and intermediate files need their own names.
@@ -1430,7 +1430,7 @@ app.component.2.ts
 
 </code-example>
 <a id="live-examples"></a>
-<h2 translation-origin="off" id="live-examples">Live examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#live-examples"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="live-examples">Live examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#live-examples"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">By adding <code>&#x3C;live-example></code> to the page you generate links that run sample code in the Stackblitz live coding environment and download that code to the reader's file system.</p>
 <p translation-origin="off">Live examples (AKA "stackblitz") are defined by one or more <code>stackblitz.json</code> files in the root of a code sample folder. Each sample folder usually has a single unnamed definition file, the default <code>stackblitz.json</code>.</p>
 <div class="alert is-helpful">
@@ -1449,7 +1449,7 @@ app.component.2.ts
 </ol>
 <p translation-origin="off">Clicking the first link opens the code sample on StackBlitz in a new browser tab.</p>
 <p translation-origin="off">You can change the appearance and behavior of the live example with attributes and classes.</p>
-<h3 translation-origin="off" class="no-toc" id="custom-label-and-tooltip">Custom label and tooltip<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#custom-label-and-tooltip"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="custom-label-and-tooltip">Custom label and tooltip<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#custom-label-and-tooltip"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Give the live example anchor a custom label and tooltip by setting the <code>title</code> attribute.</p>
 <p translation-origin="off"><live-example title="Live Example with title"></live-example></p>
 <code-example language="html">
@@ -1460,31 +1460,31 @@ app.component.2.ts
 <code-example language="html">
 &#x3C;live-example>Live example with content label&#x3C;/live-example>
 </code-example>
-<h3 translation-origin="off" class="no-toc" id="live-example-from-another-guide">Live example from another guide<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#live-example-from-another-guide"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="live-example-from-another-guide">Live example from another guide<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#live-example-from-another-guide"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To link to a Stackblitz in a folder whose name is not the same as the current guide page, set the <code>name</code> attribute to the name of that folder.</p>
 <p translation-origin="off"><live-example name="router">Live Example from the Router guide</live-example></p>
 <code-example language="html">
 &#x3C;live-example name="router">Live Example from the <a href="/api/router/Router" class="code-anchor">Router</a> guide&#x3C;/live-example>
 </code-example>
-<h3 translation-origin="off" class="no-toc" id="live-example-for-named-stackblitz">Live Example for named Stackblitz<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#live-example-for-named-stackblitz"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="live-example-for-named-stackblitz">Live Example for named Stackblitz<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#live-example-for-named-stackblitz"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To link to a Stackblitz defined by a named <code>stackblitz.json</code> file, set the <code>stackblitz</code> attribute. The following example links to the Stackblitz defined by <code>second.stackblitz.json</code> in the current guide's directory.</p>
 <p translation-origin="off"><live-example stackblitz="second"></live-example></p>
 <code-example language="html">
 &#x3C;live-example stackblitz="second">&#x3C;/live-example>
 </code-example>
-<h3 translation-origin="off" class="no-toc" id="live-example-without-download">Live Example without download<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#live-example-without-download"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="live-example-without-download">Live Example without download<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#live-example-without-download"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To skip the download link, add the <code>noDownload</code> attribute.</p>
 <p translation-origin="off"><live-example nodownload="">Just the Stackblitz</live-example></p>
 <code-example language="html">
 &#x3C;live-example noDownload>Just the Stackblitz&#x3C;/live-example>
 </code-example>
-<h3 translation-origin="off" class="no-toc" id="live-example-with-download-only">Live Example with download-only<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#live-example-with-download-only"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="live-example-with-download-only">Live Example with download-only<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#live-example-with-download-only"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To skip the live Stackblitz link and only link to the download, add the <code>downloadOnly</code> attribute.</p>
 <p translation-origin="off"><live-example downloadonly="">Download only</live-example></p>
 <code-example language="html">
 &#x3C;live-example downloadOnly>Download only&#x3C;/live-example>
 </code-example>
-<h3 translation-origin="off" class="no-toc" id="embedded-live-example">Embedded live example<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#embedded-live-example"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="embedded-live-example">Embedded live example<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#embedded-live-example"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">By default, a live example link opens a Stackblitz in a separate browser tab.
 You can embed the Stackblitz within the guide page itself by adding the <code>embedded</code> attribute.</p>
 <p translation-origin="off">For performance reasons, the Stackblitz does not start right away. The reader sees an image instead. Clicking the image starts the sometimes-slow process of launching the embedded Stackblitz within an iframe on the page.</p>
@@ -1494,26 +1494,26 @@ You can embed the Stackblitz within the guide page itself by adding the <code>em
 </code-example>
 <p translation-origin="off"><live-example embedded=""></live-example></p>
 <a id="anchors"></a>
-<h2 translation-origin="off" id="anchors">Anchors<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#anchors"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="anchors">Anchors<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#anchors"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Every section header tag is also an anchor point. Another guide page could add a link to this section by writing:</p>
 <div class="alert is-helpful">
-<p translation-origin="off">See the <a href="guide/docs-style-guide#anchors" title="Style Guide - Anchors">"Anchors"</a> section for details.</p>
+<p translation-origin="off">See the <a href="/guide/docs-style-guide#anchors" title="Style Guide - Anchors">"Anchors"</a> section for details.</p>
 </div>
 <code-example language="html">
 &#x3C;div class="alert is-helpful">
 
-See the ["Anchors"](guide/docs-style-guide#anchors "<a href="api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide - Anchors") section for details.
+See the ["Anchors"](guide/docs-style-guide#anchors "<a href="/api/animations/AnimationMetadataType#Style" class="code-anchor">Style</a> Guide - Anchors") section for details.
 
 &#x3C;/div>
 </code-example>
-<p translation-origin="off">When navigating within the page, you can omit the page URL when specifying the link that <a href="guide/docs-style-guide#anchors" title="Anchors">scrolls up</a> to the beginning of this section.</p>
+<p translation-origin="off">When navigating within the page, you can omit the page URL when specifying the link that <a href="/guide/docs-style-guide#anchors" title="Anchors">scrolls up</a> to the beginning of this section.</p>
 <code-example language="html">
 ... the link that [scrolls up](#anchors "Anchors") to ...
 </code-example>
 <a id="ugly-anchors"></a>
-<h4 translation-origin="off" id="ugly-long-section-header-anchors">Ugly, long section header anchors<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#ugly-long-section-header-anchors"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="ugly-long-section-header-anchors">Ugly, long section header anchors<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#ugly-long-section-header-anchors"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">It is often a good idea to <em>lock-in</em> a good anchor name.</p>
-<p translation-origin="off">Sometimes the section header text makes for an unattractive anchor. <a href="guide/docs-style-guide#ugly-long-section-header-anchors">This one</a> is pretty bad.</p>
+<p translation-origin="off">Sometimes the section header text makes for an unattractive anchor. <a href="/guide/docs-style-guide#ugly-long-section-header-anchors">This one</a> is pretty bad.</p>
 <code-example language="html">
 [This one](#ugly-long-section-header-anchors) is pretty bad.
 </code-example>
@@ -1525,9 +1525,9 @@ text to which it applies, using the special <code><a id="name"></a></code> synta
 
   #### Ugly, long section header anchors
 </code-example>
-<p translation-origin="off">Now <a href="guide/docs-style-guide#ugly-anchors">link to that custom anchor name</a> as you did before.</p>
+<p translation-origin="off">Now <a href="/guide/docs-style-guide#ugly-anchors">link to that custom anchor name</a> as you did before.</p>
 <code-example language="html">
-Now [link to that custom <a href="api/router/Scroll#anchor" class="code-anchor">anchor</a> name](#ugly-anchors) as you did before.
+Now [link to that custom <a href="/api/router/Scroll#anchor" class="code-anchor">anchor</a> name](#ugly-anchors) as you did before.
 </code-example>
 <div class="alert is-helpful">
 <p translation-origin="off">Alternatively, you can use the HTML <code>&#x3C;<a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a>></code> tag.</p>
@@ -1538,13 +1538,13 @@ Now [link to that custom <a href="api/router/Scroll#anchor" class="code-anchor">
 ## Anchors
 </code-example>
 </div>
-<h2 translation-origin="off" id="alerts-and-calllouts">Alerts and Calllouts<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#alerts-and-calllouts"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="alerts-and-calllouts">Alerts and Calllouts<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#alerts-and-calllouts"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Alerts and callouts present warnings, extra detail or references to other pages. They can also be used to provide commentary that <em>enriches</em> the reader's understanding of the content being presented.</p>
 <p translation-origin="off">An alert or callout <em>must not</em> contain anything <em>essential</em> to that understanding. Don't put a critical instruction or a tutorial step in a subsection.</p>
-<h3 translation-origin="off" id="alerts">Alerts<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#alerts"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">Alerts draw attention to short important points. Alerts should not be used for multi-line content (use <a href="guide/docs-style-guide#callouts" title="callouts">callouts</a> instead).</p>
+<h3 translation-origin="off" id="alerts">Alerts<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#alerts"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">Alerts draw attention to short important points. Alerts should not be used for multi-line content (use <a href="/guide/docs-style-guide#callouts" title="callouts">callouts</a> instead).</p>
 <div class="alert is-helpful">
-<p translation-origin="off">  You'll learn about styles for live examples in the <a href="guide/docs-style-guide#live-examples" title="Live examples">section below</a>.</p>
+<p translation-origin="off">  You'll learn about styles for live examples in the <a href="/guide/docs-style-guide#live-examples" title="Live examples">section below</a>.</p>
 </div>
 <p translation-origin="off">  Note that at least one blank line must follow both the opening and closing <code>&#x3C;div></code> tags. A blank line before the closing <code>&#x3C;/div></code> is customary but not required.</p>
 <code-example language="html">
@@ -1584,7 +1584,7 @@ A helpful, informational alert.
 
 &#x3C;/div>
 </code-example>
-<h3 translation-origin="off" id="callouts">Callouts<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#callouts"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="callouts">Callouts<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#callouts"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Callouts, like alerts, are meant to draw attention to important points. Use a callout when you want a riveting header and multi-line content.</p>
 <p translation-origin="off">If you have more than two paragraphs, consider creating a new page or making it part of the main content.</p>
 <p translation-origin="off">Callouts use the same <em>urgency levels</em> that alerts do.</p>
@@ -1616,7 +1616,7 @@ A helpful, informational alert.
 <li>a blank line separates the <code>&#x3C;/header></code> tag from the markdown content</li>
 </ul>
 <p translation-origin="off">Callouts are meant to grab the user's attention. They are not for casual asides. Please use them sparingly.</p>
-<h2 translation-origin="off" id="trees">Trees<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#trees"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="trees">Trees<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#trees"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Trees can represent hierarchical data.</p>
 <div class="filetree">
   <div class="file">
@@ -1691,7 +1691,7 @@ A helpful, informational alert.
     &#x3C;/div>
 &#x3C;/div>
 </code-example>
-<h2 translation-origin="off" id="tables">Tables<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#tables"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="tables">Tables<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#tables"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Use HTML tables to present tabular data.</p>
 <style>
   td, th {vertical-align: top}
@@ -1761,8 +1761,8 @@ A helpful, informational alert.
   &#x3C;/tr>
 &#x3C;/table>
 </code-example>
-<h2 translation-origin="off" id="images">Images<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#images"><i class="material-icons">link</i></a></h2>
-<h3 translation-origin="off" class="no-toc" id="image-location">Image location<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#image-location"><i class="material-icons">link</i></a></h3>
+<h2 translation-origin="off" id="images">Images<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#images"><i class="material-icons">link</i></a></h2>
+<h3 translation-origin="off" class="no-toc" id="image-location">Image location<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#image-location"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Store images in the <code>content/images</code> directory in a folder with the same URL as the guide page.
 Images for this "Authors Style Guide" page belong in the <code>content/images/guide/docs-style-guide</code> folder.</p>
 <p translation-origin="off">Angular doc generation copies these image folders to the <em>runtime</em> location, <code>generated/images</code>.
@@ -1771,7 +1771,7 @@ Set the image <code>src</code> attribute to begin in <em>that</em> directory.</p
 <code-example>
 src="generated/images/guide/docs-style-guide/flying-hero.png"
 </code-example>
-<h3 translation-origin="off" class="no-toc" id="use-the-html-img-tag">Use the HTML <i>&#x3C;img></i> tag<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#use-the-html-img-tag"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="use-the-html-img-tag">Use the HTML <i>&#x3C;img></i> tag<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#use-the-html-img-tag"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off"><strong>Do not use the markdown image syntax, ![...](...).</strong></p>
 <p translation-origin="off">Images should be specified in an <code>&#x3C;img></code> tag.</p>
 <p translation-origin="off">For accessibility, always set the <code>alt</code> attribute with a meaningful description of the image.</p>
@@ -1787,7 +1787,7 @@ src="generated/images/guide/docs-style-guide/flying-hero.png"
 &#x3C;/figure>
 </code-example>
 <p translation-origin="off"><em>Note that the HTML image element does not have a closing tag.</em></p>
-<h3 translation-origin="off" class="no-toc" id="image-dimensions">Image dimensions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#image-dimensions"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="image-dimensions">Image dimensions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#image-dimensions"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The doc generator reads the image dimensions from the file and adds width and height attributes to the <code>img</code> tag automatically. If you want to control the size of the image, supply your own width and height attributes.</p>
 <p translation-origin="off">Here's the "flying hero" at a more reasonable scale.</p>
 <figure>
@@ -1802,15 +1802,15 @@ src="generated/images/guide/docs-style-guide/flying-hero.png"
 </code-example>
 <p translation-origin="off">Wide images can be a problem. Most browsers try to rescale the image but wide images may overflow the document in certain viewports.</p>
 <p translation-origin="off"><strong>Do not set a width greater than 700px</strong>. If you wish to display a larger image, provide a link to the actual image that the user can click on to see the full size image separately as in this example of <code>source-map-explorer</code> output from the "Ahead-of-time Compilation" guide:</p>
-<a href="generated/images/guide/docs-style-guide/toh-pt6-bundle.png" title="Click to view larger image">
+<a href="/generated/images/guide/docs-style-guide/toh-pt6-bundle.png" title="Click to view larger image">
   <figure>
     <img src="generated/images/guide/docs-style-guide/toh-pt6-bundle-700w.png" alt="toh-pt6-bundle" width="300px">
   </figure>
 </a>
-<h3 translation-origin="off" class="no-toc" id="image-compression">Image compression<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#image-compression"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="image-compression">Image compression<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#image-compression"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Large image files can be slow to load, harming the user experience. Always compress the image.
 Consider using an image compression web site such as <a href="https://tinypng.com/" title="tinypng">tinypng</a>.</p>
-<h3 translation-origin="off" class="no-toc" id="floating-images">Floating images<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#floating-images"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="floating-images">Floating images<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#floating-images"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can float the image to the left or right of text by applying the class="left" or class="right" attributes respectively.</p>
 <p translation-origin="off"><img src="generated/images/guide/docs-style-guide/flying-hero.png" alt="flying Angular hero" width="200" class="left"></p>
 <p translation-origin="off">This text wraps around to the right of the floating "flying hero" image.</p>
@@ -1830,7 +1830,7 @@ Headings and code-examples automatically clear <a href="/api/router/RouterLinkWi
 &#x3C;br class="clear">
 </code-example>
 <p translation-origin="off">Note that you generally don't wrap a floating image in a <code>&#x3C;figure></code> element.</p>
-<h4 translation-origin="off" id="floating-within-a-subsection">Floating within a subsection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/docs-style-guide#floating-within-a-subsection"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="floating-within-a-subsection">Floating within a subsection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/docs-style-guide#floating-within-a-subsection"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">If you have a floating image inside an alert, callout, or a subsection, it is a good idea to apply the <code>clear-fix</code> class to the <code>div</code> to ensure that the image doesn't overflow its container. For example:</p>
 <div class="alert is-helpful clear-fix">
 <p translation-origin="off">  <img src="generated/images/guide/docs-style-guide/flying-hero.png" alt="flying Angular hero" width="100" class="right"></p>

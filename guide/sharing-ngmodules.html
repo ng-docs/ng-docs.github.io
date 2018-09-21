@@ -808,10 +808,10 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="sharing-modules">Sharing Modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#sharing-modules"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="sharing-modules">共享特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#sharing-modules"><i class="material-icons">link</i></a></h1>
-<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-16">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#prerequisites-16"><i class="material-icons">link</i></a></h4>
+<h1 translation-origin="off" id="sharing-modules">Sharing Modules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#sharing-modules"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="sharing-modules">共享特性模块<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#sharing-modules"><i class="material-icons">link</i></a></h1>
+<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-16">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#prerequisites-16"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A basic understanding of the following:</p>
 <p translation-result="">对下列知识有基本的了解：</p>
 <ul>
@@ -853,9 +853,9 @@ import { NewItemDirective } from './new-item.directive';
 import { OrdersPipe } from './orders.pipe';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
- <a href="api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a> ],
- <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ CustomerComponent, NewItemDirective, OrdersPipe ],
- <a href="api/core/NgModule#exports" class="code-anchor">exports</a>:      [ CustomerComponent, NewItemDirective, OrdersPipe,
+ <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a> ],
+ <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ CustomerComponent, NewItemDirective, OrdersPipe ],
+ <a href="/api/core/NgModule#exports" class="code-anchor">exports</a>:      [ CustomerComponent, NewItemDirective, OrdersPipe,
                  <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a>, <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> ]
 })
 export class SharedModule { }
@@ -883,13 +883,13 @@ and can bind to component properties with <code>[(<a href="/api/forms/NgModel" c
 <p translation-origin="off">Even though the components declared by <code>SharedModule</code> might not bind
 with <code>[(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]</code> and there may be no need for <code>SharedModule</code>
 to import <code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code>, <code>SharedModule</code> can still export
-<code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code> without listing it among its <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code>. This
+<code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code> without listing it among its <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code>. This
 way, you can give other modules access to <code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code> without
 having to import it directly into the <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> decorator.</p>
-<p translation-result="">即使 <code>SharedModule</code> 中声明的组件没有绑定过 <code>[(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]</code>，而且<code>SharedModule</code> 也不需要导入 <code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code>，<code>SharedModule</code> 仍然可以导出 <code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code>，而不必把它列在 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 中。
+<p translation-result="">即使 <code>SharedModule</code> 中声明的组件没有绑定过 <code>[(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]</code>，而且<code>SharedModule</code> 也不需要导入 <code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code>，<code>SharedModule</code> 仍然可以导出 <code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code>，而不必把它列在 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 中。
 这种方式下，你可以让其它模块也能访问 <code><a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a></code>，而不用直接在自己的 <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 装饰器中导入它。</p>
-<h3 translation-origin="off" id="using-components-vs-services-from-other-modules">Using components vs services from other modules.<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#using-components-vs-services-from-other-modules"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="using-components-vs-services-from-other-modules">使用来自其它模块的组件和服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#using-components-vs-services-from-other-modules"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="using-components-vs-services-from-other-modules">Using components vs services from other modules.<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#using-components-vs-services-from-other-modules"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="using-components-vs-services-from-other-modules">使用来自其它模块的组件和服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#using-components-vs-services-from-other-modules"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">There is an important distinction between using another module's component and
 using a service from another module. Import modules when you want to use
 directives, pipes, and components. Importing a module with services means that you will have a new instance of that service, which typically is not what you need (typically one wants to reuse an existing service). Use module imports to control service instantiation.</p>
@@ -901,8 +901,8 @@ directives, pipes, and components. Importing a module with services means that y
 <p translation-origin="off">To read about sharing services, see <a href="/guide/providers">Providers</a>.</p>
 <p translation-result="">要进一步了解共享服务，参见<a href="/guide/providers">服务提供商</a>。</p>
 <hr>
-<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="more-on-ngmodules-7">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/sharing-ngmodules#more-on-ngmodules-7"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="more-on-ngmodules-7">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/sharing-ngmodules#more-on-ngmodules-7"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You may also be interested in the following:</p>
 <p translation-result="">你可能还对下列内容感兴趣：</p>
 <ul>

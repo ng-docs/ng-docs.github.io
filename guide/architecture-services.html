@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="introduction-to-services-and-dependency-injection">Introduction to services and dependency injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#introduction-to-services-and-dependency-injection"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="introduction-to-services-and-dependency-injection">服务与依赖注入简介<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#introduction-to-services-and-dependency-injection"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="introduction-to-services-and-dependency-injection">Introduction to services and dependency injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#introduction-to-services-and-dependency-injection"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="introduction-to-services-and-dependency-injection">服务与依赖注入简介<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#introduction-to-services-and-dependency-injection"><i class="material-icons">link</i></a></h1>
 <img src="generated/images/guide/architecture/service.png" alt="Service" class="left" width="161" height="125">
 <p translation-origin="off"><em>Service</em> is a broad category encompassing any value, function, or feature that an app needs. A service is typically a class with a narrow, well-defined purpose. It should do something specific and do it well.</p>
 <p translation-result=""><em>服务</em>是一个广义的概念，它包括应用所需的任何值、函数或特性。狭义的服务是一个明确定义了用途的类。它应该做一些具体的事，并做好。</p>
@@ -833,13 +833,13 @@
 <p translation-origin="off">Angular doesn't <em>enforce</em> these principles. Angular does help you <em>follow</em> these principles by making it easy to factor your
 application logic into services and make those services available to components through <em>dependency injection</em>.</p>
 <p translation-result="">Angular 不会<em>强制</em>遵循这些原则。它只会通过<em>依赖注入</em>让你能更容易地将应用逻辑分解为服务，并让这些服务可用于各个组件中。</p>
-<h2 translation-origin="off" id="service-examples">Service examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#service-examples"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="service-examples">服务范例<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#service-examples"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="service-examples">Service examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#service-examples"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="service-examples">服务范例<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#service-examples"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Here's an example of a service class that logs to the browser console:</p>
 <p translation-result="">下面是一个服务类的范例，用于把日志记录到浏览器的控制台：</p>
 <code-example path="architecture/src/app/logger.service.ts" linenums="false" title="src/app/logger.service.ts (class)" region="class">
 export class Logger {
-  <a href="api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>(msg: any)   { console.log(msg); }
+  <a href="/api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a>(msg: any)   { console.log(msg); }
   error(msg: any) { console.error(msg); }
   warn(msg: any)  { console.warn(msg); }
 }
@@ -868,8 +868,8 @@ export class HeroService {
 
 </code-example>
 <hr>
-<h2 translation-origin="off" id="dependency-injection">Dependency injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#dependency-injection"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="dependency-injection-2">依赖注入（dependency injection）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#dependency-injection-2"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="dependency-injection">Dependency injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#dependency-injection"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="dependency-injection-2">依赖注入（dependency injection）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#dependency-injection-2"><i class="material-icons">link</i></a></h2>
 <img src="generated/images/guide/architecture/dependency-injection.png" alt="Service" class="left" width="200" height="90">
 <p translation-origin="off">Components consume services; that is, you can <em>inject</em> a service into a component, giving the component access to that service class. </p>
 <p translation-result="">组件是服务的消费者，也就是说，你可以把一个服务<em>注入</em>到组件中，让组件类得以访问该服务类。</p>
@@ -910,8 +910,8 @@ constructor(private service: HeroService) { }
 <figure>
   <img src="generated/images/guide/architecture/injector-injects.png" alt="Service" class="left" width="479" height="218">
 </figure>
-<h3 translation-origin="off" id="providing-services">Providing services<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#providing-services"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="providing-services">提供服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/architecture-services#providing-services"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="providing-services">Providing services<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#providing-services"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="providing-services">提供服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/architecture-services#providing-services"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You must register at least one <em>provider</em> of any service you are going to use. A service can register providers itself, making it available everywhere, or you can register providers with specific modules or components. You register providers in the metadata of the service (in the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator), or in the <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> or <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> metadata </p>
 <p translation-result="">对于要用到的任何服务，你必须至少注册一个<em>提供商</em>。服务可以注册自己的提供商，这样可以让自己到处可用。或者，你也可以为特定的模块或组件注册提供商。要注册提供商，就要在服务的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 装饰器中提供它的元数据，或者在<code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 或 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 的元数据中。</p>
 <ul>
@@ -922,7 +922,7 @@ constructor(private service: HeroService) { }
 </ul>
 <code-example>
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 </code-example>
 <p translation-origin="off"> When you provide the service at the root level, Angular creates a single, shared instance of HeroService and injects into any class that asks for it. Registering the provider in the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> metadata also allows Angular to optimize an app by removing the service if it turns out not to be used after all. </p>

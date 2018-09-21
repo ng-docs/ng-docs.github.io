@@ -808,10 +808,10 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="singleton-services">Singleton services<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#singleton-services"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="singleton-services-1">单例应用<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#singleton-services-1"><i class="material-icons">link</i></a></h1>
-<h4 translation-origin="off" id="prerequisites">Prerequisites:<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-17">前提条件：<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#prerequisites-17"><i class="material-icons">link</i></a></h4>
+<h1 translation-origin="off" id="singleton-services">Singleton services<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#singleton-services"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="singleton-services-1">单例应用<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#singleton-services-1"><i class="material-icons">link</i></a></h1>
+<h4 translation-origin="off" id="prerequisites">Prerequisites:<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-17">前提条件：<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#prerequisites-17"><i class="material-icons">link</i></a></h4>
 <ul>
 <li>
 <p translation-origin="off">A basic understanding of <a href="/guide/bootstrapping">Bootstrapping</a>.</p>
@@ -826,8 +826,8 @@
 <live-example name="ngmodules"></live-example> showcasing all the documented features of NgModules.</p>
 <p translation-result="">本页中描述的这种全应用级单例服务的例子位于<live-example name="ngmodules"></live-example>，它示范了 NgModule 的所有已文档化的特性。</p>
 <hr>
-<h2 translation-origin="off" id="providing-a-singleton-service">Providing a singleton service<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#providing-a-singleton-service"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="providing-a-singleton-service">提供单例服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#providing-a-singleton-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="providing-a-singleton-service">Providing a singleton service<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#providing-a-singleton-service"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="providing-a-singleton-service">提供单例服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#providing-a-singleton-service"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">There are two ways to make a service a singleton in Angular:</p>
 <p translation-result="">在 Angular 中有两种方式来生成单例服务：</p>
 <ul>
@@ -840,13 +840,13 @@
 <p translation-result="">把该服务包含在 <code>AppModule</code> 或某个只会被 <code>AppModule</code> 导入的模块中。</p>
 </li>
 </ul>
-<p translation-origin="off">Beginning with Angular 6.0, the preferred way to create a singleton services is to specify on the service that it should be provided in the application root. This is done by setting <code><a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> to <code>root</code> on the service's <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator:</p>
-<p translation-result="">从 Angular 6.0 开始，创建单例服务的首选方式是在那个服务类上指定它应该在应用的根上提供。只要在该服务的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 装饰器上把 <code><a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> 设置为 <code>root</code> 就可以了：</p>
+<p translation-origin="off">Beginning with Angular 6.0, the preferred way to create a singleton services is to specify on the service that it should be provided in the application root. This is done by setting <code><a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> to <code>root</code> on the service's <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator:</p>
+<p translation-result="">从 Angular 6.0 开始，创建单例服务的首选方式是在那个服务类上指定它应该在应用的根上提供。只要在该服务的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 装饰器上把 <code><a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> 设置为 <code>root</code> 就可以了：</p>
 <code-example path="providers/src/app/user.service.0.ts" title="src/app/user.service.0.ts" linenums="false">
 import { <a href="/api/core/Injectable" class="code-anchor">Injectable</a> } from '@angular/core';
 
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 export class UserService {
 }
@@ -856,15 +856,15 @@ export class UserService {
 <p translation-origin="off">For more detailed information on services, see the <a href="/tutorial/toh-pt4">Services</a> chapter of the
 <a href="/tutorial">Tour of Heroes tutorial</a>.</p>
 <p translation-result="">要想深入了解关于服务的信息，参见<a href="/tutorial">《英雄指南》教程</a>中的<a href="/tutorial/toh-pt4">服务</a>一章。</p>
-<h2 translation-origin="off" id="forroot"><code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#forroot"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="forroot"><code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#forroot"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">If a module provides both providers and declarations (components, directives, pipes) then loading it in a child injector such as a route, would duplicate the provider instances. The duplication of providers would cause issues as they would shadow the root instances, which are probably meant to be singletons. For this reason Angular provides a way to separate providers out of the module so that same module can be imported into the root module with <code>providers</code> and child modules without <code>providers</code>.</p>
 <p translation-result="">如果某个模块同时提供了服务提供商和可声明对象（组件、指令、管道），那么当在某个子注入器中加载它的时候（比如路由），就会生成多个该服务提供商的实例。
 而存在多个实例会导致一些问题，因为这些实例会屏蔽掉根注入器中该服务提供商的实例，而它的本意可能是作为单例对象使用的。
 因此，Angular 提供了一种方式来把服务提供商从该模块中分离出来，以便该模块既可以带着 <code>providers</code> 被根模块导入，也可以不带 <code>providers</code> 被子模块导入。</p>
 <ol>
 <li>
-<p translation-origin="off">Create a static method <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> (by convention) on the module.</p>
-<p translation-result="">在该模块上创建一个静态方法 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>（习惯名称）。</p>
+<p translation-origin="off">Create a static method <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> (by convention) on the module.</p>
+<p translation-result="">在该模块上创建一个静态方法 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>（习惯名称）。</p>
 </li>
 <li>
 <p translation-origin="off">Place the providers into the <code>forRoot</code> method as follows.</p>
@@ -876,20 +876,20 @@ export class UserService {
 <p translation-result="">以 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 为例具体说说。<code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 要提供 <code><a href="/api/router/Router" class="code-anchor">Router</a></code> 服务，还要提供 <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code> 指令。
 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 要由根应用模块导入，以便该应用拥有一个路由器，而且它还需要至少一个 <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code>。
 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 还必须由各个独立的路由组件导入，让它们能在自己的模板中使用 <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code> 指令来支持其子路由。</p>
-<p translation-origin="off">If the <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> didn’t have <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> then each route component would instantiate a new <code><a href="/api/router/Router" class="code-anchor">Router</a></code> instance, which would break the application as there can only be one <code><a href="/api/router/Router" class="code-anchor">Router</a></code>. For this reason, the <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> has the <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code> declaration so that it is available everywhere, but the <code><a href="/api/router/Router" class="code-anchor">Router</a></code> provider is only in the <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>. The result is that the root application module imports <code>RouterModule.forRoot(...)</code> and gets a <code><a href="/api/router/Router" class="code-anchor">Router</a></code>, whereas all route components import <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> which does not include the <code><a href="/api/router/Router" class="code-anchor">Router</a></code>.</p>
-<p translation-result="">如果 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 没有 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>，那么每个路由组件都会创建一个新的 <code><a href="/api/router/Router" class="code-anchor">Router</a></code> 实例。这将会破坏整个应用，因为应用中只能有一个 <code><a href="/api/router/Router" class="code-anchor">Router</a></code>。
-<code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 拥有 <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code> 指令，它应该随处可用，但是 <code><a href="/api/router/Router" class="code-anchor">Router</a></code> 只能有一个，它应该在 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 中提供。
+<p translation-origin="off">If the <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> didn’t have <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> then each route component would instantiate a new <code><a href="/api/router/Router" class="code-anchor">Router</a></code> instance, which would break the application as there can only be one <code><a href="/api/router/Router" class="code-anchor">Router</a></code>. For this reason, the <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> has the <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code> declaration so that it is available everywhere, but the <code><a href="/api/router/Router" class="code-anchor">Router</a></code> provider is only in the <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>. The result is that the root application module imports <code>RouterModule.forRoot(...)</code> and gets a <code><a href="/api/router/Router" class="code-anchor">Router</a></code>, whereas all route components import <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> which does not include the <code><a href="/api/router/Router" class="code-anchor">Router</a></code>.</p>
+<p translation-result="">如果 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 没有 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>，那么每个路由组件都会创建一个新的 <code><a href="/api/router/Router" class="code-anchor">Router</a></code> 实例。这将会破坏整个应用，因为应用中只能有一个 <code><a href="/api/router/Router" class="code-anchor">Router</a></code>。
+<code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 拥有 <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code> 指令，它应该随处可用，但是 <code><a href="/api/router/Router" class="code-anchor">Router</a></code> 只能有一个，它应该在 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 中提供。
 最终的结果就是，应用的根模块导入了 <code>RouterModule.forRoot(...)</code> 以获取 <code><a href="/api/router/Router" class="code-anchor">Router</a></code>，而所有路由组件都导入了 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code>，它不包括这个 <code><a href="/api/router/Router" class="code-anchor">Router</a></code> 服务。</p>
 <p translation-origin="off">If you have a module which provides both providers and declarations, use this pattern to separate them out.</p>
 <p translation-result="">如果你有一个同时提供服务提供商和可声明对象的模块，请使用下面的模式把它们分离开。</p>
 <p translation-origin="off">A module that adds providers to the application can offer a
 facility for configuring those providers as well through the
-<code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method.</p>
-<p translation-result="">那些需要把服务提供商加到应用中的模块可以通过某种类似 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法的方式配置那些服务提供商。</p>
-<p translation-origin="off"><code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> takes a service configuration object and returns a
+<code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method.</p>
+<p translation-result="">那些需要把服务提供商加到应用中的模块可以通过某种类似 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法的方式配置那些服务提供商。</p>
+<p translation-origin="off"><code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> takes a service configuration object and returns a
 <a href="/api/core/ModuleWithProviders">ModuleWithProviders</a>, which is
 a simple object with the following properties:</p>
-<p translation-result=""><code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 接收一个服务配置对象，然后返回一个 <a href="/api/core/ModuleWithProviders">ModuleWithProviders</a> ，它是一个带有下列属性的简单对象：</p>
+<p translation-result=""><code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 接收一个服务配置对象，然后返回一个 <a href="/api/core/ModuleWithProviders">ModuleWithProviders</a> ，它是一个带有下列属性的简单对象：</p>
 <ul>
 <li>
 <p translation-origin="off"><code>ngModule</code>: in this example, the <code>CoreModule</code> class.</p>
@@ -904,48 +904,48 @@ a simple object with the following properties:</p>
 the root <code>AppModule</code> imports the <code>CoreModule</code> and adds the
 <code>providers</code> to the <code>AppModule</code> providers. Specifically,
 Angular accumulates all imported providers
-before appending the items listed in <code>@<a href="api/core/NgModule#providers" class="code-anchor">NgModule.providers</a></code>.
+before appending the items listed in <code>@<a href="/api/core/NgModule#providers" class="code-anchor">NgModule.providers</a></code>.
 This sequence ensures that whatever you add explicitly to
 the <code>AppModule</code> providers takes precedence over the providers
 of imported modules.</p>
 <p translation-result="">在这个<live-example name="ngmodules"></live-example>中，根 <code>AppModule</code> 导入了 <code>CoreModule</code>，并把它的 <code>providers</code> 添加到了 <code>AppModule</code> 的服务提供商中。
-特别是，Angular 会在 <code>@<a href="api/core/NgModule#providers" class="code-anchor">NgModule.providers</a></code> 前面添加这些导入的服务提供商。
+特别是，Angular 会在 <code>@<a href="/api/core/NgModule#providers" class="code-anchor">NgModule.providers</a></code> 前面添加这些导入的服务提供商。
 这种顺序保证了 <code>AppModule</code> 中的服务提供商总是会优先于那些从其它模块中导入的服务提供商。</p>
-<p translation-origin="off">Import <code>CoreModule</code> and use its <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method one time, in <code>AppModule</code>, because it registers services and you only want to register those services one time in your app. If you were to register them more than once, you could end up with multiple instances of the service and a runtime error.</p>
-<p translation-result="">应该只在 <code>AppModule</code> 中导入 <code>CoreModule</code> 并只使用一次 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法，因为该方法中会注册服务，而你希望那些服务在该应用中只注册一次。
+<p translation-origin="off">Import <code>CoreModule</code> and use its <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method one time, in <code>AppModule</code>, because it registers services and you only want to register those services one time in your app. If you were to register them more than once, you could end up with multiple instances of the service and a runtime error.</p>
+<p translation-result="">应该只在 <code>AppModule</code> 中导入 <code>CoreModule</code> 并只使用一次 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法，因为该方法中会注册服务，而你希望那些服务在该应用中只注册一次。
 如果你多次注册它们，就可能会得到该服务的多个实例，并导致运行时错误。</p>
-<p translation-origin="off">You can also add a <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method in the <code>CoreModule</code> that configures
+<p translation-origin="off">You can also add a <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method in the <code>CoreModule</code> that configures
 the core <code>UserService</code>.</p>
-<p translation-result="">你还可以在 <code>CoreModule</code> 中添加一个用于配置 <code>UserService</code> 的 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法。</p>
+<p translation-result="">你还可以在 <code>CoreModule</code> 中添加一个用于配置 <code>UserService</code> 的 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法。</p>
 <p translation-origin="off">In the following example, the optional, injected <code>UserServiceConfig</code>
 extends the core <code>UserService</code>. If a <code>UserServiceConfig</code> exists, the <code>UserService</code> sets the user name from that config.</p>
 <p translation-result="">在下面的例子中，可选的注入 <code>UserServiceConfig</code> 扩展了 <code>Core</code> 模块中的 <code>UserService</code>。如果 <code>UserServiceConfig</code> 存在，就从这个配置中设置用户名。</p>
 <code-example path="ngmodules/src/app/core/user.service.ts" region="ctor" title="src/app/core/user.service.ts (constructor)" linenums="false">
-constructor(@<a href="/api/core/Optional" class="code-anchor">Optional</a>() <a href="api/router/Router#config" class="code-anchor">config</a>: UserServiceConfig) {
-  if (<a href="api/router/Router#config" class="code-anchor">config</a>) { this._userName = config.userName; }
+constructor(@<a href="/api/core/Optional" class="code-anchor">Optional</a>() <a href="/api/router/Router#config" class="code-anchor">config</a>: UserServiceConfig) {
+  if (<a href="/api/router/Router#config" class="code-anchor">config</a>) { this._userName = config.userName; }
 }
 
 </code-example>
-<p translation-origin="off">Here's <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> that takes a <code>UserServiceConfig</code> object:</p>
-<p translation-result="">下面是一个接受 <code>UserServiceConfig</code> 参数的 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法：</p>
+<p translation-origin="off">Here's <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> that takes a <code>UserServiceConfig</code> object:</p>
+<p translation-result="">下面是一个接受 <code>UserServiceConfig</code> 参数的 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法：</p>
 <code-example path="ngmodules/src/app/core/core.module.ts" region="for-root" title="src/app/core/core.module.ts (forRoot)" linenums="false">
-<a href="/api/upgrade/static" class="code-anchor">static</a> forRoot(<a href="api/router/Router#config" class="code-anchor">config</a>: UserServiceConfig): <a href="/api/core/ModuleWithProviders" class="code-anchor">ModuleWithProviders</a> {
+<a href="/api/upgrade/static" class="code-anchor">static</a> forRoot(<a href="/api/router/Router#config" class="code-anchor">config</a>: UserServiceConfig): <a href="/api/core/ModuleWithProviders" class="code-anchor">ModuleWithProviders</a> {
   return {
     ngModule: CoreModule,
     providers: [
-      {provide: UserServiceConfig, useValue: <a href="api/router/Router#config" class="code-anchor">config</a> }
+      {provide: UserServiceConfig, useValue: <a href="/api/router/Router#config" class="code-anchor">config</a> }
     ]
   };
 }
 
 </code-example>
-<p translation-origin="off">Lastly, call it within the <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> list of the <code>AppModule</code>.</p>
-<p translation-result="">最后，在 <code>AppModule</code> 的 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code><em>列表</em>中调用它。</p>
+<p translation-origin="off">Lastly, call it within the <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> list of the <code>AppModule</code>.</p>
+<p translation-result="">最后，在 <code>AppModule</code> 的 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code><em>列表</em>中调用它。</p>
 <code-example path="ngmodules/src/app/app.module.ts" region="import-for-root" title="src/app/app.module.ts (imports)" linenums="false">
 import { CoreModule } from './core/core.module';
 /* . . . */
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>,
     ContactModule,
     CoreModule.forRoot({userName: 'Miss Marple'}),
@@ -958,16 +958,16 @@ export class AppModule { }
 </code-example>
 <p translation-origin="off">The app displays "Miss Marple" as the user instead of the default "Sherlock Holmes".</p>
 <p translation-result="">该应用不再显示默认的 “Sherlock Holmes”，而是用 “Miss Marple” 作为用户名称。</p>
-<p translation-origin="off">Remember to <em>import</em> <code>CoreModule</code> as a Javascript import at the top of the file; don't add it to more than one <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> list.</p>
-<p translation-result="">记住，在文件顶部使用 JavaScript 的 <code>import</code> 语句<em>导入</em> <code>CoreModule</code>，但不要在多于一个 <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 的 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 列表中添加它。</p>
+<p translation-origin="off">Remember to <em>import</em> <code>CoreModule</code> as a Javascript import at the top of the file; don't add it to more than one <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> list.</p>
+<p translation-result="">记住，在文件顶部使用 JavaScript 的 <code>import</code> 语句<em>导入</em> <code>CoreModule</code>，但不要在多于一个 <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 的 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 列表中添加它。</p>
 <!-- KW--Does this mean that if we need it elsewhere we only import it at the top? I thought the services would all be available since we were importing it into `AppModule` in `providers`. -->
-<h2 translation-origin="off" id="prevent-reimport-of-the-coremodule">Prevent reimport of the <code>CoreModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#prevent-reimport-of-the-coremodule"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="prevent-reimport-of-the-codecoremodulecode">防止重复导入 <code>CoreModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#prevent-reimport-of-the-codecoremodulecode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="prevent-reimport-of-the-coremodule">Prevent reimport of the <code>CoreModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#prevent-reimport-of-the-coremodule"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="prevent-reimport-of-the-codecoremodulecode">防止重复导入 <code>CoreModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#prevent-reimport-of-the-codecoremodulecode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Only the root <code>AppModule</code> should import the <code>CoreModule</code>. If a
 lazy-loaded module imports it too, the app can generate
-<a href="guide/ngmodule-faq#q-why-bad">multiple instances</a> of a service.</p>
+<a href="/guide/ngmodule-faq#q-why-bad">multiple instances</a> of a service.</p>
 <p translation-result="">只有根模块 <code>AppModule</code> 才能导入 <code>CoreModule</code>。如果一个惰性加载模块也导入了它，
-该应用就会为服务生成<a href="guide/ngmodule-faq#q-why-bad">多个实例</a>。</p>
+该应用就会为服务生成<a href="/guide/ngmodule-faq#q-why-bad">多个实例</a>。</p>
 <p translation-origin="off">To guard against a lazy-loaded module re-importing <code>CoreModule</code>, add the following <code>CoreModule</code> constructor.</p>
 <p translation-result="">要想防止惰性加载模块重复导入 <code>CoreModule</code>，可以添加如下的 <code>CoreModule</code> 构造函数。</p>
 <code-example path="ngmodules/src/app/core/core.module.ts" region="ctor" title="src/app/core/core.module.ts" linenums="false">
@@ -1028,17 +1028,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>,
     ContactModule,
     CoreModule.forRoot({userName: 'Miss Marple'}),
     AppRoutingModule
   ],
   providers: [],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
     AppComponent
   ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [AppComponent]
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [AppComponent]
 })
 export class AppModule { }
 
@@ -1055,9 +1055,9 @@ import { UserServiceConfig } from './user.service';
 
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a> ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ TitleComponent ],
-  <a href="api/core/NgModule#exports" class="code-anchor">exports</a>:      [ TitleComponent ],
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>:      [ <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a> ],
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [ TitleComponent ],
+  <a href="/api/core/NgModule#exports" class="code-anchor">exports</a>:      [ TitleComponent ],
   providers:    [ UserService ]
 })
 export class CoreModule {
@@ -1068,11 +1068,11 @@ export class CoreModule {
     }
   }
 
-  <a href="/api/upgrade/static" class="code-anchor">static</a> forRoot(<a href="api/router/Router#config" class="code-anchor">config</a>: UserServiceConfig): <a href="/api/core/ModuleWithProviders" class="code-anchor">ModuleWithProviders</a> {
+  <a href="/api/upgrade/static" class="code-anchor">static</a> forRoot(<a href="/api/router/Router#config" class="code-anchor">config</a>: UserServiceConfig): <a href="/api/core/ModuleWithProviders" class="code-anchor">ModuleWithProviders</a> {
     return {
       ngModule: CoreModule,
       providers: [
-        {provide: UserServiceConfig, useValue: <a href="api/router/Router#config" class="code-anchor">config</a> }
+        {provide: UserServiceConfig, useValue: <a href="/api/router/Router#config" class="code-anchor">config</a> }
       ]
     };
   }
@@ -1081,8 +1081,8 @@ export class CoreModule {
 </code-pane>
 </code-tabs>
 <hr>
-<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="more-on-ngmodules-8">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/singleton-services#more-on-ngmodules-8"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="more-on-ngmodules-8">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/singleton-services#more-on-ngmodules-8"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You may also be interested in:</p>
 <p translation-result="">你还可能对下列内容感兴趣：</p>
 <ul>

@@ -808,9 +808,9 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="ngmodule-api">NgModule API<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#ngmodule-api"><i class="material-icons">link</i></a></h1>
-<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#prerequisites"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="prerequisites-6">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#prerequisites-6"><i class="material-icons">link</i></a></h4>
+<h1 translation-origin="off" id="ngmodule-api">NgModule API<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#ngmodule-api"><i class="material-icons">link</i></a></h1>
+<h4 translation-origin="off" id="prerequisites">Prerequisites<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#prerequisites"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="prerequisites-6">前提条件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#prerequisites-6"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">A basic understanding of the following concepts:</p>
 <p translation-result="">对下列概念有基本的理解：</p>
 <ul>
@@ -824,8 +824,8 @@
 </li>
 </ul>
 <hr>
-<h2 translation-origin="off" id="purpose-of-ngmodule">Purpose of <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#purpose-of-ngmodule"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="purpose-of-codengmodulecode"><code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 的设计意图<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#purpose-of-codengmodulecode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="purpose-of-ngmodule">Purpose of <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#purpose-of-ngmodule"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="purpose-of-codengmodulecode"><code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 的设计意图<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#purpose-of-codengmodulecode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">At a high level, NgModules are a way to organize Angular apps
 and they accomplish this through the metadata in the <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code>
 decorator.
@@ -834,34 +834,34 @@ The metadata falls into three categories:</p>
 这些元数据可以分成三类：</p>
 <ul>
 <li>
-<p translation-origin="off"><strong>Static:</strong> Compiler configuration which tells the compiler about directive selectors and where in templates the directives should be applied through selector matching. This is configured via the <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array.</p>
-<p translation-result=""> <strong>静态的：</strong>编译器配置，用于告诉编译器指令的选择器并通过选择器匹配的方式决定要把该指令应用到模板中的什么位置。它是通过 <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组来配置的。</p>
+<p translation-origin="off"><strong>Static:</strong> Compiler configuration which tells the compiler about directive selectors and where in templates the directives should be applied through selector matching. This is configured via the <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array.</p>
+<p translation-result=""> <strong>静态的：</strong>编译器配置，用于告诉编译器指令的选择器并通过选择器匹配的方式决定要把该指令应用到模板中的什么位置。它是通过 <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组来配置的。</p>
 </li>
 <li>
 <p translation-origin="off"><strong>Runtime:</strong> Injector configuration via the <code>providers</code> array.</p>
 <p translation-result=""> <strong>运行时：</strong>通过 <code>providers</code> 数组提供给注入器的配置。</p>
 </li>
 <li>
-<p translation-origin="off"><strong>Composability/Grouping:</strong> Bringing NgModules together and making them available via the <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> and <code><a href="api/core/NgModule#exports" class="code-anchor">exports</a></code> arrays.</p>
-<p translation-result=""> <strong>组合/分组：</strong>通过 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 和 <code><a href="api/core/NgModule#exports" class="code-anchor">exports</a></code> 数组来把多个 NgModule 放在一起，并彼此可用。</p>
+<p translation-origin="off"><strong>Composability/Grouping:</strong> Bringing NgModules together and making them available via the <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> and <code><a href="/api/core/NgModule#exports" class="code-anchor">exports</a></code> arrays.</p>
+<p translation-result=""> <strong>组合/分组：</strong>通过 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 和 <code><a href="/api/core/NgModule#exports" class="code-anchor">exports</a></code> 数组来把多个 NgModule 放在一起，并彼此可用。</p>
 </li>
 </ul>
 <code-example language="typescript">
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
   // Static, that is compiler configuration
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [], // Configure the selectors
-  entryComponents: [], // Generate the <a href="api/core/Directive#host" class="code-anchor">host</a> <a href="api/core/ResolvedReflectiveFactory#factory" class="code-anchor">factory</a>
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [], // Configure the selectors
+  entryComponents: [], // Generate the <a href="/api/core/Directive#host" class="code-anchor">host</a> <a href="/api/core/ResolvedReflectiveFactory#factory" class="code-anchor">factory</a>
 
   // Runtime, or injector configuration
   providers: [], // Runtime injector configuration
 
   // Composability / Grouping
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [], // composing NgModules together
-  <a href="api/core/NgModule#exports" class="code-anchor">exports</a>: [] // making NgModules <a href="api/service-worker/SwUpdate#available" class="code-anchor">available</a> to other parts of the app
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [], // composing NgModules together
+  <a href="/api/core/NgModule#exports" class="code-anchor">exports</a>: [] // making NgModules <a href="/api/service-worker/SwUpdate#available" class="code-anchor">available</a> to other parts of the app
 })
 </code-example>
-<h2 translation-origin="off" id="ngmodule-metadata"><code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> metadata<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#ngmodule-metadata"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="codengmodulecode-metadata"><code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 元数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#codengmodulecode-metadata"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="ngmodule-metadata"><code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> metadata<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#ngmodule-metadata"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="codengmodulecode-metadata"><code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 元数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#codengmodulecode-metadata"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The following table summarizes the <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> metadata properties.</p>
 <p translation-result="">下面是 <code>@<a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> 元数据中属性的汇总表：</p>
 <table>
@@ -877,12 +877,12 @@ The metadata falls into three categories:</p>
   </tr>
   <tr>
     <td style="vertical-align: top">
-<p translation-origin="off">      <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code></p>
+<p translation-origin="off">      <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code></p>
     </td>
     <td>
-<p translation-origin="off">      A list of <a href="guide/ngmodule-faq#q-declarable">declarable</a> classes,
+<p translation-origin="off">      A list of <a href="/guide/ngmodule-faq#q-declarable">declarable</a> classes,
 (<em>components</em>, <em>directives</em>, and <em>pipes</em>) that <em>belong to this module</em>.</p>
-<p translation-result="">      <em>属于该模块</em>的<a href="guide/ngmodule-faq#q-declarable">可声明对象</a>（<em>组件</em>、<em>指令</em>和<em>管道</em>）的列表。</p>
+<p translation-result="">      <em>属于该模块</em>的<a href="/guide/ngmodule-faq#q-declarable">可声明对象</a>（<em>组件</em>、<em>指令</em>和<em>管道</em>）的列表。</p>
       <ol>
         <li>
 <p translation-origin="off">            When compiling a template, you need to determine a set of selectors which should be used for triggering their corresponding directives.</p>
@@ -893,8 +893,8 @@ The metadata falls into three categories:</p>
 <p translation-result="">          该模板在 NgModule 环境中编译 —— 模板的组件是在该 NgModule 内部声明的，它会使用如下规则来确定这组选择器：</p>
           <ul>
             <li>
-<p translation-origin="off">                All selectors of directives listed in <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code>.</p>
-<p translation-result="">                列在 <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 中的所有指令选择器。</p>
+<p translation-origin="off">                All selectors of directives listed in <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code>.</p>
+<p translation-result="">                列在 <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 中的所有指令选择器。</p>
             </li>
             <li>
 <p translation-origin="off">                All selectors of directives exported from imported NgModules.</p>
@@ -941,7 +941,7 @@ gets the local instance of the service, not the instance in the root application
   </tr>
   <tr>
     <td style="vertical-align: top">
-<p translation-origin="off">      <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code></p>
+<p translation-origin="off">      <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code></p>
     </td>
     <td>
 <p translation-origin="off">      A list of modules which should be folded into this module. Folded means it is
@@ -950,11 +950,11 @@ as if all the imported NgModule's exported properties were declared here.</p>
 <p translation-origin="off">      Specifically, it is as if the list of modules whose exported components, directives, or pipes
 are referenced by the component templates were declared in this module.</p>
 <p translation-result="">      特别是，这里列出的模块，其导出的组件、指令或管道，当在组件模板中被引用时，和本模块自己声明的那些是等价的。</p>
-<p translation-origin="off">      A component template can <a href="guide/ngmodule-faq#q-template-reference">reference</a> another component, directive, or pipe
+<p translation-origin="off">      A component template can <a href="/guide/ngmodule-faq#q-template-reference">reference</a> another component, directive, or pipe
 when the reference is declared in this module or if the imported module has exported it.
 For example, a component can use the <code><a href="/api/common/NgIf" class="code-anchor">NgIf</a></code> and <code>NgFor</code> directives only if the
 module has imported the Angular <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> (perhaps indirectly by importing <code><a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a></code>).</p>
-<p translation-result="">      组件模板可以<a href="guide/ngmodule-faq#q-template-reference">引用</a>其它组件、指令或管道，不管它们是在本模块中声明的，还是从导入的模块中导出的。
+<p translation-result="">      组件模板可以<a href="/guide/ngmodule-faq#q-template-reference">引用</a>其它组件、指令或管道，不管它们是在本模块中声明的，还是从导入的模块中导出的。
 比如，只有当该模块导入了 Angular 的 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a>（也可能从</code>BrowserModule<code>中间接导入）时，组件才能使用</code>NgIf<code>和</code>NgFor` 指令。</p>
 <p translation-origin="off">      You can import many standard directives from the <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code>
 but some familiar directives belong to other modules.
@@ -966,17 +966,17 @@ after importing the Angular <code><a href="/api/forms/FormsModule" class="code-a
   </tr>
   <tr>
     <td style="vertical-align: top">
-<p translation-origin="off">      <code><a href="api/core/NgModule#exports" class="code-anchor">exports</a></code></p>
+<p translation-origin="off">      <code><a href="/api/core/NgModule#exports" class="code-anchor">exports</a></code></p>
     </td>
     <td>
 <p translation-origin="off">      A list of declarations—<em>component</em>, <em>directive</em>, and <em>pipe</em> classes—that
 an importing module can use.</p>
 <p translation-result="">      可供导入了自己的模块使用的可声明对象（<strong>组件</strong>、<strong>指令</strong>、<strong>管道类</strong>）的列表。</p>
 <p translation-origin="off">      Exported declarations are the module's <em>public API</em>.
-A component in another module can <a href="guide/ngmodule-faq#q-template-reference">use</a> <em>this</em>
+A component in another module can <a href="/guide/ngmodule-faq#q-template-reference">use</a> <em>this</em>
 module's <code>UserComponent</code> if it imports this module and this module exports <code>UserComponent</code>.</p>
 <p translation-result="">      导出的可声明对象就是本模块的<em>公共 API</em>。
-只有当其它模块导入了本模块，并且本模块导出了 <code>UserComponent</code> 时，其它模块中的组件才能<a href="guide/ngmodule-faq#q-template-reference">使用</a><em>本</em>模块中的 <code>UserComponent</code>。</p>
+只有当其它模块导入了本模块，并且本模块导出了 <code>UserComponent</code> 时，其它模块中的组件才能<a href="/guide/ngmodule-faq#q-template-reference">使用</a><em>本</em>模块中的 <code>UserComponent</code>。</p>
 <p translation-origin="off">      Declarations are private by default.
 If this module does <em>not</em> export <code>UserComponent</code>, then only the components within <em>this</em>
 module can use <code>UserComponent</code>.</p>
@@ -988,19 +988,19 @@ Module 'B' must import <code><a href="/api/common/CommonModule" class="code-anch
 <p translation-result="">      导入某个模块<em>并不会</em>自动重新导出被导入模块的那些导入。
 模块 B 不会因为它导入了模块 A，而模块 A 导入了 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> 而能够使用 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code>。
 模块 B 必须自己导入 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code>。</p>
-<p translation-origin="off">      A module can list another module among its <code><a href="api/core/NgModule#exports" class="code-anchor">exports</a></code>, in which case
+<p translation-origin="off">      A module can list another module among its <code><a href="/api/core/NgModule#exports" class="code-anchor">exports</a></code>, in which case
 all of that module's public components, directives, and pipes are exported.</p>
-<p translation-result="">      一个模块可以把另一个模块加入自己的 <code><a href="api/core/NgModule#exports" class="code-anchor">exports</a></code> 列表中，这时，另一个模块的所有公共组件、指令和管道都会被导出。</p>
-<p translation-origin="off">      <a href="guide/ngmodule-faq#q-reexport">Re-export</a> makes module transitivity explicit.
+<p translation-result="">      一个模块可以把另一个模块加入自己的 <code><a href="/api/core/NgModule#exports" class="code-anchor">exports</a></code> 列表中，这时，另一个模块的所有公共组件、指令和管道都会被导出。</p>
+<p translation-origin="off">      <a href="/guide/ngmodule-faq#q-reexport">Re-export</a> makes module transitivity explicit.
 If Module 'A' re-exports <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> and Module 'B' imports Module 'A',
 Module 'B' components can use <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> even though 'B' itself didn't import <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code>.</p>
-<p translation-result="">      <a href="guide/ngmodule-faq#q-reexport">重新导出</a>可以让模块被显式传递。
+<p translation-result="">      <a href="/guide/ngmodule-faq#q-reexport">重新导出</a>可以让模块被显式传递。
 如果模块 A 重新导出了 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code>，而模块 B 导入了模块 A，那么模块 B 就可以使用 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 了 —— 即使它自己没有导入 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code>。</p>
     </td>
   </tr>
   <tr>
     <td style="vertical-align: top">
-<p translation-origin="off">      <code><a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code></p>
+<p translation-origin="off">      <code><a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code></p>
     </td>
     <td>
 <p translation-origin="off">      A list of components that are automatically bootstrapped.</p>
@@ -1032,8 +1032,8 @@ The router creates them and drops them into the DOM near a <code>&#x3C;<a href="
 you don't have to add them to a module's <code>entryComponents</code> list,
 as they are added implicitly.</p>
 <p translation-result="">      虽然引导组件和路由组件都是<em>入口组件</em>，不过你不用自己把它们加到模块的 <code>entryComponents</code> 列表中，因为它们会被隐式添加进去。</p>
-<p translation-origin="off">      Angular automatically adds components in the module's <code><a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code> and route definitions into the <code>entryComponents</code> list.</p>
-<p translation-result="">      Angular 会自动把模块的 <code><a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code> 中的组件和路由定义中的组件添加到 <code>entryComponents</code> 列表。</p>
+<p translation-origin="off">      Angular automatically adds components in the module's <code><a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code> and route definitions into the <code>entryComponents</code> list.</p>
+<p translation-result="">      Angular 会自动把模块的 <code><a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code> 中的组件和路由定义中的组件添加到 <code>entryComponents</code> 列表。</p>
 <p translation-origin="off">      That leaves only components bootstrapped using one of the imperative techniques, such as <a href="https://angular.io/api/core/ViewContainerRef#createComponent"><code>ViewComponentRef.createComponent()</code></a> as undiscoverable.</p>
 <p translation-result="">      而那些使用不易察觉的<a href="https://angular.cn/api/core/ViewContainerRef#createComponent"><code>ViewComponentRef.createComponent()</code></a>的方式进行命令式引导的组件仍然需要添加。</p>
 <p translation-origin="off">      Dynamic component loading is not common in most apps beyond the router. If you need to dynamically load components, you must add these components to the <code>entryComponents</code> list yourself.</p>
@@ -1044,8 +1044,8 @@ as they are added implicitly.</p>
   </tr>
 </tbody></table>
 <hr>
-<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="more-on-ngmodules-3">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/ngmodule-api#more-on-ngmodules-3"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="more-on-ngmodules">More on NgModules<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#more-on-ngmodules"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="more-on-ngmodules-3">关于 NgModule 的更多知识<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/ngmodule-api#more-on-ngmodules-3"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You may also be interested in the following:</p>
 <p translation-result="">你可能还对下列内容感兴趣：</p>
 <ul>

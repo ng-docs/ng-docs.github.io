@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" class="no-toc" id="cheat-sheet">Cheat Sheet<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/cheatsheet#cheat-sheet"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" class="no-toc" id="cheat-sheet">速查表<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/cheatsheet#cheat-sheet"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" class="no-toc" id="cheat-sheet">Cheat Sheet<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/cheatsheet#cheat-sheet"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" class="no-toc" id="cheat-sheet">速查表<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/cheatsheet#cheat-sheet"><i class="material-icons">link</i></a></h1>
 <div id="cheatsheet">
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
@@ -844,7 +844,7 @@
 </tr>
 <tr>
 <td>
-<p translation-origin="off">    <code>@<b><a href="/api/core/NgModule" class="code-anchor">NgModule</a></b>({ <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: ..., <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: ...,<br>     exports: ..., providers: ..., bootstrap: ...})<br>class MyModule {}</code></p>
+<p translation-origin="off">    <code>@<b><a href="/api/core/NgModule" class="code-anchor">NgModule</a></b>({ <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: ..., <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: ...,<br>     exports: ..., providers: ..., bootstrap: ...})<br>class MyModule {}</code></p>
 </td>
 <td>
     <p translation-origin="off">Defines a module that contains components, directives, pipes, and providers.</p>
@@ -852,7 +852,7 @@
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>:</b> [MyRedComponent, MyBlueComponent, MyDatePipe]</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>:</b> [MyRedComponent, MyBlueComponent, MyDatePipe]</code></p>
 </td>
 <td>
     <p translation-origin="off">List of components, directives, and pipes that belong to this module.</p>
@@ -860,16 +860,16 @@
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/NgModule#imports" class="code-anchor">imports</a>:</b> [<a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, SomeOtherModule]</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/NgModule#imports" class="code-anchor">imports</a>:</b> [<a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>, SomeOtherModule]</code></p>
 </td>
 <td>
     <p translation-origin="off">List of modules to import into this module. Everything from the imported modules
-is available to <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> of this module.</p>
+is available to <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> of this module.</p>
     <p translation-result="">本模块所导入的模块列表</p>
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/NgModule#exports" class="code-anchor">exports</a>:</b> [MyRedComponent, MyDatePipe]</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/NgModule#exports" class="code-anchor">exports</a>:</b> [MyRedComponent, MyDatePipe]</code></p>
 </td>
 <td>
     <p translation-origin="off">List of components, directives, and pipes visible to modules that import this module.</p>
@@ -885,7 +885,7 @@ is available to <code><a href="api/core/NgModule#declarations" class="code-ancho
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>:</b> [MyAppComponent]</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>:</b> [MyAppComponent]</code></p>
 </td>
 <td>
     <p translation-origin="off">List of components to bootstrap when this module is bootstrapped.</p>
@@ -1188,7 +1188,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </tr>
 <tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/Component#moduleId" class="code-anchor">moduleId</a>:</b> module.id</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/Component#moduleId" class="code-anchor">moduleId</a>:</b> module.id</code></p>
 </td>
 <td>
     <p translation-origin="off">If set, the <code>templateUrl</code> and <code>styleUrl</code> are resolved relative to the component.</p>
@@ -1196,7 +1196,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/Component#viewProviders" class="code-anchor">viewProviders</a>:</b> [MyService, { provide: ... }]</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/Component#viewProviders" class="code-anchor">viewProviders</a>:</b> [MyService, { provide: ... }]</code></p>
 </td>
 <td>
     <p translation-origin="off">List of dependency injection providers scoped to this component's view.</p>
@@ -1204,7 +1204,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/Component#template" class="code-anchor">template</a>:</b> 'Hello {{name}}'<br><b>templateUrl:</b> 'my-component.html'</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/Component#template" class="code-anchor">template</a>:</b> 'Hello {{name}}'<br><b>templateUrl:</b> 'my-component.html'</code></p>
 </td>
 <td>
     <p translation-origin="off">Inline template or external template URL of the component's view.</p>
@@ -1352,7 +1352,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code><b><a href="api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></b> { ... }</code></p>
+<p translation-origin="off">    <code><b><a href="/api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></b> { ... }</code></p>
 </td>
 <td>
     <p translation-origin="off">Called after every check of the component's or directive's content.</p>
@@ -1368,7 +1368,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </p></td>
 </tr><tr>
 <td>
-<p>    <code><b><a href="api/core/AfterViewChecked#ngAfterViewChecked" class="code-anchor">ngAfterViewChecked()</a></b> { ... }</code></p>
+<p>    <code><b><a href="/api/core/AfterViewChecked#ngAfterViewChecked" class="code-anchor">ngAfterViewChecked()</a></b> { ... }</code></p>
 </td>
 <td>
     <p translation-origin="off">Called after every check of the component's views and child views / the view that a directive is in.</p>
@@ -1464,7 +1464,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code>class <b><a href="/api/router/CanActivate" class="code-anchor">CanActivate</a></b>Guard implements <b><a href="/api/router/CanActivate" class="code-anchor">CanActivate</a></b> {<br>    <a href="api/router/Route#canActivate" class="code-anchor">canActivate</a>(<br>      route: <a href="/api/router/ActivatedRouteSnapshot" class="code-anchor">ActivatedRouteSnapshot</a>,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canActivate: [<b>CanActivate</b>Guard] }</code></p>
+<p translation-origin="off">    <code>class <b><a href="/api/router/CanActivate" class="code-anchor">CanActivate</a></b>Guard implements <b><a href="/api/router/CanActivate" class="code-anchor">CanActivate</a></b> {<br>    <a href="/api/router/Route#canActivate" class="code-anchor">canActivate</a>(<br>      route: <a href="/api/router/ActivatedRouteSnapshot" class="code-anchor">ActivatedRouteSnapshot</a>,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canActivate: [<b>CanActivate</b>Guard] }</code></p>
 </td>
 <td>
     <p translation-origin="off">An interface for defining a class that the router should call first to determine if it should activate this component. Should return a boolean or an Observable/Promise that resolves to a boolean.</p>
@@ -1472,7 +1472,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code>class <b><a href="/api/router/CanDeactivate" class="code-anchor">CanDeactivate</a></b>Guard implements <b><a href="/api/router/CanDeactivate" class="code-anchor">CanDeactivate</a></b>&#x3C;T> {<br>    <a href="api/router/Route#canDeactivate" class="code-anchor">canDeactivate</a>(<br>      component: T,<br>      route: ActivatedRouteSnapshot,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canDeactivate: [<b>CanDeactivate</b>Guard] }</code></p>
+<p translation-origin="off">    <code>class <b><a href="/api/router/CanDeactivate" class="code-anchor">CanDeactivate</a></b>Guard implements <b><a href="/api/router/CanDeactivate" class="code-anchor">CanDeactivate</a></b>&#x3C;T> {<br>    <a href="/api/router/Route#canDeactivate" class="code-anchor">canDeactivate</a>(<br>      component: T,<br>      route: ActivatedRouteSnapshot,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canDeactivate: [<b>CanDeactivate</b>Guard] }</code></p>
 </td>
 <td>
     <p translation-origin="off">An interface for defining a class that the router should call first to determine if it should deactivate this component after a navigation. Should return a boolean or an Observable/Promise that resolves to a boolean.</p>
@@ -1480,7 +1480,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code>class <b><a href="/api/router/CanActivateChild" class="code-anchor">CanActivateChild</a></b>Guard implements <b><a href="/api/router/CanActivateChild" class="code-anchor">CanActivateChild</a></b> {<br>    <a href="api/router/Route#canActivateChild" class="code-anchor">canActivateChild</a>(<br>      route: <a href="/api/router/ActivatedRouteSnapshot" class="code-anchor">ActivatedRouteSnapshot</a>,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canActivateChild: [CanActivateGuard],<br>    children: ... }</code></p>
+<p translation-origin="off">    <code>class <b><a href="/api/router/CanActivateChild" class="code-anchor">CanActivateChild</a></b>Guard implements <b><a href="/api/router/CanActivateChild" class="code-anchor">CanActivateChild</a></b> {<br>    <a href="/api/router/Route#canActivateChild" class="code-anchor">canActivateChild</a>(<br>      route: <a href="/api/router/ActivatedRouteSnapshot" class="code-anchor">ActivatedRouteSnapshot</a>,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canActivateChild: [CanActivateGuard],<br>    children: ... }</code></p>
 </td>
 <td>
     <p translation-origin="off">An interface for defining a class that the router should call first to determine if it should activate the child route. Should return a boolean or an Observable/Promise that resolves to a boolean.</p>
@@ -1488,7 +1488,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code>class <b><a href="/api/router/Resolve" class="code-anchor">Resolve</a></b>Guard implements <b><a href="/api/router/Resolve" class="code-anchor">Resolve</a></b>&#x3C;T> {<br>    <a href="api/router/Route#resolve" class="code-anchor">resolve</a>(<br>      route: <a href="/api/router/ActivatedRouteSnapshot" class="code-anchor">ActivatedRouteSnapshot</a>,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;any>|Promise&#x3C;any>|any { ... }<br>}<br><br>{ path: ..., resolve: [<b>Resolve</b>Guard] }</code></p>
+<p translation-origin="off">    <code>class <b><a href="/api/router/Resolve" class="code-anchor">Resolve</a></b>Guard implements <b><a href="/api/router/Resolve" class="code-anchor">Resolve</a></b>&#x3C;T> {<br>    <a href="/api/router/Route#resolve" class="code-anchor">resolve</a>(<br>      route: <a href="/api/router/ActivatedRouteSnapshot" class="code-anchor">ActivatedRouteSnapshot</a>,<br>      state: RouterStateSnapshot<br>    ): Observable&#x3C;any>|Promise&#x3C;any>|any { ... }<br>}<br><br>{ path: ..., resolve: [<b>Resolve</b>Guard] }</code></p>
 </td>
 <td>
     <p translation-origin="off">An interface for defining a class that the router should call first to resolve route data before rendering the route. Should return a value or an Observable/Promise that resolves to a value.</p>
@@ -1496,7 +1496,7 @@ so the <code>@<a href="/api/core/Directive" class="code-anchor">Directive</a></c
 </td>
 </tr><tr>
 <td>
-<p translation-origin="off">    <code>class <b><a href="/api/router/CanLoad" class="code-anchor">CanLoad</a></b>Guard implements <b><a href="/api/router/CanLoad" class="code-anchor">CanLoad</a></b> {<br>    <a href="api/router/Route#canLoad" class="code-anchor">canLoad</a>(<br>      route: <a href="/api/router/Route" class="code-anchor">Route</a><br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canLoad: [<b>CanLoad</b>Guard], loadChildren: ... }</code></p>
+<p translation-origin="off">    <code>class <b><a href="/api/router/CanLoad" class="code-anchor">CanLoad</a></b>Guard implements <b><a href="/api/router/CanLoad" class="code-anchor">CanLoad</a></b> {<br>    <a href="/api/router/Route#canLoad" class="code-anchor">canLoad</a>(<br>      route: <a href="/api/router/Route" class="code-anchor">Route</a><br>    ): Observable&#x3C;boolean>|Promise&#x3C;boolean>|boolean { ... }<br>}<br><br>{ path: ..., canLoad: [<b>CanLoad</b>Guard], loadChildren: ... }</code></p>
 </td>
 <td>
     <p translation-origin="off">An interface for defining a class that the router should call first to check if the lazy loaded module should be loaded. Should return a boolean or an Observable/Promise that resolves to a boolean.</p>

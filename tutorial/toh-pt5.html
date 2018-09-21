@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="routing">Routing<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#routing"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="routing-1">路由<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#routing-1"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="routing">Routing<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#routing"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="routing-1">路由<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#routing-1"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">There are new requirements for the Tour of Heroes app:</p>
 <p translation-result="">有一些《英雄指南》的新需求：</p>
 <ul>
@@ -835,8 +835,8 @@
 <figure>
   <img src="generated/images/guide/toh/nav-diagram.png" alt="View navigations" width="506" height="433">
 </figure>
-<h2 translation-origin="off" id="add-the-approutingmodule">Add the <code>AppRoutingModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-the-approutingmodule"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="add-the-codeapproutingmodulecode">添加 <code>AppRoutingModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-the-codeapproutingmodulecode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="add-the-approutingmodule">Add the <code>AppRoutingModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-the-approutingmodule"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="add-the-codeapproutingmodulecode">添加 <code>AppRoutingModule</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-the-codeapproutingmodulecode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">An Angular best practice is to load and configure the router in a separate, top-level module
 that is dedicated to routing and imported by the root <code>AppModule</code>.</p>
 <p translation-result="">Angular 的最佳实践之一就是在一个独立的顶级模块中加载和配置路由器，它专注于路由功能，然后由根模块 <code>AppModule</code> 导入它。</p>
@@ -849,9 +849,9 @@ that is dedicated to routing and imported by the root <code>AppModule</code>.</p
 </code-example>
 <div class="alert is-helpful">
 <p translation-origin="off"><code>--flat</code> puts the file in <code>src/app</code> instead of its own folder.<br>
-<code>--module=app</code> tells the CLI to register it in the <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> array of the <code>AppModule</code>.</p>
+<code>--module=app</code> tells the CLI to register it in the <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> array of the <code>AppModule</code>.</p>
 <p translation-result=""><code>--flat</code> 把这个文件放进了 <code>src/app</code> 中，而不是单独的目录中。<br>
-<code>--module=app</code> 告诉 CLI 把它注册到 <code>AppModule</code> 的 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 数组中。</p>
+<code>--module=app</code> 告诉 CLI 把它注册到 <code>AppModule</code> 的 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 数组中。</p>
 </div>
 <p translation-origin="off">The generated file looks like this:</p>
 <p translation-result="">生成的文件是这样的：</p>
@@ -860,25 +860,25 @@ import { <a href="/api/core/NgModule" class="code-anchor">NgModule</a> } from '@
 import { <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a> } from '@angular/common';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/common/CommonModule" class="code-anchor">CommonModule</a>
   ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: []
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: []
 })
 export class AppRoutingModule { }
 
 
 </code-example>
 <p translation-origin="off">You generally don't declare components in a routing module so you can delete the
-<code>@<a href="api/core/NgModule#declarations" class="code-anchor">NgModule.declarations</a></code> array and delete <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> references too.</p>
-<p translation-result="">你通常不会在路由模块中声明组件，所以可以删除 <code>@<a href="api/core/NgModule#declarations" class="code-anchor">NgModule.declarations</a></code> 并删除对 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> 的引用。</p>
+<code>@<a href="/api/core/NgModule#declarations" class="code-anchor">NgModule.declarations</a></code> array and delete <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> references too.</p>
+<p translation-result="">你通常不会在路由模块中声明组件，所以可以删除 <code>@<a href="/api/core/NgModule#declarations" class="code-anchor">NgModule.declarations</a></code> 并删除对 <code><a href="/api/common/CommonModule" class="code-anchor">CommonModule</a></code> 的引用。</p>
 <p translation-origin="off">You'll configure the router with <code><a href="/api/router/Routes" class="code-anchor">Routes</a></code> in the <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code>
 so import those two symbols from the <code>@angular/router</code> library.</p>
 <p translation-result="">你将会使用 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 中的 <code><a href="/api/router/Routes" class="code-anchor">Routes</a></code> 类来配置路由器，所以还要从 <code>@angular/router</code> 库中导入这两个符号。</p>
-<p translation-origin="off">Add an <code>@<a href="api/core/NgModule#exports" class="code-anchor">NgModule.exports</a></code> array with <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> in it.
+<p translation-origin="off">Add an <code>@<a href="/api/core/NgModule#exports" class="code-anchor">NgModule.exports</a></code> array with <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> in it.
 Exporting <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> makes router directives available for use
 in the <code>AppModule</code> components that will need them.</p>
-<p translation-result="">添加一个 <code>@<a href="api/core/NgModule#exports" class="code-anchor">NgModule.exports</a></code> 数组，其中放上 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 。
+<p translation-result="">添加一个 <code>@<a href="/api/core/NgModule#exports" class="code-anchor">NgModule.exports</a></code> 数组，其中放上 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 。
 导出 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 让路由器的相关指令可以在 <code>AppModule</code> 中的组件中使用。</p>
 <p translation-origin="off"><code>AppRoutingModule</code> looks like this now:</p>
 <p translation-result="">此刻的 <code>AppRoutingModule</code> 是这样的：</p>
@@ -887,13 +887,13 @@ import { <a href="/api/core/NgModule" class="code-anchor">NgModule</a> }        
 import { <a href="/api/router/RouterModule" class="code-anchor">RouterModule</a>, <a href="/api/router/Routes" class="code-anchor">Routes</a> } from '@angular/router';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#exports" class="code-anchor">exports</a>: [ <a href="/api/router/RouterModule" class="code-anchor">RouterModule</a> ]
+  <a href="/api/core/NgModule#exports" class="code-anchor">exports</a>: [ <a href="/api/router/RouterModule" class="code-anchor">RouterModule</a> ]
 })
 export class AppRoutingModule {}
 
 </code-example>
-<h3 translation-origin="off" id="add-routes">Add routes<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-routes"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-routes">添加路由定义<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-routes"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-routes">Add routes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-routes"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-routes">添加路由定义<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-routes"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off"><em>Routes</em> tell the router which view to display when a user clicks a link or
 pastes a URL into the browser address bar.</p>
 <p translation-result=""><em>路由定义</em> 会告诉路由器，当用户点击某个链接或者在浏览器地址栏中输入某个 URL 时，要显示哪个视图。</p>
@@ -926,27 +926,27 @@ const routes: <a href="/api/router/Routes" class="code-anchor">Routes</a> = [
 <p translation-origin="off">Once you've finished setting up, the router will match that URL to <code>path: 'heroes'</code>
 and display the <code>HeroesComponent</code>.</p>
 <p translation-result="">完成这些设置之后，路由器将会把 URL 匹配到 <code>path: 'heroes'</code>，并显示 <code>HeroesComponent</code>。</p>
-<h3 translation-origin="off" id="routermoduleforroot"><em>RouterModule.forRoot()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#routermoduleforroot"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="routermoduleforroot"><em>RouterModule.forRoot()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#routermoduleforroot"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You first must initialize the router and start it listening for browser location changes.</p>
 <p translation-result="">你必须首先初始化路由器，并让它开始监听浏览器中的地址变化。</p>
-<p translation-origin="off">Add <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> to the <code>@<a href="api/core/NgModule#imports" class="code-anchor">NgModule.imports</a></code> array and
+<p translation-origin="off">Add <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> to the <code>@<a href="/api/core/NgModule#imports" class="code-anchor">NgModule.imports</a></code> array and
 configure it with the <code>routes</code> in one step by calling
-<code><a href="api/router/RouterModule#forRoot" class="code-anchor">RouterModule.forRoot()</a></code> <em>within</em> the <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> array, like this:</p>
-<p translation-result="">把 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 添加到 <code>@<a href="api/core/NgModule#imports" class="code-anchor">NgModule.imports</a></code> 数组中，并用 <code>routes</code> 来配置它。你只要调用 <code><a href="api/core/NgModule#imports" class="code-anchor">imports</a></code> 数组中的
-<code><a href="api/router/RouterModule#forRoot" class="code-anchor">RouterModule.forRoot()</a></code> 函数就行了。</p>
+<code><a href="/api/router/RouterModule#forRoot" class="code-anchor">RouterModule.forRoot()</a></code> <em>within</em> the <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> array, like this:</p>
+<p translation-result="">把 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 添加到 <code>@<a href="/api/core/NgModule#imports" class="code-anchor">NgModule.imports</a></code> 数组中，并用 <code>routes</code> 来配置它。你只要调用 <code><a href="/api/core/NgModule#imports" class="code-anchor">imports</a></code> 数组中的
+<code><a href="/api/router/RouterModule#forRoot" class="code-anchor">RouterModule.forRoot()</a></code> 函数就行了。</p>
 <code-example path="toh-pt5/src/app/app-routing.module.ts" region="ngmodule-imports">
-<a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [ RouterModule.forRoot(routes) ],
+<a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [ RouterModule.forRoot(routes) ],
 
 </code-example>
 <div class="alert is-helpful">
-<p translation-origin="off">  The method is called <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> because you configure the router at the application's root level.
-The <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method supplies the service providers and directives needed for routing,
+<p translation-origin="off">  The method is called <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> because you configure the router at the application's root level.
+The <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> method supplies the service providers and directives needed for routing,
 and performs the initial navigation based on the current browser URL.</p>
-<p translation-result="">  这个方法之所以叫 <code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>，是因为你要在应用的顶级配置这个路由器。
-<code><a href="api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法会提供路由所需的服务提供商和指令，还会基于浏览器的当前 URL 执行首次导航。</p>
+<p translation-result="">  这个方法之所以叫 <code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code>，是因为你要在应用的顶级配置这个路由器。
+<code><a href="/api/router/RouterModule#forRoot" class="code-anchor">forRoot()</a></code> 方法会提供路由所需的服务提供商和指令，还会基于浏览器的当前 URL 执行首次导航。</p>
 </div>
-<h2 translation-origin="off" id="add-routeroutlet">Add <em>RouterOutlet</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-routeroutlet"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="add-emrouteroutletem">添加路由出口 （<em>RouterOutlet</em>）<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-emrouteroutletem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="add-routeroutlet">Add <em>RouterOutlet</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-routeroutlet"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="add-emrouteroutletem">添加路由出口 （<em>RouterOutlet</em>）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-emrouteroutletem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Open the <code>AppComponent</code> template replace the <code>&#x3C;app-heroes></code> element with a <code>&#x3C;<a href="/api/router/RouterOutlet" class="code-anchor">router-outlet</a>></code> element.</p>
 <p translation-result="">打开 <code>AppComponent</code> 的模板，把 <code>&#x3C;app-heroes></code> 元素替换为 <code>&#x3C;<a href="/api/router/RouterOutlet" class="code-anchor">router-outlet</a>></code> 元素。</p>
 <code-example path="toh-pt5/src/app/app.component.html" region="outlet" title="src/app/app.component.html (router-outlet)">
@@ -964,8 +964,8 @@ and performs the initial navigation based on the current browser URL.</p>
 because <code>AppModule</code> imports <code>AppRoutingModule</code> which exported <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code>.</p>
 <p translation-result="">能在 <code>AppComponent</code> 中使用 <code><a href="/api/router/RouterOutlet" class="code-anchor">RouterOutlet</a></code>，是因为 <code>AppModule</code> 导入了 <code>AppRoutingModule</code>，而 <code>AppRoutingModule</code> 中导出了 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code>。</p>
 </div>
-<h4 translation-origin="off" id="try-it">Try it<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#try-it"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="try-it">试试看<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#try-it"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="try-it">Try it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#try-it"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="try-it">试试看<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#try-it"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">You should still be running with this CLI command.</p>
 <p translation-result="">你的 CLI 命令应该仍在运行吧。</p>
 <code-example language="sh" class="code-shell">
@@ -983,8 +983,8 @@ URL 是以 <code>/</code> 结尾的。
 You should see the familiar heroes master/detail view.</p>
 <p translation-result="">在地址栏中把 <code>/heroes</code> 追加到 URL 后面。你应该能看到熟悉的主从结构的英雄显示界面。</p>
 <a id="routerlink"></a>
-<h2 translation-origin="off" id="add-a-navigation-link-routerlink">Add a navigation link (<code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-navigation-link-routerlink"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="add-a-navigation-link-coderouterlinkcode">添加路由链接 (<code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-navigation-link-coderouterlinkcode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="add-a-navigation-link-routerlink">Add a navigation link (<code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-navigation-link-routerlink"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="add-a-navigation-link-coderouterlinkcode">添加路由链接 (<code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-navigation-link-coderouterlinkcode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Users shouldn't have to paste a route URL into the address bar.
 They should be able to click a link to navigate.</p>
 <p translation-result="">不应该让用户只能把路由的 URL 粘贴到地址栏中。他们还应该能通过点击链接进行导航。</p>
@@ -1002,13 +1002,13 @@ The revised <code>AppComponent</code> template looks like this:</p>
 &#x3C;app-messages>&#x3C;/app-messages>
 
 </code-example>
-<p translation-origin="off">A <a href="tutorial/toh-pt5#routerlink"><code>routerLink</code> attribute</a> is set to <code>"/heroes"</code>,
+<p translation-origin="off">A <a href="/tutorial/toh-pt5#routerlink"><code>routerLink</code> attribute</a> is set to <code>"/heroes"</code>,
 the string that the router matches to the route to <code>HeroesComponent</code>.
-The <code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code> is the selector for the <a href="tutorial/toh-pt5#routerlink"><code>RouterLink</code> directive</a>
+The <code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code> is the selector for the <a href="/tutorial/toh-pt5#routerlink"><code>RouterLink</code> directive</a>
 that turns user clicks into router navigations.
 It's another of the public directives in the <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code>.</p>
-<p translation-result=""><a href="tutorial/toh-pt5#routerlink"><code>routerLink</code> 属性</a>的值为 <code>"/heroes"</code>，路由器会用它来匹配出指向 <code>HeroesComponent</code> 的路由。
-<code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code> 是 <a href="tutorial/toh-pt5#routerlink"><code>RouterLink</code> 指令</a>的选择器，它会把用户的点击转换为路由器的导航操作。
+<p translation-result=""><a href="/tutorial/toh-pt5#routerlink"><code>routerLink</code> 属性</a>的值为 <code>"/heroes"</code>，路由器会用它来匹配出指向 <code>HeroesComponent</code> 的路由。
+<code><a href="/api/router/RouterLink" class="code-anchor">routerLink</a></code> 是 <a href="/tutorial/toh-pt5#routerlink"><code>RouterLink</code> 指令</a>的选择器，它会把用户的点击转换为路由器的导航操作。
 它是 <code><a href="/api/router/RouterModule" class="code-anchor">RouterModule</a></code> 中公开的另一个指令。</p>
 <p translation-origin="off">The browser refreshes and displays the app title and heroes link,
 but not the heroes list.</p>
@@ -1018,11 +1018,11 @@ The address bar updates to <code>/heroes</code> and the list of heroes appears.<
 <p translation-result="">点击这个链接。地址栏变成了 <code>/heroes</code>，并且显示出了英雄列表。</p>
 <div class="alert is-helpful">
 <p translation-origin="off">Make this and future navigation links look better by adding private CSS styles to <code>app.component.css</code>
-as listed in the <a href="tutorial/toh-pt5#appcomponent">final code review</a> below.</p>
-<p translation-result="">从下面的 <a href="tutorial/toh-pt5#appcomponent">最终代码</a>中把私有 CSS 样式添加到 <code>app.component.css</code> 中，可以让导航链接变得更好看一点。</p>
+as listed in the <a href="/tutorial/toh-pt5#appcomponent">final code review</a> below.</p>
+<p translation-result="">从下面的 <a href="/tutorial/toh-pt5#appcomponent">最终代码</a>中把私有 CSS 样式添加到 <code>app.component.css</code> 中，可以让导航链接变得更好看一点。</p>
 </div>
-<h2 translation-origin="off" id="add-a-dashboard-view">Add a dashboard view<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-dashboard-view"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="add-a-dashboard-view">添加仪表盘视图<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-dashboard-view"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="add-a-dashboard-view">Add a dashboard view<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-dashboard-view"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="add-a-dashboard-view">添加仪表盘视图<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-dashboard-view"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Routing makes more sense when there are multiple views.
 So far there's only the heroes view. </p>
 <p translation-result="">当有多个视图时，路由会更有价值。不过目前还只有一个英雄列表视图。</p>
@@ -1057,7 +1057,7 @@ import { HeroService } from '../hero.service';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './dashboard.component.css' ]
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
   heroes: Hero[] = [];
@@ -1099,7 +1099,7 @@ h3 {
   text-align: center; margin-bottom: 0;
 }
 h4 {
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
 }
 .grid {
   margin: 0;
@@ -1156,8 +1156,8 @@ h4 {
 <p translation-result=""> 这些链接被 <code>dashboard.component.css</code> 中的样式格式化成了一些色块。</p>
 </li>
 <li>
-<p translation-origin="off">The links don't go anywhere yet but <a href="tutorial/toh-pt5#hero-details">they will shortly</a>.</p>
-<p translation-result=""> 这些链接还没有指向任何地方，但<a href="tutorial/toh-pt5#hero-details">很快就会了</a>。</p>
+<p translation-origin="off">The links don't go anywhere yet but <a href="/tutorial/toh-pt5#hero-details">they will shortly</a>.</p>
+<p translation-result=""> 这些链接还没有指向任何地方，但<a href="/tutorial/toh-pt5#hero-details">很快就会了</a>。</p>
 </li>
 </ul>
 <p translation-origin="off">The <em>class</em> is similar to the <code>HeroesComponent</code> class.</p>
@@ -1186,8 +1186,8 @@ getHeroes(): void {
 }
 
 </code-example>
-<h3 translation-origin="off" id="add-the-dashboard-route">Add the dashboard route<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-the-dashboard-route"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-the-dashboard-route">添加仪表盘路由<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-the-dashboard-route"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-the-dashboard-route">Add the dashboard route<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-the-dashboard-route"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-the-dashboard-route">添加仪表盘路由<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-the-dashboard-route"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">To navigate to the dashboard, the router needs an appropriate route.</p>
 <p translation-result="">要导航到仪表盘，路由器中就需要一个相应的路由。</p>
 <p translation-origin="off">Import the <code>DashboardComponent</code> in the <code>AppRoutingModule</code>.</p>
@@ -1202,8 +1202,8 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 { path: 'dashboard', component: DashboardComponent },
 
 </code-example>
-<h3 translation-origin="off" id="add-a-default-route">Add a default route<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-default-route"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-a-default-route">添加默认路由<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-default-route"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-a-default-route">Add a default route<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-default-route"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-a-default-route">添加默认路由<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-default-route"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">When the app starts, the browsers address bar points to the web site's root.
 That doesn't match any existing route so the router doesn't navigate anywhere.
 The space below the <code>&#x3C;<a href="/api/router/RouterOutlet" class="code-anchor">router-outlet</a>></code> is blank.</p>
@@ -1214,7 +1214,7 @@ The space below the <code>&#x3C;<a href="/api/router/RouterOutlet" class="code-a
 route to the <code>AppRoutingModule.Routes</code> array.</p>
 <p translation-result="">要让应用自动导航到这个仪表盘，请把下列路由添加到 <code>AppRoutingModule.Routes</code> 数组中。</p>
 <code-example path="toh-pt5/src/app/app-routing.module.ts" region="redirect-route">
-{ path: '', <a href="api/router/Route#redirectTo" class="code-anchor">redirectTo</a>: '/dashboard', <a href="api/router/Route#pathMatch" class="code-anchor">pathMatch</a>: '<a href="api/core/Version#full" class="code-anchor">full</a>' },
+{ path: '', <a href="/api/router/Route#redirectTo" class="code-anchor">redirectTo</a>: '/dashboard', <a href="/api/router/Route#pathMatch" class="code-anchor">pathMatch</a>: '<a href="/api/core/Version#full" class="code-anchor">full</a>' },
 
 </code-example>
 <p translation-origin="off">This route redirects a URL that fully matches the empty path to the route whose path is <code>'/dashboard'</code>.</p>
@@ -1222,8 +1222,8 @@ route to the <code>AppRoutingModule.Routes</code> array.</p>
 <p translation-origin="off">After the browser refreshes, the router loads the <code>DashboardComponent</code>
 and the browser address bar shows the <code>/dashboard</code> URL.</p>
 <p translation-result="">浏览器刷新之后，路由器加载了 <code>DashboardComponent</code>，并且浏览器的地址栏会显示出 <code>/dashboard</code> 这个 URL。</p>
-<h3 translation-origin="off" id="add-dashboard-link-to-the-shell">Add dashboard link to the shell<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-dashboard-link-to-the-shell"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-dashboard-link-to-the-shell">把仪表盘链接添加到壳组件中<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-dashboard-link-to-the-shell"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-dashboard-link-to-the-shell">Add dashboard link to the shell<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-dashboard-link-to-the-shell"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-dashboard-link-to-the-shell">把仪表盘链接添加到壳组件中<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-dashboard-link-to-the-shell"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The user should be able to navigate back and forth between the
 <code>DashboardComponent</code> and the <code>HeroesComponent</code> by clicking links in the
 navigation area near the top of the page.</p>
@@ -1243,8 +1243,8 @@ navigation area near the top of the page.</p>
 <p translation-origin="off">After the browser refreshes you can navigate freely between the two views by clicking the links.</p>
 <p translation-result="">刷新浏览器，你就能通过点击这些链接在这两个视图之间自由导航了。</p>
 <a id="hero-details"></a>
-<h2 translation-origin="off" id="navigating-to-hero-details">Navigating to hero details<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#navigating-to-hero-details"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="navigating-to-hero-details">导航到英雄详情<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#navigating-to-hero-details"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="navigating-to-hero-details">Navigating to hero details<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#navigating-to-hero-details"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="navigating-to-hero-details">导航到英雄详情<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#navigating-to-hero-details"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <code>HeroDetailsComponent</code> displays details of a selected hero.
 At the moment the <code>HeroDetailsComponent</code> is only visible at the bottom of the <code>HeroesComponent</code></p>
 <p translation-result=""><code>HeroDetailComponent</code> 可以显示所选英雄的详情。
@@ -1268,8 +1268,8 @@ At the moment the <code>HeroDetailsComponent</code> is only visible at the botto
 <p translation-origin="off">In this section, you'll enable navigation to the <code>HeroDetailsComponent</code>
 and liberate it from the <code>HeroesComponent</code>.</p>
 <p translation-result="">在这一节，你将能导航到 <code>HeroDetailComponent</code>，并把它从 <code>HeroesComponent</code> 中解放出来。</p>
-<h3 translation-origin="off" id="delete-hero-details-from-heroescomponent">Delete <em>hero details</em> from <code>HeroesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#delete-hero-details-from-heroescomponent"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="delete-emhero-detailsem-from-codeheroescomponentcode">从 <code>HeroesComponent</code> 中删除<em>英雄详情</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#delete-emhero-detailsem-from-codeheroescomponentcode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="delete-hero-details-from-heroescomponent">Delete <em>hero details</em> from <code>HeroesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#delete-hero-details-from-heroescomponent"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="delete-emhero-detailsem-from-codeheroescomponentcode">从 <code>HeroesComponent</code> 中删除<em>英雄详情</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#delete-emhero-detailsem-from-codeheroescomponentcode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">When the user clicks a hero item in the <code>HeroesComponent</code>,
 the app should navigate to the <code>HeroDetailComponent</code>,
 replacing the heroes list view with the hero detail view.
@@ -1280,10 +1280,10 @@ The heroes list view should no longer show hero details as it does now.</p>
 delete the <code>&#x3C;app-hero-detail></code> element from the bottom.</p>
 <p translation-result="">打开 <code>HeroesComponent</code> 的模板文件（<code>heroes/heroes.component.html</code>），并从底部删除 <code>&#x3C;app-hero-detail></code> 元素。</p>
 <p translation-origin="off">Clicking a hero item now does nothing.
-You'll <a href="tutorial/toh-pt5#heroes-component-links">fix that shortly</a> after you enable routing to the <code>HeroDetailComponent</code>.</p>
-<p translation-result="">目前，点击某个英雄条目还没有反应。不过当你启用了到 <code>HeroDetailComponent</code> 的路由之后，<a href="tutorial/toh-pt5#heroes-component-links">很快就能修复它</a>。</p>
-<h3 translation-origin="off" id="add-a-hero-detail-route">Add a <em>hero detail</em> route<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-hero-detail-route"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-a-emhero-detailem-route">添加<em>英雄详情</em>视图<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-a-emhero-detailem-route"><i class="material-icons">link</i></a></h3>
+You'll <a href="/tutorial/toh-pt5#heroes-component-links">fix that shortly</a> after you enable routing to the <code>HeroDetailComponent</code>.</p>
+<p translation-result="">目前，点击某个英雄条目还没有反应。不过当你启用了到 <code>HeroDetailComponent</code> 的路由之后，<a href="/tutorial/toh-pt5#heroes-component-links">很快就能修复它</a>。</p>
+<h3 translation-origin="off" id="add-a-hero-detail-route">Add a <em>hero detail</em> route<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-hero-detail-route"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-a-emhero-detailem-route">添加<em>英雄详情</em>视图<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-a-emhero-detailem-route"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A URL like <code>~/detail/11</code> would be a good URL for navigating to the <em>Hero Detail</em> view of the hero whose <code>id</code> is <code>11</code>. </p>
 <p translation-result="">要导航到 <code>id</code> 为 <code>11</code> 的英雄的<em>详情</em>视图，类似于 <code>~/detail/11</code> 的 URL 将是一个不错的 URL。</p>
 <p translation-origin="off">Open <code>AppRoutingModule</code> and import <code>HeroDetailComponent</code>.</p>
@@ -1304,15 +1304,15 @@ import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 <p translation-result="">此刻，应用中的所有路由都就绪了。</p>
 <code-example path="toh-pt5/src/app/app-routing.module.ts" region="routes" title="src/app/app-routing.module.ts (all routes)">
 const routes: <a href="/api/router/Routes" class="code-anchor">Routes</a> = [
-  { path: '', <a href="api/router/Route#redirectTo" class="code-anchor">redirectTo</a>: '/dashboard', <a href="api/router/Route#pathMatch" class="code-anchor">pathMatch</a>: '<a href="api/core/Version#full" class="code-anchor">full</a>' },
+  { path: '', <a href="/api/router/Route#redirectTo" class="code-anchor">redirectTo</a>: '/dashboard', <a href="/api/router/Route#pathMatch" class="code-anchor">pathMatch</a>: '<a href="/api/core/Version#full" class="code-anchor">full</a>' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent }
 ];
 
 </code-example>
-<h3 translation-origin="off" id="dashboardcomponent-hero-links"><code>DashboardComponent</code> hero links<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#dashboardcomponent-hero-links"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="codedashboardcomponentcode-hero-links"><code>DashboardComponent</code> 中的英雄链接<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#codedashboardcomponentcode-hero-links"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="dashboardcomponent-hero-links"><code>DashboardComponent</code> hero links<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#dashboardcomponent-hero-links"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="codedashboardcomponentcode-hero-links"><code>DashboardComponent</code> 中的英雄链接<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#codedashboardcomponentcode-hero-links"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <code>DashboardComponent</code> hero links do nothing at the moment.</p>
 <p translation-result="">此刻，<code>DashboardComponent</code> 中的英雄连接还没有反应。</p>
 <p translation-origin="off">Now that the router has a route to <code>HeroDetailComponent</code>,
@@ -1324,13 +1324,13 @@ fix the dashboard hero links to navigate via the <em>parameterized</em> dashboar
     <a href="/api/router/RouterLink" class="code-anchor">routerLink</a>="/detail/{{hero.id}}">
 
 </code-example>
-<p translation-origin="off">You're using Angular <a href="guide/template-syntax#interpolation">interpolation binding</a> within the <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> repeater
+<p translation-origin="off">You're using Angular <a href="/guide/template-syntax#interpolation">interpolation binding</a> within the <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> repeater
 to insert the current iteration's <code>hero.id</code> into each
-<a href="tutorial/toh-pt5#routerlink"><code>routerLink</code></a>.</p>
-<p translation-result="">你正在 <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 复写器中使用 Angular 的<a href="guide/template-syntax#interpolation">插值表达式</a>来把当前迭代的 <code>hero.id</code> 插入到每个 <a href="tutorial/toh-pt5#routerlink"><code>routerLink</code></a> 中。</p>
+<a href="/tutorial/toh-pt5#routerlink"><code>routerLink</code></a>.</p>
+<p translation-result="">你正在 <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 复写器中使用 Angular 的<a href="/guide/template-syntax#interpolation">插值表达式</a>来把当前迭代的 <code>hero.id</code> 插入到每个 <a href="/tutorial/toh-pt5#routerlink"><code>routerLink</code></a> 中。</p>
 <a id="heroes-component-links"></a>
-<h3 translation-origin="off" id="heroescomponent-hero-links"><code>HeroesComponent</code> hero links<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#heroescomponent-hero-links"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="codeheroescomponentcode-hero-links"><code>HeroesComponent</code> 中的英雄链接<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#codeheroescomponentcode-hero-links"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="heroescomponent-hero-links"><code>HeroesComponent</code> hero links<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#heroescomponent-hero-links"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="codeheroescomponentcode-hero-links"><code>HeroesComponent</code> 中的英雄链接<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#codeheroescomponentcode-hero-links"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The hero items in the <code>HeroesComponent</code> are <code>&#x3C;li></code> elements whose click events
 are bound to the component's <code>onSelect()</code> method.</p>
 <p translation-result=""><code>HeroesComponent</code> 中的这些英雄条目都是 <code>&#x3C;li></code> 元素，它们的点击事件都绑定到了组件的 <code>onSelect()</code> 方法中。</p>
@@ -1362,11 +1362,11 @@ is the same as in the dashboard template</p>
 </code-example>
 <p translation-origin="off">You'll have to fix the private stylesheet (<code>heroes.component.css</code>) to make
 the list look as it did before.
-Revised styles are in the <a href="tutorial/toh-pt5#heroescomponent">final code review</a> at the bottom of this guide.</p>
+Revised styles are in the <a href="/tutorial/toh-pt5#heroescomponent">final code review</a> at the bottom of this guide.</p>
 <p translation-result="">你还要修改私有样式表（<code>heroes.component.css</code>），让列表恢复到以前的外观。
-修改后的样式表参见本指南底部的<a href="tutorial/toh-pt5#heroescomponent">最终代码</a>。</p>
-<h4 translation-origin="off" id="remove-dead-code-optional">Remove dead code (optional)<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#remove-dead-code-optional"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="remove-dead-code-optional">移除死代码（可选）<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#remove-dead-code-optional"><i class="material-icons">link</i></a></h4>
+修改后的样式表参见本指南底部的<a href="/tutorial/toh-pt5#heroescomponent">最终代码</a>。</p>
+<h4 translation-origin="off" id="remove-dead-code-optional">Remove dead code (optional)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#remove-dead-code-optional"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="remove-dead-code-optional">移除死代码（可选）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#remove-dead-code-optional"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">While the <code>HeroesComponent</code> class still works,
 the <code>onSelect()</code> method and <code>selectedHero</code> property are no longer used.</p>
 <p translation-result="">虽然 <code>HeroesComponent</code> 类仍然能正常工作，但 <code>onSelect()</code> 方法和 <code>selectedHero</code> 属性已经没用了。</p>
@@ -1391,8 +1391,8 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
 }
 
 </code-example>
-<h2 translation-origin="off" id="routable-herodetailcomponent">Routable <em>HeroDetailComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#routable-herodetailcomponent"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="routable-emherodetailcomponentem">支持路由的 <code>HeroDetailComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#routable-emherodetailcomponentem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="routable-herodetailcomponent">Routable <em>HeroDetailComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#routable-herodetailcomponent"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="routable-emherodetailcomponentem">支持路由的 <code>HeroDetailComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#routable-emherodetailcomponentem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Previously, the parent <code>HeroesComponent</code> set the <code>HeroDetailComponent.hero</code>
 property and the <code>HeroDetailComponent</code> displayed the hero.</p>
 <p translation-result="">以前，父组件 <code>HeroesComponent</code> 会设置 <code>HeroDetailComponent.hero</code> 属性，然后 <code>HeroDetailComponent</code> 就会显示这个英雄。</p>
@@ -1433,7 +1433,7 @@ into the constructor, saving their values in private fields:</p>
 constructor(
   private route: <a href="/api/router/ActivatedRoute" class="code-anchor">ActivatedRoute</a>,
   private heroService: HeroService,
-  private <a href="api/core/ComponentRef#location" class="code-anchor">location</a>: <a href="/api/common/Location" class="code-anchor">Location</a>
+  private <a href="/api/core/ComponentRef#location" class="code-anchor">location</a>: <a href="/api/common/Location" class="code-anchor">Location</a>
 ) {}
 
 </code-example>
@@ -1447,14 +1447,14 @@ The <em>"id"</em> parameter is the <code>id</code> of the hero to display.</p>
 and this component will use it to get the <em>hero-to-display</em>.</p>
 <p translation-result=""><a href="/tutorial/toh-pt4"><code>HeroService</code></a> 从远端服务器获取英雄数据，本组件将使用它来获取<em>要显示的英雄</em>。</p>
 <p translation-origin="off">The <a href="/api/common/Location"><code>location</code></a> is an Angular service for interacting with the browser.
-You'll use it <a href="tutorial/toh-pt5#goback">later</a> to navigate back to the view that navigated here.</p>
+You'll use it <a href="/tutorial/toh-pt5#goback">later</a> to navigate back to the view that navigated here.</p>
 <p translation-result=""><a href="/api/common/Location"><code>location</code></a> 是一个 Angular 的服务，用来与浏览器打交道。
-<a href="tutorial/toh-pt5#goback">稍后</a>，你就会使用它来导航回上一个视图。</p>
-<h3 translation-origin="off" id="extract-the-id-route-parameter">Extract the <em>id</em> route parameter<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#extract-the-id-route-parameter"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="extract-the-emidem-route-parameter">从路由参数中提取 <code>id</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#extract-the-emidem-route-parameter"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">In the <code>ngOnInit()</code> <a href="guide/lifecycle-hooks#oninit">lifecycle hook</a>
+<a href="/tutorial/toh-pt5#goback">稍后</a>，你就会使用它来导航回上一个视图。</p>
+<h3 translation-origin="off" id="extract-the-id-route-parameter">Extract the <em>id</em> route parameter<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#extract-the-id-route-parameter"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="extract-the-emidem-route-parameter">从路由参数中提取 <code>id</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#extract-the-emidem-route-parameter"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">In the <code>ngOnInit()</code> <a href="/guide/lifecycle-hooks#oninit">lifecycle hook</a>
 call <code>getHero()</code> and define it as follows.</p>
-<p translation-result="">在 <code>ngOnInit()</code> <a href="guide/lifecycle-hooks#oninit">生命周期钩子</a>
+<p translation-result="">在 <code>ngOnInit()</code> <a href="/guide/lifecycle-hooks#oninit">生命周期钩子</a>
 中调用 <code>getHero()</code>，代码如下：</p>
 <code-example path="toh-pt5/src/app/hero-detail/hero-detail.component.ts" region="ngOnInit">
 ngOnInit(): void {
@@ -1484,13 +1484,13 @@ JavaScript 的 (+) 操作符会把字符串转换成数字，英雄的 <code>id<
 Add it now.</p>
 <p translation-result="">刷新浏览器，应用挂了。出现一个编译错误，因为 <code>HeroService</code> 没有一个名叫 <code>getHero()</code> 的方法。
 这就添加它。</p>
-<h3 translation-origin="off" id="add-heroservicegethero">Add <code>HeroService.getHero()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-heroservicegethero"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-codeheroservicegetherocode">添加 <code>HeroService.getHero()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#add-codeheroservicegetherocode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-heroservicegethero">Add <code>HeroService.getHero()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-heroservicegethero"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-codeheroservicegetherocode">添加 <code>HeroService.getHero()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#add-codeheroservicegetherocode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Open <code>HeroService</code> and add this <code>getHero()</code> method</p>
 <p translation-result="">添加 <code>HeroService</code>，并添加如下的 <code>getHero()</code> 方法</p>
 <code-example path="toh-pt5/src/app/hero.service.ts" region="getHero" title="src/app/hero.service.ts (getHero)">
 getHero(id: number): Observable&#x3C;Hero> {
-  // TODO: send the <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the hero
+  // TODO: send the <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the hero
   this.messageService.add(`HeroService: fetched hero id=${id}`);
   return of(HEROES.find(hero => hero.id === id));
 }
@@ -1502,16 +1502,16 @@ define a JavaScript
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"><em>template literal</em></a> for embedding the <code>id</code>.</p>
 <p translation-result="">注意，反引号 ( ` ) 用于定义 JavaScript 的 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">模板字符串字面量</a>，以便嵌入 <code>id</code>。</p>
 </div>
-<p translation-origin="off">Like <a href="tutorial/toh-pt4#observable-heroservice"><code>getHeroes()</code></a>,
+<p translation-origin="off">Like <a href="/tutorial/toh-pt4#observable-heroservice"><code>getHeroes()</code></a>,
 <code>getHero()</code> has an asynchronous signature.
 It returns a <em>mock hero</em> as an <code>Observable</code>, using the RxJS <code>of()</code> function.</p>
-<p translation-result="">像 <a href="tutorial/toh-pt4#observable-heroservice"><code>getHeroes()</code></a> 一样，<code>getHero()</code> 也有一个异步函数签名。
+<p translation-result="">像 <a href="/tutorial/toh-pt4#observable-heroservice"><code>getHeroes()</code></a> 一样，<code>getHero()</code> 也有一个异步函数签名。
 它用 RxJS 的 <code>of()</code> 函数返回一个 <code>Observable</code> 形式的<em>模拟英雄数据</em>。</p>
 <p translation-origin="off">You'll be able to re-implement <code>getHero()</code> as a real <code><a href="/api/http/Http" class="code-anchor">Http</a></code> request
 without having to change the <code>HeroDetailComponent</code> that calls it.</p>
 <p translation-result="">你将来可以用一个真实的 <code><a href="/api/http/Http" class="code-anchor">Http</a></code> 请求来重现实现 <code>getHero()</code>，而不用修改调用了它的 <code>HeroDetailComponent</code>。</p>
-<h4 translation-origin="off" id="try-it-1">Try it<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#try-it-1"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="try-it-1">试试看<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#try-it-1"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="try-it-1">Try it<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#try-it-1"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="try-it-1">试试看<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#try-it-1"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The browser refreshes and the app is working again.
 You can click a hero in the dashboard or in the heroes list and navigate to that hero's detail view.</p>
 <p translation-result="">刷新浏览器，应用又恢复正常了。
@@ -1520,8 +1520,8 @@ You can click a hero in the dashboard or in the heroes list and navigate to that
 the router navigates to the detail view for the hero with <code>id: 11</code>,  "Mr. Nice".</p>
 <p translation-result="">如果你在浏览器的地址栏中粘贴了 <code>localhost:4200/detail/11</code>，路由器也会导航到 <code>id: 11</code> 的英雄（"Mr. Nice"）的详情视图。</p>
 <a id="goback"></a>
-<h3 translation-origin="off" id="find-the-way-back">Find the way back<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#find-the-way-back"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="find-the-way-back">回到原路<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#find-the-way-back"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="find-the-way-back">Find the way back<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#find-the-way-back"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="find-the-way-back">回到原路<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#find-the-way-back"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">By clicking the browser's back button,
 you can go back to the hero list or dashboard view,
 depending upon which sent you to the detail view.</p>
@@ -1537,8 +1537,8 @@ to the component's <code>goBack()</code> method.</p>
 </code-example>
 <p translation-origin="off">Add a <code>goBack()</code> <em>method</em> to the component class that navigates backward one step
 in the browser's history stack
-using the <code><a href="/api/common/Location" class="code-anchor">Location</a></code> service that you <a href="tutorial/toh-pt5#hero-detail-ctor">injected previously</a>.</p>
-<p translation-result="">在组件类中添加一个 <code>goBack()</code> 方法，利用<a href="tutorial/toh-pt5#hero-detail-ctor">你以前注入的</a> <code><a href="/api/common/Location" class="code-anchor">Location</a></code> 服务在浏览器的历史栈中后退一步。</p>
+using the <code><a href="/api/common/Location" class="code-anchor">Location</a></code> service that you <a href="/tutorial/toh-pt5#hero-detail-ctor">injected previously</a>.</p>
+<p translation-result="">在组件类中添加一个 <code>goBack()</code> 方法，利用<a href="/tutorial/toh-pt5#hero-detail-ctor">你以前注入的</a> <code><a href="/api/common/Location" class="code-anchor">Location</a></code> 服务在浏览器的历史栈中后退一步。</p>
 <code-example path="toh-pt5/src/app/hero-detail/hero-detail.component.ts" region="goBack" title="src/app/hero-detail/hero-detail.component.ts (goBack)">
 goBack(): void {
   this.location.back();
@@ -1552,14 +1552,14 @@ from heroes list to the mini detail to the hero details and back to the heroes a
 用户能在应用中导航：从仪表盘到英雄详情再回来，从英雄列表到 mini 版英雄详情到英雄详情，再回到英雄列表。</p>
 <p translation-origin="off">You've met all of the navigational requirements that propelled this page.</p>
 <p translation-result="">你已经满足了在本章开头设定的所有导航需求。</p>
-<h2 translation-origin="off" id="final-code-review">Final code review<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#final-code-review"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="final-code-review-5">查看最终代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#final-code-review-5"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="final-code-review">Final code review<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#final-code-review"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="final-code-review-5">查看最终代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#final-code-review-5"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Here are the code files discussed on this page and your app should look like this <live-example></live-example>.</p>
 <p translation-result="">你的应用应该变成了这样 <live-example></live-example>。本页所提及的代码文件如下：</p>
 <a id="approutingmodule"></a>
 <a id="appmodule"></a>
-<h4 translation-origin="off" id="approutingmodule-appmodule-and-heroservice"><em>AppRoutingModule</em>, <em>AppModule</em>, and <em>HeroService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#approutingmodule-appmodule-and-heroservice"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="emapproutingmoduleem-emappmoduleem-and-emheroserviceem"><code>AppRoutingModule</code>、<code>AppModule</code> 和 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#emapproutingmoduleem-emappmoduleem-and-emheroserviceem"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="approutingmodule-appmodule-and-heroservice"><em>AppRoutingModule</em>, <em>AppModule</em>, and <em>HeroService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#approutingmodule-appmodule-and-heroservice"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="emapproutingmoduleem-emappmoduleem-and-emheroserviceem"><code>AppRoutingModule</code>、<code>AppModule</code> 和 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#emapproutingmoduleem-emappmoduleem-and-emheroserviceem"><i class="material-icons">link</i></a></h4>
 <code-tabs>
   <code-pane title="src/app/app-routing.module.ts" path="toh-pt5/src/app/app-routing.module.ts">
 import { <a href="/api/core/NgModule" class="code-anchor">NgModule</a> }             from '@angular/core';
@@ -1570,15 +1570,15 @@ import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: <a href="/api/router/Routes" class="code-anchor">Routes</a> = [
-  { path: '', <a href="api/router/Route#redirectTo" class="code-anchor">redirectTo</a>: '/dashboard', <a href="api/router/Route#pathMatch" class="code-anchor">pathMatch</a>: '<a href="api/core/Version#full" class="code-anchor">full</a>' },
+  { path: '', <a href="/api/router/Route#redirectTo" class="code-anchor">redirectTo</a>: '/dashboard', <a href="/api/router/Route#pathMatch" class="code-anchor">pathMatch</a>: '<a href="/api/core/Version#full" class="code-anchor">full</a>' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent }
 ];
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [ RouterModule.forRoot(routes) ],
-  <a href="api/core/NgModule#exports" class="code-anchor">exports</a>: [ <a href="/api/router/RouterModule" class="code-anchor">RouterModule</a> ]
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [ RouterModule.forRoot(routes) ],
+  <a href="/api/core/NgModule#exports" class="code-anchor">exports</a>: [ <a href="/api/router/RouterModule" class="code-anchor">RouterModule</a> ]
 })
 export class AppRoutingModule {}
 
@@ -1592,24 +1592,24 @@ import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { HeroesComponent }      from './heroes/heroes.component';
-import { MessagesComponent }    from './<a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a>/messages.component';
+import { MessagesComponent }    from './<a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a>/messages.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>,
     <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a>,
     AppRoutingModule
   ],
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
     AppComponent,
     DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent
   ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
 })
 export class AppModule { }
 
@@ -1624,19 +1624,19 @@ import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { MessageService } from './message.service';
 
-@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({ <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root' })
+@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({ <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root' })
 export class HeroService {
 
   constructor(private messageService: MessageService) { }
 
   getHeroes(): Observable&#x3C;Hero[]> {
-    // TODO: send the <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the heroes
+    // TODO: send the <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the heroes
     this.messageService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
 
   getHero(id: number): Observable&#x3C;Hero> {
-    // TODO: send the <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the hero
+    // TODO: send the <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the hero
     this.messageService.add(`HeroService: fetched hero id=${id}`);
     return of(HEROES.find(hero => hero.id === id));
   }
@@ -1646,7 +1646,7 @@ export class HeroService {
 </code-pane>
 </code-tabs>
 <a id="appcomponent"></a>
-<h4 translation-origin="off" id="appcomponent"><em>AppComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#appcomponent"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="appcomponent"><em>AppComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#appcomponent"><i class="material-icons">link</i></a></h4>
 <code-tabs>
   <code-pane title="src/app/app.component.html" path="toh-pt5/src/app/app.component.html">
 &#x3C;h1>{{title}}&#x3C;/h1>
@@ -1694,7 +1694,7 @@ nav a.active {
 </code-pane>
 </code-tabs>
 <a id="dashboardcomponent"></a>
-<h4 translation-origin="off" id="dashboardcomponent"><em>DashboardComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#dashboardcomponent"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="dashboardcomponent"><em>DashboardComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#dashboardcomponent"><i class="material-icons">link</i></a></h4>
 <code-tabs>
   <code-pane title="src/app/dashboard/dashboard.component.html" path="toh-pt5/src/app/dashboard/dashboard.component.html">
 &#x3C;h3>Top Heroes&#x3C;/h3>
@@ -1718,7 +1718,7 @@ import { HeroService } from '../hero.service';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './dashboard.component.css' ]
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
   heroes: Hero[] = [];
@@ -1760,7 +1760,7 @@ h3 {
   text-align: center; margin-bottom: 0;
 }
 h4 {
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
 }
 .grid {
   margin: 0;
@@ -1806,7 +1806,7 @@ h4 {
 </code-pane>
 </code-tabs>
 <a id="heroescomponent"></a>
-<h4 translation-origin="off" id="heroescomponent"><em>HeroesComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#heroescomponent"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="heroescomponent"><em>HeroesComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#heroescomponent"><i class="material-icons">link</i></a></h4>
 <code-tabs>
   <code-pane title="src/app/heroes/heroes.component.html" path="toh-pt5/src/app/heroes/heroes.component.html">
 &#x3C;h2>My Heroes&#x3C;/h2>
@@ -1830,7 +1830,7 @@ import { HeroService } from '../hero.service';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
 })
 export class HeroesComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
   heroes: Hero[];
@@ -1859,7 +1859,7 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
   width: 15em;
 }
 .heroes li {
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
   cursor: pointer;
   background-color: #EEE;
   margin: .5em;
@@ -1877,7 +1877,7 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
 .heroes <a href="/api/router/RouterLinkWithHref" class="code-anchor">a</a> {
   color: #888;
   text-decoration: none;
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
   display: block;
   width: 250px;
 }
@@ -1893,7 +1893,7 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
   padding: 0.8em 0.7em 0 0.7em;
   background-color: #607D8B;
   line-height: 1em;
-  <a href="api/router/Scroll#position" class="code-anchor">position</a>: relative;
+  <a href="/api/router/Scroll#position" class="code-anchor">position</a>: relative;
   left: -1px;
   top: -4px;
   height: 1.8em;
@@ -1907,7 +1907,7 @@ export class HeroesComponent implements <a href="/api/core/OnInit" class="code-a
 </code-pane>
 </code-tabs>
 <a id="herodetailcomponent"></a>
-<h4 translation-origin="off" id="herodetailcomponent"><em>HeroDetailComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#herodetailcomponent"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="herodetailcomponent"><em>HeroDetailComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#herodetailcomponent"><i class="material-icons">link</i></a></h4>
 <code-tabs>
   <code-pane title="src/app/hero-detail/hero-detail.component.html" path="toh-pt5/src/app/hero-detail/hero-detail.component.html">
 &#x3C;div *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="hero">
@@ -1935,7 +1935,7 @@ import { HeroService }  from '../hero.service';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './hero-detail.component.css' ]
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
   @<a href="/api/core/Input" class="code-anchor">Input</a>() hero: Hero;
@@ -1943,7 +1943,7 @@ export class HeroDetailComponent implements <a href="/api/core/OnInit" class="co
   constructor(
     private route: <a href="/api/router/ActivatedRoute" class="code-anchor">ActivatedRoute</a>,
     private heroService: HeroService,
-    private <a href="api/core/ComponentRef#location" class="code-anchor">location</a>: <a href="/api/common/Location" class="code-anchor">Location</a>
+    private <a href="/api/core/ComponentRef#location" class="code-anchor">location</a>: <a href="/api/common/Location" class="code-anchor">Location</a>
   ) {}
 
   ngOnInit(): void {
@@ -1999,8 +1999,8 @@ button:disabled {
 
 </code-pane>
 </code-tabs>
-<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#summary"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="summary-15">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt5#summary-15"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#summary"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="summary-15">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt5#summary-15"><i class="material-icons">link</i></a></h2>
 <ul>
 <li>
 <p translation-origin="off">You added the Angular router to navigate among different components.</p>

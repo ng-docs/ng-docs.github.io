@@ -808,15 +808,15 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="services">Services<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#services"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="services-1">服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#services-1"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="services">Services<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#services"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="services-1">服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#services-1"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">The Tour of Heroes <code>HeroesComponent</code> is currently getting and displaying fake data.</p>
 <p translation-result="">英雄指南的 <code>HeroesComponent</code> 目前获取和显示的都是模拟数据。</p>
 <p translation-origin="off">After the refactoring in this tutorial, <code>HeroesComponent</code> will be lean and focused on supporting the view.
 It will also be easier to unit-test with a mock service.</p>
 <p translation-result="">本节课的重构完成之后，<code>HeroesComponent</code> 变得更精简，并且聚焦于为它的视图提供支持。这也让它更容易使用模拟服务进行单元测试。</p>
-<h2 translation-origin="off" id="why-services">Why services<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#why-services"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="why-services">为什么需要服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#why-services"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="why-services">Why services<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#why-services"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="why-services">为什么需要服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#why-services"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Components shouldn't fetch or save data directly and they certainly shouldn't knowingly present fake data.
 They should focus on presenting data and delegate data access to a service.</p>
 <p translation-result="">组件不应该直接获取或保存数据，它们不应该了解是否在展示假数据。
@@ -841,8 +841,8 @@ You'll create a <code>MessageService</code> and inject it in two places:</p>
 <p translation-result=""><code>MessagesComponent</code> 中，它会显示其中的消息。</p>
 </li>
 </ol>
-<h2 translation-origin="off" id="create-the-heroservice">Create the <em>HeroService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#create-the-heroservice"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="create-the-emheroserviceem">创建 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#create-the-emheroserviceem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="create-the-heroservice">Create the <em>HeroService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#create-the-heroservice"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="create-the-emheroserviceem">创建 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#create-the-emheroserviceem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Using the Angular CLI, create a service called <code>hero</code>.</p>
 <p translation-result="">使用 Angular CLI 创建一个名叫 <code>hero</code> 的服务。</p>
 <code-example language="sh" class="code-shell">
@@ -856,7 +856,7 @@ The <code>HeroService</code> class should look like the following example.</p>
 import { <a href="/api/core/Injectable" class="code-anchor">Injectable</a> } from '@angular/core';
 
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 export class HeroService {
 
@@ -865,18 +865,18 @@ export class HeroService {
 }
 
 </code-example>
-<h3 translation-origin="off" id="injectable-services"><em>@Injectable()</em> services<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#injectable-services"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="eminjectableem-services"><em>@Injectable()</em> 服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#eminjectableem-services"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="injectable-services"><em>@Injectable()</em> services<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#injectable-services"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="eminjectableem-services"><em>@Injectable()</em> 服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#eminjectableem-services"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Notice that the new service imports the Angular <code><a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> symbol and annotates
 the class with the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> decorator. This marks the class as one that participates in the <em>dependency injection system</em>. The <code>HeroService</code> class is going to provide an injectable service, and it can also have its own injected dependencies.
-It doesn't have any dependencies yet, but <a href="tutorial/toh-pt4#inject-message-service">it will soon</a>.</p>
+It doesn't have any dependencies yet, but <a href="/tutorial/toh-pt4#inject-message-service">it will soon</a>.</p>
 <p translation-result="">注意，这个新的服务导入了 Angular 的 <code><a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 符号，并且给这个服务类添加了 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> 装饰器。
 它把这个类标记为<em>依赖注入系统</em>的参与者之一。<code>HeroService</code> 类将会提供一个可注入的服务，并且它还可以拥有自己的待注入的依赖。
-目前它还没有依赖，但是<a href="tutorial/toh-pt4#inject-message-service">很快就会有了</a>。</p>
+目前它还没有依赖，但是<a href="/tutorial/toh-pt4#inject-message-service">很快就会有了</a>。</p>
 <p translation-origin="off">The <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> decorator accepts a metadata object for the service, the same way the <code>@<a href="/api/core/Component" class="code-anchor">Component</a>()</code> decorator did for your component classes. </p>
 <p translation-result=""><code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> 装饰器会接受该服务的元数据对象，就像 <code>@<a href="/api/core/Component" class="code-anchor">Component</a>()</code> 对组件类的作用一样。</p>
-<h3 translation-origin="off" id="get-hero-data">Get hero data<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#get-hero-data"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="get-hero-data">获取英雄数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#get-hero-data"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="get-hero-data">Get hero data<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#get-hero-data"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="get-hero-data">获取英雄数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#get-hero-data"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <code>HeroService</code> could get hero data from anywhere—a web service, local storage, or a mock data source. </p>
 <p translation-result=""><code>HeroService</code> 可以从任何地方获取数据：Web 服务、本地存储（LocalStorage）或一个模拟的数据源。</p>
 <p translation-origin="off">Removing data access from components means you can change your mind about the implementation anytime, without touching any components.
@@ -901,12 +901,12 @@ getHeroes(): Hero[] {
 
 </code-example>
 <a id="provide"></a>
-<h2 translation-origin="off" id="provide-the-heroservice">Provide the <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#provide-the-heroservice"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="provide-the-codeheroservicecode">提供（provide） <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#provide-the-codeheroservicecode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="provide-the-heroservice">Provide the <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#provide-the-heroservice"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="provide-the-codeheroservicecode">提供（provide） <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#provide-the-codeheroservicecode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You must make the <code>HeroService</code> available to the dependency injection system
 before Angular can <em>inject</em> it into the <code>HeroesComponent</code>,
-as you will do <a href="tutorial/toh-pt4#inject">below</a>. You do this by registering a <em>provider</em>. A provider is something that can create or deliver a service; in this case, it instantiates the <code>HeroService</code> class to provide the service.</p>
-<p translation-result="">在要求 Angular 把 <code>HeroService</code> 注入到 <code>HeroesComponent</code> 之前，你必须先把这个服务<em>提供给依赖注入系统</em>。<a href="tutorial/toh-pt4#inject">稍后</a>你就要这么做。
+as you will do <a href="/tutorial/toh-pt4#inject">below</a>. You do this by registering a <em>provider</em>. A provider is something that can create or deliver a service; in this case, it instantiates the <code>HeroService</code> class to provide the service.</p>
+<p translation-result="">在要求 Angular 把 <code>HeroService</code> 注入到 <code>HeroesComponent</code> 之前，你必须先把这个服务<em>提供给依赖注入系统</em>。<a href="/tutorial/toh-pt4#inject">稍后</a>你就要这么做。
 你可以通过注册<em>提供商</em>来做到这一点。提供商用来创建和交付服务，在这个例子中，它会对 <code>HeroService</code> 类进行实例化，以提供该服务。</p>
 <p translation-origin="off">Now, you need to make sure that the <code>HeroService</code> is registered as the provider of this service.
 You are registering it with an <em>injector</em>, which is the object that is responsible for choosing and injecting the provider where it is required. </p>
@@ -914,11 +914,11 @@ You are registering it with an <em>injector</em>, which is the object that is re
 你要用一个<em>注入器</em>注册它。注入器就是一个对象，负责在需要时选取和注入该提供商。</p>
 <p translation-origin="off">By default, the Angular CLI command <code>ng generate service</code> registers a provider with the <em>root injector</em> for your service by including provider metadata in the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> decorator. </p>
 <p translation-result="">默认情况下，Angular CLI 命令 <code>ng generate service</code> 会通过给 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 装饰器添加元数据的形式，为该服务把提供商注册到<em>根注入器</em>上。</p>
-<p translation-origin="off">If you look at the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> statement right before the <code>HeroService</code> class definition, you can see that the <code><a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> metadata value is 'root':    </p>
-<p translation-result="">如果你看看 <code>HeroService</code> 紧前面的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> 语句定义，就会发现 <code><a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> 元数据的值是 'root'：</p>
+<p translation-origin="off">If you look at the <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> statement right before the <code>HeroService</code> class definition, you can see that the <code><a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> metadata value is 'root':    </p>
+<p translation-result="">如果你看看 <code>HeroService</code> 紧前面的 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a>()</code> 语句定义，就会发现 <code><a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a></code> 元数据的值是 'root'：</p>
 <code-example>
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 </code-example>
 <p translation-origin="off">When you provide the service at the root level, Angular creates a single, shared instance of <code>HeroService</code> and injects into any class that asks for it.
@@ -940,11 +940,11 @@ For instance, you could have told the CLI to provide the service at the module l
 <p translation-origin="off">The <code>HeroService</code> is now ready to plug into the <code>HeroesComponent</code>.</p>
 <p translation-result="">现在 <code>HeroService</code> 已经准备好插入到 <code>HeroesComponent</code> 中了。</p>
 <div class="alert is-important">
-<p translation-origin="off">This is a interim code sample that will allow you to provide and use the <code>HeroService</code>.  At this point, the code will differ from the <code>HeroService</code> in the <a href="tutorial/toh-pt4#final-code-review">"final code review"</a>.</p>
-<p translation-result="">这是一个过渡性的代码范例，它将会允许你提供并使用 <code>HeroService</code>。此刻的代码和<a href="tutorial/toh-pt4#final-code-review">最终代码</a>相差很大。</p>
+<p translation-origin="off">This is a interim code sample that will allow you to provide and use the <code>HeroService</code>.  At this point, the code will differ from the <code>HeroService</code> in the <a href="/tutorial/toh-pt4#final-code-review">"final code review"</a>.</p>
+<p translation-result="">这是一个过渡性的代码范例，它将会允许你提供并使用 <code>HeroService</code>。此刻的代码和<a href="/tutorial/toh-pt4#final-code-review">最终代码</a>相差很大。</p>
 </div>
-<h2 translation-origin="off" id="update-heroescomponent">Update <code>HeroesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#update-heroescomponent"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="update-codeheroescomponentcode">修改 <code>HeroesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#update-codeheroescomponentcode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="update-heroescomponent">Update <code>HeroesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#update-heroescomponent"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="update-codeheroescomponentcode">修改 <code>HeroesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#update-codeheroescomponentcode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Open the <code>HeroesComponent</code> class file.</p>
 <p translation-result="">打开 <code>HeroesComponent</code> 类文件。</p>
 <p translation-origin="off">Delete the <code>HEROES</code> import, because you won't need that anymore.
@@ -962,8 +962,8 @@ heroes: Hero[];
 
 </code-example>
 <a id="inject"></a>
-<h3 translation-origin="off" id="inject-the-heroservice">Inject the <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#inject-the-heroservice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="inject-the-codeheroservicecode">注入 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#inject-the-codeheroservicecode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="inject-the-heroservice">Inject the <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#inject-the-heroservice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="inject-the-codeheroservicecode">注入 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#inject-the-codeheroservicecode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Add a private <code>heroService</code> parameter of type <code>HeroService</code> to the constructor.</p>
 <p translation-result="">往构造函数中添加一个私有的 <code>heroService</code>，其类型为 <code>HeroService</code>。</p>
 <code-example path="toh-pt4/src/app/heroes/heroes.component.ts" region="ctor">
@@ -975,8 +975,8 @@ constructor(private heroService: HeroService) { }
 <p translation-origin="off">When Angular creates a <code>HeroesComponent</code>, the <a href="/guide/dependency-injection">Dependency Injection</a> system
 sets the <code>heroService</code> parameter to the singleton instance of <code>HeroService</code>. </p>
 <p translation-result="">当 Angular 创建 <code>HeroesComponent</code> 时，<a href="/guide/dependency-injection">依赖注入</a>系统就会把这个 <code>heroService</code> 参数设置为 <code>HeroService</code> 的单例对象。</p>
-<h3 translation-origin="off" id="add-getheroes">Add <em>getHeroes()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#add-getheroes"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="add-emgetheroesem">添加 <em>getHeroes()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#add-emgetheroesem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="add-getheroes">Add <em>getHeroes()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#add-getheroes"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="add-emgetheroesem">添加 <em>getHeroes()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#add-emgetheroesem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Create a function to retrieve the heroes from the service.</p>
 <p translation-result="">创建一个函数，以从服务中获取这些英雄数据。</p>
 <code-example path="toh-pt4/src/app/heroes/heroes.component.1.ts" region="getHeroes">
@@ -986,8 +986,8 @@ getHeroes(): void {
 
 </code-example>
 <a id="oninit"></a>
-<h3 translation-origin="off" id="call-it-in-ngoninit">Call it in <code>ngOnInit</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#call-it-in-ngoninit"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="call-it-in-codengoninitcode">在 <code>ngOnInit</code> 中调用它<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#call-it-in-codengoninitcode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="call-it-in-ngoninit">Call it in <code>ngOnInit</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#call-it-in-ngoninit"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="call-it-in-codengoninitcode">在 <code>ngOnInit</code> 中调用它<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#call-it-in-codengoninitcode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">While you could call <code>getHeroes()</code> in the constructor, that's not the best practice.</p>
 <p translation-result="">你固然可以在构造函数中调用 <code>getHeroes()</code>，但那不是最佳实践。</p>
 <p translation-origin="off">Reserve the constructor for simple initialization such as wiring constructor parameters to properties.
@@ -1005,14 +1005,14 @@ ngOnInit() {
 }
 
 </code-example>
-<h3 translation-origin="off" id="see-it-run">See it run<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#see-it-run"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="see-it-run">查看运行效果<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#see-it-run"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="see-it-run">See it run<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#see-it-run"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="see-it-run">查看运行效果<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#see-it-run"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">After the browser refreshes, the app should run as before,
 showing a list of heroes and a hero detail view when you click on a hero name.</p>
 <p translation-result="">刷新浏览器，该应用仍运行的一如既往。
 显示英雄列表，并且当你点击某个英雄的名字时显示出英雄详情视图。</p>
-<h2 translation-origin="off" id="observable-data">Observable data<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#observable-data"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="observable-data">可观察（Observable）的数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#observable-data"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="observable-data">Observable data<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#observable-data"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="observable-data">可观察（Observable）的数据<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#observable-data"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <code>HeroService.getHeroes()</code> method has a <em>synchronous signature</em>,
 which implies that the <code>HeroService</code> can fetch heroes synchronously.
 The <code>HeroesComponent</code> consumes the <code>getHeroes()</code> result
@@ -1044,8 +1044,8 @@ and the browser will not block while the service waits.</p>
 in part because it will eventually use the Angular <code>HttpClient.get</code> method to fetch the heroes
 and <a href="/guide/http"><code>HttpClient.get()</code> returns an <code>Observable</code></a>.</p>
 <p translation-result="">这节课，<code>HeroService.getHeroes()</code> 将会返回 <code>Observable</code>，因为它最终会使用 Angular 的 <code>HttpClient.get</code> 方法来获取英雄数据，而 <a href="/guide/http"><code>HttpClient.get()</code> 会返回 <code>Observable</code></a>。</p>
-<h3 translation-origin="off" id="observable-heroservice">Observable <em>HeroService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#observable-heroservice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="observable-emheroserviceem">可观察对象版本的 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#observable-emheroserviceem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="observable-heroservice">Observable <em>HeroService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#observable-heroservice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="observable-emheroserviceem">可观察对象版本的 <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#observable-emheroserviceem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off"><code>Observable</code> is one of the key classes in the <a href="http://reactivex.io/rxjs/">RxJS library</a>.</p>
 <p translation-result=""><code>Observable</code> 是 <a href="http://reactivex.io/rxjs/">RxJS 库</a>中的一个关键类。</p>
 <p translation-origin="off">In a <a href="/tutorial/toh-pt6">later tutorial on HTTP</a>, you'll learn that Angular's <code><a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a></code> methods return RxJS <code>Observable</code>s.
@@ -1072,8 +1072,8 @@ getHeroes(): Observable&#x3C;Hero[]> {
 <p translation-origin="off">In the <a href="/tutorial/toh-pt6">HTTP tutorial</a>, you'll call <code>HttpClient.get&#x3C;Hero[]>()</code> which also returns an <code>Observable&#x3C;Hero[]></code> that emits  <em>a single value</em>, an array of heroes from the body of the HTTP response.</p>
 <p translation-result="">在 <a href="/tutorial/toh-pt6">HTTP 教程</a>中，你将会调用 <code>HttpClient.get&#x3C;Hero[]>()</code> 它也同样返回一个 <code>Observable&#x3C;Hero[]></code>，它也会发出单个值，这个值就是来自 HTTP 响应体中的英雄数组。</p>
 </div>
-<h3 translation-origin="off" id="subscribe-in-heroescomponent">Subscribe in <em>HeroesComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#subscribe-in-heroescomponent"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="subscribe-in-emheroescomponentem">在 <code>HeroesComponent</code> 中订阅<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#subscribe-in-emheroescomponentem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="subscribe-in-heroescomponent">Subscribe in <em>HeroesComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#subscribe-in-heroescomponent"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="subscribe-in-emheroescomponentem">在 <code>HeroesComponent</code> 中订阅<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#subscribe-in-emheroescomponentem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <code>HeroService.getHeroes</code> method used to return a <code>Hero[]</code>.
 Now it returns an <code>Observable&#x3C;Hero[]></code>.</p>
 <p translation-result=""><code>HeroService.getHeroes</code> 方法之前返回一个 <code>Hero[]</code>，
@@ -1119,8 +1119,8 @@ which sets the component's <code>heroes</code> property.</p>
 <p translation-origin="off">This asynchronous approach <em>will work</em> when
 the <code>HeroService</code> requests heroes from the server.</p>
 <p translation-result="">使用这种异步方式，当 <code>HeroService</code> 从远端服务器获取英雄数据时，就<em>可以工作了</em>。</p>
-<h2 translation-origin="off" id="show-messages">Show messages<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#show-messages"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="show-messages">显示消息<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#show-messages"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="show-messages">Show messages<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#show-messages"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="show-messages">显示消息<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#show-messages"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">In this section you will </p>
 <p translation-result="">在这一节，你将</p>
 <ul>
@@ -1141,15 +1141,15 @@ the <code>HeroService</code> requests heroes from the server.</p>
 <p translation-result=""> 当 <code>HeroService</code> 成功获取了英雄数据时显示一条消息。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="create-messagescomponent">Create <em>MessagesComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#create-messagescomponent"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="create-emmessagescomponentem">创建 <code>MessagesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#create-emmessagescomponentem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="create-messagescomponent">Create <em>MessagesComponent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#create-messagescomponent"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="create-emmessagescomponentem">创建 <code>MessagesComponent</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#create-emmessagescomponentem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Use the CLI to create the <code>MessagesComponent</code>.</p>
 <p translation-result="">使用 CLI 创建 <code>MessagesComponent</code>。</p>
 <code-example language="sh" class="code-shell">
-  ng generate component <a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a>
+  ng generate component <a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a>
 </code-example>
-<p translation-origin="off">The CLI creates the component files in the <code>src/app/<a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> folder and declare <code>MessagesComponent</code> in <code>AppModule</code>.</p>
-<p translation-result="">CLI 在 <code>src/app/<a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> 中创建了组件文件，并且把 <code>MessagesComponent</code> 声明在了 <code>AppModule</code> 中。</p>
+<p translation-origin="off">The CLI creates the component files in the <code>src/app/<a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> folder and declare <code>MessagesComponent</code> in <code>AppModule</code>.</p>
+<p translation-result="">CLI 在 <code>src/app/<a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> 中创建了组件文件，并且把 <code>MessagesComponent</code> 声明在了 <code>AppModule</code> 中。</p>
 <p translation-origin="off">Modify the <code>AppComponent</code> template to display the generated <code>MessagesComponent</code></p>
 <p translation-result="">修改 <code>AppComponent</code> 的模板来显示所生成的 <code>MessagesComponent</code>：</p>
 <code-example title="/src/app/app.component.html" path="toh-pt4/src/app/app.component.html">
@@ -1161,12 +1161,12 @@ the <code>HeroService</code> requests heroes from the server.</p>
 </code-example>
 <p translation-origin="off">You should see the default paragraph from <code>MessagesComponent</code> at the bottom of the page.</p>
 <p translation-result="">你可以在页面的底部看到来自的 <code>MessagesComponent</code> 的默认内容。</p>
-<h3 translation-origin="off" id="create-the-messageservice">Create the <em>MessageService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#create-the-messageservice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="create-the-emmessageserviceem">创建 <code>MessageService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#create-the-emmessageserviceem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="create-the-messageservice">Create the <em>MessageService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#create-the-messageservice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="create-the-emmessageserviceem">创建 <code>MessageService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#create-the-emmessageserviceem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Use the CLI to create the <code>MessageService</code> in <code>src/app</code>. </p>
 <p translation-result="">使用 CLI 在 <code>src/app</code> 中创建 <code>MessageService</code>。</p>
 <code-example language="sh" class="code-shell">
-  ng generate service <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
+  ng generate service <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
 </code-example>
 <p translation-origin="off">Open <code>MessageService</code> and replace its contents with the following.</p>
 <p translation-result="">打开 <code>MessageService</code>，并把它的内容改成这样：</p>
@@ -1174,13 +1174,13 @@ the <code>HeroService</code> requests heroes from the server.</p>
 import { <a href="/api/core/Injectable" class="code-anchor">Injectable</a> } from '@angular/core';
 
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 export class MessageService {
-  <a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a>: string[] = [];
+  <a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a>: string[] = [];
 
-  add(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
-    this.messages.push(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>);
+  add(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
+    this.messages.push(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>);
   }
 
   clear() {
@@ -1190,11 +1190,11 @@ export class MessageService {
 
 
 </code-example>
-<p translation-origin="off">The service exposes its cache of <code><a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> and two methods: one to <code>add()</code> a message to the cache and another to <code><a href="api/core/ViewContainerRef#clear" class="code-anchor">clear()</a></code> the cache.</p>
-<p translation-result="">该服务对外暴露了它的 <code><a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> 缓存，以及两个方法：<code>add()</code> 方法往缓存中添加一条消息，<code><a href="api/core/ViewContainerRef#clear" class="code-anchor">clear()</a></code> 方法用于清空缓存。</p>
+<p translation-origin="off">The service exposes its cache of <code><a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> and two methods: one to <code>add()</code> a message to the cache and another to <code><a href="/api/core/ViewContainerRef#clear" class="code-anchor">clear()</a></code> the cache.</p>
+<p translation-result="">该服务对外暴露了它的 <code><a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a></code> 缓存，以及两个方法：<code>add()</code> 方法往缓存中添加一条消息，<code><a href="/api/core/ViewContainerRef#clear" class="code-anchor">clear()</a></code> 方法用于清空缓存。</p>
 <a id="inject-message-service"></a>
-<h3 translation-origin="off" id="inject-it-into-the-heroservice">Inject it into the <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#inject-it-into-the-heroservice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="inject-it-into-the-codeheroservicecode">把它注入到 <code>HeroService</code> 中<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#inject-it-into-the-codeheroservicecode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="inject-it-into-the-heroservice">Inject it into the <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#inject-it-into-the-heroservice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="inject-it-into-the-codeheroservicecode">把它注入到 <code>HeroService</code> 中<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#inject-it-into-the-codeheroservicecode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Re-open the <code>HeroService</code> and import the <code>MessageService</code>.</p>
 <p translation-result="">重新打开 <code>HeroService</code>，并且导入 <code>MessageService</code>。</p>
 <code-example title="/src/app/hero.service.ts (import MessageService)" path="toh-pt4/src/app/hero.service.ts" region="import-message-service">
@@ -1216,20 +1216,20 @@ you inject the <code>MessageService</code> into the <code>HeroService</code> whi
 <p translation-result="">这是一个典型的“服务中的服务”场景：
 你把 <code>MessageService</code> 注入到了 <code>HeroService</code> 中，而 <code>HeroService</code> 又被注入到了 <code>HeroesComponent</code> 中。</p>
 </div>
-<h3 translation-origin="off" id="send-a-message-from-heroservice">Send a message from <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#send-a-message-from-heroservice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="send-a-message-from-codeheroservicecode">从 <code>HeroService</code> 中发送一条消息<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#send-a-message-from-codeheroservicecode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="send-a-message-from-heroservice">Send a message from <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#send-a-message-from-heroservice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="send-a-message-from-codeheroservicecode">从 <code>HeroService</code> 中发送一条消息<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#send-a-message-from-codeheroservicecode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Modify the <code>getHeroes</code> method to send a message when the heroes are fetched.</p>
 <p translation-result="">修改 <code>getHeroes</code> 方法，在获取到英雄数组时发送一条消息。</p>
 <code-example path="toh-pt4/src/app/hero.service.ts" region="getHeroes">
 getHeroes(): Observable&#x3C;Hero[]> {
-  // TODO: send the <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the heroes
+  // TODO: send the <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the heroes
   this.messageService.add('HeroService: fetched heroes');
   return of(HEROES);
 }
 
 </code-example>
-<h3 translation-origin="off" id="display-the-message-from-heroservice">Display the message from <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#display-the-message-from-heroservice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="display-the-message-from-codeheroservicecode">从 <code>HeroService</code> 中显示消息<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#display-the-message-from-codeheroservicecode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="display-the-message-from-heroservice">Display the message from <code>HeroService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#display-the-message-from-heroservice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="display-the-message-from-codeheroservicecode">从 <code>HeroService</code> 中显示消息<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#display-the-message-from-codeheroservicecode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <code>MessagesComponent</code> should display all messages,
 including the message sent by the <code>HeroService</code> when it fetches heroes.</p>
 <p translation-result=""><code>MessagesComponent</code> 可以显示所有消息，
@@ -1255,8 +1255,8 @@ constructor(public messageService: MessageService) {}
 <p translation-origin="off">Angular only binds to <em>public</em> component properties.</p>
 <p translation-result="">Angular 只会绑定到组件的<em>公共</em>属性。</p>
 </div>
-<h3 translation-origin="off" id="bind-to-the-messageservice">Bind to the <em>MessageService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#bind-to-the-messageservice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="bind-to-the-emmessageserviceem">绑定到 <code>MessageService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#bind-to-the-emmessageserviceem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="bind-to-the-messageservice">Bind to the <em>MessageService</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#bind-to-the-messageservice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="bind-to-the-emmessageserviceem">绑定到 <code>MessageService</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#bind-to-the-emmessageserviceem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Replace the CLI-generated <code>MessagesComponent</code> template with the following.</p>
 <p translation-result="">把 CLI 生成的 <code>MessagesComponent</code> 的模板改成这样：</p>
 <code-example title="src/app/messages/messages.component.html" path="toh-pt4/src/app/messages/messages.component.html">
@@ -1265,7 +1265,7 @@ constructor(public messageService: MessageService) {}
   &#x3C;h2>Messages&#x3C;/h2>
   &#x3C;button class="clear"
           (click)="messageService.clear()">clear&#x3C;/button>
-  &#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>='let <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> of messageService.messages'> {{<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}} &#x3C;/div>
+  &#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>='let <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> of messageService.messages'> {{<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}} &#x3C;/div>
 
 &#x3C;/div>
 
@@ -1283,14 +1283,14 @@ constructor(public messageService: MessageService) {}
 <p translation-result=""> <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 用来在一系列 <code>&#x3C;div></code> 元素中展示消息列表。</p>
 </li>
 <li>
-<p translation-origin="off">An Angular <a href="guide/template-syntax#event-binding">event binding</a> binds the button's click event
+<p translation-origin="off">An Angular <a href="/guide/template-syntax#event-binding">event binding</a> binds the button's click event
 to <code>MessageService.clear()</code>.</p>
-<p translation-result="">   Angular 的<a href="guide/template-syntax#event-binding">事件绑定</a>把按钮的 <code>click</code> 事件绑定到了 <code>MessageService.clear()</code>。</p>
+<p translation-result="">   Angular 的<a href="/guide/template-syntax#event-binding">事件绑定</a>把按钮的 <code>click</code> 事件绑定到了 <code>MessageService.clear()</code>。</p>
 </li>
 </ul>
 <p translation-origin="off">The messages will look better when you add the private CSS styles to <code>messages.component.css</code>
-as listed in one of the <a href="tutorial/toh-pt4#final-code-review">"final code review"</a> tabs below.</p>
-<p translation-result="">当你把 <a href="tutorial/toh-pt4#final-code-review">最终代码</a> 某一页的内容添加到 <code>messages.component.css</code> 中时，这些消息会变得好看一些。</p>
+as listed in one of the <a href="/tutorial/toh-pt4#final-code-review">"final code review"</a> tabs below.</p>
+<p translation-result="">当你把 <a href="/tutorial/toh-pt4#final-code-review">最终代码</a> 某一页的内容添加到 <code>messages.component.css</code> 中时，这些消息会变得好看一些。</p>
 <p translation-origin="off">The browser refreshes and the page displays the list of heroes.
 Scroll to the bottom to see the message from the <code>HeroService</code> in the message area.
 Click the "clear" button and the message area disappears.</p>
@@ -1298,8 +1298,8 @@ Click the "clear" button and the message area disappears.</p>
 滚动到底部，就会在消息区看到来自 <code>HeroService</code> 的消息。
 点击“清空”按钮，消息区不见了。</p>
 <a id="final-code-review"></a>
-<h2 translation-origin="off" id="final-code-review">Final code review<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#final-code-review"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="final-code-review-4">查看最终代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#final-code-review-4"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="final-code-review">Final code review<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#final-code-review"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="final-code-review-4">查看最终代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#final-code-review-4"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Here are the code files discussed on this page and your app should look like this <live-example></live-example>.</p>
 <p translation-result="">你的应用应该变成了这样 <live-example></live-example>。本页所提及的代码文件如下：</p>
 <code-tabs>
@@ -1314,14 +1314,14 @@ import { HEROES } from './mock-heroes';
 import { MessageService } from './message.service';
 
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 export class HeroService {
 
   constructor(private messageService: MessageService) { }
 
   getHeroes(): Observable&#x3C;Hero[]> {
-    // TODO: send the <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the heroes
+    // TODO: send the <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> _after_ fetching the heroes
     this.messageService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
@@ -1333,13 +1333,13 @@ export class HeroService {
 import { <a href="/api/core/Injectable" class="code-anchor">Injectable</a> } from '@angular/core';
 
 @<a href="/api/core/Injectable" class="code-anchor">Injectable</a>({
-  <a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
+  <a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>: 'root',
 })
 export class MessageService {
-  <a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a>: string[] = [];
+  <a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a>: string[] = [];
 
-  add(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
-    this.messages.push(<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>);
+  add(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>: string) {
+    this.messages.push(<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>);
   }
 
   clear() {
@@ -1359,7 +1359,7 @@ import { HeroService } from '../hero.service';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./heroes.component.css']
 })
 export class HeroesComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
 
@@ -1393,7 +1393,7 @@ import { MessageService } from '../message.service';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./messages.component.css']
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: ['./messages.component.css']
 })
 export class MessagesComponent implements <a href="/api/core/OnInit" class="code-anchor">OnInit</a> {
 
@@ -1413,7 +1413,7 @@ export class MessagesComponent implements <a href="/api/core/OnInit" class="code
   &#x3C;h2>Messages&#x3C;/h2>
   &#x3C;button class="clear"
           (click)="messageService.clear()">clear&#x3C;/button>
-  &#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>='let <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> of messageService.messages'> {{<a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}} &#x3C;/div>
+  &#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>='let <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> of messageService.messages'> {{<a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>}} &#x3C;/div>
 
 &#x3C;/div>
 
@@ -1467,23 +1467,23 @@ import { <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a> } 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { MessagesComponent } from './<a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a>/messages.component';
+import { MessagesComponent } from './<a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a>/messages.component';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent
   ],
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>,
     <a href="/api/forms/FormsModule" class="code-anchor">FormsModule</a>
   ],
   providers: [
-    // no need to place any providers due to the `<a href="api/core/Injectable#providedIn" class="code-anchor">providedIn</a>` flag...
+    // no need to place any providers due to the `<a href="/api/core/Injectable#providedIn" class="code-anchor">providedIn</a>` flag...
   ],
-  <a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
+  <a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a>: [ AppComponent ]
 })
 export class AppModule { }
 
@@ -1499,8 +1499,8 @@ export class AppModule { }
 </code-pane>
 
 </code-tabs>
-<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#summary"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="summary-14">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="tutorial/toh-pt4#summary-14"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#summary"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="summary-14">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="/tutorial/toh-pt4#summary-14"><i class="material-icons">link</i></a></h2>
 <ul>
 <li>
 <p translation-origin="off">You refactored data access to the <code>HeroService</code> class.</p>

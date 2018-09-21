@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="pipes">Pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pipes"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="pipes-2">管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pipes-2"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="pipes">Pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pipes"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="pipes-2">管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pipes-2"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">Every application starts out with what seems like a simple task: get data, transform them, and show them to users.
 Getting data could be as simple as creating a local variable or as complex as streaming data over a WebSocket.</p>
 <p translation-result="">每个应用开始的时候差不多都是一些简单任务：获取数据、转换它们，然后把它们显示给用户。
@@ -832,8 +832,8 @@ In fact, you might like to apply them in your HTML templates as you do styles.</
 <p translation-result="">通过引入 Angular 管道，你可以把这种简单的“显示-值”转换器声明在 HTML 中。</p>
 <p translation-origin="off">You can run the <live-example></live-example> in Stackblitz and download the code from there.</p>
 <p translation-result="">你可以运行<live-example></live-example>，在 Stackblitz 中试用并下载本页的代码。</p>
-<h2 translation-origin="off" id="using-pipes">Using pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#using-pipes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="using-pipes">使用管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#using-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="using-pipes">Using pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#using-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="using-pipes">使用管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#using-pipes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A pipe takes in data as input and transforms it to a desired output.
 In this page, you'll use pipes to transform a component's birthday property into
 a human-friendly date.</p>
@@ -844,7 +844,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-birthday',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `&#x3C;p>The hero's birthday is {{ birthday | date }}&#x3C;/p>`
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `&#x3C;p>The hero's birthday is {{ birthday | date }}&#x3C;/p>`
 })
 export class HeroBirthdayComponent {
   birthday = new Date(1988, 3, 15); // April 15, 1988
@@ -859,26 +859,26 @@ export class HeroBirthdayComponent {
 
 </code-example>
 <p translation-origin="off">Inside the interpolation expression, you flow the component's <code>birthday</code> value through the
-<a href="guide/template-syntax#pipe">pipe operator</a> ( | ) to the <a href="/api/common/DatePipe">Date pipe</a>
+<a href="/guide/template-syntax#pipe">pipe operator</a> ( | ) to the <a href="/api/common/DatePipe">Date pipe</a>
 function on the right. All pipes work this way.</p>
-<p translation-result="">在这个插值表达式中，你让组件的 <code>birthday</code> 值通过<a href="guide/template-syntax#pipe">管道操作符</a>( | )流动到
+<p translation-result="">在这个插值表达式中，你让组件的 <code>birthday</code> 值通过<a href="/guide/template-syntax#pipe">管道操作符</a>( | )流动到
 右侧的<a href="/api/common/DatePipe">Date 管道</a>函数中。所有管道都会用这种方式工作。</p>
-<h2 translation-origin="off" id="built-in-pipes">Built-in pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#built-in-pipes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="built-in-pipes">内置的管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#built-in-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="built-in-pipes">Built-in pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#built-in-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="built-in-pipes">内置的管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#built-in-pipes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular comes with a stock of pipes such as
 <code><a href="/api/common/DatePipe" class="code-anchor">DatePipe</a></code>, <code><a href="/api/common/UpperCasePipe" class="code-anchor">UpperCasePipe</a></code>, <code><a href="/api/common/LowerCasePipe" class="code-anchor">LowerCasePipe</a></code>, <code><a href="/api/common/CurrencyPipe" class="code-anchor">CurrencyPipe</a></code>, and <code><a href="/api/common/PercentPipe" class="code-anchor">PercentPipe</a></code>.
 They are all available for use in any template.</p>
 <p translation-result="">Angular 内置了一些管道，比如 <code><a href="/api/common/DatePipe" class="code-anchor">DatePipe</a></code>、<code><a href="/api/common/UpperCasePipe" class="code-anchor">UpperCasePipe</a></code>、<code><a href="/api/common/LowerCasePipe" class="code-anchor">LowerCasePipe</a></code>、<code><a href="/api/common/CurrencyPipe" class="code-anchor">CurrencyPipe</a></code> 和 <code><a href="/api/common/PercentPipe" class="code-anchor">PercentPipe</a></code>。
 它们全都可以直接用在任何模板中。</p>
 <div class="alert is-helpful">
-<p translation-origin="off">Read more about these and many other built-in pipes in the <a href="api?type=pipe">pipes topics</a> of the
+<p translation-origin="off">Read more about these and many other built-in pipes in the <a href="/api?type=pipe">pipes topics</a> of the
 <a href="/api">API Reference</a>; filter for entries that include the word "pipe".</p>
-<p translation-result="">要学习更多内置管道的知识，参见<a href="api?type=pipe">API 参考手册</a>，并用“pipe”为关键词对结果进行过滤。</p>
-<p translation-origin="off">Angular doesn't have a <code>FilterPipe</code> or an <code>OrderByPipe</code> for reasons explained in the <a href="guide/pipes#no-filter-pipe">Appendix</a> of this page.</p>
-<p translation-result="">Angular 没有 <code>FilterPipe</code> 或 <code>OrderByPipe</code> 管道，原因在<a href="guide/pipes#no-filter-pipe">后面的附录中</a>有解释。</p>
+<p translation-result="">要学习更多内置管道的知识，参见<a href="/api?type=pipe">API 参考手册</a>，并用“pipe”为关键词对结果进行过滤。</p>
+<p translation-origin="off">Angular doesn't have a <code>FilterPipe</code> or an <code>OrderByPipe</code> for reasons explained in the <a href="/guide/pipes#no-filter-pipe">Appendix</a> of this page.</p>
+<p translation-result="">Angular 没有 <code>FilterPipe</code> 或 <code>OrderByPipe</code> 管道，原因在<a href="/guide/pipes#no-filter-pipe">后面的附录中</a>有解释。</p>
 </div>
-<h2 translation-origin="off" id="parameterizing-a-pipe">Parameterizing a pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#parameterizing-a-pipe"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="parameterizing-a-pipe">对管道进行参数化<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#parameterizing-a-pipe"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="parameterizing-a-pipe">Parameterizing a pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#parameterizing-a-pipe"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="parameterizing-a-pipe">对管道进行参数化<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#parameterizing-a-pipe"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">A pipe can accept any number of optional parameters to fine-tune its output.
 To add parameters to a pipe, follow the pipe name with a colon ( : ) and then the parameter value
 (such as <code>currency:'EUR'</code>). If the pipe accepts multiple parameters, separate the values with colons (such as <code>slice:1:5</code>)</p>
@@ -894,19 +894,19 @@ After formatting the hero's April 15th birthday, it renders as <strong><samp>04/
 
 </code-example>
 <p translation-origin="off">The parameter value can be any valid template expression,
-(see the <a href="guide/template-syntax#template-expressions">Template expressions</a> section of the
+(see the <a href="/guide/template-syntax#template-expressions">Template expressions</a> section of the
 <a href="/guide/template-syntax">Template Syntax</a> page)
 such as a string literal or a component property.
 In other words, you can control the format through a binding the same way you control the birthday value through a binding.</p>
-<p translation-result="">参数值可以是任何有效的模板表达式（参见<a href="/guide/template-syntax">模板语法</a>中的<a href="guide/template-syntax#template-expressions">模板表达式</a>部分），比如字符串字面量或组件的属性。
+<p translation-result="">参数值可以是任何有效的模板表达式（参见<a href="/guide/template-syntax">模板语法</a>中的<a href="/guide/template-syntax#template-expressions">模板表达式</a>部分），比如字符串字面量或组件的属性。
 换句话说，借助属性绑定，你也可以像用绑定来控制生日的值一样，控制生日的显示格式。</p>
 <p translation-origin="off">Write a second component that <em>binds</em> the pipe's format parameter
 to the component's <code>format</code> property. Here's the template for that component:</p>
 <p translation-result="">来写第二个组件，它把管道的格式参数<em>绑定</em>到该组件的 <code>format</code> 属性。这里是新组件的模板：</p>
 <code-example path="pipes/src/app/hero-birthday2.component.ts" region="template" title="src/app/hero-birthday2.component.ts (template)" linenums="false">
-<a href="api/core/Component#template" class="code-anchor">template</a>: `
+<a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;p>The hero's birthday is {{ birthday | date:format }}&#x3C;/p>
-  &#x3C;button (click)="toggleFormat()">Toggle <a href="api/common/FormStyle#Format" class="code-anchor">Format</a>&#x3C;/button>
+  &#x3C;button (click)="toggleFormat()">Toggle <a href="/api/common/FormStyle#Format" class="code-anchor">Format</a>&#x3C;/button>
 `
 
 </code-example>
@@ -938,8 +938,8 @@ export class HeroBirthday2Component {
 API Reference page.</p>
 <p translation-result="">要了解更多 <code>DatePipes</code> 的格式选项，请参阅<a href="/api/common/DatePipe">API 文档</a>。</p>
 </div>
-<h2 translation-origin="off" id="chaining-pipes">Chaining pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#chaining-pipes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="chaining-pipes">链式管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#chaining-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="chaining-pipes">Chaining pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#chaining-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="chaining-pipes">链式管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#chaining-pipes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You can chain pipes together in potentially useful combinations.
 In the following example, to display the birthday in uppercase,
 the birthday is chained to the <code><a href="/api/common/DatePipe" class="code-anchor">DatePipe</a></code> and on to the <code><a href="/api/common/UpperCasePipe" class="code-anchor">UpperCasePipe</a></code>.
@@ -960,8 +960,8 @@ The chained hero's birthday is
 {{  birthday | date:'fullDate' | uppercase}}
 
 </code-example>
-<h2 translation-origin="off" id="custom-pipes">Custom pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#custom-pipes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="custom-pipes">自定义管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#custom-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="custom-pipes">Custom pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#custom-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="custom-pipes">自定义管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#custom-pipes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You can write your own custom pipes.
 Here's a custom pipe named <code>ExponentialStrengthPipe</code> that can boost a hero's powers:</p>
 <p translation-result="">你还可以写自己的自定义管道。
@@ -1018,8 +1018,8 @@ Your pipe's name is <code>exponentialStrength</code>.</p>
 </li>
 </ul>
 <div class="alert is-helpful">
-<h2 translation-origin="off" id="the-pipetransform-interface">The <em>PipeTransform</em> interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#the-pipetransform-interface"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="the-empipetransformem-interface"><em>PipeTransform</em> 接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#the-empipetransformem-interface"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="the-pipetransform-interface">The <em>PipeTransform</em> interface<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#the-pipetransform-interface"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="the-empipetransformem-interface"><em>PipeTransform</em> 接口<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#the-empipetransformem-interface"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <code>transform</code> method is essential to a pipe.
 The <code><a href="/api/core/PipeTransform" class="code-anchor">PipeTransform</a></code> <em>interface</em> defines that method and guides both tooling and the compiler.
 Technically, it's optional; Angular looks for and executes the <code>transform</code> method regardless.</p>
@@ -1034,7 +1034,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-power-booster',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>Power Booster&#x3C;/h2>
     &#x3C;p>Super power boost: {{2 | exponentialStrength: 10}}&#x3C;/p>
   `
@@ -1054,8 +1054,8 @@ export class PowerBoosterComponent { }
 <p translation-result=""> 你使用自定义管道的方式和内置管道完全相同。</p>
 </li>
 <li>
-<p translation-origin="off">You must include your pipe in the <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array of the <code>AppModule</code>.</p>
-<p translation-result=""> 你必须在 <code>AppModule</code> 的 <code><a href="api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组中包含这个管道。</p>
+<p translation-origin="off">You must include your pipe in the <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> array of the <code>AppModule</code>.</p>
+<p translation-result=""> 你必须在 <code>AppModule</code> 的 <code><a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a></code> 数组中包含这个管道。</p>
 </li>
 </ul>
 <div class="callout is-helpful">
@@ -1070,8 +1070,8 @@ Angular CLI's generator registers the pipe automatically.</p>
 <p translation-origin="off">To probe the behavior in the <live-example></live-example>,
 change the value and optional exponent in the template.</p>
 <p translation-result="">试一下这个<live-example></live-example>，并通过修改值和模板中的可选部分来体会其行为。</p>
-<h2 translation-origin="off" id="power-boost-calculator">Power Boost Calculator<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#power-boost-calculator"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="power-boost-calculator">能力倍增计算器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#power-boost-calculator"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="power-boost-calculator">Power Boost Calculator<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#power-boost-calculator"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="power-boost-calculator">能力倍增计算器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#power-boost-calculator"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">It's not much fun updating the template to test the custom pipe.
 Upgrade the example to a "Power Boost Calculator" that combines
 your pipe and two-way data binding with <code><a href="/api/forms/NgModel" class="code-anchor">ngModel</a></code>.</p>
@@ -1082,7 +1082,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-power-boost-calculator',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>Power Boost Calculator&#x3C;/h2>
     &#x3C;div>Normal power: &#x3C;input [(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]="power">&#x3C;/div>
     &#x3C;div>Boost factor: &#x3C;input [(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]="factor">&#x3C;/div>
@@ -1102,8 +1102,8 @@ export class PowerBoostCalculatorComponent {
   <img src="generated/images/guide/pipes/power-boost-calculator-anim.gif" alt="Power Boost Calculator" width="296" height="136">
 </figure>
 <a id="change-detection"></a>
-<h2 translation-origin="off" id="pipes-and-change-detection">Pipes and change detection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pipes-and-change-detection"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="pipes-and-change-detection">管道与变更检测<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pipes-and-change-detection"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="pipes-and-change-detection">Pipes and change detection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pipes-and-change-detection"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="pipes-and-change-detection">管道与变更检测<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pipes-and-change-detection"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular looks for changes to data-bound values through a <em>change detection</em> process that runs after every DOM event:
 every keystroke, mouse move, timer tick, and server response. This could be expensive.
 Angular strives to lower the cost whenever possible and appropriate.</p>
@@ -1111,8 +1111,8 @@ Angular strives to lower the cost whenever possible and appropriate.</p>
 这可能会让变更检测显得很昂贵，但是 Angular 会尽可能降低变更检测的成本。</p>
 <p translation-origin="off">Angular picks a simpler, faster change detection algorithm when you use a pipe.</p>
 <p translation-result="">当使用管道时，Angular 会选用一种更简单、更快速的变更检测算法。</p>
-<h3 translation-origin="off" class="no-toc" id="no-pipe">No pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#no-pipe"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="no-pipe">无管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#no-pipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="no-pipe">No pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#no-pipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="no-pipe">无管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#no-pipe"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">In the next example, the component uses the default, aggressive change detection strategy to monitor and update
 its display of every hero in the <code>heroes</code> array. Here's the template:</p>
 <p translation-result="">在下一个例子中，组件使用默认的、激进(昂贵)的变更检测策略来检测和更新 <code>heroes</code> 数组中的每个英雄。下面是它的模板：</p>
@@ -1152,8 +1152,8 @@ If you added the ability to remove or change a hero, Angular would detect those 
 <p translation-result="">你可以添加新的英雄，加完之后，Angular 就会更新显示。
 <code>reset</code> 按钮会把 <code>heroes</code> 替换成一个由原来的英雄组成的新数组，重置完之后，Angular 就会更新显示。
 如果你提供了删除或修改英雄的能力，Angular 也会检测到那些更改，并更新显示。</p>
-<h3 translation-origin="off" class="no-toc" id="flyingheroespipe"><i>FlyingHeroesPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#flyingheroespipe"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="iflyingheroespipei"><i>“会飞的英雄”管道（FlyingHeroesPipe）</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#iflyingheroespipei"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="flyingheroespipe"><i>FlyingHeroesPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#flyingheroespipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="iflyingheroespipei"><i>“会飞的英雄”管道（FlyingHeroesPipe）</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#iflyingheroespipei"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Add a <code>FlyingHeroesPipe</code> to the <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> repeater that filters the list of heroes to just those heroes who can fly.</p>
 <p translation-result="">往 <code>*<a href="/api/common/NgForOf" class="code-anchor">ngFor</a></code> 重复器中添加一个 <code>FlyingHeroesPipe</code> 管道，这个管道能过滤出所有会飞的英雄。</p>
 <code-example path="pipes/src/app/flying-heroes.component.html" region="template-flying-heroes" title="src/app/flying-heroes.component.html (flyers)" linenums="false">
@@ -1228,26 +1228,26 @@ The component should be unaware of pipes.</p>
 要尽可能保持组件类独立于 HTML。组件不应该关心管道的存在。</p>
 <p translation-origin="off">For filtering flying heroes, consider an <em>impure pipe</em>.</p>
 <p translation-result="">为了过滤出会飞的英雄，考虑使用<em>非纯(impure)管道</em>。</p>
-<h2 translation-origin="off" id="pure-and-impure-pipes">Pure and impure pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pure-and-impure-pipes"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="pure-and-impure-pipes">纯(pure)管道与非纯(impure)管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pure-and-impure-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="pure-and-impure-pipes">Pure and impure pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pure-and-impure-pipes"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="pure-and-impure-pipes">纯(pure)管道与非纯(impure)管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pure-and-impure-pipes"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">There are two categories of pipes: <em>pure</em> and <em>impure</em>.
 Pipes are pure by default. Every pipe you've seen so far has been pure.
 You make a pipe impure by setting its pure flag to false. You could make the <code>FlyingHeroesPipe</code>
 impure like this:</p>
 <p translation-result="">有两类管道：<strong>纯</strong>的与<strong>非纯</strong>的。
 默认情况下，管道都是纯的。以前见到的每个管道都是纯的。
-通过把它的 <code><a href="api/core/Pipe#pure" class="code-anchor">pure</a></code> 标志设置为 <code>false</code>，你可以制作一个非纯管道。你可以像这样让 <code>FlyingHeroesPipe</code> 变成非纯的：</p>
+通过把它的 <code><a href="/api/core/Pipe#pure" class="code-anchor">pure</a></code> 标志设置为 <code>false</code>，你可以制作一个非纯管道。你可以像这样让 <code>FlyingHeroesPipe</code> 变成非纯的：</p>
 <code-example path="pipes/src/app/flying-heroes.pipe.ts" region="pipe-decorator" title="src/app/flying-heroes.pipe.ts" linenums="false">
 @<a href="/api/core/Pipe" class="code-anchor">Pipe</a>({
   name: 'flyingHeroesImpure',
-  <a href="api/core/Pipe#pure" class="code-anchor">pure</a>: false
+  <a href="/api/core/Pipe#pure" class="code-anchor">pure</a>: false
 })
 
 </code-example>
 <p translation-origin="off">Before doing that, understand the difference between pure and impure, starting with a pure pipe.</p>
 <p translation-result="">在继续往下走之前，先理解一下<em>纯</em>和<em>非纯</em>之间的区别，从<em>纯</em>管道开始。</p>
-<h3 translation-origin="off" class="no-toc" id="pure-pipes">Pure pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pure-pipes"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="pure-pipes">纯管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pure-pipes"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="pure-pipes">Pure pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pure-pipes"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="pure-pipes">纯管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pure-pipes"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular executes a <em>pure pipe</em> only when it detects a <em>pure change</em> to the input value.
 A pure change is either a change to a primitive input value (<code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>Symbol</code>)
 or a changed object reference (<code>Date</code>, <code>Array</code>, <code>Function</code>, <code>Object</code>).</p>
@@ -1275,8 +1275,8 @@ a point that's discussed later in this page.</p>
 <p translation-result="">或者你也可以完全不用管道。
 有时候，使用组件的属性能比用管道更好的达到目的，后面会再讨论这一点。</p>
 </div>
-<h3 translation-origin="off" class="no-toc" id="impure-pipes">Impure pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#impure-pipes"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="impure-pipes">非纯管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#impure-pipes"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="impure-pipes">Impure pipes<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#impure-pipes"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="impure-pipes">非纯管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#impure-pipes"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular executes an <em>impure pipe</em>  during every component change detection cycle.
 An impure pipe is called often, as often as every keystroke or mouse-move.</p>
 <p translation-result="">Angular 会在每个组件的变更检测周期中执行<em>非纯管道</em>。
@@ -1286,8 +1286,8 @@ An expensive, long-running pipe could destroy the user experience.</p>
 <p translation-result="">要在脑子里绷着这根弦，必须小心翼翼的实现非纯管道。
 一个昂贵、迟钝的管道将摧毁用户体验。</p>
 <a id="impure-flying-heroes"></a>
-<h3 translation-origin="off" class="no-toc" id="an-impure-flyingheroespipe">An impure <i>FlyingHeroesPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#an-impure-flyingheroespipe"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="an-impure-iflyingheroespipei">非纯管道 <i>FlyingHeroesPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#an-impure-iflyingheroespipei"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="an-impure-flyingheroespipe">An impure <i>FlyingHeroesPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#an-impure-flyingheroespipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="an-impure-iflyingheroespipei">非纯管道 <i>FlyingHeroesPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#an-impure-iflyingheroespipei"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A flip of the switch turns the <code>FlyingHeroesPipe</code> into a <code>FlyingHeroesImpurePipe</code>.
 The complete implementation is as follows:</p>
 <p translation-result="">把 <code>FlyingHeroesPipe</code> 换成了 <code>FlyingHeroesImpurePipe</code>。
@@ -1297,7 +1297,7 @@ The complete implementation is as follows:</p>
   <code-pane title="FlyingHeroesImpurePipe" path="pipes/src/app/flying-heroes.pipe.ts" region="impure">
 @<a href="/api/core/Pipe" class="code-anchor">Pipe</a>({
   name: 'flyingHeroesImpure',
-  <a href="api/core/Pipe#pure" class="code-anchor">pure</a>: false
+  <a href="/api/core/Pipe#pure" class="code-anchor">pure</a>: false
 })
 export class FlyingHeroesImpurePipe extends FlyingHeroesPipe {}
 
@@ -1319,9 +1319,9 @@ export class FlyingHeroesPipe implements <a href="/api/core/PipeTransform" class
 
 </code-tabs>
 <p translation-origin="off">You inherit from <code>FlyingHeroesPipe</code> to prove the point that nothing changed internally.
-The only difference is the <code><a href="api/core/Pipe#pure" class="code-anchor">pure</a></code> flag in the pipe metadata.</p>
+The only difference is the <code><a href="/api/core/Pipe#pure" class="code-anchor">pure</a></code> flag in the pipe metadata.</p>
 <p translation-result="">你把它从 <code>FlyingHeroesPipe</code> 中继承下来，以证明无需改动内部代码。
-唯一的区别是管道元数据中的 <code><a href="api/core/Pipe#pure" class="code-anchor">pure</a></code> 标志。</p>
+唯一的区别是管道元数据中的 <code><a href="/api/core/Pipe#pure" class="code-anchor">pure</a></code> 标志。</p>
 <p translation-origin="off">This is a good candidate for an impure pipe because the <code>transform</code> function is trivial and fast.</p>
 <p translation-result="">这是一个很好地非纯管道候选者，因为它的 <code>transform</code> 函数又小又快。</p>
 <code-example path="pipes/src/app/flying-heroes.pipe.ts" linenums="false" title="src/app/flying-heroes.pipe.ts (filter)" region="filter">
@@ -1342,8 +1342,8 @@ display updates as you add heroes, even when you mutate the <code>heroes</code> 
 <p translation-result="">唯一的重大改动就是管道。
 你可以在<live-example></live-example>中确认，当你添加新的英雄甚至修改 <code>heroes</code> 数组时，这个<em>会飞的英雄</em>的显示也跟着更新了。</p>
 <a id="async-pipe"></a>
-<h3 translation-origin="off" class="no-toc" id="the-impure-asyncpipe">The impure <i>AsyncPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#the-impure-asyncpipe"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="async-pipe">非纯  <i>AsyncPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#async-pipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="the-impure-asyncpipe">The impure <i>AsyncPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#the-impure-asyncpipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="async-pipe">非纯  <i>AsyncPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#async-pipe"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The Angular <code><a href="/api/common/AsyncPipe" class="code-anchor">AsyncPipe</a></code> is an interesting example of an impure pipe.
 The <code><a href="/api/common/AsyncPipe" class="code-anchor">AsyncPipe</a></code> accepts a <code>Promise</code> or <code>Observable</code> as input
 and subscribes to the input automatically, eventually returning the emitted values.</p>
@@ -1355,8 +1355,8 @@ keeps delivering values from that <code>Observable</code> as they arrive.</p>
 <p translation-result=""><code><a href="/api/common/AsyncPipe" class="code-anchor">AsyncPipe</a></code> 管道是有状态的。
 该管道维护着一个所输入的 <code>Observable</code> 的订阅，并且持续从那个 <code>Observable</code> 中发出新到的值。</p>
 <p translation-origin="off">This next example binds an <code>Observable</code> of message strings
-(<code><a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$</code>) to a view with the <code><a href="/api/core/testing/async" class="code-anchor">async</a></code> pipe.</p>
-<p translation-result="">下面例子使用该 <code><a href="/api/core/testing/async" class="code-anchor">async</a></code> 管道把一个消息字符串(<code><a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$</code>)的 <code>Observable</code> 绑定到视图中。</p>
+(<code><a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$</code>) to a view with the <code><a href="/api/core/testing/async" class="code-anchor">async</a></code> pipe.</p>
+<p translation-result="">下面例子使用该 <code><a href="/api/core/testing/async" class="code-anchor">async</a></code> 管道把一个消息字符串(<code><a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$</code>)的 <code>Observable</code> 绑定到视图中。</p>
 <code-example path="pipes/src/app/hero-async-message.component.ts" title="src/app/hero-async-message.component.ts">
 import { <a href="/api/core/Component" class="code-anchor">Component</a> } from '@angular/core';
 
@@ -1365,15 +1365,15 @@ import { map, take } from 'rxjs/operators';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-message',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>Async Hero Message and <a href="/api/common/AsyncPipe" class="code-anchor">AsyncPipe</a>&#x3C;/h2>
-    &#x3C;p>Message: {{ <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$ | <a href="/api/core/testing/async" class="code-anchor">async</a> }}&#x3C;/p>
+    &#x3C;p>Message: {{ <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$ | <a href="/api/core/testing/async" class="code-anchor">async</a> }}&#x3C;/p>
     &#x3C;button (click)="resend()">Resend&#x3C;/button>`,
 })
 export class HeroAsyncMessageComponent {
-  <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$: Observable&#x3C;string>;
+  <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>$: Observable&#x3C;string>;
 
-  private <a href="api/service-worker/SwPush#messages" class="code-anchor">messages</a> = [
+  private <a href="/api/service-worker/SwPush#messages" class="code-anchor">messages</a> = [
     'You are my hero!',
     'You are the best hero!',
     'Will you be my hero?'
@@ -1397,8 +1397,8 @@ and have to unsubscribe when it's destroyed
 (a potent source of memory leaks).</p>
 <p translation-result="">这个 Async 管道节省了组件的样板代码。
 组件不用订阅这个异步数据源，而且不用在被销毁时取消订阅(如果订阅了而忘了反订阅容易导致隐晦的内存泄露)。</p>
-<h3 translation-origin="off" class="no-toc" id="an-impure-caching-pipe">An impure caching pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#an-impure-caching-pipe"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="an-impure-caching-pipe">一个非纯而且带缓存的管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#an-impure-caching-pipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="an-impure-caching-pipe">An impure caching pipe<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#an-impure-caching-pipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="an-impure-caching-pipe">一个非纯而且带缓存的管道<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#an-impure-caching-pipe"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Write one more impure pipe, a pipe that makes an HTTP request.</p>
 <p translation-result="">来写更多的非纯管道：一个向服务器发起 HTTP 请求的管道。</p>
 <p translation-origin="off">Remember that impure pipes are called every few milliseconds.
@@ -1414,7 +1414,7 @@ import { <a href="/api/core/Pipe" class="code-anchor">Pipe</a>, <a href="/api/co
 import { <a href="/api/common/http/HttpClient" class="code-anchor">HttpClient</a> }          from '@angular/common/http';
 @<a href="/api/core/Pipe" class="code-anchor">Pipe</a>({
   name: 'fetch',
-  <a href="api/core/Pipe#pure" class="code-anchor">pure</a>: false
+  <a href="/api/core/Pipe#pure" class="code-anchor">pure</a>: false
 })
 export class FetchJsonPipe  implements <a href="/api/core/PipeTransform" class="code-anchor">PipeTransform</a> {
   private cachedData: any = null;
@@ -1443,7 +1443,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-list',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;h2>Heroes from JSON File&#x3C;/h2>
 
     &#x3C;div *<a href="/api/common/NgForOf" class="code-anchor">ngFor</a>="let hero of ('assets/heroes.json' | fetch) ">
@@ -1479,7 +1479,7 @@ export class HeroListComponent { }
 <p translation-result=""> 每个管道实例都只调用一次服务器。</p>
 </li>
 </ul>
-<h3 translation-origin="off" class="no-toc" id="jsonpipe"><i>JsonPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#jsonpipe"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="jsonpipe"><i>JsonPipe</i><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#jsonpipe"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">In the previous code sample, the second <code>fetch</code> pipe binding demonstrates more pipe chaining.
 It displays the same hero data in JSON format by chaining through to the built-in <code><a href="/api/common/JsonPipe" class="code-anchor">JsonPipe</a></code>.</p>
 <p translation-result="">第二个绑定除了用到 <code>FetchPipe</code> 之外还链接了更多管道。
@@ -1493,8 +1493,8 @@ inspect an object for future binding.</p>
 <p translation-result=""><a href="/api/common/JsonPipe">JsonPipe</a>为你诊断数据绑定的某些神秘错误或为做进一步绑定而探查数据时，提供了一个简单途径。</p>
 </div>
 <a id="pure-pipe-pure-fn"></a>
-<h3 translation-origin="off" class="no-toc" id="pure-pipes-and-pure-functions">Pure pipes and pure functions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pure-pipes-and-pure-functions"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="pure-pipes-and-pure-functions">纯管道与纯函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#pure-pipes-and-pure-functions"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="pure-pipes-and-pure-functions">Pure pipes and pure functions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pure-pipes-and-pure-functions"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="pure-pipes-and-pure-functions">纯管道与纯函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#pure-pipes-and-pure-functions"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">A pure pipe uses pure functions.
 Pure functions process inputs and return values without detectable side effects.
 Given the same input, they should always return the same output.</p>
@@ -1513,20 +1513,20 @@ A few steps back, you reviewed the <code>FlyingHeroesImpurePipe</code>—an impu
 <p translation-origin="off">But always implement a <em>pure pipe</em> with a <em>pure function</em>.
 Otherwise, you'll see many console errors regarding expressions that changed after they were checked.</p>
 <p translation-result="">但是一个<em>纯管道</em>必须总是用<em>纯函数</em>实现。忽略这个警告将导致失败并带来一大堆这样的控制台错误：表达式在被检查后被变更。</p>
-<h2 translation-origin="off" id="next-steps">Next steps<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#next-steps"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="next-steps">下一步<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#next-steps"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="next-steps">Next steps<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#next-steps"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="next-steps">下一步<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#next-steps"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Pipes are a great way to encapsulate and share common display-value
 transformations. Use them like styles, dropping them
 into your template's expressions to enrich the appeal and usability
 of your views.</p>
 <p translation-result="">管道能很好的封装和共享的通用“值-显示”转换逻辑。可以像样式一样使用它们，把它们扔到模板表达式中，以提升视图的表现力和可用性。</p>
-<p translation-origin="off">Explore Angular's inventory of built-in pipes in the <a href="api?type=pipe">API Reference</a>.
+<p translation-origin="off">Explore Angular's inventory of built-in pipes in the <a href="/api?type=pipe">API Reference</a>.
 Try writing a custom pipe and perhaps contributing it to the community.</p>
-<p translation-result="">要浏览 Angular 的所有内置管道，请到<a href="api?type=pipe">API 参考手册</a>。
+<p translation-result="">要浏览 Angular 的所有内置管道，请到<a href="/api?type=pipe">API 参考手册</a>。
 学着写写自定义管道，并贡献给开发社区。</p>
 <a id="no-filter-pipe"></a>
-<h2 translation-origin="off" id="appendix-no-filterpipe-or-orderbypipe">Appendix: No <em>FilterPipe</em> or <em>OrderByPipe</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#appendix-no-filterpipe-or-orderbypipe"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="appendix-no-emfilterpipeem-or-emorderbypipeem">附录：没有 <em>FilterPipe</em> 或者 <em>OrderByPipe</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/pipes#appendix-no-emfilterpipeem-or-emorderbypipeem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="appendix-no-filterpipe-or-orderbypipe">Appendix: No <em>FilterPipe</em> or <em>OrderByPipe</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#appendix-no-filterpipe-or-orderbypipe"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="appendix-no-emfilterpipeem-or-emorderbypipeem">附录：没有 <em>FilterPipe</em> 或者 <em>OrderByPipe</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/pipes#appendix-no-emfilterpipeem-or-emorderbypipeem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular doesn't provide pipes for filtering or sorting lists.
 Developers familiar with AngularJS know these as <code>filter</code> and <code>orderBy</code>.
 There are no equivalents in Angular.</p>
@@ -1535,11 +1535,11 @@ There are no equivalents in Angular.</p>
 <p translation-origin="off">This isn't an oversight. Angular doesn't offer such pipes because
 they perform poorly and prevent aggressive minification.
 Both <code>filter</code> and <code>orderBy</code> require parameters that reference object properties.
-Earlier in this page, you learned that such pipes must be <a href="guide/pipes#pure-and-impure-pipes">impure</a> and that
+Earlier in this page, you learned that such pipes must be <a href="/guide/pipes#pure-and-impure-pipes">impure</a> and that
 Angular calls impure pipes in almost every change-detection cycle.</p>
 <p translation-result="">这并不是疏忽。Angular 不想提供这些管道，因为 (a) 它们性能堪忧，以及 (b) 它们会阻止比较激进的代码最小化(minification)。
 无论是 <code>filter</code> 还是 <code>orderBy</code> 都需要它的参数引用对象型属性。
-你在前面学过，这样的管道必然是<a href="guide/pipes#pure-and-impure-pipes"><em>非纯管道</em></a>，并且 Angular 会在几乎每一次变更检测周期中调用非纯管道。</p>
+你在前面学过，这样的管道必然是<a href="/guide/pipes#pure-and-impure-pipes"><em>非纯管道</em></a>，并且 Angular 会在几乎每一次变更检测周期中调用非纯管道。</p>
 <p translation-origin="off">Filtering and especially sorting are expensive operations.
 The user experience can degrade severely for even moderate-sized lists when Angular calls these pipe methods many times per second.
 <code>filter</code> and <code>orderBy</code> have often been abused in AngularJS apps, leading to complaints that Angular itself is slow.
@@ -1579,8 +1579,8 @@ written in a filtering/sorting service and injected into the component.</p>
 组件可以对外暴露一个 <code>filteredHeroes</code> 或 <code>sortedHeroes</code> 属性，这样它就获得控制权，以决定要用什么频度去执行其它辅助逻辑。
 你原本准备实现为管道，并在整个应用中共享的那些功能，都能被改写为一个过滤/排序的服务，并注入到组件中。</p>
 <p translation-origin="off">If these performance and minification considerations don't apply to you, you can always create your own such pipes
-(similar to the <a href="guide/pipes#impure-flying-heroes">FlyingHeroesPipe</a>) or find them in the community.</p>
-<p translation-result="">如果你不需要顾虑这些性能和最小化问题，也可以创建自己的管道来实现这些功能(参考<a href="guide/pipes#impure-flying-heroes">FlyingHeroesPipe</a>中的写法)或到社区中去找找。</p>
+(similar to the <a href="/guide/pipes#impure-flying-heroes">FlyingHeroesPipe</a>) or find them in the community.</p>
+<p translation-result="">如果你不需要顾虑这些性能和最小化问题，也可以创建自己的管道来实现这些功能(参考<a href="/guide/pipes#impure-flying-heroes">FlyingHeroesPipe</a>中的写法)或到社区中去找找。</p>
 
 </div>
 <!-- links to this doc:

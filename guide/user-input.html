@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="user-input">User Input<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#user-input"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="user-input">用户输入<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#user-input"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="user-input">User Input<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#user-input"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="user-input">用户输入<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#user-input"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">User actions such as clicking a link, pushing a button, and entering
 text raise DOM events.
 This page explains how to bind those events to component event handlers using the Angular
@@ -818,17 +818,17 @@ event binding syntax.</p>
 本章解释如何使用 Angular 事件绑定语法把这些事件绑定到事件处理器。</p>
 <p translation-origin="off">Run the <live-example></live-example>.</p>
 <p translation-result="">运行<live-example></live-example></p>
-<h2 translation-origin="off" id="binding-to-user-input-events">Binding to user input events<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#binding-to-user-input-events"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="binding-to-user-input-events">绑定到用户输入事件<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#binding-to-user-input-events"><i class="material-icons">link</i></a></h2>
-<p translation-origin="off">You can use <a href="guide/template-syntax#event-binding">Angular event bindings</a>
+<h2 translation-origin="off" id="binding-to-user-input-events">Binding to user input events<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#binding-to-user-input-events"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="binding-to-user-input-events">绑定到用户输入事件<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#binding-to-user-input-events"><i class="material-icons">link</i></a></h2>
+<p translation-origin="off">You can use <a href="/guide/template-syntax#event-binding">Angular event bindings</a>
 to respond to any <a href="https://developer.mozilla.org/en-US/docs/Web/Events">DOM event</a>.
 Many DOM events are triggered by user input. Binding to these events provides a way to
 get input from the user.</p>
-<p translation-result="">你可以使用 <a href="guide/template-syntax#event-binding">Angular 事件绑定</a>机制来响应任何 <a href="https://developer.mozilla.org/en-US/docs/Web/Events">DOM 事件</a>。
+<p translation-result="">你可以使用 <a href="/guide/template-syntax#event-binding">Angular 事件绑定</a>机制来响应任何 <a href="https://developer.mozilla.org/en-US/docs/Web/Events">DOM 事件</a>。
 许多 DOM 事件是由用户输入触发的。绑定这些事件可以获取用户输入。</p>
 <p translation-origin="off">To bind to a DOM event, surround the DOM event name in parentheses and assign a quoted
-<a href="guide/template-syntax#template-statements">template statement</a> to it.</p>
-<p translation-result="">要绑定 DOM 事件，只要把 DOM 事件的名字包裹在圆括号中，然后用放在引号中的<a href="guide/template-syntax#template-statements">模板语句</a>对它赋值就可以了。</p>
+<a href="/guide/template-syntax#template-statements">template statement</a> to it.</p>
+<p translation-result="">要绑定 DOM 事件，只要把 DOM 事件的名字包裹在圆括号中，然后用放在引号中的<a href="/guide/template-syntax#template-statements">模板语句</a>对它赋值就可以了。</p>
 <p translation-origin="off">The following example shows an event binding that implements a click handler:</p>
 <p translation-result="">下例展示了一个事件绑定，它实现了一个点击事件处理器：</p>
 <code-example path="user-input/src/app/click-me.component.ts" region="click-me-button" title="src/app/click-me.component.ts" linenums="false">
@@ -853,7 +853,7 @@ The example above shows a single line of HTML, but that HTML belongs to a larger
 <code-example path="user-input/src/app/click-me.component.ts" region="click-me-component" title="src/app/click-me.component.ts" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-click-me',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;button (click)="onClickMe()">Click me!&#x3C;/button>
     {{clickMessage}}`
 })
@@ -868,8 +868,8 @@ export class ClickMeComponent {
 </code-example>
 <p translation-origin="off">When the user clicks the button, Angular calls the <code>onClickMe</code> method from <code>ClickMeComponent</code>.</p>
 <p translation-result="">当用户点击按钮时，Angular 调用 <code>ClickMeComponent</code> 的 <code>onClickMe</code> 方法。</p>
-<h2 translation-origin="off" id="get-user-input-from-the-event-object">Get user input from the $event object<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#get-user-input-from-the-event-object"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="get-user-input-from-the-event-object">通过 $event 对象取得用户输入<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#get-user-input-from-the-event-object"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="get-user-input-from-the-event-object">Get user input from the $event object<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#get-user-input-from-the-event-object"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="get-user-input-from-the-event-object">通过 $event 对象取得用户输入<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#get-user-input-from-the-event-object"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">DOM events carry a payload of information that may be useful to the component.
 This section shows how to bind to the <code>keyup</code> event of an input box to get the user's input after each keystroke.</p>
 <p translation-result="">DOM 事件可以携带可能对组件有用的信息。
@@ -877,7 +877,7 @@ This section shows how to bind to the <code>keyup</code> event of an input box t
 <p translation-origin="off">The following code listens to the <code>keyup</code> event and passes the entire event payload (<code>$event</code>) to the component event handler.</p>
 <p translation-result="">下面的代码监听 <code>keyup</code> 事件，并将整个事件载荷 (<code>$event</code>) 传递给组件的事件处理器。</p>
 <code-example path="user-input/src/app/keyup.components.ts" region="key-up-component-1-template" title="src/app/keyup.components.ts (template v.1)" linenums="false">
-<a href="api/core/Component#template" class="code-anchor">template</a>: `
+<a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;input (keyup)="onKey($event)">
   &#x3C;p>{{values}}&#x3C;/p>
 `
@@ -901,19 +901,19 @@ export class KeyUpComponent_v1 {
 a mouse event includes different information than an input box editing event.</p>
 <p translation-result=""><code>$event</code> 对象的属性取决于 DOM 事件的类型。例如，鼠标事件与输入框编辑事件包含了不同的信息。</p>
 <p translation-origin="off">All <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">standard DOM event objects</a>
-have a <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> property, a reference to the element that raised the event.
-In this case, <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> refers to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement"><code>&#x3C;input></code> element</a> and
+have a <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> property, a reference to the element that raised the event.
+In this case, <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> refers to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement"><code>&#x3C;input></code> element</a> and
 <code>event.target.value</code> returns the current contents of that element.</p>
-<p translation-result="">所有<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">标准 DOM 事件对象</a>都有一个 <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> 属性，
+<p translation-result="">所有<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">标准 DOM 事件对象</a>都有一个 <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> 属性，
 引用触发该事件的元素。
-在本例中，<code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> 是<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement"><code>&#x3C;input></code> 元素</a>，
+在本例中，<code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> 是<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement"><code>&#x3C;input></code> 元素</a>，
 <code>event.target.value</code> 返回该元素的当前内容。</p>
 <p translation-origin="off">After each call, the <code>onKey()</code> method appends the contents of the input box value to the list
 in the component's <code>values</code> property, followed by a  separator character (|).
-The <a href="guide/template-syntax#interpolation">interpolation</a>
+The <a href="/guide/template-syntax#interpolation">interpolation</a>
 displays the accumulating input box changes from the <code>values</code> property.</p>
 <p translation-result="">在组件的 <code>onKey()</code> 方法中，把输入框的值和分隔符 (|) 追加组件的 <code>values</code> 属性。
-使用<a href="guide/template-syntax#interpolation">插值表达式</a>来把存放累加结果的 <code>values</code> 属性回显到屏幕上。</p>
+使用<a href="/guide/template-syntax#interpolation">插值表达式</a>来把存放累加结果的 <code>values</code> 属性回显到屏幕上。</p>
 <p translation-origin="off">Suppose the user enters the letters "abc", and then backspaces to remove them one by one.
 Here's what the UI displays:</p>
 <p translation-result="">假设用户输入字母“abc”，然后用退格键一个一个删除它们。
@@ -934,8 +934,8 @@ for <code>event.target.value</code> in which case the same user input would prod
 </code-example>
 </div>
 <a id="keyup1"></a>
-<h3 translation-origin="off" id="type-the-event">Type the <em>$event</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#type-the-event"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="type-the-emeventem"><em>$event</em>的类型<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#type-the-emeventem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="type-the-event">Type the <em>$event</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#type-the-event"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="type-the-emeventem"><em>$event</em>的类型<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#type-the-emeventem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The example above casts the <code>$event</code> as an <code>any</code> type.
 That simplifies the code at a cost.
 There is no type information
@@ -957,13 +957,13 @@ export class KeyUpComponent_v1 {
 
 </code-example>
 <p translation-origin="off">The <code>$event</code> is now a specific <code>KeyboardEvent</code>.
-Not all elements have a <code>value</code> property so it casts <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> to an input element.
+Not all elements have a <code>value</code> property so it casts <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> to an input element.
 The <code>OnKey</code> method more clearly expresses what it expects from the template and how it interprets the event.</p>
 <p translation-result=""><code>$event</code> 的类型现在是 <code>KeyboardEvent</code>。
-不是所有的元素都有 <code>value</code> 属性，所以它将 <code><a href="api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> 转换为输入元素。
+不是所有的元素都有 <code>value</code> 属性，所以它将 <code><a href="/api/router/RouterLinkWithHref#target" class="code-anchor">target</a></code> 转换为输入元素。
 <code>OnKey</code> 方法更加清晰地表达了它期望从模板得到什么，以及它是如何解析事件的。</p>
-<h3 translation-origin="off" id="passing-event-is-a-dubious-practice">Passing <em>$event</em> is a dubious practice<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#passing-event-is-a-dubious-practice"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="passing-emeventem-is-a-dubious-practice">传入 <em>$event</em> 是靠不住的做法<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#passing-emeventem-is-a-dubious-practice"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="passing-event-is-a-dubious-practice">Passing <em>$event</em> is a dubious practice<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#passing-event-is-a-dubious-practice"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="passing-emeventem-is-a-dubious-practice">传入 <em>$event</em> 是靠不住的做法<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#passing-emeventem-is-a-dubious-practice"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Typing the event object reveals a significant objection to passing the entire DOM event into the method:
 the component has too much awareness of the template details.
 It can't extract information without knowing more than it should about the HTML implementation.
@@ -974,13 +974,13 @@ and the component (<em>how the application processes user data</em>).</p>
 这就违反了模板（<em>用户看到的</em>）和组件（<em>应用如何处理用户数据</em>）之间的分离关注原则。</p>
 <p translation-origin="off">The next section shows how to use template reference variables to address this problem.</p>
 <p translation-result="">下面将介绍如何用模板引用变量来解决这个问题。</p>
-<h2 translation-origin="off" id="get-user-input-from-a-template-reference-variable">Get user input from a template reference variable<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#get-user-input-from-a-template-reference-variable"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="get-user-input-from-a-template-reference-variable">从一个模板引用变量中获得用户输入<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#get-user-input-from-a-template-reference-variable"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="get-user-input-from-a-template-reference-variable">Get user input from a template reference variable<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#get-user-input-from-a-template-reference-variable"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="get-user-input-from-a-template-reference-variable">从一个模板引用变量中获得用户输入<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#get-user-input-from-a-template-reference-variable"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">There's another way to get the user data: use Angular
-<a href="guide/template-syntax#ref-vars"><strong>template reference variables</strong></a>.
+<a href="/guide/template-syntax#ref-vars"><strong>template reference variables</strong></a>.
 These variables provide direct access to an element from within the template.
 To declare a template reference variable, precede an identifier with a hash (or pound) character (#).</p>
-<p translation-result="">还有另一种获取用户数据的方式：使用 Angular 的<a href="guide/template-syntax#ref-vars"><strong>模板引用变量</strong></a>。
+<p translation-result="">还有另一种获取用户数据的方式：使用 Angular 的<a href="/guide/template-syntax#ref-vars"><strong>模板引用变量</strong></a>。
 这些变量提供了从模块中直接访问元素的能力。
 在标识符前加上井号 (#) 就能声明一个模板引用变量。</p>
 <p translation-origin="off">The following example uses a template reference variable
@@ -989,7 +989,7 @@ to implement a keystroke loopback in a simple template.</p>
 <code-example path="user-input/src/app/loop-back.component.ts" region="loop-back-component" title="src/app/loop-back.component.ts" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-loop-back',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box (keyup)="0">
     &#x3C;p>{{box.value}}&#x3C;/p>
   `
@@ -1032,7 +1032,7 @@ variable than to go through the <code>$event</code> object. Here's a rewrite of 
 <code-example path="user-input/src/app/keyup.components.ts" region="key-up-component-2" title="src/app/keyup.components.ts (v2)" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-key-up2',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box (keyup)="onKey(box.value)">
     &#x3C;p>{{values}}&#x3C;/p>
   `
@@ -1049,8 +1049,8 @@ export class KeyUpComponent_v2 {
 It no longer requires knowledge of the <code>$event</code> and its structure.</p>
 <p translation-result="">这个方法最漂亮的一点是：组件代码从视图中获得了干净的数据值。再也不用了解 <code>$event</code> 变量及其结构了。</p>
 <a id="key-event"></a>
-<h2 translation-origin="off" id="key-event-filtering-with-keyenter">Key event filtering (with <code>key.enter</code>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#key-event-filtering-with-keyenter"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="key-event-filtering-with-codekeyentercode">按键事件过滤（通过 <code>key.enter</code>）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#key-event-filtering-with-codekeyentercode"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="key-event-filtering-with-keyenter">Key event filtering (with <code>key.enter</code>)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#key-event-filtering-with-keyenter"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="key-event-filtering-with-codekeyentercode">按键事件过滤（通过 <code>key.enter</code>）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#key-event-filtering-with-codekeyentercode"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <code>(keyup)</code> event handler hears <em>every keystroke</em>.
 Sometimes only the <em>Enter</em> key matters, because it signals that the user has finished typing.
 One way to reduce the noise would be to examine every <code>$event.keyCode</code> and take action only when the key is <em>Enter</em>.</p>
@@ -1064,7 +1064,7 @@ Then Angular calls the event handler only when the user presses <em>Enter</em>.<
 <code-example path="user-input/src/app/keyup.components.ts" region="key-up-component-3" title="src/app/keyup.components.ts (v3)" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-key-up3',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box (keyup.enter)="onEnter(box.value)">
     &#x3C;p>{{value}}&#x3C;/p>
   `
@@ -1080,8 +1080,8 @@ export class KeyUpComponent_v3 {
 <figure>
   <img src="generated/images/guide/user-input/keyup3-anim.gif" alt="key up 3" width="280" height="100">
 </figure>
-<h2 translation-origin="off" id="on-blur">On blur<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#on-blur"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="on-blur">失去焦点事件 (blur)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#on-blur"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="on-blur">On blur<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#on-blur"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="on-blur">失去焦点事件 (blur)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#on-blur"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">In the previous example, the current state of the input box
 is lost if the user mouses away and clicks elsewhere on the page
 without first pressing <em>Enter</em>.
@@ -1093,22 +1093,22 @@ The component's <code>value</code> property is updated only when the user presse
 <code-example path="user-input/src/app/keyup.components.ts" region="key-up-component-4" title="src/app/keyup.components.ts (v4)" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-key-up4',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box
-      (keyup.enter)="<a href="api/forms/NgModel#update" class="code-anchor">update</a>(box.value)"
-      (blur)="<a href="api/forms/NgModel#update" class="code-anchor">update</a>(box.value)">
+      (keyup.enter)="<a href="/api/forms/NgModel#update" class="code-anchor">update</a>(box.value)"
+      (blur)="<a href="/api/forms/NgModel#update" class="code-anchor">update</a>(box.value)">
 
     &#x3C;p>{{value}}&#x3C;/p>
   `
 })
 export class KeyUpComponent_v4 {
   value = '';
-  <a href="api/forms/NgModel#update" class="code-anchor">update</a>(value: string) { this.value = value; }
+  <a href="/api/forms/NgModel#update" class="code-anchor">update</a>(value: string) { this.value = value; }
 }
 
 </code-example>
-<h2 translation-origin="off" id="put-it-all-together">Put it all together<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#put-it-all-together"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="put-it-all-together">把它们放在一起<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#put-it-all-together"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="put-it-all-together">Put it all together<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#put-it-all-together"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="put-it-all-together">把它们放在一起<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#put-it-all-together"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The previous page showed how to <a href="/guide/displaying-data">display data</a>.
 This page demonstrated event binding techniques.</p>
 <p translation-result="">上一章介绍了如何<a href="/guide/displaying-data">显示数据</a>。
@@ -1127,7 +1127,7 @@ clicking <strong>Add</strong>.</p>
 <code-example path="user-input/src/app/little-tour.component.ts" region="little-tour" title="src/app/little-tour.component.ts" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-little-tour',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #newHero
       (keyup.enter)="addHero(newHero.value)"
       (blur)="addHero(newHero.value); newHero.value='' ">
@@ -1147,8 +1147,8 @@ export class LittleTourComponent {
 }
 
 </code-example>
-<h3 translation-origin="off" id="observations">Observations<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#observations"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="observations">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#observations"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="observations">Observations<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#observations"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="observations">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#observations"><i class="material-icons">link</i></a></h3>
 <ul>
 <li>
 <p translation-origin="off"><strong>Use template variables to refer to elements</strong> —
@@ -1174,8 +1174,8 @@ clears the input box after a new hero is added to the list.</p>
 第一句调用 <code>addHero</code>。第二句 <code>newHero.value=''</code> 在添加新英雄到列表中后清除输入框。</p>
 </li>
 </ul>
-<h2 translation-origin="off" id="source-code">Source code<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#source-code"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="source-code">源代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#source-code"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="source-code">Source code<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#source-code"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="source-code">源代码<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#source-code"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Following is all the code discussed in this page.</p>
 <p translation-result="">下面是本章讨论过的所有源码。</p>
 <code-tabs>
@@ -1185,7 +1185,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-click-me',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;button (click)="onClickMe()">Click me!&#x3C;/button>
     {{clickMessage}}`
 })
@@ -1205,7 +1205,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-key-up1',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input (keyup)="onKey($event)">
     &#x3C;p>{{values}}&#x3C;/p>
   `
@@ -1228,7 +1228,7 @@ export class KeyUpComponent_v1 {
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-key-up2',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box (keyup)="onKey(box.value)">
     &#x3C;p>{{values}}&#x3C;/p>
   `
@@ -1244,7 +1244,7 @@ export class KeyUpComponent_v2 {
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-key-up3',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box (keyup.enter)="onEnter(box.value)">
     &#x3C;p>{{value}}&#x3C;/p>
   `
@@ -1258,17 +1258,17 @@ export class KeyUpComponent_v3 {
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-key-up4',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box
-      (keyup.enter)="<a href="api/forms/NgModel#update" class="code-anchor">update</a>(box.value)"
-      (blur)="<a href="api/forms/NgModel#update" class="code-anchor">update</a>(box.value)">
+      (keyup.enter)="<a href="/api/forms/NgModel#update" class="code-anchor">update</a>(box.value)"
+      (blur)="<a href="/api/forms/NgModel#update" class="code-anchor">update</a>(box.value)">
 
     &#x3C;p>{{value}}&#x3C;/p>
   `
 })
 export class KeyUpComponent_v4 {
   value = '';
-  <a href="api/forms/NgModel#update" class="code-anchor">update</a>(value: string) { this.value = value; }
+  <a href="/api/forms/NgModel#update" class="code-anchor">update</a>(value: string) { this.value = value; }
 }
 
 
@@ -1278,7 +1278,7 @@ export class KeyUpComponent_v4 {
 import { <a href="/api/core/Component" class="code-anchor">Component</a> } from '@angular/core';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-loop-back',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #box (keyup)="0">
     &#x3C;p>{{box.value}}&#x3C;/p>
   `
@@ -1293,7 +1293,7 @@ import { <a href="/api/core/Component" class="code-anchor">Component</a> } from 
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-little-tour',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: `
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: `
     &#x3C;input #newHero
       (keyup.enter)="addHero(newHero.value)"
       (blur)="addHero(newHero.value); newHero.value='' ">
@@ -1316,8 +1316,8 @@ export class LittleTourComponent {
 </code-pane>
 
 </code-tabs>
-<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#summary"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="summary-9">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/user-input#summary-9"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#summary"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="summary-9">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/user-input#summary-9"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You have mastered the basic primitives for responding to user input and gestures.</p>
 <p translation-result="">你已经掌握了响应用户输入和操作的基础技术。</p>
 <p translation-origin="off">These techniques are useful for small-scale demonstrations, but they

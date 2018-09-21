@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="the-ahead-of-time-aot-compiler">The Ahead-of-Time (AOT) Compiler<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#the-ahead-of-time-aot-compiler"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="the-ahead-of-time-aot-compiler">预先（AOT）编译<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#the-ahead-of-time-aot-compiler"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="the-ahead-of-time-aot-compiler">The Ahead-of-Time (AOT) Compiler<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#the-ahead-of-time-aot-compiler"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="the-ahead-of-time-aot-compiler">预先（AOT）编译<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#the-ahead-of-time-aot-compiler"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">The Angular Ahead-of-Time (AOT) compiler converts your Angular HTML and TypeScript code into efficient JavaScript code during the build phase <em>before</em> the browser downloads and runs that code.</p>
 <p translation-result="">Angular 的“预先（AOT）编译器”会在构建期间把 Angular 应用的 HTML 和 TypeScript 代码编译成高效的 JavaScript 代码，之后浏览器就可以下载并快速运行这些代码。</p>
 <p translation-origin="off">This guide explains how to build with the AOT compiler using different compiler options and how to write Angular metadata that AOT can compile.</p>
@@ -818,8 +818,8 @@
 <p translation-result="">  观看编译器作者 Tobias Bosch 在 AngularConnect 2016 大会里，对<a href="http://v.youku.com/v_show/id_XMTc1NTE4NTkwOA==.html?from=y1.7-1.4" target="_blank">Angular 编译器</a>的演讲。</p>
 </div>
 <a id="overview"></a>
-<h2 translation-origin="off" id="angular-compilation">Angular compilation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#angular-compilation"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="angular-compilation">Angular 中的编译<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#angular-compilation"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="angular-compilation">Angular compilation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#angular-compilation"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="angular-compilation">Angular 中的编译<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#angular-compilation"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">An Angular application consists largely of components and their HTML templates.
 Before the browser can render the application,
 the components and templates must be converted to executable JavaScript by an <em>Angular compiler</em>.</p>
@@ -857,8 +857,8 @@ the components and templates must be converted to executable JavaScript by an <e
 <p translation-result="">要了解更多，请参见<a href="https://github.com/angular/angular-cli/wiki">CLI 文档</a>，特别是<a href="https://github.com/angular/angular-cli/wiki/build"><code>build</code> 这个主题</a>。</p>
 </div>
 <a id="why-aot"></a>
-<h2 translation-origin="off" id="why-compile-with-aot">Why compile with AOT?<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#why-compile-with-aot"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="why-compile-with-aot">为什么需要 AOT 编译？<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#why-compile-with-aot"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="why-compile-with-aot">Why compile with AOT?<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#why-compile-with-aot"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="why-compile-with-aot">为什么需要 AOT 编译？<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#why-compile-with-aot"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off"><em>Faster rendering</em></p>
 <p translation-result=""><strong>渲染得更快</strong></p>
 <p translation-origin="off">With AOT, the browser downloads a pre-compiled version of the application.
@@ -890,8 +890,8 @@ there are fewer opportunities for injection attacks.</p>
 <p translation-result="">AOT 编译远在 HTML 模版和组件被服务到客户端之前，将它们编译到 JavaScript 文件。
 没有模版可以阅读，没有高风险客户端 HTML 或 JavaScript 可利用，所以注入攻击的机会较少。</p>
 <a id="compiler-options"></a>
-<h2 translation-origin="off" id="angular-compiler-options">Angular Compiler Options<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#angular-compiler-options"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="angular-compiler-options">Angular 编译器选项<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#angular-compiler-options"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="angular-compiler-options">Angular Compiler Options<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#angular-compiler-options"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="angular-compiler-options">Angular 编译器选项<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#angular-compiler-options"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You can control your app compilation by providing template compiler options in the <code>tsconfig.json</code> file along with the options supplied to the TypeScript compiler. The template compiler options are specified as members of
 <code>"angularCompilerOptions"</code> object as shown below:</p>
 <p translation-result="">你可以通过在 <code>tsconfig.json</code> 文件中随 TypeScript 编译选项一起提供模板编译选项来控制应用的编译方式。
@@ -904,17 +904,17 @@ there are fewer opportunities for injection attacks.</p>
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "<a href="api/core/Component#preserveWhitespaces" class="code-anchor">preserveWhitespaces</a>": true,
+    "<a href="/api/core/Component#preserveWhitespaces" class="code-anchor">preserveWhitespaces</a>": true,
     ...
   }
 }
 </code-example>
-<h3 translation-origin="off" id="enableresourceinlining"><em>enableResourceInlining</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#enableresourceinlining"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">This options tell the compiler to replace the <code>templateUrl</code> and <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> property in all <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> decorators with inlined contents in <code><a href="api/core/Component#template" class="code-anchor">template</a></code> and <code>styles</code> properties.
-When enabled, the <code>.js</code> output of ngc will have no lazy-loaded <code>templateUrl</code> or <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>.</p>
-<p translation-result="">这个选项告诉编译器把所有 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 装饰器中的 <code>templateUrl</code> 和 <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 属性内联成 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 和 <code>styles</code> 属性。
-当启用时，ngc 的 <code>.js</code> 输出中将不会有惰性加载的 <code>templateUrl</code> 和 <code><a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>。</p>
-<h3 translation-origin="off" id="skipmetadataemit"><em>skipMetadataEmit</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#skipmetadataemit"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="enableresourceinlining"><em>enableResourceInlining</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#enableresourceinlining"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">This options tell the compiler to replace the <code>templateUrl</code> and <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> property in all <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> decorators with inlined contents in <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> and <code>styles</code> properties.
+When enabled, the <code>.js</code> output of ngc will have no lazy-loaded <code>templateUrl</code> or <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>.</p>
+<p translation-result="">这个选项告诉编译器把所有 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 装饰器中的 <code>templateUrl</code> 和 <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code> 属性内联成 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 和 <code>styles</code> 属性。
+当启用时，ngc 的 <code>.js</code> 输出中将不会有惰性加载的 <code>templateUrl</code> 和 <code><a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a></code>。</p>
+<h3 translation-origin="off" id="skipmetadataemit"><em>skipMetadataEmit</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#skipmetadataemit"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This option tells the compiler not to produce <code>.metadata.json</code> files.
 The option is <code>false</code> by default.</p>
 <p translation-result="">这个选项告诉编译器不要生成 <code>.metadata.json</code> 文件，它默认是 <code>false</code>。</p>
@@ -932,7 +932,7 @@ Angular 中不建议使用 <code>--outFile</code>，请改用 <a href="https://w
 <p translation-origin="off">This option can also be set to <code>true</code> when using factory summaries as the factory summaries
 include a copy of the information that is in the <code>.metadata.json</code> file.</p>
 <p translation-result="">当使用工厂汇总器（factory summary）时，这个选项也要设置为 <code>true</code>，因为工厂汇总器在自己的 <code>.metadata.json</code> 中也包含了这些信息的一个副本。</p>
-<h3 translation-origin="off" id="strictmetadataemit"><em>strictMetadataEmit</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#strictmetadataemit"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="strictmetadataemit"><em>strictMetadataEmit</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#strictmetadataemit"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This option tells the template compiler to report an error to the <code>.metadata.json</code>
 file if <code>"skipMetadataEmit"</code> is <code>false</code> . This option is <code>false</code> by default. This should only be used when <code>"skipMetadataEmit"</code> is <code>false</code> and <code>"skipTemplateCodegen"</code> is <code>true</code>.</p>
 <p translation-result="">这个选项告诉模板编译器如果 <code>"skipMetadataEmit"</code> 为 <code>false</code>，那就把错误信息汇报到 <code>.metadata.json</code> 中。
@@ -953,7 +953,7 @@ the library and is used, for example, in producing Angular libraries themselves.
 如果这些符号被用到了，模板编译器就会根据这些错误节点报告错误。
 如果某个库的使用者只是在注解中（而不是普通代码中）使用这些符号，模板编译器通常不会报错。
 这个选项允许在该库（比如 Angular 自身这些库）的构建和使用过程中检测这类错误。</p>
-<h3 translation-origin="off" id="skiptemplatecodegen"><em>skipTemplateCodegen</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#skiptemplatecodegen"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="skiptemplatecodegen"><em>skipTemplateCodegen</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#skiptemplatecodegen"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This option tells the compiler to suppress emitting <code>.ngfactory.js</code> and <code>.ngstyle.js</code> files. When set,
 this turns off most of the template compiler and disables reporting template diagnostics.
 This option can be used to instruct the
@@ -963,7 +963,7 @@ avoiding the production of <code>.ngfactory.js</code> and <code>.ngstyle.js</cod
 <p translation-result="">这个选项告诉编译器忽略从 <code>.ngfactory.js</code> 和 <code>.ngstyle.js</code> 文件中发出的错误。
 如果为 <code>true</code>，它就会关闭大多数的模板编译器，并禁止汇报模板诊断信息。
 这个选项用于指示模板编译器为通过 <code>npm</code> 包分发而生成 <code>.metadata.json</code> 文件，同时避免生成无法分发到 <code>npm</code> 的 <code>.ngfactory.js</code> 和 <code>.ngstyle.js</code> 文件。</p>
-<h3 translation-origin="off" id="strictinjectionparameters"><em>strictInjectionParameters</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#strictinjectionparameters"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="strictinjectionparameters"><em>strictInjectionParameters</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#strictinjectionparameters"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">When set to <code>true</code>, this options tells the compiler to report an error for a parameter supplied
 whose injection type cannot be determined. When this value option is not provided or is <code>false</code>, constructor parameters of classes marked with <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> whose type cannot be resolved will
 produce a warning.</p>
@@ -971,7 +971,7 @@ produce a warning.</p>
 当该值没有提供或未 <code>false</code> 时，那些带有 <code>@<a href="/api/core/Injectable" class="code-anchor">Injectable</a></code> 的类，如果其构造参数的类型无法解析，就会生成一个警告。</p>
 <p translation-origin="off"><em>Note</em>: It is recommended to change this option explicitly to <code>true</code> as this option will default to <code>true</code> in the future.</p>
 <p translation-result=""><em>注意</em>：建议把该选项显式改为 <code>true</code>，因为将来这个选项的默认值会是 <code>true</code>。</p>
-<h3 translation-origin="off" id="flatmoduleoutfile"><em>flatModuleOutFile</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#flatmoduleoutfile"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="flatmoduleoutfile"><em>flatModuleOutFile</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#flatmoduleoutfile"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">When set to <code>true</code>, this option tells the template compiler to generate a flat module
 index of the given file name and the corresponding flat module metadata. Use this option when creating
 flat modules that are packaged similarly to <code>@angular/core</code> and <code>@angular/common</code>. When this option
@@ -1002,7 +1002,7 @@ would be <code>"index.d.ts"</code>.</p>
 比如，如果某个库使用 <code>public_api.ts</code> 文件作为该模块的库索引，那么 <code>tsconfig.json</code> 的 <code>files</code> 字段就应该是 <code>["public_api.ts"]</code>。
 然后可以把 <code>flatModuleOutFile</code> 选项设置为 <code>"index.js"</code>，它就会生成 <code>index.d.ts</code> 和  <code>index.metadata.json</code> 文件。
 该库的 <code>package.json</code> 文件的 <code>module</code> 字段将会是 <code>"index.js"</code>，而 <code>typings</code> 字段会是 <code>"index.d.ts"</code>。</p>
-<h3 translation-origin="off" id="flatmoduleid"><em>flatModuleId</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#flatmoduleid"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="flatmoduleid"><em>flatModuleId</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#flatmoduleid"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This option specifies the preferred module id to use for importing a flat module.
 References generated by the template compiler will use this module name when importing symbols
 from the flat module.
@@ -1011,7 +1011,7 @@ this option.</p>
 <p translation-result="">该选项指定建议的模块 ID，这个 ID 用于导入扁平模块。
 从扁平模块中导入符号时，由模板编译器生成的引用将使用这个模块名称。
 它仅在同时提供了 <code>flatModuleOutFile</code> 选项时才有意义，否则，编译器将忽略此选项。</p>
-<h3 translation-origin="off" id="generatecodeforlibraries"><em>generateCodeForLibraries</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#generatecodeforlibraries"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="generatecodeforlibraries"><em>generateCodeForLibraries</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#generatecodeforlibraries"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This option tells the template compiler to generate factory files (<code>.ngfactory.js</code> and <code>.ngstyle.js</code>)
 for <code>.d.ts</code> files with a corresponding <code>.metadata.json</code> file. This option defaults to
 <code>true</code>. When this option is <code>false</code>, factory files are generated only for <code>.ts</code> files.</p>
@@ -1019,21 +1019,21 @@ for <code>.d.ts</code> files with a corresponding <code>.metadata.json</code> fi
 这个选项默认为 <code>true</code>。当该选项为 <code>false</code> 时，只会为 <code>.ts</code> 文件生成工厂文件。</p>
 <p translation-origin="off">This option should be set to <code>false</code> when using factory summaries.</p>
 <p translation-result="">当使用工厂汇总器时，这个选项应该设置为 <code>false</code>。</p>
-<h3 translation-origin="off" id="fulltemplatetypecheck"><em>fullTemplateTypeCheck</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#fulltemplatetypecheck"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">This option tells the compiler to enable the <a href="guide/aot-compiler#binding-expression-validation">binding expression validation</a>
+<h3 translation-origin="off" id="fulltemplatetypecheck"><em>fullTemplateTypeCheck</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#fulltemplatetypecheck"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">This option tells the compiler to enable the <a href="/guide/aot-compiler#binding-expression-validation">binding expression validation</a>
 phase of the template compiler which uses TypeScript to validate binding expressions.</p>
-<p translation-result="">该选项告诉编译器要为模板编译器启用<a href="guide/aot-compiler#binding-expression-validation">绑定表达式验证</a>阶段，它会使用 TypeScript 来验证绑定表达式。</p>
+<p translation-result="">该选项告诉编译器要为模板编译器启用<a href="/guide/aot-compiler#binding-expression-validation">绑定表达式验证</a>阶段，它会使用 TypeScript 来验证绑定表达式。</p>
 <p translation-origin="off">This option is <code>false</code> by default.</p>
 <p translation-result="">该选项默认是 <code>false</code>。</p>
 <p translation-origin="off"><em>Note</em>: It is recommended to set this to <code>true</code> as this option will default to <code>true</code> in the future.</p>
 <p translation-result=""><em>注意</em>：建议把它设置为 <code>true</code>，因为将来它会默认为 <code>true</code>。</p>
-<h3 translation-origin="off" id="annotateforclosurecompiler"><em>annotateForClosureCompiler</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#annotateforclosurecompiler"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="annotateforclosurecompiler"><em>annotateForClosureCompiler</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#annotateforclosurecompiler"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This option tells the compiler to use <a href="https://github.com/angular/tsickle">Tsickle</a> to annotate the emitted
 JavaScript with <a href="http://usejsdoc.org/">JsDoc</a> comments needed by the
 <a href="https://github.com/google/closure-compiler">Closure Compiler</a>. This option defaults to <code>false</code>.</p>
 <p translation-result="">该选项告诉编译器使用 <a href="https://github.com/angular/tsickle">Tsickle</a> 来为生成的 JavaScript 添加供 <a href="https://github.com/google/closure-compiler">Closure Compiler</a> 使用的 <a href="http://usejsdoc.org/">JsDoc</a> 注解。
 该选项默认为 <code>false</code>。</p>
-<h3 translation-origin="off" id="annotationsas"><em>annotationsAs</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#annotationsas"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="annotationsas"><em>annotationsAs</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#annotationsas"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Use this option to modify how the Angular specific annotations are emitted to improve tree-shaking. Non-Angular
 annotations and decorators are unaffected. Default is <code><a href="/api/upgrade/static" class="code-anchor">static</a> fields</code>.</p>
 <p translation-result="">使用这个选项来修改生成 Angular 特有注解的方式，以提升摇树优化（tree-shaking）的效果。它对 Angular 自身之外的注解和装饰器无效。
@@ -1089,24 +1089,24 @@ Replace decorators with a static field in the class. Allows advanced tree-shaker
 </tr>
 </tbody>
 </table>
-<h3 translation-origin="off" id="trace"><em>trace</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#trace"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="trace"><em>trace</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#trace"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This tells the compiler to print extra information while compiling templates.</p>
 <p translation-result="">它告诉编译器在编译模板时打印额外的信息。</p>
-<h3 translation-origin="off" id="disableexpressionlowering"><em>disableExpressionLowering</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#disableexpressionlowering"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="disableexpressionlowering"><em>disableExpressionLowering</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#disableexpressionlowering"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The Angular template compiler transforms code that is used, or could be used, in an annotation
 to allow it to be imported from template factory modules. See
-<a href="guide/aot-compiler#metadata-rewriting">metadata rewriting</a> for more information.</p>
+<a href="/guide/aot-compiler#metadata-rewriting">metadata rewriting</a> for more information.</p>
 <p translation-result="">Angular 的模板编译器会转换注解中使用或可能使用的代码，以便能从模板的工厂模块中导入它。
-参见<a href="guide/aot-compiler#metadata-rewriting">元数据重写</a>以了解更多信息。</p>
+参见<a href="/guide/aot-compiler#metadata-rewriting">元数据重写</a>以了解更多信息。</p>
 <p translation-origin="off">Setting this option to <code>false</code> disables this rewriting, requiring the rewriting to be
 done manually.</p>
 <p translation-result="">把该选项设置为 <code>false</code> 将会禁止这种重写，如果需要重写就去得人工完成了。</p>
-<h3 translation-origin="off" id="preservewhitespaces"><em>preserveWhitespaces</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#preservewhitespaces"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="preservewhitespaces"><em>preserveWhitespaces</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#preservewhitespaces"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This option tells the compiler whether to remove blank text nodes from compiled templates.
 As of v6, this option is <code>false</code> by default, which results in smaller emitted template factory modules.</p>
 <p translation-result="">该选项会告诉编译器是否要从编译后的模板中移除空白的文本节点。
 对于 Angular v6，该选项默认为 <code>false</code>，它会移除空白节点，以生成更小的模板工厂模块。</p>
-<h3 translation-origin="off" id="allowemptycodegenfiles"><em>allowEmptyCodegenFiles</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#allowemptycodegenfiles"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="allowemptycodegenfiles"><em>allowEmptyCodegenFiles</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#allowemptycodegenfiles"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Tells the compiler to generate all the possible generated files even if they are empty. This option is
 <code>false</code> by default. This is an option used by <code>bazel</code> build rules and is needed to simplify
 how <code>bazel</code> rules track file dependencies. It is not recommended to use this option outside of the <code>bazel</code>
@@ -1115,7 +1115,7 @@ rules.</p>
 该选项默认为 <code>false</code>。
 这是供 <code>bazel</code> 构建规则使用的选项，它用于简化 <code>bazel</code> 规则跟踪文件依赖的方式。
 除了 <code>bazel</code> 规则之外不建议使用该选项。</p>
-<h3 translation-origin="off" id="enableivy"><em>enableIvy</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#enableivy"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="enableivy"><em>enableIvy</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#enableivy"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Tells the compiler to generate definitions using the Render3 style code generation. This option defaults to <code>false</code>.</p>
 <p translation-result="">告诉编译器使用 Render3 风格的代码生成器来来生成各种定义。
 该选项默认为 <code>false</code>。</p>
@@ -1124,8 +1124,8 @@ for experimentation and testing of Render3 style code generation.</p>
 <p translation-result="">当开启该选项时，有些特性不受支持。它仅仅用来为试验和测试 Render3 风格的代码生成提供支持。</p>
 <p translation-origin="off"><em>Note</em>: Is it not recommended to use this option as it is not yet feature complete with the Render2 code generation.</p>
 <p translation-result=""><em>注意</em>：不建议使用该选项，因为它在使用 Render2 的代码生成器时还缺少一些特性。</p>
-<h2 translation-origin="off" id="angular-metadata-and-aot">Angular Metadata and AOT<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#angular-metadata-and-aot"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="angular-metadata-and-aot">Angular 元数据与 AOT<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#angular-metadata-and-aot"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="angular-metadata-and-aot">Angular Metadata and AOT<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#angular-metadata-and-aot"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="angular-metadata-and-aot">Angular 元数据与 AOT<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#angular-metadata-and-aot"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The Angular <strong>AOT compiler</strong> extracts and interprets <strong>metadata</strong> about the parts of the application that Angular is supposed to manage.</p>
 <p translation-result="">Angular 的 <strong>AOT 编译器</strong>会提取并解释应用中由 Angular 管理的各个部件的<strong>元数据</strong>。</p>
 <p translation-origin="off">Angular metadata tells Angular how to construct instances of your application classes and interact with them at runtime.</p>
@@ -1139,7 +1139,7 @@ You also specify metadata implicitly in the constructor declarations of these de
 <code-example language="typescript">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-typical',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;div>A typical component for {{data.name}}&#x3C;/div>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;div>A typical component for {{data.name}}&#x3C;/div>'
 )}
 export class TypicalComponent {
   @<a href="/api/core/Input" class="code-anchor">Input</a>() data: TypicalData;
@@ -1150,22 +1150,22 @@ export class TypicalComponent {
 When it needs to create a <code>TypicalComponent</code> instance, Angular calls the factory, which produces a new visual element, bound to a new instance of the component class with its injected dependency.</p>
 <p translation-result="">Angular 编译器只提取<strong>一次</strong>元数据，并且为 <code>TypicalComponent</code> 生成一个<strong>工厂</strong>。
 当它需要创建 <code>TypicalComponent</code> 的实例时，Angular 调用这个工厂，工厂会生成一个新的可视元素，并且把它（及其依赖）绑定到组件类的一个新实例上。</p>
-<h2 translation-origin="off" id="metadata-restrictions">Metadata restrictions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#metadata-restrictions"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="metadata-restrictions">元数据的限制<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#metadata-restrictions"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="metadata-restrictions">Metadata restrictions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#metadata-restrictions"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="metadata-restrictions">元数据的限制<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#metadata-restrictions"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You write metadata in a <em>subset</em> of TypeScript that must conform to the following general constraints:</p>
 <p translation-result="">你只能使用 TypeScript 的一个<strong>子集</strong>书写元数据，它必须满足下列限制：</p>
 <ol>
 <li>
-<p translation-origin="off">Limit <a href="guide/aot-compiler#expression-syntax">expression syntax</a> to the supported subset of JavaScript.</p>
-<p translation-result=""><a href="guide/aot-compiler#expression-syntax">表达式语法</a>只支持 JavaScript 的一个有限的子集。</p>
+<p translation-origin="off">Limit <a href="/guide/aot-compiler#expression-syntax">expression syntax</a> to the supported subset of JavaScript.</p>
+<p translation-result=""><a href="/guide/aot-compiler#expression-syntax">表达式语法</a>只支持 JavaScript 的一个有限的子集。</p>
 </li>
 <li>
-<p translation-origin="off">Only reference exported symbols after <a href="guide/aot-compiler#folding">code folding</a>.</p>
-<p translation-result="">只能引用<a href="guide/aot-compiler#folding">代码收缩</a>后导出的符号。</p>
+<p translation-origin="off">Only reference exported symbols after <a href="/guide/aot-compiler#folding">code folding</a>.</p>
+<p translation-result="">只能引用<a href="/guide/aot-compiler#folding">代码收缩</a>后导出的符号。</p>
 </li>
 <li>
-<p translation-origin="off">Only call <a href="guide/aot-compiler#supported-functions">functions supported</a> by the compiler.</p>
-<p translation-result="">只能调用编译器<a href="guide/aot-compiler#supported-functions">支持的那些函数</a>。</p>
+<p translation-origin="off">Only call <a href="/guide/aot-compiler#supported-functions">functions supported</a> by the compiler.</p>
+<p translation-result="">只能调用编译器<a href="/guide/aot-compiler#supported-functions">支持的那些函数</a>。</p>
 </li>
 <li>
 <p translation-origin="off">Decorated and data-bound class members must be public.</p>
@@ -1174,12 +1174,12 @@ When it needs to create a <code>TypicalComponent</code> instance, Angular calls 
 </ol>
 <p translation-origin="off">The next sections elaborate on these points.</p>
 <p translation-result="">下一节将会详细解释这些问题。</p>
-<h2 translation-origin="off" id="how-aot-works">How AOT works<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#how-aot-works"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="how-aot-works">AOT 工作原理<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#how-aot-works"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="how-aot-works">How AOT works<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#how-aot-works"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="how-aot-works">AOT 工作原理<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#how-aot-works"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">It helps to think of the AOT compiler as having two phases: a code analysis phase in which it simply records a representation of the source; and a code generation phase in which the compiler's <code>StaticReflector</code> handles the interpretation as well as places restrictions on what it interprets.</p>
 <p translation-result="">可以把 AOT 编译器看做两个阶段：在代码分析阶段，它只记录源代码，而在代码生成阶段，编译器的 <code>StaticReflector</code> 会解释这些结果，并为这些结果加上限制。</p>
-<h2 translation-origin="off" id="phase-1-analysis">Phase 1: analysis<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#phase-1-analysis"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="phase-1-analysis">阶段 1：分析<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#phase-1-analysis"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="phase-1-analysis">Phase 1: analysis<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#phase-1-analysis"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="phase-1-analysis">阶段 1：分析<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#phase-1-analysis"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The TypeScript compiler does some of the analytic work of the first phase. It emits the <code>.d.ts</code> <em>type definition files</em> with type information that the AOT compiler needs to generate application code.</p>
 <p translation-result="">TypeScript 编译器会做一些初步的分析工作，它会生成<strong>类型定义文件</strong><code>.d.ts</code>，其中带有类型信息，Angular 编译器需要借助它们来生成代码。</p>
 <p translation-origin="off">At the same time, the AOT <strong><em>collector</em></strong> analyzes the metadata recorded in the Angular decorators and outputs metadata information in <strong><code>.metadata.json</code></strong> files, one per <code>.d.ts</code> file.</p>
@@ -1192,8 +1192,8 @@ describes the JSON format as a collection of TypeScript interfaces.</p>
 <p translation-result="">Angular 的 <a href="https://github.com/angular/angular/blob/master/packages/compiler-cli/src/metadata/schema.ts">schema.ts</a> 把这个 JSON 格式表示成了一组 TypeScript 接口。</p>
 </div>
 <a id="expression-syntax"></a>
-<h3 translation-origin="off" id="expression-syntax">Expression syntax<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#expression-syntax"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="expression-syntax">表达式语法<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#expression-syntax"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="expression-syntax">Expression syntax<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#expression-syntax"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="expression-syntax">表达式语法<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#expression-syntax"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <em>collector</em> only understands a subset of JavaScript.
 Define metadata objects with the following limited syntax:</p>
 <p translation-result="">这个<strong>收集器</strong>只能理解 JavaScript 的一个子集。
@@ -1392,8 +1392,8 @@ piece of metadata to generate the application code.</p>
 </div>
 <a id="function-expression"></a>
 <a id="arrow-functions"></a>
-<h3 translation-origin="off" id="no-arrow-functions">No arrow functions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#no-arrow-functions"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="no-arrow-functions">不要有箭头函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#no-arrow-functions"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="no-arrow-functions">No arrow functions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#no-arrow-functions"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="no-arrow-functions">不要有箭头函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#no-arrow-functions"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The AOT compiler does not support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">function expressions</a>
 and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow functions</a>, also called <em>lambda</em> functions.</p>
 <p translation-result="">AOT 编译器不支持 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">函数表达式</a>
@@ -1427,16 +1427,16 @@ export function serverFactory() {
 <p translation-origin="off">Beginning in version 5, the compiler automatically performs this rewriting while emitting the <code>.js</code> file.</p>
 <p translation-result="">从 Angular v5 开始，编译器会在生成 <code>.js</code> 文件时自动执行这种改写。</p>
 <a id="function-calls"></a>
-<h3 translation-origin="off" id="limited-function-calls">Limited function calls<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#limited-function-calls"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="limited-function-calls">受限函数调用<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#limited-function-calls"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="limited-function-calls">Limited function calls<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#limited-function-calls"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="limited-function-calls">受限函数调用<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#limited-function-calls"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <em>collector</em> can represent a function call or object creation with <code>new</code> as long as the syntax is valid. The <em>collector</em> only cares about proper syntax.</p>
 <p translation-result="">只要语法有效，<em>收集器</em>就可以支持函数调用或使用 <code>new</code> 来创建对象。<em>收集器</em>只在乎语法是否正确。</p>
 <p translation-origin="off">But beware. The compiler may later refuse to generate a call to a <em>particular</em> function or creation of a <em>particular</em> object.
-The compiler only supports calls to a small set of functions and will use <code>new</code> for only a few designated classes. These functions and classes are in a table of <a href="guide/aot-compiler#supported-functions">below</a>.</p>
+The compiler only supports calls to a small set of functions and will use <code>new</code> for only a few designated classes. These functions and classes are in a table of <a href="/guide/aot-compiler#supported-functions">below</a>.</p>
 <p translation-result="">但要注意。编译器稍后可能拒绝调用<em>特定的</em>函数或拒绝创建<em>特定的</em>对象。
-编译器值仅支持调用一小部分函数，也只能 <code>new</code> 一小部分类。这些函数和类列在了<a href="guide/aot-compiler#supported-functions">后面</a>的表格中。</p>
-<h3 translation-origin="off" id="folding">Folding<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#folding"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="folding">折叠（fold）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#folding"><i class="material-icons">link</i></a></h3>
+编译器值仅支持调用一小部分函数，也只能 <code>new</code> 一小部分类。这些函数和类列在了<a href="/guide/aot-compiler#supported-functions">后面</a>的表格中。</p>
+<h3 translation-origin="off" id="folding">Folding<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#folding"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="folding">折叠（fold）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#folding"><i class="material-icons">link</i></a></h3>
 <a id="exported-symbols"></a>
 <p translation-origin="off">The compiler can only resolve references to <strong><em>exported</em></strong> symbols.
 Fortunately, the <em>collector</em> enables limited use of non-exported symbols through <em>folding</em>.</p>
@@ -1455,41 +1455,41 @@ module-local <code>const</code> declarations and initialized <code>var</code> an
 <p translation-origin="off">Consider the following component definition:</p>
 <p translation-result="">考虑下列组件定义：</p>
 <code-example language="typescript">
-const <a href="api/core/Component#template" class="code-anchor">template</a> = '&#x3C;div>{{hero.name}}&#x3C;/div>';
+const <a href="/api/core/Component#template" class="code-anchor">template</a> = '&#x3C;div>{{hero.name}}&#x3C;/div>';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: <a href="api/core/Component#template" class="code-anchor">template</a>
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: <a href="/api/core/Component#template" class="code-anchor">template</a>
 })
 export class HeroComponent {
   @<a href="/api/core/Input" class="code-anchor">Input</a>() hero: Hero;
 }
 </code-example>
-<p translation-origin="off">The compiler could not refer to the <code><a href="api/core/Component#template" class="code-anchor">template</a></code> constant because it isn't exported.</p>
-<p translation-result="">编译器不能引用 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 常量，因为它是未导出的。</p>
-<p translation-origin="off">But the <em>collector</em> can <em>fold</em> the <code><a href="api/core/Component#template" class="code-anchor">template</a></code> constant into the metadata definition by inlining its contents.
+<p translation-origin="off">The compiler could not refer to the <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> constant because it isn't exported.</p>
+<p translation-result="">编译器不能引用 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 常量，因为它是未导出的。</p>
+<p translation-origin="off">But the <em>collector</em> can <em>fold</em> the <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> constant into the metadata definition by inlining its contents.
 The effect is the same as if you had written:</p>
-<p translation-result="">但是<em>折叠器</em>可以通过内联 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 常量的方式把它<em>折叠</em>进元数据定义中。
+<p translation-result="">但是<em>折叠器</em>可以通过内联 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 常量的方式把它<em>折叠</em>进元数据定义中。
 最终的结果和你以前的写法是一样的：</p>
 <code-example language="typescript">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;div>{{hero.name}}&#x3C;/div>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;div>{{hero.name}}&#x3C;/div>'
 })
 export class HeroComponent {
   @<a href="/api/core/Input" class="code-anchor">Input</a>() hero: Hero;
 }
 </code-example>
-<p translation-origin="off">There is no longer a reference to <code><a href="api/core/Component#template" class="code-anchor">template</a></code> and, therefore, nothing to trouble the compiler when it later interprets the <em>collector's</em> output in <code>.metadata.json</code>.</p>
-<p translation-result="">这里没有对 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 的引用，因此，当编译器稍后对位于 <code>.metadata.json</code> 中的<em>收集器</em>输出进行解释时，不会再出问题。</p>
-<p translation-origin="off">You can take this example a step further by including the <code><a href="api/core/Component#template" class="code-anchor">template</a></code> constant in another expression:</p>
-<p translation-result="">你还可以通过把 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 常量包含在其它表达式中来让这个例子深入一点：</p>
+<p translation-origin="off">There is no longer a reference to <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> and, therefore, nothing to trouble the compiler when it later interprets the <em>collector's</em> output in <code>.metadata.json</code>.</p>
+<p translation-result="">这里没有对 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 的引用，因此，当编译器稍后对位于 <code>.metadata.json</code> 中的<em>收集器</em>输出进行解释时，不会再出问题。</p>
+<p translation-origin="off">You can take this example a step further by including the <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> constant in another expression:</p>
+<p translation-result="">你还可以通过把 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 常量包含在其它表达式中来让这个例子深入一点：</p>
 <code-example language="typescript">
-const <a href="api/core/Component#template" class="code-anchor">template</a> = '&#x3C;div>{{hero.name}}&#x3C;/div>';
+const <a href="/api/core/Component#template" class="code-anchor">template</a> = '&#x3C;div>{{hero.name}}&#x3C;/div>';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: <a href="api/core/Component#template" class="code-anchor">template</a> + '&#x3C;div>{{hero.title}}&#x3C;/div>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: <a href="/api/core/Component#template" class="code-anchor">template</a> + '&#x3C;div>{{hero.title}}&#x3C;/div>'
 })
 export class HeroComponent {
   @<a href="/api/core/Input" class="code-anchor">Input</a>() hero: Hero;
@@ -1498,8 +1498,8 @@ export class HeroComponent {
 <p translation-origin="off">The <em>collector</em> reduces this expression to its equivalent <em>folded</em> string:</p>
 <p translation-result=""><em>收集器</em>把该表达式缩减成其等价的<em>已折叠</em>字符串：</p>
 <p translation-origin="off"><code>'&#x3C;div>{{hero.name}}&#x3C;/div>&#x3C;div>{{hero.title}}&#x3C;/div>'</code>.</p>
-<h4 translation-origin="off" id="foldable-syntax">Foldable syntax<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#foldable-syntax"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="foldable-syntax">可折叠的语法<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#foldable-syntax"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="foldable-syntax">Foldable syntax<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#foldable-syntax"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="foldable-syntax">可折叠的语法<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#foldable-syntax"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">The following table describes which expressions the <em>collector</em> can and cannot fold:</p>
 <p translation-result="">下表中描述了哪些表达式是否能被<em>收集器</em>折叠：</p>
 <table>
@@ -1794,8 +1794,8 @@ yes, if the expression is foldable
 </table>
 <p translation-origin="off">If an expression is not foldable, the collector writes it to <code>.metadata.json</code> as an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a> for the compiler to resolve.</p>
 <p translation-result="">如果表达式是不可折叠的，那么收集器就会把它作为一个 <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a>（抽象语法树） 写入 <code>.metadata.json</code> 中，留给编译器去解析。</p>
-<h2 translation-origin="off" id="phase-2-code-generation">Phase 2: code generation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#phase-2-code-generation"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="phase-2-code-generation">阶段 2：代码生成<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#phase-2-code-generation"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="phase-2-code-generation">Phase 2: code generation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#phase-2-code-generation"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="phase-2-code-generation">阶段 2：代码生成<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#phase-2-code-generation"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <em>collector</em> makes no attempt to understand the metadata that it collects and outputs to <code>.metadata.json</code>. It represents the metadata as best it can and records errors when it detects a metadata syntax violation.</p>
 <p translation-result=""><em>收集器</em>不会试图理解它收集并输出到 <code>.metadata.json</code> 中的元数据，它所能做的只是尽可能准确的表述这些元数据，并在检测到元数据中的语法违规时记录这些错误。</p>
 <p translation-origin="off">It's the compiler's job to interpret the <code>.metadata.json</code> in the code generation phase.</p>
@@ -1812,7 +1812,7 @@ yes, if the expression is foldable
 // BAD CODE - title is private
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-root',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;h1>{{title}}&#x3C;/h1>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;h1>{{title}}&#x3C;/h1>'
 })
 export class AppComponent {
   private title = 'My App'; // Bad
@@ -1821,12 +1821,12 @@ export class AppComponent {
 <a id="supported-functions"></a>
 <p translation-origin="off">Most importantly, the compiler only generates code to create instances of certain classes, support certain decorators, and call certain functions from the following lists.</p>
 <p translation-result="">最重要的是，编译器生成代码时，只支持为下面列出的某些类创建实例、只支持某些装饰器、只会调用某些函数。</p>
-<h3 translation-origin="off" id="new-instances">New instances<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#new-instances"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="new-instances">新建实例<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#new-instances"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="new-instances">New instances<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#new-instances"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="new-instances">新建实例<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#new-instances"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler only allows metadata that create instances of the class <code><a href="/api/core/InjectionToken" class="code-anchor">InjectionToken</a></code> from <code>@angular/core</code>.</p>
 <p translation-result="">编译器只允许创建来自 <code>@angular/core</code> 的 <code><a href="/api/core/InjectionToken" class="code-anchor">InjectionToken</a></code> 类创建实例。</p>
-<h3 translation-origin="off" id="annotationsdecorators">Annotations/Decorators<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#annotationsdecorators"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="annotationsdecorators">注解 / 装饰器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#annotationsdecorators"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="annotationsdecorators">Annotations/Decorators<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#annotationsdecorators"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="annotationsdecorators">注解 / 装饰器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#annotationsdecorators"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler only supports metadata for these Angular decorators.</p>
 <p translation-result="">编译器只支持下列 Angular 装饰器的元数据。</p>
 <table>
@@ -1921,8 +1921,8 @@ Module
 </tr>
 </tbody>
 </table>
-<h3 translation-origin="off" id="macro-functions-and-macro-static-methods">Macro-functions and macro-static methods<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#macro-functions-and-macro-static-methods"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="macro-functions-and-macro-static-methods">宏函数或静态宏函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#macro-functions-and-macro-static-methods"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="macro-functions-and-macro-static-methods">Macro-functions and macro-static methods<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#macro-functions-and-macro-static-methods"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="macro-functions-and-macro-static-methods">宏函数或静态宏函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#macro-functions-and-macro-static-methods"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler also supports <em>macros</em> in the form of functions or static
 methods that return an expression.</p>
 <p translation-result="">编译器也支持在返回表达式的函数或静态函数中使用<em>宏</em>。</p>
@@ -1939,7 +1939,7 @@ export function wrapInArray&#x3C;T>(value: T): T[] {
 <p translation-result="">你还可以这样使用 <code>wrapInArray()</code>：</p>
 <code-example language="typescript">
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: wrapInArray(TypicalComponent)
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: wrapInArray(TypicalComponent)
 })
 export class TypicalModule {}
 </code-example>
@@ -1947,7 +1947,7 @@ export class TypicalModule {}
 <p translation-result="">编译器会把这种用法处理成你以前的写法：</p>
 <code-example language="typescript">
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#declarations" class="code-anchor">declarations</a>: [TypicalComponent]
+  <a href="/api/core/NgModule#declarations" class="code-anchor">declarations</a>: [TypicalComponent]
 })
 export class TypicalModule {}
 </code-example>
@@ -1960,8 +1960,8 @@ for these methods to see how macros can simplify configuration of complex <a hre
 <p translation-result="">Angular 的 <a href="/api/router/RouterModule"><code>RouterModule</code></a> 导出了两个静态宏函数 <code>forRoot</code> 和 <code>forChild</code>，以帮助声明根路由和子路由。
 查看这些方法的<a href="https://github.com/angular/angular/blob/master/packages/router/src/router_module.ts#L139" title="RouterModule.forRoot source code">源码</a>，以了解宏函数是如何简化复杂的 <a href="/guide/ngmodules">NgModule</a> 配置的。</p>
 <a id="metadata-rewriting"></a>
-<h3 translation-origin="off" id="metadata-rewriting">Metadata rewriting<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#metadata-rewriting"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="metadata-rewriting">元数据重写<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#metadata-rewriting"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="metadata-rewriting">Metadata rewriting<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#metadata-rewriting"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="metadata-rewriting">元数据重写<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#metadata-rewriting"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler treats object literals containing the fields <code>useClass</code>, <code>useValue</code>, <code>useFactory</code>, and <code>data</code> specially. The compiler converts the expression initializing one of these fields into an exported variable, which replaces the expression. This process of rewriting these expressions removes all the restrictions on what can be in them because
 the compiler doesn't need to know the expression's value—it just needs to be able to generate a reference to the value.</p>
 <p translation-result="">编译器会对含有 <code>useClass</code>、<code>useValue</code>、<code>useFactory</code> 和 <code>data</code> 的对象字面量进行特殊处理。
@@ -2000,30 +2000,30 @@ factory without having to know what the value of <code>ɵ0</code> contains.</p>
 <p translation-result="">这就让编译器能在工厂中生成一个对 <code>ɵ0</code> 的引用，而不用知道 <code>ɵ0</code> 中包含的值到底是什么。</p>
 <p translation-origin="off">The compiler does the rewriting during the emit of the <code>.js</code> file. This doesn't rewrite the <code>.d.ts</code> file, however, so TypeScript doesn't recognize it as being an export. Thus, it does not pollute the ES module's exported API.</p>
 <p translation-result="">编译器会在生成 <code>.js</code> 文件期间进行这种重写。它不会重写 <code>.d.ts</code> 文件，所以 TypeScript 也不会把这个变量当做一项导出，因此也就不会污染 ES 模块中导出的 API。</p>
-<h2 translation-origin="off" id="metadata-errors">Metadata Errors<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#metadata-errors"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="metadata-errors">元数据错误<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#metadata-errors"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="metadata-errors">Metadata Errors<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#metadata-errors"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="metadata-errors">元数据错误<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#metadata-errors"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The following are metadata errors you may encounter, with explanations and suggested corrections.</p>
 <p translation-result="">你可能遇到一些元数据错误，下面是对它们的解释和纠正建议。</p>
-<p translation-result=""><a href="guide/aot-compiler#expression-form-not-supported"><t>Expression form not supported</t><t>【不支持此表达式格式】</t></a><br>
-<a href="guide/aot-compiler#reference-to-a-local-symbol"><t>Reference to a local (non-exported) symbol</t><t>【引用了局部（未导出的）符号】</t></a><br>
-<a href="guide/aot-compiler#only-initialized-variables"><t>Only initialized variables and constants</t><t>【只允许初始化过的变量和常量】</t></a><br>
-<a href="guide/aot-compiler#reference-to-a-non-exported-class"><t>Reference to a non-exported class</t><t>【引用了未导出的类】</t></a><br>
-<a href="guide/aot-compiler#reference-to-a-non-exported-function"><t>Reference to a non-exported function</t><t>【引用了未导出的函数】</t></a><br>
-<a href="guide/aot-compiler#function-calls-not-supported"><t>Function calls are not supported</t><t>【不支持函数调用】</t></a><br>
-<a href="guide/aot-compiler#destructured-variable-not-supported"><t>Destructured variable or constant not supported</t><t>【不支持解构变量或常量】</t></a><br>
-<a href="guide/aot-compiler#could-not-resolve-type"><t>Could not resolve type</t><t>【不能解析此类型】</t></a><br>
-<a href="guide/aot-compiler#name-expected"><t>Name expected</t><t>【期待是名字】</t></a><br>
-<a href="guide/aot-compiler#unsupported-enum-member-name"><t>Unsupported enum member name</t><t>【不支持的枚举成员名】</t></a><br>
-<a href="guide/aot-compiler#tagged-template-expressions-not-supported"><t>Tagged template expressions are not supported</t><t>【不支持带标签函数的模板表达式】</t></a><br>
-<a href="guide/aot-compiler#symbol-reference-expected"><t>Symbol reference expected</t><t>【期待是符号引用】</t></a><br></p>
+<p translation-result=""><a href="/guide/aot-compiler#expression-form-not-supported"><t>Expression form not supported</t><t>【不支持此表达式格式】</t></a><br>
+<a href="/guide/aot-compiler#reference-to-a-local-symbol"><t>Reference to a local (non-exported) symbol</t><t>【引用了局部（未导出的）符号】</t></a><br>
+<a href="/guide/aot-compiler#only-initialized-variables"><t>Only initialized variables and constants</t><t>【只允许初始化过的变量和常量】</t></a><br>
+<a href="/guide/aot-compiler#reference-to-a-non-exported-class"><t>Reference to a non-exported class</t><t>【引用了未导出的类】</t></a><br>
+<a href="/guide/aot-compiler#reference-to-a-non-exported-function"><t>Reference to a non-exported function</t><t>【引用了未导出的函数】</t></a><br>
+<a href="/guide/aot-compiler#function-calls-not-supported"><t>Function calls are not supported</t><t>【不支持函数调用】</t></a><br>
+<a href="/guide/aot-compiler#destructured-variable-not-supported"><t>Destructured variable or constant not supported</t><t>【不支持解构变量或常量】</t></a><br>
+<a href="/guide/aot-compiler#could-not-resolve-type"><t>Could not resolve type</t><t>【不能解析此类型】</t></a><br>
+<a href="/guide/aot-compiler#name-expected"><t>Name expected</t><t>【期待是名字】</t></a><br>
+<a href="/guide/aot-compiler#unsupported-enum-member-name"><t>Unsupported enum member name</t><t>【不支持的枚举成员名】</t></a><br>
+<a href="/guide/aot-compiler#tagged-template-expressions-not-supported"><t>Tagged template expressions are not supported</t><t>【不支持带标签函数的模板表达式】</t></a><br>
+<a href="/guide/aot-compiler#symbol-reference-expected"><t>Symbol reference expected</t><t>【期待是符号引用】</t></a><br></p>
 <hr>
-<h3 translation-origin="off" class="no-toc" id="expression-form-not-supported">Expression form not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#expression-form-not-supported"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="expression-form-not-supported">不支持这种表达式格式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#expression-form-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="expression-form-not-supported">Expression form not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#expression-form-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="expression-form-not-supported">不支持这种表达式格式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#expression-form-not-supported"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler encountered an expression it didn't understand while evaluating Angular metadata.</p>
 <p translation-result="">编译器在对 Angular 元数据求值时遇到了一个它不能理解的表达式。</p>
-<p translation-origin="off">Language features outside of the compiler's <a href="guide/aot-compiler#expression-syntax">restricted expression syntax</a>
+<p translation-origin="off">Language features outside of the compiler's <a href="/guide/aot-compiler#expression-syntax">restricted expression syntax</a>
 can produce this error, as seen in the following example:</p>
-<p translation-result="">除编译器<a href="guide/aot-compiler#expression-syntax">允许的表达式语法</a>之外的语言特性可能导致这个错误，比如下面的例子：</p>
+<p translation-result="">除编译器<a href="/guide/aot-compiler#expression-syntax">允许的表达式语法</a>之外的语言特性可能导致这个错误，比如下面的例子：</p>
 <code-example>
 // ERROR
 export class Fooish { ... }
@@ -2037,14 +2037,14 @@ const prop = typeof Fooish; // typeof is not valid in metadata
 <p translation-origin="off">You can use <code>typeof</code> and bracket notation in normal application code.
 You just can't use those features within expressions that define Angular metadata.</p>
 <p translation-result="">你可以在普通的应用代码中使用 <code>typeof</code> 和方括号标记法来指定属性名，但是这些特性不能在定义 Angular 元数据的表达式中使用。</p>
-<p translation-origin="off">Avoid this error by sticking to the compiler's <a href="guide/aot-compiler#expression-syntax">restricted expression syntax</a>
+<p translation-origin="off">Avoid this error by sticking to the compiler's <a href="/guide/aot-compiler#expression-syntax">restricted expression syntax</a>
 when writing Angular metadata
 and be wary of new or unusual TypeScript features.</p>
-<p translation-result="">在写 Angular 的元数据时，严格遵循编译器的<a href="guide/aot-compiler#expression-syntax">受限表达式语法</a>可以避免这个错误，此外还要小心那些新的或罕见的 TypeScript 特性。</p>
+<p translation-result="">在写 Angular 的元数据时，严格遵循编译器的<a href="/guide/aot-compiler#expression-syntax">受限表达式语法</a>可以避免这个错误，此外还要小心那些新的或罕见的 TypeScript 特性。</p>
 <hr>
 <a id="reference-to-a-local-symbol"></a>
-<h3 translation-origin="off" class="no-toc" id="reference-to-a-local-non-exported-symbol">Reference to a local (non-exported) symbol<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#reference-to-a-local-non-exported-symbol"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="reference-to-a-local-non-exported-symbol">引用了局部（未导出的）符号<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#reference-to-a-local-non-exported-symbol"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="reference-to-a-local-non-exported-symbol">Reference to a local (non-exported) symbol<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#reference-to-a-local-non-exported-symbol"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="reference-to-a-local-non-exported-symbol">引用了局部（未导出的）符号<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#reference-to-a-local-non-exported-symbol"><i class="material-icons">link</i></a></h3>
 <div class="alert is-helpful">
 <p translation-origin="off"><em>Reference to a local (non-exported) symbol 'symbol name'. Consider exporting the symbol.</em></p>
 </div>
@@ -2058,7 +2058,7 @@ let foo: number; // neither exported nor initialized
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: ... ,
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: ... ,
   providers: [
     { provide: Foo, useValue: foo }
   ]
@@ -2072,8 +2072,8 @@ export class MyComponent {}
 <code-example>
 let foo = 42; // initialized
 </code-example>
-<p translation-origin="off">The compiler will <a href="guide/aot-compiler#folding">fold</a> the expression into the provider as if you had written this.</p>
-<p translation-result="">编译器将会把这个表达式<a href="guide/aot-compiler#folding">折叠</a>进 <code>providers</code> 中，就像你以前的写法一样。</p>
+<p translation-origin="off">The compiler will <a href="/guide/aot-compiler#folding">fold</a> the expression into the provider as if you had written this.</p>
+<p translation-result="">编译器将会把这个表达式<a href="/guide/aot-compiler#folding">折叠</a>进 <code>providers</code> 中，就像你以前的写法一样。</p>
 <code-example>
   providers: [
     { provide: Foo, useValue: 42 }
@@ -2087,7 +2087,7 @@ export let foo: number; // exported
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: ... ,
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: ... ,
   providers: [
     { provide: Foo, useValue: foo }
   ]
@@ -2098,44 +2098,44 @@ export class MyComponent {}
 <p translation-result="">添加 <code>export</code> 的方式通常用于需要在元数据中引用变量时，如 <code>providers</code> 和 <code>animations</code>，这样编译器就可以在这些表达式中生成对已导出变量的引用了。它不需要知道这些变量的<em>值</em>。</p>
 <p translation-origin="off">Adding <code>export</code> doesn't work when the compiler needs the <em>actual value</em>
 in order to generate code.
-For example, it doesn't work for the <code><a href="api/core/Component#template" class="code-anchor">template</a></code> property.</p>
-<p translation-result="">当编译器需要知道<em>真正的值</em>已生成代码时，添加 <code>export</code> 的方式就是无效的。比如这里的 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 属性。</p>
+For example, it doesn't work for the <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> property.</p>
+<p translation-result="">当编译器需要知道<em>真正的值</em>已生成代码时，添加 <code>export</code> 的方式就是无效的。比如这里的 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 属性。</p>
 <code-example>
 // ERROR
 export let someTemplate: string; // exported but not initialized
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: someTemplate
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: someTemplate
 })
 export class MyComponent {}
 </code-example>
-<p translation-origin="off">The compiler needs the value of the <code><a href="api/core/Component#template" class="code-anchor">template</a></code> property <em>right now</em> to generate the component factory.
+<p translation-origin="off">The compiler needs the value of the <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> property <em>right now</em> to generate the component factory.
 The variable reference alone is insufficient.
-Prefixing the declaration with <code>export</code> merely produces a new error, "<a href="guide/aot-compiler#only-initialized-variables"><code>Only initialized variables and constants can be referenced</code></a>".</p>
-<p translation-result="">编译器<em>现在就</em>需要 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 属性的值来生成组件工厂。
+Prefixing the declaration with <code>export</code> merely produces a new error, "<a href="/guide/aot-compiler#only-initialized-variables"><code>Only initialized variables and constants can be referenced</code></a>".</p>
+<p translation-result="">编译器<em>现在就</em>需要 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 属性的值来生成组件工厂。
 仅仅有对该变量的引用是不够的。
-给这个声明加上 <code>export</code> 前缀只会生成一个新的错误 "<a href="guide/aot-compiler#only-initialized-variables"><code>Only initialized variables and constants can be referenced</code>【只能引用初始化过的变量和常量】</a>"。</p>
+给这个声明加上 <code>export</code> 前缀只会生成一个新的错误 "<a href="/guide/aot-compiler#only-initialized-variables"><code>Only initialized variables and constants can be referenced</code>【只能引用初始化过的变量和常量】</a>"。</p>
 <hr>
 <a id="only-initialized-variables"></a>
-<h3 translation-origin="off" class="no-toc" id="only-initialized-variables-and-constants">Only initialized variables and constants<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#only-initialized-variables-and-constants"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="only-initialized-variables-and-constants">只允许使用初始化过的变量和常量<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#only-initialized-variables-and-constants"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="only-initialized-variables-and-constants">Only initialized variables and constants<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#only-initialized-variables-and-constants"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="only-initialized-variables-and-constants">只允许使用初始化过的变量和常量<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#only-initialized-variables-and-constants"><i class="material-icons">link</i></a></h3>
 <div class="alert is-helpful">
 <p translation-origin="off"><em>Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler.</em></p>
 </div>
 <p translation-origin="off">The compiler found a reference to an exported variable or static field that wasn't initialized.
 It needs the value of that variable to generate code.</p>
 <p translation-result="">编译器发现某个到已导出的变量或静态字段的引用是没有初始化过的。而它需要根据那个变量的值来生成代码。</p>
-<p translation-origin="off">The following example tries to set the component's <code><a href="api/core/Component#template" class="code-anchor">template</a></code> property to the value of
+<p translation-origin="off">The following example tries to set the component's <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> property to the value of
 the exported <code>someTemplate</code> variable which is declared but <em>unassigned</em>.</p>
-<p translation-result="">下面的例子试图把组件的 <code><a href="api/core/Component#template" class="code-anchor">template</a></code> 属性设置为已导出的 <code>someTemplate</code> 变量的值，而这个值虽然声明过，却没有初始化过。</p>
+<p translation-result="">下面的例子试图把组件的 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code> 属性设置为已导出的 <code>someTemplate</code> 变量的值，而这个值虽然声明过，却没有初始化过。</p>
 <code-example>
 // ERROR
 export let someTemplate: string;
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: someTemplate
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: someTemplate
 })
 export class MyComponent {}
 </code-example>
@@ -2143,11 +2143,11 @@ export class MyComponent {}
 <p translation-result="">如果你从其它模块中导入了 <code>someTemplate</code>，但那个模块中忘了初始化它，就会看到这个错误。</p>
 <code-example>
 // ERROR - not initialized there either
-import { someTemplate } from './<a href="api/router/Router#config" class="code-anchor">config</a>';
+import { someTemplate } from './<a href="/api/router/Router#config" class="code-anchor">config</a>';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: someTemplate
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: someTemplate
 })
 export class MyComponent {}
 </code-example>
@@ -2165,13 +2165,13 @@ export let someTemplate = '&#x3C;h1>Greetings from Angular&#x3C;/h1>';
 
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: someTemplate
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: someTemplate
 })
 export class MyComponent {}
 </code-example>
 <hr>
-<h3 translation-origin="off" class="no-toc" id="reference-to-a-non-exported-class">Reference to a non-exported class<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#reference-to-a-non-exported-class"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="reference-to-a-non-exported-class">引用了未导出的类<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#reference-to-a-non-exported-class"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="reference-to-a-non-exported-class">Reference to a non-exported class<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#reference-to-a-non-exported-class"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="reference-to-a-non-exported-class">引用了未导出的类<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#reference-to-a-non-exported-class"><i class="material-icons">link</i></a></h3>
 <div class="alert is-helpful">
 <p translation-origin="off"><em>Reference to a non-exported class <class name="">. Consider exporting the class.</class></em></p>
 </div>
@@ -2191,9 +2191,9 @@ abstract class MyStrategy { }
   ...
 </code-example>
 <p translation-origin="off">Angular generates a class factory in a separate module and that
-factory <a href="guide/aot-compiler#exported-symbols">can only access exported classes</a>.
+factory <a href="/guide/aot-compiler#exported-symbols">can only access exported classes</a>.
 To correct this error, export the referenced class.</p>
-<p translation-result="">Angular 会在一个单独的模块中生成类工厂，而那个工厂<a href="guide/aot-compiler#exported-symbols">只能访问已导出的类</a>。
+<p translation-result="">Angular 会在一个单独的模块中生成类工厂，而那个工厂<a href="/guide/aot-compiler#exported-symbols">只能访问已导出的类</a>。
 要纠正这个问题，就要导出所引用的类。</p>
 <code-example>
 // CORRECTED
@@ -2206,8 +2206,8 @@ export abstract class MyStrategy { }
   ...
 </code-example>
 <hr>
-<h3 translation-origin="off" class="no-toc" id="reference-to-a-non-exported-function">Reference to a non-exported function<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#reference-to-a-non-exported-function"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="reference-to-a-non-exported-function">引用了未导出的函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#reference-to-a-non-exported-function"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="reference-to-a-non-exported-function">Reference to a non-exported function<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#reference-to-a-non-exported-function"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="reference-to-a-non-exported-function">引用了未导出的函数<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#reference-to-a-non-exported-function"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Metadata referenced a function that wasn't exported.</p>
 <p translation-result="">元数据中引用了未导出的函数。</p>
 <p translation-origin="off">For example, you may have set a providers <code>useFactory</code> property to a locally defined function that you neglected to export.</p>
@@ -2223,9 +2223,9 @@ function myStrategy() { ... }
   ...
 </code-example>
 <p translation-origin="off">Angular generates a class factory in a separate module and that
-factory <a href="guide/aot-compiler#exported-symbols">can only access exported functions</a>.
+factory <a href="/guide/aot-compiler#exported-symbols">can only access exported functions</a>.
 To correct this error, export the function.</p>
-<p translation-result="">Angular 会在一个单独的模块中生成类工厂，那个工厂<a href="guide/aot-compiler#exported-symbols">只能访问已导出的函数</a>。
+<p translation-result="">Angular 会在一个单独的模块中生成类工厂，那个工厂<a href="/guide/aot-compiler#exported-symbols">只能访问已导出的函数</a>。
 要纠正这个错误，请导出该函数。</p>
 <code-example>
 // CORRECTED
@@ -2239,14 +2239,14 @@ export function myStrategy() { ... }
 </code-example>
 <hr>
 <a id="function-calls-not-supported"></a>
-<h3 translation-origin="off" class="no-toc" id="function-calls-are-not-supported">Function calls are not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#function-calls-are-not-supported"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="function-calls-are-not-supported">不支持函数调用<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#function-calls-are-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="function-calls-are-not-supported">Function calls are not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#function-calls-are-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="function-calls-are-not-supported">不支持函数调用<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#function-calls-are-not-supported"><i class="material-icons">link</i></a></h3>
 <div class="alert is-helpful">
 <p translation-origin="off"><em>Function calls are not supported. Consider replacing the function or lambda with a reference to an exported function.</em></p>
 </div>
-<p translation-origin="off">The compiler does not currently support <a href="guide/aot-compiler#function-expression">function expressions or lambda functions</a>.
+<p translation-origin="off">The compiler does not currently support <a href="/guide/aot-compiler#function-expression">function expressions or lambda functions</a>.
 For example, you cannot set a provider's <code>useFactory</code> to an anonymous function or arrow function like this.</p>
-<p translation-result="">编译器目前不支持<a href="guide/aot-compiler#function-expression">函数表达式或 Lambda 表达式</a>。
+<p translation-result="">编译器目前不支持<a href="/guide/aot-compiler#function-expression">函数表达式或 Lambda 表达式</a>。
 比如，你不能把某个服务提供商的 <code>useFactory</code> 设置成如下匿名函数或函数表达式。</p>
 <code-example>
 // ERROR
@@ -2290,8 +2290,8 @@ export function someValueFactory() {
 </code-example>
 <hr>
 <a id="destructured-variable-not-supported"></a>
-<h3 translation-origin="off" class="no-toc" id="destructured-variable-or-constant-not-supported">Destructured variable or constant not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#destructured-variable-or-constant-not-supported"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="destructured-variable-or-constant-not-supported">不支持解构变量或常量<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#destructured-variable-or-constant-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="destructured-variable-or-constant-not-supported">Destructured variable or constant not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#destructured-variable-or-constant-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="destructured-variable-or-constant-not-supported">不支持解构变量或常量<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#destructured-variable-or-constant-not-supported"><i class="material-icons">link</i></a></h3>
 <div class="alert is-helpful">
 <p translation-origin="off"><em>Referencing an exported destructured variable or constant is not supported by the template compiler. Consider simplifying this to avoid destructuring.</em></p>
 </div>
@@ -2325,8 +2325,8 @@ import { configuration } from './configuration';
   ...
 </code-example>
 <hr>
-<h3 translation-origin="off" class="no-toc" id="could-not-resolve-type">Could not resolve type<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#could-not-resolve-type"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="could-not-resolve-type">不能解析类型<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#could-not-resolve-type"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="could-not-resolve-type">Could not resolve type<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#could-not-resolve-type"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="could-not-resolve-type">不能解析类型<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#could-not-resolve-type"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler encountered a type and can't determine which module exports that type.</p>
 <p translation-result="">编译器遇到了某个类型，但是不知道它是由哪个模块导出的。</p>
 <p translation-origin="off">This can happen if you refer to an ambient type.
@@ -2394,8 +2394,8 @@ export class MyComponent {
 <p translation-origin="off">The <code>Window</code> type in the constructor is no longer a problem for the compiler because it
 uses the <code>@<a href="/api/core/Inject" class="code-anchor">Inject</a>(WINDOW)</code> to generate the injection code.</p>
 <p translation-result="">对于编译器来说，构造函数中出现 <code>Window</code> 类型已不再是个问题，因为它现在使用 <code>@<a href="/api/core/Inject" class="code-anchor">Inject</a>(WINDOW)</code> 来生成注入代码。</p>
-<p translation-origin="off">Angular does something similar with the <code><a href="/api/common/DOCUMENT" class="code-anchor">DOCUMENT</a></code> token so you can inject the browser's <code><a href="api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code> object (or an abstraction of it, depending upon the platform in which the application runs).</p>
-<p translation-result="">Angular 也用 <code><a href="/api/common/DOCUMENT" class="code-anchor">DOCUMENT</a></code> 令牌做了类似的事情，所以你也可以注入浏览器的 <code><a href="api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code> 对象（或它的一个抽象层，取决于该应用运行在哪个平台）。</p>
+<p translation-origin="off">Angular does something similar with the <code><a href="/api/common/DOCUMENT" class="code-anchor">DOCUMENT</a></code> token so you can inject the browser's <code><a href="/api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code> object (or an abstraction of it, depending upon the platform in which the application runs).</p>
+<p translation-result="">Angular 也用 <code><a href="/api/common/DOCUMENT" class="code-anchor">DOCUMENT</a></code> 令牌做了类似的事情，所以你也可以注入浏览器的 <code><a href="/api/platform-server/PlatformConfig#document" class="code-anchor">document</a></code> 对象（或它的一个抽象层，取决于该应用运行在哪个平台）。</p>
 <code-example linenums="false">
 import { <a href="/api/core/Inject" class="code-anchor">Inject</a> }   from '@angular/core';
 import { <a href="/api/common/DOCUMENT" class="code-anchor">DOCUMENT</a> } from '@angular/platform-browser';
@@ -2406,8 +2406,8 @@ export class MyComponent {
 }
 </code-example>
 <hr>
-<h3 translation-origin="off" class="no-toc" id="name-expected">Name expected<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#name-expected"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="name-expected">期待是名字<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#name-expected"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="name-expected">Name expected<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#name-expected"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="name-expected">期待是名字<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#name-expected"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler expected a name in an expression it was evaluating.
 This can happen if you use a number as a property name as in the following example.</p>
 <p translation-result="">编译器期待它正在求值的表达式中是一个名字。</p>
@@ -2422,8 +2422,8 @@ provider: [{ provide: Foo, useValue: { 0: 'test' } }]
 provider: [{ provide: Foo, useValue: { '0': 'test' } }]
 </code-example>
 <hr>
-<h3 translation-origin="off" class="no-toc" id="unsupported-enum-member-name">Unsupported enum member name<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#unsupported-enum-member-name"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="unsupported-enum-member-name">不支持的枚举成员名<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#unsupported-enum-member-name"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="unsupported-enum-member-name">Unsupported enum member name<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#unsupported-enum-member-name"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="unsupported-enum-member-name">不支持的枚举成员名<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#unsupported-enum-member-name"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Angular couldn't determine the value of the <a href="https://www.typescriptlang.org/docs/handbook/enums.html">enum member</a>
 that you referenced in metadata.</p>
 <p translation-result="">Angular 不能确定你在元数据中引用的<a href="https://www.typescriptlang.org/docs/handbook/enums.html">枚举成员</a>的值。</p>
@@ -2449,8 +2449,8 @@ enum Colors {
 <p translation-result="">避免引用那些使用了复杂初始化对象或计算属性的枚举。</p>
 <hr>
 <a id="tagged-template-expressions-not-supported"></a>
-<h3 translation-origin="off" class="no-toc" id="tagged-template-expressions-are-not-supported">Tagged template expressions are not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#tagged-template-expressions-are-not-supported"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="tagged-template-expressions-are-not-supported">不支持带标签函数的模板表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#tagged-template-expressions-are-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="tagged-template-expressions-are-not-supported">Tagged template expressions are not supported<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#tagged-template-expressions-are-not-supported"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="tagged-template-expressions-are-not-supported">不支持带标签函数的模板表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#tagged-template-expressions-are-not-supported"><i class="material-icons">link</i></a></h3>
 <div class="alert is-helpful">
 <p translation-origin="off"><em>Tagged template expressions are not supported in metadata.</em></p>
 </div>
@@ -2459,9 +2459,9 @@ enum Colors {
 <code-example>
 // ERROR
 const expression = 'funky';
-const raw = String.raw`A tagged <a href="api/core/Component#template" class="code-anchor">template</a> ${expression} string`;
+const raw = String.raw`A tagged <a href="/api/core/Component#template" class="code-anchor">template</a> ${expression} string`;
  ...
- <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;div>' + raw + '&#x3C;/div>'
+ <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;div>' + raw + '&#x3C;/div>'
  ...
 </code-example>
 <p translation-origin="off"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw"><code>String.raw()</code></a>
@@ -2470,8 +2470,8 @@ is a <em>tag function</em> native to JavaScript ES2015.</p>
 <p translation-origin="off">The AOT compiler does not support tagged template expressions; avoid them in metadata expressions.</p>
 <p translation-result="">AOT 编译器不支持带标签函数的模板表达式，避免在元数据表达式中使用它们。</p>
 <hr>
-<h3 translation-origin="off" class="no-toc" id="symbol-reference-expected">Symbol reference expected<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#symbol-reference-expected"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" class="no-toc" id="symbol-reference-expected">期待是符号引用<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#symbol-reference-expected"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" class="no-toc" id="symbol-reference-expected">Symbol reference expected<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#symbol-reference-expected"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" class="no-toc" id="symbol-reference-expected">期待是符号引用<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#symbol-reference-expected"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The compiler expected a reference to a symbol at the location specified in the error message.</p>
 <p translation-result="">编译器期待在错误信息指出的位置是一个符号引用。</p>
 <p translation-origin="off">This error can occur if you use an expression in the <code>extends</code> clause of a class.</p>
@@ -2482,14 +2482,14 @@ Chuck: After reviewing your PR comment I'm still at a loss. See [comment there](
 
 -->
 <a id="binding-expression-validation"></a>
-<h2 translation-origin="off" id="phase-3-binding-expression-validation">Phase 3: binding expression validation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#phase-3-binding-expression-validation"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="phase-3-binding-expression-validation">阶段 3：验证绑定表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#phase-3-binding-expression-validation"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="phase-3-binding-expression-validation">Phase 3: binding expression validation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#phase-3-binding-expression-validation"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="phase-3-binding-expression-validation">阶段 3：验证绑定表达式<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#phase-3-binding-expression-validation"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">  In the validation phase, the Angular template compiler uses the TypeScript compiler to validate the
 binding expressions in templates. Enable this phase explicitly by adding the compiler
 option <code>"fullTemplateTypeCheck"</code> in the <code>"angularCompilerOptions"</code> of the project's <code>tsconfig.json</code> (see
-<a href="guide/aot-compiler#compiler-options">Angular Compiler Options</a>).</p>
+<a href="/guide/aot-compiler#compiler-options">Angular Compiler Options</a>).</p>
 <p translation-result="">  在验证阶段，Angular 的模板编译器会使用 TypeScript 编译器来验证模板中的绑定表达式。
-通过在项目的 <code>tsconfig.json</code>（参见 <a href="guide/aot-compiler#compiler-options">Angular Compiler Options</a>）的 <code>"angularCompilerOptions"</code> 中添加编译选项 <code>"fullTemplateTypeCheck"</code> 可以启用这个阶段。</p>
+通过在项目的 <code>tsconfig.json</code>（参见 <a href="/guide/aot-compiler#compiler-options">Angular Compiler Options</a>）的 <code>"angularCompilerOptions"</code> 中添加编译选项 <code>"fullTemplateTypeCheck"</code> 可以启用这个阶段。</p>
 <p translation-origin="off">  Template validation produces error messages when a type error is detected in a template binding
 expression, similar to how type errors are reported by the TypeScript compiler against code in a <code>.ts</code>
 file.</p>
@@ -2499,7 +2499,7 @@ file.</p>
 <code-example language="typescript">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '{{person.addresss.street}}'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '{{person.addresss.street}}'
 })
 class MyComponent {
   person?: Person;
@@ -2514,12 +2514,12 @@ my.component.ts.MyComponent.html(1,1): : Property 'addresss' does not exist on t
 generated by the template compiler that holds contents of the <code>MyComponent</code> class template.
 Compiler never writes this file to disk. The line and column numbers are relative to the template string
 in the <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> annotation of the class, <code>MyComponent</code> in this case. If a component uses
-<code>templateUrl</code> instead of <code><a href="api/core/Component#template" class="code-anchor">template</a></code>, the errors are reported in the HTML file referenced by the
+<code>templateUrl</code> instead of <code><a href="/api/core/Component#template" class="code-anchor">template</a></code>, the errors are reported in the HTML file referenced by the
 <code>templateUrl</code> instead of a synthetic file.</p>
 <p translation-result="">  错误信息中汇报的文件名 <code>my.component.ts.MyComponent.html</code> 是一个由模板编译器生成出的虚拟文件，
 用于保存 <code>MyComponent</code> 类的模板内容。
 编译器永远不会把这个文件写入磁盘。这个例子中，这里的行号和列号都是相对于 <code>MyComponent</code> 的 <code>@<a href="/api/core/Component" class="code-anchor">Component</a></code> 注解中的模板字符串的。
-如果组件使用 <code>templateUrl</code> 来代替 <code><a href="api/core/Component#template" class="code-anchor">template</a></code>，这些错误就会在 <code>templateUrl</code> 引用的 HTML 文件中汇报，而不是这个虚拟文件中。</p>
+如果组件使用 <code>templateUrl</code> 来代替 <code><a href="/api/core/Component#template" class="code-anchor">template</a></code>，这些错误就会在 <code>templateUrl</code> 引用的 HTML 文件中汇报，而不是这个虚拟文件中。</p>
 <p translation-origin="off">  The error location is the beginning of the text node that contains the interpolation expression with
 the error. If the error is in an attribute binding such as <code>[value]="person.address.street"</code>, the error
 location is the location of the attribute that contains the error.</p>
@@ -2529,8 +2529,8 @@ location is the location of the attribute that contains the error.</p>
 how detailed the type validation is. For example, if the <code>strictTypeChecks</code> is specified, the error  <code>my.component.ts.MyComponent.html(1,1): : Object is possibly 'undefined'</code> is reported as well as the above error message.</p>
 <p translation-result="">  这个验证过程使用 TypeScript 的类型检查器，这些选项也会提供给 TypeScript 编译器以控制类型验证的详细程度。
 比如，如果指定了 <code>strictTypeChecks</code>，就会像上面的错误信息一样报告 <code>my.component.ts.MyComponent.html(1,1): : Object is possibly 'undefined'</code> 错误。</p>
-<h3 translation-origin="off" id="type-narrowing">Type narrowing<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#type-narrowing"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="type-narrowing">类型窄化<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#type-narrowing"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="type-narrowing">Type narrowing<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#type-narrowing"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="type-narrowing">类型窄化<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#type-narrowing"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">  The expression used in an <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> directive is used to narrow type unions in the Angular
 template compiler, the same way the <code>if</code> expression does in TypeScript. For example, to avoid
 <code>Object is possibly 'undefined'</code> error in the template above, modify it to only emit the
@@ -2540,7 +2540,7 @@ interpolation if the value of <code>person</code> is initialized as shown below:
 <code-example language="typescript">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;span *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="person"> {{person.addresss.street}} &#x3C;/span>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;span *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="person"> {{person.addresss.street}} &#x3C;/span>'
 })
 class MyComponent {
   person?: Person;
@@ -2549,8 +2549,8 @@ class MyComponent {
 <p translation-origin="off">  Using <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> allows the TypeScript compiler to infer that the <code>person</code> used in the
 binding expression will never be <code>undefined</code>.</p>
 <p translation-result="">  使用 <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 能让 TypeScript 编译器推断出这个绑定表达式中使用的 <code>person</code> 永远不会是 <code>undefined</code>。</p>
-<h4 translation-origin="off" id="custom-ngif-like-directives">Custom <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> like directives<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#custom-ngif-like-directives"><i class="material-icons">link</i></a></h4>
-<h4 translation-result="" id="custom-codengifcode-like-directives">类似于的 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 的自定义指令<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#custom-codengifcode-like-directives"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="custom-ngif-like-directives">Custom <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> like directives<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#custom-ngif-like-directives"><i class="material-icons">link</i></a></h4>
+<h4 translation-result="" id="custom-codengifcode-like-directives">类似于的 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 的自定义指令<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#custom-codengifcode-like-directives"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">  Directives that behave like <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> can declare that they want the same treatment by including
 a static member marker that is a signal to the template compiler to treat them
 like <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code>. This static member for <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> is:</p>
@@ -2562,13 +2562,13 @@ like <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code>. This
 guard to the use of its template, implying that the template will only be instantiated if
 the <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> input property is true.</p>
 <p translation-result="">  它声明了 <code><a href="/api/common/NgIf" class="code-anchor">NgIf</a></code> 指令的 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 属性应该在用到它的模板中看做一个守卫，以表明只有当 <code><a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 这个输入属性为 <code>true</code> 时，才应该生成那个模板。</p>
-<h3 translation-origin="off" id="non-null-type-assertion-operator">Non-null type assertion operator<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#non-null-type-assertion-operator"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="non-null-type-assertion-operator">非空类型断言操作符<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#non-null-type-assertion-operator"><i class="material-icons">link</i></a></h3>
-<p translation-origin="off">  Use the <a href="guide/template-syntax#non-null-assertion-operator">non-null type assertion operator</a>
+<h3 translation-origin="off" id="non-null-type-assertion-operator">Non-null type assertion operator<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#non-null-type-assertion-operator"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="non-null-type-assertion-operator">非空类型断言操作符<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#non-null-type-assertion-operator"><i class="material-icons">link</i></a></h3>
+<p translation-origin="off">  Use the <a href="/guide/template-syntax#non-null-assertion-operator">non-null type assertion operator</a>
 to suppress the <code>Object is possibly 'undefined'</code> error when it is incovienent to use
 <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> or when some constraint in the component ensures that the expression is always
 non-null when the binding expression is interpolated.</p>
-<p translation-result="">  使用 <a href="guide/template-syntax#non-null-assertion-operator">非空类型断言操作符</a>可以在不方便使用 <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 或
+<p translation-result="">  使用 <a href="/guide/template-syntax#non-null-assertion-operator">非空类型断言操作符</a>可以在不方便使用 <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code> 或
 当组件中的某些约束可以确保这个绑定表达式在求值时永远不会为空时，防止出现 <code>Object is possibly 'undefined'</code> 错误。</p>
 <p translation-origin="off">  In the following example, the <code>person</code> and <code>address</code> properties are always set together,
 implying that <code>address</code> is always non-null if <code>person</code> is non-null. There is no convenient
@@ -2578,7 +2578,7 @@ is suppressed in the example by using <code>address!.street</code>.</p>
 <code-example language="typescript">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;span *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="person"> {{person.name}} lives on {{address!.street}} &#x3C;/span>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;span *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="person"> {{person.name}} lives on {{address!.street}} &#x3C;/span>'
 })
 class MyComponent {
   person?: Person;
@@ -2599,7 +2599,7 @@ in the <code>*<a href="/api/common/NgIf" class="code-anchor">ngIf</a></code>as s
 <code-example language="typescript">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;span *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="person &#x26;&#x26; address"> {{person.name}} lives on {{address.street}} &#x3C;/span>'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;span *<a href="/api/common/NgIf" class="code-anchor">ngIf</a>="person &#x26;&#x26; address"> {{person.name}} lives on {{address.street}} &#x3C;/span>'
 })
 class MyComponent {
   person?: Person;
@@ -2611,8 +2611,8 @@ class MyComponent {
   }
 }
 </code-example>
-<h3 translation-origin="off" id="disabling-type-checking-using-any">Disabling type checking using <code>$any()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#disabling-type-checking-using-any"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="disabling-type-checking-using-codeanycode">使用 <code>$any()</code> 禁用类型检查<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#disabling-type-checking-using-codeanycode"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="disabling-type-checking-using-any">Disabling type checking using <code>$any()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#disabling-type-checking-using-any"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="disabling-type-checking-using-codeanycode">使用 <code>$any()</code> 禁用类型检查<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#disabling-type-checking-using-codeanycode"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">  Disable checking of a binding expression by surrounding the expression
 in a call to the <a href="/guide/template-syntax"><code>$any()</code> cast pseudo-function</a>.
 The compiler treats it as a cast to the <code>any</code> type just like in TypeScript when a <code>&#x3C;any></code>
@@ -2625,14 +2625,14 @@ by casting <code>person</code> to the <code>any</code> type.</p>
 <code-example language="typescript">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'my-component',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '{{$any(person).addresss.street}}'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '{{$any(person).addresss.street}}'
 })
 class MyComponent {
   person?: Person;
 }
 </code-example>
-<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#summary"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="summary">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/aot-compiler#summary"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="summary">Summary<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#summary"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="summary">小结<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/aot-compiler#summary"><i class="material-icons">link</i></a></h2>
 <ul>
 <li>
 <p translation-origin="off">What the AOT compiler does and why it is important.</p>

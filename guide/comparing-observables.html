@@ -808,15 +808,15 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="observables-compared-to-other-techniques">Observables compared to other techniques<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-other-techniques"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="observables-compared-to-other-techniques">可观察对象与其它技术的比较<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-other-techniques"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="observables-compared-to-other-techniques">Observables compared to other techniques<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-other-techniques"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="observables-compared-to-other-techniques">可观察对象与其它技术的比较<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-other-techniques"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">You can often use observables instead of promises to deliver values asynchronously. Similarly, observables can take the place of event handlers. Finally, because observables deliver multiple values, you can use them where you might otherwise build and operate on arrays.</p>
 <p translation-result="">你可以经常使用可观察对象（Observable）而不是承诺（Promise）来异步传递值。
 类似的，可观察对象也可以取代事件处理器的位置。最后，由于可观察对象传递多个值，所以你可以在任何可能构建和操作数组的地方使用可观察对象。</p>
 <p translation-origin="off">Observables behave somewhat differently from the alternative techniques in each of these situations, but offer some significant advantages. Here are detailed comparisons of the differences.</p>
 <p translation-result="">在这些情况下，可观察对象的行为与其替代技术有一些差异，不过也提供了一些显著的优势。下面是对这些差异的详细比较。</p>
-<h2 translation-origin="off" id="observables-compared-to-promises">Observables compared to promises<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-promises"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="observables-compared-to-promises">可观察对象 vs. 承诺<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-promises"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="observables-compared-to-promises">Observables compared to promises<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-promises"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="observables-compared-to-promises">可观察对象 vs. 承诺<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-promises"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Observables are often compared to promises. Here are some key differences:</p>
 <p translation-result="">可观察对象经常拿来和承诺进行对比。有一些关键的不同点：</p>
 <ul>
@@ -837,8 +837,8 @@
 <p translation-result=""> 可观察对象的 <code>subscribe()</code> 会负责处理错误。承诺会把错误推送给它的子承诺。这让可观察对象可用于进行集中式、可预测的错误处理。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="creation-and-subscription">Creation and subscription<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#creation-and-subscription"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="creation-and-subscription">创建与订阅<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#creation-and-subscription"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="creation-and-subscription">Creation and subscription<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#creation-and-subscription"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="creation-and-subscription">创建与订阅<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#creation-and-subscription"><i class="material-icons">link</i></a></h3>
 <ul>
 <li>
 <p translation-origin="off">Observables are not executed until a consumer subcribes. The <code>subscribe()</code> executes the defined behavior once, and it can be called again. Each subscription has its own computation. Resubscription causes recomputation of values.</p>
@@ -861,14 +861,14 @@ observable.subscribe(() => {
 </ul>
 <code-example hidecopy="">
 // initiate execution
-new Promise((<a href="api/router/Route#resolve" class="code-anchor">resolve</a>, reject) => { executer_fn });
+new Promise((<a href="/api/router/Route#resolve" class="code-anchor">resolve</a>, reject) => { executer_fn });
 // handle return value
 promise.then((value) => {
       // handle result here
     });
 </code-example>
-<h3 translation-origin="off" id="chaining">Chaining<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#chaining"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="chaining">串联<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#chaining"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="chaining">Chaining<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#chaining"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="chaining">串联<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#chaining"><i class="material-icons">link</i></a></h3>
 <ul>
 <li>
 <p translation-origin="off">Observables differentiate between transformation function such as a map and subscription. Only subscription activates the subscriber function to start computing the values.</p>
@@ -883,8 +883,8 @@ promise.then((value) => {
 </li>
 </ul>
 <code-example hidecopy="">promise.then((v) => 2*v);</code-example>
-<h3 translation-origin="off" id="cancellation">Cancellation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#cancellation"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="cancellation">可取消<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#cancellation"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="cancellation">Cancellation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#cancellation"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="cancellation">可取消<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#cancellation"><i class="material-icons">link</i></a></h3>
 <ul>
 <li>
 <p translation-origin="off">Observable subscriptions are cancellable. Unsubscribing removes the listener from receiving further values, and notifies the subscriber function to cancel work.</p>
@@ -901,8 +901,8 @@ sub.unsubscribe();
 <p translation-result=""> 承诺是不可取消的。</p>
 </li>
 </ul>
-<h3 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#error-handling"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="error-handling">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#error-handling"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="error-handling">Error handling<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#error-handling"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="error-handling">错误处理<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#error-handling"><i class="material-icons">link</i></a></h3>
 <ul>
 <li>
 <p translation-origin="off">Observable execution errors are delivered to the subscriber's error handler, and the subscriber automatically unsubscribes from the observable.</p>
@@ -925,8 +925,8 @@ promise.then(() => {
       throw Error('my error');
 });
 </code-example>
-<h3 translation-origin="off" id="cheat-sheet">Cheat sheet<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#cheat-sheet"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="cheat-sheet-1">速查表<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#cheat-sheet-1"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="cheat-sheet">Cheat sheet<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#cheat-sheet"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="cheat-sheet-1">速查表<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#cheat-sheet-1"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The following code snippets illustrate how the same kind of operation is defined using observables and promises.</p>
 <p translation-result="">下列代码片段揭示了同样的操作要如何分别使用可观察对象和承诺进行实现。</p>
 <table>
@@ -1002,8 +1002,8 @@ promise.then(() => {
     </td>
   </tr>
 </tbody></table>
-<h2 translation-origin="off" id="observables-compared-to-events-api">Observables compared to events API<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-events-api"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="observables-compared-to-events-api">可观察对象 vs. 事件 API<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-events-api"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="observables-compared-to-events-api">Observables compared to events API<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-events-api"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="observables-compared-to-events-api">可观察对象 vs. 事件 API<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-events-api"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Observables are very similar to event handlers that use the events API. Both techniques define notification handlers, and use them to process multiple values delivered over time. Subscribing to an observable is equivalent to adding an event listener. One significant difference is that you can configure an observable to transform an event before passing the event to the handler.</p>
 <p translation-result="">可观察对象和事件 API 中的事件处理器很像。这两种技术都会定义通知处理器，并使用它们来处理一段时间内传递的多个值。订阅可观察对象与添加事件处理器是等价的。一个显著的不同是你可以配置可观察对象，使其在把事件传给事件处理器之间先进行转换。</p>
 <p translation-origin="off">Using observables to handle events and asynchronous operations can have the advantage of greater consistency in contexts such as HTTP requests.</p>
@@ -1087,8 +1087,8 @@ button.removeEventListener(‘click’, handler);
     </td>
   </tr>
 </tbody></table>
-<h2 translation-origin="off" id="observables-compared-to-arrays">Observables compared to arrays<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-arrays"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="observables-compared-to-arrays">可观察对象 vs. 数组<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/comparing-observables#observables-compared-to-arrays"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="observables-compared-to-arrays">Observables compared to arrays<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-arrays"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="observables-compared-to-arrays">可观察对象 vs. 数组<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/comparing-observables#observables-compared-to-arrays"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">An observable produces values over time. An array is created as a static set of values. In a sense, observables are asynchronous where arrays are synchronous. In the following examples, ➞ implies asynchronous value delivery.</p>
 <p translation-result="">可观察对象会随时间生成值。数组是用一组静态的值创建的。某种意义上，可观察对象是异步的，而数组是同步的。
 在下列例子中，➞ 符号表示异步传递值。</p>

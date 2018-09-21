@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="hierarchical-dependency-injectors">Hierarchical Dependency Injectors<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#hierarchical-dependency-injectors"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="hierarchical-dependency-injectors">多级依赖注入器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#hierarchical-dependency-injectors"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="hierarchical-dependency-injectors">Hierarchical Dependency Injectors<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#hierarchical-dependency-injectors"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="hierarchical-dependency-injectors">多级依赖注入器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#hierarchical-dependency-injectors"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">You learned the basics of Angular Dependency injection in the
 <a href="/guide/dependency-injection">Dependency Injection</a> guide.</p>
 <p translation-result="">在<a href="/guide/dependency-injection">依赖注入</a>一章中，你已经学过了 Angular 依赖注入的基础知识。</p>
@@ -823,8 +823,8 @@ You can reconfigure the injectors at any level of that component tree.</p>
 <p translation-result="">本文将浏览这个体系，并告诉你如何善用它。</p>
 <p translation-origin="off">Try the <live-example></live-example>.</p>
 <p translation-result="">试试<live-example></live-example>。</p>
-<h2 translation-origin="off" id="the-injector-tree">The injector tree<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#the-injector-tree"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="the-injector-tree">注入器树<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#the-injector-tree"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="the-injector-tree">The injector tree<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#the-injector-tree"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="the-injector-tree">注入器树<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#the-injector-tree"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">In the <a href="/guide/dependency-injection">Dependency Injection</a> guide,
 you learned how to configure a dependency injector and how to retrieve dependencies where you need them.</p>
 <p translation-result="">在<a href="/guide/dependency-injection">依赖注入</a>一章中，你学过如何配置依赖注入器，以及如何在需要时用它获取依赖。</p>
@@ -855,8 +855,8 @@ open simultaneously.</p>
 <figure>
   <img src="generated/images/guide/dependency-injection/component-hierarchy.png" alt="injector tree" width="600" height="224">
 </figure>
-<h3 translation-origin="off" id="injector-bubbling">Injector bubbling<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#injector-bubbling"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="injector-bubbling">注入器冒泡<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#injector-bubbling"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="injector-bubbling">Injector bubbling<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#injector-bubbling"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="injector-bubbling">注入器冒泡<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#injector-bubbling"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">When a component requests a dependency, Angular tries to satisfy that dependency with a provider registered in that component's own injector.
 If the component's injector lacks the provider, it passes the request up to its parent component's injector.
 If that injector can't satisfy the request, it passes it along to <em>its</em> parent injector.
@@ -875,8 +875,8 @@ This is a topic for another day.</p>
 向上查找提供商的过程会截止于这个“宿主”组件。
 这个问题先放一放，等改天再讨论它。</p>
 </div>
-<h3 translation-origin="off" id="re-providing-a-service-at-different-levels">Re-providing a service at different levels<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#re-providing-a-service-at-different-levels"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="re-providing-a-service-at-different-levels">在不同层级再次提供同一个服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#re-providing-a-service-at-different-levels"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="re-providing-a-service-at-different-levels">Re-providing a service at different levels<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#re-providing-a-service-at-different-levels"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="re-providing-a-service-at-different-levels">在不同层级再次提供同一个服务<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#re-providing-a-service-at-different-levels"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">You can re-register a provider for a particular dependency token at multiple levels of the injector tree.
 You don't <em>have</em> to re-register providers. You shouldn't do so unless you have a good reason.
 But you <em>can</em>.</p>
@@ -892,12 +892,12 @@ It effectively "reconfigures" and "shadows" a provider at a higher level in the 
 All requests bubble up to the root <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> injector that you configured with the <code>bootstrapModule</code> method.</p>
 <p translation-result="">如果你只在顶级（通常是根模块 <code>AppModule</code>），这三个注入器看起来将是“平面”的。
 所有的申请都会冒泡到根<code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code>进行处理，也就是你在 <code>bootstrapModule</code> 方法中配置的那个。</p>
-<h2 translation-origin="off" id="component-injectors">Component injectors<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#component-injectors"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="component-injectors">组件注入器<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#component-injectors"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="component-injectors">Component injectors<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#component-injectors"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="component-injectors">组件注入器<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#component-injectors"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The ability to configure one or more providers at different levels opens up interesting and useful possibilities.</p>
 <p translation-result="">在不同层次上重新配置一个或多个提供商的能力，开启了一些既有趣又有用的可能性。</p>
-<h3 translation-origin="off" id="scenario-service-isolation">Scenario: service isolation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#scenario-service-isolation"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="scenario-service-isolation">场景：服务隔离<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#scenario-service-isolation"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="scenario-service-isolation">Scenario: service isolation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#scenario-service-isolation"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="scenario-service-isolation">场景：服务隔离<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#scenario-service-isolation"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Architectural reasons may lead you to restrict access to a service to the application domain where it belongs.</p>
 <p translation-result="">出于架构方面的考虑，可能会让你决定把一个服务限制到只能在它所属的特定领域中访问。</p>
 <p translation-origin="off">The guide sample includes a <code>VillainsListComponent</code> that displays a list of villains.
@@ -927,8 +927,8 @@ It's still a singleton, but it's a singleton that exist solely in the <em>villai
 它仍然是单例，但是这个单例只存在于<em>反派（villain）</em>这个领域中。</p>
 <p translation-origin="off">Now you know that a hero component can't access it. You've reduced your exposure to error.</p>
 <p translation-result="">现在，你可以确信英雄组件不会访问它，因此减少了犯错误的机会。</p>
-<h3 translation-origin="off" id="scenario-multiple-edit-sessions">Scenario: multiple edit sessions<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#scenario-multiple-edit-sessions"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="scenario-multiple-edit-sessions">场景：多重编辑会话<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#scenario-multiple-edit-sessions"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="scenario-multiple-edit-sessions">Scenario: multiple edit sessions<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#scenario-multiple-edit-sessions"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="scenario-multiple-edit-sessions">场景：多重编辑会话<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#scenario-multiple-edit-sessions"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Many applications allow users to work on several open tasks at the same time.
 For example, in a tax preparation application, the preparer could be working on several tax returns,
 switching from one to the other throughout the day.</p>
@@ -1018,11 +1018,11 @@ import { HeroTaxReturnService } from './hero-tax-return.service';
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-hero-tax-return',
   templateUrl: './hero-tax-return.component.html',
-  <a href="api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './hero-tax-return.component.css' ],
+  <a href="/api/core/Component#styleUrls" class="code-anchor">styleUrls</a>: [ './hero-tax-return.component.css' ],
   providers: [ HeroTaxReturnService ]
 })
 export class HeroTaxReturnComponent {
-  <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = '';
+  <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a> = '';
   @<a href="/api/core/Output" class="code-anchor">Output</a>() close = new <a href="/api/core/EventEmitter" class="code-anchor">EventEmitter</a>&#x3C;void>();
 
   get taxReturn(): HeroTaxReturn {
@@ -1088,8 +1088,8 @@ You can review it and download it from the <live-example></live-example>.</p>
 <p translation-result="">该场景代码中的其它部分依赖另一些 Angular 的特性和技术，你将会在本文档的其它章节学到。
 你可以到<live-example></live-example>查看代码和下载它。</p>
 </div>
-<h3 translation-origin="off" id="scenario-specialized-providers">Scenario: specialized providers<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#scenario-specialized-providers"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="scenario-specialized-providers">场景：专门的提供商<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/hierarchical-dependency-injection#scenario-specialized-providers"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="scenario-specialized-providers">Scenario: specialized providers<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#scenario-specialized-providers"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="scenario-specialized-providers">场景：专门的提供商<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/hierarchical-dependency-injection#scenario-specialized-providers"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Another reason to re-provide a service is to substitute a <em>more specialized</em> implementation of that service,
 deeper in the component tree.</p>
 <p translation-result="">重新提供服务的另一个原因，是在组件树的深层中把该服务替换为一个<em>更特殊的</em>实现。</p>

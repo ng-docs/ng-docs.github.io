@@ -808,8 +808,8 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="lifecycle-hooks">Lifecycle Hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#lifecycle-hooks"><i class="material-icons">link</i></a></h1>
-<h1 translation-result="" id="lifecycle-hooks">生命周期钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#lifecycle-hooks"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="lifecycle-hooks">Lifecycle Hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#lifecycle-hooks"><i class="material-icons">link</i></a></h1>
+<h1 translation-result="" id="lifecycle-hooks">生命周期钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#lifecycle-hooks"><i class="material-icons">link</i></a></h1>
 <p translation-origin="off">A component has a lifecycle managed by Angular.</p>
 <p translation-result="">每个组件都有一个被 Angular 管理的生命周期。</p>
 <p translation-origin="off">Angular creates it, renders it, creates and renders its children,
@@ -821,8 +821,8 @@ that provide visibility into these key life moments and the ability to act when 
 <p translation-origin="off">A directive has the same set of lifecycle hooks.</p>
 <p translation-result="">除了那些组件内容和视图相关的钩子外,指令有相同生命周期钩子。</p>
 <a id="hooks-overview"></a>
-<h2 translation-origin="off" id="component-lifecycle-hooks-overview">Component lifecycle hooks overview<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#component-lifecycle-hooks-overview"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="component-lifecycle-hooks-overview">组件生命周期钩子概览<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#component-lifecycle-hooks-overview"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="component-lifecycle-hooks-overview">Component lifecycle hooks overview<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#component-lifecycle-hooks-overview"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="component-lifecycle-hooks-overview">组件生命周期钩子概览<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#component-lifecycle-hooks-overview"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Directive and component instances have a lifecycle
 as Angular creates, updates, and destroys them.
 Developers can tap into key moments in that lifecycle by implementing
@@ -851,8 +851,8 @@ export class PeekABoo implements <a href="/api/core/OnInit" class="code-anchor">
 Angular only calls a directive/component hook method <em>if it is defined</em>.</p>
 <p translation-result="">没有指令或者组件会实现所有这些接口，并且有些钩子只对组件有意义。只有在指令/组件中<em>定义过的</em>那些钩子方法才会被 Angular 调用。</p>
 <a id="hooks-purpose-timing"></a>
-<h2 translation-origin="off" id="lifecycle-sequence">Lifecycle sequence<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#lifecycle-sequence"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="lifecycle-sequence">生命周期的顺序<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#lifecycle-sequence"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="lifecycle-sequence">Lifecycle sequence<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#lifecycle-sequence"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="lifecycle-sequence">生命周期的顺序<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#lifecycle-sequence"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off"><em>After</em> creating a component/directive by calling its constructor, Angular
 calls the lifecycle hook methods in the following sequence at specific moments:</p>
 <p translation-result="">当 Angular 使用构造函数新建一个组件或指令后，就会按下面的顺序在特定时刻调用这些生命周期钩子方法：</p>
@@ -918,7 +918,7 @@ and sets the directive/component's input properties.</p>
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <code><a href="api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code></p>
+<p translation-origin="off">      <code><a href="/api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code></p>
     </td>
     <td>
 <p translation-origin="off">      Respond after Angular checks the content projected into the directive/component.</p>
@@ -934,19 +934,19 @@ and sets the directive/component's input properties.</p>
     <td>
 <p translation-origin="off">      Respond after Angular initializes the component's views and child views / the view that a directive is in.</p>
 <p translation-result="">      初始化完组件视图及其子视图之后调用。</p>
-<p translation-origin="off">      Called <em>once</em> after the first <code><a href="api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code>.</p>
-<p translation-result="">      第一次 <code><a href="api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code> 之后调用，只调用一次。</p>
+<p translation-origin="off">      Called <em>once</em> after the first <code><a href="/api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code>.</p>
+<p translation-result="">      第一次 <code><a href="/api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code> 之后调用，只调用一次。</p>
     </td>
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <code><a href="api/core/AfterViewChecked#ngAfterViewChecked" class="code-anchor">ngAfterViewChecked()</a></code></p>
+<p translation-origin="off">      <code><a href="/api/core/AfterViewChecked#ngAfterViewChecked" class="code-anchor">ngAfterViewChecked()</a></code></p>
     </td>
     <td>
 <p translation-origin="off">      Respond after Angular checks the component's views and child views / the view that a directive is in.</p>
 <p translation-result="">      每次做完组件视图和子视图的变更检测之后调用。</p>
-<p translation-origin="off">      Called after the <code>ngAfterViewInit</code> and every subsequent <code><a href="api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code>.</p>
-<p translation-result="">      <code>ngAfterViewInit()</code> 和每次 <code><a href="api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code> 之后调用。</p>
+<p translation-origin="off">      Called after the <code>ngAfterViewInit</code> and every subsequent <code><a href="/api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code>.</p>
+<p translation-result="">      <code>ngAfterViewInit()</code> 和每次 <code><a href="/api/core/AfterContentChecked#ngAfterContentChecked" class="code-anchor">ngAfterContentChecked()</a></code> 之后调用。</p>
     </td>
   </tr>
   <tr style="vertical-align:top">
@@ -964,8 +964,8 @@ Unsubscribe Observables and detach event handlers to avoid memory leaks.</p>
   </tr>
 </tbody></table>
 <a id="interface-optional"></a>
-<h2 translation-origin="off" id="interfaces-are-optional-technically">Interfaces are optional (technically)<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#interfaces-are-optional-technically"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="interfaces-are-optional-technically">接口是可选的（严格来说）<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#interfaces-are-optional-technically"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="interfaces-are-optional-technically">Interfaces are optional (technically)<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#interfaces-are-optional-technically"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="interfaces-are-optional-technically">接口是可选的（严格来说）<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#interfaces-are-optional-technically"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The interfaces are optional for JavaScript and Typescript developers from a purely technical perspective.
 The JavaScript language doesn't have interfaces.
 Angular can't see TypeScript interfaces at runtime because they disappear from the transpiled JavaScript.</p>
@@ -983,16 +983,16 @@ Angular 会找到并调用像 <code>ngOnInit()</code> 这样的钩子方法，�
 in order to benefit from strong typing and editor tooling.</p>
 <p translation-result="">虽然如此，在 TypeScript 指令类中添加接口是一项最佳实践，它可以获得强类型和 IDE 等编辑器带来的好处。</p>
 <a id="other-lifecycle-hooks"></a>
-<h2 translation-origin="off" id="other-angular-lifecycle-hooks">Other Angular lifecycle hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#other-angular-lifecycle-hooks"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="other-angular-lifecycle-hooks">其它生命周期钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#other-angular-lifecycle-hooks"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="other-angular-lifecycle-hooks">Other Angular lifecycle hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#other-angular-lifecycle-hooks"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="other-angular-lifecycle-hooks">其它生命周期钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#other-angular-lifecycle-hooks"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Other Angular sub-systems may have their own lifecycle hooks apart from these component hooks.</p>
 <p translation-result="">Angular 的其它子系统除了有这些组件钩子外，还可能有它们自己的生命周期钩子。</p>
 <p translation-origin="off">3rd party libraries might implement their hooks as well in order to give developers more
 control over how these libraries are used.</p>
 <p translation-result="">第三方库也可能会实现它们自己的钩子，以便让这些开发者在使用时能做更多的控制。</p>
 <a id="the-sample"></a>
-<h2 translation-origin="off" id="lifecycle-examples">Lifecycle examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#lifecycle-examples"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="lifecycle-examples">生命周期范例<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#lifecycle-examples"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="lifecycle-examples">Lifecycle examples<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#lifecycle-examples"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="lifecycle-examples">生命周期范例<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#lifecycle-examples"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <live-example></live-example>
 demonstrates the lifecycle hooks in action through a series of exercises
 presented as components under the control of the root <code>AppComponent</code>.</p>
@@ -1017,7 +1017,7 @@ a <em>child</em> component that illustrates one or more of the lifecycle hook me
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <a href="guide/lifecycle-hooks#peek-a-boo">Peek-a-boo</a></p>
+<p translation-origin="off">      <a href="/guide/lifecycle-hooks#peek-a-boo">Peek-a-boo</a></p>
     </td>
     <td>
 <p translation-origin="off">      Demonstrates every lifecycle hook.
@@ -1027,7 +1027,7 @@ Each hook method writes to the on-screen log.</p>
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <a href="guide/lifecycle-hooks#spy">Spy</a></p>
+<p translation-origin="off">      <a href="/guide/lifecycle-hooks#spy">Spy</a></p>
     </td>
     <td>
 <p translation-origin="off">      Directives have lifecycle hooks too.
@@ -1041,19 +1041,19 @@ managed by the parent <code>SpyComponent</code>.</p>
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <a href="guide/lifecycle-hooks#onchanges">OnChanges</a></p>
+<p translation-origin="off">      <a href="/guide/lifecycle-hooks#onchanges">OnChanges</a></p>
     </td>
     <td>
-<p translation-origin="off">      See how Angular calls the <code>ngOnChanges()</code> hook with a <code><a href="api/core/QueryList#changes" class="code-anchor">changes</a></code> object
+<p translation-origin="off">      See how Angular calls the <code>ngOnChanges()</code> hook with a <code><a href="/api/core/QueryList#changes" class="code-anchor">changes</a></code> object
 every time one of the component input properties changes.
-Shows how to interpret the <code><a href="api/core/QueryList#changes" class="code-anchor">changes</a></code> object.</p>
-<p translation-result="">      这里将会看到：每当组件的输入属性发生变化时，Angular 会如何以 <code><a href="api/core/QueryList#changes" class="code-anchor">changes</a></code> 对象作为参数去调用 <code>ngOnChanges()</code> 钩子。
-展示了该如何理解和使用 <code><a href="api/core/QueryList#changes" class="code-anchor">changes</a></code> 对象。</p>
+Shows how to interpret the <code><a href="/api/core/QueryList#changes" class="code-anchor">changes</a></code> object.</p>
+<p translation-result="">      这里将会看到：每当组件的输入属性发生变化时，Angular 会如何以 <code><a href="/api/core/QueryList#changes" class="code-anchor">changes</a></code> 对象作为参数去调用 <code>ngOnChanges()</code> 钩子。
+展示了该如何理解和使用 <code><a href="/api/core/QueryList#changes" class="code-anchor">changes</a></code> 对象。</p>
     </td>
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <a href="guide/lifecycle-hooks#docheck">DoCheck</a></p>
+<p translation-origin="off">      <a href="/guide/lifecycle-hooks#docheck">DoCheck</a></p>
     </td>
     <td>
 <p translation-origin="off">      Implements an <code>ngDoCheck()</code> method with custom change detection.
@@ -1064,7 +1064,7 @@ See how often Angular calls this hook and watch it post changes to a log.</p>
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <a href="guide/lifecycle-hooks#afterview">AfterView</a></p>
+<p translation-origin="off">      <a href="/guide/lifecycle-hooks#afterview">AfterView</a></p>
     </td>
     <td>
 <p translation-origin="off">      Shows what Angular means by a <em>view</em>.
@@ -1075,7 +1075,7 @@ Demonstrates the <code>ngAfterViewInit</code> and <code>ngAfterViewChecked</code
   </tr>
   <tr style="vertical-align:top">
     <td>
-<p translation-origin="off">      <a href="guide/lifecycle-hooks#aftercontent">AfterContent</a></p>
+<p translation-origin="off">      <a href="/guide/lifecycle-hooks#aftercontent">AfterContent</a></p>
     </td>
     <td>
 <p translation-origin="off">      Shows how to project external content into a component and
@@ -1106,8 +1106,8 @@ to the <code>CounterComponent</code> log where it watches log entries being crea
 <p translation-origin="off">The remainder of this page discusses selected exercises in further detail.</p>
 <p translation-result="">本文剩下的部分将详细讨论这些练习。</p>
 <a id="peek-a-boo"></a>
-<h2 translation-origin="off" id="peek-a-boo-all-hooks">Peek-a-boo: all hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#peek-a-boo-all-hooks"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="peek-a-boo-all-hooks">Peek-a-boo：全部钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#peek-a-boo-all-hooks"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="peek-a-boo-all-hooks">Peek-a-boo: all hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#peek-a-boo-all-hooks"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="peek-a-boo-all-hooks">Peek-a-boo：全部钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#peek-a-boo-all-hooks"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <code>PeekABooComponent</code> demonstrates all of the hooks in one component.</p>
 <p translation-result=""><code>PeekABooComponent</code> 组件演示了组件中所有可能存在的钩子。</p>
 <p translation-origin="off">You would rarely, if ever, implement all of the interfaces like this.
@@ -1139,8 +1139,8 @@ Clearly these three hooks fire <em>often</em>. Keep the logic in these hooks as 
 <p translation-origin="off">The next examples focus on hook details.</p>
 <p translation-result="">下一个例子就聚焦于这些钩子的细节上。</p>
 <a id="spy"></a>
-<h2 translation-origin="off" id="spying-oninit-and-ondestroy">Spying <em>OnInit</em> and <em>OnDestroy</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#spying-oninit-and-ondestroy"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="spying-emoninitem-and-emondestroyem">窥探 <em>OnInit</em> 和 <em>OnDestroy</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#spying-emoninitem-and-emondestroyem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="spying-oninit-and-ondestroy">Spying <em>OnInit</em> and <em>OnDestroy</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#spying-oninit-and-ondestroy"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="spying-emoninitem-and-emondestroyem">窥探 <em>OnInit</em> 和 <em>OnDestroy</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#spying-emoninitem-and-emondestroyem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Go undercover with these two spy hooks to discover when an element is initialized or destroyed.</p>
 <p translation-result="">潜入这两个 spy 钩子来发现一个元素是什么时候被初始化或者销毁的。</p>
 <p translation-origin="off">This is the perfect infiltration job for a directive.
@@ -1215,8 +1215,8 @@ Angular 从 DOM 中移除了所有英雄的 div，并且同时销毁了附加在
 <p translation-origin="off">The <code>ngOnInit()</code> and <code>ngOnDestroy()</code> methods have more vital roles to play in real applications.</p>
 <p translation-result="">在真实的应用程序中，<code>ngOnInit()</code> 和 <code>ngOnDestroy()</code> 方法扮演着更重要的角色。</p>
 <a id="oninit"></a>
-<h3 translation-origin="off" id="oninit"><em>OnInit()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#oninit"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="emoninitem"><em>OnInit()钩子</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#emoninitem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="oninit"><em>OnInit()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#oninit"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="emoninitem"><em>OnInit()钩子</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#emoninitem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Use <code>ngOnInit()</code> for two main reasons:</p>
 <p translation-result="">使用 <code>ngOnInit()</code> 有两个原因：</p>
 <ol>
@@ -1245,8 +1245,8 @@ Constructors should do no more than set the initial local variables to simple va
 在测试环境下新建组件时或在你决定要显示它之前，不应该担心它会尝试联系远程服务器。
 构造函数中除了使用简单的值对局部变量进行初始化之外，什么都不应该做。</p>
 <p translation-origin="off">An <code>ngOnInit()</code> is a good place for a component to fetch its initial data. The
-<a href="tutorial/toh-pt4#oninit">Tour of Heroes Tutorial</a> guide shows how.</p>
-<p translation-result=""><code>ngOnInit()</code> 是组件获取初始数据的好地方。<a href="tutorial/toh-pt4#oninit">指南</a>中讲解了如何这样做。</p>
+<a href="/tutorial/toh-pt4#oninit">Tour of Heroes Tutorial</a> guide shows how.</p>
+<p translation-result=""><code>ngOnInit()</code> 是组件获取初始数据的好地方。<a href="/tutorial/toh-pt4#oninit">指南</a>中讲解了如何这样做。</p>
 <p translation-origin="off">Remember also that a directive's data-bound input properties are not set until <em>after construction</em>.
 That's a problem if you need to initialize the directive based on those properties.
 They'll have been set when <code>ngOnInit()</code> runs.</p>
@@ -1265,8 +1265,8 @@ That's where the heavy initialization logic belongs.</p>
 <p translation-result="">你可以信任 Angular 会在创建组件后立刻调用 <code>ngOnInit()</code> 方法。
 这里是放置复杂初始化逻辑的好地方。</p>
 <a id="ondestroy"></a>
-<h3 translation-origin="off" id="ondestroy"><em>OnDestroy()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#ondestroy"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="emondestroyem"><em>OnDestroy()钩子</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#emondestroyem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="ondestroy"><em>OnDestroy()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#ondestroy"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="emondestroyem"><em>OnDestroy()钩子</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#emondestroyem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Put cleanup logic in <code>ngOnDestroy()</code>, the logic that <em>must</em> run before Angular destroys the directive.</p>
 <p translation-result="">一些清理逻辑<em>必须</em>在 Angular 销毁指令之前运行，把它们放在 <code>ngOnDestroy()</code> 中。</p>
 <p translation-origin="off">This is the time to notify another part of the application that the component is going away.</p>
@@ -1279,16 +1279,16 @@ You risk memory leaks if you neglect to do so.</p>
 取消那些对可观察对象和 DOM 事件的订阅。停止定时器。注销该指令曾注册到全局服务或应用级服务中的各种回调函数。
 如果不这么做，就会有导致内存泄露的风险。</p>
 <a id="onchanges"></a>
-<h2 translation-origin="off" id="onchanges"><em>OnChanges()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#onchanges"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="emonchangesem"><em>OnChanges()</em> 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#emonchangesem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="onchanges"><em>OnChanges()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#onchanges"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="emonchangesem"><em>OnChanges()</em> 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#emonchangesem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Angular calls its <code>ngOnChanges()</code> method whenever it detects changes to <strong><em>input properties</em></strong> of the component (or directive).
 This example monitors the <code><a href="/api/core/OnChanges" class="code-anchor">OnChanges</a></code> hook.</p>
 <p translation-result="">一旦检测到该组件(或指令)的<strong><em>输入属性</em></strong>发生了变化，Angular 就会调用它的 <code>ngOnChanges()</code> 方法。
 本例监控 <code><a href="/api/core/OnChanges" class="code-anchor">OnChanges</a></code> 钩子。</p>
 <code-example path="lifecycle-hooks/src/app/on-changes.component.ts" region="ng-on-changes" title="on-changes.component.ts (excerpt)" linenums="false">
-ngOnChanges(<a href="api/core/QueryList#changes" class="code-anchor">changes</a>: <a href="/api/core/SimpleChanges" class="code-anchor">SimpleChanges</a>) {
-  for (let propName in <a href="api/core/QueryList#changes" class="code-anchor">changes</a>) {
-    let chng = <a href="api/core/QueryList#changes" class="code-anchor">changes</a>[propName];
+ngOnChanges(<a href="/api/core/QueryList#changes" class="code-anchor">changes</a>: <a href="/api/core/SimpleChanges" class="code-anchor">SimpleChanges</a>) {
+  for (let propName in <a href="/api/core/QueryList#changes" class="code-anchor">changes</a>) {
+    let chng = <a href="/api/core/QueryList#changes" class="code-anchor">changes</a>[propName];
     let cur  = JSON.stringify(chng.currentValue);
     let prev = JSON.stringify(chng.previousValue);
     this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
@@ -1334,8 +1334,8 @@ The hero object <em>reference</em> didn't change so, from Angular's perspective,
 Angular 不会关注这个英雄对象的 <code>name</code> 属性的变化。
 这个英雄对象的<em>引用</em>没有发生变化，于是从 Angular 的视角看来，也就没有什么需要报告的变化了。</p>
 <a id="docheck"></a>
-<h2 translation-origin="off" id="docheck"><em>DoCheck()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#docheck"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="emdocheckem"><em>DoCheck()</em> 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#emdocheckem"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="docheck"><em>DoCheck()</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#docheck"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="emdocheckem"><em>DoCheck()</em> 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#emdocheckem"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Use the <code><a href="/api/core/DoCheck" class="code-anchor">DoCheck</a></code> hook to detect and act upon changes that Angular doesn't catch on its own.</p>
 <p translation-result="">使用 <code><a href="/api/core/DoCheck" class="code-anchor">DoCheck</a></code> 钩子来检测那些 Angular 自身无法捕获的变更并采取行动。</p>
 <div class="alert is-helpful">
@@ -1362,14 +1362,14 @@ ngDoCheck() {
   if (this.changeDetected) {
       this.noChangeCount = 0;
   } else {
-      // <a href="api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a> that hook was called when there was no relevant change.
-      let <a href="api/common/NgForOfContext#count" class="code-anchor">count</a> = this.noChangeCount += 1;
-      let noChangeMsg = `<a href="/api/core/DoCheck" class="code-anchor">DoCheck</a> called ${<a href="api/common/NgForOfContext#count" class="code-anchor">count</a>}x when no change to hero or power`;
-      if (<a href="api/common/NgForOfContext#count" class="code-anchor">count</a> === 1) {
-        // add new "no change" <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
+      // <a href="/api/animations/browser/testing/MockAnimationDriver#log" class="code-anchor">log</a> that hook was called when there was no relevant change.
+      let <a href="/api/common/NgForOfContext#count" class="code-anchor">count</a> = this.noChangeCount += 1;
+      let noChangeMsg = `<a href="/api/core/DoCheck" class="code-anchor">DoCheck</a> called ${<a href="/api/common/NgForOfContext#count" class="code-anchor">count</a>}x when no change to hero or power`;
+      if (<a href="/api/common/NgForOfContext#count" class="code-anchor">count</a> === 1) {
+        // add new "no change" <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
         this.changeLog.push(noChangeMsg);
       } else {
-        // <a href="api/forms/NgModel#update" class="code-anchor">update</a> last "no change" <a href="api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
+        // <a href="/api/forms/NgModel#update" class="code-anchor">update</a> last "no change" <a href="/api/common/http/HttpErrorResponse#message" class="code-anchor">message</a>
         this.changeLog[this.changeLog.length - 1] = noChangeMsg;
       }
   }
@@ -1403,8 +1403,8 @@ Clearly our implementation must be very lightweight or the user experience suffe
 只有相对较少的调用才是由于对相关数据的修改而触发的。
 显然，我们的实现必须非常轻量级，否则将损害用户体验。</p>
 <a id="afterview"></a>
-<h2 translation-origin="off" id="afterview">AfterView<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#afterview"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="afterview">AfterView 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#afterview"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="afterview">AfterView<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#afterview"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="afterview">AfterView 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#afterview"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <em>AfterView</em> sample explores the <code><a href="/api/core/AfterViewInit" class="code-anchor">AfterViewInit</a>()</code> and <code><a href="/api/core/AfterViewChecked" class="code-anchor">AfterViewChecked</a>()</code> hooks that Angular calls
 <em>after</em> it creates a component's child views.</p>
 <p translation-result=""><em>AfterView</em> 例子展示了 <code><a href="/api/core/AfterViewInit" class="code-anchor">AfterViewInit</a>()</code> 和 <code><a href="/api/core/AfterViewChecked" class="code-anchor">AfterViewChecked</a>()</code> 钩子，Angular 会在每次创建了组件的子视图后调用它们。</p>
@@ -1413,7 +1413,7 @@ Clearly our implementation must be very lightweight or the user experience suffe
 <code-example path="lifecycle-hooks/src/app/after-view.component.ts" region="child-view" title="ChildComponent" linenums="false">
 @<a href="/api/core/Component" class="code-anchor">Component</a>({
   selector: 'app-child-view',
-  <a href="api/core/Component#template" class="code-anchor">template</a>: '&#x3C;input [(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]="hero">'
+  <a href="/api/core/Component#template" class="code-anchor">template</a>: '&#x3C;input [(<a href="/api/forms/NgModel" class="code-anchor">ngModel</a>)]="hero">'
 })
 export class ChildViewComponent {
   hero = 'Magneta';
@@ -1423,7 +1423,7 @@ export class ChildViewComponent {
 <p translation-origin="off">The <code>AfterViewComponent</code> displays this child view <em>within its template</em>:</p>
 <p translation-result=""><code>AfterViewComponent</code> 把这个子视图显示<em>在它的模板中</em>：</p>
 <code-example path="lifecycle-hooks/src/app/after-view.component.ts" region="template" title="AfterViewComponent (template)" linenums="false">
-<a href="api/core/Component#template" class="code-anchor">template</a>: `
+<a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;div>-- child view begins --&#x3C;/div>
     &#x3C;app-child-view>&#x3C;/app-child-view>
   &#x3C;div>-- child view ends --&#x3C;/div>`
@@ -1461,8 +1461,8 @@ export class AfterViewComponent implements  <a href="/api/core/AfterViewChecked"
 
 </code-example>
 <a id="wait-a-tick"></a>
-<h3 translation-origin="off" id="abide-by-the-unidirectional-data-flow-rule">Abide by the unidirectional data flow rule<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#abide-by-the-unidirectional-data-flow-rule"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="abide-by-the-unidirectional-data-flow-rule">遵循单向数据流规则<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#abide-by-the-unidirectional-data-flow-rule"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="abide-by-the-unidirectional-data-flow-rule">Abide by the unidirectional data flow rule<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#abide-by-the-unidirectional-data-flow-rule"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="abide-by-the-unidirectional-data-flow-rule">遵循单向数据流规则<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#abide-by-the-unidirectional-data-flow-rule"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The <code>doSomething()</code> method updates the screen when the hero name exceeds 10 characters.</p>
 <p translation-result="">当英雄的名字超过 10 个字符时，<code>doSomething()</code> 方法就会更新屏幕。</p>
 <code-example path="lifecycle-hooks/src/app/after-view.component.ts" region="do-something" title="AfterViewComponent (doSomething)" linenums="false">
@@ -1497,14 +1497,14 @@ Write lean hook methods to avoid performance problems.</p>
 <p translation-result="">注意，Angular 会频繁的调用 <code><a href="/api/core/AfterViewChecked" class="code-anchor">AfterViewChecked</a>()</code>，甚至在并没有需要关注的更改时也会触发。
 所以务必把这个钩子方法写得尽可能精简，以免出现性能问题。</p>
 <a id="aftercontent"></a>
-<h2 translation-origin="off" id="aftercontent">AfterContent<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#aftercontent"><i class="material-icons">link</i></a></h2>
-<h2 translation-result="" id="aftercontent">AfterContent 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#aftercontent"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="aftercontent">AfterContent<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#aftercontent"><i class="material-icons">link</i></a></h2>
+<h2 translation-result="" id="aftercontent">AfterContent 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#aftercontent"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">The <em>AfterContent</em> sample explores the <code><a href="/api/core/AfterContentInit" class="code-anchor">AfterContentInit</a>()</code> and <code><a href="/api/core/AfterContentChecked" class="code-anchor">AfterContentChecked</a>()</code> hooks that Angular calls
 <em>after</em> Angular projects external content into the component.</p>
 <p translation-result=""><em>AfterContent</em> 例子展示了 <code><a href="/api/core/AfterContentInit" class="code-anchor">AfterContentInit</a>()</code> 和 <code><a href="/api/core/AfterContentChecked" class="code-anchor">AfterContentChecked</a>()</code> 钩子，Angular 会在外来内容被投影到组件中<em>之后</em>调用它们。</p>
 <a id="content-projection"></a>
-<h3 translation-origin="off" id="content-projection">Content projection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#content-projection"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="content-projection">内容投影<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#content-projection"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="content-projection">Content projection<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#content-projection"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="content-projection">内容投影<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#content-projection"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off"><em>Content projection</em> is a way to import HTML content from outside the component and insert that content
 into the component's template in a designated spot.</p>
 <p translation-result=""><em>内容投影</em>是从组件外部导入 HTML 内容，并把它插入在组件模板中指定位置上的一种途径。</p>
@@ -1512,10 +1512,10 @@ into the component's template in a designated spot.</p>
 <p translation-origin="off">  AngularJS developers know this technique as <em>transclusion</em>.</p>
 <p translation-result="">  AngularJS 的开发者大概知道一项叫做 <em>transclusion</em> 的技术，对，这就是它的马甲。</p>
 </div>
-<p translation-origin="off">Consider this variation on the <a href="guide/lifecycle-hooks#afterview">previous <em>AfterView</em></a> example.
+<p translation-origin="off">Consider this variation on the <a href="/guide/lifecycle-hooks#afterview">previous <em>AfterView</em></a> example.
 This time, instead of including the child view within the template, it imports the content from
 the <code>AfterContentComponent</code>'s parent. Here's the parent's template:</p>
-<p translation-result="">对比<a href="guide/lifecycle-hooks#afterview">前一个</a>例子考虑这个变化。
+<p translation-result="">对比<a href="/guide/lifecycle-hooks#afterview">前一个</a>例子考虑这个变化。
 这次不再通过模板来把子视图包含进来，而是改为从 <code>AfterContentComponent</code> 的父组件中导入它。下面是父组件的模板：</p>
 <code-example path="lifecycle-hooks/src/app/after-content.component.ts" region="parent-template" title="AfterContentParentComponent (template excerpt)" linenums="false">
 `&#x3C;after-content>
@@ -1531,7 +1531,7 @@ into the component</em>.</p>
 <p translation-origin="off">Now look at the component's template:</p>
 <p translation-result="">现在来看下 <code>&#x3C;after-content></code> 组件的模板：</p>
 <code-example path="lifecycle-hooks/src/app/after-content.component.ts" region="template" title="AfterContentComponent (template)" linenums="false">
-<a href="api/core/Component#template" class="code-anchor">template</a>: `
+<a href="/api/core/Component#template" class="code-anchor">template</a>: `
   &#x3C;div>-- projected content begins --&#x3C;/div>
     &#x3C;ng-content>&#x3C;/ng-content>
   &#x3C;div>-- projected content ends --&#x3C;/div>`
@@ -1561,8 +1561,8 @@ In this case, the projected content is the <code>&#x3C;app-child></code> from th
 </ul>
 </div>
 <a id="aftercontent-hooks"></a>
-<h3 translation-origin="off" id="aftercontent-hooks">AfterContent hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#aftercontent-hooks"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="aftercontent-hooks">AfterContent 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#aftercontent-hooks"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="aftercontent-hooks">AfterContent hooks<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#aftercontent-hooks"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="aftercontent-hooks">AfterContent 钩子<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#aftercontent-hooks"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off"><em>AfterContent</em> hooks are similar to the <em>AfterView</em> hooks.
 The key difference is in the child component.</p>
 <p translation-result=""><em>AfterContent</em> 钩子和 <em>AfterView</em> 相似。关键的不同点是子组件的类型不同。</p>
@@ -1611,12 +1611,12 @@ export class AfterContentComponent implements <a href="/api/core/AfterContentChe
 
 </code-example>
 <a id="no-unidirectional-flow-worries"></a>
-<h3 translation-origin="off" id="no-unidirectional-flow-worries-with-aftercontent">No unidirectional flow worries with <em>AfterContent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#no-unidirectional-flow-worries-with-aftercontent"><i class="material-icons">link</i></a></h3>
-<h3 translation-result="" id="no-unidirectional-flow-worries-with-emaftercontentem">使用 <strong>AfterContent</strong> 时，无需担心单向数据流规则<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/lifecycle-hooks#no-unidirectional-flow-worries-with-emaftercontentem"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="no-unidirectional-flow-worries-with-aftercontent">No unidirectional flow worries with <em>AfterContent</em><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#no-unidirectional-flow-worries-with-aftercontent"><i class="material-icons">link</i></a></h3>
+<h3 translation-result="" id="no-unidirectional-flow-worries-with-emaftercontentem">使用 <strong>AfterContent</strong> 时，无需担心单向数据流规则<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/lifecycle-hooks#no-unidirectional-flow-worries-with-emaftercontentem"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">This component's <code>doSomething()</code> method update's the component's data-bound <code>comment</code> property immediately.
-There's no <a href="guide/lifecycle-hooks#wait-a-tick">need to wait</a>.</p>
+There's no <a href="/guide/lifecycle-hooks#wait-a-tick">need to wait</a>.</p>
 <p translation-result="">该组件的 <code>doSomething()</code> 方法立即更新了组件被绑定的 <code>comment</code> 属性。
-它<a href="guide/lifecycle-hooks#wait-a-tick">不用等</a>下一回合。</p>
+它<a href="/guide/lifecycle-hooks#wait-a-tick">不用等</a>下一回合。</p>
 <p translation-origin="off">Recall that Angular calls both <em>AfterContent</em> hooks before calling either of the <em>AfterView</em> hooks.
 Angular completes composition of the projected content <em>before</em> finishing the composition of this component's view.
 There is a small window between the <code>AfterContent...</code> and <code>AfterView...</code> hooks to modify the host view.</p>

@@ -808,7 +808,7 @@
                          style="margin-left: 264px; margin-right: 0px;">
       
 <div class="content">
-<h1 translation-origin="off" id="upgrading-for-performance">Upgrading for Performance<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#upgrading-for-performance"><i class="material-icons">link</i></a></h1>
+<h1 translation-origin="off" id="upgrading-for-performance">Upgrading for Performance<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#upgrading-for-performance"><i class="material-icons">link</i></a></h1>
 <div class="alert is-helpful">
 <p translation-origin="off">  <em>Angular</em> is the name for the Angular of today and tomorrow.<br>
 <em>AngularJS</em> is the name for all 1.x versions of Angular.</p>
@@ -819,30 +819,30 @@ the Angular platform, one piece at a time. It is very similar to
 propagated between the two frameworks. It allows you to upgrade incrementally while improving the
 speed of your hybrid apps and leveraging the latest of Angular in AngularJS apps early in the
 process of upgrading.</p>
-<h2 translation-origin="off" id="preparation">Preparation<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#preparation"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="preparation">Preparation<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#preparation"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Before discussing how you can use <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> to create hybrid apps, there are things that
 you can do to ease the upgrade process even before you begin upgrading. Because the steps are the
-same regardless of how you upgrade, refer to the <a href="guide/upgrade#preparation">Preparation</a> section of
+same regardless of how you upgrade, refer to the <a href="/guide/upgrade#preparation">Preparation</a> section of
 <a href="/guide/upgrade">Upgrading from AngularJS</a>.</p>
-<h2 translation-origin="off" id="upgrading-with-ngupgrade">Upgrading with <code>ngUpgrade</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#upgrading-with-ngupgrade"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="upgrading-with-ngupgrade">Upgrading with <code>ngUpgrade</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#upgrading-with-ngupgrade"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">With the <code>ngUpgrade</code> library in Angular you can upgrade an existing AngularJS app incrementally by
 building a hybrid app where you can run both frameworks side-by-side. In these hybrid apps you can
 mix and match AngularJS and Angular components and services and have them interoperate seamlessly.
 That means you don't have to do the upgrade work all at once as there is a natural coexistence
 between the two frameworks during the transition period.</p>
-<h3 translation-origin="off" id="how-ngupgrade-works">How <code>ngUpgrade</code> Works<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#how-ngupgrade-works"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="how-ngupgrade-works">How <code>ngUpgrade</code> Works<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#how-ngupgrade-works"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">Regardless of whether you choose <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> or <code><a href="/api/upgrade/static/UpgradeModule" class="code-anchor">UpgradeModule</a></code>, the basic principles of
 upgrading, the mental model behind hybrid apps, and how you use the <a href="/api/upgrade/static">upgrade/static</a> utilities remain the same. For more information, see the
-<a href="guide/upgrade#how-ngupgrade-works">How <code>ngUpgrade</code> Works</a> section of
+<a href="/guide/upgrade#how-ngupgrade-works">How <code>ngUpgrade</code> Works</a> section of
 <a href="/guide/upgrade">Upgrading from AngularJS</a>.</p>
 <div class="alert is-helpful">
-<p translation-origin="off">  The <a href="guide/upgrade#change-detection">Change Detection</a> section of
+<p translation-origin="off">  The <a href="/guide/upgrade#change-detection">Change Detection</a> section of
 <a href="/guide/upgrade">Upgrading from AngularJS</a> only applies to apps that use <code><a href="/api/upgrade/static/UpgradeModule" class="code-anchor">UpgradeModule</a></code>. Though
 you handle change detection differently with <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code>, which is the focus of this
-guide, reading the <a href="guide/upgrade#change-detection">Change Detection</a> section provides helpful
+guide, reading the <a href="/guide/upgrade#change-detection">Change Detection</a> section provides helpful
 context for what follows.</p>
 </div>
-<h4 translation-origin="off" id="change-detection-with-downgrademodule">Change Detection with <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#change-detection-with-downgrademodule"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="change-detection-with-downgrademodule">Change Detection with <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#change-detection-with-downgrademodule"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">As mentioned before, one of the key differences between <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> and <code><a href="/api/upgrade/static/UpgradeModule" class="code-anchor">UpgradeModule</a></code> has
 to do with change detection and how it is propagated between the two frameworks.</p>
 <p translation-origin="off">With <code><a href="/api/upgrade/static/UpgradeModule" class="code-anchor">UpgradeModule</a></code>, the two change detection systems are tied together more tightly. Whenever
@@ -861,12 +861,12 @@ you are responsible for notifying the interested parties by manually triggering 
 <p translation-origin="off">If you want a particular piece of code to trigger change detection in the AngularJS part of the app,
 you need to wrap it in
 <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">scope.$apply()</a>. Similarly, for
-triggering change detection in Angular you would use <a href="api/core/NgZone#run">ngZone.run()</a>.</p>
+triggering change detection in Angular you would use <a href="/api/core/NgZone#run">ngZone.run()</a>.</p>
 <p translation-origin="off">In many cases, a few extra change detection runs may not matter much. However, on larger or
 change-detection-heavy apps they can have a noticeable impact. By giving you more fine-grained
 control over the change detection propagation, <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> allows you to achieve better
 performance for your hybrid apps.</p>
-<h2 translation-origin="off" id="using-downgrademodule">Using <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#using-downgrademodule"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="using-downgrademodule">Using <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#using-downgrademodule"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">Both AngularJS and Angular have their own concept of modules to help organize an app into cohesive
 blocks of functionality.</p>
 <p translation-origin="off">Their details are quite different in architecture and implementation. In AngularJS, you create a
@@ -915,7 +915,7 @@ angular.module('mainAngularJsModule', [
   downgradedModule
 ]);
 </code-example>
-<h4 translation-origin="off" id="specifying-a-factory-for-the-angular-module">Specifying a factory for the Angular module<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#specifying-a-factory-for-the-angular-module"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="specifying-a-factory-for-the-angular-module">Specifying a factory for the Angular module<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#specifying-a-factory-for-the-angular-module"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">As mentioned earlier, <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> needs to know how to instantiate the Angular module. It
 needs a recipe. You define that recipe by providing a factory function that can create an instance
 of the Angular module. <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> accepts two types of factory functions:</p>
@@ -924,7 +924,7 @@ of the Angular module. <code><a href="/api/upgrade/static/downgradeModule" class
 <li><code>(extraProviders: <a href="/api/core/StaticProvider" class="code-anchor">StaticProvider</a>[]) => Promise&#x3C;<a href="/api/core/NgModuleRef" class="code-anchor">NgModuleRef</a>></code></li>
 </ol>
 <p translation-origin="off">When you pass an <code><a href="/api/core/NgModuleFactory" class="code-anchor">NgModuleFactory</a></code>, <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> uses it to instantiate the module using
-<a href="/api/platform-browser/platformBrowser">platformBrowser</a>'s <a href="api/core/PlatformRef#bootstrapModuleFactory">bootstrapModuleFactory()</a>, which is compatible with ahead-of-time (AOT) compilation. AOT compilation
+<a href="/api/platform-browser/platformBrowser">platformBrowser</a>'s <a href="/api/core/PlatformRef#bootstrapModuleFactory">bootstrapModuleFactory()</a>, which is compatible with ahead-of-time (AOT) compilation. AOT compilation
 helps make your apps load faster. For more about AOT and how to create an <code><a href="/api/core/NgModuleFactory" class="code-anchor">NgModuleFactory</a></code>, see the
 <a href="/guide/aot-compiler">Ahead-of-Time Compilation</a> guide.</p>
 <p translation-origin="off">Alternatively, you can pass a plain function, which is expected to return a promise resolving to an
@@ -946,7 +946,7 @@ const bootstrapFn = (extraProviders: <a href="/api/core/StaticProvider" class="c
 <p translation-origin="off">Using an <code><a href="/api/core/NgModuleFactory" class="code-anchor">NgModuleFactory</a></code> requires less boilerplate and is a good default option as it supports AOT
 out-of-the-box. Using a custom function requires slightly more code, but gives you greater
 flexibility.</p>
-<h4 translation-origin="off" id="instantiating-the-angular-module-on-demand">Instantiating the Angular module on-demand<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#instantiating-the-angular-module-on-demand"><i class="material-icons">link</i></a></h4>
+<h4 translation-origin="off" id="instantiating-the-angular-module-on-demand">Instantiating the Angular module on-demand<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#instantiating-the-angular-module-on-demand"><i class="material-icons">link</i></a></h4>
 <p translation-origin="off">Another key difference between <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> and <code><a href="/api/upgrade/static/UpgradeModule" class="code-anchor">UpgradeModule</a></code> is that the latter requires
 you to instantiate both the AngularJS and Angular modules up-front. This means that you have to pay
 the cost of instantiating the Angular part of the app, even if you don't use any Angular assets
@@ -965,7 +965,7 @@ authenticated.</li>
 <li>You use Angular for a feature that is not critical for the initial rendering of the app and you
 can afford a small delay in favor of better initial load performance.</li>
 </ul>
-<h3 translation-origin="off" id="bootstrapping-with-downgrademodule">Bootstrapping with <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#bootstrapping-with-downgrademodule"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="bootstrapping-with-downgrademodule">Bootstrapping with <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code><a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#bootstrapping-with-downgrademodule"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">As you might have guessed, you don't need to change anything in the way you bootstrap your existing
 AngularJS app. Unlike <code><a href="/api/upgrade/static/UpgradeModule" class="code-anchor">UpgradeModule</a></code>—which requires some extra steps—
 <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> is able to take care of bootstrapping the Angular module, as long as you provide
@@ -985,7 +985,7 @@ import { <a href="/api/core/NgModule" class="code-anchor">NgModule</a> } from '@
 import { <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a> } from '@angular/platform-browser';
 
 @<a href="/api/core/NgModule" class="code-anchor">NgModule</a>({
-  <a href="api/core/NgModule#imports" class="code-anchor">imports</a>: [
+  <a href="/api/core/NgModule#imports" class="code-anchor">imports</a>: [
     <a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a>
   ]
 })
@@ -995,10 +995,10 @@ export class MainAngularModule {
 }
 </code-example>
 <p translation-origin="off">This bare minimum <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> imports <code><a href="/api/platform-browser/BrowserModule" class="code-anchor">BrowserModule</a></code>, the module every Angular browser-based app
-must have. It also defines an empty <code>ngDoBootstrap()</code> method, to prevent the <a href="/api/core/Compiler">Compiler</a> from returning errors. This is necessary because the module will not have a <code><a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code>
+must have. It also defines an empty <code>ngDoBootstrap()</code> method, to prevent the <a href="/api/core/Compiler">Compiler</a> from returning errors. This is necessary because the module will not have a <code><a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code>
 declaration on its <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> decorator.</p>
 <div class="alert is-important">
-<p translation-origin="off">  You do not add a <code><a href="api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code> declaration to the <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> decorator since AngularJS owns the root
+<p translation-origin="off">  You do not add a <code><a href="/api/core/NgModule#bootstrap" class="code-anchor">bootstrap</a></code> declaration to the <code><a href="/api/core/NgModule" class="code-anchor">NgModule</a></code> decorator since AngularJS owns the root
 template of the app and <code>ngUpgrade</code> bootstraps the necessary components.</p>
 </div>
 <p translation-origin="off">You can now link the AngularJS and Angular modules together using <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code>.</p>
@@ -1017,17 +1017,17 @@ angular.module('mainAngularJsModule', [
 ]);
 </code-example>
 <p translation-origin="off">The existing AngularJS code works as before <em>and</em> you are ready to start adding Angular code.</p>
-<h3 translation-origin="off" id="using-components-and-injectables">Using Components and Injectables<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#using-components-and-injectables"><i class="material-icons">link</i></a></h3>
+<h3 translation-origin="off" id="using-components-and-injectables">Using Components and Injectables<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#using-components-and-injectables"><i class="material-icons">link</i></a></h3>
 <p translation-origin="off">The differences between <code><a href="/api/upgrade/static/downgradeModule" class="code-anchor">downgradeModule</a>()</code> and <code><a href="/api/upgrade/static/UpgradeModule" class="code-anchor">UpgradeModule</a></code> end here. The rest of the
 <code><a href="/api/upgrade/static" class="code-anchor">upgrade/static</a></code> APIs and concepts work in the exact same way for both types of hybrid apps.
 See <a href="/guide/upgrade">Upgrading from AngularJS</a> to learn about:</p>
 <ul>
-<li><a href="guide/upgrade#using-angular-components-from-angularjs-code">Using Angular Components from AngularJS Code</a>.</li>
-<li><a href="guide/upgrade#using-angularjs-component-directives-from-angular-code">Using AngularJS Component Directives from Angular Code</a>.</li>
-<li><a href="guide/upgrade#projecting-angularjs-content-into-angular-components">Projecting AngularJS Content into Angular Components</a>.</li>
-<li><a href="guide/upgrade#transcluding-angular-content-into-angularjs-component-directives">Transcluding Angular Content into AngularJS Component Directives</a>.</li>
-<li><a href="guide/upgrade#making-angularjs-dependencies-injectable-to-angular">Making AngularJS Dependencies Injectable to Angular</a>.</li>
-<li><a href="guide/upgrade#making-angular-dependencies-injectable-to-angularjs">Making Angular Dependencies Injectable to AngularJS</a>.</li>
+<li><a href="/guide/upgrade#using-angular-components-from-angularjs-code">Using Angular Components from AngularJS Code</a>.</li>
+<li><a href="/guide/upgrade#using-angularjs-component-directives-from-angular-code">Using AngularJS Component Directives from Angular Code</a>.</li>
+<li><a href="/guide/upgrade#projecting-angularjs-content-into-angular-components">Projecting AngularJS Content into Angular Components</a>.</li>
+<li><a href="/guide/upgrade#transcluding-angular-content-into-angularjs-component-directives">Transcluding Angular Content into AngularJS Component Directives</a>.</li>
+<li><a href="/guide/upgrade#making-angularjs-dependencies-injectable-to-angular">Making AngularJS Dependencies Injectable to Angular</a>.</li>
+<li><a href="/guide/upgrade#making-angular-dependencies-injectable-to-angularjs">Making Angular Dependencies Injectable to AngularJS</a>.</li>
 </ul>
 <div class="alert is-important">
 <p translation-origin="off">  While it is possible to downgrade injectables, downgraded injectables will not be available until
@@ -1037,7 +1037,7 @@ injectables are not used anywhere <em>outside</em> the part of the app that is c
 from Angular components, but it is <em>not OK</em> to use it in an AngularJS component that may be used
 independently of Angular.</p>
 </div>
-<h2 translation-origin="off" id="using-ahead-of-time-compilation-with-hybrid-apps">Using ahead-of-time compilation with hybrid apps<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#using-ahead-of-time-compilation-with-hybrid-apps"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="using-ahead-of-time-compilation-with-hybrid-apps">Using ahead-of-time compilation with hybrid apps<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#using-ahead-of-time-compilation-with-hybrid-apps"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">You can take advantage of ahead-of-time (AOT) compilation in hybrid apps just like in any other
 Angular app. The setup for a hybrid app is mostly the same as described in the
 <a href="/guide/aot-compiler">Ahead-of-Time Compilation</a> guide save for differences in <code>index.html</code> and
@@ -1057,7 +1057,7 @@ angular.module('mainAngularJsModule', [
 ]);
 </code-example>
 <p translation-origin="off">And that is all you need to do to get the full benefit of AOT for hybrid Angular apps.</p>
-<h2 translation-origin="off" id="conclusion">Conclusion<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/upgrade-performance#conclusion"><i class="material-icons">link</i></a></h2>
+<h2 translation-origin="off" id="conclusion">Conclusion<a title="Link to this heading" class="header-link" aria-hidden="true" href="/guide/upgrade-performance#conclusion"><i class="material-icons">link</i></a></h2>
 <p translation-origin="off">This page covered how to use the <a href="/api/upgrade/static">upgrade/static</a> package to incrementally
 upgrade existing AngularJS apps at your own pace and without impeding further development of the app
 for the duration of the upgrade process.</p>
