@@ -73,7 +73,7 @@
         "title": "AnimationBuilder",
         "path": "api/animations/AnimationBuilder",
         "docType": "class",
-        "stability": "experimental",
+        "stability": "stable",
         "securityRisk": false
       },
       {
@@ -89,7 +89,7 @@
         "title": "AnimationFactory",
         "path": "api/animations/AnimationFactory",
         "docType": "class",
-        "stability": "experimental",
+        "stability": "stable",
         "securityRisk": false
       },
       {
@@ -137,7 +137,7 @@
         "title": "AnimationPlayer",
         "path": "api/animations/AnimationPlayer",
         "docType": "interface",
-        "stability": "experimental",
+        "stability": "stable",
         "securityRisk": false
       },
       {
@@ -241,7 +241,7 @@
         "title": "NoopAnimationPlayer",
         "path": "api/animations/NoopAnimationPlayer",
         "docType": "class",
-        "stability": "experimental",
+        "stability": "stable",
         "securityRisk": false
       },
       {
@@ -381,7 +381,7 @@
         "name": "httpclientjsonpmodule",
         "title": "HttpClientJsonpModule",
         "path": "api/common/http/HttpClientJsonpModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -389,7 +389,7 @@
         "name": "httpclientmodule",
         "title": "HttpClientModule",
         "path": "api/common/http/HttpClientModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -397,7 +397,7 @@
         "name": "httpclientxsrfmodule",
         "title": "HttpClientXsrfModule",
         "path": "api/common/http/HttpClientXsrfModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -588,7 +588,7 @@
         "name": "httpclienttestingmodule",
         "title": "HttpClientTestingModule",
         "path": "api/common/http/testing/HttpClientTestingModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -643,7 +643,7 @@
         "name": "commonmodule",
         "title": "CommonModule",
         "path": "api/common/CommonModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -699,7 +699,7 @@
         "name": "deprecatedi18npipesmodule",
         "title": "DeprecatedI18NPipesModule",
         "path": "api/common/DeprecatedI18NPipesModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "deprecated",
         "securityRisk": false
       },
@@ -1378,7 +1378,7 @@
         "title": "APP_INITIALIZER",
         "path": "api/core/APP_INITIALIZER",
         "docType": "const",
-        "stability": "experimental",
+        "stability": "stable",
         "securityRisk": false
       },
       {
@@ -1386,14 +1386,14 @@
         "title": "ApplicationInitStatus",
         "path": "api/core/ApplicationInitStatus",
         "docType": "class",
-        "stability": "experimental",
+        "stability": "stable",
         "securityRisk": false
       },
       {
         "name": "applicationmodule",
         "title": "ApplicationModule",
         "path": "api/core/ApplicationModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       },
@@ -1638,6 +1638,14 @@
         "securityRisk": false
       },
       {
+        "name": "dobootstrap",
+        "title": "DoBootstrap",
+        "path": "api/core/DoBootstrap",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "docheck",
         "title": "DoCheck",
         "path": "api/core/DoCheck",
@@ -1831,18 +1839,18 @@
       },
       {
         "name": "injector",
-        "title": "Injector",
-        "path": "api/core/Injector",
-        "docType": "class",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "injector",
         "title": "INJECTOR",
         "path": "api/core/INJECTOR",
         "docType": "const",
         "stability": "experimental",
+        "securityRisk": false
+      },
+      {
+        "name": "injector",
+        "title": "Injector",
+        "path": "api/core/Injector",
+        "docType": "class",
+        "stability": "stable",
         "securityRisk": false
       },
       {
@@ -2549,14 +2557,6 @@
         "securityRisk": false
       },
       {
-        "name": "cleanupdocument",
-        "title": "cleanupDocument",
-        "path": "api/core/testing/cleanupDocument",
-        "docType": "function",
-        "stability": "experimental",
-        "securityRisk": false
-      },
-      {
         "name": "componentfixture",
         "title": "ComponentFixture",
         "path": "api/core/testing/ComponentFixture",
@@ -2589,14 +2589,6 @@
         "securityRisk": false
       },
       {
-        "name": "ensuredocument",
-        "title": "ensureDocument",
-        "path": "api/core/testing/ensureDocument",
-        "docType": "function",
-        "stability": "experimental",
-        "securityRisk": false
-      },
-      {
         "name": "fakeasync",
         "title": "fakeAsync",
         "path": "api/core/testing/fakeAsync",
@@ -2624,7 +2616,7 @@
         "name": "gettestbed",
         "title": "getTestBed",
         "path": "api/core/testing/getTestBed",
-        "docType": "function",
+        "docType": "const",
         "stability": "experimental",
         "securityRisk": false
       },
@@ -2664,7 +2656,15 @@
         "name": "testbed",
         "title": "TestBed",
         "path": "api/core/testing/TestBed",
-        "docType": "class",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "testbedstatic",
+        "title": "TestBedStatic",
+        "path": "api/core/testing/TestBedStatic",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2688,14 +2688,6 @@
         "name": "tick",
         "title": "tick",
         "path": "api/core/testing/tick",
-        "docType": "function",
-        "stability": "experimental",
-        "securityRisk": false
-      },
-      {
-        "name": "withbody",
-        "title": "withBody",
-        "path": "api/core/testing/withBody",
         "docType": "function",
         "stability": "experimental",
         "securityRisk": false
@@ -2974,7 +2966,7 @@
         "name": "formsmodule",
         "title": "FormsModule",
         "path": "api/forms/FormsModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3051,6 +3043,14 @@
         "securityRisk": false
       },
       {
+        "name": "ngformselectorwarning",
+        "title": "NgFormSelectorWarning",
+        "path": "api/forms/NgFormSelectorWarning",
+        "docType": "directive",
+        "stability": "deprecated",
+        "securityRisk": false
+      },
+      {
         "name": "ngmodel",
         "title": "NgModel",
         "path": "api/forms/NgModel",
@@ -3094,7 +3094,7 @@
         "name": "reactiveformsmodule",
         "title": "ReactiveFormsModule",
         "path": "api/forms/ReactiveFormsModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3229,7 +3229,7 @@
         "name": "httpmodule",
         "title": "HttpModule",
         "path": "api/http/HttpModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "deprecated",
         "securityRisk": false
       },
@@ -3261,7 +3261,7 @@
         "name": "jsonpmodule",
         "title": "JsonpModule",
         "path": "api/http/JsonpModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "deprecated",
         "securityRisk": false
       },
@@ -3419,7 +3419,7 @@
         "name": "browsermodule",
         "title": "BrowserModule",
         "path": "api/platform-browser/BrowserModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3427,7 +3427,7 @@
         "name": "browsertransferstatemodule",
         "title": "BrowserTransferStateModule",
         "path": "api/platform-browser/BrowserTransferStateModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       },
@@ -3642,7 +3642,7 @@
         "name": "browseranimationsmodule",
         "title": "BrowserAnimationsModule",
         "path": "api/platform-browser/animations/BrowserAnimationsModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       },
@@ -3650,7 +3650,7 @@
         "name": "noopanimationsmodule",
         "title": "NoopAnimationsModule",
         "path": "api/platform-browser/animations/NoopAnimationsModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       }
@@ -3665,7 +3665,7 @@
         "name": "browsertestingmodule",
         "title": "BrowserTestingModule",
         "path": "api/platform-browser/testing/BrowserTestingModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3719,7 +3719,7 @@
         "name": "browserdynamictestingmodule",
         "title": "BrowserDynamicTestingModule",
         "path": "api/platform-browser-dynamic/testing/BrowserDynamicTestingModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3806,7 +3806,7 @@
         "name": "servermodule",
         "title": "ServerModule",
         "path": "api/platform-server/ServerModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       },
@@ -3814,7 +3814,7 @@
         "name": "servertransferstatemodule",
         "title": "ServerTransferStateModule",
         "path": "api/platform-server/ServerTransferStateModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       }
@@ -3837,7 +3837,7 @@
         "name": "servertestingmodule",
         "title": "ServerTestingModule",
         "path": "api/platform-server/testing/ServerTestingModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       }
@@ -3980,7 +3980,7 @@
         "name": "workerappmodule",
         "title": "WorkerAppModule",
         "path": "api/platform-webworker/WorkerAppModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       }
@@ -4402,7 +4402,7 @@
         "name": "routermodule",
         "title": "RouterModule",
         "path": "api/router/RouterModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4545,7 +4545,7 @@
         "name": "routertestingmodule",
         "title": "RouterTestingModule",
         "path": "api/router/testing/RouterTestingModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4599,7 +4599,7 @@
         "name": "serviceworkermodule",
         "title": "ServiceWorkerModule",
         "path": "api/service-worker/ServiceWorkerModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       },
@@ -4616,6 +4616,22 @@
         "title": "SwUpdate",
         "path": "api/service-worker/SwUpdate",
         "docType": "class",
+        "stability": "experimental",
+        "securityRisk": false
+      },
+      {
+        "name": "updateactivatedevent",
+        "title": "UpdateActivatedEvent",
+        "path": "api/service-worker/UpdateActivatedEvent",
+        "docType": "interface",
+        "stability": "experimental",
+        "securityRisk": false
+      },
+      {
+        "name": "updateavailableevent",
+        "title": "UpdateAvailableEvent",
+        "path": "api/service-worker/UpdateAvailableEvent",
+        "docType": "interface",
         "stability": "experimental",
         "securityRisk": false
       }
@@ -4717,7 +4733,7 @@
         "name": "upgrademodule",
         "title": "UpgradeModule",
         "path": "api/upgrade/static/UpgradeModule",
-        "docType": "class",
+        "docType": "ngmodule",
         "stability": "experimental",
         "securityRisk": false
       }

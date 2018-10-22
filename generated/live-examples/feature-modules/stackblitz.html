@@ -15,15 +15,14 @@ export class AppComponent {
 Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { BrowserModule } from '@angular/platform-browser';
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 // import the feature module here so you can add it to the imports array below
 import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
-
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     CustomerDashboardModule // add the feature module here
   ],
   providers: [],
@@ -111,10 +110,11 @@ export const environment = {
 };
 
 /*
- * In development mode, to ignore zone related error stack frames such as
- * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can
- * import the following file, but please comment it out in production mode
- * because it will have performance impact when throw error
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
@@ -153,7 +153,7 @@ can be found in the LICENSE file at http://angular.io/license
  * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
  * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
  *
- * Learn more in https://angular.io/docs/ts/latest/guide/browser-support.html
+ * Learn more in https://angular.io/guide/browser-support
  */
 
 /***************************************************************************************************
@@ -176,23 +176,32 @@ can be found in the LICENSE file at http://angular.io/license
 // import 'core-js/es6/weak-map';
 // import 'core-js/es6/set';
 
+/**
+ * If the application will be indexed by Google Search, the following is required.
+ * Googlebot uses a renderer based on Chrome 41.
+ * https://developers.google.com/search/docs/guides/rendering
+ **/
+// import 'core-js/es6/array';
+
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /** IE10 and IE11 requires the following for the Reflect API. */
-// import 'core-js/es6/reflect';
-
-
-/** Evergreen browsers require these. **/
-// Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
+/**
+ * DO NOT REMOVE
+ * By default, Reflect polyfills are auto-included by the CLI and
+ * are required for JIT compilation.  StackBlitz examples are
+ * compiled using JIT.
+ */
+import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 
-
 /**
- * Required to support Web Animations `@angular/platform-browser/animations`.
- * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
  **/
-// import 'web-animations-js';
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 
 /**
  * By default, zone.js will patch all possible macroTask and DomEvents
@@ -351,14 +360,16 @@ Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
-  &quot;$schema&quot;: &quot;./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json&quot;,
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
   &quot;newProjectRoot&quot;: &quot;projects&quot;,
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;projectType&quot;: &quot;application&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
+      &quot;schematics&quot;: {},
       &quot;architect&quot;: {
         &quot;build&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
@@ -369,21 +380,11 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;src/tsconfig.app.json&quot;,
             &quot;assets&quot;: [
-              {
-                &quot;glob&quot;: &quot;favicon.ico&quot;,
-                &quot;input&quot;: &quot;src&quot;,
-                &quot;output&quot;: &quot;/&quot;
-              },
-              {
-                &quot;glob&quot;: &quot;**/*&quot;,
-                &quot;input&quot;: &quot;src/assets&quot;,
-                &quot;output&quot;: &quot;/assets&quot;
-              }
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
             ],
             &quot;styles&quot;: [
-              {
-                &quot;input&quot;: &quot;src/styles.css&quot;
-              }
+              &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: []
           },
@@ -403,7 +404,14 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
-              &quot;buildOptimizer&quot;: true
+              &quot;buildOptimizer&quot;: true,
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
+                  &quot;maximumError&quot;: &quot;5mb&quot;
+                }
+              ]
             }
           }
         },
@@ -432,22 +440,12 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;tsConfig&quot;: &quot;src/tsconfig.spec.json&quot;,
             &quot;karmaConfig&quot;: &quot;src/karma.conf.js&quot;,
             &quot;styles&quot;: [
-              {
-                &quot;input&quot;: &quot;styles.css&quot;
-              }
+              &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: [],
             &quot;assets&quot;: [
-              {
-                &quot;glob&quot;: &quot;favicon.ico&quot;,
-                &quot;input&quot;: &quot;src/&quot;,
-                &quot;output&quot;: &quot;/&quot;
-              },
-              {
-                &quot;glob&quot;: &quot;**/*&quot;,
-                &quot;input&quot;: &quot;src/assets&quot;,
-                &quot;output&quot;: &quot;/assets&quot;
-              }
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
             ]
           }
         },
@@ -468,12 +466,18 @@ can be found in the LICENSE file at http://angular.io/license
     &quot;angular.io-example-e2e&quot;: {
       &quot;root&quot;: &quot;e2e/&quot;,
       &quot;projectType&quot;: &quot;application&quot;,
+      &quot;prefix&quot;: &quot;&quot;,
       &quot;architect&quot;: {
         &quot;e2e&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
           &quot;options&quot;: {
             &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
             &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
           }
         },
         &quot;lint&quot;: {
@@ -487,8 +491,10 @@ can be found in the LICENSE file at http://angular.io/license
         }
       }
     }
-  }
-}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="feature modules"><input type="hidden" name="description" value="Angular Example - Feature Modules"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^6.0.0&quot;,&quot;@angular/common&quot;:&quot;^6.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^6.0.0&quot;,&quot;@angular/core&quot;:&quot;^6.0.0&quot;,&quot;@angular/forms&quot;:&quot;^6.0.0&quot;,&quot;@angular/http&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^6.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^6.0.0&quot;,&quot;@angular/router&quot;:&quot;^6.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.0.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;^0.8.24&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.3.1&quot;}"></form>
+  },
+  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+}
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="feature modules"><input type="hidden" name="description" value="Angular Example - Feature Modules"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/common&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/compiler&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/core&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/forms&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/http&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~7.0.0-rc.0&quot;,&quot;@angular/router&quot;:&quot;~7.0.0-rc.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.3.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.8.26&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.4.0&quot;}"></form>
     <script>
       var embedded = 'ctl=1';
       var isEmbedded = window.location.search.indexOf(embedded) > -1;
