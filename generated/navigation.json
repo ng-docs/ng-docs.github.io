@@ -316,8 +316,8 @@
             },
             {
               "url": "guide/singleton-services",
-              "title": "单例应用",
-              "tooltip": "创建单例应用"
+              "title": "单例服务",
+              "tooltip": "创建单例服务"
             },
             {
               "url": "guide/lazy-loading-ngmodules",
@@ -367,7 +367,7 @@
             },
             {
               "url": "guide/dependency-injection-navtree",
-              "title": "在组件树中导航",
+              "title": "浏览组件树",
               "tooltip": "使用注入器树来查找父组件。"
             }
           ]
@@ -476,7 +476,7 @@
             },
             {
               "url": "guide/upgrade-performance",
-              "title": "提高升级效率",
+              "title": "更关注性能的升级方式",
               "tooltip": "用更灵活的方式把 AngularJS 升级到 Angular"
             },
             {
@@ -853,12 +853,12 @@
     "prerelease": [
       "local"
     ],
-    "build": "sha.0f81ec01d6",
+    "build": "sha.716736eb42",
     "version": "7.0.1-local",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.0.1-local+sha.0f81ec01d6",
+    "full": "7.0.1-local+sha.716736eb42",
     "branch": "master",
-    "commitSHA": "0f81ec01d6e995cbbe738f9a9f98c5a62004799d"
+    "commitSHA": "716736eb423f274856367265d4cc1a84612c67c7"
   }
 }
