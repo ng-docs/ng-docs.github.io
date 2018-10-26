@@ -606,7 +606,7 @@
         },
         {
           "url": "guide/build",
-          "title": "构建与启动开发服务器",
+          "title": "构建与运行",
           "tooltip": "构建应用及为应用启动开发服务器。"
         },
         {
@@ -853,12 +853,12 @@
     "prerelease": [
       "local"
     ],
-    "build": "sha.845161839f",
+    "build": "sha.0845db64cb",
     "version": "7.0.1-local",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.0.1-local+sha.845161839f",
+    "full": "7.0.1-local+sha.0845db64cb",
     "branch": "master",
-    "commitSHA": "845161839f12f4bf1baee0e3ac5db6fa549bbb28"
+    "commitSHA": "0845db64cb8647913f19f9185bb9078299c3b4d5"
   }
 }
