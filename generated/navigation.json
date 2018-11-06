@@ -853,12 +853,12 @@
     "prerelease": [
       "local"
     ],
-    "build": "sha.1cf66d57f2",
+    "build": "sha.bc877d104",
     "version": "7.0.1-local",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.0.1-local+sha.1cf66d57f2",
+    "full": "7.0.1-local+sha.bc877d104",
     "branch": "master",
-    "commitSHA": "1cf66d57f293c07c94f2ceeac9200d68664f18fb"
+    "commitSHA": "bc877d104a8a6ee85d491c26358496e33b6a94ae"
   }
 }
