@@ -23,6 +23,10 @@
     {
       "url": "translations/cn/home",
       "title": "关于中文版"
+    },
+    {
+      "url": "https://ng-china.org/",
+      "title": "**** 2018 ngChina @ 杭州！****"
     }
   ],
   "TopBarNarrow": [
@@ -852,14 +856,14 @@
     "patch": 1,
     "prerelease": [
       "build",
-      "6"
+      "8"
     ],
-    "build": "sha.5123b0ac1",
-    "version": "7.0.1-build.6",
+    "build": "sha.ef3ad747f",
+    "version": "7.0.1-build.8",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.0.1-build.6+sha.5123b0ac1",
+    "full": "7.0.1-build.8+sha.ef3ad747f",
     "branch": "master",
-    "commitSHA": "5123b0ac1d28a5c9cfd8a8ff5a64875ed3f9f7b9"
+    "commitSHA": "ef3ad747f5c247e9a923e943ecced7456f90ead3"
   }
 }
