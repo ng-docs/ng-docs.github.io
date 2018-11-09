@@ -851,14 +851,15 @@
     "minor": 0,
     "patch": 1,
     "prerelease": [
-      "local"
+      "build",
+      "6"
     ],
-    "build": "sha.bc877d104",
-    "version": "7.0.1-local",
+    "build": "sha.5123b0ac1",
+    "version": "7.0.1-build.6",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.0.1-local+sha.bc877d104",
+    "full": "7.0.1-build.6+sha.5123b0ac1",
     "branch": "master",
-    "commitSHA": "bc877d104a8a6ee85d491c26358496e33b6a94ae"
+    "commitSHA": "5123b0ac1d28a5c9cfd8a8ff5a64875ed3f9f7b9"
   }
 }
