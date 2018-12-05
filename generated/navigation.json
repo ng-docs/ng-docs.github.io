@@ -26,7 +26,8 @@
     },
     {
       "url": "https://ng-china.org/",
-      "title": "**** 2018 ngChina @ 杭州！****"
+      "title": "**** 2018 ngChina @ 杭州！****",
+      "highlight": true
     }
   ],
   "TopBarNarrow": [
@@ -861,14 +862,14 @@
     "patch": 1,
     "prerelease": [
       "build",
-      "9"
+      "15"
     ],
-    "build": "sha.122c7959c",
-    "version": "7.0.1-build.9",
+    "build": "sha.f4e35179e",
+    "version": "7.0.1-build.15",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.0.1-build.9+sha.122c7959c",
+    "full": "7.0.1-build.15+sha.f4e35179e",
     "branch": "master",
-    "commitSHA": "122c7959ccb284c5422b7f396d3a5370469d5ce6"
+    "commitSHA": "f4e35179ea0d879f432939d294bc9b2e11c4689c"
   }
 }
