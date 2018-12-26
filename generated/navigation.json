@@ -862,14 +862,14 @@
     "patch": 1,
     "prerelease": [
       "build",
-      "42"
+      "44"
     ],
-    "build": "sha.a1b74f25f",
-    "version": "7.0.1-build.42",
+    "build": "sha.760570c8e",
+    "version": "7.0.1-build.44",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.0.1-build.42+sha.a1b74f25f",
+    "full": "7.0.1-build.44+sha.760570c8e",
     "branch": "master",
-    "commitSHA": "a1b74f25fae7c961ffc5441e02dff532dca6cc11"
+    "commitSHA": "760570c8efa97b7e95a3fa5c9e34c36a566a5177"
   }
 }
