@@ -1848,9 +1848,22 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             // The activate event is triggered when this version of the service worker is
             // first activated.
             this.scope.addEventListener('activate', (event) => {
-                // As above, it's safe to take over from existing clients immediately, since
-                // the new SW version will continue to serve the old application.
-                event.waitUntil(this.scope.clients.claim());
+                event.waitUntil((() => __awaiter$5(this, void 0, void 0, function* () {
+                    // As above, it's safe to take over from existing clients immediately, since the new SW
+                    // version will continue to serve the old application.
+                    yield this.scope.clients.claim();
+                    // Once all clients have been taken over, we can delete caches used by old versions of
+                    // `@angular/service-worker`, which are no longer needed. This can happen in the background.
+                    this.idle.schedule('activate: cleanup-old-sw-caches', () => __awaiter$5(this, void 0, void 0, function* () {
+                        try {
+                            yield this.cleanupOldSwCaches();
+                        }
+                        catch (err) {
+                            // Nothing to do - cleanup failed. Just log it.
+                            this.debugger.log(err, 'cleanupOldSwCaches @ activate: cleanup-old-sw-caches');
+                        }
+                    }));
+                }))());
                 // Rather than wait for the first fetch event, which may not arrive until
                 // the next time the application is loaded, the SW takes advantage of the
                 // activation event to schedule initialization. However, if this were run
@@ -2512,6 +2525,18 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                 }), Promise.resolve());
                 // Commit all the changes to the saved state.
                 yield this.sync();
+            });
+        }
+        /**
+         * Delete caches that were used by older versions of `@angular/service-worker` to avoid running
+         * into storage quota limitations imposed by browsers.
+         * (Since at this point the SW has claimed all clients, it is safe to remove those caches.)
+         */
+        cleanupOldSwCaches() {
+            return __awaiter$5(this, void 0, void 0, function* () {
+                const cacheNames = yield this.scope.caches.keys();
+                const oldSwCacheNames = cacheNames.filter(name => /^ngsw:(?:active|staged|manifest:.+)$/.test(name));
+                yield Promise.all(oldSwCacheNames.map(name => this.scope.caches.delete(name)));
             });
         }
         /**

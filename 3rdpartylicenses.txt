@@ -256,6 +256,8 @@ THE SOFTWARE.
 
 @angular/material/snack-bar
 
+@angular/material/tooltip
+
 tslib
 Apache-2.0
 Apache License
@@ -399,5 +401,3 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 @angular/material/tabs
 
 @angular/material/card
-
-@angular/material/expansion

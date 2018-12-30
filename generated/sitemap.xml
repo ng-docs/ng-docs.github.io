@@ -250,6 +250,9 @@
     <loc>https://angular.cn/guide/visual-studio-2015</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/workspace-config</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/tutorial</loc>
   </url>
   <url>
@@ -1126,16 +1129,16 @@
     <loc>https://angular.cn/api/core/InjectableProvider</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/inject</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/InjectFlags</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/core/INJECTOR</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/Injector</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/inject</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/InjectFlags</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/ReflectiveInjector</loc>
@@ -1837,6 +1840,9 @@
     <loc>https://angular.cn/api/platform-webworker</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/platform-webworker/bootstrapWorkerUi</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/platform-webworker/ClientMessageBroker</loc>
   </url>
   <url>
@@ -1883,9 +1889,6 @@
   </url>
   <url>
     <loc>https://angular.cn/api/platform-webworker/platformWorkerUi</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/bootstrapWorkerUi</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/platform-webworker-dynamic</loc>
@@ -2011,6 +2014,9 @@
     <loc>https://angular.cn/api/router/RouteReuseStrategy</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/router/Navigation</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/router/NavigationExtras</loc>
   </url>
   <url>
@@ -2098,10 +2104,10 @@
     <loc>https://angular.cn/api/router/testing</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/router/testing/SpyNgModuleFactoryLoader</loc>
+    <loc>https://angular.cn/api/router/testing/setupTestingRouter</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/router/testing/setupTestingRouter</loc>
+    <loc>https://angular.cn/api/router/testing/SpyNgModuleFactoryLoader</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/router/testing/RouterTestingModule</loc>
@@ -2110,13 +2116,13 @@
     <loc>https://angular.cn/api/router/upgrade</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/router/upgrade/RouterUpgradeInitializer</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/router/upgrade/locationSyncBootstrapListener</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/router/upgrade/setUpLocationSync</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/router/upgrade/RouterUpgradeInitializer</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/service-worker</loc>
