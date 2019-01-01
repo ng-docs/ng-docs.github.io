@@ -1,5 +1,5 @@
 {
   "id": "api",
   "title": "API 列表",
-  "contents": "\n\n\n\n<div class=\"content\">\n<h1 translation-result=\"\" class=\"no-toc\" id=\"api-列表\">API 列表<a title=\"Link to this heading\" class=\"header-link\" aria-hidden=\"true\" href=\"api#api-列表\"><i class=\"material-icons\">link</i></a></h1>\n<aio-api-list></aio-api-list>\n\n</div>\n\n<!-- links to this doc:\n - api/upgrade/static/UpgradeComponent\n - api/upgrade/static/UpgradeModule\n - api/upgrade/static/downgradeComponent\n - api/upgrade/static/downgradeInjectable\n - api/upgrade/static/downgradeModule\n - guide/dependency-injection-providers\n - guide/pipes\n-->\n<!-- links from this doc:\n - api#api-列表\n-->"
+  "contents": "\n\n\n\n<div class=\"content\">\n<h1 class=\"no-toc\" id=\"api-列表\">API 列表<a title=\"Link to this heading\" class=\"header-link\" aria-hidden=\"true\" href=\"api#api-列表\"><i class=\"material-icons\">link</i></a></h1>\n<aio-api-list></aio-api-list>\n\n</div>\n\n<!-- links to this doc:\n - api/upgrade/static/UpgradeComponent\n - api/upgrade/static/UpgradeModule\n - api/upgrade/static/downgradeComponent\n - api/upgrade/static/downgradeInjectable\n - api/upgrade/static/downgradeModule\n - guide/dependency-injection-providers\n - guide/pipes\n-->\n<!-- links from this doc:\n - api#api-列表\n-->"
 }
