@@ -847,14 +847,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "15"
+      "19"
     ],
-    "build": "sha.30a630b",
-    "version": "7.2.0-build.15",
+    "build": "sha.8957bbf",
+    "version": "7.2.0-build.19",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.15+sha.30a630b",
+    "full": "7.2.0-build.19+sha.8957bbf",
     "branch": "master",
-    "commitSHA": "30a630b3143676d89100ce887055e3173ac143b8"
+    "commitSHA": "8957bbf209ac6ddb39dac4d27e129402f4890b86"
   }
 }
