@@ -847,14 +847,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "22"
+      "23"
     ],
-    "build": "sha.5a4a749",
-    "version": "7.2.0-build.22",
+    "build": "sha.65c7a3e",
+    "version": "7.2.0-build.23",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.22+sha.5a4a749",
+    "full": "7.2.0-build.23+sha.65c7a3e",
     "branch": "master",
-    "commitSHA": "5a4a7496a40b45f20cc8655a764c7feecd082db2"
+    "commitSHA": "65c7a3ed9960c195d5716271801128b94101737a"
   }
 }
