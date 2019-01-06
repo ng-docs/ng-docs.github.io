@@ -847,13 +847,13 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "35"
+      "39"
     ],
     "build": "sha.23b4d5a",
-    "version": "7.2.0-build.35",
+    "version": "7.2.0-build.39",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.35+sha.23b4d5a",
+    "full": "7.2.0-build.39+sha.23b4d5a",
     "branch": "master",
     "commitSHA": "23b4d5acd0106612b251f277e7944313b264a9c3"
   }
