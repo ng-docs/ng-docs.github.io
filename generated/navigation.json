@@ -847,14 +847,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "42"
+      "44"
     ],
-    "build": "sha.73312fd",
-    "version": "7.2.0-build.42",
+    "build": "sha.dd5e3f9",
+    "version": "7.2.0-build.44",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.42+sha.73312fd",
+    "full": "7.2.0-build.44+sha.dd5e3f9",
     "branch": "master",
-    "commitSHA": "73312fdafc24fa140e0eb9e2a4847c692cb0dfe3"
+    "commitSHA": "dd5e3f9ff9d72d2919cbc6974a2d39121ff3f27f"
   }
 }
