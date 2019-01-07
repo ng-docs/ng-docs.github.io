@@ -847,14 +847,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "46"
+      "47"
     ],
-    "build": "sha.152508e",
-    "version": "7.2.0-build.46",
+    "build": "sha.2a85eaa",
+    "version": "7.2.0-build.47",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.46+sha.152508e",
+    "full": "7.2.0-build.47+sha.2a85eaa",
     "branch": "master",
-    "commitSHA": "152508e95715852526cd132d81582458e006b6eb"
+    "commitSHA": "2a85eaae80f539f73a7134851577afba826e2334"
   }
 }
