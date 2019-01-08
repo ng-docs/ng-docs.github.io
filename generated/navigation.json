@@ -23,11 +23,6 @@
     {
       "url": "translations/cn/home",
       "title": "关于中文版"
-    },
-    {
-      "url": "https://ng-china.org/",
-      "title": "**** 2018 ngChina @ 杭州！****",
-      "highlight": true
     }
   ],
   "TopBarNarrow": [
@@ -721,6 +716,11 @@
       "url": "https://ng.ant.design/"
     },
     {
+      "title": "ng-zorro mobile 组件库",
+      "tooltip": "Ant Design Mobile 的 Angular 实现，服务于无线产品。",
+      "url": "https://ng.mobile.ant.design/"
+    },
+    {
       "url": "guide/change-log",
       "title": "Change Log",
       "tooltip": "Angular Documentation Change Log",
@@ -847,14 +847,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "47"
+      "51"
     ],
-    "build": "sha.2a85eaa",
-    "version": "7.2.0-build.47",
+    "build": "sha.96989d2",
+    "version": "7.2.0-build.51",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.47+sha.2a85eaa",
+    "full": "7.2.0-build.51+sha.96989d2",
     "branch": "master",
-    "commitSHA": "2a85eaae80f539f73a7134851577afba826e2334"
+    "commitSHA": "96989d24cada9510e1ae0482242d6115f4369777"
   }
 }
