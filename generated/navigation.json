@@ -847,14 +847,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "51"
+      "52"
     ],
-    "build": "sha.96989d2",
-    "version": "7.2.0-build.51",
+    "build": "sha.b069d9a",
+    "version": "7.2.0-build.52",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.51+sha.96989d2",
+    "full": "7.2.0-build.52+sha.b069d9a",
     "branch": "master",
-    "commitSHA": "96989d24cada9510e1ae0482242d6115f4369777"
+    "commitSHA": "b069d9a82ba28bbaec39da7c448b0265d97463b1"
   }
 }
