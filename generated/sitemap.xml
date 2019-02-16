@@ -55,6 +55,9 @@
     <loc>https://angular.cn/guide/component-styles</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/creating-libraries</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/custom-elements</loc>
   </url>
   <url>
@@ -125,6 +128,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/lazy-loading-ngmodules</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/libraries</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/lifecycle-hooks</loc>
@@ -245,6 +251,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/user-input</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/using-libraries</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/visual-studio-2015</loc>
@@ -1012,10 +1021,34 @@
     <loc>https://angular.cn/api/core/SecurityContext</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/ANALYZE_FOR_ENTRY_COMPONENTS</loc>
+    <loc>https://angular.cn/api/core/Attribute</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/Attribute</loc>
+    <loc>https://angular.cn/api/core/AfterContentChecked</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/AfterContentInit</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/AfterViewChecked</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/AfterViewInit</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/DoCheck</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/OnChanges</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/OnDestroy</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/OnInit</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/ANALYZE_FOR_ENTRY_COMPONENTS</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/ContentChild</loc>
@@ -1054,43 +1087,19 @@
     <loc>https://angular.cn/api/core/Pipe</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/AfterContentChecked</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/AfterContentInit</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/AfterViewChecked</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/AfterViewInit</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/DoCheck</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/OnChanges</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/OnDestroy</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/OnInit</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/CUSTOM_ELEMENTS_SCHEMA</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/core/DoBootstrap</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/ModuleWithProviders</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/NO_ERRORS_SCHEMA</loc>
+    <loc>https://angular.cn/api/core/NgModule</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/NgModule</loc>
+    <loc>https://angular.cn/api/core/CUSTOM_ELEMENTS_SCHEMA</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/NO_ERRORS_SCHEMA</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/SchemaMetadata</loc>
@@ -1102,16 +1111,19 @@
     <loc>https://angular.cn/api/core/Version</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/InjectableType</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/InjectorType</loc>
+    <loc>https://angular.cn/api/core/InjectFlags</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/defineInjectable</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/defineInjector</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/InjectableType</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/InjectorType</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/forwardRef</loc>
@@ -1136,9 +1148,6 @@
   </url>
   <url>
     <loc>https://angular.cn/api/core/inject</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/InjectFlags</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/ReflectiveInjector</loc>
@@ -1166,9 +1175,6 @@
   </url>
   <url>
     <loc>https://angular.cn/api/core/ClassProvider</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/createInjector</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/ResolvedReflectiveFactory</loc>
@@ -1483,7 +1489,13 @@
     <loc>https://angular.cn/api/forms/NgModelGroup</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/forms/NumberValueAccessor</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/forms/RadioControlValueAccessor</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/forms/RangeValueAccessor</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/forms/FormControlDirective</loc>

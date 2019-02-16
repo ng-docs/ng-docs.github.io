@@ -17,7 +17,7 @@ export class AppComponent {}
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/app.module.3.ts]" value="/* Angular Imports */
@@ -29,8 +29,8 @@ import { AppComponent }       from './app.component.3';
 /*
 import { AppComponent }       from './app.component';
 */
-import { HighlightDirective } from './highlight.directive';
-import { TitleComponent }     from './title.component';
+import { HighlightDirective } from './highlight.directive.1';
+import { TitleComponent }     from './title.component.1';
 import { UserService }        from './user.service';
 
 /* Routing Module */
@@ -52,7 +52,7 @@ export class AppModule { }
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/app-routing.module.3.ts]" value="import { NgModule } from '@angular/core';
@@ -77,55 +77,7 @@ export class AppRoutingModule {}
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/highlight.directive.ts]" value="import { Directive, ElementRef } from '@angular/core';
-
-// Highlight the host element in gold
-@Directive({ selector: '[highlight]' })
-export class HighlightDirective {
-  constructor(el: ElementRef) {
-    el.nativeElement.style.backgroundColor = 'gold';
-    console.log(`* AppRoot highlight called for ${el.nativeElement.tagName}`);
-  }
-}
-
-
-/*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/title.component.html]" value="<h1 highlight>{{title}}</h1>
-<p *ngIf=&quot;user&quot;>
-  <i>Welcome, {{user}}</i>
-<p>
-
-
-
-<!-- 
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/title.component.ts]" value="import { Component } from '@angular/core';
-import { UserService } from './user.service';
-
-@Component({
-  selector: 'app-title',
-  templateUrl: './title.component.html'
-})
-export class TitleComponent {
-  title = 'Angular Modules';
-  user = '';
-
-  constructor(userService: UserService) {
-    this.user = userService.userName;
-  }
-}
-
-
-/*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/user.service.ts]" value="import { Injectable } from '@angular/core';
@@ -138,7 +90,7 @@ export class UserService {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/contact/contact.component.css]" value=".ng-valid[required] {
@@ -175,7 +127,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/contact/contact.component.html]" value="<h2>Contact of {{userName}}</h2>
@@ -212,7 +164,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 <!-- 
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->"><input type="hidden" name="files[src/app/contact/contact.service.ts]" value="import { Injectable, OnDestroy } from '@angular/core';
@@ -250,22 +202,7 @@ export class ContactService implements OnDestroy {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/contact/awesome.pipe.ts]" value="import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({ name: 'awesome' })
-/** Precede the input string with the word &quot;Awesome &quot; */
-export class AwesomePipe implements PipeTransform {
-  transform(phrase: string) {
-    return phrase ? 'Awesome ' + phrase : '';
-  }
-}
-
-
-/*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/contact/contact.component.3.ts]" value="import { Component, OnInit }      from '@angular/core';
@@ -323,7 +260,7 @@ export class ContactComponent implements OnInit {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/contact/contact.module.3.ts]" value="import { NgModule }           from '@angular/core';
@@ -360,7 +297,7 @@ export class ContactModule { }
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/contact/contact-routing.module.3.ts]" value="import { NgModule }            from '@angular/core';
@@ -380,28 +317,7 @@ export class ContactRoutingModule {}
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/contact/contact-highlight.directive.ts]" value="// Same directive name and selector as
-// HighlightDirective in parent AppModule
-// It selects for both input boxes and  'highlight' attr
-// and it highlights in blue instead of gold
-
-import { Directive, ElementRef } from '@angular/core';
-
-// Highlight the host element or any InputElement in blue
-@Directive({ selector: '[highlight], input' })
-export class ContactHighlightDirective {
-  constructor(el: ElementRef) {
-    el.nativeElement.style.backgroundColor = 'powderblue';
-    console.log(`* Contact highlight called for ${el.nativeElement.tagName}`);
-  }
-}
-
-
-/*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/crisis/crisis-detail.component.ts]" value="import { Component, OnInit } from '@angular/core';
@@ -426,7 +342,7 @@ export class CrisisDetailComponent implements OnInit {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/crisis/crisis-list.component.ts]" value="import { Component } from '@angular/core';
@@ -453,7 +369,7 @@ export class CrisisListComponent {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/crisis/crisis-routing.module.ts]" value="import { NgModule }            from '@angular/core';
@@ -477,7 +393,7 @@ export class CrisisRoutingModule {}
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/crisis/crisis.module.ts]" value="import { NgModule }      from '@angular/core';
@@ -497,7 +413,7 @@ export class CrisisModule {}
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/crisis/crisis.service.ts]" value="import { Injectable, OnDestroy } from '@angular/core';
@@ -536,7 +452,7 @@ export class CrisisService implements OnDestroy {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-detail.component.ts]" value="import { Component, OnInit } from '@angular/core';
@@ -573,7 +489,7 @@ export class HeroDetailComponent implements OnInit {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-list.component.ts]" value="import { Component }  from '@angular/core';
@@ -599,7 +515,7 @@ export class HeroListComponent {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero.service.ts]" value="import { Injectable, OnDestroy } from '@angular/core';
@@ -641,7 +557,7 @@ export class HeroService implements OnDestroy {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero.component.3.ts]" value="import { Component }   from '@angular/core';
@@ -665,7 +581,7 @@ export class HeroComponent {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero.module.3.ts]" value="import { NgModule }            from '@angular/core';
@@ -690,7 +606,7 @@ export class HeroModule { }
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-routing.module.3.ts]" value="import { NgModule }     from '@angular/core';
@@ -719,26 +635,7 @@ export class HeroRoutingModule {}
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/hero/highlight.directive.ts]" value="import { Directive, ElementRef } from '@angular/core';
-
-// Same directive name and selector as
-// HighlightDirective in parent AppRootModule
-// It selects for both input boxes and  'highlight' attr
-// and it highlights in beige instead of yellow
-@Directive({ selector: '[highlight]' })
-export class HighlightDirective {
-    constructor(el: ElementRef) {
-       el.nativeElement.style.backgroundColor = 'beige';
-       console.log(`* Hero highlight called for ${el.nativeElement.tagName}`);
-    }
-}
-
-
-/*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
@@ -755,7 +652,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Master Styles */
@@ -826,7 +723,7 @@ nav a.active {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
@@ -845,7 +742,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 <!-- 
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
@@ -854,7 +751,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
@@ -876,7 +773,7 @@ export const environment = {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[angular.json]" value="{
@@ -1105,7 +1002,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="NgModule"><input type="hidden" name="description" value="Angular Example - NgModule v.3"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^7.0.0&quot;,&quot;@angular/common&quot;:&quot;^7.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^7.0.0&quot;,&quot;@angular/core&quot;:&quot;^7.0.0&quot;,&quot;@angular/forms&quot;:&quot;^7.0.0&quot;,&quot;@angular/http&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^7.0.0&quot;,&quot;@angular/router&quot;:&quot;^7.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.3.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.8.26&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.4.0&quot;}"></form>

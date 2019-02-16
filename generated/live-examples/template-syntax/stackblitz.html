@@ -66,7 +66,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   currentHero: Hero;
 
-  deleteHero(hero: Hero) {
+  deleteHero(hero?: Hero) {
     this.alert(`Delete ${hero ? hero.name : 'the hero'}.`);
   }
 
@@ -103,18 +103,18 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   get nullHero(): Hero { return null; }
 
-  onClickMe(event: KeyboardEvent) {
+  onClickMe(event?: KeyboardEvent) {
     let evtMsg = event ? ' Event target class is ' + (<HTMLElement>event.target).className  : '';
     this.alert('Click me.' + evtMsg);
   }
 
-  onSave(event: KeyboardEvent) {
+  onSave(event?: KeyboardEvent) {
     let evtMsg = event ? ' Event target is ' + (<HTMLElement>event.target).textContent : '';
     this.alert('Saved.' + evtMsg);
     if (event) { event.stopPropagation(); }
   }
 
-  onSubmit() {/* referenced but not used */}
+  onSubmit(data: any) {/* referenced but not used */}
 
   product = {
     name: 'frimfram',
@@ -175,7 +175,7 @@ function trackChanges(views: QueryList<ElementRef>, changed: () => void) {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/app.module.1.ts]" value="import { NgModule } from '@angular/core';
@@ -195,7 +195,7 @@ export class AppModule { }
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule }       from '@angular/core';
@@ -230,7 +230,7 @@ export class AppModule { }
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/click.directive.ts]" value="/* tslint:disable use-output-property-decorator directive-class-suffix */
@@ -270,7 +270,7 @@ export class ClickDirective2 {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-detail.component.ts]" value="/* tslint:disable use-input-property-decorator use-output-property-decorator */
@@ -341,7 +341,7 @@ export class BigHeroDetailComponent extends HeroDetailComponent {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-form.component.ts]" value="import { Component, Input, ViewChild } from '@angular/core';
@@ -377,7 +377,7 @@ export class HeroFormComponent {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-switch.components.ts]" value="import { Component, Input } from '@angular/core';
@@ -425,7 +425,7 @@ export const heroSwitchComponents =
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/hero.ts]" value="export class Hero {
@@ -465,7 +465,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/sizer.component.ts]" value="import { Component, EventEmitter, Input, Output } from '@angular/core';
@@ -494,7 +494,7 @@ export class SizerComponent {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
@@ -503,7 +503,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
@@ -525,7 +525,7 @@ export const environment = {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
@@ -542,7 +542,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/polyfills.ts]" value="/**
@@ -636,7 +636,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.css]" value="a.to-toc { margin: 30px 0; }
@@ -659,7 +659,7 @@ little-hero {color:blue; font-size: smaller; background-color: Turquoise }
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Master Styles */
@@ -730,7 +730,7 @@ nav a.active {
 
 
 /*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.html]" value="<a id=&quot;toc&quot;></a>
@@ -1424,7 +1424,7 @@ The null hero's name is {{nullHero &amp;&amp; nullHero.name}}
 
 
 <!-- 
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->"><input type="hidden" name="files[src/app/hero-form.component.html]" value="<div id=&quot;heroForm&quot;>
@@ -1443,7 +1443,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 <!-- 
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
@@ -1463,7 +1463,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 
 <!-- 
-Copyright 2017-2018 Google Inc. All Rights Reserved.
+Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{

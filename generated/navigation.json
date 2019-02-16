@@ -485,6 +485,27 @@
               "tooltip": "学习如何把 AngularJS 的概念映射到 Angular 中。"
             }
           ]
+        },
+        {
+          "title": "Angular Libraries",
+          "tooltip": "Extending Angular with shared libraries.",
+          "children": [
+            {
+              "url": "guide/libraries",
+              "title": "Libraries Overview",
+              "tooltip": "Understand how and when to use or create libraries."
+            },
+            {
+              "url": "guide/using-libraries",
+              "title": "Using Published Libraries",
+              "tooltip": "Integrate published libraries into an app."
+            },
+            {
+              "url": "guide/creating-libraries",
+              "title": "Creating Libraries",
+              "tooltip": "Extend Angular by creating, publishing, and using your own libraries."
+            }
+          ]
         }
       ]
     },
@@ -492,92 +513,6 @@
       "title": "环境搭建与部署",
       "tooltip": "关于环境搭建、构建、测试、部署环境与工具的信息。",
       "children": [
-        {
-          "title": "CLI 命令参考手册",
-          "tooltip": "CLI 简介与命令列表",
-          "children": [
-            {
-              "url": "cli",
-              "title": "CLI 简介",
-              "tooltip": "CLI 简介"
-            },
-            {
-              "url": "cli/add",
-              "title": "add",
-              "tooltip": "为项目添加外部库支持。"
-            },
-            {
-              "url": "cli/build",
-              "title": "build    ( b )",
-              "tooltip": "把 Angular 应用编译到指定路径下一个名为 dist/ 的输出目录下。必须在工作空间目录下执行它。"
-            },
-            {
-              "url": "cli/config",
-              "title": "config",
-              "tooltip": "接收或设置 Angular CLI 参数"
-            },
-            {
-              "url": "cli/doc",
-              "title": "doc    ( d )",
-              "tooltip": "在浏览器中打开 Angular 官方网站（angular.io），并搜索指定的关键字。"
-            },
-            {
-              "url": "cli/e2e",
-              "title": "e2e    ( e )",
-              "tooltip": "构建并启动 Angular 应用，然后使用 Protractor 运行端到端测试。"
-            },
-            {
-              "url": "cli/generate",
-              "title": "generate    ( g )",
-              "tooltip": "根据原理图（schematic）生成或修改文件。"
-            },
-            {
-              "url": "cli/help",
-              "title": "help",
-              "tooltip": "列出可用的命令及其简写形式。"
-            },
-            {
-              "url": "cli/lint",
-              "title": "lint    ( l )",
-              "tooltip": "对指定项目目录下的 Angular 应用代码运行风格检查工具。"
-            },
-            {
-              "url": "cli/new",
-              "title": "new    ( n )",
-              "tooltip": "创建新的工作空间，并初始化 Angular 项目。"
-            },
-            {
-              "url": "cli/run",
-              "title": "run",
-              "tooltip": "执行项目中定义的定制化目标。"
-            },
-            {
-              "url": "cli/serve",
-              "title": "serve    ( s )",
-              "tooltip": "构建并运行应用，每当文件变化时都重新构建。"
-            },
-            {
-              "url": "cli/test",
-              "title": "test    ( t )",
-              "tooltip": "在项目中运行单元测试。"
-            },
-            {
-              "url": "cli/update",
-              "title": "update",
-              "tooltip": "升级你的应用及其依赖，参见 https://update.angular.io/。"
-            },
-            {
-              "url": "cli/version",
-              "title": "version    ( v )",
-              "tooltip": "输出 Angular CLI 的版本。"
-            },
-            {
-              "url": "cli/xi18n",
-              "title": "xi18n",
-              "tooltip": "从源码中提取出 i18n 信息。"
-            }
-          ]
-        },
         {
           "url": "guide/setup",
           "title": "搭建本地开发环境",
@@ -682,6 +617,77 @@
           "url": "guide/glossary",
           "title": "词汇表",
           "tooltip": "Angular 中最重要的词汇的简要定义。"
+        }
+      ]
+    },
+    {
+      "title": "CLI 命令",
+      "tooltip": "Angular CLI 命令参考手册。",
+      "children": [
+        {
+          "title": "概览",
+          "tooltip": "CLI 工具介绍、命令、语法",
+          "url": "cli"
+        },
+        {
+          "url": "cli/add",
+          "title": "ng add"
+        },
+        {
+          "url": "cli/build",
+          "title": "ng build"
+        },
+        {
+          "url": "cli/config",
+          "title": "ng config"
+        },
+        {
+          "url": "cli/doc",
+          "title": "ng doc"
+        },
+        {
+          "url": "cli/e2e",
+          "title": "ng e2e"
+        },
+        {
+          "url": "cli/generate",
+          "title": "ng generate"
+        },
+        {
+          "url": "cli/help",
+          "title": "ng help"
+        },
+        {
+          "url": "cli/lint",
+          "title": "ng lint"
+        },
+        {
+          "url": "cli/new",
+          "title": "ng new"
+        },
+        {
+          "url": "cli/run",
+          "title": "ng run"
+        },
+        {
+          "url": "cli/serve",
+          "title": "ng serve"
+        },
+        {
+          "url": "cli/test",
+          "title": "ng test"
+        },
+        {
+          "url": "cli/update",
+          "title": "ng update"
+        },
+        {
+          "url": "cli/version",
+          "title": "ng version"
+        },
+        {
+          "url": "cli/xi18n",
+          "title": "ng xi18n"
         }
       ]
     },
@@ -818,6 +824,10 @@
         {
           "title": "日本語版",
           "url": "https://angular.jp/"
+        },
+        {
+          "title": "한국어",
+          "url": "https://angular.kr/"
         }
       ]
     }
@@ -841,20 +851,20 @@
     }
   ],
   "__versionInfo": {
-    "raw": "7.2.0-rc.0",
-    "major": 7,
-    "minor": 2,
+    "raw": "8.0.0-beta.4",
+    "major": 8,
+    "minor": 0,
     "patch": 0,
     "prerelease": [
       "build",
-      "84"
+      "87"
     ],
-    "build": "sha.a4fc5f8",
-    "version": "7.2.0-build.84",
+    "build": "sha.73d7c58",
+    "version": "8.0.0-build.87",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "7.2.0-build.84+sha.a4fc5f8",
+    "full": "8.0.0-build.87+sha.73d7c58",
     "branch": "master",
-    "commitSHA": "a4fc5f8e37262ef4f4a029a3391621db151656f7"
+    "commitSHA": "73d7c58d5ea404f24d11b570fcfe84e314cff6eb"
   }
 }

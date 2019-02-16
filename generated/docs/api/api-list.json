@@ -1550,14 +1550,6 @@
         "securityRisk": false
       },
       {
-        "name": "createinjector",
-        "title": "createInjector",
-        "path": "api/core/createInjector",
-        "docType": "function",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
         "name": "createplatform",
         "title": "createPlatform",
         "path": "api/core/createPlatform",
@@ -1783,17 +1775,17 @@
       },
       {
         "name": "inject",
-        "title": "Inject",
-        "path": "api/core/Inject",
-        "docType": "decorator",
+        "title": "inject",
+        "path": "api/core/inject",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
       {
         "name": "inject",
-        "title": "inject",
-        "path": "api/core/inject",
-        "docType": "function",
+        "title": "Inject",
+        "path": "api/core/Inject",
+        "docType": "decorator",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3075,6 +3067,14 @@
         "securityRisk": false
       },
       {
+        "name": "numbervalueaccessor",
+        "title": "NumberValueAccessor",
+        "path": "api/forms/NumberValueAccessor",
+        "docType": "directive",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "patternvalidator",
         "title": "PatternValidator",
         "path": "api/forms/PatternValidator",
@@ -3086,6 +3086,14 @@
         "name": "radiocontrolvalueaccessor",
         "title": "RadioControlValueAccessor",
         "path": "api/forms/RadioControlValueAccessor",
+        "docType": "directive",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "rangevalueaccessor",
+        "title": "RangeValueAccessor",
+        "path": "api/forms/RangeValueAccessor",
         "docType": "directive",
         "stability": "stable",
         "securityRisk": false
