@@ -487,23 +487,23 @@
           ]
         },
         {
-          "title": "Angular Libraries",
-          "tooltip": "Extending Angular with shared libraries.",
+          "title": "Angular 库开发",
+          "tooltip": "使用共享库扩展 Angular",
           "children": [
             {
               "url": "guide/libraries",
-              "title": "Libraries Overview",
-              "tooltip": "Understand how and when to use or create libraries."
+              "title": "库概览",
+              "tooltip": "理解何时以及如何使用和创建库。"
             },
             {
               "url": "guide/using-libraries",
-              "title": "Using Published Libraries",
-              "tooltip": "Integrate published libraries into an app."
+              "title": "使用已发布的库",
+              "tooltip": "把已发布的库集成进你的应用中。"
             },
             {
               "url": "guide/creating-libraries",
-              "title": "Creating Libraries",
-              "tooltip": "Extend Angular by creating, publishing, and using your own libraries."
+              "title": "创建库",
+              "tooltip": "通过创建、发布和使用你自己的库来扩展 Angular"
             }
           ]
         }
@@ -522,12 +522,12 @@
         {
           "url": "guide/file-structure",
           "title": "项目文件结构",
-          "tooltip": "Angular 工作空间在文件系统中是怎样的。"
+          "tooltip": "Angular 工作区在文件系统中是怎样的。"
         },
         {
           "url": "guide/workspace-config",
-          "title": "Workspace Configuration",
-          "tooltip": "The \"angular.json\" file contains workspace and project configuration defaults for Angular CLI commands."
+          "title": "工作区配置",
+          "tooltip": "\"angular.json\" 包含供 CLI 命令使用的工作区和项目默认配置。"
         },
         {
           "url": "guide/npm-packages",
@@ -857,14 +857,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "93"
+      "95"
     ],
-    "build": "sha.2b4662e",
-    "version": "8.0.0-build.93",
+    "build": "sha.43aadf1",
+    "version": "8.0.0-build.95",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.0.0-build.93+sha.2b4662e",
+    "full": "8.0.0-build.95+sha.43aadf1",
     "branch": "master",
-    "commitSHA": "2b4662edebf0900dcb0d8d7d9a3555a008b0d685"
+    "commitSHA": "43aadf1873e9467cb37f7d8f091da83c03c52854"
   }
 }
