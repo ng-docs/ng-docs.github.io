@@ -857,14 +857,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "92"
+      "93"
     ],
-    "build": "sha.bed7a6c",
-    "version": "8.0.0-build.92",
+    "build": "sha.2b4662e",
+    "version": "8.0.0-build.93",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.0.0-build.92+sha.bed7a6c",
+    "full": "8.0.0-build.93+sha.2b4662e",
     "branch": "master",
-    "commitSHA": "bed7a6ca919a77b7cddf6d2beffa436ee29d4653"
+    "commitSHA": "2b4662edebf0900dcb0d8d7d9a3555a008b0d685"
   }
 }
