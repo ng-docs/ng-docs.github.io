@@ -23,6 +23,10 @@
     {
       "url": "translations/cn/home",
       "title": "关于中文版"
+    },
+    {
+      "url": "https://flutter-io.cn/",
+      "title": "友站：Flutter CN"
     }
   ],
   "TopBarNarrow": [
@@ -857,14 +861,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "95"
+      "96"
     ],
-    "build": "sha.43aadf1",
-    "version": "8.0.0-build.95",
+    "build": "sha.50be918",
+    "version": "8.0.0-build.96",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.0.0-build.95+sha.43aadf1",
+    "full": "8.0.0-build.96+sha.50be918",
     "branch": "master",
-    "commitSHA": "43aadf1873e9467cb37f7d8f091da83c03c52854"
+    "commitSHA": "50be918e997cfc33e75144665fab3a8892fa9eff"
   }
 }
