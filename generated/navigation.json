@@ -862,14 +862,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "98"
+      "99"
     ],
-    "build": "sha.9e773bd",
-    "version": "8.0.0-build.98",
+    "build": "sha.c8a99a2",
+    "version": "8.0.0-build.99",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.0.0-build.98+sha.9e773bd",
+    "full": "8.0.0-build.99+sha.c8a99a2",
     "branch": "master",
-    "commitSHA": "9e773bd0a771474fa1934172bd73ed21bf68eb64"
+    "commitSHA": "c8a99a2b7267feeb2103de0ae0c5d7a1611edee2"
   }
 }
