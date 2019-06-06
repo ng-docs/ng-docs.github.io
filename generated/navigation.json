@@ -952,14 +952,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "111"
+      "112"
     ],
-    "build": "sha.3e0ef41",
-    "version": "8.0.0-build.111",
+    "build": "sha.b046dfd",
+    "version": "8.0.0-build.112",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.0.0-build.111+sha.3e0ef41",
+    "full": "8.0.0-build.112+sha.b046dfd",
     "branch": "master",
-    "commitSHA": "3e0ef413a8d88f5f3786b7bf31b9ab5d60017d79"
+    "commitSHA": "b046dfdb6e8dca3d3ec1af19f1d65422fdc63a5e"
   }
 }
