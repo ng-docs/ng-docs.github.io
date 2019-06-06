@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1559803606824,
+  "timestamp": 1559826770545,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1607,7 +1607,7 @@
     "/generated/docs/api/core/TypeProvider.json": "7985afcad6cdc9206a0f95f3885578eb3deff7b2",
     "/generated/docs/api/core/ValueProvider.json": "82bfd2ed05c98cf1f3843bdf702ca3e7a3c5cf27",
     "/generated/docs/api/core/Version.json": "0b3bf8df9e6931187b3c76ac349769f357d8bd62",
-    "/generated/docs/api/core/ViewChild.json": "d66293636e682367cd6b10d5bcaa1cb0e141830c",
+    "/generated/docs/api/core/ViewChild.json": "6c90c413a6aee18659b372eab706360b05ec7251",
     "/generated/docs/api/core/ViewChildren.json": "1f4aa6b7e79d60ca2aa35591ec3e30a9b642261e",
     "/generated/docs/api/core/ViewContainerRef.json": "44f273b0896342304658db8b7e740058446e71ff",
     "/generated/docs/api/core/ViewEncapsulation.json": "c6a1deb43183e5b64fe09fc343e3fa38ad134be7",
@@ -2462,7 +2462,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "b5c9e179767e70e3bd7967f2b26e3d616c7e1f9f",
+    "/generated/navigation.json": "a5f7c352a97c219bb3fd23c2705c750791657446",
     "/generated/resources.json": "a07ea2858f2f27e7a12ba72b8c0c675a4f48e31f",
     "/index.html": "55bc6f8d61530d221d065bb3ba655747dd530198",
     "/live-example-live-example-module-ngfactory-es2015.96275b8f0102b9105fdc.js": "041b7d1c81549e7fda19b58a21708576b0b0997b",
