@@ -24,7 +24,7 @@ can be found in the LICENSE file at http://angular.io/license
 @Component({
   selector: 'app-root',
   template: `
-    <app-title></app-title>
+    <app-greeting></app-greeting>
     <nav>
       <a routerLink=&quot;contact&quot; routerLinkActive=&quot;active&quot;>Contact</a>
       <a routerLink=&quot;items&quot; routerLinkActive=&quot;active&quot;>Items</a>
@@ -41,7 +41,8 @@ export class AppComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { BrowserModule } from '@angular/platform-browser';
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 /* App Root */
@@ -49,20 +50,18 @@ import { AppComponent } from './app.component';
 
 /* Feature Modules */
 import { ContactModule } from './contact/contact.module';
-import { CoreModule } from './core/core.module';
+import { GreetingModule } from './greeting/greeting.module';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
-
 
 @NgModule({
   imports: [
     BrowserModule,
     ContactModule,
-    CoreModule.forRoot({userName: 'Miss Marple'}),
+    GreetingModule.forRoot({userName: 'Miss Marple'}),
     AppRoutingModule
   ],
-  providers: [],
   declarations: [
     AppComponent
   ],
@@ -96,11 +95,12 @@ export class ContactRoutingModule {}
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/contact/contact.component.ts]" value="// Exact copy except import UserService from core
+*/"><input type="hidden" name="files[src/app/contact/contact.component.ts]" value="// Exact copy except import UserService from greeting
 import { Component, OnInit }      from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import { Contact, ContactService } from './contact.service';
-import { UserService }             from '../core/user.service';
+import { UserService }             from '../greeting/user.service';
 
 @Component({
   selector: 'app-contact',
@@ -114,15 +114,24 @@ export class ContactComponent implements OnInit {
   msg = 'Loading contacts ...';
   userName = '';
 
-  constructor(private contactService: ContactService, userService: UserService) {
+  contactForm = this.fb.group({
+    name: ['', Validators.required]
+  });
+
+  constructor(private contactService: ContactService, userService: UserService, private fb: FormBuilder) {
     this.userName = userService.userName;
   }
 
   ngOnInit() {
+    this.setupForm();
+  }
+
+  setupForm() {
     this.contactService.getContacts().subscribe(contacts => {
       this.msg = '';
       this.contacts = contacts;
       this.contact = contacts[0];
+      this.contactForm.get('name').setValue(this.contact.name);
     });
   }
 
@@ -130,15 +139,18 @@ export class ContactComponent implements OnInit {
     let ix = 1 + this.contacts.indexOf(this.contact);
     if (ix >= this.contacts.length) { ix = 0; }
     this.contact = this.contacts[ix];
+    console.log(this.contacts[ix]);
   }
 
   onSubmit() {
-    // POST-DEMO TODO: do something like save it
-    this.displayMessage('Saved ' + this.contact.name);
+    let newName = this.contactForm.get('name').value;
+    this.displayMessage('Saved ' + newName);
+    this.contact.name = newName;
   }
 
   newContact() {
     this.displayMessage('New contact');
+    this.contactForm.get('name').setValue('');
     this.contact = {id: 42, name: ''};
     this.contacts.push(this.contact);
   }
@@ -151,13 +163,13 @@ export class ContactComponent implements OnInit {
 }
 
 
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/contact/contact.module.ts]" value="import { NgModule }           from '@angular/core';
 import { SharedModule }       from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ContactComponent }     from './contact.component';
 import { ContactService }       from './contact.service';
@@ -166,7 +178,8 @@ import { ContactRoutingModule } from './contact-routing.module';
 @NgModule({
   imports: [
     SharedModule,
-    ContactRoutingModule
+    ContactRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [ ContactComponent ],
   providers:    [ ContactService ]
@@ -213,100 +226,6 @@ export class ContactService implements OnDestroy {
 }
 
 
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/core/core.module.ts]" value="import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-
-import { TitleComponent } from './title.component';
-import { UserService } from './user.service';
-import { UserServiceConfig } from './user.service';
-
-
-@NgModule({
-  imports:      [ CommonModule ],
-  declarations: [ TitleComponent ],
-  exports:      [ TitleComponent ],
-  providers:    [ UserService ]
-})
-export class CoreModule {
-  constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
-    if (parentModule) {
-      throw new Error(
-        'CoreModule is already loaded. Import it in the AppModule only');
-    }
-  }
-
-  static forRoot(config: UserServiceConfig): ModuleWithProviders {
-    return {
-      ngModule: CoreModule,
-      providers: [
-        {provide: UserServiceConfig, useValue: config }
-      ]
-    };
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/core/title.component.ts]" value="import { Component, Input } from '@angular/core';
-import { UserService }      from '../core/user.service';
-
-@Component({
-  selector: 'app-title',
-  templateUrl: './title.component.html',
-})
-export class TitleComponent {
-  title = 'NgModules';
-  user = '';
-
-  constructor(userService: UserService) {
-    this.user = userService.userName;
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/core/user.service.ts]" value="// Proves that UserService is an app-wide singleton and only instantiated once
-// IFF shared.module follows the `forRoot` pattern.
-//
-// If it didn't, a new instance of UserService would be created
-// after each lazy load and the userName would double up.
-
-import { Injectable, Optional } from '@angular/core';
-
-let nextId = 1;
-
-export class UserServiceConfig {
-  userName = 'Philip Marlowe';
-}
-
-@Injectable()
-export class UserService {
-  id = nextId++;
-  private _userName = 'Sherlock Holmes';
-
-  constructor(@Optional() config: UserServiceConfig) {
-    if (config) { this._userName = config.userName; }
-  }
-
-  get userName() {
-    // Demo: add a suffix if this service has been created more than once
-    const suffix = this.id > 1 ? ` times ${this.id}` : '';
-    return this._userName + suffix;
-  }
-}
 
 
 /*
@@ -410,7 +329,7 @@ can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/customers/customers.component.ts]" value="import { Component }   from '@angular/core';
 
 import { CustomersService } from './customers.service';
-import { UserService } from '../core/user.service';
+import { UserService } from '../greeting/user.service';
 
 @Component({
   template: `
@@ -491,6 +410,95 @@ export class CustomersService implements OnDestroy {
   getCustomer(id: number | string): Observable<Customer> {
     const customer$ = of(CUSTOMERS.find(customer => customer.id === +id));
     return customer$.pipe(delay(FETCH_LATENCY));
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/greeting/greeting.component.ts]" value="import { Component, Input } from '@angular/core';
+import { UserService }      from '../greeting/user.service';
+
+@Component({
+  selector: 'app-greeting',
+  templateUrl: './greeting.component.html',
+})
+export class GreetingComponent {
+  title = 'NgModules';
+  user = '';
+
+  constructor(userService: UserService) {
+    this.user = userService.userName;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/greeting/greeting.module.ts]" value="import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
+
+import { GreetingComponent } from './greeting.component';
+import { UserServiceConfig } from './user.service';
+
+
+@NgModule({
+  imports:      [ CommonModule ],
+  declarations: [ GreetingComponent ],
+  exports:      [ GreetingComponent ]
+})
+export class GreetingModule {
+  constructor (@Optional() @SkipSelf() parentModule: GreetingModule) {
+    if (parentModule) {
+      throw new Error(
+        'GreetingModule is already loaded. Import it in the AppModule only');
+    }
+  }
+
+  static forRoot(config: UserServiceConfig): ModuleWithProviders {
+    return {
+      ngModule: GreetingModule,
+      providers: [
+        {provide: UserServiceConfig, useValue: config }
+      ]
+    };
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/greeting/user.service.ts]" value="
+import { Injectable, Optional } from '@angular/core';
+
+let nextId = 1;
+
+export class UserServiceConfig {
+  userName = 'Philip Marlowe';
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  id = nextId++;
+  private _userName = 'Sherlock Holmes';
+
+  constructor(@Optional() config: UserServiceConfig) {
+    if (config) { this._userName = config.userName; }
+  }
+
+  get userName() {
+    // Demo: add a suffix if this service has been created more than once
+    const suffix = this.id > 1 ? ` times ${this.id}` : '';
+    return this._userName + suffix;
   }
 }
 
@@ -868,7 +876,24 @@ can be found in the LICENSE file at http://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/contact/contact.component.css]" value="
+*/"><input type="hidden" name="files[src/app/contact/contact.component.css]" value=".button-group {
+  display: flex;
+  flex-direction: row;
+}
+button {
+  margin: 1rem 1rem 0 0;
+}
+
+input {
+  padding: .5rem;
+  margin-left: .5rem;
+}
+
+.alert {
+  color: red;
+  font-style: italic;
+}
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
@@ -880,7 +905,7 @@ can be found in the LICENSE file at http://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/styles.css]" value="/* Master Styles */
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -960,32 +985,28 @@ can be found in the LICENSE file at http://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/contact/contact.component.html]" value="
-<h2>Contact of {{userName}}</h2>
+-->"><input type="hidden" name="files[src/app/contact/contact.component.html]" value="<h2>{{userName}}'s Contacts</h2>
 <div *ngIf=&quot;msg&quot; class=&quot;msg&quot;>{{msg}}</div>
 
-<form *ngIf=&quot;contacts&quot; (ngSubmit)=&quot;onSubmit()&quot; #contactForm=&quot;ngForm&quot;>
+<form *ngIf=&quot;contacts&quot; (ngSubmit)=&quot;onSubmit()&quot; [formGroup]=&quot;contactForm&quot;>
   <h3 highlight>{{ contact.name | awesome }}</h3>
 
   <div class=&quot;form-group&quot;>
     <label for=&quot;name&quot;>Name</label>
-
-    <input type=&quot;text&quot; class=&quot;form-control&quot; required
-    [(ngModel)]=&quot;contact.name&quot;
-    name=&quot;name&quot;  #name=&quot;ngModel&quot; >
-
-    <div [hidden]=&quot;name.valid&quot; class=&quot;alert alert-danger&quot;>
-      Name is required
+    <input type=&quot;text&quot; formControlName=&quot;name&quot; required>
+    <div *ngIf=&quot;!contactForm.controls['name'].valid &amp;&amp; contactForm.controls['name'].touched&quot; class=&quot;alert&quot;>
+      Name is required.
     </div>
+
   </div>
 
   <div class=&quot;button-group&quot;>
     <button type=&quot;submit&quot; class=&quot;btn btn-default&quot;
-    [disabled]=&quot;!contactForm.form.valid&quot;>
+    [disabled]=&quot;!contactForm.valid&quot;>
     Save</button>
 
     <button type=&quot;button&quot; class=&quot;btn&quot; (click)=&quot;next()&quot;
-    [disabled]=&quot;!contactForm.form.valid&quot;>
+    [disabled]=&quot;!contactForm.valid &amp;&amp; contactForm.touched&quot;>
     Next Contact</button>
 
     <button type=&quot;button&quot; class=&quot;btn&quot; (click)=&quot;newContact()&quot;>
@@ -994,11 +1015,13 @@ can be found in the LICENSE file at http://angular.io/license
 </form>
 
 
+
+
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/core/title.component.html]" value="<h1>{{title}}</h1>
+-->"><input type="hidden" name="files[src/app/greeting/greeting.component.html]" value="<h1>{{title}}</h1>
 <p *ngIf=&quot;user&quot;>
   <i>Welcome, {{user}}</i>
 <p>
@@ -1172,7 +1195,7 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="NgModules"><input type="hidden" name="description" value="Angular Example - NgModules"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^7.0.0&quot;,&quot;@angular/common&quot;:&quot;^7.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^7.0.0&quot;,&quot;@angular/core&quot;:&quot;^7.0.0&quot;,&quot;@angular/forms&quot;:&quot;^7.0.0&quot;,&quot;@angular/http&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^7.0.0&quot;,&quot;@angular/router&quot;:&quot;^7.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.3.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.8.26&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.4.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="NgModules"><input type="hidden" name="description" value="Angular Example - NgModules"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^7.0.0&quot;,&quot;@angular/common&quot;:&quot;^7.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^7.0.0&quot;,&quot;@angular/core&quot;:&quot;^7.0.0&quot;,&quot;@angular/forms&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^7.0.0&quot;,&quot;@angular/router&quot;:&quot;^7.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.9.1&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.4.0&quot;}"></form>
     <script>
       var embedded = 'ctl=1';
       var isEmbedded = window.location.search.indexOf(embedded) > -1;

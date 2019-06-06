@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/styles.css]" value="/* Master Styles */
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -1634,79 +1634,96 @@ import { interval, of } from 'rxjs';
 import { delay, take } from 'rxjs/operators';
 
 describe('Angular async helper', () => {
-  let actuallyDone = false;
 
-  beforeEach(() => { actuallyDone = false; });
+  describe('async', () => {
+    let actuallyDone = false;
 
-  afterEach(() => { expect(actuallyDone).toBe(true, 'actuallyDone should be true'); });
+    beforeEach(() => { actuallyDone = false; });
 
-  it('should run normal test', () => { actuallyDone = true; });
+    afterEach(() => { expect(actuallyDone).toBe(true, 'actuallyDone should be true'); });
 
-  it('should run normal async test', (done: DoneFn) => {
-    setTimeout(() => {
-      actuallyDone = true;
-      done();
-    }, 0);
+    it('should run normal test', () => { actuallyDone = true; });
+
+    it('should run normal async test', (done: DoneFn) => {
+      setTimeout(() => {
+        actuallyDone = true;
+        done();
+      }, 0);
+    });
+
+    it('should run async test with task',
+       async(() => { setTimeout(() => { actuallyDone = true; }, 0); }));
+
+    it('should run async test with task', async(() => {
+      const id = setInterval(() => {
+        actuallyDone = true;
+        clearInterval(id);
+      }, 100);
+    }));
+
+    it('should run async test with successful promise', async(() => {
+      const p = new Promise(resolve => { setTimeout(resolve, 10); });
+      p.then(() => { actuallyDone = true; });
+    }));
+
+    it('should run async test with failed promise', async(() => {
+      const p = new Promise((resolve, reject) => { setTimeout(reject, 10); });
+      p.catch(() => { actuallyDone = true; });
+    }));
+
+    // Use done. Can also use async or fakeAsync.
+    it('should run async test with successful delayed Observable', (done: DoneFn) => {
+      const source = of (true).pipe(delay(10));
+      source.subscribe(val => actuallyDone = true, err => fail(err), done);
+    });
+
+    it('should run async test with successful delayed Observable', async(() => {
+      const source = of (true).pipe(delay(10));
+      source.subscribe(val => actuallyDone = true, err => fail(err));
+    }));
+
+    it('should run async test with successful delayed Observable', fakeAsync(() => {
+      const source = of (true).pipe(delay(10));
+      source.subscribe(val => actuallyDone = true, err => fail(err));
+
+      tick(10);
+    }));
   });
 
-  it('should run async test with task',
-     async(() => { setTimeout(() => { actuallyDone = true; }, 0); }));
+  describe('fakeAsync', () => {
+    it('should run timeout callback with delay after call tick with millis', fakeAsync(() => {
+        let called = false;
+        setTimeout(() => { called = true; }, 100);
+        tick(100);
+        expect(called).toBe(true);
+      }));
 
-  it('should run async test with task', async(() => {
-       const id = setInterval(() => {
-         actuallyDone = true;
-         clearInterval(id);
-       }, 100);
-     }));
+    it('should get Date diff correctly in fakeAsync', fakeAsync(() => {
+        const start = Date.now();
+        tick(100);
+        const end = Date.now();
+        expect(end - start).toBe(100);
+      }));
 
-  it('should run async test with successful promise', async(() => {
-       const p = new Promise(resolve => { setTimeout(resolve, 10); });
-       p.then(() => { actuallyDone = true; });
-     }));
+    it('should get Date diff correctly in fakeAsync with rxjs scheduler', fakeAsync(() => {
+        // need to add `import 'zone.js/dist/zone-patch-rxjs-fake-async'
+        // to patch rxjs scheduler
+        let result = null;
+        of ('hello').pipe(delay(1000)).subscribe(v => { result = v; });
+        expect(result).toBeNull();
+        tick(1000);
+        expect(result).toBe('hello');
 
-  it('should run async test with failed promise', async(() => {
-       const p = new Promise((resolve, reject) => { setTimeout(reject, 10); });
-       p.catch(() => { actuallyDone = true; });
-     }));
+        const start = new Date().getTime();
+        let dateDiff = 0;
+        interval(1000).pipe(take(2)).subscribe(() => dateDiff = (new Date().getTime() - start));
 
-  // Use done. Can also use async or fakeAsync.
-  it('should run async test with successful delayed Observable', (done: DoneFn) => {
-    const source = of (true).pipe(delay(10));
-    source.subscribe(val => actuallyDone = true, err => fail(err), done);
+        tick(1000);
+        expect(dateDiff).toBe(1000);
+        tick(1000);
+        expect(dateDiff).toBe(2000);
+      }));
   });
-
-  it('should run timeout callback with delay after call tick with millis', fakeAsync(() => {
-       let called = false;
-       setTimeout(() => { called = true; }, 100);
-       tick(100);
-       expect(called).toBe(true);
-     }));
-
-  it('should get Date diff correctly in fakeAsync', fakeAsync(() => {
-       const start = Date.now();
-       tick(100);
-       const end = Date.now();
-       expect(end - start).toBe(100);
-     }));
-
-  it('should get Date diff correctly in fakeAsync with rxjs scheduler', fakeAsync(() => {
-       // need to add `import 'zone.js/dist/zone-patch-rxjs-fake-async'
-       // to patch rxjs scheduler
-       let result = null;
-       of ('hello').pipe(delay(1000)).subscribe(v => { result = v; });
-       expect(result).toBeNull();
-       tick(1000);
-       expect(result).toBe('hello');
-
-       const start = new Date().getTime();
-       let dateDiff = 0;
-       interval(1000).pipe(take(2)).subscribe(() => dateDiff = (new Date().getTime() - start));
-
-       tick(1000);
-       expect(dateDiff).toBe(1000);
-       tick(1000);
-       expect(dateDiff).toBe(2000);
-     }));
 
   describe('use jasmine.clock()', () => {
     // need to config __zone_symbol__fakeAsyncPatchLock flag
@@ -1743,18 +1760,6 @@ describe('Angular async helper', () => {
          });
        }));
   });
-
-  it('should run async test with successful delayed Observable', async(() => {
-       const source = of (true).pipe(delay(10));
-       source.subscribe(val => actuallyDone = true, err => fail(err));
-     }));
-
-  it('should run async test with successful delayed Observable', fakeAsync(() => {
-       const source = of (true).pipe(delay(10));
-       source.subscribe(val => actuallyDone = true, err => fail(err));
-
-       tick(10);
-     }));
 
 });
 
@@ -4155,211 +4160,6 @@ export const _dummy = undefined;
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/model/http-hero.service.spec.ts]" value="/**
- * Test the HeroService when implemented with the OLD HttpModule
- */
-import {
-   async, inject, TestBed
-} from '@angular/core/testing';
-
-import {
-  MockBackend,
-  MockConnection
-} from '@angular/http/testing';
-
-import {
-  HttpModule, Http, XHRBackend, Response, ResponseOptions
-} from '@angular/http';
-
-import { of } from 'rxjs';
-
-import { Hero } from './hero';
-import { HttpHeroService } from './http-hero.service';
-
-const makeHeroData = () => [
-  { id: 1, name: 'Windstorm' },
-  { id: 2, name: 'Bombasto' },
-  { id: 3, name: 'Magneta' },
-  { id: 4, name: 'Tornado' }
-] as Hero[];
-
-////////  Tests  /////////////
-describe('HttpHeroService (using old HttpModule)', () => {
-  let backend: MockBackend;
-  let service: HttpHeroService;
-
-  beforeEach( () => {
-    TestBed.configureTestingModule({
-      imports: [ HttpModule ],
-      providers: [
-        HttpHeroService,
-        { provide: XHRBackend, useClass: MockBackend }
-      ]
-    });
-  });
-
-  it('can instantiate service via DI', () => {
-      service = TestBed.get(HttpHeroService);
-      expect(service instanceof HttpHeroService).toBe(true);
-  });
-
-  it('can instantiate service with &quot;new&quot;', () => {
-    const http = TestBed.get(Http);
-    expect(http).not.toBeNull('http should be provided');
-    let service = new HttpHeroService(http);
-    expect(service instanceof HttpHeroService).toBe(true, 'new service should be ok');
-  });
-
-  it('can provide the mockBackend as XHRBackend', () => {
-    const backend = TestBed.get(XHRBackend);
-    expect(backend).not.toBeNull('backend should be provided');
-  });
-
-  describe('when getHeroes', () => {
-    let fakeHeroes: Hero[];
-    let http: Http;
-    let response: Response;
-
-    beforeEach(() => {
-
-      backend = TestBed.get(XHRBackend);
-      http = TestBed.get(Http);
-
-      service = new HttpHeroService(http);
-      fakeHeroes = makeHeroData();
-      let options = new ResponseOptions({status: 200, body: {data: fakeHeroes}});
-      response = new Response(options);
-    });
-
-    it('should have expected fake heroes (then)', () => {
-      backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
-
-      service.getHeroes().toPromise()
-      // .then(() => Promise.reject('deliberate'))
-        .then(heroes => {
-          expect(heroes.length).toBe(fakeHeroes.length,
-            'should have expected no. of heroes');
-        })
-        .catch(fail);
-    });
-
-    it('should have expected fake heroes (Observable tap)', () => {
-      backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
-
-      service.getHeroes().subscribe(
-        heroes => {
-          expect(heroes.length).toBe(fakeHeroes.length,
-            'should have expected no. of heroes');
-        },
-        fail
-      );
-    });
-
-
-    it('should be OK returning no heroes', () => {
-      let resp = new Response(new ResponseOptions({status: 200, body: {data: []}}));
-      backend.connections.subscribe((c: MockConnection) => c.mockRespond(resp));
-
-      service.getHeroes().subscribe(
-        heroes => {
-          expect(heroes.length).toBe(0, 'should have no heroes');
-        },
-        fail
-      );
-    });
-
-    it('should treat 404 as an Observable error', () => {
-      let resp = new Response(new ResponseOptions({status: 404}));
-      backend.connections.subscribe((c: MockConnection) => c.mockRespond(resp));
-
-      service.getHeroes().subscribe(
-        heroes => fail('should not respond with heroes'),
-        err => {
-          expect(err).toMatch(/Bad response status/, 'should catch bad response status code');
-          return of(null); // failure is the expected test result
-        });
-    });
-  });
-});
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/model/http-hero.service.ts]" value="// The OLD Http module. See HeroService for use of the current HttpClient
-import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Headers, RequestOptions } from '@angular/http';
-import { Hero }           from './hero';
-
-import { Observable } from 'rxjs';
-import { throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-
-@Injectable()
-export class HttpHeroService {
-  private _heroesUrl = 'app/heroes';  // URL to web api
-
-  constructor (private http: Http) {}
-
-  getHeroes (): Observable<Hero[]> {
-    return this.http.get(this._heroesUrl).pipe(
-      map(this.extractData),
-      // tap(data => console.log(data)), // eyeball results in the console
-      catchError(this.handleError)
-    );
-  }
-
-  getHero(id: number | string) {
-    return this.http.get('app/heroes/?id=${id}').pipe(
-      map((r: Response) => r.json().data as Hero[])
-    );
-  }
-
-  addHero (name: string): Observable<Hero>  {
-    let body = JSON.stringify({ name });
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-
-    return this.http.post(this._heroesUrl, body, options).pipe(
-      map(this.extractData),
-      catchError(this.handleError)
-    );
-  }
-
-  updateHero (hero: Hero): Observable<Hero>  {
-    let body = JSON.stringify(hero);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-
-    return this.http.put(this._heroesUrl, body, options).pipe(
-      map(this.extractData),
-      catchError(this.handleError)
-    );
-  }
-
-  private extractData(res: Response) {
-    if (res.status < 200 || res.status >= 300) {
-      throw new Error('Bad response status: ' + res.status);
-    }
-    let body = res.json();
-    return body.data || { };
-  }
-
-  private handleError (error: any) {
-    // In a real world app, we might send the error to remote logging infrastructure
-    let errMsg = error.message || 'Server error';
-    console.error(errMsg); // log to console instead
-    return throwError(errMsg);
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/model/index.ts]" value="export * from './hero';
 export * from './hero.service';
 export * from './user.service';
@@ -5693,7 +5493,6 @@ import './app/hero/hero-detail.component.no-testbed.spec.ts';
 import './app/hero/hero-detail.component.spec.ts';
 import './app/hero/hero-list.component.spec.ts';
 import './app/model/hero.service.spec.ts';
-import './app/model/http-hero.service.spec.ts';
 import './app/model/testing/http-client.spec.ts';
 import './app/shared/highlight.directive.spec.ts';
 import './app/shared/title-case.pipe.spec.ts';
@@ -6016,7 +5815,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Testing - specs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^7.0.0&quot;,&quot;@angular/common&quot;:&quot;^7.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^7.0.0&quot;,&quot;@angular/core&quot;:&quot;^7.0.0&quot;,&quot;@angular/forms&quot;:&quot;^7.0.0&quot;,&quot;@angular/http&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^7.0.0&quot;,&quot;@angular/router&quot;:&quot;^7.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.6.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.3.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.8.26&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.4.0&quot;}"></form>
+*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Testing - specs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^7.0.0&quot;,&quot;@angular/common&quot;:&quot;^7.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^7.0.0&quot;,&quot;@angular/core&quot;:&quot;^7.0.0&quot;,&quot;@angular/forms&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^7.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^7.0.0&quot;,&quot;@angular/router&quot;:&quot;^7.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.9.1&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.4.0&quot;}"></form>
     <script>
       var embedded = 'ctl=1';
       var isEmbedded = window.location.search.indexOf(embedded) > -1;

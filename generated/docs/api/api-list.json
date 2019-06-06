@@ -1056,6 +1056,14 @@
         "securityRisk": false
       },
       {
+        "name": "ngclassbase",
+        "title": "NgClassBase",
+        "path": "api/common/NgClassBase",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "ngcomponentoutlet",
         "title": "NgComponentOutlet",
         "path": "api/common/NgComponentOutlet",
@@ -1132,6 +1140,14 @@
         "title": "NgStyle",
         "path": "api/common/NgStyle",
         "docType": "directive",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ngstylebase",
+        "title": "NgStyleBase",
+        "path": "api/common/NgStyleBase",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1295,10 +1311,34 @@
     "path": "api/common/testing",
     "items": [
       {
+        "name": "mock_platform_location_config",
+        "title": "MOCK_PLATFORM_LOCATION_CONFIG",
+        "path": "api/common/testing/MOCK_PLATFORM_LOCATION_CONFIG",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "mocklocationstrategy",
         "title": "MockLocationStrategy",
         "path": "api/common/testing/MockLocationStrategy",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "mockplatformlocation",
+        "title": "MockPlatformLocation",
+        "path": "api/common/testing/MockPlatformLocation",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "mockplatformlocationconfig",
+        "title": "MockPlatformLocationConfig",
+        "path": "api/common/testing/MockPlatformLocationConfig",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1317,6 +1357,14 @@
     "title": "core",
     "path": "api/core",
     "items": [
+      {
+        "name": "abstracttype",
+        "title": "AbstractType",
+        "path": "api/core/AbstractType",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
       {
         "name": "aftercontentchecked",
         "title": "AfterContentChecked",
@@ -1582,6 +1630,14 @@
         "securityRisk": false
       },
       {
+        "name": "debugeventlistener",
+        "title": "DebugEventListener",
+        "path": "api/core/DebugEventListener",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "debugnode",
         "title": "DebugNode",
         "path": "api/core/DebugNode",
@@ -1601,16 +1657,8 @@
         "name": "defineinjectable",
         "title": "defineInjectable",
         "path": "api/core/defineInjectable",
-        "docType": "function",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "defineinjector",
-        "title": "defineInjector",
-        "path": "api/core/defineInjector",
-        "docType": "function",
-        "stability": "stable",
+        "docType": "const",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -1777,7 +1825,7 @@
         "name": "inject",
         "title": "inject",
         "path": "api/core/inject",
-        "docType": "function",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2010,7 +2058,7 @@
         "title": "NgModuleFactoryLoader",
         "path": "api/core/NgModuleFactoryLoader",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2346,7 +2394,7 @@
         "title": "SystemJsNgModuleLoader",
         "path": "api/core/SystemJsNgModuleLoader",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2354,7 +2402,7 @@
         "title": "SystemJsNgModuleLoaderConfig",
         "path": "api/core/SystemJsNgModuleLoaderConfig",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3165,260 +3213,6 @@
     ]
   },
   {
-    "name": "http",
-    "title": "http",
-    "path": "api/http",
-    "items": [
-      {
-        "name": "baserequestoptions",
-        "title": "BaseRequestOptions",
-        "path": "api/http/BaseRequestOptions",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "baseresponseoptions",
-        "title": "BaseResponseOptions",
-        "path": "api/http/BaseResponseOptions",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "browserxhr",
-        "title": "BrowserXhr",
-        "path": "api/http/BrowserXhr",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "connection",
-        "title": "Connection",
-        "path": "api/http/Connection",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "connectionbackend",
-        "title": "ConnectionBackend",
-        "path": "api/http/ConnectionBackend",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "cookiexsrfstrategy",
-        "title": "CookieXSRFStrategy",
-        "path": "api/http/CookieXSRFStrategy",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "headers",
-        "title": "Headers",
-        "path": "api/http/Headers",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "http",
-        "title": "Http",
-        "path": "api/http/Http",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "httpmodule",
-        "title": "HttpModule",
-        "path": "api/http/HttpModule",
-        "docType": "ngmodule",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "jsonp",
-        "title": "Jsonp",
-        "path": "api/http/Jsonp",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "jsonpbackend",
-        "title": "JSONPBackend",
-        "path": "api/http/JSONPBackend",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "jsonpconnection",
-        "title": "JSONPConnection",
-        "path": "api/http/JSONPConnection",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "jsonpmodule",
-        "title": "JsonpModule",
-        "path": "api/http/JsonpModule",
-        "docType": "ngmodule",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "queryencoder",
-        "title": "QueryEncoder",
-        "path": "api/http/QueryEncoder",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "readystate",
-        "title": "ReadyState",
-        "path": "api/http/ReadyState",
-        "docType": "enum",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "request",
-        "title": "Request",
-        "path": "api/http/Request",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "requestmethod",
-        "title": "RequestMethod",
-        "path": "api/http/RequestMethod",
-        "docType": "enum",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "requestoptions",
-        "title": "RequestOptions",
-        "path": "api/http/RequestOptions",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "requestoptionsargs",
-        "title": "RequestOptionsArgs",
-        "path": "api/http/RequestOptionsArgs",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "response",
-        "title": "Response",
-        "path": "api/http/Response",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "responsecontenttype",
-        "title": "ResponseContentType",
-        "path": "api/http/ResponseContentType",
-        "docType": "enum",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "responseoptions",
-        "title": "ResponseOptions",
-        "path": "api/http/ResponseOptions",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "responseoptionsargs",
-        "title": "ResponseOptionsArgs",
-        "path": "api/http/ResponseOptionsArgs",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "responsetype",
-        "title": "ResponseType",
-        "path": "api/http/ResponseType",
-        "docType": "enum",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "urlsearchparams",
-        "title": "URLSearchParams",
-        "path": "api/http/URLSearchParams",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "xhrbackend",
-        "title": "XHRBackend",
-        "path": "api/http/XHRBackend",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "xhrconnection",
-        "title": "XHRConnection",
-        "path": "api/http/XHRConnection",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "xsrfstrategy",
-        "title": "XSRFStrategy",
-        "path": "api/http/XSRFStrategy",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      }
-    ]
-  },
-  {
-    "name": "http/testing",
-    "title": "http/testing",
-    "path": "api/http/testing",
-    "items": [
-      {
-        "name": "mockbackend",
-        "title": "MockBackend",
-        "path": "api/http/testing/MockBackend",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "mockconnection",
-        "title": "MockConnection",
-        "path": "api/http/testing/MockConnection",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      }
-    ]
-  },
-  {
     "name": "platform-browser",
     "title": "platform-browser",
     "path": "api/platform-browser",
@@ -3453,14 +3247,6 @@
         "path": "api/platform-browser/disableDebugTools",
         "docType": "function",
         "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "document",
-        "title": "DOCUMENT",
-        "path": "api/platform-browser/DOCUMENT",
-        "docType": "const",
-        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -4127,6 +3913,14 @@
         "securityRisk": false
       },
       {
+        "name": "deprecatedloadchildren",
+        "title": "DeprecatedLoadChildren",
+        "path": "api/router/DeprecatedLoadChildren",
+        "docType": "type-alias",
+        "stability": "deprecated",
+        "securityRisk": false
+      },
+      {
         "name": "detachedroutehandle",
         "title": "DetachedRouteHandle",
         "path": "api/router/DetachedRouteHandle",
@@ -4456,17 +4250,17 @@
       },
       {
         "name": "routes",
-        "title": "ROUTES",
-        "path": "api/router/ROUTES",
-        "docType": "const",
+        "title": "Routes",
+        "path": "api/router/Routes",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
       {
         "name": "routes",
-        "title": "Routes",
-        "path": "api/router/Routes",
-        "docType": "type-alias",
+        "title": "ROUTES",
+        "path": "api/router/ROUTES",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4623,6 +4417,14 @@
         "name": "swpush",
         "title": "SwPush",
         "path": "api/service-worker/SwPush",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "swregistrationoptions",
+        "title": "SwRegistrationOptions",
+        "path": "api/service-worker/SwRegistrationOptions",
         "docType": "class",
         "stability": "stable",
         "securityRisk": false

@@ -62,12 +62,43 @@
       "hidden": true
     },
     {
-      "url": "guide/quickstart",
       "title": "快速上手",
-      "tooltip": "对 Angular 和 Angular CLI 基础知识的简短介绍"
+      "tooltip": "通过构建第一个 Angular 应用来学习基础知识",
+      "children": [
+        {
+          "url": "getting-started",
+          "title": "你的第一个应用",
+          "tooltip": "介绍 Angular 的组件模型、模板语法和组件通讯"
+        },
+        {
+          "url": "getting-started/routing",
+          "title": "路由",
+          "tooltip": "介绍如何使用浏览器的 URL 在组件之间进行路由"
+        },
+        {
+          "url": "getting-started/data",
+          "title": "管理数据",
+          "tooltip": "介绍服务以及如何访问外部数据"
+        },
+        {
+          "url": "getting-started/forms",
+          "title": "表单",
+          "tooltip": "学习如何使用表单从用户那里获取并管理数据"
+        },
+        {
+          "url": "getting-started/deployment",
+          "title": "部署",
+          "tooltip": "通过你的应用放到 Firebase 或自己的服务器上来把它分享给外界"
+        }
+      ]
     },
     {
-      "title": "教程",
+      "url": "guide/quickstart",
+      "title": "快速搭建环境",
+      "tooltip": "使用 Angular CLI 搭建本地开发环境简介"
+    },
+    {
+      "title": "教程：英雄指南",
       "tooltip": "此《英雄指南》教程会带你用 TypeScript 一步步创建一个 Angular 应用。",
       "children": [
         {
@@ -444,6 +475,11 @@
               "tooltip": "在 CLI 项目中启用 Service Worker，并在浏览器中查看效果。"
             },
             {
+              "url": "guide/app-shell",
+              "title": "应用外壳",
+              "tooltip": "在 CLI 项目中启用应用外壳。"
+            },
+            {
               "url": "guide/service-worker-communications",
               "title": "与 Service Worker 通讯",
               "tooltip": "那些能让你和 Angular 的 Service Worker 通讯的服务类。"
@@ -477,7 +513,7 @@
             {
               "url": "guide/upgrade-performance",
               "title": "更关注性能的升级方式",
-              "tooltip": "用更灵活的方式把 AngularJS 升级到 Angular"
+              "tooltip": "用更灵活的方式把 AngularJS 升级到 Angular。"
             },
             {
               "url": "guide/ajs-quick-reference",
@@ -487,7 +523,7 @@
           ]
         },
         {
-          "title": "Angular 库开发",
+          "title": "开发 Angular 库",
           "tooltip": "使用共享库扩展 Angular",
           "children": [
             {
@@ -503,15 +539,46 @@
             {
               "url": "guide/creating-libraries",
               "title": "创建库",
-              "tooltip": "通过创建、发布和使用你自己的库来扩展 Angular"
+              "tooltip": "通过创建、发布和使用你自己的库来扩展 Angular。"
             }
           ]
+        },
+        {
+          "title": "原理图（Schematic）",
+          "tooltip": "理解原理图",
+          "children": [
+            {
+              "url": "guide/schematics",
+              "title": "原理图概览",
+              "tooltip": "理解 Angular 如何使用原理图。"
+            },
+            {
+              "url": "guide/schematics-authoring",
+              "title": "制作原理图",
+              "tooltip": "理解原理图的结构。"
+            },
+            {
+              "url": "guide/schematics-for-libraries",
+              "title": "库的原理图",
+              "tooltip": "使用原理图来把你的库集成进 Angular CLI 中。"
+            }
+          ]
+        },
+        {
+          "url": "guide/ivy",
+          "title": "Angular Ivy（常春藤）",
+          "tooltip": "在 Angular CLI 中可选的启用 Ivy。"
+        },
+        {
+          "url": "guide/web-worker",
+          "title": "Web Worker",
+          "tooltip": "在 Angular CLI 中使用 Web Worker。"
         }
       ]
     },
     {
       "title": "环境搭建与部署",
-      "tooltip": "关于环境搭建、构建、测试、部署环境与工具的信息。",
+      "tooltip": "构建、测试、部署环境、工具以及配置信息。",
       "children": [
         {
           "url": "guide/setup",
@@ -548,6 +615,11 @@
           "url": "guide/build",
           "title": "构建与运行",
           "tooltip": "构建应用及为应用启动开发服务器。"
+        },
+        {
+          "url": "guide/bazel",
+          "title": "使用 Bazel 进行构建",
+          "tooltip": "如何配置你的环境，以利用 Bazel 进行构建和测试。"
         },
         {
           "url": "guide/testing",
@@ -594,8 +666,13 @@
         },
         {
           "url": "guide/releases",
-          "title": "Angular 发布策略与实践",
-          "tooltip": "Angular 的版本、发布、支持、弃用策略与实践。"
+          "title": "发布实践",
+          "tooltip": "Angular 的版本、发布、支持、弃用策略及实践"
+        },
+        {
+          "url": "guide/deprecations",
+          "title": "弃用清单",
+          "tooltip": "弃用的 Angular API 和特性汇总。"
         }
       ]
     },
@@ -630,8 +707,17 @@
           "url": "cli"
         },
         {
+          "title": "使用情况分析",
+          "tooltip": "管理员如何从用户那里收集使用情况分析。",
+          "url": "cli/usage-analytics-gathering"
+        },
+        {
           "url": "cli/add",
           "title": "ng add"
+        },
+        {
+          "url": "cli/analytics",
+          "title": "ng analytics"
         },
         {
           "url": "cli/build",
@@ -730,12 +816,6 @@
       "url": "https://flutter-io.cn/",
       "tooltip": "Flutter 中文文档站",
       "title": "友站：Flutter 中文"
-    },
-    {
-      "url": "guide/change-log",
-      "title": "Change Log",
-      "tooltip": "Angular Documentation Change Log",
-      "hidden": true
     }
   ],
   "Footer": [
@@ -761,6 +841,11 @@
           "url": "https://blog.angular.io/",
           "title": "博客",
           "tooltip": "Angular 官方博客"
+        },
+        {
+          "url": "analytics",
+          "title": "使用情况分析",
+          "tooltip": "Angular 使用情况分析"
         }
       ]
     },
@@ -856,20 +941,25 @@
     }
   ],
   "__versionInfo": {
-    "raw": "8.0.0-beta.4",
+    "options": {
+      "loose": false,
+      "includePrerelease": false
+    },
+    "loose": false,
+    "raw": "8.0.0-rc.0",
     "major": 8,
     "minor": 0,
     "patch": 0,
     "prerelease": [
       "build",
-      "102"
+      "110"
     ],
-    "build": "sha.e732a17",
-    "version": "8.0.0-build.102",
+    "build": "sha.8454750",
+    "version": "8.0.0-build.110",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.0.0-build.102+sha.e732a17",
+    "full": "8.0.0-build.110+sha.8454750",
     "branch": "master",
-    "commitSHA": "e732a172d83938224d3c2edd49abe45a88bec8b3"
+    "commitSHA": "845475005c8965edf4c64b71c58b94d810a6cc11"
   }
 }
