@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://angular.cn/getting-started/data</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/getting-started/deployment</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/getting-started/forms</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/getting-started</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/getting-started/routing</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/guide/ajs-quick-reference</loc>
   </url>
   <url>
@@ -59,6 +44,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/cheatsheet</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/cli-builder</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/comparing-observables</loc>
@@ -190,13 +178,7 @@
     <loc>https://angular.cn/guide/practical-observable-usage</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/prerequisites-setup</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/guide/providers</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/guide/quickstart</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/reactive-forms</loc>
@@ -247,6 +229,9 @@
     <loc>https://angular.cn/guide/set-document-title</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/setup-local</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/setup</loc>
   </url>
   <url>
@@ -254,6 +239,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/singleton-services</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/static-query-migration</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/structural-directives</loc>
@@ -299,6 +287,21 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/workspace-config</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/start/data</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/start/deployment</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/start/forms</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/start</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/start/routing</loc>
   </url>
   <url>
     <loc>https://angular.cn/tutorial</loc>
@@ -941,6 +944,30 @@
   </url>
   <url>
     <loc>https://angular.cn/api/common/testing/MockPlatformLocationConfig</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade/$locationShim</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade/$locationShimProvider</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade/LOCATION_UPGRADE_CONFIGURATION</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade/LocationUpgradeConfig</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade/LocationUpgradeModule</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade/AngularJSUrlCodec</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/upgrade/UrlCodec</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core</loc>

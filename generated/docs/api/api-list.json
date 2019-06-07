@@ -1353,6 +1353,69 @@
     ]
   },
   {
+    "name": "common/upgrade",
+    "title": "common/upgrade",
+    "path": "api/common/upgrade",
+    "items": [
+      {
+        "name": "$locationshim",
+        "title": "$locationShim",
+        "path": "api/common/upgrade/$locationShim",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "$locationshimprovider",
+        "title": "$locationShimProvider",
+        "path": "api/common/upgrade/$locationShimProvider",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "angularjsurlcodec",
+        "title": "AngularJSUrlCodec",
+        "path": "api/common/upgrade/AngularJSUrlCodec",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "location_upgrade_configuration",
+        "title": "LOCATION_UPGRADE_CONFIGURATION",
+        "path": "api/common/upgrade/LOCATION_UPGRADE_CONFIGURATION",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "locationupgradeconfig",
+        "title": "LocationUpgradeConfig",
+        "path": "api/common/upgrade/LocationUpgradeConfig",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "locationupgrademodule",
+        "title": "LocationUpgradeModule",
+        "path": "api/common/upgrade/LocationUpgradeModule",
+        "docType": "ngmodule",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "urlcodec",
+        "title": "UrlCodec",
+        "path": "api/common/upgrade/UrlCodec",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      }
+    ]
+  },
+  {
     "name": "core",
     "title": "core",
     "path": "api/core",
@@ -2546,7 +2609,7 @@
         "title": "wtfCreateScope",
         "path": "api/core/wtfCreateScope",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2554,7 +2617,7 @@
         "title": "wtfEndTimeRange",
         "path": "api/core/wtfEndTimeRange",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2562,7 +2625,7 @@
         "title": "wtfLeave",
         "path": "api/core/wtfLeave",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2570,7 +2633,7 @@
         "title": "WtfScopeFn",
         "path": "api/core/WtfScopeFn",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2578,7 +2641,7 @@
         "title": "wtfStartTimeRange",
         "path": "api/core/wtfStartTimeRange",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       }
     ]
@@ -3647,7 +3710,7 @@
         "title": "bootstrapWorkerUi",
         "path": "api/platform-webworker/bootstrapWorkerUi",
         "docType": "function",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3655,7 +3718,7 @@
         "title": "ClientMessageBroker",
         "path": "api/platform-webworker/ClientMessageBroker",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3663,7 +3726,7 @@
         "title": "ClientMessageBrokerFactory",
         "path": "api/platform-webworker/ClientMessageBrokerFactory",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3679,7 +3742,7 @@
         "title": "MessageBus",
         "path": "api/platform-webworker/MessageBus",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3703,7 +3766,7 @@
         "title": "platformWorkerApp",
         "path": "api/platform-webworker/platformWorkerApp",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3719,7 +3782,7 @@
         "title": "ReceivedMessage",
         "path": "api/platform-webworker/ReceivedMessage",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3727,7 +3790,7 @@
         "title": "SerializerTypes",
         "path": "api/platform-webworker/SerializerTypes",
         "docType": "enum",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3735,7 +3798,7 @@
         "title": "ServiceMessageBroker",
         "path": "api/platform-webworker/ServiceMessageBroker",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3743,7 +3806,7 @@
         "title": "ServiceMessageBrokerFactory",
         "path": "api/platform-webworker/ServiceMessageBrokerFactory",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3759,7 +3822,7 @@
         "title": "WORKER_APP_LOCATION_PROVIDERS",
         "path": "api/platform-webworker/WORKER_APP_LOCATION_PROVIDERS",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3767,7 +3830,7 @@
         "title": "WORKER_UI_LOCATION_PROVIDERS",
         "path": "api/platform-webworker/WORKER_UI_LOCATION_PROVIDERS",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3775,7 +3838,7 @@
         "title": "WorkerAppModule",
         "path": "api/platform-webworker/WorkerAppModule",
         "docType": "ngmodule",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       }
     ]
@@ -3790,7 +3853,7 @@
         "title": "platformWorkerAppDynamic",
         "path": "api/platform-webworker-dynamic/platformWorkerAppDynamic",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       }
     ]

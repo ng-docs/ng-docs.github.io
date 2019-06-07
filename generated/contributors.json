@@ -408,6 +408,16 @@
       "GDE"
     ]
   },
+  "michaelhladky": {
+    "name": "Michael Hladky",
+    "picture": "michael-hladky.jpg",
+    "twitter": "Michael_Hladky",
+    "website": "https://github.com/BioPhoton",
+    "bio": "Michael is a self employed trainer, consultant and developer with the focus on Angular, and located in Vienna, Austria. He gives workshops on Angular, RxJS and Ionic. As Google Developer Expert, founder of Angular-Austria-Association and Angular-Vienna meetup, and speaker he is an active part of the community.",
+    "groups": [
+      "GDE"
+    ]
+  },
   "michaelprentice": {
     "name": "Michael Prentice",
     "picture": "michaelprentice.jpg",
@@ -996,5 +1006,15 @@
       "Angular"
     ],
     "lead": "kara"
+  },
+  "kamilmysliwiec": {
+    "name": "Kamil Mysliwiec",
+    "picture": "kamilmysliwiec.jpg",
+    "twitter": "kammysliwiec",
+    "website": "https://github.com/kamilmysliwiec",
+    "bio": "Kamil Mysliwiec is a software engineer truly passionate about Web Technologies. Creator of NestJS, Co-Founder of Trilon.io, speaker, and trainer.",
+    "groups": [
+      "GDE"
+    ]
   }
 }
