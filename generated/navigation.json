@@ -566,8 +566,8 @@
         },
         {
           "url": "guide/cli-builder",
-          "title": "CLI Builders",
-          "tooltip": "Using builders to customize Angular CLI."
+          "title": "CLI 构建器",
+          "tooltip": "使用构建器定制 Angular CLI。"
         },
         {
           "url": "guide/ivy",
@@ -967,14 +967,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "117"
+      "119"
     ],
-    "build": "sha.78f4af5",
-    "version": "8.1.0-build.117",
+    "build": "sha.cc30126",
+    "version": "8.1.0-build.119",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.1.0-build.117+sha.78f4af5",
+    "full": "8.1.0-build.119+sha.cc30126",
     "branch": "master",
-    "commitSHA": "78f4af5f14303708481facde927a6951796c9e18"
+    "commitSHA": "cc301263b84ab0fbbe7826a49526982b7058c151"
   }
 }
