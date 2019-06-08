@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1559923270374,
+  "timestamp": 1559966322749,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1897,7 +1897,7 @@
     "/generated/docs/api/upgrade/static/getAngularLib.json": "349f70abfecd467946915a3ac3d64e53daed7237",
     "/generated/docs/api/upgrade/static/setAngularJSGlobal.json": "d8219ff86401b1819b2bbd4fa068af7f5f7f7c4d",
     "/generated/docs/api/upgrade/static/setAngularLib.json": "37f32a84cc72c732377e12990fcaafc0908a764a",
-    "/generated/docs/app/search-data.json": "f47b9d900f25a3594c971367294d1964b5d2d781",
+    "/generated/docs/app/search-data.json": "3e88bddb65fbbdefcaa5e32b2aa03096ba330dce",
     "/generated/docs/cli.json": "9a5f7909ecd394836950978980ea26f5b0e74c24",
     "/generated/docs/cli/add.json": "a2b08519b75bcb0eff6d27c9dc13b6decde9078b",
     "/generated/docs/cli/analytics.json": "25baae73bad3b25f13de3289afed7d9a4c7513d1",
@@ -1936,7 +1936,7 @@
     "/generated/docs/guide/browser-support.json": "6931896eabf2da0ae540d2dcbacc7a36d77df918",
     "/generated/docs/guide/build.json": "57f732eaf9de4b2e226a8ed353bf00d0b9e5d459",
     "/generated/docs/guide/cheatsheet.json": "15d3f1ef4cd6739db8091935f597367c58d9c6fc",
-    "/generated/docs/guide/cli-builder.json": "0f839e13a9096320d126eac6177aee45374e4301",
+    "/generated/docs/guide/cli-builder.json": "f2bbe5913232604e7973524328b1da859416611d",
     "/generated/docs/guide/comparing-observables.json": "25ee73c789138cbedcd4abe477653304fead809f",
     "/generated/docs/guide/complex-animation-sequences.json": "09d55807db4710460620443085ff61a5903f484a",
     "/generated/docs/guide/component-interaction.json": "c23c5f5f56f13b717389a0d9f0f3ff11485a1225",
@@ -2464,7 +2464,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "af31dcc31ce7174d93d55453b38307d58d794b17",
+    "/generated/navigation.json": "c69ba3fbf1d740bf1d12a2ace8e372a0e20559d7",
     "/generated/resources.json": "a07ea2858f2f27e7a12ba72b8c0c675a4f48e31f",
     "/index.html": "dc9d210c7a70ed46250319d920cf62b8224907ef",
     "/main-es2015.ebd0d82f492ad480b14d.js": "8242dd5e79da22dcb0435d324974cb038bd49aee",
