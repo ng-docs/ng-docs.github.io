@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1559990144707,
+  "timestamp": 1563777755085,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1934,7 +1934,7 @@
     "/generated/docs/guide/bazel.json": "135e2ffca82d5cc3bf39634d22b5b92533202c71",
     "/generated/docs/guide/bootstrapping.json": "70039d5007ccce6ff630c6179ecd21e9134e4bc8",
     "/generated/docs/guide/browser-support.json": "6931896eabf2da0ae540d2dcbacc7a36d77df918",
-    "/generated/docs/guide/build.json": "57f732eaf9de4b2e226a8ed353bf00d0b9e5d459",
+    "/generated/docs/guide/build.json": "2e9c9119c7fb8764aa9938af23f06c33c953bfb6",
     "/generated/docs/guide/cheatsheet.json": "15d3f1ef4cd6739db8091935f597367c58d9c6fc",
     "/generated/docs/guide/cli-builder.json": "a18fb758997c0dd1fa1fd9b596d92b99498b3606",
     "/generated/docs/guide/comparing-observables.json": "25ee73c789138cbedcd4abe477653304fead809f",
@@ -2464,7 +2464,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "13b6daf0bcf860d9db1c8896b1c3d87aeba1d21f",
+    "/generated/navigation.json": "37c25aada9d3fda4492744084d262834e1f4f22e",
     "/generated/resources.json": "a07ea2858f2f27e7a12ba72b8c0c675a4f48e31f",
     "/index.html": "dc9d210c7a70ed46250319d920cf62b8224907ef",
     "/main-es2015.ebd0d82f492ad480b14d.js": "8242dd5e79da22dcb0435d324974cb038bd49aee",
