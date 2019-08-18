@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1564390358386,
+  "timestamp": 1566133473714,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1897,7 +1897,7 @@
     "/generated/docs/api/upgrade/static/getAngularLib.json": "349f70abfecd467946915a3ac3d64e53daed7237",
     "/generated/docs/api/upgrade/static/setAngularJSGlobal.json": "d8219ff86401b1819b2bbd4fa068af7f5f7f7c4d",
     "/generated/docs/api/upgrade/static/setAngularLib.json": "37f32a84cc72c732377e12990fcaafc0908a764a",
-    "/generated/docs/app/search-data.json": "3e88bddb65fbbdefcaa5e32b2aa03096ba330dce",
+    "/generated/docs/app/search-data.json": "701d97d1d5a2d74f064d756ba315e88bfd973ce3",
     "/generated/docs/cli.json": "9a5f7909ecd394836950978980ea26f5b0e74c24",
     "/generated/docs/cli/add.json": "a2b08519b75bcb0eff6d27c9dc13b6decde9078b",
     "/generated/docs/cli/analytics.json": "25baae73bad3b25f13de3289afed7d9a4c7513d1",
@@ -2001,7 +2001,7 @@
     "/generated/docs/guide/setup.json": "dd146c2b160aa34217d4f1121d7701a283f196a5",
     "/generated/docs/guide/sharing-ngmodules.json": "750e35fb36e35f8d47dd240f5408cc67f325e661",
     "/generated/docs/guide/singleton-services.json": "4d482066e37641ff477152e8635dd531c1497766",
-    "/generated/docs/guide/static-query-migration.json": "7474f4a1802ff06fedfbe4f58cd02242aa6def85",
+    "/generated/docs/guide/static-query-migration.json": "f086af01249d642db7ec832bf42977ef0b37f569",
     "/generated/docs/guide/structural-directives.json": "367e2c82ad4936a6c52a0f15b2c89e140dba754c",
     "/generated/docs/guide/styleguide.json": "7409d1e323fdca29ff6546f9415a32599446aed7",
     "/generated/docs/guide/template-syntax.json": "c22de079d4702cb768c64dac93a1fb8e3311a1cb",
@@ -2464,7 +2464,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "7d045fc203cd13774bc395c3cb99fbb2811bc8ae",
+    "/generated/navigation.json": "4446e52f9ebb63d75e676400bf79b48cdd5eaf13",
     "/generated/resources.json": "a07ea2858f2f27e7a12ba72b8c0c675a4f48e31f",
     "/index.html": "dc9d210c7a70ed46250319d920cf62b8224907ef",
     "/main-es2015.ebd0d82f492ad480b14d.js": "8242dd5e79da22dcb0435d324974cb038bd49aee",
