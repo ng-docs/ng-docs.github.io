@@ -973,14 +973,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "10"
+      "9"
     ],
-    "build": "sha.2a1b525",
-    "version": "8.1.0-build.10",
+    "build": "sha.2576847",
+    "version": "8.1.0-build.9",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.1.0-build.10+sha.2a1b525",
+    "full": "8.1.0-build.9+sha.2576847",
     "branch": "master",
-    "commitSHA": "2a1b52536bf9de1c213d4b5cd4ab3ce417a60f43"
+    "commitSHA": "257684791c3275d5f06c9350feb81e85ba58f8f3"
   }
 }
