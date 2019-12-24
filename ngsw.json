@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1577064509345,
+  "timestamp": 1577161136117,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1970,7 +1970,7 @@
     "/generated/docs/guide/lazy-loading-ngmodules.json": "99e1e4be420f1318d67164bcc0a319ca657ef3b7",
     "/generated/docs/guide/libraries.json": "a91eff4116e936b60214dbf4d16511f6595b2302",
     "/generated/docs/guide/lifecycle-hooks.json": "5a012706c597f92d1cf9c23f15fc013734e5554e",
-    "/generated/docs/guide/module-types.json": "cf62fee6ebc08189a554968158e5bde2312dd016",
+    "/generated/docs/guide/module-types.json": "ac646ac502039d30f7f3b1c7b3949c88a8b2b095",
     "/generated/docs/guide/ngmodule-api.json": "af2e4d54e4c9518f8137bcfa031588b1e11f237b",
     "/generated/docs/guide/ngmodule-faq.json": "d6df7824cfa82f34979dd1f58f033a5fcd940850",
     "/generated/docs/guide/ngmodule-vs-jsmodule.json": "9c8967fc25d2fbbce1be1b06e0f99e445a3c2d54",
@@ -2464,7 +2464,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "4983209b74624faba7ecca36ad5b90b99f5a39f5",
+    "/generated/navigation.json": "9d633ef2ffde40c31ac436fb592eee425fade27f",
     "/generated/resources.json": "a07ea2858f2f27e7a12ba72b8c0c675a4f48e31f",
     "/index.html": "1c59853f44b87ff8b23108f9a9bc3205dd49c33b",
     "/main-es2015.7d0dff1bc03e34b88f06.js": "77e453a049d5a59f3d7586c8a9bc72f57f18a2cb",
