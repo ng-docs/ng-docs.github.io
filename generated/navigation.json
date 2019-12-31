@@ -23,6 +23,12 @@
     {
       "url": "translations/cn/home",
       "title": "关于中文版"
+    },
+    {
+      "title": "2019 ngChina @ 杭州",
+      "tooltip": "2019 ngChina 开发者大会",
+      "url": "https://ng-china.org",
+      "highlight": true
     }
   ],
   "TopBarNarrow": [
@@ -799,8 +805,8 @@
       "divider": true
     },
     {
-      "title": "2018 ngChina @ 杭州",
-      "tooltip": "2018 ngChina 开发者大会",
+      "title": "2019 ngChina @ 杭州",
+      "tooltip": "2019 ngChina 开发者大会",
       "url": "https://ng-china.org"
     },
     {
@@ -961,20 +967,20 @@
       "includePrerelease": false
     },
     "loose": false,
-    "raw": "8.1.0-beta.0",
+    "raw": "8.1.0-next.1",
     "major": 8,
     "minor": 1,
     "patch": 0,
     "prerelease": [
       "build",
-      "142"
+      "26"
     ],
-    "build": "sha.c820496",
-    "version": "8.1.0-build.142",
+    "build": "sha.3a75c35",
+    "version": "8.1.0-build.26",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "8.1.0-build.142+sha.c820496",
+    "full": "8.1.0-build.26+sha.3a75c35",
     "branch": "master",
-    "commitSHA": "c8204965933bb203430f115b63a8fb5473645daf"
+    "commitSHA": "3a75c350b4151d34879a84ea1f5b8f5fb766b540"
   }
 }
