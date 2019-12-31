@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1577771188873,
+  "timestamp": 1577771217060,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2022,7 +2022,7 @@
     "/generated/docs/presskit.json": "2ac4f31544699e2429169a43e25d6aefc5220e92",
     "/generated/docs/resources-contributing.json": "35f84b0dc02dfe625426a78ca7ac7db27955db3e",
     "/generated/docs/resources.json": "78ff14c68d4eed69f970fdce13fa3541f8debc06",
-    "/generated/docs/start.json": "07af4ba4b7e24fca51444aea4714cb366e4c51d7",
+    "/generated/docs/start.json": "e6c8883766bd72a89562a6b5d10b0995046dcc79",
     "/generated/docs/start/data.json": "e124ae88e69b59da52cf69884bece0386488bfbb",
     "/generated/docs/start/deployment.json": "1a1dec9564ab80514267244fb53c34bb5cfb90ac",
     "/generated/docs/start/forms.json": "739c14bae5535c87a292c6baece669f0efdeae8f",
@@ -2464,7 +2464,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "aa3f6e4b02321e1c62d638e43b5cb6d99d41c9a4",
+    "/generated/navigation.json": "1e68c7eaa1850995aeffa018962ec0e2dfcf0c76",
     "/generated/resources.json": "a07ea2858f2f27e7a12ba72b8c0c675a4f48e31f",
     "/index.html": "1c59853f44b87ff8b23108f9a9bc3205dd49c33b",
     "/main-es2015.7d0dff1bc03e34b88f06.js": "77e453a049d5a59f3d7586c8a9bc72f57f18a2cb",
