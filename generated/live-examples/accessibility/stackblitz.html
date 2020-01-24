@@ -1,0 +1,451 @@
+<html lang="en"><head></head><body>
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: [ './app.component.css' ]
+})
+export class AppComponent  {
+  progress = 0;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { ExampleProgressbarComponent } from './progress-bar.component';
+
+@NgModule({
+  imports:      [ BrowserModule ],
+  declarations: [ AppComponent, ExampleProgressbarComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/progress-bar.component.ts]" value="import { Component, Input } from '@angular/core';
+
+/**
+ * Example progressbar component.
+ */
+@Component({
+  selector: 'app-example-progressbar',
+  template: `<div class=&quot;bar&quot; [style.width.%]=&quot;value&quot;></div>`,
+  styleUrls: ['./progress-bar.component.css'],
+  host: {
+    // Sets the role for this component to &quot;progressbar&quot;
+    role: 'progressbar',
+
+    // Sets the minimum and maximum values for the progressbar role.
+    'aria-valuemin': '0',
+    'aria-valuemax': '100',
+
+    // Binding that updates the current value of the progressbar.
+    '[attr.aria-valuenow]': 'value',
+  }
+})
+export class ExampleProgressbarComponent  {
+  /** Current value of the progressbar. */
+  @Input() value = 0;
+}
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/**
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
+ */
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags.ts';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js/dist/zone'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/progress-bar.component.css]" value="    :host { 
+      display: block; 
+      width: 300px; 
+      height: 25px; 
+      border: 1px solid black; 
+      margin-top: 16px;
+    }
+    
+    .bar { 
+      background: blue; 
+      height: 100%; 
+    }
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #333;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>Accessibility Example</h1>
+<label>
+  Enter an example progress value
+  <input type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot;
+      [value]=&quot;progress&quot; (input)=&quot;progress = $event.target.value&quot;>
+</label>
+
+<!-- The user of the progressbar sets an aria-label to communicate what the progress means. -->
+<app-example-progressbar [value]=&quot;progress&quot; aria-label=&quot;Example of a progress bar&quot;>
+</app-example-progressbar>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/index.html]" value="<!doctype html>
+<html>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+  <title>Accessibility Example</title>
+  <base href=&quot;/&quot;>
+
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;>
+</head>
+<body>
+  <app-root>Loading...</app-root>
+</body>
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;schematics&quot;: {},
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;extractCss&quot;: true,
+              &quot;namedChunks&quot;: false,
+              &quot;aot&quot;: true,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true,
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
+                  &quot;maximumError&quot;: &quot;5mb&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;tsconfig.app.json&quot;,
+              &quot;tsconfig.spec.json&quot;,
+              &quot;e2e/tsconfig.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+}
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Accessibility"><input type="hidden" name="description" value="Angular Example - Accessibility"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
+    <script>
+      var embedded = 'ctl=1';
+      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+      if (isEmbedded) {
+        var form = document.getElementById('mainForm');
+        var action = form.action;
+        var actionHasParams = action.indexOf('?') > -1;
+        var symbol = actionHasParams ? '&' : '?'
+        form.action = form.action + symbol + embedded;
+      }
+      document.getElementById("mainForm").submit();
+    </script>
+    </body></html>

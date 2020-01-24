@@ -1,0 +1,709 @@
+<html lang="en"><head></head><body>
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[src/app/aliasing/aliasing.component.ts]" value="/* tslint:disable:use-input-property-decorator */
+/* tslint:disable:use-output-property-decorator */
+
+/* tslint:disable:no-input-rename */
+
+
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-aliasing',
+  templateUrl: './aliasing.component.html',
+  styleUrls: ['./aliasing.component.css'],
+  // tslint:disable: no-inputs-metadata-property no-outputs-metadata-property
+  inputs: ['input1: saveForLaterItem'], // propertyName:alias
+  outputs: ['outputEvent1: saveForLaterEvent']
+  // tslint:disable: no-inputs-metadata-property no-outputs-metadata-property
+
+})
+export class AliasingComponent {
+
+  input1: string;
+  outputEvent1: EventEmitter<string> = new EventEmitter<string>();
+
+  @Input('wishListItem') input2: string; //  @Input(alias)
+  @Output('wishEvent') outputEvent2 = new EventEmitter<string>(); //  @Output(alias) propertyName = ...
+
+
+  saveIt() {
+    console.warn('Child says: emiting outputEvent1 with', this.input1);
+    this.outputEvent1.emit(this.input1);
+  }
+
+  wishForIt() {
+    console.warn('Child says: emiting outputEvent2', this.input2);
+    this.outputEvent2.emit(this.input2);
+  }
+
+
+}
+/* tslint:enable:use-input-property-decorator */
+/* tslint:enable:use-output-property-decorator */
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.ts]" value="
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  currentItem = 'Television';
+
+  lastChanceItem = 'Beanbag';
+  items = ['item1', 'item2', 'item3', 'item4'];
+  wishlist = ['Drone', 'Computer'];
+
+
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
+
+
+  crossOffItem(item: string) {
+    console.warn(`Parent says: crossing off ${item}.`);
+  }
+
+  buyClearanceItem(item) {
+    console.warn(`Parent says: buying ${item}.`);
+  }
+
+  saveForLater(item) {
+    console.warn(`Parent says: saving ${item} for later.`);
+  }
+
+  addToWishList(wish: string) {
+    console.warn(`Parent says: adding ${this.currentItem} to your wishlist.`);
+    this.wishlist.push(wish);
+    console.warn(this.wishlist);
+  }
+}
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+
+import { AppComponent } from './app.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemOutputComponent } from './item-output/item-output.component';
+import { InputOutputComponent } from './input-output/input-output.component';
+import { InTheMetadataComponent } from './in-the-metadata/in-the-metadata.component';
+import { AliasingComponent } from './aliasing/aliasing.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ItemDetailComponent,
+    ItemOutputComponent,
+    InputOutputComponent,
+    InTheMetadataComponent,
+    AliasingComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/in-the-metadata/in-the-metadata.component.ts]" value="/* tslint:disable:use-input-property-decorator */
+/* tslint:disable:use-output-property-decorator */
+
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-in-the-metadata',
+  templateUrl: './in-the-metadata.component.html',
+  styleUrls: ['./in-the-metadata.component.css'],
+  // tslint:disable: no-inputs-metadata-property no-outputs-metadata-property
+  inputs: ['clearanceItem'],
+  outputs: ['buyEvent']
+  // tslint:enable: no-inputs-metadata-property no-outputs-metadata-property
+
+})
+export class InTheMetadataComponent  {
+
+
+  buyEvent = new EventEmitter<string>();
+  clearanceItem: string;
+
+  buyIt() {
+    console.warn('Child says: emiting buyEvent with', this.clearanceItem);
+    this.buyEvent.emit(this.clearanceItem);
+  }
+
+}
+
+/* tslint:enable:use-input-property-decorator */
+/* tslint:enable:use-output-property-decorator */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/input-output/input-output.component.ts]" value="import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-input-output',
+  templateUrl: './input-output.component.html',
+  styleUrls: ['./input-output.component.css']
+})
+export class InputOutputComponent {
+  @Input() item: string;
+  @Output() deleteRequest = new EventEmitter<string>();
+
+  lineThrough = '';
+
+  delete() {
+    console.warn('Child says: emiting item deleteRequest with', this.item);
+    this.deleteRequest.emit(this.item);
+    this.lineThrough = this.lineThrough ? '' : 'line-through';
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item-detail/item-detail.component.ts]" value="import { Component, Input } from '@angular/core'; // First, import Input
+
+@Component({
+  selector: 'app-item-detail',
+  templateUrl: './item-detail.component.html',
+  styleUrls: ['./item-detail.component.css']
+})
+
+export class ItemDetailComponent {
+  @Input() item: string; // decorate the property with @Input()
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item-output/item-output.component.ts]" value="import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-item-output',
+  templateUrl: './item-output.component.html',
+  styleUrls: ['./item-output.component.css']
+})
+
+export class ItemOutputComponent {
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/**
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
+ */
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags.ts';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js/dist/zone'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/aliasing/aliasing.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/in-the-metadata/in-the-metadata.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/input-output/input-output.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item-detail/item-detail.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item-output/item-output.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #333;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/aliasing/aliasing.component.html]" value="<p>Save for later item: {{input1}}</p>
+<button (click)=&quot;saveIt()&quot;> Save for later</button>
+
+
+  <p>Item for wishlist: {{input2}}</p>
+  <button (click)=&quot;wishForIt()&quot;> Add to wishlist</button>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>Inputs and Outputs</h1>
+
+<app-item-detail [item]=&quot;currentItem&quot;></app-item-detail>
+<hr>
+
+<app-item-output (newItemEvent)=&quot;addItem($event)&quot;></app-item-output>
+<h3>Parent component receiving value via @Output()</h3>
+
+<ul>
+  <li *ngFor=&quot;let item of items&quot;>{{item}}</li>
+</ul>
+
+<hr>
+
+<h2>Input and Output together</h2>
+<p>Open the console to see the EventEmitter at work when you click Delete.</p>
+
+<app-input-output [item]=&quot;currentItem&quot; (deleteRequest)=&quot;crossOffItem($event)&quot;></app-input-output>
+
+<hr>
+
+<h2>Input and Output in the component class metadata</h2>
+<p>Open the console to see the EventEmitter at work when you click Buy.</p>
+
+<app-in-the-metadata [clearanceItem]=&quot;lastChanceItem&quot; (buyEvent)=&quot;buyClearanceItem($event)&quot;></app-in-the-metadata>
+
+
+<hr>
+
+<h2>Aliasing Inputs and Outputs</h2>
+<p>See aliasing.component.ts for aliases and the console for the EventEmitter console logs.</p>
+
+<app-aliasing [saveForLaterItem]=&quot;currentItem&quot; (saveForLaterEvent)=&quot;saveForLater($event)&quot; [wishListItem]=&quot;currentItem&quot; (wishEvent)=&quot;addToWishList($event)&quot;></app-aliasing>
+
+<h2>Wishlist:</h2>
+<ul>
+  <li *ngFor=&quot;let wish of wishlist&quot;>{{wish}}</li>
+</ul>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/app/in-the-metadata/in-the-metadata.component.html]" value="<p>Latest clearance item: {{clearanceItem}}</p>
+
+<button (click)=&quot;buyIt()&quot;> Buy it with an Output!</button>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/app/input-output/input-output.component.html]" value="<span [style.text-decoration]=&quot;lineThrough&quot;>Item: {{item}}</span>
+<button (click)=&quot;delete()&quot;>Delete it with an Output!</button>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/app/item-detail/item-detail.component.html]" value="<h2>Child component with @Input()</h2>
+
+<p>
+  Today's item: {{item}}
+</p>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/app/item-output/item-output.component.html]" value="<h2>Child component with @Output()</h2>
+
+<label>Add an item: <input #newItem></label>
+<button (click)=&quot;addNewItem(newItem.value)&quot;>Add to parent's list</button>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/index.html]" value="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+  <title>Inputs and Outputs</title>
+  <base href=&quot;/&quot;>
+
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;schematics&quot;: {},
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;extractCss&quot;: true,
+              &quot;namedChunks&quot;: false,
+              &quot;aot&quot;: true,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true,
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
+                  &quot;maximumError&quot;: &quot;5mb&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;tsconfig.app.json&quot;,
+              &quot;tsconfig.spec.json&quot;,
+              &quot;e2e/tsconfig.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+}
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Inputs and Outputs"><input type="hidden" name="description" value="Angular Example - Inputs and Outputs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
+    <script>
+      var embedded = 'ctl=1';
+      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+      if (isEmbedded) {
+        var form = document.getElementById('mainForm');
+        var action = form.action;
+        var actionHasParams = action.indexOf('?') > -1;
+        var symbol = actionHasParams ? '&' : '?'
+        form.action = form.action + symbol + embedded;
+      }
+      document.getElementById("mainForm").submit();
+    </script>
+    </body></html>

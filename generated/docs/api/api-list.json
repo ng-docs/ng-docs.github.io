@@ -522,6 +522,14 @@
         "securityRisk": false
       },
       {
+        "name": "httpuploadprogressevent",
+        "title": "HttpUploadProgressEvent",
+        "path": "api/common/http/HttpUploadProgressEvent",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "httpurlencodingcodec",
         "title": "HttpUrlEncodingCodec",
         "path": "api/common/http/HttpUrlEncodingCodec",
@@ -672,46 +680,6 @@
         "securityRisk": false
       },
       {
-        "name": "deprecatedcurrencypipe",
-        "title": "DeprecatedCurrencyPipe",
-        "path": "api/common/DeprecatedCurrencyPipe",
-        "docType": "pipe",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "deprecateddatepipe",
-        "title": "DeprecatedDatePipe",
-        "path": "api/common/DeprecatedDatePipe",
-        "docType": "pipe",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "deprecateddecimalpipe",
-        "title": "DeprecatedDecimalPipe",
-        "path": "api/common/DeprecatedDecimalPipe",
-        "docType": "pipe",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "deprecatedi18npipesmodule",
-        "title": "DeprecatedI18NPipesModule",
-        "path": "api/common/DeprecatedI18NPipesModule",
-        "docType": "ngmodule",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "deprecatedpercentpipe",
-        "title": "DeprecatedPercentPipe",
-        "path": "api/common/DeprecatedPercentPipe",
-        "docType": "pipe",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
         "name": "document",
         "title": "DOCUMENT",
         "path": "api/common/DOCUMENT",
@@ -819,6 +787,14 @@
         "name": "getlocaledayperiods",
         "title": "getLocaleDayPeriods",
         "path": "api/common/getLocaleDayPeriods",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "getlocaledirection",
+        "title": "getLocaleDirection",
+        "path": "api/common/getLocaleDirection",
         "docType": "function",
         "stability": "stable",
         "securityRisk": false
@@ -1465,7 +1441,7 @@
         "title": "ANALYZE_FOR_ENTRY_COMPONENTS",
         "path": "api/core/ANALYZE_FOR_ENTRY_COMPONENTS",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -1565,6 +1541,14 @@
         "securityRisk": false
       },
       {
+        "name": "classsansprovider",
+        "title": "ClassSansProvider",
+        "path": "api/core/ClassSansProvider",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "collectionchangerecord",
         "title": "CollectionChangeRecord",
         "path": "api/core/CollectionChangeRecord",
@@ -1633,6 +1617,14 @@
         "title": "ComponentRef",
         "path": "api/core/ComponentRef",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "constructorprovider",
+        "title": "ConstructorProvider",
+        "path": "api/core/ConstructorProvider",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1805,9 +1797,25 @@
         "securityRisk": false
       },
       {
+        "name": "existingsansprovider",
+        "title": "ExistingSansProvider",
+        "path": "api/core/ExistingSansProvider",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "factoryprovider",
         "title": "FactoryProvider",
         "path": "api/core/FactoryProvider",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "factorysansprovider",
+        "title": "FactorySansProvider",
+        "path": "api/core/FactorySansProvider",
         "docType": "interface",
         "stability": "stable",
         "securityRisk": false
@@ -1886,17 +1894,17 @@
       },
       {
         "name": "inject",
-        "title": "inject",
-        "path": "api/core/inject",
-        "docType": "const",
+        "title": "Inject",
+        "path": "api/core/Inject",
+        "docType": "decorator",
         "stability": "stable",
         "securityRisk": false
       },
       {
         "name": "inject",
-        "title": "Inject",
-        "path": "api/core/Inject",
-        "docType": "decorator",
+        "title": "inject",
+        "path": "api/core/inject",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2301,22 +2309,6 @@
         "securityRisk": false
       },
       {
-        "name": "rendercomponenttype",
-        "title": "RenderComponentType",
-        "path": "api/core/RenderComponentType",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "renderer",
-        "title": "Renderer",
-        "path": "api/core/Renderer",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
         "name": "renderer2",
         "title": "Renderer2",
         "path": "api/core/Renderer2",
@@ -2370,14 +2362,6 @@
         "path": "api/core/resolveForwardRef",
         "docType": "function",
         "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "rootrenderer",
-        "title": "RootRenderer",
-        "path": "api/core/RootRenderer",
-        "docType": "class",
-        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2441,6 +2425,22 @@
         "title": "SkipSelf",
         "path": "api/core/SkipSelf",
         "docType": "decorator",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "staticclassprovider",
+        "title": "StaticClassProvider",
+        "path": "api/core/StaticClassProvider",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "staticclasssansprovider",
+        "title": "StaticClassSansProvider",
+        "path": "api/core/StaticClassSansProvider",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2549,6 +2549,14 @@
         "securityRisk": false
       },
       {
+        "name": "valuesansprovider",
+        "title": "ValueSansProvider",
+        "path": "api/core/ValueSansProvider",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "version",
         "title": "Version",
         "path": "api/core/Version",
@@ -2602,46 +2610,6 @@
         "path": "api/core/WrappedValue",
         "docType": "class",
         "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "wtfcreatescope",
-        "title": "wtfCreateScope",
-        "path": "api/core/wtfCreateScope",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "wtfendtimerange",
-        "title": "wtfEndTimeRange",
-        "path": "api/core/wtfEndTimeRange",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "wtfleave",
-        "title": "wtfLeave",
-        "path": "api/core/wtfLeave",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "wtfscopefn",
-        "title": "WtfScopeFn",
-        "path": "api/core/WtfScopeFn",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "wtfstarttimerange",
-        "title": "wtfStartTimeRange",
-        "path": "api/core/wtfStartTimeRange",
-        "docType": "const",
-        "stability": "deprecated",
         "securityRisk": false
       }
     ]
@@ -3146,14 +3114,6 @@
         "securityRisk": false
       },
       {
-        "name": "ngformselectorwarning",
-        "title": "NgFormSelectorWarning",
-        "path": "api/forms/NgFormSelectorWarning",
-        "docType": "directive",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
         "name": "ngmodel",
         "title": "NgModel",
         "path": "api/forms/NgModel",
@@ -3373,6 +3333,14 @@
         "title": "HammerLoader",
         "path": "api/platform-browser/HammerLoader",
         "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "hammermodule",
+        "title": "HammerModule",
+        "path": "api/platform-browser/HammerModule",
+        "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3734,7 +3702,7 @@
         "title": "FnArg",
         "path": "api/platform-webworker/FnArg",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3750,7 +3718,7 @@
         "title": "MessageBusSink",
         "path": "api/platform-webworker/MessageBusSink",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3758,7 +3726,7 @@
         "title": "MessageBusSource",
         "path": "api/platform-webworker/MessageBusSource",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3774,7 +3742,7 @@
         "title": "platformWorkerUi",
         "path": "api/platform-webworker/platformWorkerUi",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3814,7 +3782,7 @@
         "title": "UiArguments",
         "path": "api/platform-webworker/UiArguments",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -4024,6 +3992,14 @@
         "securityRisk": false
       },
       {
+        "name": "initialnavigation",
+        "title": "InitialNavigation",
+        "path": "api/router/InitialNavigation",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "loadchildren",
         "title": "LoadChildren",
         "path": "api/router/LoadChildren",
@@ -4148,6 +4124,14 @@
         "title": "provideRoutes",
         "path": "api/router/provideRoutes",
         "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "queryparamshandling",
+        "title": "QueryParamsHandling",
+        "path": "api/router/QueryParamsHandling",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4615,6 +4599,29 @@
         "title": "UpgradeModule",
         "path": "api/upgrade/static/UpgradeModule",
         "docType": "ngmodule",
+        "stability": "stable",
+        "securityRisk": false
+      }
+    ]
+  },
+  {
+    "name": "upgrade/static/testing",
+    "title": "upgrade/static/testing",
+    "path": "api/upgrade/static/testing",
+    "items": [
+      {
+        "name": "createangularjstestingmodule",
+        "title": "createAngularJSTestingModule",
+        "path": "api/upgrade/static/testing/createAngularJSTestingModule",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "createangulartestingmodule",
+        "title": "createAngularTestingModule",
+        "path": "api/upgrade/static/testing/createAngularTestingModule",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       }

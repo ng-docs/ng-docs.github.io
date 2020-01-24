@@ -1,5 +1,43 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/index.html]" value="<!-- Run the test app-->
+<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <base href=&quot;/&quot;>
+    <title>App Under Test</title>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/main.ts]" value="// main app entry point
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -64,6 +102,13 @@ nav a.active {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
 
 
 /*
@@ -367,7 +412,7 @@ import { AboutComponent } from './about/about.component';
     RouterModule.forRoot([
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
       { path: 'about', component: AboutComponent },
-      { path: 'heroes', loadChildren: () => import('./hero/hero.module').then(mod => mod.HeroModule)}
+      { path: 'heroes', loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule)}
     ])
   ],
   exports: [ RouterModule ] // re-export the module declarations
@@ -609,14 +654,14 @@ import { delay } from 'rxjs/operators';
 
 ////////// The App: Services and Components for the tests. //////////////
 
-export class Hero {
+export interface Hero {
   name: string;
 }
 
 ////////// Services ///////////////
 @Injectable()
 export class ValueService {
-  protected value = 'real value';
+  value = 'real value';
 
   getValue() { return this.value; }
   setValue(value: string) { this.value = value; }
@@ -1128,7 +1173,7 @@ export class HeroDetailService {
   // Returns a clone which caller may modify safely
   getHero(id: number | string): Observable<Hero> {
     if (typeof id === 'string') {
-      id = parseInt(id as string, 10);
+      id = parseInt(id, 10);
     }
     return this.heroService.getHero(id).pipe(
       map(hero => {
@@ -1273,7 +1318,7 @@ export class HeroService {
   constructor(private http: HttpClient) { }
 
   /** GET heroes from the server */
-  getHeroes (): Observable<Hero[]> {
+  getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         tap(heroes => this.log(`fetched heroes`)),
@@ -1284,7 +1329,7 @@ export class HeroService {
   /** GET hero by id. Return `undefined` when id not found */
   getHero<Data>(id: number | string): Observable<Hero> {
     if (typeof id === 'string') {
-      id = parseInt(id as string, 10);
+      id = parseInt(id, 10);
     }
     const url = `${this.heroesUrl}/?id=${id}`;
     return this.http.get<Hero[]>(url)
@@ -1301,14 +1346,14 @@ export class HeroService {
   //////// Save methods //////////
 
   /** POST: add a new hero to the server */
-  addHero (hero: Hero): Observable<Hero> {
+  addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
-      tap((hero: Hero) => this.log(`added hero w/ id=${hero.id}`)),
+      tap((addedHero) => this.log(`added hero w/ id=${addedHero.id}`)),
       catchError(this.handleError<Hero>('addHero'))
     );
   }
   /** DELETE: delete the hero from the server */
-  deleteHero (hero: Hero | number): Observable<Hero> {
+  deleteHero(hero: Hero | number): Observable<Hero> {
     const id = typeof hero === 'number' ? hero : hero.id;
     const url = `${this.heroesUrl}/${id}`;
 
@@ -1319,7 +1364,7 @@ export class HeroService {
   }
 
   /** PUT: update the hero on the server */
-  updateHero (hero: Hero): Observable<any> {
+  updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
@@ -1330,7 +1375,7 @@ export class HeroService {
    * This error handler lets the app continue to run as if no error occurred.
    * @param operation - name of the operation that failed
    */
-  private handleError<T> (operation = 'operation') {
+  private handleError<T>(operation = 'operation') {
     return (error: HttpErrorResponse): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
@@ -1360,10 +1405,6 @@ can be found in the LICENSE file at http://angular.io/license
   id: number;
   name: string;
 }
-
-// SystemJS bug:
-// TS file must export something real in JS, not just interfaces
-export const _dummy = undefined;
 
 
 /*
@@ -1430,9 +1471,9 @@ export class TestHeroService extends HeroService {
 
   getHero(id: number | string): Observable<Hero> {
     if (typeof id === 'string') {
-      id = parseInt(id as string, 10);
+      id = parseInt(id, 10);
     }
-    let hero = this.heroes.find(h => h.id === id);
+    const hero = this.heroes.find(h => h.id === id);
     return this.lastResult = asyncData(hero);
   }
 
@@ -1485,7 +1526,7 @@ export class UserService {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="import { Component, AfterViewInit, ViewChild } from '@angular/core';
+*/"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'sample-canvas',
@@ -1493,7 +1534,7 @@ can be found in the LICENSE file at http://angular.io/license
 })
 export class CanvasComponent implements AfterViewInit {
   blobSize: number;
-  @ViewChild('sampleCanvas', {static: false}) sampleCanvas;
+  @ViewChild('sampleCanvas') sampleCanvas: ElementRef;
 
   constructor() { }
 
@@ -1547,6 +1588,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { HighlightDirective } from './highlight.directive';
 import { TitleCasePipe }      from './title-case.pipe';
+import { CanvasComponent }    from './canvas.component';
 
 @NgModule({
   imports: [ CommonModule ],
@@ -1555,9 +1597,10 @@ import { TitleCasePipe }      from './title-case.pipe';
     // SharedModule importers won't have to import FormsModule too
     FormsModule,
     HighlightDirective,
-    TitleCasePipe
+    TitleCasePipe,
+    CanvasComponent
   ],
-  declarations: [ HighlightDirective, TitleCasePipe ]
+  declarations: [ HighlightDirective, TitleCasePipe, CanvasComponent ]
 })
 export class SharedModule { }
 
@@ -1664,7 +1707,7 @@ can be found in the LICENSE file at http://angular.io/license
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, of, throwError, Observer } from 'rxjs';
 import { concat, map, retryWhen, switchMap, take, tap } from 'rxjs/operators';
 
 import { Quote } from './quote';
@@ -1676,7 +1719,7 @@ export class TwainService {
   private nextId = 1;
 
   getQuote(): Observable<string> {
-    return Observable.create(observer => observer.next(this.nextId++)).pipe(
+    return Observable.create((observer: Observer<number>) => observer.next(this.nextId++)).pipe(
 
       // tap((id: number) => console.log(id)),
       // tap((id: number) => { throw new Error('Simulated server error'); }),
@@ -1733,52 +1776,7 @@ export class WelcomeComponent  implements OnInit {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/main.ts]" value="// main app entry point
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/index.html]" value="<!-- Run the test app-->
-<!DOCTYPE html>
-<html lang=&quot;en&quot;>
-  <head>
-    <base href=&quot;/&quot;>
-    <title>App Under Test</title>
-    <meta charset=&quot;UTF-8&quot;>
-    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
-  </head>
-
-  <body>
-    <app-root></app-root>
-  </body>
-</html>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
 
@@ -1834,7 +1832,8 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;src/assets&quot;
             ],
             &quot;styles&quot;: [
-              &quot;src/styles.css&quot;
+              &quot;src/styles.css&quot;,
+              &quot;src/test.css&quot;
             ],
             &quot;scripts&quot;: []
           },
@@ -1894,8 +1893,7 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;src/assets&quot;
             ],
             &quot;styles&quot;: [
-              &quot;src/styles.css&quot;,
-              &quot;src/test.css&quot;
+              &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: []
           }
@@ -1953,16 +1951,6 @@ can be found in the LICENSE file at http://angular.io/license
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
-/** IE10 and IE11 requires the following for the Reflect API. */
-/**
- * DO NOT REMOVE
- * By default, Reflect polyfills are auto-included by the CLI and
- * are required for JIT compilation.  StackBlitz examples are
- * compiled using JIT.
- */
-import 'core-js/es6/reflect';
-import 'core-js/es7/reflect';
-
 /**
  * Web Animations `@angular/platform-browser/animations`
  * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
@@ -1983,9 +1971,11 @@ import 'core-js/es7/reflect';
  *
  * The following flags will work for all browsers.
  *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
  * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
  *
  *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
  *  with the following flag, it will bypass `zone.js` patch for IE/Edge
@@ -1997,8 +1987,7 @@ import 'core-js/es7/reflect';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
@@ -2009,7 +1998,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Heroes Test App"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.9.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.9.1&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.5.0&quot;}"></form>
+*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Heroes Test App"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
     <script>
       var embedded = 'ctl=1';
       var isEmbedded = window.location.search.indexOf(embedded) > -1;

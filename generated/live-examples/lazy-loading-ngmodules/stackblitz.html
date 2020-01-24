@@ -6,11 +6,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'customers',
-    loadChildren: () => import('./customers/customers.module').then(mod => mod.CustomersModule)
+    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
   },
   {
     path: 'orders',
-    loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule)
+    loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)
   },
   {
     path: '',
@@ -77,37 +77,16 @@ export class AppModule { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/customers/customer-list/customer-list.component.ts]" value="import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-customer-list',
-  templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css']
-})
-export class CustomerListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/customers/customers-routing.module.ts]" value="import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomersComponent } from './customers.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: CustomerListComponent
+    component: CustomersComponent
   }
 ];
 
@@ -122,33 +101,14 @@ export class CustomersRoutingModule { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/customers/customers.module.ts]" value="import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CustomersRoutingModule } from './customers-routing.module';
-import { CustomerListComponent } from './customer-list/customer-list.component';
-
-@NgModule({
-  imports: [
-    CommonModule,
-    CustomersRoutingModule
-  ],
-  declarations: [CustomerListComponent]
-})
-export class CustomersModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/orders/order-list/order-list.component.ts]" value="import { Component, OnInit } from '@angular/core';
+*/"><input type="hidden" name="files[src/app/customers/customers.component.ts]" value="import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-order-list',
-  templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.css']
+  selector: 'app-customers',
+  templateUrl: './customers.component.html',
+  styleUrls: ['./customers.component.css']
 })
-export class OrderListComponent implements OnInit {
+export class CustomersComponent implements OnInit {
 
   constructor() { }
 
@@ -162,15 +122,34 @@ export class OrderListComponent implements OnInit {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/customers/customers.module.ts]" value="import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CustomersRoutingModule } from './customers-routing.module';
+import { CustomersComponent } from './customers.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    CustomersRoutingModule
+  ],
+  declarations: [CustomersComponent]
+})
+export class CustomersModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/orders/orders-routing.module.ts]" value="import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { OrderListComponent } from './order-list/order-list.component';
+import { OrdersComponent } from './orders.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: OrderListComponent
+    component: OrdersComponent
   }
 ];
 
@@ -185,18 +164,39 @@ export class OrdersRoutingModule { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/orders/orders.component.ts]" value="import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-orders',
+  templateUrl: './orders.component.html',
+  styleUrls: ['./orders.component.css']
+})
+export class OrdersComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/orders/orders.module.ts]" value="import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { OrdersRoutingModule } from './orders-routing.module';
-import { OrderListComponent } from './order-list/order-list.component';
+import { OrdersComponent } from './orders.component';
 
 @NgModule({
   imports: [
     CommonModule,
     OrdersRoutingModule
   ],
-  declarations: [OrderListComponent]
+  declarations: [OrdersComponent]
 })
 export class OrdersModule { }
 
@@ -276,16 +276,6 @@ can be found in the LICENSE file at http://angular.io/license
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
-/** IE10 and IE11 requires the following for the Reflect API. */
-/**
- * DO NOT REMOVE
- * By default, Reflect polyfills are auto-included by the CLI and
- * are required for JIT compilation.  StackBlitz examples are
- * compiled using JIT.
- */
-import 'core-js/es6/reflect';
-import 'core-js/es7/reflect';
-
 /**
  * Web Animations `@angular/platform-browser/animations`
  * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
@@ -306,9 +296,11 @@ import 'core-js/es7/reflect';
  *
  * The following flags will work for all browsers.
  *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
  * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
  *
  *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
  *  with the following flag, it will bypass `zone.js` patch for IE/Edge
@@ -320,8 +312,7 @@ import 'core-js/es7/reflect';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
@@ -338,13 +329,13 @@ can be found in the LICENSE file at http://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/customers/customer-list/customer-list.component.css]" value="
+*/"><input type="hidden" name="files[src/app/customers/customers.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/orders/order-list/order-list.component.css]" value="
+*/"><input type="hidden" name="files[src/app/orders/orders.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
@@ -437,8 +428,8 @@ can be found in the LICENSE file at http://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/customers/customer-list/customer-list.component.html]" value="<p>
-  customer-list works!
+-->"><input type="hidden" name="files[src/app/customers/customers.component.html]" value="<p>
+  customers works!
 </p>
 
 
@@ -446,8 +437,8 @@ can be found in the LICENSE file at http://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/orders/order-list/order-list.component.html]" value="<p>
-  order-list works!
+-->"><input type="hidden" name="files[src/app/orders/orders.component.html]" value="<p>
+  orders works!
 </p>
 
 
@@ -595,7 +586,7 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="lazy loading"><input type="hidden" name="description" value="Angular Example - Lazy Loading Feature Modules"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.9.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.9.1&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.5.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="lazy loading"><input type="hidden" name="description" value="Angular Example - Lazy Loading Feature Modules"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
     <script>
       var embedded = 'ctl=1';
       var isEmbedded = window.location.search.indexOf(embedded) > -1;

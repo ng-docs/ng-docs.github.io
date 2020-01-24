@@ -1,0 +1,925 @@
+<html lang="en"><head></head><body>
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component, OnInit } from '@angular/core';
+import { Item } from './item';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+
+  canSave =  true;
+  isSpecial = true;
+  isUnchanged = true;
+
+  isActive = true;
+  nullCustomer = null;
+  currentCustomer = {
+    name: 'Laura'
+  };
+
+  item: Item; // defined to demonstrate template context precedence
+  items: Item[];
+
+  currentItem: Item;
+
+
+  // trackBy change counting
+  itemsNoTrackByCount   = 0;
+  itemsWithTrackByCount = 0;
+  itemsWithTrackByCountReset = 0;
+  itemIdIncrement = 1;
+
+  ngOnInit() {
+    this.resetItems();
+    this.setCurrentClasses();
+    this.setCurrentStyles();
+    this.itemsNoTrackByCount = 0;
+  }
+
+  setUppercaseName(name: string) {
+    this.currentItem.name = name.toUpperCase();
+  }
+
+  currentClasses: {};
+  setCurrentClasses() {
+    // CSS classes: added/removed per current state of component properties
+    this.currentClasses =  {
+      'saveable': this.canSave,
+      'modified': !this.isUnchanged,
+      'special':  this.isSpecial
+    };
+  }
+
+  currentStyles: {};
+  setCurrentStyles() {
+    // CSS styles: set per current state of component properties
+    this.currentStyles = {
+      'font-style':  this.canSave      ? 'italic' : 'normal',
+      'font-weight': !this.isUnchanged ? 'bold'   : 'normal',
+      'font-size':   this.isSpecial    ? '24px'   : '12px'
+    };
+  }
+
+  isActiveToggle() {
+    this.isActive = !this.isActive;
+  }
+
+  giveNullCustomerValue() {
+    !(this.nullCustomer = null) ? (this.nullCustomer = 'Kelly') : (this.nullCustomer = null);
+  }
+
+  resetNullItem() {
+    this.nullCustomer = null;
+  }
+
+  resetItems() {
+    this.items = Item.items.map(item => item.clone());
+    this.currentItem = this.items[0];
+    this.item = this.currentItem;
+  }
+
+  resetList() {
+    this.resetItems()
+    this.itemsWithTrackByCountReset = 0;
+    this.itemsNoTrackByCount = ++this.itemsNoTrackByCount;
+  }
+
+  changeIds() {
+
+    this.items.forEach(i => i.id += 1 * this.itemIdIncrement);
+    this.itemsWithTrackByCountReset = -1;
+    this.itemsNoTrackByCount = ++this.itemsNoTrackByCount;
+    this.itemsWithTrackByCount = ++this.itemsWithTrackByCount;
+  }
+
+  clearTrackByCounts() {
+    this.resetItems();
+    this.itemsNoTrackByCount = 0;
+    this.itemsWithTrackByCount = 0;
+    this.itemIdIncrement = 1;
+  }
+  trackByItems(index: number, item: Item): number { return item.id; }
+
+  trackById(index: number, item: any): number { return item['id']; }
+
+}
+
+
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
+
+
+import { AppComponent } from './app.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemSwitchComponents } from './item-switch.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ItemDetailComponent,
+    ItemSwitchComponents
+  ],
+
+  imports: [
+    BrowserModule,
+    FormsModule // <--- import into the NgModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item-detail/item-detail.component.ts]" value="import { Component, Input } from '@angular/core';
+
+import { Item } from '../item';
+
+@Component({
+  selector: 'app-item-detail',
+  templateUrl: './item-detail.component.html',
+  styleUrls: ['./item-detail.component.css']
+})
+export class ItemDetailComponent {
+
+
+  @Input() item: Item;
+
+  constructor() { }
+
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item-switch.component.ts]" value="import { Component, Input } from '@angular/core';
+import { Item } from './item';
+
+@Component({
+  selector: 'app-stout-item',
+  template: `I'm a little {{item.name}}, short and stout!`
+})
+export class StoutItemComponent {
+  @Input() item: Item;
+}
+
+@Component({
+  selector: 'app-best-item',
+  template: `This is the brightest {{item.name}} in town.`
+})
+export class BestItemComponent {
+  @Input() item: Item;
+}
+
+@Component({
+  selector: 'app-device-item',
+  template: `Which is the slimmest {{item.name}}?`
+})
+export class DeviceItemComponent {
+  @Input() item: Item;
+}
+
+@Component({
+  selector: 'app-lost-item',
+  template: `Has anyone seen my {{item.name}}?`
+})
+export class LostItemComponent {
+  @Input() item: Item;
+}
+
+@Component({
+  selector: 'app-unknown-item',
+  template: `{{message}}`
+})
+export class UnknownItemComponent {
+  @Input() item: Item;
+  get message() {
+    return this.item &amp;&amp; this.item.name ?
+      `${this.item.name} is strange and mysterious.` :
+      'A mystery wrapped in a fishbowl.';
+  }
+}
+
+export const ItemSwitchComponents =
+  [ StoutItemComponent, BestItemComponent, DeviceItemComponent, LostItemComponent, UnknownItemComponent ];
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item.ts]" value="export class Item {
+  static nextId = 0;
+
+  static items: Item[] = [
+    new Item(
+      null,
+      'Teapot',
+      'stout'
+    ),
+    new Item(1, 'Lamp', 'bright'),
+    new Item(2, 'Phone', 'slim' ),
+    new Item(3, 'Television', 'vintage' ),
+    new Item(4, 'Fishbowl')
+  ];
+
+
+  constructor(
+    public id?: number,
+    public name?: string,
+    public feature?: string,
+    public url?: string,
+    public rate = 100,
+    ) {
+    this.id = id ? id : Item.nextId++;
+  }
+
+  clone(): Item {
+    return Object.assign(new Item(), this);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/**
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
+ */
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags.ts';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js/dist/zone'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.css]" value="
+button {
+	font-size: 100%;
+	margin: 0 2px;
+}
+
+div[ng-reflect-ng-switch], app-unknown-item {
+  margin: .5rem 0;
+  display: block;
+}
+
+#noTrackByCnt,
+#withTrackByCnt {
+	color: darkred;
+	max-width: 450px;
+	margin: 4px;
+}
+
+img {
+	height: 100px;
+}
+
+.box {
+	border: 1px solid black;
+	padding: 6px;
+	max-width: 450px;
+}
+
+.child-div {
+	margin-left: 1em;
+	font-weight: normal;
+}
+
+.context {
+	margin-left: 1em;
+}
+
+.hidden {
+	display: none;
+}
+
+.parent-div {
+	margin-top: 1em;
+	font-weight: bold;
+}
+
+.course {
+	font-weight: bold;
+	font-size: x-large;
+}
+
+.helpful {
+	color: red;
+}
+
+.saveable {
+	color: limegreen;
+}
+
+.study,
+.modified {
+  font-family: &quot;Brush Script MT&quot;;
+  font-size: 2rem;
+}
+
+.toe {
+	margin-left: 1em;
+	font-style: italic;
+}
+
+
+.to-toc {
+	margin-top: 10px;
+	display: block;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/item-detail/item-detail.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #333;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>Built-in Directives</h1>
+
+<h2>Built-in attribute directives</h2>
+
+<h3 id=&quot;ngModel&quot;>NgModel (two-way) Binding</h3>
+
+<fieldset><h4>NgModel examples</h4>
+  <p>Current item name: {{currentItem.name}}</p>
+  <p>
+    <label for=&quot;without&quot;>without NgModel:</label>
+    <input [value]=&quot;currentItem.name&quot; (input)=&quot;currentItem.name=$event.target.value&quot; id=&quot;without&quot;>
+
+  </p>
+
+  <p>
+    <label for=&quot;example-ngModel&quot;>[(ngModel)]:</label>
+    <input [(ngModel)]=&quot;currentItem.name&quot; id=&quot;example-ngModel&quot;>
+  </p>
+
+  <p>
+    <label for=&quot;example-bindon&quot;>bindon-ngModel: </label>
+    <input bindon-ngModel=&quot;currentItem.name&quot; id=&quot;example-bindon&quot;>
+  </p>
+
+  <p>
+    <label for=&quot;example-change&quot;>(ngModelChange)=&quot;...name=$event&quot;:</label>
+    <input [ngModel]=&quot;currentItem.name&quot; (ngModelChange)=&quot;currentItem.name=$event&quot; id=&quot;example-change&quot;>
+  </p>
+
+  <p>
+    <label for=&quot;example-uppercase&quot;>(ngModelChange)=&quot;setUppercaseName($event)&quot;
+      <input [ngModel]=&quot;currentItem.name&quot; (ngModelChange)=&quot;setUppercaseName($event)&quot; id=&quot;example-uppercase&quot;>
+    </label>
+  </p>
+</fieldset>
+
+<hr><h2 id=&quot;ngClass&quot;>NgClass Binding</h2>
+
+<p>currentClasses is {{currentClasses | json}}</p>
+<div [ngClass]=&quot;currentClasses&quot;>This div is initially saveable, unchanged, and special.</div>
+<ul>
+  <li>
+    <label for=&quot;saveable&quot;>saveable</label>
+    <input type=&quot;checkbox&quot; [(ngModel)]=&quot;canSave&quot; id=&quot;saveable&quot;>
+  </li>
+  <li>
+    <label for=&quot;modified&quot;>modified:</label>
+    <input type=&quot;checkbox&quot; [value]=&quot;!isUnchanged&quot; (change)=&quot;isUnchanged=!isUnchanged&quot; id=&quot;modified&quot;></li>
+  <li>
+    <label for=&quot;special&quot;>special: <input type=&quot;checkbox&quot; [(ngModel)]=&quot;isSpecial&quot; id=&quot;special&quot;></label>
+</li>
+</ul>
+<button (click)=&quot;setCurrentClasses()&quot;>Refresh currentClasses</button>
+
+<div [ngClass]=&quot;currentClasses&quot;>
+  This div should be {{ canSave ? &quot;&quot;: &quot;not&quot;}} saveable,
+                  {{ isUnchanged ? &quot;unchanged&quot; : &quot;modified&quot; }} and
+                  {{ isSpecial ? &quot;&quot;: &quot;not&quot;}} special after clicking &quot;Refresh&quot;.</div>
+<br><br>
+<!-- toggle the &quot;special&quot; class on/off with a property -->
+<div [ngClass]=&quot;isSpecial ? 'special' : ''&quot;>This div is special</div>
+<div class=&quot;helpful study course&quot;>Helpful study course</div>
+<div [ngClass]=&quot;{'helpful':false, 'study':true, 'course':true}&quot;>Study course</div>
+
+
+<!-- NgStyle binding -->
+<hr><h3>NgStyle Binding</h3>
+<div [style.font-size]=&quot;isSpecial ? 'x-large' : 'smaller'&quot;>
+  This div is x-large or smaller.
+</div>
+
+
+<h4>[ngStyle] binding to currentStyles - CSS property names</h4>
+<p>currentStyles is {{currentStyles | json}}</p>
+
+<div [ngStyle]=&quot;currentStyles&quot;>
+  This div is initially italic, normal weight, and extra large (24px).
+</div>
+
+
+
+<br>
+<label>italic: <input type=&quot;checkbox&quot; [(ngModel)]=&quot;canSave&quot;></label> |
+<label>normal: <input type=&quot;checkbox&quot; [(ngModel)]=&quot;isUnchanged&quot;></label> |
+<label>xlarge: <input type=&quot;checkbox&quot; [(ngModel)]=&quot;isSpecial&quot;></label>
+<button (click)=&quot;setCurrentStyles()&quot;>Refresh currentStyles</button>
+<br><br>
+<div [ngStyle]=&quot;currentStyles&quot;>
+  This div should be {{ canSave ? &quot;italic&quot;: &quot;plain&quot;}},
+                  {{ isUnchanged ? &quot;normal weight&quot; : &quot;bold&quot; }} and,
+                  {{ isSpecial ? &quot;extra large&quot;: &quot;normal size&quot;}} after clicking &quot;Refresh&quot;.</div>
+
+<hr>
+<h2>Built-in structural directives</h2>
+<h3 id=&quot;ngIf&quot;>NgIf Binding</h3>
+<div>
+  <p>If isActive is true, app-item-detail will render: </p>
+  <app-item-detail *ngIf=&quot;isActive&quot; [item]=&quot;item&quot;></app-item-detail>
+
+  <button (click)=&quot;isActiveToggle()&quot;>Toggle app-item-detail</button>
+</div>
+<p>If currentCustomer isn't null, say hello to Laura:</p>
+<div *ngIf=&quot;currentCustomer&quot;>Hello, {{currentCustomer.name}}</div>
+<p>nullCustomer is null by default. NgIf guards against null. Give it a value to show it:</p>
+<div *ngIf=&quot;nullCustomer&quot;>Hello, <span>{{nullCustomer}}</span></div>
+<button (click)=&quot;giveNullCustomerValue()&quot;>Give nullCustomer a value</button>
+
+
+<h4>NgIf binding with template (no *)</h4>
+
+<ng-template [ngIf]=&quot;currentItem&quot;>Add {{currentItem.name}} with template</ng-template>
+<hr>
+
+<h4>Show/hide vs. NgIf</h4>
+<!-- isSpecial is true -->
+<div [class.hidden]=&quot;!isSpecial&quot;>Show with class</div>
+<div [class.hidden]=&quot;isSpecial&quot;>Hide with class</div>
+
+<p>ItemDetail is in the DOM but hidden</p>
+<app-item-detail [class.hidden]=&quot;isSpecial&quot;></app-item-detail>
+
+<div [style.display]=&quot;isSpecial ? 'block' : 'none'&quot;>Show with style</div>
+<div [style.display]=&quot;isSpecial ? 'none'  : 'block'&quot;>Hide with style</div>
+
+
+<hr>
+<h2 id=&quot;ngFor&quot;>NgFor Binding</h2>
+
+<div class=&quot;box&quot;>
+  <div *ngFor=&quot;let item of items&quot;>{{item.name}}</div>
+</div>
+
+<p>*ngFor with ItemDetailComponent element</p>
+<div class=&quot;box&quot;>
+  <app-item-detail *ngFor=&quot;let item of items&quot; [item]=&quot;item&quot;></app-item-detail>
+</div>
+
+
+<h4 id=&quot;ngFor-index&quot;>*ngFor with index</h4>
+<p>with <i>semi-colon</i> separator</p>
+<div class=&quot;box&quot;>
+  <div *ngFor=&quot;let item of items; let i=index&quot;>{{i + 1}} - {{item.name}}</div>
+</div>
+
+<p>with <i>comma</i> separator</p>
+<div class=&quot;box&quot;>
+ <div *ngFor=&quot;let item of items, let i=index&quot;>{{i + 1}} - {{item.name}}</div>
+</div>
+
+<h4 id=&quot;ngFor-trackBy&quot;>*ngFor trackBy</h4>
+<button (click)=&quot;resetList()&quot;>Reset items</button>
+<button (click)=&quot;changeIds()&quot;>Change ids</button>
+<button (click)=&quot;clearTrackByCounts()&quot;>Clear counts</button>
+
+<p><i>without</i> trackBy</p>
+<div class=&quot;box&quot;>
+  <div #noTrackBy *ngFor=&quot;let item of items&quot;>({{item.id}}) {{item.name}}</div>
+
+  <div id=&quot;noTrackByCnt&quot; *ngIf=&quot;itemsNoTrackByCount&quot; >
+    Item DOM elements change #{{itemsNoTrackByCount}} without trackBy
+  </div>
+</div>
+
+<p>with trackBy</p>
+<div class=&quot;box&quot;>
+  <div #withTrackBy *ngFor=&quot;let item of items; trackBy: trackByItems&quot;>({{item.id}}) {{item.name}}</div>
+
+  <div id=&quot;withTrackByCnt&quot; *ngIf=&quot;itemsWithTrackByCount&quot;>
+    Item DOM elements change #{{itemsWithTrackByCount}} with trackBy
+  </div>
+</div>
+
+<br><br><br>
+
+<p>with trackBy and <i>semi-colon</i> separator</p>
+<div class=&quot;box&quot;>
+  <div *ngFor=&quot;let item of items; trackBy: trackByItems&quot;>
+    ({{item.id}}) {{item.name}}
+  </div>
+</div>
+
+<p>with trackBy and <i>comma</i> separator</p>
+<div class=&quot;box&quot;>
+  <div *ngFor=&quot;let item of items, trackBy: trackByItems&quot;>({{item.id}}) {{item.name}}</div>
+</div>
+
+<p>with trackBy and <i>space</i> separator</p>
+<div class=&quot;box&quot;>
+  <div *ngFor=&quot;let item of items trackBy: trackByItems&quot;>({{item.id}}) {{item.name}}</div>
+</div>
+
+<p>with <i>generic</i> trackById function</p>
+<div class=&quot;box&quot;>
+  <div *ngFor=&quot;let item of items, trackBy: trackById&quot;>({{item.id}}) {{item.name}}</div>
+</div>
+
+<hr><h2>NgSwitch Binding</h2>
+
+<p>Pick your favorite item</p>
+<div>
+  <label *ngFor=&quot;let i of items&quot;>
+    <div><input type=&quot;radio&quot; name=&quot;items&quot; [(ngModel)]=&quot;currentItem&quot; [value]=&quot;i&quot;>{{i.name}}
+    </div>
+  </label>
+</div>
+
+<div [ngSwitch]=&quot;currentItem.feature&quot;>
+  <app-stout-item    *ngSwitchCase=&quot;'stout'&quot;    [item]=&quot;currentItem&quot;></app-stout-item>
+  <app-device-item   *ngSwitchCase=&quot;'slim'&quot;     [item]=&quot;currentItem&quot;></app-device-item>
+  <app-lost-item     *ngSwitchCase=&quot;'vintage'&quot;  [item]=&quot;currentItem&quot;></app-lost-item>
+  <app-best-item     *ngSwitchCase=&quot;'bright'&quot;   [item]=&quot;currentItem&quot;></app-best-item>
+  <div *ngSwitchCase=&quot;'bright'&quot;> Are you as bright as {{currentItem.name}}?</div>
+  <app-unknown-item  *ngSwitchDefault           [item]=&quot;currentItem&quot;></app-unknown-item>
+</div>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/app/item-detail/item-detail.component.html]" value="<div>
+  <span>{{item?.name}}</span>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[src/index.html]" value="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+  <title>BuiltInDirectives</title>
+  <base href=&quot;/&quot;>
+
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;schematics&quot;: {},
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;extractCss&quot;: true,
+              &quot;namedChunks&quot;: false,
+              &quot;aot&quot;: true,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true,
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
+                  &quot;maximumError&quot;: &quot;5mb&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;tsconfig.app.json&quot;,
+              &quot;tsconfig.spec.json&quot;,
+              &quot;e2e/tsconfig.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+}
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Built-in Directives"><input type="hidden" name="description" value="Angular Example - Built-in Directives"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
+    <script>
+      var embedded = 'ctl=1';
+      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+      if (isEmbedded) {
+        var form = document.getElementById('mainForm');
+        var action = form.action;
+        var actionHasParams = action.indexOf('?') > -1;
+        var symbol = actionHasParams ? '&' : '?'
+        form.action = form.action + symbol + embedded;
+      }
+      document.getElementById("mainForm").submit();
+    </script>
+    </body></html>

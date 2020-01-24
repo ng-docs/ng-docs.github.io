@@ -2,22 +2,24 @@
     <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component }       from '@angular/core';
 
 import { QuestionService } from './question.service';
+import { QuestionBase }    from './question-base';
+import { Observable }      from 'rxjs';
 
 @Component({
   selector: 'app-root',
   template: `
     <div>
       <h2>Job Application for Heroes</h2>
-      <app-dynamic-form [questions]=&quot;questions&quot;></app-dynamic-form>
+      <app-dynamic-form [questions]=&quot;questions$ | async&quot;></app-dynamic-form>
     </div>
   `,
   providers:  [QuestionService]
 })
 export class AppComponent {
-  questions: any[];
+  questions$: Observable<QuestionBase<any>[]>;
 
   constructor(service: QuestionService) {
-    this.questions = service.getQuestions();
+    this.questions$ = service.getQuestions();
   }
 }
 
@@ -59,7 +61,7 @@ import { QuestionBase }     from './question-base';
   templateUrl: './dynamic-form-question.component.html'
 })
 export class DynamicFormQuestionComponent {
-  @Input() question: QuestionBase<any>;
+  @Input() question: QuestionBase<string>;
   @Input() form: FormGroup;
   get isValid() { return this.form.controls[this.question.key].valid; }
 }
@@ -82,7 +84,7 @@ import { QuestionControlService }    from './question-control.service';
 })
 export class DynamicFormComponent implements OnInit {
 
-  @Input() questions: QuestionBase<any>[] = [];
+  @Input() questions: QuestionBase<string>[] = [];
   form: FormGroup;
   payLoad = '';
 
@@ -93,7 +95,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
+    this.payLoad = JSON.stringify(this.form.getRawValue());
   }
 }
 
@@ -109,6 +111,8 @@ can be found in the LICENSE file at http://angular.io/license
   required: boolean;
   order: number;
   controlType: string;
+  type: string;
+  options: {key: string, value: string}[];
 
   constructor(options: {
       value?: T,
@@ -116,7 +120,8 @@ can be found in the LICENSE file at http://angular.io/license
       label?: string,
       required?: boolean,
       order?: number,
-      controlType?: string
+      controlType?: string,
+      type?: string
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -124,6 +129,7 @@ can be found in the LICENSE file at http://angular.io/license
     this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
+    this.type = options.type || '';
   }
 }
 
@@ -141,7 +147,7 @@ import { QuestionBase } from './question-base';
 export class QuestionControlService {
   constructor() { }
 
-  toFormGroup(questions: QuestionBase<any>[] ) {
+  toFormGroup(questions: QuestionBase<string>[] ) {
     let group: any = {};
 
     questions.forEach(question => {
@@ -196,15 +202,15 @@ can be found in the LICENSE file at http://angular.io/license
 import { DropdownQuestion } from './question-dropdown';
 import { QuestionBase }     from './question-base';
 import { TextboxQuestion }  from './question-textbox';
+import { of } from 'rxjs';
 
 @Injectable()
 export class QuestionService {
 
   // TODO: get from a remote source of question metadata
-  // TODO: make asynchronous
   getQuestions() {
 
-    let questions: QuestionBase<any>[] = [
+    let questions: QuestionBase<string>[] = [
 
       new DropdownQuestion({
         key: 'brave',
@@ -234,7 +240,7 @@ export class QuestionService {
       })
     ];
 
-    return questions.sort((a, b) => a.order - b.order);
+    return of(questions.sort((a, b) => a.order - b.order));
   }
 }
 
@@ -314,16 +320,6 @@ can be found in the LICENSE file at http://angular.io/license
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
-/** IE10 and IE11 requires the following for the Reflect API. */
-/**
- * DO NOT REMOVE
- * By default, Reflect polyfills are auto-included by the CLI and
- * are required for JIT compilation.  StackBlitz examples are
- * compiled using JIT.
- */
-import 'core-js/es6/reflect';
-import 'core-js/es7/reflect';
-
 /**
  * Web Animations `@angular/platform-browser/animations`
  * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
@@ -344,9 +340,11 @@ import 'core-js/es7/reflect';
  *
  * The following flags will work for all browsers.
  *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
  * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
  *
  *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
  *  with the following flag, it will bypass `zone.js` patch for IE/Edge
@@ -358,8 +356,7 @@ import 'core-js/es7/reflect';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
@@ -465,7 +462,7 @@ can be found in the LICENSE file at http://angular.io/license
       <option *ngFor=&quot;let opt of question.options&quot; [value]=&quot;opt.key&quot;>{{opt.value}}</option>
     </select>
 
-  </div> 
+  </div>
 
   <div class=&quot;errorMessage&quot; *ngIf=&quot;!isValid&quot;>{{question.label}} is required</div>
 </div>
@@ -637,7 +634,7 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="cookbook"><input type="hidden" name="description" value="Angular Example - Dynamic Form"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.9.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.9.1&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.5.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="cookbook"><input type="hidden" name="description" value="Angular Example - Dynamic Form"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
     <script>
       var embedded = 'ctl=1';
       var isEmbedded = window.location.search.indexOf(embedded) > -1;
