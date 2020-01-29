@@ -463,12 +463,12 @@
         },
         {
           "url": "guide/i18n",
-          "title": "国际化 (i18n)",
+          "title": "国际化（i18n）",
           "tooltip": "把应用模板中的文本翻译成多种语言。"
         },
         {
           "url": "guide/accessibility",
-          "title": "无障碍(a11y)",
+          "title": "无障碍（a11y）",
           "tooltip": "设计能被所有用户访问的应用"
         },
         {
@@ -1018,14 +1018,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "50"
+      "64"
     ],
-    "build": "sha.fb87151",
-    "version": "9.0.0-build.50",
+    "build": "sha.d15b482",
+    "version": "9.0.0-build.64",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "9.0.0-build.50+sha.fb87151",
+    "full": "9.0.0-build.64+sha.d15b482",
     "branch": "master",
-    "commitSHA": "fb8715150949a4d31750f5c682786356d210b495"
+    "commitSHA": "d15b4822f8f2d2ca62b340d1efb1246e7b053fa1"
   }
 }
