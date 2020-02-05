@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580884440990,
+  "timestamp": 1580892190100,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1971,7 +1971,7 @@
     "/generated/docs/guide/app-shell.json": "5780c44046016adebe3a62c8efa29f8679dbb58d",
     "/generated/docs/guide/architecture-components.json": "07ca61ba10346a2f3db5993235949b9f5bc6fb7c",
     "/generated/docs/guide/architecture-modules.json": "a521809cdf9b7f7c6bf833590210436c7a91ccfa",
-    "/generated/docs/guide/architecture-next-steps.json": "3ea0b6833f47c8375042b4d94ee5c97b2c26687e",
+    "/generated/docs/guide/architecture-next-steps.json": "e8b48199ace2ecab431db7d31fe641553fe2b489",
     "/generated/docs/guide/architecture-services.json": "a191e1b69c9387e66940524db695d3f6dd5d0657",
     "/generated/docs/guide/architecture.json": "056c8f9f07ba567d375ff60ead4ded5623882227",
     "/generated/docs/guide/attribute-directives.json": "60ad807126095d466ecadece754131ac48dcebff",
@@ -2039,7 +2039,7 @@
     "/generated/docs/guide/route-animations.json": "39c73f2f647e2b78abd2a29ba8a94eca90892643",
     "/generated/docs/guide/router.json": "44261f02319b5ca442637fd9dfeefcd95ec5f989",
     "/generated/docs/guide/rx-library.json": "7ea98e9d3e986aeb6eea19a536d61a4f22e5ef37",
-    "/generated/docs/guide/schematics-authoring.json": "495408ca28d29e52b7c52ae0ccb228dae4528a6a",
+    "/generated/docs/guide/schematics-authoring.json": "7f538d90521a6ae7ccc4770b33a3c8908cdbeeb9",
     "/generated/docs/guide/schematics-for-libraries.json": "bdb75e09ae0e4032f3b0c5ef8da40182e3b74746",
     "/generated/docs/guide/schematics.json": "85c311b56140c7ce67e74bc3e7f62d9f2d05aeed",
     "/generated/docs/guide/security.json": "3304d9897fc6e09bba91b9853ec91fbd6ee17adc",
@@ -2528,7 +2528,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "b268face1233de9d5a146c9166e30c2460329d02",
+    "/generated/navigation.json": "55756c10e0afbea53b672e1a0c97e4f5ce946323",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "5856076a223c44b59d21606a75d91d6858aa35e5",
     "/live-example-live-example-module-es2015.a8023d1b084857ef476b.js": "bb2e3f03c21ba07fe7c90916cb89a0d133a876b1",
