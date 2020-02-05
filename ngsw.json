@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580877821625,
+  "timestamp": 1580884440990,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2005,7 +2005,7 @@
     "/generated/docs/guide/forms-overview.json": "7da2d36e49c0de21867a8ac647f52f121d99af9c",
     "/generated/docs/guide/forms.json": "ec072af7ea3991ea965e30fb26567427f26688d1",
     "/generated/docs/guide/frequent-ngmodules.json": "c624e871f476d6ce9fbaaa64f04b123ad78e7934",
-    "/generated/docs/guide/glossary.json": "d194d7138ac07918c5942d7f599d48788ca0b31d",
+    "/generated/docs/guide/glossary.json": "2f42b904119afa854a3809771e7b99a43118bb64",
     "/generated/docs/guide/hierarchical-dependency-injection.json": "606bf4ee4dd97ab5f7cc61bc950caa860a4679bb",
     "/generated/docs/guide/http.json": "63f6a94db57a89f7a7d6a61543289176424e0597",
     "/generated/docs/guide/i18n.json": "5e281aaa98e53504aae219ff113993fc3aee7b22",
@@ -2055,7 +2055,7 @@
     "/generated/docs/guide/static-query-migration.json": "10a3d8ea2e28a315bb3bebf89b6674b714e89727",
     "/generated/docs/guide/structural-directives.json": "b8115b24fc1a7e518dd63bc90386efd2bc326b33",
     "/generated/docs/guide/styleguide.json": "0a7be61c18a987e5f88527a674e3b01cac924b2a",
-    "/generated/docs/guide/template-syntax.json": "e806b6705fe8d352e076ff2575f0fbc4245aea62",
+    "/generated/docs/guide/template-syntax.json": "9154a5d371a0f737a249a69fe9c406ce851200c4",
     "/generated/docs/guide/template-typecheck.json": "5c8ae073db6894ed9788351d3dfcb2636a79683f",
     "/generated/docs/guide/testing.json": "0c9f26d55581cec46dee133d607d2b1ec5e4facc",
     "/generated/docs/guide/transition-and-triggers.json": "22fc45a5f7824b25486afded710d0dd80a5b2d08",
@@ -2094,7 +2094,7 @@
     "/generated/docs/tutorial/toh-pt3.json": "6855d07d83fb4af68f5242d5d87c92858cde24e0",
     "/generated/docs/tutorial/toh-pt4.json": "e4683ba4584dfa33f23759fdbea77b9585a9e4be",
     "/generated/docs/tutorial/toh-pt5.json": "500f22a5e7ead085ecc603d8cfbe4f6cbc9b1358",
-    "/generated/docs/tutorial/toh-pt6.json": "01de754114837948bac3be726af68aa099919ac6",
+    "/generated/docs/tutorial/toh-pt6.json": "3b1900f1c67001f34642faea92d7419f81312f19",
     "/generated/images/bios/CaerusKaru.jpg": "2a0c64a6b46d198a752aaf12fa046244b7af2b9c",
     "/generated/images/bios/JiaLiPassion.jpg": "47017649c2b62aa31a9f17d8856c9fcda0de4fa5",
     "/generated/images/bios/_no-one.jpg": "de366daa5f7c46e8565f0cee3f425df2c5792d81",
@@ -2528,7 +2528,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "faf06e73ec43463955b67b4f82364e31c36bcdcf",
+    "/generated/navigation.json": "b268face1233de9d5a146c9166e30c2460329d02",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "5856076a223c44b59d21606a75d91d6858aa35e5",
     "/live-example-live-example-module-es2015.a8023d1b084857ef476b.js": "bb2e3f03c21ba07fe7c90916cb89a0d133a876b1",
