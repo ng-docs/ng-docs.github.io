@@ -744,6 +744,14 @@
         "securityRisk": false
       },
       {
+        "name": "getlocalecurrencycode",
+        "title": "getLocaleCurrencyCode",
+        "path": "api/common/getLocaleCurrencyCode",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "getlocalecurrencyname",
         "title": "getLocaleCurrencyName",
         "path": "api/common/getLocaleCurrencyName",
@@ -1032,14 +1040,6 @@
         "securityRisk": false
       },
       {
-        "name": "ngclassbase",
-        "title": "NgClassBase",
-        "path": "api/common/NgClassBase",
-        "docType": "class",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
         "name": "ngcomponentoutlet",
         "title": "NgComponentOutlet",
         "path": "api/common/NgComponentOutlet",
@@ -1116,14 +1116,6 @@
         "title": "NgStyle",
         "path": "api/common/NgStyle",
         "docType": "directive",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "ngstylebase",
-        "title": "NgStyleBase",
-        "path": "api/common/NgStyleBase",
-        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1701,6 +1693,14 @@
         "securityRisk": false
       },
       {
+        "name": "default_currency_code",
+        "title": "DEFAULT_CURRENCY_CODE",
+        "path": "api/core/DEFAULT_CURRENCY_CODE",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "defaultiterablediffer",
         "title": "DefaultIterableDiffer",
         "path": "api/core/DefaultIterableDiffer",
@@ -1950,17 +1950,17 @@
       },
       {
         "name": "injector",
-        "title": "Injector",
-        "path": "api/core/Injector",
-        "docType": "class",
+        "title": "INJECTOR",
+        "path": "api/core/INJECTOR",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
       {
         "name": "injector",
-        "title": "INJECTOR",
-        "path": "api/core/INJECTOR",
-        "docType": "const",
+        "title": "Injector",
+        "path": "api/core/Injector",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2609,6 +2609,93 @@
         "title": "WrappedValue",
         "path": "api/core/WrappedValue",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      }
+    ]
+  },
+  {
+    "name": "core/global",
+    "title": "core/global",
+    "path": "api/core/global",
+    "items": [
+      {
+        "name": "listener",
+        "title": "Listener",
+        "path": "api/core/global/Listener",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.applychanges",
+        "title": "ng.applyChanges",
+        "path": "api/core/global/ngApplyChanges",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.getcomponent",
+        "title": "ng.getComponent",
+        "path": "api/core/global/ngGetComponent",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.getcontext",
+        "title": "ng.getContext",
+        "path": "api/core/global/ngGetContext",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.getdirectives",
+        "title": "ng.getDirectives",
+        "path": "api/core/global/ngGetDirectives",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.gethostelement",
+        "title": "ng.getHostElement",
+        "path": "api/core/global/ngGetHostElement",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.getinjector",
+        "title": "ng.getInjector",
+        "path": "api/core/global/ngGetInjector",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.getlisteners",
+        "title": "ng.getListeners",
+        "path": "api/core/global/ngGetListeners",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.getowningcomponent",
+        "title": "ng.getOwningComponent",
+        "path": "api/core/global/ngGetOwningComponent",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ng.getrootcomponents",
+        "title": "ng.getRootComponents",
+        "path": "api/core/global/ngGetRootComponents",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       }

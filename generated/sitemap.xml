@@ -814,6 +814,9 @@
     <loc>https://angular.cn/api/common/getLocaleNumberFormat</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/common/getLocaleCurrencyCode</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/common/getLocaleCurrencyName</loc>
   </url>
   <url>
@@ -827,9 +830,6 @@
   </url>
   <url>
     <loc>https://angular.cn/api/common/NgClass</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/common/NgClassBase</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/common/NgForOf</loc>
@@ -851,9 +851,6 @@
   </url>
   <url>
     <loc>https://angular.cn/api/common/NgStyle</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/common/NgStyleBase</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/common/NgSwitch</loc>
@@ -1097,6 +1094,9 @@
   </url>
   <url>
     <loc>https://angular.cn/api/core/LOCALE_ID</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/DEFAULT_CURRENCY_CODE</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/MissingTranslationStrategy</loc>
@@ -1460,6 +1460,39 @@
   </url>
   <url>
     <loc>https://angular.cn/api/core/platformCore</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngApplyChanges</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/Listener</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetComponent</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetContext</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetDirectives</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetHostElement</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetInjector</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetListeners</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetOwningComponent</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/global/ngGetRootComponents</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/testing</loc>

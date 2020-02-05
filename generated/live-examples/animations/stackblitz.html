@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/app/about.component.ts]" value="import { Component, OnInit } from '@angular/core';
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[src/app/about.component.ts]" value="import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -169,6 +169,7 @@ import { InsertRemoveComponent } from './insert-remove.component';
       { path: 'hero-groups', component: HeroListGroupPageComponent },
       { path: 'enter-leave', component: HeroListEnterLeavePageComponent },
       { path: 'auto', component: HeroListAutoCalcPageComponent },
+      { path: 'insert-remove', component: InsertRemoveComponent},
       { path: 'home', component: HomeComponent, data: {animation: 'HomePage'} },
       { path: 'about', component: AboutComponent, data: {animation: 'AboutPage'} },
 
@@ -573,10 +574,10 @@ import { trigger, transition, animate, style } from '@angular/animations';
     trigger('myInsertRemoveTrigger', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('5s', style({ opacity: 1 })),
+        animate('100ms', style({ opacity: 1 })),
       ]),
       transition(':leave', [
-        animate('5s', style({ opacity: 0 }))
+        animate('100ms', style({ opacity: 0 }))
       ])
     ]),
   ],
@@ -1284,11 +1285,14 @@ Toggle All Animations <input type=&quot;checkbox&quot; [checked]=&quot;!animatio
   <a id=&quot;auto&quot; routerLink=&quot;/auto&quot; routerLinkActive=&quot;active&quot;>Auto Calculation</a>
   <a id=&quot;heroes&quot; routerLink=&quot;/heroes&quot; routerLinkActive=&quot;active&quot;>Filter/Stagger</a>
   <a id=&quot;hero-groups&quot; routerLink=&quot;/hero-groups&quot; routerLinkActive=&quot;active&quot;>Hero Groups</a>
+  <a id=&quot;insert-remove&quot; routerLink=&quot;/insert-remove&quot; routerLinkActive=&quot;active&quot;>Insert/Remove</a>
+
 </nav>
 
 <div [@routeAnimations]=&quot;prepareRoute(outlet)&quot; >
   <router-outlet #outlet=&quot;outlet&quot;></router-outlet>
 </div>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
@@ -1336,7 +1340,10 @@ can be found in the LICENSE file at http://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/insert-remove.component.html]" value="<nav>
+-->"><input type="hidden" name="files[src/app/insert-remove.component.html]" value="
+<h2>Insert/Remove</h2>
+
+<nav>
   <button (click)=&quot;toggle()&quot;>Toggle Insert/Remove</button>
 </nav>
 

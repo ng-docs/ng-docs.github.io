@@ -1053,7 +1053,16 @@
                     return;
                 }
                 const table = yield this.lruTable;
-                return table.write('lru', this._lru.state);
+                try {
+                    return table.write('lru', this._lru.state);
+                }
+                catch (err) {
+                    // Writing lru cache table failed. This could be a result of a full storage.
+                    // Continue serving clients as usual.
+                    this.debugHandler.log(err, `DataGroup(${this.config.name}@${this.config.version}).syncLru()`);
+                    // TODO: Better detect/handle full storage; e.g. using
+                    // [navigator.storage](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorStorage/storage).
+                }
             });
         }
         /**

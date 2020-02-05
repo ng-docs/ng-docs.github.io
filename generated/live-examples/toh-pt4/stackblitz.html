@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/hero.service.ts" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -111,6 +111,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -123,7 +124,7 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.getHeroes();
@@ -131,6 +132,7 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.messageService.add(`HeroService: Selected hero id=${hero.id}`);
   }
 
   getHeroes(): void {

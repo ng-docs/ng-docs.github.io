@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1" target="_self"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/hero.service.ts" target="_self"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
@@ -272,7 +272,9 @@ export class HeroService {
       return of([]);
     }
     return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-      tap(_ => this.log(`found heroes matching &quot;${term}&quot;`)),
+      tap(x => x.length ?
+         this.log(`found heroes matching &quot;${term}&quot;`) :
+         this.log(`no heroes matching &quot;${term}&quot;`)),
       catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
   }
