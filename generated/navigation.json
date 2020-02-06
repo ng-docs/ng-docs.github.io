@@ -476,7 +476,7 @@
             },
             {
               "url": "guide/service-worker-getting-started",
-              "title": "快速起步",
+              "title": "快速上手",
               "tooltip": "在 CLI 项目中启用 Service Worker，并在浏览器中查看效果。"
             },
             {
@@ -1007,14 +1007,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "70"
+      "71"
     ],
-    "build": "sha.1c3923e7",
-    "version": "9.0.0-build.70",
+    "build": "sha.df592cdf",
+    "version": "9.0.0-build.71",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "9.0.0-build.70+sha.1c3923e7",
+    "full": "9.0.0-build.71+sha.df592cdf",
     "branch": "master",
-    "commitSHA": "1c3923e7f7054b1bf50cde3a94bf27126e46d2bc"
+    "commitSHA": "df592cdf696a67914a3335fab39aa22f47040450"
   }
 }
