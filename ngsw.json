@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580892190100,
+  "timestamp": 1580948925496,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -905,6 +905,7 @@
         "/generated/docs/translations/cn/home.json",
         "/generated/docs/translations/cn/news.json",
         "/generated/docs/translations/cn/nice-angular.json",
+        "/generated/docs/translations/tw/home.json",
         "/generated/docs/tutorial/toh-pt0.json",
         "/generated/docs/tutorial/toh-pt1.json",
         "/generated/docs/tutorial/toh-pt2.json",
@@ -1937,7 +1938,7 @@
     "/generated/docs/api/upgrade/static/testing.json": "7c2f53ddebebf8b404f1cbf60d151ba9ec1bfc37",
     "/generated/docs/api/upgrade/static/testing/createAngularJSTestingModule.json": "73c6d95aa51c277defabb808efa43a459fa86e38",
     "/generated/docs/api/upgrade/static/testing/createAngularTestingModule.json": "2e6fa837dc887d474eb530db5faef6ed81d296aa",
-    "/generated/docs/app/search-data.json": "bcdc1d6f8b3f53715769aca9ce786f9332d65346",
+    "/generated/docs/app/search-data.json": "8b1677c0f1b090265ce015d85a1b8e9cbdd1602e",
     "/generated/docs/cli.json": "8d48794437d3d0ba77be94783e37b7dc269b47fd",
     "/generated/docs/cli/add.json": "cf2d8bd229e5224e3f968c3ba16280531e97710d",
     "/generated/docs/cli/analytics.json": "419d09035ae3dabcfd4a05f1acb5720f2dd4c2a5",
@@ -2087,6 +2088,7 @@
     "/generated/docs/translations/cn/home.json": "9589deb693b5a58ffe94fd1b15984a7d4b5a4f4c",
     "/generated/docs/translations/cn/news.json": "14d007e4bd6ad9eedb5ae4c04d033000c7932c48",
     "/generated/docs/translations/cn/nice-angular.json": "bd88e90bbb77d36908670b15e3d2917e658dec3c",
+    "/generated/docs/translations/tw/home.json": "ccd0911f1bdbdee64b8aa8a76eca8b331f26b031",
     "/generated/docs/tutorial.json": "16a1cb82481c0aeba12b4b5024c82eeef4635d4c",
     "/generated/docs/tutorial/toh-pt0.json": "85187ed75155160f2ba5b8dc5776685455d627d3",
     "/generated/docs/tutorial/toh-pt1.json": "748ed079ec191bd028265c57e717f0886eb586c1",
@@ -2528,7 +2530,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "55756c10e0afbea53b672e1a0c97e4f5ce946323",
+    "/generated/navigation.json": "b8791aed1827fe000e6bef81154e2275a756b8cc",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "5856076a223c44b59d21606a75d91d6858aa35e5",
     "/live-example-live-example-module-es2015.a8023d1b084857ef476b.js": "bb2e3f03c21ba07fe7c90916cb89a0d133a876b1",
