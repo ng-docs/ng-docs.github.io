@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581038760818,
+  "timestamp": 1581048661530,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2012,7 +2012,7 @@
     "/generated/docs/guide/i18n.json": "5e281aaa98e53504aae219ff113993fc3aee7b22",
     "/generated/docs/guide/ivy-compatibility-examples.json": "17fd8fd204757b65d0c4638a5fec300a2b137e24",
     "/generated/docs/guide/ivy-compatibility.json": "69ae4cda217f28da6a5ea8b768c024f11267b790",
-    "/generated/docs/guide/ivy.json": "59ddfdacd147762d964bb73241f55b43c50ab48f",
+    "/generated/docs/guide/ivy.json": "e76f6efe02d2dfffe80f1057dee8d956100d665a",
     "/generated/docs/guide/language-service.json": "32a58c06bfc90499a9ba50923fb82e7fc512677b",
     "/generated/docs/guide/lazy-loading-ngmodules.json": "fa8b11fd11f31ae95ea08cbb55a6c91b0692bfdc",
     "/generated/docs/guide/libraries.json": "f8968e4078732b67fc383ad6c12f8cca8c03a92b",
@@ -2530,7 +2530,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "94d1c5fde7586b09cc2ae79279323da3b3d5d64d",
+    "/generated/navigation.json": "683c00ba7b96016019f2f280419b511a03d49179",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "15365360ef678d502a587ef5b59236b3fe2c8d49",
     "/live-example-live-example-module-es2015.a8023d1b084857ef476b.js": "bb2e3f03c21ba07fe7c90916cb89a0d133a876b1",
