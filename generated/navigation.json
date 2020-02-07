@@ -975,6 +975,10 @@
   ],
   "docVersions": [
     {
+      "title": "v8",
+      "url": "https://v8.angular.io/"
+    },
+    {
       "title": "v7",
       "url": "https://v7.angular.io/"
     },
@@ -1001,20 +1005,20 @@
       "includePrerelease": false
     },
     "loose": false,
-    "raw": "9.0.0-rc.1",
+    "raw": "9.0.0",
     "major": 9,
     "minor": 0,
-    "patch": 0,
+    "patch": 1,
     "prerelease": [
       "build",
-      "71"
+      "72"
     ],
-    "build": "sha.df592cdf",
-    "version": "9.0.0-build.71",
+    "build": "sha.43d40473",
+    "version": "9.0.1-build.72",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "9.0.0-build.71+sha.df592cdf",
+    "full": "9.0.1-build.72+sha.43d40473",
     "branch": "master",
-    "commitSHA": "df592cdf696a67914a3335fab39aa22f47040450"
+    "commitSHA": "43d40473b892be09151bd66ef12b9e8f1bc6868b"
   }
 }
