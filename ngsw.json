@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581346896397,
+  "timestamp": 1581588429699,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2062,7 +2062,7 @@
     "/generated/docs/guide/transition-and-triggers.json": "22fc45a5f7824b25486afded710d0dd80a5b2d08",
     "/generated/docs/guide/typescript-configuration.json": "839e7623249fe3f52076e098581820120ec69e72",
     "/generated/docs/guide/universal.json": "a38c1a71af0b50eec7fa8fd723207da30751645e",
-    "/generated/docs/guide/updating-to-version-9.json": "994e2af02e08e9a5124b195f84419f13af3f5739",
+    "/generated/docs/guide/updating-to-version-9.json": "5cec9061f6b9c8e418e83cd4642ae0099cbc8d7b",
     "/generated/docs/guide/updating.json": "dfbefd8e5a98a1193038965e3b0088a83d297ef8",
     "/generated/docs/guide/upgrade-performance.json": "8b40bcfd9f046a7b9a852c853197f7546b06c678",
     "/generated/docs/guide/upgrade-setup.json": "77ae6c3cb18a7d3f4f666c52f8f825423cec0183",
@@ -2530,7 +2530,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "11ec9f8437acd1796b38feebb8c20abd48195b52",
+    "/generated/navigation.json": "ededaf739b6b40c90b542f3dfc66a176395c2a61",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "15365360ef678d502a587ef5b59236b3fe2c8d49",
     "/live-example-live-example-module-es2015.a8023d1b084857ef476b.js": "bb2e3f03c21ba07fe7c90916cb89a0d133a876b1",
