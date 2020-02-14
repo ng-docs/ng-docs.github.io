@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581588429699,
+  "timestamp": 1581643801992,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2040,7 +2040,7 @@
     "/generated/docs/guide/route-animations.json": "93ed3d272752b7f4969c0f1eacbcd3f078cfa643",
     "/generated/docs/guide/router.json": "44261f02319b5ca442637fd9dfeefcd95ec5f989",
     "/generated/docs/guide/rx-library.json": "7ea98e9d3e986aeb6eea19a536d61a4f22e5ef37",
-    "/generated/docs/guide/schematics-authoring.json": "7f538d90521a6ae7ccc4770b33a3c8908cdbeeb9",
+    "/generated/docs/guide/schematics-authoring.json": "23864328d532f9fe3038ce49a00b22a91a513c6b",
     "/generated/docs/guide/schematics-for-libraries.json": "bdb75e09ae0e4032f3b0c5ef8da40182e3b74746",
     "/generated/docs/guide/schematics.json": "85c311b56140c7ce67e74bc3e7f62d9f2d05aeed",
     "/generated/docs/guide/security.json": "9c63e18ba4d87c54ee6b6791ed6093016f3d762b",
@@ -2530,7 +2530,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "ededaf739b6b40c90b542f3dfc66a176395c2a61",
+    "/generated/navigation.json": "2c1b4ffe42d725cc27f2dfbd7ec89df96dc07384",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "15365360ef678d502a587ef5b59236b3fe2c8d49",
     "/live-example-live-example-module-es2015.a8023d1b084857ef476b.js": "bb2e3f03c21ba07fe7c90916cb89a0d133a876b1",
