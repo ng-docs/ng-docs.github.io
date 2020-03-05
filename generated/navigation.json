@@ -1011,14 +1011,14 @@
     "patch": 1,
     "prerelease": [
       "build",
-      "81"
+      "82"
     ],
-    "build": "sha.d9b29a28",
-    "version": "9.0.1-build.81",
+    "build": "sha.6576b1cd",
+    "version": "9.0.1-build.82",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "9.0.1-build.81+sha.d9b29a28",
+    "full": "9.0.1-build.82+sha.6576b1cd",
     "branch": "master",
-    "commitSHA": "d9b29a288c80ace5159a3f5f88de347eb65f2254"
+    "commitSHA": "6576b1cd4063c68751afe20aaef2903409aa5659"
   }
 }
