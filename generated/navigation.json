@@ -17,8 +17,9 @@
       "title": "会议"
     },
     {
-      "url": "https://blog.angular.io/",
-      "title": "博客"
+      "url": "https://blog.wangke.io/",
+      "title": "译者博客",
+      "tooltip": "译者汪志成的博客，包括翻译文章和原创文章"
     },
     {
       "url": "translations/cn/home",
@@ -855,6 +856,11 @@
       "url": "https://ng.ant.design/"
     },
     {
+      "title": "华为 DevUI 组件库",
+      "tooltip": "“华为云” 开源的企业级组件库，核心设计思想是：致简、沉浸、灵活",
+      "url": "https://devui.design/"
+    },
+    {
       "title": "ng-zorro mobile 组件库",
       "tooltip": "Ant Design Mobile 的 Angular 实现，服务于无线产品。",
       "url": "https://ng.mobile.ant.design/"
@@ -1011,14 +1017,14 @@
     "patch": 1,
     "prerelease": [
       "build",
-      "83"
+      "84"
     ],
-    "build": "sha.7deaf58f",
-    "version": "9.0.1-build.83",
+    "build": "sha.72b1aff4",
+    "version": "9.0.1-build.84",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "9.0.1-build.83+sha.7deaf58f",
+    "full": "9.0.1-build.84+sha.72b1aff4",
     "branch": "master",
-    "commitSHA": "7deaf58f95b626f1ba752a9c3157daa72e6fc1bb"
+    "commitSHA": "72b1aff4e7ff7359ea599034acc249c4ea4b3209"
   }
 }
