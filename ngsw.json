@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585143295246,
+  "timestamp": 1585216262028,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2052,7 +2052,7 @@
     "/generated/docs/guide/set-document-title.json": "27de6f7059b4f6d1d0beacc8d20dfc4865d4d1c9",
     "/generated/docs/guide/setup-local.json": "c1e23b96e7b2607bbc071c02e2c3035418b4511e",
     "/generated/docs/guide/sharing-ngmodules.json": "d0e82ddaeceb3777b2ef27db34d3df0a2ac25889",
-    "/generated/docs/guide/singleton-services.json": "6e59f053ead50d63aabe6030cffc547b60019a95",
+    "/generated/docs/guide/singleton-services.json": "384a59a978218f6b6338efcc41523a0b394bd467",
     "/generated/docs/guide/static-query-migration.json": "10a3d8ea2e28a315bb3bebf89b6674b714e89727",
     "/generated/docs/guide/structural-directives.json": "b8115b24fc1a7e518dd63bc90386efd2bc326b33",
     "/generated/docs/guide/styleguide.json": "0a7be61c18a987e5f88527a674e3b01cac924b2a",
@@ -2530,7 +2530,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "25710b07f386371001ceac3599cd6528b5766f54",
+    "/generated/navigation.json": "522eaf640f67dc80a1cfb37ea0a23d0f50afbcbf",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "d36c0324344c8b4735749716856f5d58a774d91a",
     "/live-example-live-example-module-es2015.d3b124043392e69f9e97.js": "cfbc22c83817ae79df3e3d1b82ac53c964d6f95c",
