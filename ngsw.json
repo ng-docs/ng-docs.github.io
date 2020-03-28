@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585392648821,
+  "timestamp": 1585401625656,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2033,7 +2033,7 @@
     "/generated/docs/guide/observables.json": "dbeec681decbf2c9775df9774363e39bd314de20",
     "/generated/docs/guide/pipes.json": "8ee9059e5097ed4a825a2e13764dad8a2839baf0",
     "/generated/docs/guide/practical-observable-usage.json": "be17411f6d9d1651801828d8f5a38e5575747804",
-    "/generated/docs/guide/providers.json": "4b8bcfa7ee447fbf43152e9942332db91637d566",
+    "/generated/docs/guide/providers.json": "1ab3eac6c19101c9b4f9186ae6fb69bd3a94c0bb",
     "/generated/docs/guide/reactive-forms.json": "47c2d8d6c4b8d4f55db02383af2f8fd9dd0f185e",
     "/generated/docs/guide/releases.json": "5c068bcdb0c9f08800b2d4f4dba5aa570bd398d7",
     "/generated/docs/guide/reusable-animations.json": "2c3e7c052ffd79a477a0a5d2291f6a80890e6900",
@@ -2530,7 +2530,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "4d51e5cb52d40e4dcde8ca99aa75735c07d05bcd",
+    "/generated/navigation.json": "73036997c3bd77b650e2965b8839ee72d8b209cb",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "75cf85dceaa7f2f7caf1888e776c9ffae5a135f2",
     "/live-example-live-example-module-es2015.d3b124043392e69f9e97.js": "cfbc22c83817ae79df3e3d1b82ac53c964d6f95c",
