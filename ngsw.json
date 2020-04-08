@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585901964757,
+  "timestamp": 1586337082924,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2092,7 +2092,7 @@
     "/generated/docs/tutorial.json": "287c5f4905c1cd8babe9b0559b50a58d7a2c98e8",
     "/generated/docs/tutorial/toh-pt0.json": "85187ed75155160f2ba5b8dc5776685455d627d3",
     "/generated/docs/tutorial/toh-pt1.json": "976f48fec479c743f8837c2802bf841da140de02",
-    "/generated/docs/tutorial/toh-pt2.json": "c554515055d19e5c5e125c26640708178a492433",
+    "/generated/docs/tutorial/toh-pt2.json": "fb64e87bdf60d374a47fc190bb0d095b7fb9b57a",
     "/generated/docs/tutorial/toh-pt3.json": "6855d07d83fb4af68f5242d5d87c92858cde24e0",
     "/generated/docs/tutorial/toh-pt4.json": "e4683ba4584dfa33f23759fdbea77b9585a9e4be",
     "/generated/docs/tutorial/toh-pt5.json": "094a61d1136508efb941c00e838050c1d3075e34",
@@ -2530,7 +2530,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "6595df406d4b0091e3d596aa97128c4f833951d5",
+    "/generated/navigation.json": "da04a6d2cb9c41a85c75fd7af913ddabac3d2079",
     "/generated/resources.json": "f8fd7e734fe60e3c336356cd2117c1969c324b61",
     "/index.html": "75cf85dceaa7f2f7caf1888e776c9ffae5a135f2",
     "/live-example-live-example-module-es2015.d3b124043392e69f9e97.js": "cfbc22c83817ae79df3e3d1b82ac53c964d6f95c",
