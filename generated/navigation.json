@@ -344,8 +344,8 @@
             },
             {
               "url": "guide/providers",
-              "title": "服务提供商",
-              "tooltip": "服务提供商与 NgModule"
+              "title": "服务提供者",
+              "tooltip": "服务提供者与 NgModule"
             },
             {
               "url": "guide/singleton-services",
@@ -390,8 +390,8 @@
             },
             {
               "url": "guide/dependency-injection-providers",
-              "title": "DI 提供商",
-              "tooltip": "各种提供商类型的更多知识。"
+              "title": "DI 提供者",
+              "tooltip": "各种提供者类型的更多知识。"
             },
             {
               "url": "guide/dependency-injection-in-action",
@@ -1018,14 +1018,14 @@
     "patch": 1,
     "prerelease": [
       "build",
-      "108"
+      "109"
     ],
-    "build": "sha.c180073",
-    "version": "9.0.1-build.108",
+    "build": "sha.7a49faba",
+    "version": "9.0.1-build.109",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "9.0.1-build.108+sha.c180073",
+    "full": "9.0.1-build.109+sha.7a49faba",
     "branch": "master",
-    "commitSHA": "c1800730ed733cf89a0973749a4f2548e932f0d6"
+    "commitSHA": "7a49faba2d369d247d05e3dc94038080eb0ad508"
   }
 }
