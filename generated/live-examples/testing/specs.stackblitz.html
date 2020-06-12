@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/expected.ts]" value="/* Ignore. Satisfies static analysis of router config in app.component.router.spec.ts */
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/expected.ts]" value="/* Ignore. Satisfies static analysis of router config in app.component.router.spec.ts */
 
 
 /*
@@ -160,6 +160,7 @@ import './app/hero/hero-detail.component.spec.ts';
 import './app/hero/hero-list.component.spec.ts';
 import './app/model/hero.service.spec.ts';
 import './app/model/testing/http-client.spec.ts';
+import './app/shared/canvas.component.spec.ts';
 import './app/shared/highlight.directive.spec.ts';
 import './app/shared/title-case.pipe.spec.ts';
 import './app/twain/twain.component.spec.ts';
@@ -438,7 +439,7 @@ let fixture: ComponentFixture<AboutComponent>;
 describe('AboutComponent (highlightDirective)', () => {
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      declarations: [ AboutComponent, HighlightDirective],
+      declarations: [ AboutComponent, HighlightDirective ],
       schemas:      [ NO_ERRORS_SCHEMA ]
     })
     .createComponent(AboutComponent);
@@ -489,15 +490,15 @@ describe('AppComponent (initial CLI version)', () => {
   }));
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   }));
   it(`should have as title 'app'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
     expect(app.title).toEqual('app');
   }));
-  it('should render title in a h1 tag', async(() => {
+  it('should render title', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
@@ -563,22 +564,24 @@ export class AppComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule }       from '@angular/core';
-import { RouterModule }   from '@angular/router';
+*/"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';
 
+export const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: 'about', component: AboutComponent },
+  { path: 'heroes', loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule)},
+];
+
 @NgModule({
   imports: [
-    RouterModule.forRoot([
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-      { path: 'about', component: AboutComponent },
-      { path: 'heroes', loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule)}
-    ])
+    RouterModule.forRoot(routes),
   ],
   exports: [ RouterModule ] // re-export the module declarations
 })
-export class AppRoutingModule { };
+export class AppRoutingModule { }
 
 
 /*
@@ -588,16 +591,13 @@ can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.router.spec.ts]" value="// For more examples:
 //   https://github.com/angular/angular/blob/master/modules/@angular/router/test/integration.spec.ts
 
-import { async, ComponentFixture, fakeAsync, TestBed, tick,
-} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { asyncData } from '../testing';
 
 import { RouterTestingModule } from '@angular/router/testing';
 import { SpyLocation }         from '@angular/common/testing';
 
-// r - for relatively obscure router symbols
-import * as r                         from  '@angular/router';
 import { Router, RouterLinkWithHref } from '@angular/router';
 
 import { By }                 from '@angular/platform-browser';
@@ -606,6 +606,7 @@ import { Location }           from '@angular/common';
 
 import { click }              from '../testing';
 
+import { routes }             from './app-routing.module';
 import { AppModule }          from './app.module';
 import { AppComponent }       from './app.component';
 import { AboutComponent }     from './about/about.component';
@@ -624,7 +625,10 @@ describe('AppComponent &amp; RouterTestingModule', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ],
+      imports: [
+        AppModule,
+        RouterTestingModule.withRoutes(routes),
+      ],
       providers: [
         { provide: HeroService, useClass: TestHeroService }
       ]
@@ -635,7 +639,7 @@ describe('AppComponent &amp; RouterTestingModule', () => {
   it('should navigate to &quot;Dashboard&quot; immediately', fakeAsync(() => {
     createComponent();
     tick(); // wait for async data to arrive
-    expect(location.path()).toEqual('/dashboard', 'after initialNavigation()');
+    expectPathToBe('/dashboard', 'after initialNavigation()');
     expectElementOf(DashboardComponent);
   }));
 
@@ -683,14 +687,17 @@ xdescribe('AppComponent &amp; Lazy Loading (not working yet)', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+        AppModule,
+        RouterTestingModule.withRoutes(routes),
+      ],
     })
     .compileComponents();
   }));
 
   beforeEach(fakeAsync(() => {
     createComponent();
-    loader = TestBed.inject(NgModuleFactoryLoader);
+    loader = TestBed.inject(NgModuleFactoryLoader) as SpyNgModuleFactoryLoader;
     loader.stubbedModules = { expected: HeroModule };
     router.resetConfig([{path: 'heroes', loadChildren: 'expected'}]);
   }));
@@ -974,7 +981,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     AboutComponent,
     BannerComponent,
     TwainComponent,
-    WelcomeComponent ],
+    WelcomeComponent,
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
@@ -1756,21 +1764,21 @@ describe('Angular async helper', () => {
        async(() => { setTimeout(() => { actuallyDone = true; }, 0); }));
 
     it('should run async test with task', async(() => {
-      const id = setInterval(() => {
-        actuallyDone = true;
-        clearInterval(id);
-      }, 100);
-    }));
+         const id = setInterval(() => {
+           actuallyDone = true;
+           clearInterval(id);
+         }, 100);
+       }));
 
     it('should run async test with successful promise', async(() => {
-      const p = new Promise(resolve => { setTimeout(resolve, 10); });
-      p.then(() => { actuallyDone = true; });
-    }));
+         const p = new Promise(resolve => { setTimeout(resolve, 10); });
+         p.then(() => { actuallyDone = true; });
+       }));
 
     it('should run async test with failed promise', async(() => {
-      const p = new Promise((resolve, reject) => { setTimeout(reject, 10); });
-      p.catch(() => { actuallyDone = true; });
-    }));
+         const p = new Promise((resolve, reject) => { setTimeout(reject, 10); });
+         p.catch(() => { actuallyDone = true; });
+       }));
 
     // Use done. Can also use async or fakeAsync.
     it('should run async test with successful delayed Observable', (done: DoneFn) => {
@@ -1779,51 +1787,75 @@ describe('Angular async helper', () => {
     });
 
     it('should run async test with successful delayed Observable', async(() => {
-      const source = of (true).pipe(delay(10));
-      source.subscribe(val => actuallyDone = true, err => fail(err));
-    }));
+         const source = of (true).pipe(delay(10));
+         source.subscribe(val => actuallyDone = true, err => fail(err));
+       }));
 
     it('should run async test with successful delayed Observable', fakeAsync(() => {
-      const source = of (true).pipe(delay(10));
-      source.subscribe(val => actuallyDone = true, err => fail(err));
+         const source = of (true).pipe(delay(10));
+         source.subscribe(val => actuallyDone = true, err => fail(err));
 
-      tick(10);
-    }));
+         tick(10);
+       }));
   });
 
   describe('fakeAsync', () => {
     it('should run timeout callback with delay after call tick with millis', fakeAsync(() => {
-        let called = false;
-        setTimeout(() => { called = true; }, 100);
-        tick(100);
-        expect(called).toBe(true);
-      }));
+         let called = false;
+         setTimeout(() => { called = true; }, 100);
+         tick(100);
+         expect(called).toBe(true);
+       }));
+
+    it('should run new macro task callback with delay after call tick with millis',
+       fakeAsync(() => {
+         function nestedTimer(cb: () => any): void { setTimeout(() => setTimeout(() => cb())); }
+         const callback = jasmine.createSpy('callback');
+         nestedTimer(callback);
+         expect(callback).not.toHaveBeenCalled();
+         tick(0);
+         // the nested timeout will also be triggered
+         expect(callback).toHaveBeenCalled();
+       }));
+
+    it('should not run new macro task callback with delay after call tick with millis',
+       fakeAsync(() => {
+         function nestedTimer(cb: () => any): void { setTimeout(() => setTimeout(() => cb())); }
+         const callback = jasmine.createSpy('callback');
+         nestedTimer(callback);
+         expect(callback).not.toHaveBeenCalled();
+         tick(0, {processNewMacroTasksSynchronously: false});
+         // the nested timeout will not be triggered
+         expect(callback).not.toHaveBeenCalled();
+         tick(0);
+         expect(callback).toHaveBeenCalled();
+       }));
 
     it('should get Date diff correctly in fakeAsync', fakeAsync(() => {
-        const start = Date.now();
-        tick(100);
-        const end = Date.now();
-        expect(end - start).toBe(100);
-      }));
+         const start = Date.now();
+         tick(100);
+         const end = Date.now();
+         expect(end - start).toBe(100);
+       }));
 
     it('should get Date diff correctly in fakeAsync with rxjs scheduler', fakeAsync(() => {
-        // need to add `import 'zone.js/dist/zone-patch-rxjs-fake-async'
-        // to patch rxjs scheduler
-        let result = null;
-        of ('hello').pipe(delay(1000)).subscribe(v => { result = v; });
-        expect(result).toBeNull();
-        tick(1000);
-        expect(result).toBe('hello');
+         // need to add `import 'zone.js/dist/zone-patch-rxjs-fake-async'
+         // to patch rxjs scheduler
+         let result = null;
+         of ('hello').pipe(delay(1000)).subscribe(v => { result = v; });
+         expect(result).toBeNull();
+         tick(1000);
+         expect(result).toBe('hello');
 
-        const start = new Date().getTime();
-        let dateDiff = 0;
-        interval(1000).pipe(take(2)).subscribe(() => dateDiff = (new Date().getTime() - start));
+         const start = new Date().getTime();
+         let dateDiff = 0;
+         interval(1000).pipe(take(2)).subscribe(() => dateDiff = (new Date().getTime() - start));
 
-        tick(1000);
-        expect(dateDiff).toBe(1000);
-        tick(1000);
-        expect(dateDiff).toBe(2000);
-      }));
+         tick(1000);
+         expect(dateDiff).toBe(1000);
+         tick(1000);
+         expect(dateDiff).toBe(2000);
+       }));
   });
 
   describe('use jasmine.clock()', () => {
@@ -2123,7 +2155,7 @@ describe('demo (with TestBed):', () => {
       });
       // Inject both the service-to-test and its (spy) dependency
       masterService = TestBed.inject(MasterService);
-      valueServiceSpy = TestBed.inject(ValueService);
+      valueServiceSpy = TestBed.inject(ValueService) as jasmine.SpyObj<ValueService>;
     });
 
     it('#getValue should return stubbed value from a spy', () => {
@@ -2378,14 +2410,14 @@ describe('demo (with TestBed):', () => {
 
       expect(el.context).toBe(childComp, 'context is the child component');
 
-      expect(el.attributes['account']).toBe(childComp.id, 'account attribute');
-      expect(el.attributes['bank']).toBe(childComp.bank, 'bank attribute');
+      expect(el.attributes.account).toBe(childComp.id, 'account attribute');
+      expect(el.attributes.bank).toBe(childComp.bank, 'bank attribute');
 
-      expect(el.classes['closed']).toBe(true, 'closed class');
-      expect(el.classes['open']).toBe(false, 'open class');
+      expect(el.classes.closed).toBe(true, 'closed class');
+      expect(el.classes.open).toBeFalsy('open class');
 
-      expect(el.styles['color']).toBe(comp.color, 'color style');
-      expect(el.styles['width']).toBe(comp.width + 'px', 'width style');
+      expect(el.styles.color).toBe(comp.color, 'color style');
+      expect(el.styles.width).toBe(comp.width + 'px', 'width style');
 
       // Removed on 12/02/2016 when ceased public discussion of the `Renderer`. Revive in future?
       // expect(el.properties['customProperty']).toBe(true, 'customProperty');
@@ -2952,7 +2984,7 @@ export class TestViewProvidersComponent {
 export class ExternalTemplateComponent implements OnInit {
   serviceValue: string;
 
-  constructor(@Optional() private service: ValueService) {  }
+  constructor(@Optional() private service?: ValueService) {  }
 
   ngOnInit() {
     if (this.service) { this.serviceValue = this.service.getValue(); }
@@ -4550,7 +4582,16 @@ Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/canvas.component.spec.ts]" value="import { TestBed, async, tick, fakeAsync } from '@angular/core/testing';
 import { CanvasComponent } from './canvas.component';
+
 describe('CanvasComponent', () => {
+  beforeEach(() => {
+    window['__zone_symbol__FakeAsyncTestMacroTask'] = [
+      {
+        source: 'HTMLCanvasElement.toBlob',
+        callbackArgs: [{ size: 200 }],
+      },
+    ];
+  });
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -4558,52 +4599,49 @@ describe('CanvasComponent', () => {
       ],
     }).compileComponents();
   }));
-  beforeEach(() => {
-    window['__zone_symbol__FakeAsyncTestMacroTask'] = [
-      {
-        source: 'HTMLCanvasElement.toBlob',
-        callbackArgs: [{ size: 200 }]
-      }
-    ];
-  });
+
   it('should be able to generate blob data from canvas', fakeAsync(() => {
     const fixture = TestBed.createComponent(CanvasComponent);
+    const canvasComp = fixture.componentInstance;
+
     fixture.detectChanges();
+    expect(canvasComp.blobSize).toBe(0);
+
     tick();
-    const app = fixture.debugElement.componentInstance;
-    expect(app.blobSize).toBeGreaterThan(0);
+    expect(canvasComp.blobSize).toBeGreaterThan(0);
   }));
 });
-
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+*/"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="// Import patch to make async `HTMLCanvasElement` methods (such as `.toBlob()`) Zone.js-aware.
+// Either import in `polyfills.ts` (if used in more than one places in the app) or in the component
+// file using `HTMLCanvasElement` (if it is only used in a single file).
+import 'zone.js/dist/zone-patch-canvas';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'sample-canvas',
-  template: '<canvas #sampleCanvas width=&quot;200&quot; height=&quot;200&quot;></canvas>'
+  template: '<canvas #sampleCanvas width=&quot;200&quot; height=&quot;200&quot;></canvas>',
 })
 export class CanvasComponent implements AfterViewInit {
-  blobSize: number;
+  blobSize = 0;
   @ViewChild('sampleCanvas') sampleCanvas: ElementRef;
 
-  constructor() { }
-
   ngAfterViewInit() {
-    const canvas = this.sampleCanvas.nativeElement;
+    const canvas: HTMLCanvasElement = this.sampleCanvas.nativeElement;
     const context = canvas.getContext('2d');
-    if (context) {
-      context.clearRect(0, 0, 200, 200);
-      context.fillStyle = '#FF1122';
-      context.fillRect(0, 0, 200, 200);
-      canvas.toBlob((blob: any) => {
-        this.blobSize = blob.size;
-      });
-    }
+
+    context.clearRect(0, 0, 200, 200);
+    context.fillStyle = '#FF1122';
+    context.fillRect(0, 0, 200, 200);
+
+    canvas.toBlob(blob => {
+      this.blobSize = blob.size;
+    });
   }
 }
 
@@ -5247,20 +5285,20 @@ describe('WelcomeComponent', () => {
   let userService: UserService; // the TestBed injected service
   let el: HTMLElement; // the DOM element with the welcome message
 
-    let userServiceStub: Partial<UserService>;
+  let userServiceStub: Partial<UserService>;
 
   beforeEach(() => {
     // stub UserService for test purposes
     userServiceStub = {
       isLoggedIn: true,
-      user: { name: 'Test User'}
+      user: { name: 'Test User' },
     };
 
     TestBed.configureTestingModule({
        declarations: [ WelcomeComponent ],
-    // providers:    [ UserService ]  // NO! Don't provide the real service!
-                                      // Provide a test-double instead
-       providers:    [ {provide: UserService, useValue: userServiceStub } ]
+    // providers: [ UserService ],  // NO! Don't provide the real service!
+                                    // Provide a test-double instead
+       providers: [ { provide: UserService, useValue: userServiceStub } ],
     });
 
     fixture = TestBed.createComponent(WelcomeComponent);
@@ -5305,14 +5343,6 @@ describe('WelcomeComponent', () => {
   it('TestBed and Component UserService should be the same', () => {
     expect(userService === componentUserService).toBe(true);
   });
-
-  it('stub object and injected UserService should not be the same', () => {
-    expect(userServiceStub === userService).toBe(false);
-
-    // Changing the stub object has no effect on the injected service
-    userServiceStub.isLoggedIn = false;
-    expect(userService.isLoggedIn).toBe(true);
-  });
 });
 
 
@@ -5321,13 +5351,13 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/welcome/welcome.component.ts]" value="import { Component, OnInit } from '@angular/core';
-import { UserService }       from '../model/user.service';
+import { UserService } from '../model/user.service';
 
 @Component({
   selector: 'app-welcome',
   template: '<h3 class=&quot;welcome&quot;><i>{{welcome}}</i></h3>'
 })
-export class WelcomeComponent  implements OnInit {
+export class WelcomeComponent implements OnInit {
   welcome: string;
   constructor(private userService: UserService) { }
 
@@ -5643,6 +5673,11 @@ can be found in the LICENSE file at http://angular.io/license
                   &quot;type&quot;: &quot;initial&quot;,
                   &quot;maximumWarning&quot;: &quot;2mb&quot;,
                   &quot;maximumError&quot;: &quot;5mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
+                  &quot;maximumError&quot;: &quot;10kb&quot;
                 }
               ]
             }
@@ -5749,7 +5784,7 @@ can be found in the LICENSE file at http://angular.io/license
  * will put import in the top of bundle, so user need to create a separate file
  * in this directory (for example: zone-flags.ts), and put the following flags
  * into that file, and then add the following code before importing zone.js.
- * import './zone-flags.ts';
+ * import './zone-flags';
  *
  * The flags allowed in zone-flags.ts are listed here.
  *
@@ -5782,18 +5817,18 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Testing - specs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
-    <script>
-      var embedded = 'ctl=1';
-      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Testing - specs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.9.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+        <script>
+          var embedded = 'ctl=1';
+          var isEmbedded = window.location.search.indexOf(embedded) > -1;
 
-      if (isEmbedded) {
-        var form = document.getElementById('mainForm');
-        var action = form.action;
-        var actionHasParams = action.indexOf('?') > -1;
-        var symbol = actionHasParams ? '&' : '?'
-        form.action = form.action + symbol + embedded;
-      }
-      document.getElementById("mainForm").submit();
-    </script>
-    </body></html>
+          if (isEmbedded) {
+            var form = document.getElementById('mainForm');
+            var action = form.action;
+            var actionHasParams = action.indexOf('?') > -1;
+            var symbol = actionHasParams ? '&' : '?'
+            form.action = form.action + symbol + embedded;
+          }
+          document.getElementById("mainForm").submit();
+        </script>
+      </body></html>

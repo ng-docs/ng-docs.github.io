@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/hero-app.component.ts" target="_self"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/hero-app.component.ts" target="_self"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HeroAppComponent } from './hero-app.component';
@@ -268,7 +268,7 @@ can be found in the LICENSE file at http://angular.io/license
  * will put import in the top of bundle, so user need to create a separate file
  * in this directory (for example: zone-flags.ts), and put the following flags
  * into that file, and then add the following code before importing zone.js.
- * import './zone-flags.ts';
+ * import './zone-flags';
  *
  * The flags allowed in zone-flags.ts are listed here.
  *
@@ -518,6 +518,11 @@ can be found in the LICENSE file at http://angular.io/license
                   &quot;type&quot;: &quot;initial&quot;,
                   &quot;maximumWarning&quot;: &quot;2mb&quot;,
                   &quot;maximumError&quot;: &quot;5mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
+                  &quot;maximumError&quot;: &quot;10kb&quot;
                 }
               ]
             }
@@ -587,18 +592,18 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="CSS"><input type="hidden" name="description" value="Angular Example - Component Styles"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
-    <script>
-      var embedded = 'ctl=1';
-      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="CSS"><input type="hidden" name="description" value="Angular Example - Component Styles"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.9.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+        <script>
+          var embedded = 'ctl=1';
+          var isEmbedded = window.location.search.indexOf(embedded) > -1;
 
-      if (isEmbedded) {
-        var form = document.getElementById('mainForm');
-        var action = form.action;
-        var actionHasParams = action.indexOf('?') > -1;
-        var symbol = actionHasParams ? '&' : '?'
-        form.action = form.action + symbol + embedded;
-      }
-      document.getElementById("mainForm").submit();
-    </script>
-    </body></html>
+          if (isEmbedded) {
+            var form = document.getElementById('mainForm');
+            var action = form.action;
+            var actionHasParams = action.indexOf('?') > -1;
+            var symbol = actionHasParams ? '&' : '?'
+            form.action = form.action + symbol + embedded;
+          }
+          document.getElementById("mainForm").submit();
+        </script>
+      </body></html>

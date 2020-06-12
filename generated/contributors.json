@@ -54,17 +54,6 @@
     ],
     "lead": "juleskremer"
   },
-  "robwormald": {
-    "name": "Rob Wormald",
-    "picture": "rob-wormald.jpg",
-    "twitter": "robwormald",
-    "website": "http://github.com/robwormald",
-    "bio": "Rob is a Developer Advocate on the Angular team at Google. He's the Angular team's resident reactive programming geek and founded the Reactive Extensions for Angular project, ngrx.",
-    "groups": [
-      "Angular"
-    ],
-    "lead": "stephenfluin"
-  },
   "alexeagle": {
     "name": "Alex Eagle",
     "picture": "alex-eagle.jpg",
@@ -837,6 +826,15 @@
     ],
     "lead": "dennispbrown"
   },
+  "rockument69": {
+    "name": "Tony Bove",
+    "picture": "rockument69.jpg",
+    "bio": "Tony is a technical writer with Expert Support. His lifelong passions are helping people use technology, writing fiction, and playing music. When he's not working or playing the harmonica with friends in a bluegrass band, he's swimming and snorkeling on a Kauai beach and playing ball with his Irish Wolfhound. He's worked at home for decades before it became a thing.",
+    "groups": [
+      "Angular"
+    ],
+    "lead": "aikidave"
+  },
   "kapunahelewong": {
     "name": "Kapunahele Wong",
     "picture": "kapunahele.jpg",
@@ -1012,6 +1010,16 @@
       "GDE"
     ]
   },
+  "doguhan": {
+    "name": "Doguhan Uluca",
+    "picture": "doguhan.jpg",
+    "twitter": "duluca",
+    "website": "https://angularforenterprise.com",
+    "bio": "Doguhan is a GDE in Angular and Web Technologies. He is the author of Angular for Enterprise-Ready Web Applications, a speaker, organizer for AngularDC, and OSS contributor. When away from a screen, he enjoys playing Go, building legos, and claims to be an avid mixologist.",
+    "groups": [
+      "GDE"
+    ]
+  },
   "juleskremer": {
     "name": "Jules Kremer",
     "picture": "juleskremer.jpg",
@@ -1039,5 +1047,14 @@
       "Angular"
     ],
     "lead": "juleskremer"
+  },
+  "anneiyw": {
+    "name": "Annie Wang",
+    "picture": "annieyw.jpg",
+    "bio": "Annie is an engineering resident on the Angular Components team at Google. She is passionate about the intersection between design and technology and enjoys drawing in her free time.",
+    "groups": [
+      "Angular"
+    ],
+    "lead": "jelbourn"
   }
 }

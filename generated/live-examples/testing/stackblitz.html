@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/index.html]" value="<!-- Run the test app-->
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/index.html]" value="<!-- Run the test app-->
 <!DOCTYPE html>
 <html lang=&quot;en&quot;>
   <head>
@@ -402,22 +402,24 @@ export class AppComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule }       from '@angular/core';
-import { RouterModule }   from '@angular/router';
+*/"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';
 
+export const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: 'about', component: AboutComponent },
+  { path: 'heroes', loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule)},
+];
+
 @NgModule({
   imports: [
-    RouterModule.forRoot([
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-      { path: 'about', component: AboutComponent },
-      { path: 'heroes', loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule)}
-    ])
+    RouterModule.forRoot(routes),
   ],
   exports: [ RouterModule ] // re-export the module declarations
 })
-export class AppRoutingModule { };
+export class AppRoutingModule { }
 
 
 /*
@@ -482,7 +484,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     AboutComponent,
     BannerComponent,
     TwainComponent,
-    WelcomeComponent ],
+    WelcomeComponent,
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
@@ -883,7 +886,7 @@ export class TestViewProvidersComponent {
 export class ExternalTemplateComponent implements OnInit {
   serviceValue: string;
 
-  constructor(@Optional() private service: ValueService) {  }
+  constructor(@Optional() private service?: ValueService) {  }
 
   ngOnInit() {
     if (this.service) { this.serviceValue = this.service.getValue(); }
@@ -1526,29 +1529,31 @@ export class UserService {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+*/"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="// Import patch to make async `HTMLCanvasElement` methods (such as `.toBlob()`) Zone.js-aware.
+// Either import in `polyfills.ts` (if used in more than one places in the app) or in the component
+// file using `HTMLCanvasElement` (if it is only used in a single file).
+import 'zone.js/dist/zone-patch-canvas';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'sample-canvas',
-  template: '<canvas #sampleCanvas width=&quot;200&quot; height=&quot;200&quot;></canvas>'
+  template: '<canvas #sampleCanvas width=&quot;200&quot; height=&quot;200&quot;></canvas>',
 })
 export class CanvasComponent implements AfterViewInit {
-  blobSize: number;
+  blobSize = 0;
   @ViewChild('sampleCanvas') sampleCanvas: ElementRef;
 
-  constructor() { }
-
   ngAfterViewInit() {
-    const canvas = this.sampleCanvas.nativeElement;
+    const canvas: HTMLCanvasElement = this.sampleCanvas.nativeElement;
     const context = canvas.getContext('2d');
-    if (context) {
-      context.clearRect(0, 0, 200, 200);
-      context.fillStyle = '#FF1122';
-      context.fillRect(0, 0, 200, 200);
-      canvas.toBlob((blob: any) => {
-        this.blobSize = blob.size;
-      });
-    }
+
+    context.clearRect(0, 0, 200, 200);
+    context.fillStyle = '#FF1122';
+    context.fillRect(0, 0, 200, 200);
+
+    canvas.toBlob(blob => {
+      this.blobSize = blob.size;
+    });
   }
 }
 
@@ -1755,13 +1760,13 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */"><input type="hidden" name="files[src/app/welcome/welcome.component.ts]" value="import { Component, OnInit } from '@angular/core';
-import { UserService }       from '../model/user.service';
+import { UserService } from '../model/user.service';
 
 @Component({
   selector: 'app-welcome',
   template: '<h3 class=&quot;welcome&quot;><i>{{welcome}}</i></h3>'
 })
-export class WelcomeComponent  implements OnInit {
+export class WelcomeComponent implements OnInit {
   welcome: string;
   constructor(private userService: UserService) { }
 
@@ -1859,6 +1864,11 @@ can be found in the LICENSE file at http://angular.io/license
                   &quot;type&quot;: &quot;initial&quot;,
                   &quot;maximumWarning&quot;: &quot;2mb&quot;,
                   &quot;maximumError&quot;: &quot;5mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
+                  &quot;maximumError&quot;: &quot;10kb&quot;
                 }
               ]
             }
@@ -1965,7 +1975,7 @@ can be found in the LICENSE file at http://angular.io/license
  * will put import in the top of bundle, so user need to create a separate file
  * in this directory (for example: zone-flags.ts), and put the following flags
  * into that file, and then add the following code before importing zone.js.
- * import './zone-flags.ts';
+ * import './zone-flags';
  *
  * The flags allowed in zone-flags.ts are listed here.
  *
@@ -1998,18 +2008,18 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Heroes Test App"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
-    <script>
-      var embedded = 'ctl=1';
-      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Heroes Test App"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.9.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+        <script>
+          var embedded = 'ctl=1';
+          var isEmbedded = window.location.search.indexOf(embedded) > -1;
 
-      if (isEmbedded) {
-        var form = document.getElementById('mainForm');
-        var action = form.action;
-        var actionHasParams = action.indexOf('?') > -1;
-        var symbol = actionHasParams ? '&' : '?'
-        form.action = form.action + symbol + embedded;
-      }
-      document.getElementById("mainForm").submit();
-    </script>
-    </body></html>
+          if (isEmbedded) {
+            var form = document.getElementById('mainForm');
+            var action = form.action;
+            var actionHasParams = action.indexOf('?') > -1;
+            var symbol = actionHasParams ? '&' : '?'
+            form.action = form.action + symbol + embedded;
+          }
+          document.getElementById("mainForm").submit();
+        </script>
+      </body></html>

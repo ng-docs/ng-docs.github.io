@@ -1894,17 +1894,17 @@
       },
       {
         "name": "inject",
-        "title": "Inject",
-        "path": "api/core/Inject",
-        "docType": "decorator",
+        "title": "inject",
+        "path": "api/core/inject",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
       {
         "name": "inject",
-        "title": "inject",
-        "path": "api/core/inject",
-        "docType": "const",
+        "title": "Inject",
+        "path": "api/core/Inject",
+        "docType": "decorator",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1950,17 +1950,17 @@
       },
       {
         "name": "injector",
-        "title": "INJECTOR",
-        "path": "api/core/INJECTOR",
-        "docType": "const",
+        "title": "Injector",
+        "path": "api/core/Injector",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
       {
         "name": "injector",
-        "title": "Injector",
-        "path": "api/core/Injector",
-        "docType": "class",
+        "title": "INJECTOR",
+        "path": "api/core/INJECTOR",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2609,7 +2609,7 @@
         "title": "WrappedValue",
         "path": "api/core/WrappedValue",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       }
     ]
@@ -2964,7 +2964,7 @@
         "name": "abstractformgroupdirective",
         "title": "AbstractFormGroupDirective",
         "path": "api/forms/AbstractFormGroupDirective",
-        "docType": "class",
+        "docType": "directive",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4677,7 +4677,7 @@
         "name": "upgradecomponent",
         "title": "UpgradeComponent",
         "path": "api/upgrade/static/UpgradeComponent",
-        "docType": "class",
+        "docType": "directive",
         "stability": "stable",
         "securityRisk": false
       },

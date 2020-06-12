@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-    <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/hero.service.ts" target="_self"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/hero.service.ts" target="_self"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
@@ -81,7 +81,6 @@ import { MessagesComponent }    from './messages/messages.component';
   ],
   bootstrap: [ AppComponent ]
 })
-
 export class AppModule { }
 
 
@@ -153,7 +152,7 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
- save(): void {
+  save(): void {
     this.heroService.updateHero(this.hero)
       .subscribe(() => this.goBack());
   }
@@ -234,7 +233,7 @@ export class HeroService {
     private messageService: MessageService) { }
 
   /** GET heroes from the server */
-  getHeroes (): Observable<Hero[]> {
+  getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         tap(_ => this.log('fetched heroes')),
@@ -282,7 +281,7 @@ export class HeroService {
   //////// Save methods //////////
 
   /** POST: add a new hero to the server */
-  addHero (hero: Hero): Observable<Hero> {
+  addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
       tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
       catchError(this.handleError<Hero>('addHero'))
@@ -290,7 +289,7 @@ export class HeroService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteHero (hero: Hero | number): Observable<Hero> {
+  deleteHero(hero: Hero | number): Observable<Hero> {
     const id = typeof hero === 'number' ? hero : hero.id;
     const url = `${this.heroesUrl}/${id}`;
 
@@ -301,7 +300,7 @@ export class HeroService {
   }
 
   /** PUT: update the hero on the server */
-  updateHero (hero: Hero): Observable<any> {
+  updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
@@ -314,7 +313,7 @@ export class HeroService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
@@ -394,9 +393,9 @@ export class HeroesComponent implements OnInit {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/in-memory-data.service.ts]" value="import { InMemoryDbService } from 'angular-in-memory-web-api';
+*/"><input type="hidden" name="files[src/app/in-memory-data.service.ts]" value="import { Injectable } from '@angular/core';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from './hero';
-import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -536,7 +535,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
 
 
 /*
@@ -580,7 +580,7 @@ can be found in the LICENSE file at http://angular.io/license
  * will put import in the top of bundle, so user need to create a separate file
  * in this directory (for example: zone-flags.ts), and put the following flags
  * into that file, and then add the following code before importing zone.js.
- * import './zone-flags.ts';
+ * import './zone-flags';
  *
  * The flags allowed in zone-flags.ts are listed here.
  *
@@ -736,7 +736,7 @@ button {
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
-  cursor: pointer; cursor: hand;
+  cursor: pointer;
 }
 button:hover {
   background-color: #cfd8dc;
@@ -829,7 +829,7 @@ can be found in the LICENSE file at http://angular.io/license
 }
 
 .heroes a:hover {
-  color:#607D8B;
+  color: #607D8B;
 }
 
 .heroes .badge {
@@ -837,7 +837,7 @@ can be found in the LICENSE file at http://angular.io/license
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color:#405061;
+  background-color: #405061;
   line-height: 1em;
   position: relative;
   left: -1px;
@@ -1102,7 +1102,6 @@ can be found in the LICENSE file at http://angular.io/license
   <meta charset=&quot;utf-8&quot;>
   <title>Tour of Heroes</title>
   <base href=&quot;/&quot;>
-
   <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
   <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;>
 </head>
@@ -1167,6 +1166,11 @@ can be found in the LICENSE file at http://angular.io/license
                   &quot;type&quot;: &quot;initial&quot;,
                   &quot;maximumWarning&quot;: &quot;2mb&quot;,
                   &quot;maximumError&quot;: &quot;5mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
+                  &quot;maximumError&quot;: &quot;10kb&quot;
                 }
               ]
             }
@@ -1236,18 +1240,18 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="tutorial"><input type="hidden" name="tags[3]" value="tour"><input type="hidden" name="tags[4]" value="heroes"><input type="hidden" name="tags[5]" value="http"><input type="hidden" name="description" value="Angular Example - Tour of Heroes: Part 6"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;^8.0.0&quot;,&quot;@angular/common&quot;:&quot;^8.0.0&quot;,&quot;@angular/compiler&quot;:&quot;^8.0.0&quot;,&quot;@angular/core&quot;:&quot;^8.0.0&quot;,&quot;@angular/forms&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;^8.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;^8.0.0&quot;,&quot;@angular/router&quot;:&quot;^8.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;^0.8.0&quot;,&quot;core-js&quot;:&quot;^2.5.4&quot;,&quot;rxjs&quot;:&quot;^6.5.1&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;web-animations-js&quot;:&quot;^2.3.1&quot;,&quot;zone.js&quot;:&quot;~0.10.2&quot;,&quot;jasmine-core&quot;:&quot;~2.99.1&quot;,&quot;jasmine-marbles&quot;:&quot;^0.6.0&quot;}"></form>
-    <script>
-      var embedded = 'ctl=1';
-      var isEmbedded = window.location.search.indexOf(embedded) > -1;
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="tutorial"><input type="hidden" name="tags[3]" value="tour"><input type="hidden" name="tags[4]" value="heroes"><input type="hidden" name="tags[5]" value="http"><input type="hidden" name="description" value="Angular Example - Tour of Heroes: Part 6"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.9.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+        <script>
+          var embedded = 'ctl=1';
+          var isEmbedded = window.location.search.indexOf(embedded) > -1;
 
-      if (isEmbedded) {
-        var form = document.getElementById('mainForm');
-        var action = form.action;
-        var actionHasParams = action.indexOf('?') > -1;
-        var symbol = actionHasParams ? '&' : '?'
-        form.action = form.action + symbol + embedded;
-      }
-      document.getElementById("mainForm").submit();
-    </script>
-    </body></html>
+          if (isEmbedded) {
+            var form = document.getElementById('mainForm');
+            var action = form.action;
+            var actionHasParams = action.indexOf('?') > -1;
+            var symbol = actionHasParams ? '&' : '?'
+            form.action = form.action + symbol + embedded;
+          }
+          document.getElementById("mainForm").submit();
+        </script>
+      </body></html>
