@@ -1166,14 +1166,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "129"
+      "130"
     ],
-    "build": "sha.56545331",
-    "version": "10.0.0-build.129",
+    "build": "sha.ee664190",
+    "version": "10.0.0-build.130",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "10.0.0-build.129+sha.56545331",
+    "full": "10.0.0-build.130+sha.ee664190",
     "branch": "master",
-    "commitSHA": "5654533190336bac74e9c63d7b0b509b18d8a942"
+    "commitSHA": "ee6641901fc83ff3d8b4c96afaf42978993fb8cb"
   }
 }
