@@ -428,8 +428,8 @@
       ]
     },
     {
-      "title": "技巧",
-      "tooltip": "在你的环境中使用 Angular 的技巧",
+      "title": "其它技术",
+      "tooltip": "在你的环境中使用 Angular 的其它技术",
       "children": [
         {
           "title": "动画",
@@ -1166,14 +1166,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "134"
+      "135"
     ],
-    "build": "sha.a6cec2dc",
-    "version": "10.0.0-build.134",
+    "build": "sha.28bebe84",
+    "version": "10.0.0-build.135",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "10.0.0-build.134+sha.a6cec2dc",
+    "full": "10.0.0-build.135+sha.28bebe84",
     "branch": "master",
-    "commitSHA": "a6cec2dcb59bfb4afc963a761cb2a69c6d529d29"
+    "commitSHA": "28bebe849d3761f862a88de8385636b58fbae379"
   }
 }
