@@ -40,9 +40,6 @@
     <loc>https://angular.cn/guide/attribute-directives</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/bazel</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/guide/bootstrapping</loc>
   </url>
   <url>
@@ -163,6 +160,9 @@
     <loc>https://angular.cn/guide/lifecycle-hooks</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/lightweight-injection-tokens</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/migration-dynamic-flag</loc>
   </url>
   <url>
@@ -178,7 +178,16 @@
     <loc>https://angular.cn/guide/migration-renderer</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/migration-solution-style-tsconfig</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/migration-undecorated-classes</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/migration-update-libraries-tslib</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/migration-update-module-and-target-compiler-options</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/module-types</loc>
@@ -277,6 +286,9 @@
     <loc>https://angular.cn/guide/static-query-migration</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/strict-mode</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/structural-directives</loc>
   </url>
   <url>
@@ -301,7 +313,7 @@
     <loc>https://angular.cn/guide/universal</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/updating-to-version-9</loc>
+    <loc>https://angular.cn/guide/updating-to-version-10</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/updating</loc>

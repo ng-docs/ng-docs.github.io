@@ -610,13 +610,13 @@ import { searchUrl } from '../package-search/package-search.service';
 
 
 /**
- * If request is cachable (e.g., package search) and
+ * If request is cacheable (e.g., package search) and
  * response is in cache return the cached response as observable.
  * If has 'x-refresh' header that is true,
  * then also re-run the package search, using response from next(),
  * returning an observable that emits the cached response first.
  *
- * If not in cache or not cachable,
+ * If not in cache or not cacheable,
  * pass request through to next()
  */
 @Injectable()
@@ -624,8 +624,8 @@ export class CachingInterceptor implements HttpInterceptor {
   constructor(private cache: RequestCache) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    // continue if not cachable.
-    if (!isCachable(req)) { return next.handle(req); }
+    // continue if not cacheable.
+    if (!isCacheable(req)) { return next.handle(req); }
 
     const cachedResponse = this.cache.get(req);
     // cache-then-refresh
@@ -642,11 +642,11 @@ export class CachingInterceptor implements HttpInterceptor {
 }
 
 
-/** Is this request cachable? */
-function isCachable(req: HttpRequest<any>) {
-  // Only GET requests are cachable
+/** Is this request cacheable? */
+function isCacheable(req: HttpRequest<any>) {
+  // Only GET requests are cacheable
   return req.method === 'GET' &amp;&amp;
-    // Only npm package search is cachable in this app
+    // Only npm package search is cacheable in this app
     -1 < req.url.indexOf(searchUrl);
 }
 
@@ -1841,7 +1841,7 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;heroesUrl&quot;: &quot;api/heroes&quot;,
   &quot;textfile&quot;: &quot;assets/textfile.txt&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="description" value="Angular Example - Http"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.9.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="description" value="Angular Example - Http"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

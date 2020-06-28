@@ -1672,7 +1672,7 @@
         "name": "debugelement",
         "title": "DebugElement",
         "path": "api/core/DebugElement",
-        "docType": "interface",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1688,7 +1688,7 @@
         "name": "debugnode",
         "title": "DebugNode",
         "path": "api/core/DebugNode",
-        "docType": "interface",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2520,7 +2520,7 @@
         "name": "type",
         "title": "Type",
         "path": "api/core/Type",
-        "docType": "interface",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2814,7 +2814,7 @@
         "name": "testbed",
         "title": "TestBed",
         "path": "api/core/testing/TestBed",
-        "docType": "interface",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
