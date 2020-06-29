@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1593339584774,
+  "timestamp": 1593408105368,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2052,7 +2052,7 @@
     "/generated/docs/guide/npm-packages.json": "072e35b32098422dbb7ea54fa68b60a91ff25203",
     "/generated/docs/guide/observables-in-angular.json": "baf5f9d2d7f63c71b91d3ddf1aacada917c178d7",
     "/generated/docs/guide/observables.json": "8b0ca9c2a154d1ceaff15f1211ba1d255cdc317b",
-    "/generated/docs/guide/pipes.json": "fc85ea94317725ded2687e3ecd8f1e72eba8691a",
+    "/generated/docs/guide/pipes.json": "d98c1b434de33974dd37119640951c5e42870b1c",
     "/generated/docs/guide/practical-observable-usage.json": "be17411f6d9d1651801828d8f5a38e5575747804",
     "/generated/docs/guide/providers.json": "ab471e53abfc6fc504cf73ec960145404adc302f",
     "/generated/docs/guide/reactive-forms.json": "e03579b13c422ef65b5ba7413afb41eefea1a00b",
@@ -2551,7 +2551,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "e155e640030e95eaea2e9d38351bf8b9c1f30c6b",
+    "/generated/navigation.json": "35c4d5a6f3e3be0255df71089227af8fe22cc195",
     "/generated/resources.json": "a032b6c83602c2b3fc0c4b29a08694d53c2f2312",
     "/index.html": "ff00660a1388f58b9af7428576538627b1e9918b",
     "/live-example-live-example-module-es2015.1d25e49b85fc828d903e.js": "06aa2f7e2b7595a5b81f3569ce9774436f0070bc",
