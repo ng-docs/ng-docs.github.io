@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1593408105368,
+  "timestamp": 1593412223927,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2026,7 +2026,7 @@
     "/generated/docs/guide/glossary.json": "7fb7d375159094c134fb5119594cd97e2f3438f9",
     "/generated/docs/guide/hierarchical-dependency-injection.json": "329bcc914ea41907d38509fdcff21041bdaca5a5",
     "/generated/docs/guide/http.json": "3aff4a2334e95f004f2e948a960dd18d91603615",
-    "/generated/docs/guide/i18n.json": "75f1ceaaa299949ad73897043a187af7c35e0877",
+    "/generated/docs/guide/i18n.json": "e8a8b86c5a30c1cc961e6e39bd9ffbe678ab0c91",
     "/generated/docs/guide/ivy-compatibility-examples.json": "4109ab7734d3f786327f3752e2b93e0f6d4cea19",
     "/generated/docs/guide/ivy-compatibility.json": "0e358263205f4cd755334963786aa4e2ebafcb09",
     "/generated/docs/guide/ivy.json": "5ad4c9b79d0fdbcdd0e9320948fae5731817620b",
@@ -2551,7 +2551,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "35c4d5a6f3e3be0255df71089227af8fe22cc195",
+    "/generated/navigation.json": "752432ef5da56513bbbafe7aaef9f98c8f3d34d6",
     "/generated/resources.json": "a032b6c83602c2b3fc0c4b29a08694d53c2f2312",
     "/index.html": "ff00660a1388f58b9af7428576538627b1e9918b",
     "/live-example-live-example-module-es2015.1d25e49b85fc828d903e.js": "06aa2f7e2b7595a5b81f3569ce9774436f0070bc",
