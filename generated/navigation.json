@@ -1170,14 +1170,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "150"
+      "151"
     ],
-    "build": "sha.56004468",
-    "version": "10.0.0-build.150",
+    "build": "sha.10ba378f",
+    "version": "10.0.0-build.151",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "10.0.0-build.150+sha.56004468",
+    "full": "10.0.0-build.151+sha.10ba378f",
     "branch": "master",
-    "commitSHA": "56004468e905c39aee32b7f3c7b762923e041f8d"
+    "commitSHA": "10ba378f672b22819e88b24478aab716fbb049f8"
   }
 }
