@@ -23,28 +23,28 @@ export class AppComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule }         from '@angular/core';
-import { BrowserModule }    from '@angular/platform-browser';
-import { FormsModule }      from '@angular/forms';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { RequestCache, RequestCacheWithMap } from './request-cache.service';
 
-import { AppComponent }         from './app.component';
-import { AuthService }          from './auth.service';
-import { ConfigComponent }      from './config/config.component';
-import { DownloaderComponent }  from './downloader/downloader.component';
-import { HeroesComponent }      from './heroes/heroes.component';
-import { HttpErrorHandler }     from './http-error-handler.service';
-import { MessageService }       from './message.service';
-import { MessagesComponent }    from './messages/messages.component';
+import { AppComponent } from './app.component';
+import { AuthService } from './auth.service';
+import { ConfigComponent } from './config/config.component';
+import { DownloaderComponent } from './downloader/downloader.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HttpErrorHandler } from './http-error-handler.service';
+import { MessageService } from './message.service';
+import { MessagesComponent } from './messages/messages.component';
 import { PackageSearchComponent } from './package-search/package-search.component';
-import { UploaderComponent }    from './uploader/uploader.component';
+import { UploaderComponent } from './uploader/uploader.component';
 
 import { httpInterceptorProviders } from './http-interceptors/index';
 
@@ -94,7 +94,7 @@ export class AppModule {}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/auth.service.ts]" value="import { Injectable } from '@angular/core';
 
 /** Mock client-side authentication/authorization service */
@@ -109,7 +109,7 @@ export class AuthService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/config/config.component.ts]" value="import { Component } from '@angular/core';
 import { Config, ConfigService } from './config.service';
 import { MessageService } from '../message.service';
@@ -144,8 +144,8 @@ export class ConfigComponent {
   showConfig_v1() {
     this.configService.getConfig_1()
       .subscribe((data: Config) => this.config = {
-          heroesUrl: data['heroesUrl'],
-          textfile:  data['textfile']
+          heroesUrl: data.heroesUrl,
+          textfile:  data.textfile
       });
   }
 
@@ -177,7 +177,7 @@ export class ConfigComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/config/config.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
@@ -231,15 +231,15 @@ export class ConfigService {
       console.error('An error occurred:', error.error.message);
     } else {
       // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
+      // The response body may contain clues as to what went wrong.
       console.error(
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
-    // return an observable with a user-facing error message
+    // Return an observable with a user-facing error message.
     return throwError(
       'Something bad happened; please try again later.');
-  };
+  }
 
   makeIntentionalError() {
     return this.http.get('not/a/real/url')
@@ -254,7 +254,7 @@ export class ConfigService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/downloader/downloader.component.ts]" value="import { Component } from '@angular/core';
 import { DownloaderService } from './downloader.service';
 
@@ -281,7 +281,7 @@ export class DownloaderComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/downloader/downloader.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -324,7 +324,7 @@ export class DownloaderService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/heroes/hero.ts]" value="export interface Hero {
   id: number;
   name: string;
@@ -334,7 +334,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/heroes/heroes.component.ts]" value="import { Component, OnInit } from '@angular/core';
 
 import { Hero } from './hero';
@@ -419,7 +419,7 @@ export class HeroesComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/heroes/heroes.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
@@ -434,7 +434,7 @@ import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    Authorization: 'my-auth-token'
   })
 };
 
@@ -450,7 +450,7 @@ export class HeroesService {
   }
 
   /** GET heroes from the server */
-  getHeroes (): Observable<Hero[]> {
+  getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         catchError(this.handleError('getHeroes', []))
@@ -474,7 +474,7 @@ export class HeroesService {
   //////// Save methods //////////
 
   /** POST: add a new hero to the database */
-  addHero (hero: Hero): Observable<Hero> {
+  addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
       .pipe(
         catchError(this.handleError('addHero', hero))
@@ -482,7 +482,7 @@ export class HeroesService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteHero (id: number): Observable<{}> {
+  deleteHero(id: number): Observable<{}> {
     const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
     return this.http.delete(url, httpOptions)
       .pipe(
@@ -491,7 +491,7 @@ export class HeroesService {
   }
 
   /** PUT: update the hero on the server. Returns the updated hero upon success. */
-  updateHero (hero: Hero): Observable<Hero> {
+  updateHero(hero: Hero): Observable<Hero> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'my-new-auth-token');
 
@@ -506,7 +506,7 @@ export class HeroesService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-error-handler.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -524,8 +524,10 @@ export class HttpErrorHandler {
   constructor(private messageService: MessageService) { }
 
   /** Create curried handleError function that already knows the service name */
-  createHandleError = (serviceName = '') => <T>
-    (operation = 'operation', result = {} as T) => this.handleError(serviceName, operation, result);
+  createHandleError = (serviceName = '') => {
+    return <T>(operation = 'operation', result = {} as T) =>
+      this.handleError(serviceName, operation, result);
+  }
 
   /**
    * Returns a function that handles Http operation failures.
@@ -534,7 +536,7 @@ export class HttpErrorHandler {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  handleError<T> (serviceName = '', operation = 'operation', result = {} as T) {
+  handleError<T>(serviceName = '', operation = 'operation', result = {} as T) {
 
     return (error: HttpErrorResponse): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
@@ -558,7 +560,7 @@ export class HttpErrorHandler {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/auth-interceptor.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
@@ -595,7 +597,7 @@ export class AuthInterceptor implements HttpInterceptor {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/caching-interceptor.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpHeaders, HttpRequest, HttpResponse,
@@ -677,7 +679,7 @@ function sendRequest(
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/ensure-https-interceptor.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
@@ -701,7 +703,7 @@ export class EnsureHttpsInterceptor implements HttpInterceptor {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/index.ts]" value="/* &quot;Barrel&quot; of Http Interceptors */
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -731,7 +733,7 @@ export const httpInterceptorProviders = [
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/logging-interceptor.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler,
@@ -773,7 +775,7 @@ export class LoggingInterceptor implements HttpInterceptor {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/noop-interceptor.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
@@ -795,7 +797,7 @@ export class NoopInterceptor implements HttpInterceptor {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/trim-name-interceptor.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
@@ -823,7 +825,7 @@ export class TrimNameInterceptor implements HttpInterceptor {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-interceptors/upload-interceptor.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler,
@@ -890,7 +892,7 @@ function createUploadEvents(delay: number) {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/in-memory-data.service.ts]" value="import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
@@ -909,7 +911,7 @@ export class InMemoryDataService implements InMemoryDbService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/message.service.ts]" value="import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -929,7 +931,7 @@ export class MessageService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/messages/messages.component.ts]" value="import { Component } from '@angular/core';
 import { MessageService } from '../message.service';
 
@@ -945,7 +947,7 @@ export class MessagesComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/package-search/package-search.component.ts]" value="import { Component, OnInit } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
@@ -987,7 +989,7 @@ export class PackageSearchComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/package-search/package-search.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
@@ -1029,7 +1031,7 @@ export class PackageSearchService {
     this.handleError = httpErrorHandler.createHandleError('HeroesService');
   }
 
-  search (packageName: string, refresh = false): Observable<NpmPackageInfo[]> {
+  search(packageName: string, refresh = false): Observable<NpmPackageInfo[]> {
     // clear if no pkg name
     if (!packageName.trim()) { return of([]); }
 
@@ -1054,7 +1056,7 @@ export class PackageSearchService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/request-cache.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse } from '@angular/common/http';
 
@@ -1068,7 +1070,7 @@ export interface RequestCacheEntry {
 
 export abstract class RequestCache {
   abstract get(req: HttpRequest<any>): HttpResponse<any> | undefined;
-  abstract put(req: HttpRequest<any>, response: HttpResponse<any>): void
+  abstract put(req: HttpRequest<any>, response: HttpResponse<any>): void;
 }
 
 const maxAge = 30000; // maximum cache age (ms)
@@ -1099,8 +1101,8 @@ export class RequestCacheWithMap implements RequestCache {
     const url = req.urlWithParams;
     this.messenger.add(`Caching response from &quot;${url}&quot;.`);
 
-    const entry = { url, response, lastRead: Date.now() };
-    this.cache.set(url, entry);
+    const newEntry = { url, response, lastRead: Date.now() };
+    this.cache.set(url, newEntry);
 
     // remove expired cache entries
     const expired = Date.now() - maxAge;
@@ -1118,7 +1120,7 @@ export class RequestCacheWithMap implements RequestCache {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/uploader/uploader.component.ts]" value="import { Component } from '@angular/core';
 import { UploaderService } from './uploader.service';
 
@@ -1149,7 +1151,7 @@ export class UploaderComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/uploader/uploader.service.ts]" value="import { Injectable } from '@angular/core';
 import {
   HttpClient, HttpEvent, HttpEventType, HttpProgressEvent,
@@ -1176,7 +1178,7 @@ export class UploaderService {
   // }
 
   upload(file: File) {
-    if (!file) { return; }
+    if (!file) { return of<string>(); }
 
     // COULD HAVE WRITTEN:
     // return this.http.post('/upload/file', file, {
@@ -1254,7 +1256,7 @@ export class UploaderService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -1263,7 +1265,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -1285,7 +1287,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -1302,7 +1304,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -1323,7 +1325,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -1372,7 +1374,7 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/heroes/heroes.component.css]" value="/* HeroesComponent's private CSS styles */
 .heroes {
   margin: 0 0 2em 0;
@@ -1467,7 +1469,7 @@ input {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -1538,14 +1540,14 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>HTTP Sample</h1>
 <div>
   <input type=&quot;checkbox&quot; id=&quot;heroes&quot; [checked]=&quot;showHeroes&quot; (click)=&quot;toggleHeroes()&quot;>
@@ -1575,7 +1577,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/config/config.component.html]" value="<h3>Get configuration from JSON file</h3>
 <div>
   <button (click)=&quot;clear(); showConfig()&quot;>get</button>
@@ -1599,7 +1601,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/downloader/downloader.component.html]" value="<h3>Download the textfile</h3>
 <button (click)=&quot;download()&quot;>Download</button>
 <button (click)=&quot;clear()&quot;>clear</button>
@@ -1609,7 +1611,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/heroes/heroes.component.html]" value="<h3>Heroes</h3>
 <div>
   <label>Hero name:
@@ -1641,7 +1643,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/messages/messages.component.html]" value="<div *ngIf=&quot;messageService.messages.length&quot;>
   <h3>Messages</h3>
   <button class=&quot;clear&quot; (click)=&quot;messageService.clear()&quot;>clear</button>
@@ -1655,7 +1657,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/package-search/package-search.component.html]" value="<h3>Search Npm Packages</h3>
 <p><i>Searches when typing stops. Caches for 30 seconds.</i></p>
 <input (keyup)=&quot;search($event.target.value)&quot; id=&quot;name&quot; placeholder=&quot;Search&quot;/>
@@ -1673,7 +1675,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/uploader/uploader.component.html]" value="<h3>Upload file</h3>
 <form enctype=&quot;multipart/form-data&quot; method=&quot;post&quot;>
   <div>
@@ -1691,7 +1693,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<!doctype html>
 <html lang=&quot;en&quot;>
 <head>
@@ -1710,7 +1712,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -1718,7 +1720,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -1731,6 +1737,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -1752,22 +1759,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -1841,7 +1846,7 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;heroesUrl&quot;: &quot;api/heroes&quot;,
   &quot;textfile&quot;: &quot;assets/textfile.txt&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="description" value="Angular Example - Http"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="description" value="Angular Example - Http"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

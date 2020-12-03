@@ -5,7 +5,7 @@
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/index.html]" value="<!--
   Intentionally empty placeholder for Stackblitz.
   Do not need index.html in zip-download either as you should run tests with `npm test`
@@ -15,7 +15,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/main.ts]" value="import './testing/global-jasmine';
 import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
 import 'jasmine-core/lib/jasmine-core/boot.js';
@@ -41,13 +41,13 @@ bootstrap();
 
 //
 
-function bootstrap () {
-  if (window['jasmineRef']) {
+function bootstrap() {
+  if ((window as any).jasmineRef) {
     location.reload();
     return;
   } else {
     window.onload(undefined);
-    window['jasmineRef'] = jasmine.getEnv();
+    (window as any).jasmineRef = jasmine.getEnv();
   }
 
   // First, initialize the Angular testing environment.
@@ -61,7 +61,7 @@ function bootstrap () {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -132,14 +132,14 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/tests.sb.ts]" value="// Import spec files individually for Stackblitz
 import './app/about/about.component.spec.ts';
 import './app/app-initial.component.spec.ts';
@@ -171,14 +171,14 @@ import './app/welcome/welcome.component.spec.ts';
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/banner/banner-external.component.css]" value="h1 { color: green; font-size: 350%}
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/dashboard/dashboard-hero.component.css]" value=".hero {
 	padding: 20px;
   position: relative;
@@ -212,7 +212,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/dashboard/dashboard.component.css]" value="[class*='col-'] {
   float: left;
 }
@@ -254,7 +254,7 @@ h3 {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-detail.component.css]" value="label {
   display: inline-block;
   width: 3em;
@@ -290,7 +290,7 @@ button:disabled {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-list.component.css]" value=".selected {
   background-color: #CFD8DC !important;
   color: white;
@@ -355,7 +355,7 @@ button:hover {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.html]" value="<app-banner></app-banner>
 <app-welcome></app-welcome>
 <nav>
@@ -369,14 +369,14 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/banner/banner-external.component.html]" value="<h1>{{title}}</h1>
 
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/dashboard/dashboard.component.html]" value="<h2 highlight>{{title}}</h2>
 
 <div class=&quot;grid grid-pad&quot;>
@@ -389,14 +389,14 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/demo/demo-external-template.html]" value="<span>from external template</span>
 
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/hero/hero-detail.component.html]" value="<div *ngIf=&quot;hero&quot;>
   <h2><span>{{hero.name | titlecase}}</span> Details</h2>
   <div>
@@ -413,7 +413,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/hero/hero-list.component.html]" value="<h2 highlight=&quot;gold&quot;>My Heroes</h2>
 <ul class=&quot;heroes&quot;>
   <li *ngFor=&quot;let hero of heroes | async &quot;
@@ -427,11 +427,11 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/about/about.component.spec.ts]" value="import { NO_ERRORS_SCHEMA }          from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/about/about.component.spec.ts]" value="import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AboutComponent }     from './about.component';
+import { AboutComponent } from './about.component';
 import { HighlightDirective } from '../shared/highlight.directive';
 
 let fixture: ComponentFixture<AboutComponent>;
@@ -457,7 +457,7 @@ describe('AboutComponent (highlightDirective)', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/about/about.component.ts]" value="import { Component } from '@angular/core';
 @Component({
   template: `
@@ -472,8 +472,8 @@ export class AboutComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app-initial.component.spec.ts]" value="import { TestBed, async } from '@angular/core/testing';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app-initial.component.spec.ts]" value="import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app-initial.component';
 /*
 import { AppComponent } from './app.component';
@@ -481,29 +481,29 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
 */
 describe('AppComponent (initial CLI version)', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({
+          declarations: [AppComponent],
+        })
+        .compileComponents();
   }));
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
-  }));
+  it('should create the app', waitForAsync(() => {
+       const fixture = TestBed.createComponent(AppComponent);
+       const app = fixture.componentInstance;
+       expect(app).toBeTruthy();
+     }));
+  it(`should have as title 'app'`, waitForAsync(() => {
+       const fixture = TestBed.createComponent(AppComponent);
+       const app = fixture.componentInstance;
+       expect(app.title).toEqual('app');
+     }));
+  it('should render title', waitForAsync(() => {
+       const fixture = TestBed.createComponent(AppComponent);
+       fixture.detectChanges();
+       const compiled = fixture.nativeElement;
+       expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+     }));
 });
 
 /// As it should be
@@ -511,16 +511,13 @@ import { DebugElement } from '@angular/core';
 import { ComponentFixture } from '@angular/core/testing';
 
 describe('AppComponent (initial CLI version - as it should be)', () => {
-
   let app: AppComponent;
   let de: DebugElement;
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     });
 
     fixture = TestBed.createComponent(AppComponent);
@@ -538,8 +535,7 @@ describe('AppComponent (initial CLI version - as it should be)', () => {
 
   it('should render title in an h1 tag', () => {
     fixture.detectChanges();
-    expect(de.nativeElement.querySelector('h1').textContent)
-      .toContain('Welcome to app!');
+    expect(de.nativeElement.querySelector('h1').textContent).toContain('Welcome to app!');
   });
 });
 
@@ -547,7 +543,7 @@ describe('AppComponent (initial CLI version - as it should be)', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app-initial.component.ts]" value="// Reduced version of the initial AppComponent generated by CLI
 import { Component } from '@angular/core';
 
@@ -563,7 +559,7 @@ export class AppComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -587,134 +583,131 @@ export class AppRoutingModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.router.spec.ts]" value="// For more examples:
 //   https://github.com/angular/angular/blob/master/modules/@angular/router/test/integration.spec.ts
 
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { asyncData } from '../testing';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { SpyLocation }         from '@angular/common/testing';
+import { SpyLocation } from '@angular/common/testing';
 
 import { Router, RouterLinkWithHref } from '@angular/router';
 
-import { By }                 from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { DebugElement, Type } from '@angular/core';
-import { Location }           from '@angular/common';
+import { Location } from '@angular/common';
 
-import { click }              from '../testing';
+import { click } from '../testing';
 
-import { routes }             from './app-routing.module';
-import { AppModule }          from './app.module';
-import { AppComponent }       from './app.component';
-import { AboutComponent }     from './about/about.component';
+import { routes } from './app-routing.module';
+import { AppModule } from './app.module';
+import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TwainService }       from './twain/twain.service';
 
 import { HeroService, TestHeroService } from './model/testing/test-hero.service';
+import { TwainService } from './twain/twain.service';
 
-let comp:     AppComponent;
-let fixture:  ComponentFixture<AppComponent>;
-let page:     Page;
-let router:   Router;
+let comp: AppComponent;
+let fixture: ComponentFixture<AppComponent>;
+let page: Page;
+let router: Router;
 let location: SpyLocation;
 
 describe('AppComponent &amp; RouterTestingModule', () => {
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        AppModule,
-        RouterTestingModule.withRoutes(routes),
-      ],
-      providers: [
-        { provide: HeroService, useClass: TestHeroService }
-      ]
-    })
-    .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({
+          imports: [
+            AppModule,
+            RouterTestingModule.withRoutes(routes),
+          ],
+          providers: [{provide: HeroService, useClass: TestHeroService}]
+        })
+        .compileComponents();
   }));
 
   it('should navigate to &quot;Dashboard&quot; immediately', fakeAsync(() => {
-    createComponent();
-    tick(); // wait for async data to arrive
-    expectPathToBe('/dashboard', 'after initialNavigation()');
-    expectElementOf(DashboardComponent);
-  }));
+       createComponent();
+       tick();  // wait for async data to arrive
+       expectPathToBe('/dashboard', 'after initialNavigation()');
+       expectElementOf(DashboardComponent);
+     }));
 
   it('should navigate to &quot;About&quot; on click', fakeAsync(() => {
-    createComponent();
-    click(page.aboutLinkDe);
-    // page.aboutLinkDe.nativeElement.click(); // ok but fails in phantom
+       createComponent();
+       click(page.aboutLinkDe);
+       // page.aboutLinkDe.nativeElement.click(); // ok but fails in phantom
 
-    advance();
-    expectPathToBe('/about');
-    expectElementOf(AboutComponent);
-  }));
+       advance();
+       expectPathToBe('/about');
+       expectElementOf(AboutComponent);
+     }));
 
   it('should navigate to &quot;About&quot; w/ browser location URL change', fakeAsync(() => {
-    createComponent();
-    location.simulateHashChange('/about');
-    // location.go('/about'); // also works ... except, perhaps, in Stackblitz
-    advance();
-    expectPathToBe('/about');
-    expectElementOf(AboutComponent);
-  }));
+       createComponent();
+       location.simulateHashChange('/about');
+       // location.go('/about'); // also works ... except, perhaps, in Stackblitz
+       advance();
+       expectPathToBe('/about');
+       expectElementOf(AboutComponent);
+     }));
 
   // Can't navigate to lazy loaded modules with this technique
   xit('should navigate to &quot;Heroes&quot; on click (not working yet)', fakeAsync(() => {
-    createComponent();
-    page.heroesLinkDe.nativeElement.click();
-    advance();
-    expectPathToBe('/heroes');
-  }));
-
+        createComponent();
+        page.heroesLinkDe.nativeElement.click();
+        advance();
+        expectPathToBe('/heroes');
+      }));
 });
 
 
 ///////////////
-import { NgModuleFactoryLoader }    from '@angular/core';
+import { NgModuleFactoryLoader } from '@angular/core';
 import { SpyNgModuleFactoryLoader } from '@angular/router/testing';
 
-import { HeroModule }             from './hero/hero.module';  // should be lazy loaded
-import { HeroListComponent }      from './hero/hero-list.component';
+import { HeroModule } from './hero/hero.module';  // should be lazy loaded
+import { HeroListComponent } from './hero/hero-list.component';
 
 let loader: SpyNgModuleFactoryLoader;
 
 ///////// Can't get lazy loaded Heroes to work yet
 xdescribe('AppComponent &amp; Lazy Loading (not working yet)', () => {
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        AppModule,
-        RouterTestingModule.withRoutes(routes),
-      ],
-    })
-    .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({
+          imports: [
+            AppModule,
+            RouterTestingModule.withRoutes(routes),
+          ],
+        })
+        .compileComponents();
   }));
 
   beforeEach(fakeAsync(() => {
     createComponent();
     loader = TestBed.inject(NgModuleFactoryLoader) as SpyNgModuleFactoryLoader;
-    loader.stubbedModules = { expected: HeroModule };
+    loader.stubbedModules = {expected: HeroModule};
     router.resetConfig([{path: 'heroes', loadChildren: 'expected'}]);
   }));
 
-  it('should navigate to &quot;Heroes&quot; on click', async(() => {
-    page.heroesLinkDe.nativeElement.click();
-    advance();
-    expectPathToBe('/heroes');
-    expectElementOf(HeroListComponent);
-  }));
+  it('should navigate to &quot;Heroes&quot; on click', waitForAsync(() => {
+       page.heroesLinkDe.nativeElement.click();
+       advance();
+       expectPathToBe('/heroes');
+       expectElementOf(HeroListComponent);
+     }));
 
   it('can navigate to &quot;Heroes&quot; w/ browser location URL change', fakeAsync(() => {
-    location.go('/heroes');
-    advance();
-    expectPathToBe('/heroes');
-    expectElementOf(HeroListComponent);
-  }));
+       location.go('/heroes');
+       advance();
+       expectPathToBe('/heroes');
+       expectElementOf(HeroListComponent);
+     }));
 });
 
 ////// Helpers /////////
@@ -724,9 +717,9 @@ xdescribe('AppComponent &amp; Lazy Loading (not working yet)', () => {
  * Wait a tick, then detect changes, and tick again
  */
 function advance(): void {
-  tick(); // wait while navigating
-  fixture.detectChanges(); // update view
-  tick(); // wait for async data to arrive
+  tick();                   // wait while navigating
+  fixture.detectChanges();  // update view
+  tick();                   // wait for async data to arrive
 }
 
 function createComponent() {
@@ -738,17 +731,17 @@ function createComponent() {
   router = injector.get(Router);
   router.initialNavigation();
   spyOn(injector.get(TwainService), 'getQuote')
-    // fake fast async observable
-    .and.returnValue(asyncData('Test Quote'));
+      // fake fast async observable
+      .and.returnValue(asyncData('Test Quote'));
   advance();
 
   page = new Page();
 }
 
 class Page {
-  aboutLinkDe:     DebugElement;
+  aboutLinkDe: DebugElement;
   dashboardLinkDe: DebugElement;
-  heroesLinkDe:    DebugElement;
+  heroesLinkDe: DebugElement;
 
   // for debugging
   comp: AppComponent;
@@ -758,14 +751,14 @@ class Page {
 
   constructor() {
     const links = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-    this.aboutLinkDe     = links[2];
+    this.aboutLinkDe = links[2];
     this.dashboardLinkDe = links[0];
-    this.heroesLinkDe    = links[1];
+    this.heroesLinkDe = links[1];
 
     // for debugging
-    this.comp    = comp;
+    this.comp = comp;
     this.fixture = fixture;
-    this.router  = router;
+    this.router = router;
   }
 }
 
@@ -783,61 +776,65 @@ function expectElementOf(type: Type<any>): any {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.spec.ts]" value="import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.spec.ts]" value="import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { RouterLinkDirectiveStub } from '../testing';
 
+import { AppComponent } from './app.component';
+
 @Component({selector: 'app-banner', template: ''})
-class BannerStubComponent {}
+class BannerStubComponent {
+}
 
 @Component({selector: 'router-outlet', template: ''})
-class RouterOutletStubComponent { }
+class RouterOutletStubComponent {
+}
 
 @Component({selector: 'app-welcome', template: ''})
-class WelcomeStubComponent {}
+class WelcomeStubComponent {
+}
 
-let comp:    AppComponent;
+let comp: AppComponent;
 let fixture: ComponentFixture<AppComponent>;
 
 describe('AppComponent &amp; TestModule', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        RouterLinkDirectiveStub,
-        BannerStubComponent,
-        RouterOutletStubComponent,
-        WelcomeStubComponent
-      ]
-    })
-    .compileComponents().then(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      comp    = fixture.componentInstance;
-    });
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({
+          declarations: [
+            AppComponent, RouterLinkDirectiveStub, BannerStubComponent, RouterOutletStubComponent,
+            WelcomeStubComponent
+          ]
+        })
+        .compileComponents()
+        .then(() => {
+          fixture = TestBed.createComponent(AppComponent);
+          comp = fixture.componentInstance;
+        });
   }));
   tests();
 });
 
 //////// Testing w/ NO_ERRORS_SCHEMA //////
 describe('AppComponent &amp; NO_ERRORS_SCHEMA', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        BannerStubComponent,
-        RouterLinkDirectiveStub
-      ],
-      schemas: [ NO_ERRORS_SCHEMA ]
-    })
-    .compileComponents().then(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      comp    = fixture.componentInstance;
-    });
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({
+          declarations: [
+            AppComponent,
+            BannerStubComponent,
+            RouterLinkDirectiveStub
+          ],
+          schemas: [NO_ERRORS_SCHEMA]
+        })
+        .compileComponents()
+        .then(() => {
+          fixture = TestBed.createComponent(AppComponent);
+          comp = fixture.componentInstance;
+        });
   }));
   tests();
 });
@@ -845,34 +842,27 @@ describe('AppComponent &amp; NO_ERRORS_SCHEMA', () => {
 //////// Testing w/ real root module //////
 // Tricky because we are disabling the router and its configuration
 // Better to use RouterTestingModule
-import { AppModule }    from './app.module';
+import { AppModule } from './app.module';
 import { AppRoutingModule } from './app-routing.module';
 
 describe('AppComponent &amp; AppModule', () => {
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({imports: [AppModule]})
 
-  beforeEach(async(() => {
+        // Get rid of app's Router configuration otherwise many failures.
+        // Doing so removes Router declarations; add the Router stubs
+        .overrideModule(AppModule, {
+          remove: {imports: [AppRoutingModule]},
+          add: {declarations: [RouterLinkDirectiveStub, RouterOutletStubComponent]}
+        })
 
-    TestBed.configureTestingModule({
-      imports: [ AppModule ]
-    })
+        .compileComponents()
 
-    // Get rid of app's Router configuration otherwise many failures.
-    // Doing so removes Router declarations; add the Router stubs
-    .overrideModule(AppModule, {
-      remove: {
-        imports: [ AppRoutingModule ]
-      },
-      add: {
-        declarations: [ RouterLinkDirectiveStub, RouterOutletStubComponent ]
-      }
-    })
-
-    .compileComponents()
-
-    .then(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      comp    = fixture.componentInstance;
-    });
+        .then(() => {
+          fixture = TestBed.createComponent(AppComponent);
+          comp = fixture.componentInstance;
+        });
   }));
 
   tests();
@@ -883,11 +873,10 @@ function tests() {
   let linkDes: DebugElement[];
 
   beforeEach(() => {
-    fixture.detectChanges(); // trigger initial data binding
+    fixture.detectChanges();  // trigger initial data binding
 
     // find DebugElements with an attached RouterLinkStubDirective
-    linkDes = fixture.debugElement
-      .queryAll(By.directive(RouterLinkDirectiveStub));
+    linkDes = fixture.debugElement.queryAll(By.directive(RouterLinkDirectiveStub));
 
     // get attached link directive instances
     // using each DebugElement's injector
@@ -906,8 +895,8 @@ function tests() {
   });
 
   it('can click Heroes link in template', () => {
-    const heroesLinkDe = linkDes[1];   // heroes link DebugElement
-    const heroesLink = routerLinks[1]; // heroes link directive
+    const heroesLinkDe = linkDes[1];    // heroes link DebugElement
+    const heroesLink = routerLinks[1];  // heroes link directive
 
     expect(heroesLink.navigatedTo).toBeNull('should not have navigated yet');
 
@@ -922,7 +911,7 @@ function tests() {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -934,24 +923,24 @@ export class AppComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule }         from '@angular/core';
-import { BrowserModule }    from '@angular/platform-browser';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent }     from './app.component';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AboutComponent }   from './about/about.component';
-import { BannerComponent }  from './banner/banner.component';
-import { HeroService }      from './model/hero.service';
-import { UserService }      from './model/user.service';
-import { TwainComponent }   from './twain/twain.component';
-import { TwainService }     from './twain/twain.service';
+import { AboutComponent } from './about/about.component';
+import { BannerComponent } from './banner/banner.component';
+import { HeroService } from './model/hero.service';
+import { UserService } from './model/user.service';
+import { TwainComponent } from './twain/twain.component';
+import { TwainService } from './twain/twain.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 
-import { DashboardModule }  from './dashboard/dashboard.module';
-import { SharedModule }     from './shared/shared.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { SharedModule } from './shared/shared.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -991,30 +980,31 @@ export class AppModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/banner/banner-external.component.spec.ts]" value="import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By }              from '@angular/platform-browser';
-import { DebugElement }    from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/banner/banner-external.component.spec.ts]" value="import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
 import { BannerComponent } from './banner-external.component';
 
 describe('BannerComponent (external files)', () => {
   let component: BannerComponent;
-  let fixture:   ComponentFixture<BannerComponent>;
-  let h1:        HTMLElement;
+  let fixture: ComponentFixture<BannerComponent>;
+  let h1: HTMLElement;
 
   describe('Two beforeEach', () => {
-    beforeEach(async(() => {
-      TestBed.configureTestingModule({
-        declarations: [ BannerComponent ],
-      })
-      .compileComponents();  // compile template and css
+    beforeEach(waitForAsync(() => {
+      TestBed
+          .configureTestingModule({
+            declarations: [BannerComponent],
+          })
+          .compileComponents();  // compile template and css
     }));
 
     // synchronous beforeEach
     beforeEach(() => {
       fixture = TestBed.createComponent(BannerComponent);
-      component = fixture.componentInstance; // BannerComponent test instance
+      component = fixture.componentInstance;  // BannerComponent test instance
       h1 = fixture.nativeElement.querySelector('h1');
     });
 
@@ -1022,16 +1012,17 @@ describe('BannerComponent (external files)', () => {
   });
 
   describe('One beforeEach', () => {
-    beforeEach(async(() => {
-      TestBed.configureTestingModule({
-        declarations: [ BannerComponent ],
-      })
-      .compileComponents()
-      .then(() => {
-        fixture = TestBed.createComponent(BannerComponent);
-        component = fixture.componentInstance;
-        h1 = fixture.nativeElement.querySelector('h1');
-      });
+    beforeEach(waitForAsync(() => {
+      TestBed
+          .configureTestingModule({
+            declarations: [BannerComponent],
+          })
+          .compileComponents()
+          .then(() => {
+            fixture = TestBed.createComponent(BannerComponent);
+            component = fixture.componentInstance;
+            h1 = fixture.nativeElement.querySelector('h1');
+          });
     }));
 
     tests();
@@ -1056,11 +1047,10 @@ describe('BannerComponent (external files)', () => {
 });
 
 
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/banner/banner-external.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -1076,11 +1066,13 @@ export class BannerComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/banner/banner-initial.component.spec.ts]" value="import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/banner/banner-initial.component.spec.ts]" value="import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+
 import { BannerComponent } from './banner-initial.component';
+
 /*
 import { BannerComponent } from './banner.component';
 
@@ -1090,11 +1082,8 @@ describe('BannerComponent (initial CLI generated)', () => {
   let component: BannerComponent;
   let fixture: ComponentFixture<BannerComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BannerComponent ]
-    })
-    .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({declarations: [BannerComponent]}).compileComponents();
   }));
 
   beforeEach(() => {
@@ -1110,9 +1099,7 @@ describe('BannerComponent (initial CLI generated)', () => {
 
 describe('BannerComponent (minimal)', () => {
   it('should create', () => {
-    TestBed.configureTestingModule({
-      declarations: [ BannerComponent ]
-    });
+    TestBed.configureTestingModule({declarations: [BannerComponent]});
     const fixture = TestBed.createComponent(BannerComponent);
     const component = fixture.componentInstance;
     expect(component).toBeDefined();
@@ -1124,9 +1111,7 @@ describe('BannerComponent (with beforeEach)', () => {
   let fixture: ComponentFixture<BannerComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BannerComponent ]
-    });
+    TestBed.configureTestingModule({declarations: [BannerComponent]});
     fixture = TestBed.createComponent(BannerComponent);
     component = fixture.componentInstance;
   });
@@ -1147,26 +1132,26 @@ describe('BannerComponent (with beforeEach)', () => {
   });
 
 
-it('should find the <p> with fixture.debugElement.nativeElement)', () => {
-  const bannerDe: DebugElement = fixture.debugElement;
-  const bannerEl: HTMLElement = bannerDe.nativeElement;
-  const p = bannerEl.querySelector('p');
-  expect(p.textContent).toEqual('banner works!');
-});
+  it('should find the <p> with fixture.debugElement.nativeElement)', () => {
+    const bannerDe: DebugElement = fixture.debugElement;
+    const bannerEl: HTMLElement = bannerDe.nativeElement;
+    const p = bannerEl.querySelector('p');
+    expect(p.textContent).toEqual('banner works!');
+  });
 
-it('should find the <p> with fixture.debugElement.query(By.css)', () => {
-  const bannerDe: DebugElement = fixture.debugElement;
-  const paragraphDe = bannerDe.query(By.css('p'));
-  const p: HTMLElement = paragraphDe.nativeElement;
-  expect(p.textContent).toEqual('banner works!');
-});
+  it('should find the <p> with fixture.debugElement.query(By.css)', () => {
+    const bannerDe: DebugElement = fixture.debugElement;
+    const paragraphDe = bannerDe.query(By.css('p'));
+    const p: HTMLElement = paragraphDe.nativeElement;
+    expect(p.textContent).toEqual('banner works!');
+  });
 });
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/banner/banner-initial.component.ts]" value="// BannerComponent as initially generated by the CLI
 import { Component } from '@angular/core';
 
@@ -1181,7 +1166,7 @@ export class BannerComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/banner/banner.component.detect-changes.spec.ts]" value="import { async } from '@angular/core/testing';
 import { ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -1189,9 +1174,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BannerComponent } from './banner.component';
 
 describe('BannerComponent (AutoChangeDetect)', () => {
-  let comp:    BannerComponent;
+  let comp: BannerComponent;
   let fixture: ComponentFixture<BannerComponent>;
-  let h1:      HTMLElement;
+  let h1: HTMLElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -1228,7 +1213,7 @@ describe('BannerComponent (AutoChangeDetect)', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/banner/banner.component.spec.ts]" value="import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
@@ -1236,8 +1221,8 @@ import { BannerComponent } from './banner.component';
 
 describe('BannerComponent (inline template)', () => {
   let component: BannerComponent;
-  let fixture:   ComponentFixture<BannerComponent>;
-  let h1:        HTMLElement;
+  let fixture: ComponentFixture<BannerComponent>;
+  let h1: HTMLElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -1257,23 +1242,23 @@ describe('BannerComponent (inline template)', () => {
     expect(h1.textContent).toContain(component.title);
   });
 
-it('should display original title after detectChanges()', () => {
-  fixture.detectChanges();
-  expect(h1.textContent).toContain(component.title);
-});
+  it('should display original title after detectChanges()', () => {
+    fixture.detectChanges();
+    expect(h1.textContent).toContain(component.title);
+  });
 
-it('should display a different test title', () => {
-  component.title = 'Test Title';
-  fixture.detectChanges();
-  expect(h1.textContent).toContain('Test Title');
-});
+  it('should display a different test title', () => {
+    component.title = 'Test Title';
+    fixture.detectChanges();
+    expect(h1.textContent).toContain('Test Title');
+  });
 });
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/banner/banner.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -1289,25 +1274,23 @@ export class BannerComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/dashboard/dashboard-hero.component.spec.ts]" value="
-import { async, ComponentFixture, TestBed
-} from '@angular/core/testing';
-
-import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { addMatchers, click } from '../../testing';
-
 import { Hero } from '../model/hero';
+
 import { DashboardHeroComponent } from './dashboard-hero.component';
 
-beforeEach( addMatchers );
+beforeEach(addMatchers);
 
 describe('DashboardHeroComponent class only', () => {
   it('raises the selected event when clicked', () => {
     const comp = new DashboardHeroComponent();
-    const hero: Hero = { id: 42, name: 'Test' };
+    const hero: Hero = {id: 42, name: 'Test'};
     comp.hero = hero;
 
     comp.selected.subscribe((selectedHero: Hero) => expect(selectedHero).toBe(hero));
@@ -1316,30 +1299,28 @@ describe('DashboardHeroComponent class only', () => {
 });
 
 describe('DashboardHeroComponent when tested directly', () => {
-
   let comp: DashboardHeroComponent;
   let expectedHero: Hero;
   let fixture: ComponentFixture<DashboardHeroComponent>;
   let heroDe: DebugElement;
   let heroEl: HTMLElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DashboardHeroComponent ]
-    })
-    .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({declarations: [DashboardHeroComponent]})
+        .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DashboardHeroComponent);
-    comp    = fixture.componentInstance;
+    comp = fixture.componentInstance;
 
     // find the hero's DebugElement and element
-    heroDe  = fixture.debugElement.query(By.css('.hero'));
+    heroDe = fixture.debugElement.query(By.css('.hero'));
     heroEl = heroDe.nativeElement;
 
     // mock the hero supplied by the parent component
-    expectedHero = { id: 42, name: 'Test Name' };
+    expectedHero = {id: 42, name: 'Test Name'};
 
     // simulate the parent setting the input property with that hero
     comp.hero = expectedHero;
@@ -1361,20 +1342,20 @@ describe('DashboardHeroComponent when tested directly', () => {
     expect(selectedHero).toBe(expectedHero);
   });
 
-    it('should raise selected event when clicked (element.click)', () => {
-      let selectedHero: Hero;
-      comp.selected.subscribe((hero: Hero) => selectedHero = hero);
+  it('should raise selected event when clicked (element.click)', () => {
+    let selectedHero: Hero;
+    comp.selected.subscribe((hero: Hero) => selectedHero = hero);
 
-      heroEl.click();
-      expect(selectedHero).toBe(expectedHero);
-    });
+    heroEl.click();
+    expect(selectedHero).toBe(expectedHero);
+  });
 
   it('should raise selected event when clicked (click helper)', () => {
     let selectedHero: Hero;
     comp.selected.subscribe((hero: Hero) => selectedHero = hero);
 
-    click(heroDe); // click helper with DebugElement
-    click(heroEl); // click helper with native element
+    click(heroDe);  // click helper with DebugElement
+    click(heroEl);  // click helper with native element
 
     expect(selectedHero).toBe(expectedHero);
   });
@@ -1387,19 +1368,18 @@ describe('DashboardHeroComponent when inside a test host', () => {
   let fixture: ComponentFixture<TestHostComponent>;
   let heroEl: HTMLElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DashboardHeroComponent, TestHostComponent ]
-    })
-    .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({declarations: [DashboardHeroComponent, TestHostComponent]})
+        .compileComponents();
   }));
 
   beforeEach(() => {
     // create TestHostComponent instead of DashboardHeroComponent
-    fixture  = TestBed.createComponent(TestHostComponent);
+    fixture = TestBed.createComponent(TestHostComponent);
     testHost = fixture.componentInstance;
-    heroEl   = fixture.nativeElement.querySelector('.hero');
-    fixture.detectChanges(); // trigger initial data binding
+    heroEl = fixture.nativeElement.querySelector('.hero');
+    fixture.detectChanges();  // trigger initial data binding
   });
 
   it('should display hero name', () => {
@@ -1424,16 +1404,18 @@ import { Component } from '@angular/core';
     </dashboard-hero>`
 })
 class TestHostComponent {
-  hero: Hero = {id: 42, name: 'Test Name' };
+  hero: Hero = {id: 42, name: 'Test Name'};
   selectedHero: Hero;
-  onSelected(hero: Hero) { this.selectedHero = hero; }
+  onSelected(hero: Hero) {
+    this.selectedHero = hero;
+  }
 }
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/dashboard/dashboard-hero.component.ts]" value="import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Hero } from '../model/hero';
@@ -1456,13 +1438,13 @@ export class DashboardHeroComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/dashboard/dashboard.component.no-testbed.spec.ts]" value="import { Router } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
-import { Hero }               from '../model/hero';
+import { Hero } from '../model/hero';
 
-import { addMatchers }     from '../../testing';
+import { addMatchers } from '../../testing';
 import { TestHeroService, HeroService } from '../model/testing/test-hero.service';
 
 class FakeRouter {
@@ -1521,21 +1503,20 @@ describe('DashboardComponent class only', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/dashboard/dashboard.component.spec.ts]" value="import { async, inject, ComponentFixture, TestBed
-} from '@angular/core/testing';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dashboard/dashboard.component.spec.ts]" value="import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { addMatchers, asyncData, click } from '../../testing';
-import { HeroService }   from '../model/hero.service';
+import { HeroService } from '../model/hero.service';
 import { getTestHeroes } from '../model/testing/test-heroes';
 
-import { By }     from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
-import { DashboardModule }    from './dashboard.module';
+import { DashboardModule } from './dashboard.module';
 
-beforeEach ( addMatchers );
+beforeEach(addMatchers);
 
 let comp: DashboardComponent;
 let fixture: ComponentFixture<DashboardComponent>;
@@ -1544,9 +1525,7 @@ let fixture: ComponentFixture<DashboardComponent>;
 
 describe('DashboardComponent (deep)', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [ DashboardModule ]
-    });
+    TestBed.configureTestingModule({imports: [DashboardModule]});
   });
 
   compileAndCreate();
@@ -1566,10 +1545,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DashboardComponent (shallow)', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ],
-      schemas:      [NO_ERRORS_SCHEMA]
-    });
+    TestBed.configureTestingModule(
+        {declarations: [DashboardComponent], schemas: [NO_ERRORS_SCHEMA]});
   });
 
   compileAndCreate();
@@ -1585,23 +1562,24 @@ describe('DashboardComponent (shallow)', () => {
 
 /** Add TestBed providers, compile, and create DashboardComponent */
 function compileAndCreate() {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
     const heroServiceSpy = jasmine.createSpyObj('HeroService', ['getHeroes']);
 
-    TestBed.configureTestingModule({
-      providers: [
-        { provide: HeroService, useValue: heroServiceSpy },
-        { provide: Router,      useValue: routerSpy }
-      ]
-    })
-    .compileComponents().then(() => {
-      fixture = TestBed.createComponent(DashboardComponent);
-      comp = fixture.componentInstance;
+    TestBed
+        .configureTestingModule({
+          providers: [
+            {provide: HeroService, useValue: heroServiceSpy}, {provide: Router, useValue: routerSpy}
+          ]
+        })
+        .compileComponents()
+        .then(() => {
+          fixture = TestBed.createComponent(DashboardComponent);
+          comp = fixture.componentInstance;
 
-      // getHeroes spy returns observable of test heroes
-      heroServiceSpy.getHeroes.and.returnValue(asyncData(getTestHeroes()));
-    });
+          // getHeroes spy returns observable of test heroes
+          heroServiceSpy.getHeroes.and.returnValue(asyncData(getTestHeroes()));
+        });
   }));
 }
 
@@ -1609,35 +1587,32 @@ function compileAndCreate() {
  * The (almost) same tests for both.
  * Only change: the way that the first hero is clicked
  */
-function tests(heroClick: Function) {
+function tests(heroClick: () => void) {
 
   it('should NOT have heroes before ngOnInit', () => {
-    expect(comp.heroes.length).toBe(0,
-      'should not have heroes before ngOnInit');
+    expect(comp.heroes.length).toBe(0, 'should not have heroes before ngOnInit');
   });
 
   it('should NOT have heroes immediately after ngOnInit', () => {
-    fixture.detectChanges(); // runs initial lifecycle hooks
+    fixture.detectChanges();  // runs initial lifecycle hooks
 
-    expect(comp.heroes.length).toBe(0,
-      'should not have heroes until service promise resolves');
+    expect(comp.heroes.length).toBe(0, 'should not have heroes until service promise resolves');
   });
 
   describe('after get dashboard heroes', () => {
-
     let router: Router;
 
      // Trigger component so it gets heroes and binds to them
-     beforeEach(async(() => {
-        router = fixture.debugElement.injector.get(Router);
-        fixture.detectChanges(); // runs ngOnInit -> getHeroes
-        fixture.whenStable() // No need for the `lastPromise` hack!
-          .then(() => fixture.detectChanges()); // bind to heroes
-     }));
+    beforeEach(waitForAsync(() => {
+      router = fixture.debugElement.injector.get(Router);
+      fixture.detectChanges(); // runs ngOnInit -> getHeroes
+      fixture.whenStable() // No need for the `lastPromise` hack!
+        .then(() => fixture.detectChanges()); // bind to heroes
+    }));
 
     it('should HAVE heroes', () => {
-      expect(comp.heroes.length).toBeGreaterThan(0,
-        'should have heroes after service promise resolves');
+      expect(comp.heroes.length)
+          .toBeGreaterThan(0, 'should have heroes after service promise resolves');
     });
 
     it('should DISPLAY heroes', () => {
@@ -1648,8 +1623,7 @@ function tests(heroClick: Function) {
     });
 
     it('should tell ROUTER to navigate when hero clicked', () => {
-
-      heroClick(); // trigger click on first inner <div class=&quot;hero&quot;>
+      heroClick();  // trigger click on first inner <div class=&quot;hero&quot;>
 
       // args passed to router.navigateByUrl() spy
       const spy = router.navigateByUrl as jasmine.Spy;
@@ -1657,22 +1631,20 @@ function tests(heroClick: Function) {
 
       // expecting to navigate to id of the component's first hero
       const id = comp.heroes[0].id;
-      expect(navArgs).toBe('/heroes/' + id,
-        'should nav to HeroDetail for first hero');
+      expect(navArgs).toBe('/heroes/' + id, 'should nav to HeroDetail for first hero');
     });
   });
 }
 
 
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/dashboard/dashboard.component.ts]" value="import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
 
-import { Hero }        from '../model/hero';
+import { Hero } from '../model/hero';
 import { HeroService } from '../model/hero.service';
 
 @Component({
@@ -1695,12 +1667,12 @@ export class DashboardComponent implements OnInit {
   }
 
   gotoDetail(hero: Hero) {
-    let url = `/heroes/${hero.id}`;
+    const url = `/heroes/${hero.id}`;
     this.router.navigateByUrl(url);
   }
 
   get title() {
-    let cnt = this.heroes.length;
+    const cnt = this.heroes.length;
     return cnt === 0 ? 'No Heroes' :
       cnt === 1 ? 'Top Hero' :  `Top ${cnt} Heroes`;
   }
@@ -1710,13 +1682,13 @@ export class DashboardComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/dashboard/dashboard.module.ts]" value="import { NgModule }               from '@angular/core';
-import { RouterModule, Routes }   from '@angular/router';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dashboard/dashboard.module.ts]" value="import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { SharedModule }           from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
-import { DashboardComponent }     from './dashboard.component';
+import { DashboardComponent } from './dashboard.component';
 import { DashboardHeroComponent } from './dashboard-hero.component';
 
 const routes: Routes =  [
@@ -1736,22 +1708,27 @@ export class DashboardModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/demo/async-helper.spec.ts]" value="// tslint:disable-next-line:no-unused-variable
-import { async, fakeAsync, tick } from '@angular/core/testing';
+import { fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { interval, of } from 'rxjs';
 import { delay, take } from 'rxjs/operators';
 
 describe('Angular async helper', () => {
-
   describe('async', () => {
     let actuallyDone = false;
 
-    beforeEach(() => { actuallyDone = false; });
+    beforeEach(() => {
+      actuallyDone = false;
+    });
 
-    afterEach(() => { expect(actuallyDone).toBe(true, 'actuallyDone should be true'); });
+    afterEach(() => {
+      expect(actuallyDone).toBe(true, 'actuallyDone should be true');
+    });
 
-    it('should run normal test', () => { actuallyDone = true; });
+    it('should run normal test', () => {
+      actuallyDone = true;
+    });
 
     it('should run normal async test', (done: DoneFn) => {
       setTimeout(() => {
@@ -1760,39 +1737,50 @@ describe('Angular async helper', () => {
       }, 0);
     });
 
-    it('should run async test with task',
-       async(() => { setTimeout(() => { actuallyDone = true; }, 0); }));
+    it('should run async test with task', waitForAsync(() => {
+         setTimeout(() => {
+           actuallyDone = true;
+         }, 0);
+       }));
 
-    it('should run async test with task', async(() => {
+    it('should run async test with task', waitForAsync(() => {
          const id = setInterval(() => {
            actuallyDone = true;
            clearInterval(id);
          }, 100);
        }));
 
-    it('should run async test with successful promise', async(() => {
-         const p = new Promise(resolve => { setTimeout(resolve, 10); });
-         p.then(() => { actuallyDone = true; });
+    it('should run async test with successful promise', waitForAsync(() => {
+         const p = new Promise(resolve => {
+           setTimeout(resolve, 10);
+         });
+         p.then(() => {
+           actuallyDone = true;
+         });
        }));
 
-    it('should run async test with failed promise', async(() => {
-         const p = new Promise((resolve, reject) => { setTimeout(reject, 10); });
-         p.catch(() => { actuallyDone = true; });
+    it('should run async test with failed promise', waitForAsync(() => {
+         const p = new Promise((resolve, reject) => {
+           setTimeout(reject, 10);
+         });
+         p.catch(() => {
+           actuallyDone = true;
+         });
        }));
 
     // Use done. Can also use async or fakeAsync.
     it('should run async test with successful delayed Observable', (done: DoneFn) => {
-      const source = of (true).pipe(delay(10));
+      const source = of(true).pipe(delay(10));
       source.subscribe(val => actuallyDone = true, err => fail(err), done);
     });
 
-    it('should run async test with successful delayed Observable', async(() => {
-         const source = of (true).pipe(delay(10));
+    it('should run async test with successful delayed Observable', waitForAsync(() => {
+         const source = of(true).pipe(delay(10));
          source.subscribe(val => actuallyDone = true, err => fail(err));
        }));
 
     it('should run async test with successful delayed Observable', fakeAsync(() => {
-         const source = of (true).pipe(delay(10));
+         const source = of(true).pipe(delay(10));
          source.subscribe(val => actuallyDone = true, err => fail(err));
 
          tick(10);
@@ -1802,14 +1790,18 @@ describe('Angular async helper', () => {
   describe('fakeAsync', () => {
     it('should run timeout callback with delay after call tick with millis', fakeAsync(() => {
          let called = false;
-         setTimeout(() => { called = true; }, 100);
+         setTimeout(() => {
+           called = true;
+         }, 100);
          tick(100);
          expect(called).toBe(true);
        }));
 
     it('should run new macro task callback with delay after call tick with millis',
        fakeAsync(() => {
-         function nestedTimer(cb: () => any): void { setTimeout(() => setTimeout(() => cb())); }
+         function nestedTimer(cb: () => any): void {
+           setTimeout(() => setTimeout(() => cb()));
+         }
          const callback = jasmine.createSpy('callback');
          nestedTimer(callback);
          expect(callback).not.toHaveBeenCalled();
@@ -1820,7 +1812,9 @@ describe('Angular async helper', () => {
 
     it('should not run new macro task callback with delay after call tick with millis',
        fakeAsync(() => {
-         function nestedTimer(cb: () => any): void { setTimeout(() => setTimeout(() => cb())); }
+         function nestedTimer(cb: () => any): void {
+           setTimeout(() => setTimeout(() => cb()));
+         }
          const callback = jasmine.createSpy('callback');
          nestedTimer(callback);
          expect(callback).not.toHaveBeenCalled();
@@ -1842,7 +1836,9 @@ describe('Angular async helper', () => {
          // need to add `import 'zone.js/dist/zone-patch-rxjs-fake-async'
          // to patch rxjs scheduler
          let result = null;
-         of ('hello').pipe(delay(1000)).subscribe(v => { result = v; });
+         of('hello').pipe(delay(1000)).subscribe(v => {
+           result = v;
+         });
          expect(result).toBeNull();
          tick(1000);
          expect(result).toBe('hello');
@@ -1861,24 +1857,30 @@ describe('Angular async helper', () => {
   describe('use jasmine.clock()', () => {
     // need to config __zone_symbol__fakeAsyncPatchLock flag
     // before loading zone.js/dist/zone-testing
-    beforeEach(() => { jasmine.clock().install(); });
-    afterEach(() => { jasmine.clock().uninstall(); });
+    beforeEach(() => {
+      jasmine.clock().install();
+    });
+    afterEach(() => {
+      jasmine.clock().uninstall();
+    });
     it('should auto enter fakeAsync', () => {
       // is in fakeAsync now, don't need to call fakeAsync(testFn)
       let called = false;
-      setTimeout(() => { called = true; }, 100);
+      setTimeout(() => {
+        called = true;
+      }, 100);
       jasmine.clock().tick(100);
       expect(called).toBe(true);
     });
   });
 
   describe('test jsonp', () => {
-    function jsonp(url: string, callback: Function) {
+    function jsonp(url: string, callback: () => void) {
       // do a jsonp call which is not zone aware
     }
     // need to config __zone_symbol__supportWaitUnResolvedChainedPromise flag
     // before loading zone.js/dist/zone-testing
-    it('should wait until promise.then is called', async(() => {
+    it('should wait until promise.then is called', waitForAsync(() => {
          let finished = false;
          new Promise((res, rej) => {
            jsonp('localhost:8080/jsonp', () => {
@@ -1893,14 +1895,13 @@ describe('Angular async helper', () => {
          });
        }));
   });
-
 });
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/demo/demo-main.ts]" value="// main app entry point
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { DemoModule } from './demo';
@@ -1911,7 +1912,7 @@ platformBrowserDynamic().bootstrapModule(DemoModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/demo/demo.spec.ts]" value="import {
   LightswitchComponent,
   MasterService,
@@ -2055,7 +2056,7 @@ describe('demo (no TestBed):', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/demo/demo.testbed.spec.ts]" value="import {
   DemoModule,
   BankAccountComponent, BankAccountParentComponent,
@@ -2072,26 +2073,27 @@ can be found in the LICENSE file at http://angular.io/license
   ReversePipeComponent, ShellComponent
 } from './demo';
 
-import { By }          from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { Component,
          DebugElement,
-         Injectable }  from '@angular/core';
+         Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // Forms symbols imported only for a specific test below
 import { NgModel, NgControl } from '@angular/forms';
 
-import { async, ComponentFixture, fakeAsync, inject, TestBed, tick
+import {
+  ComponentFixture, fakeAsync, inject, TestBed, tick, waitForAsync
 } from '@angular/core/testing';
 
-import { addMatchers, newEvent, click } from '../../testing';
+import { addMatchers, click } from '../../testing';
 
-export class NotProvided extends ValueService { /* example below */}
-beforeEach( addMatchers );
+export class NotProvided extends ValueService { /* example below */ }
+beforeEach(addMatchers);
 
 describe('demo (with TestBed):', () => {
 
-////////  Service Tests  /////////////
+  ////////  Service Tests  /////////////
 
   describe('ValueService', () => {
 
@@ -2111,13 +2113,13 @@ describe('demo (with TestBed):', () => {
       service = TestBed.inject(NotProvided, null); // service is null
     });
 
-    it('test should wait for ValueService.getPromiseValue', async(() => {
+    it('test should wait for ValueService.getPromiseValue', waitForAsync(() => {
       service.getPromiseValue().then(
         value => expect(value).toBe('promise value')
       );
     }));
 
-    it('test should wait for ValueService.getObservableValue', async(() => {
+    it('test should wait for ValueService.getObservableValue', waitForAsync(() => {
       service.getObservableValue().subscribe(
         value => expect(value).toBe('observable value')
       );
@@ -2185,14 +2187,14 @@ describe('demo (with TestBed):', () => {
     );
   });
 
-  describe('using async(inject) within beforeEach', () => {
+  describe('using waitForAsync(inject) within beforeEach', () => {
     let serviceValue: string;
 
     beforeEach(() => {
       TestBed.configureTestingModule({ providers: [ValueService] });
     });
 
-    beforeEach(async(inject([ValueService], (service: ValueService) => {
+    beforeEach(waitForAsync(inject([ValueService], (service: ValueService) => {
       service.getPromiseValue().then(value => serviceValue = value);
     })));
 
@@ -2201,11 +2203,11 @@ describe('demo (with TestBed):', () => {
     });
   });
 
-/////////// Component Tests //////////////////
+  /////////// Component Tests //////////////////
 
   describe('TestBed component tests', () => {
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
       TestBed
         .configureTestingModule({
           imports: [DemoModule],
@@ -2264,7 +2266,7 @@ describe('demo (with TestBed):', () => {
       fixture.detectChanges();
       const ngForRow = fixture.debugElement.query(By.directive(IoComponent)); // first hero ngForRow
 
-      const hero = ngForRow.context['hero']; // the hero object passed into the row
+      const hero = ngForRow.context.hero; // the hero object passed into the row
       expect(hero.name).toBe(heroName, 'ngRow.context.hero');
 
       const rowComp = ngForRow.componentInstance;
@@ -2276,7 +2278,7 @@ describe('demo (with TestBed):', () => {
 
     it('should support clicking a button', () => {
       const fixture = TestBed.createComponent(LightswitchComponent);
-      const btn  = fixture.debugElement.query(By.css('button'));
+      const btn = fixture.debugElement.query(By.css('button'));
       const span = fixture.debugElement.query(By.css('span')).nativeElement;
 
       fixture.detectChanges();
@@ -2288,7 +2290,7 @@ describe('demo (with TestBed):', () => {
     });
 
     // ngModel is async so we must wait for it with promise-based `whenStable`
-    it('should support entering text in input box (ngModel)', async(() => {
+    it('should support entering text in input box (ngModel)', waitForAsync(() => {
       const expectedOrigName = 'John';
       const expectedNewName = 'Sally';
 
@@ -2296,7 +2298,7 @@ describe('demo (with TestBed):', () => {
       fixture.detectChanges();
 
       const comp = fixture.componentInstance;
-      const input = <HTMLInputElement> fixture.debugElement.query(By.css('input')).nativeElement;
+      const input = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
 
       expect(comp.name).toBe(expectedOrigName,
         `At start name should be ${expectedOrigName} `);
@@ -2313,15 +2315,17 @@ describe('demo (with TestBed):', () => {
         expect(comp.name).toBe(expectedOrigName,
           `comp.name should still be ${expectedOrigName} after value change, before binding happens`);
 
-        // dispatch a DOM event so that Angular learns of input value change.
+        // Dispatch a DOM event so that Angular learns of input value change.
         // then wait while ngModel pushes input.box value to comp.name
-        input.dispatchEvent(newEvent('input'));
+        // In older browsers, such as IE, you might need a CustomEvent instead. See
+        // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+        input.dispatchEvent(new Event('input'));
         return fixture.whenStable();
       })
-      .then(() => {
-        expect(comp.name).toBe(expectedNewName,
-          `After ngModel updates the model, comp.name should be ${expectedNewName} `);
-      });
+        .then(() => {
+          expect(comp.name).toBe(expectedNewName,
+            `After ngModel updates the model, comp.name should be ${expectedNewName} `);
+        });
     }));
 
     // fakeAsync version of ngModel input test enables sync test style
@@ -2334,7 +2338,7 @@ describe('demo (with TestBed):', () => {
       fixture.detectChanges();
 
       const comp =  fixture.componentInstance;
-      const input = <HTMLInputElement> fixture.debugElement.query(By.css('input')).nativeElement;
+      const input = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
 
       expect(comp.name).toBe(expectedOrigName,
         `At start name should be ${expectedOrigName} `);
@@ -2351,9 +2355,11 @@ describe('demo (with TestBed):', () => {
       expect(comp.name).toBe(expectedOrigName,
         `comp.name should still be ${expectedOrigName} after value change, before binding happens`);
 
-      // dispatch a DOM event so that Angular learns of input value change.
+      // Dispatch a DOM event so that Angular learns of input value change.
       // then wait a tick while ngModel pushes input.box value to comp.name
-      input.dispatchEvent(newEvent('input'));
+      // In older browsers, such as IE, you might need a CustomEvent instead. See
+      // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+      input.dispatchEvent(new Event('input'));
       tick();
       expect(comp.name).toBe(expectedNewName,
         `After ngModel updates the model, comp.name should be ${expectedNewName} `);
@@ -2366,17 +2372,19 @@ describe('demo (with TestBed):', () => {
       const fixture = TestBed.createComponent(ReversePipeComponent);
       fixture.detectChanges();
 
-      const comp =  fixture.componentInstance;
+      const comp = fixture.componentInstance;
       const input = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
-      const span =  fixture.debugElement.query(By.css('span')).nativeElement  as HTMLElement;
+      const span = fixture.debugElement.query(By.css('span')).nativeElement as HTMLElement;
 
       // simulate user entering new name in input
       input.value = inputText;
 
-      // dispatch a DOM event so that Angular learns of input value change.
+      // Dispatch a DOM event so that Angular learns of input value change.
       // then wait a tick while ngModel pushes input.box value to comp.text
       // and Angular updates the output span
-      input.dispatchEvent(newEvent('input'));
+      // In older browsers, such as IE, you might need a CustomEvent instead. See
+      // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+      input.dispatchEvent(new Event('input'));
       tick();
       fixture.detectChanges();
       expect(span.textContent).toBe(expectedText, 'output span');
@@ -2434,10 +2442,10 @@ describe('demo (with TestBed):', () => {
       const fixture = TestBed.configureTestingModule({
         declarations: [Child1Component],
       })
-      .overrideComponent(Child1Component, {
-        set: { template: '<span>Fake</span>' }
-      })
-      .createComponent(Child1Component);
+        .overrideComponent(Child1Component, {
+          set: { template: '<span>Fake</span>' }
+        })
+        .createComponent(Child1Component);
 
       fixture.detectChanges();
       expect(fixture).toHaveText('Fake');
@@ -2447,14 +2455,14 @@ describe('demo (with TestBed):', () => {
       const fixture = TestBed.configureTestingModule({
         declarations: [TestProvidersComponent],
       })
-      .overrideComponent(TestProvidersComponent, {
-        remove: { providers: [ValueService]},
-        add:    { providers: [{ provide: ValueService, useClass: FakeValueService }] },
+        .overrideComponent(TestProvidersComponent, {
+          remove: { providers: [ValueService] },
+          add: { providers: [{ provide: ValueService, useClass: FakeValueService }] },
 
-        // Or replace them all (this component has only one provider)
-        // set:    { providers: [{ provide: ValueService, useClass: FakeValueService }] },
-      })
-      .createComponent(TestProvidersComponent);
+          // Or replace them all (this component has only one provider)
+          // set:    { providers: [{ provide: ValueService, useClass: FakeValueService }] },
+        })
+        .createComponent(TestProvidersComponent);
 
       fixture.detectChanges();
       expect(fixture).toHaveText('injected value: faked value', 'text');
@@ -2470,14 +2478,14 @@ describe('demo (with TestBed):', () => {
       const fixture = TestBed.configureTestingModule({
         declarations: [TestViewProvidersComponent],
       })
-      .overrideComponent(TestViewProvidersComponent, {
-        // remove: { viewProviders: [ValueService]},
-        // add:    { viewProviders: [{ provide: ValueService, useClass: FakeValueService }] },
+        .overrideComponent(TestViewProvidersComponent, {
+          // remove: { viewProviders: [ValueService]},
+          // add:    { viewProviders: [{ provide: ValueService, useClass: FakeValueService }] },
 
-        // Or replace them all (this component has only one viewProvider)
-        set:    { viewProviders: [{ provide: ValueService, useClass: FakeValueService }] },
-      })
-      .createComponent(TestViewProvidersComponent);
+          // Or replace them all (this component has only one viewProvider)
+          set: { viewProviders: [{ provide: ValueService, useClass: FakeValueService }] },
+        })
+        .createComponent(TestViewProvidersComponent);
 
       fixture.detectChanges();
       expect(fixture).toHaveText('injected value: faked value');
@@ -2487,20 +2495,20 @@ describe('demo (with TestBed):', () => {
 
       // TestComponent is parent of TestProvidersComponent
       @Component({ template: '<my-service-comp></my-service-comp>' })
-      class TestComponent {}
+      class TestComponent { }
 
       // 3 levels of ValueService provider: module, TestCompomponent, TestProvidersComponent
       const fixture = TestBed.configureTestingModule({
         declarations: [TestComponent, TestProvidersComponent],
-        providers:    [ValueService]
+        providers: [ValueService]
       })
-      .overrideComponent(TestComponent, {
-        set: { providers: [{ provide: ValueService, useValue: {} }] }
-      })
-      .overrideComponent(TestProvidersComponent, {
-        set: { providers: [{ provide: ValueService, useClass: FakeValueService }] }
-      })
-      .createComponent(TestComponent);
+        .overrideComponent(TestComponent, {
+          set: { providers: [{ provide: ValueService, useValue: {} }] }
+        })
+        .overrideComponent(TestProvidersComponent, {
+          set: { providers: [{ provide: ValueService, useClass: FakeValueService }] }
+        })
+        .createComponent(TestComponent);
 
       let testBedProvider: ValueService;
       let tcProvider: ValueService;
@@ -2523,10 +2531,10 @@ describe('demo (with TestBed):', () => {
       const fixture = TestBed.configureTestingModule({
         declarations: [ShellComponent, NeedsContentComponent, Child1Component, Child2Component, Child3Component],
       })
-      .overrideComponent(ShellComponent, {
-        set: {
-          selector: 'test-shell',
-          template: `
+        .overrideComponent(ShellComponent, {
+          set: {
+            selector: 'test-shell',
+            template: `
           <needs-content #nc>
             <child-1 #content text=&quot;My&quot;></child-1>
             <child-2 #content text=&quot;dog&quot;></child-2>
@@ -2535,9 +2543,9 @@ describe('demo (with TestBed):', () => {
             <div #content>!</div>
           </needs-content>
           `
-        }
-      })
-      .createComponent(ShellComponent);
+          }
+        })
+        .createComponent(ShellComponent);
 
       fixture.detectChanges();
 
@@ -2548,10 +2556,10 @@ describe('demo (with TestBed):', () => {
       expect(comp.children.toArray().length).toBe(4,
         'three different child components and an ElementRef with #content');
 
-      expect(el.references['nc']).toBe(comp, '#nc reference to component');
+      expect(el.references.nc).toBe(comp, '#nc reference to component');
 
       // Filter for DebugElements with a #content reference
-      const contentRefs = el.queryAll( de => de.references['content']);
+      const contentRefs = el.queryAll( de => de.references.content);
       expect(contentRefs.length).toBe(4, 'elements w/ a #content reference');
     });
 
@@ -2589,8 +2597,8 @@ describe('demo (with TestBed):', () => {
 
   describe('lifecycle hooks w/ MyIfParentComp', () => {
     let fixture: ComponentFixture<MyIfParentComponent>;
-    let parent:  MyIfParentComponent;
-    let child:   MyIfChildComponent;
+    let parent: MyIfParentComponent;
+    let child: MyIfChildComponent;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -2647,7 +2655,7 @@ describe('demo (with TestBed):', () => {
     });
 
     // must be async test to see child flow to parent
-    it('changed child value flows to parent', async(() => {
+    it('changed child value flows to parent', waitForAsync(() => {
       fixture.detectChanges();
       getChild();
 
@@ -2657,14 +2665,14 @@ describe('demo (with TestBed):', () => {
         // Wait one JS engine turn!
         setTimeout(() => resolve(), 0);
       })
-      .then(() => {
-        fixture.detectChanges();
+        .then(() => {
+          fixture.detectChanges();
 
-        expect(child.ngOnChangesCounter).toBe(2,
-          'expected 2 changes: initial value and changed value');
-        expect(parent.parentValue).toBe('bar',
-          'parentValue should eq changed parent value');
-      });
+          expect(child.ngOnChangesCounter).toBe(2,
+            'expected 2 changes: initial value and changed value');
+          expect(parent.parentValue).toBe('bar',
+            'parentValue should eq changed parent value');
+        });
 
     }));
 
@@ -2694,12 +2702,12 @@ describe('demo (with TestBed):', () => {
 
       // DebugElement.queryAll: if we wanted all of many instances:
       childDe = fixture.debugElement
-        .queryAll(function (de) { return de.componentInstance instanceof MyIfChildComponent; })[0];
+        .queryAll(de => de.componentInstance instanceof MyIfChildComponent)[0];
 
       // WE'LL USE THIS APPROACH !
       // DebugElement.query: find first instance (if any)
       childDe = fixture.debugElement
-        .query(function (de) { return de.componentInstance instanceof MyIfChildComponent; });
+        .query(de => de.componentInstance instanceof MyIfChildComponent);
 
       if (childDe &amp;&amp; childDe.componentInstance) {
         child = childDe.componentInstance;
@@ -2741,14 +2749,14 @@ class FakeValueService extends ValueService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/demo/demo.ts]" value="/* tslint:disable:forin */
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/demo/demo.ts]" value="// tslint:disable: directive-selector forin no-input-rename
 import { Component, ContentChildren, Directive, EventEmitter,
          Injectable, Input, Output, Optional,
          HostBinding, HostListener,
          OnInit, OnChanges, OnDestroy,
          Pipe, PipeTransform,
-         SimpleChange } from '@angular/core';
+         SimpleChanges } from '@angular/core';
 
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -2790,7 +2798,7 @@ export class MasterService {
 export class ReversePipe implements PipeTransform {
   transform(s: string) {
     let r = '';
-    for (let i = s.length; i; )  { r += s[--i]; };
+    for (let i = s.length; i; ) { r += s[--i]; }
     return r;
   }
 }
@@ -3045,12 +3053,12 @@ export class MyIfChildComponent implements OnInit, OnChanges, OnDestroy {
     this.changeLog.push('ngOnDestroy called');
   }
 
-  ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
-    for (let propName in changes) {
+  ngOnChanges(changes: SimpleChanges) {
+    for (const propName in changes) {
       this.ngOnChangesCounter += 1;
-      let prop = changes[propName];
-      let cur  = JSON.stringify(prop.currentValue);
-      let prev = JSON.stringify(prop.previousValue);
+      const prop = changes[propName];
+      const cur  = JSON.stringify(prop.currentValue);
+      const prev = JSON.stringify(prop.previousValue);
       this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
     }
   }
@@ -3160,9 +3168,9 @@ export const demoProviders = [MasterService, ValueService];
 
 ////////////////////
 ////////////
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -3178,7 +3186,7 @@ export class DemoModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/dummy.module.ts]" value="// These unused NgModules keep the Angular Language Service happy.
 // The AppModule registers the final versions of these components
 import { NgModule } from '@angular/core';
@@ -3199,16 +3207,15 @@ export class BannerModuleExternal {}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-detail.component.no-testbed.spec.ts]" value="import { asyncData, ActivatedRouteStub } from '../../testing';
 
 import { HeroDetailComponent } from './hero-detail.component';
-import { Hero }                from '../model/hero';
+import { Hero } from '../model/hero';
 
 //////////  Tests  ////////////////////
 
 describe('HeroDetailComponent - no TestBed', () => {
-  let activatedRoute: ActivatedRouteStub;
   let comp: HeroDetailComponent;
   let expectedHero: Hero;
   let hds: any;
@@ -3223,12 +3230,11 @@ describe('HeroDetailComponent - no TestBed', () => {
     hds.getHero.and.returnValue(asyncData(expectedHero));
     hds.saveHero.and.returnValue(asyncData(expectedHero));
 
-    comp = new HeroDetailComponent(hds, <any> activatedRoute, router);
+    comp = new HeroDetailComponent(hds, activatedRoute as any, router);
     comp.ngOnInit();
 
     // OnInit calls HDS.getHero; wait for it to get the fake hero
     hds.getHero.calls.first().returnValue.subscribe(done);
-
   });
 
   it('should expose the hero retrieved from the service', () => {
@@ -3262,21 +3268,18 @@ describe('HeroDetailComponent - no TestBed', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/hero/hero-detail.component.spec.ts]" value="import {
-  async, ComponentFixture, fakeAsync, inject, TestBed, tick
-} from '@angular/core/testing';
-
-import { Router }       from '@angular/router';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-detail.component.spec.ts]" value="import { ComponentFixture, fakeAsync, inject, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { Router } from '@angular/router';
 
 import {
-  ActivatedRoute, ActivatedRouteStub, asyncData, click, newEvent
+  ActivatedRoute, ActivatedRouteStub, asyncData, click
 } from '../../testing';
 
-import { Hero }                from '../model/hero';
+import { Hero } from '../model/hero';
 import { HeroDetailComponent } from './hero-detail.component';
-import { HeroDetailService }   from './hero-detail.service';
-import { HeroModule }          from './hero.module';
+import { HeroDetailService } from './hero-detail.service';
+import { HeroModule } from './hero.module';
 
 ////// Testing Vars //////
 let activatedRoute: ActivatedRouteStub;
@@ -3299,51 +3302,46 @@ describe('HeroDetailComponent', () => {
 
 function overrideSetup() {
   class HeroDetailServiceSpy {
-    testHero: Hero = {id: 42, name: 'Test Hero' };
+    testHero: Hero = {id: 42, name: 'Test Hero'};
 
     /* emit cloned test hero */
     getHero = jasmine.createSpy('getHero').and.callFake(
-      () => asyncData(Object.assign({}, this.testHero))
-    );
+        () => asyncData(Object.assign({}, this.testHero)));
 
     /* emit clone of test hero, with changes merged in */
-    saveHero = jasmine.createSpy('saveHero').and.callFake(
-      (hero: Hero) => asyncData(Object.assign(this.testHero, hero))
-    );
+    saveHero = jasmine.createSpy('saveHero')
+                   .and.callFake((hero: Hero) => asyncData(Object.assign(this.testHero, hero)));
   }
 
 
   // the `id` value is irrelevant because ignored by service stub
-  beforeEach(() => activatedRoute.setParamMap({ id: 99999 }));
+  beforeEach(() => activatedRoute.setParamMap({id: 99999}));
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     const routerSpy = createRouterSpy();
 
-    TestBed.configureTestingModule({
-      imports:   [ HeroModule ],
-      providers: [
-        { provide: ActivatedRoute, useValue: activatedRoute },
-        { provide: Router,         useValue: routerSpy},
-        // HeroDetailService at this level is IRRELEVANT!
-        { provide: HeroDetailService, useValue: {} }
-      ]
-    })
+    TestBed
+        .configureTestingModule({
+          imports: [HeroModule],
+          providers: [
+            {provide: ActivatedRoute, useValue: activatedRoute},
+            {provide: Router, useValue: routerSpy},
+            // HeroDetailService at this level is IRRELEVANT!
+            {provide: HeroDetailService, useValue: {}}
+          ]
+        })
 
-    // Override component's own provider
-    .overrideComponent(HeroDetailComponent, {
-      set: {
-        providers: [
-          { provide: HeroDetailService, useClass: HeroDetailServiceSpy }
-        ]
-      }
-    })
+        // Override component's own provider
+        .overrideComponent(
+            HeroDetailComponent,
+            {set: {providers: [{provide: HeroDetailService, useClass: HeroDetailServiceSpy}]}})
 
-    .compileComponents();
+        .compileComponents();
   }));
 
   let hdsSpy: HeroDetailServiceSpy;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     createComponent();
     // get the component's injected HeroDetailServiceSpy
     hdsSpy = fixture.debugElement.injector.get(HeroDetailService) as any;
@@ -3358,32 +3356,34 @@ function overrideSetup() {
   });
 
   it('should save stub hero change', fakeAsync(() => {
-    const origName = hdsSpy.testHero.name;
-    const newName = 'New Name';
+       const origName = hdsSpy.testHero.name;
+       const newName = 'New Name';
 
-    page.nameInput.value = newName;
-    page.nameInput.dispatchEvent(newEvent('input')); // tell Angular
+       page.nameInput.value = newName;
 
-    expect(component.hero.name).toBe(newName, 'component hero has new name');
-    expect(hdsSpy.testHero.name).toBe(origName, 'service hero unchanged before save');
+       // In older browsers, such as IE, you might need a CustomEvent instead. See
+       // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+       page.nameInput.dispatchEvent(new Event('input')); // tell Angular
 
-    click(page.saveBtn);
-    expect(hdsSpy.saveHero.calls.count()).toBe(1, 'saveHero called once');
+       expect(component.hero.name).toBe(newName, 'component hero has new name');
+       expect(hdsSpy.testHero.name).toBe(origName, 'service hero unchanged before save');
 
-    tick(); // wait for async save to complete
-    expect(hdsSpy.testHero.name).toBe(newName, 'service hero has new name after save');
-    expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
-  }));
+       click(page.saveBtn);
+       expect(hdsSpy.saveHero.calls.count()).toBe(1, 'saveHero called once');
+
+       tick();  // wait for async save to complete
+       expect(hdsSpy.testHero.name).toBe(newName, 'service hero has new name after save');
+       expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
+     }));
 
   it('fixture injected service is not the component injected service',
-    // inject gets the service from the fixture
-    inject([HeroDetailService], (fixtureService: HeroDetailService) => {
+     // inject gets the service from the fixture
+     inject([HeroDetailService], (fixtureService: HeroDetailService) => {
+       // use `fixture.debugElement.injector` to get service from component
+       const componentService = fixture.debugElement.injector.get(HeroDetailService);
 
-    // use `fixture.debugElement.injector` to get service from component
-    const componentService = fixture.debugElement.injector.get(HeroDetailService);
-
-    expect(fixtureService).not.toBe(componentService, 'service injected from fixture');
-  }));
+       expect(fixtureService).not.toBe(componentService, 'service injected from fixture');
+     }));
 }
 
 ////////////////////
@@ -3392,27 +3392,28 @@ import { getTestHeroes, TestHeroService, HeroService } from '../model/testing/te
 const firstHero = getTestHeroes()[0];
 
 function heroModuleSetup() {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     const routerSpy = createRouterSpy();
 
-    TestBed.configureTestingModule({
-      imports:   [ HeroModule ],
-  //  declarations: [ HeroDetailComponent ], // NO!  DOUBLE DECLARATION
-      providers: [
-        { provide: ActivatedRoute, useValue: activatedRoute },
-        { provide: HeroService,    useClass: TestHeroService },
-        { provide: Router,         useValue: routerSpy},
-      ]
-    })
-    .compileComponents();
+    TestBed
+        .configureTestingModule({
+          imports: [HeroModule],
+          //  declarations: [ HeroDetailComponent ], // NO!  DOUBLE DECLARATION
+          providers: [
+            {provide: ActivatedRoute, useValue: activatedRoute},
+            {provide: HeroService, useClass: TestHeroService},
+            {provide: Router, useValue: routerSpy},
+          ]
+        })
+        .compileComponents();
   }));
 
   describe('when navigate to existing hero', () => {
     let expectedHero: Hero;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
       expectedHero = firstHero;
-      activatedRoute.setParamMap({ id: expectedHero.id });
+      activatedRoute.setParamMap({id: expectedHero.id});
       createComponent();
     }));
 
@@ -3437,10 +3438,10 @@ function heroModuleSetup() {
     });
 
     it('should navigate when click save and save resolves', fakeAsync(() => {
-      click(page.saveBtn);
-      tick(); // wait for async save to complete
-      expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
-    }));
+         click(page.saveBtn);
+         tick();  // wait for async save to complete
+         expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
+       }));
 
     it('should convert hero name to Title Case', () => {
       // get the name's input and display elements from the DOM
@@ -3451,9 +3452,10 @@ function heroModuleSetup() {
       // simulate user entering a new name into the input box
       nameInput.value = 'quick BROWN  fOx';
 
-      // dispatch a DOM event so that Angular learns of input value change.
-      // use newEvent utility function (not provided by Angular) for better browser compatibility
-      nameInput.dispatchEvent(newEvent('input'));
+      // Dispatch a DOM event so that Angular learns of input value change.
+      // In older browsers, such as IE, you might need a CustomEvent instead. See
+      // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+      nameInput.dispatchEvent(new Event('input'));
 
       // Tell Angular to update the display binding through the title pipe
       fixture.detectChanges();
@@ -3463,7 +3465,7 @@ function heroModuleSetup() {
   });
 
   describe('when navigate with no hero id', () => {
-    beforeEach(async( createComponent ));
+    beforeEach(waitForAsync(createComponent));
 
     it('should have hero.id === 0', () => {
       expect(component.hero.id).toBe(0);
@@ -3475,8 +3477,8 @@ function heroModuleSetup() {
   });
 
   describe('when navigate to non-existent hero id', () => {
-    beforeEach(async(() => {
-      activatedRoute.setParamMap({ id: 99999 });
+    beforeEach(waitForAsync(() => {
+      activatedRoute.setParamMap({id: 99999});
       createComponent();
     }));
 
@@ -3491,11 +3493,10 @@ function heroModuleSetup() {
     let service: HeroDetailService;
     fixture = TestBed.createComponent(HeroDetailComponent);
     expect(
-      // Throws because `inject` only has access to TestBed's injector
-      // which is an ancestor of the component's injector
-      inject([HeroDetailService], (hds: HeroDetailService) =>  service = hds )
-    )
-    .toThrowError(/No provider for HeroDetailService/);
+        // Throws because `inject` only has access to TestBed's injector
+        // which is an ancestor of the component's injector
+        inject([HeroDetailService], (hds: HeroDetailService) => service = hds))
+        .toThrowError(/No provider for HeroDetailService/);
 
     // get `HeroDetailService` with component's own injector
     service = fixture.debugElement.injector.get(HeroDetailService);
@@ -3504,60 +3505,62 @@ function heroModuleSetup() {
 }
 
 /////////////////////
-import { FormsModule }         from '@angular/forms';
-import { TitleCasePipe }       from '../shared/title-case.pipe';
+import { FormsModule } from '@angular/forms';
+import { TitleCasePipe } from '../shared/title-case.pipe';
 
 function formsModuleSetup() {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     const routerSpy = createRouterSpy();
 
-    TestBed.configureTestingModule({
-      imports:      [ FormsModule ],
-      declarations: [ HeroDetailComponent, TitleCasePipe ],
-      providers: [
-        { provide: ActivatedRoute, useValue: activatedRoute },
-        { provide: HeroService,    useClass: TestHeroService },
-        { provide: Router,         useValue: routerSpy},
-      ]
-    })
-    .compileComponents();
+    TestBed
+        .configureTestingModule({
+          imports: [FormsModule],
+          declarations: [HeroDetailComponent, TitleCasePipe],
+          providers: [
+            {provide: ActivatedRoute, useValue: activatedRoute},
+            {provide: HeroService, useClass: TestHeroService},
+            {provide: Router, useValue: routerSpy},
+          ]
+        })
+        .compileComponents();
   }));
 
-  it('should display 1st hero\'s name', async(() => {
-    const expectedHero = firstHero;
-    activatedRoute.setParamMap({ id: expectedHero.id });
-    createComponent().then(() => {
-      expect(page.nameDisplay.textContent).toBe(expectedHero.name);
-    });
-  }));
+  it('should display 1st hero\'s name', waitForAsync(() => {
+       const expectedHero = firstHero;
+       activatedRoute.setParamMap({id: expectedHero.id});
+       createComponent().then(() => {
+         expect(page.nameDisplay.textContent).toBe(expectedHero.name);
+       });
+     }));
 }
 
 ///////////////////////
-import { SharedModule }        from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 function sharedModuleSetup() {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     const routerSpy = createRouterSpy();
 
-    TestBed.configureTestingModule({
-      imports:      [ SharedModule ],
-      declarations: [ HeroDetailComponent ],
-      providers: [
-        { provide: ActivatedRoute, useValue: activatedRoute },
-        { provide: HeroService,    useClass: TestHeroService },
-        { provide: Router,         useValue: routerSpy},
-      ]
-    })
-    .compileComponents();
+    TestBed
+        .configureTestingModule({
+          imports: [SharedModule],
+          declarations: [HeroDetailComponent],
+          providers: [
+            {provide: ActivatedRoute, useValue: activatedRoute},
+            {provide: HeroService, useClass: TestHeroService},
+            {provide: Router, useValue: routerSpy},
+          ]
+        })
+        .compileComponents();
   }));
 
-  it('should display 1st hero\'s name', async(() => {
-    const expectedHero = firstHero;
-    activatedRoute.setParamMap({ id: expectedHero.id });
-    createComponent().then(() => {
-      expect(page.nameDisplay.textContent).toBe(expectedHero.name);
-    });
-  }));
+  it('should display 1st hero\'s name', waitForAsync(() => {
+       const expectedHero = firstHero;
+       activatedRoute.setParamMap({id: expectedHero.id});
+       createComponent().then(() => {
+         expect(page.nameDisplay.textContent).toBe(expectedHero.name);
+       });
+     }));
 }
 
 /////////// Helpers /////
@@ -3578,23 +3581,33 @@ function createComponent() {
 
 class Page {
   // getter properties wait to query the DOM until called.
-  get buttons()     { return this.queryAll<HTMLButtonElement>('button'); }
-  get saveBtn()     { return this.buttons[0]; }
-  get cancelBtn()   { return this.buttons[1]; }
-  get nameDisplay() { return this.query<HTMLElement>('span'); }
-  get nameInput()   { return this.query<HTMLInputElement>('input'); }
+  get buttons() {
+    return this.queryAll<HTMLButtonElement>('button');
+  }
+  get saveBtn() {
+    return this.buttons[0];
+  }
+  get cancelBtn() {
+    return this.buttons[1];
+  }
+  get nameDisplay() {
+    return this.query<HTMLElement>('span');
+  }
+  get nameInput() {
+    return this.query<HTMLInputElement>('input');
+  }
 
   gotoListSpy: jasmine.Spy;
-  navigateSpy:  jasmine.Spy;
+  navigateSpy: jasmine.Spy;
 
-  constructor(fixture: ComponentFixture<HeroDetailComponent>) {
+  constructor(someFixture: ComponentFixture<HeroDetailComponent>) {
     // get the navigate spy from the injected router spy object
-    const routerSpy = <any> fixture.debugElement.injector.get(Router);
+    const routerSpy = someFixture.debugElement.injector.get(Router) as any;
     this.navigateSpy = routerSpy.navigate;
 
     // spy on component's `gotoList()` method
-    const component = fixture.componentInstance;
-    this.gotoListSpy = spyOn(component, 'gotoList').and.callThrough();
+    const someComponent = someFixture.componentInstance;
+    this.gotoListSpy = spyOn(someComponent, 'gotoList').and.callThrough();
   }
 
   //// query helpers ////
@@ -3615,12 +3628,12 @@ function createRouterSpy() {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-detail.component.ts]" value="/* tslint:disable:member-ordering */
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router }   from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { Hero }              from '../model/hero';
+import { Hero } from '../model/hero';
 import { HeroDetailService } from './hero-detail.service';
 
 @Component({
@@ -3632,7 +3645,7 @@ import { HeroDetailService } from './hero-detail.service';
 export class HeroDetailComponent implements OnInit {
   constructor(
     private heroDetailService: HeroDetailService,
-    private route:  ActivatedRoute,
+    private route: ActivatedRoute,
     private router: Router) {
   }
 
@@ -3674,7 +3687,7 @@ export class HeroDetailComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-detail.service.ts]" value="import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
@@ -3708,23 +3721,22 @@ export class HeroDetailService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/hero/hero-list.component.spec.ts]" value="import { async, ComponentFixture, fakeAsync, TestBed, tick
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-list.component.spec.ts]" value="import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync
 } from '@angular/core/testing';
 
-import { By }           from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { Router }       from '@angular/router';
+import { Router } from '@angular/router';
 
-import { addMatchers, newEvent } from '../../testing';
-
+import { addMatchers } from '../../testing';
+import { HeroService } from '../model/hero.service';
 import { getTestHeroes, TestHeroService } from '../model/testing/test-hero.service';
 
-import { HeroModule }         from './hero.module';
-import { HeroListComponent }  from './hero-list.component';
+import { HeroModule } from './hero.module';
+import { HeroListComponent } from './hero-list.component';
 import { HighlightDirective } from '../shared/highlight.directive';
-import { HeroService }        from '../model/hero.service';
 
 const HEROES = getTestHeroes();
 
@@ -3735,20 +3747,20 @@ let page: Page;
 /////// Tests //////
 
 describe('HeroListComponent', () => {
-
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     addMatchers();
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
 
-    TestBed.configureTestingModule({
-      imports: [HeroModule],
-      providers: [
-        { provide: HeroService, useClass: TestHeroService },
-        { provide: Router,      useValue: routerSpy}
-      ]
-    })
-    .compileComponents()
-    .then(createComponent);
+    TestBed
+        .configureTestingModule({
+          imports: [HeroModule],
+          providers: [
+            {provide: HeroService, useClass: TestHeroService},
+            {provide: Router, useValue: routerSpy}
+          ]
+        })
+        .compileComponents()
+        .then(createComponent);
   }));
 
   it('should display heroes', () => {
@@ -3763,35 +3775,40 @@ describe('HeroListComponent', () => {
   });
 
   it('should select hero on click', fakeAsync(() => {
-    const expectedHero = HEROES[1];
-    const li = page.heroRows[1];
-    li.dispatchEvent(newEvent('click'));
-    tick();
-    // `.toEqual` because selectedHero is clone of expectedHero; see FakeHeroService
-    expect(comp.selectedHero).toEqual(expectedHero);
-  }));
+       const expectedHero = HEROES[1];
+       const li = page.heroRows[1];
+
+       // In older browsers, such as IE, you might need a CustomEvent instead. See
+       // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+       li.dispatchEvent(new Event('click'));
+       tick();
+       // `.toEqual` because selectedHero is clone of expectedHero; see FakeHeroService
+       expect(comp.selectedHero).toEqual(expectedHero);
+     }));
 
   it('should navigate to selected hero detail on click', fakeAsync(() => {
-    const expectedHero = HEROES[1];
-    const li = page.heroRows[1];
-    li.dispatchEvent(newEvent('click'));
-    tick();
+       const expectedHero = HEROES[1];
+       const li = page.heroRows[1];
 
-    // should have navigated
-    expect(page.navSpy.calls.any()).toBe(true, 'navigate called');
+       // In older browsers, such as IE, you might need a CustomEvent instead. See
+       // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+       li.dispatchEvent(new Event('click'));
+       tick();
 
-    // composed hero detail will be URL like 'heroes/42'
-    // expect link array with the route path and hero id
-    // first argument to router.navigate is link array
-    const navArgs = page.navSpy.calls.first().args[0];
-    expect(navArgs[0]).toContain('heroes', 'nav to heroes detail URL');
-    expect(navArgs[1]).toBe(expectedHero.id, 'expected hero.id');
+       // should have navigated
+       expect(page.navSpy.calls.any()).toBe(true, 'navigate called');
 
-  }));
+       // composed hero detail will be URL like 'heroes/42'
+       // expect link array with the route path and hero id
+       // first argument to router.navigate is link array
+       const navArgs = page.navSpy.calls.first().args[0];
+       expect(navArgs[0]).toContain('heroes', 'nav to heroes detail URL');
+       expect(navArgs[1]).toBe(expectedHero.id, 'expected hero.id');
+     }));
 
   it('should find `HighlightDirective` with `By.directive', () => {
     // Can find DebugElement either by css selector or by directive
-    const h2        = fixture.debugElement.query(By.css('h2'));
+    const h2 = fixture.debugElement.query(By.css('h2'));
     const directive = fixture.debugElement.query(By.directive(HighlightDirective));
     expect(h2).toBe(directive);
   });
@@ -3848,16 +3865,16 @@ class Page {
     // Get the component's injected router navigation spy
     const routerSpy = fixture.debugElement.injector.get(Router);
     this.navSpy = routerSpy.navigate as jasmine.Spy;
-  };
+  }
 }
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero/hero-list.component.ts]" value="import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
@@ -3891,12 +3908,12 @@ export class HeroListComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/hero/hero-routing.module.ts]" value="import { NgModule }             from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-routing.module.ts]" value="import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HeroListComponent }    from './hero-list.component';
-import { HeroDetailComponent }  from './hero-detail.component';
+import { HeroListComponent } from './hero-list.component';
+import { HeroDetailComponent } from './hero-detail.component';
 
 const routes: Routes =  [
   { path: '',    component: HeroListComponent },
@@ -3915,8 +3932,8 @@ export class HeroRoutingModule {}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/hero/hero.module.ts]" value="import { NgModule }     from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero.module.ts]" value="import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { routedComponents, HeroRoutingModule } from './hero-routing.module';
 
@@ -3930,7 +3947,7 @@ export class HeroModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/in-memory-data.service.ts]" value="import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { QUOTES } from './twain/twain.data';
 
@@ -3961,7 +3978,7 @@ export class InMemoryDataService implements InMemoryDbService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/hero.service.spec.ts]" value="import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 // Other imports
@@ -3980,7 +3997,7 @@ describe ('HeroesService (with spies)', () => {
   beforeEach(() => {
     // TODO: spy on other methods too
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    heroService = new HeroService(<any> httpClientSpy);
+    heroService = new HeroService(httpClientSpy as any);
   });
 
   it('should return expected heroes (HttpClient called once)', () => {
@@ -4176,7 +4193,7 @@ describe('HeroesService (with mocks)', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/hero.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
@@ -4279,7 +4296,7 @@ export class HeroService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/hero.ts]" value="export interface Hero {
   id: number;
   name: string;
@@ -4289,7 +4306,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/index.ts]" value="export * from './hero';
 export * from './hero.service';
 export * from './user.service';
@@ -4298,7 +4315,7 @@ export * from './user.service';
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
@@ -4362,7 +4379,7 @@ describe('HttpClient testing', () => {
 
     // Make an HTTP GET request with specific header
     httpClient.get<Data>(testUrl, {
-        headers: new HttpHeaders({'Authorization': 'my-auth-token'})
+        headers: new HttpHeaders({Authorization: 'my-auth-token'})
       })
       .subscribe(data =>
         expect(data).toEqual(testData)
@@ -4371,13 +4388,13 @@ describe('HttpClient testing', () => {
       // Find request with a predicate function.
     // Expect one request with an authorization header
     const req = httpTestingController.expectOne(
-      req => req.headers.has('Authorization')
+      request => request.headers.has('Authorization')
     );
     req.flush(testData);
   });
 
   it('can test multiple requests', () => {
-    let testData: Data[] = [
+    const testData: Data[] = [
       { name: 'bob' }, { name: 'carol' },
       { name: 'ted' }, { name: 'alice' }
     ];
@@ -4473,14 +4490,14 @@ describe('HttpClient testing', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/testing/index.ts]" value="export * from './test-hero.service';
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/testing/test-hero.service.ts]" value="import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
@@ -4489,19 +4506,19 @@ import { asyncData } from '../../../testing';
 import { map } from 'rxjs/operators';
 
 // re-export for tester convenience
-export { Hero }          from '../hero';
-export { HeroService }   from '../hero.service';
+export { Hero } from '../hero';
+export { HeroService } from '../hero.service';
 export { getTestHeroes } from './test-heroes';
 
-import { Hero }          from '../hero';
-import { HeroService }   from '../hero.service';
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 import { getTestHeroes } from './test-heroes';
 
 @Injectable()
 /**
  * FakeHeroService pretends to make real http requests.
  * implements only as much of HeroService as is actually consumed by the app
-*/
+ */
 export class TestHeroService extends HeroService {
 
   constructor() {
@@ -4547,7 +4564,7 @@ export class TestHeroService extends HeroService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/testing/test-heroes.ts]" value="import { Hero } from '../hero';
 
 /** return fresh array of test heroes */
@@ -4566,7 +4583,7 @@ export function getTestHeroes(): Hero[] {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/model/user.service.ts]" value="import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -4579,44 +4596,45 @@ export class UserService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/shared/canvas.component.spec.ts]" value="import { TestBed, async, tick, fakeAsync } from '@angular/core/testing';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/canvas.component.spec.ts]" value="import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+
 import { CanvasComponent } from './canvas.component';
 
 describe('CanvasComponent', () => {
   beforeEach(() => {
-    window['__zone_symbol__FakeAsyncTestMacroTask'] = [
+    (window as any).__zone_symbol__FakeAsyncTestMacroTask = [
       {
         source: 'HTMLCanvasElement.toBlob',
-        callbackArgs: [{ size: 200 }],
+        callbackArgs: [{size: 200}],
       },
     ];
   });
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        CanvasComponent
-      ],
-    }).compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed
+        .configureTestingModule({
+          declarations: [CanvasComponent],
+        })
+        .compileComponents();
   }));
 
   it('should be able to generate blob data from canvas', fakeAsync(() => {
-    const fixture = TestBed.createComponent(CanvasComponent);
-    const canvasComp = fixture.componentInstance;
+       const fixture = TestBed.createComponent(CanvasComponent);
+       const canvasComp = fixture.componentInstance;
 
-    fixture.detectChanges();
-    expect(canvasComp.blobSize).toBe(0);
+       fixture.detectChanges();
+       expect(canvasComp.blobSize).toBe(0);
 
-    tick();
-    expect(canvasComp.blobSize).toBeGreaterThan(0);
-  }));
+       tick();
+       expect(canvasComp.blobSize).toBeGreaterThan(0);
+     }));
 });
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="// Import patch to make async `HTMLCanvasElement` methods (such as `.toBlob()`) Zone.js-aware.
 // Either import in `polyfills.ts` (if used in more than one places in the app) or in the component
 // file using `HTMLCanvasElement` (if it is only used in a single file).
@@ -4649,13 +4667,12 @@ export class CanvasComponent implements AfterViewInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/shared/highlight.directive.spec.ts]" value="import { Component, DebugElement }   from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/highlight.directive.spec.ts]" value="import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { HighlightDirective } from './highlight.directive';
-import { newEvent }           from '../../testing';
 
 @Component({
   template: `
@@ -4708,9 +4725,12 @@ describe('HighlightDirective', () => {
     const input = des[2].nativeElement as HTMLInputElement;
     expect(input.style.backgroundColor).toBe('cyan', 'initial backgroundColor');
 
-    // dispatch a DOM event so that Angular responds to the input value change.
     input.value = 'green';
-    input.dispatchEvent(newEvent('input'));
+
+    // Dispatch a DOM event so that Angular responds to the input value change.
+    // In older browsers, such as IE, you might need a CustomEvent instead. See
+    // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+    input.dispatchEvent(new Event('input'));
     fixture.detectChanges();
 
     expect(input.style.backgroundColor).toBe('green', 'changed backgroundColor');
@@ -4718,7 +4738,7 @@ describe('HighlightDirective', () => {
 
 
   it('bare <h2> should not have a customProperty', () => {
-    expect(bareH2.properties['customProperty']).toBeUndefined();
+    expect(bareH2.properties.customProperty).toBeUndefined();
   });
 
   // Removed on 12/02/2016 when ceased public discussion of the `Renderer`. Revive in future?
@@ -4755,12 +4775,15 @@ describe('HighlightDirective', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/shared/highlight.directive.ts]" value="import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/highlight.directive.ts]" value="// tslint:disable: directive-selector
+import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 
 @Directive({ selector: '[highlight]' })
-/** Set backgroundColor for the attached element to highlight color
- *  and set the element's customProperty to true */
+/**
+ * Set backgroundColor for the attached element to highlight color
+ * and set the element's customProperty to true
+ */
 export class HighlightDirective implements OnChanges {
 
   defaultColor =  'rgb(211, 211, 211)'; // lightgray
@@ -4780,14 +4803,14 @@ export class HighlightDirective implements OnChanges {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/shared/shared.module.ts]" value="import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/shared.module.ts]" value="import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { HighlightDirective } from './highlight.directive';
-import { TitleCasePipe }      from './title-case.pipe';
-import { CanvasComponent }    from './canvas.component';
+import { TitleCasePipe } from './title-case.pipe';
+import { CanvasComponent } from './canvas.component';
 
 @NgModule({
   imports: [ CommonModule ],
@@ -4807,12 +4830,12 @@ export class SharedModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/title-case.pipe.spec.ts]" value="import { TitleCasePipe } from './title-case.pipe';
 
 describe('TitleCasePipe', () => {
   // This pipe is a pure, stateless function so no need for BeforeEach
-  let pipe = new TitleCasePipe();
+  const pipe = new TitleCasePipe();
 
   it('transforms &quot;abc&quot; to &quot;Abc&quot;', () => {
     expect(pipe.transform('abc')).toBe('Abc');
@@ -4840,11 +4863,11 @@ describe('TitleCasePipe', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/title-case.pipe.ts]" value="import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({name: 'titlecase', pure: true})
-/** Transform to Title Case: uppercase the first letter of the words in a string.*/
+/** Transform to Title Case: uppercase the first letter of the words in a string. */
 export class TitleCasePipe implements PipeTransform {
   transform(input: string): string {
     return input.length === 0 ? '' :
@@ -4856,7 +4879,7 @@ export class TitleCasePipe implements PipeTransform {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/twain/quote.ts]" value="export class Quote {
   id: number;
   quote: string;
@@ -4866,12 +4889,12 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/twain/twain.component.marbles.spec.ts]" value="import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
 
 import { cold, getTestScheduler } from 'jasmine-marbles';
 
-import { TwainService }   from './twain.service';
+import { TwainService } from './twain.service';
 import { TwainComponent } from './twain.component';
 
 
@@ -4946,17 +4969,16 @@ describe('TwainComponent (marbles)', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/twain/twain.component.spec.ts]" value="import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/twain/twain.component.spec.ts]" value="import { fakeAsync, ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
 
-import { asyncData, asyncError }  from '../../testing';
+import { asyncData, asyncError } from '../../testing';
 
 import { of, throwError } from 'rxjs';
-
 import { last } from 'rxjs/operators';
 
-import { TwainService }   from './twain.service';
 import { TwainComponent } from './twain.component';
+import { TwainService } from './twain.service';
 
 describe('TwainComponent', () => {
   let component: TwainComponent;
@@ -4978,13 +5000,11 @@ describe('TwainComponent', () => {
     // Create a fake TwainService object with a `getQuote()` spy
     const twainService = jasmine.createSpyObj('TwainService', ['getQuote']);
     // Make the spy return a synchronous Observable with the test data
-    getQuoteSpy = twainService.getQuote.and.returnValue( of(testQuote) );
+    getQuoteSpy = twainService.getQuote.and.returnValue(of(testQuote));
 
     TestBed.configureTestingModule({
-      declarations: [ TwainComponent ],
-      providers:    [
-        { provide: TwainService, useValue: twainService }
-      ]
+      declarations: [TwainComponent],
+      providers: [{provide: TwainService, useValue: twainService}]
     });
 
     fixture = TestBed.createComponent(TwainComponent);
@@ -5001,7 +5021,7 @@ describe('TwainComponent', () => {
 
     // The quote would not be immediately available if the service were truly async.
     it('should show quote after component initialized', () => {
-      fixture.detectChanges(); // onInit()
+      fixture.detectChanges();  // onInit()
 
       // sync spy result shows testQuote immediately after init
       expect(quoteEl.textContent).toBe(testQuote);
@@ -5012,20 +5032,19 @@ describe('TwainComponent', () => {
     // The error would not be immediately available if the service were truly async.
     // Use `fakeAsync` because the component error calls `setTimeout`
     it('should display error when TwainService fails', fakeAsync(() => {
-      // tell spy to return an error observable
-      getQuoteSpy.and.returnValue(
-        throwError('TwainService test failure'));
+         // tell spy to return an error observable
+         getQuoteSpy.and.returnValue(throwError('TwainService test failure'));
 
-      fixture.detectChanges(); // onInit()
-      // sync spy errors immediately after init
+         fixture.detectChanges();  // onInit()
+         // sync spy errors immediately after init
 
-      tick(); // flush the component's setTimeout()
+         tick();  // flush the component's setTimeout()
 
-      fixture.detectChanges(); // update errorMessage within setTimeout()
+         fixture.detectChanges();  // update errorMessage within setTimeout()
 
-      expect(errorMessage()).toMatch(/test failure/, 'should display error');
-      expect(quoteEl.textContent).toBe('...', 'should show placeholder');
-    }));
+         expect(errorMessage()).toMatch(/test failure/, 'should display error');
+         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+       }));
   });
 
   describe('when test with asynchronous observable', () => {
@@ -5050,33 +5069,33 @@ describe('TwainComponent', () => {
     });
 
     it('should show quote after getQuote (fakeAsync)', fakeAsync(() => {
-      fixture.detectChanges(); // ngOnInit()
-      expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+         fixture.detectChanges();  // ngOnInit()
+         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
 
-      tick(); // flush the observable to get the quote
-      fixture.detectChanges(); // update view
+         tick();                   // flush the observable to get the quote
+         fixture.detectChanges();  // update view
 
-      expect(quoteEl.textContent).toBe(testQuote, 'should show quote');
-      expect(errorMessage()).toBeNull('should not show error');
-    }));
+         expect(quoteEl.textContent).toBe(testQuote, 'should show quote');
+         expect(errorMessage()).toBeNull('should not show error');
+       }));
 
-    it('should show quote after getQuote (async)', async(() => {
-      fixture.detectChanges(); // ngOnInit()
-      expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+    it('should show quote after getQuote (async)', waitForAsync(() => {
+         fixture.detectChanges();  // ngOnInit()
+         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
 
-      fixture.whenStable().then(() => { // wait for async getQuote
-        fixture.detectChanges();        // update view with quote
-        expect(quoteEl.textContent).toBe(testQuote);
-        expect(errorMessage()).toBeNull('should not show error');
-      });
-    }));
+         fixture.whenStable().then(() => {  // wait for async getQuote
+           fixture.detectChanges();         // update view with quote
+           expect(quoteEl.textContent).toBe(testQuote);
+           expect(errorMessage()).toBeNull('should not show error');
+         });
+       }));
 
 
     it('should show last quote (quote done)', (done: DoneFn) => {
       fixture.detectChanges();
 
-      component.quote.pipe( last() ).subscribe(() => {
-        fixture.detectChanges(); // update view with quote
+      component.quote.pipe(last()).subscribe(() => {
+        fixture.detectChanges();  // update view with quote
         expect(quoteEl.textContent).toBe(testQuote);
         expect(errorMessage()).toBeNull('should not show error');
         done();
@@ -5088,7 +5107,7 @@ describe('TwainComponent', () => {
 
       // the spy's most recent call returns the observable with the test quote
       getQuoteSpy.calls.mostRecent().returnValue.subscribe(() => {
-        fixture.detectChanges(); // update view with quote
+        fixture.detectChanges();  // update view with quote
         expect(quoteEl.textContent).toBe(testQuote);
         expect(errorMessage()).toBeNull('should not show error');
         done();
@@ -5096,16 +5115,16 @@ describe('TwainComponent', () => {
     });
 
     it('should display error when TwainService fails', fakeAsync(() => {
-      // tell spy to return an async error observable
-      getQuoteSpy.and.returnValue(asyncError<string>('TwainService test failure'));
+         // tell spy to return an async error observable
+         getQuoteSpy.and.returnValue(asyncError<string>('TwainService test failure'));
 
-      fixture.detectChanges();
-      tick();                  // component shows error after a setTimeout()
-      fixture.detectChanges(); // update error message
+         fixture.detectChanges();
+         tick();                   // component shows error after a setTimeout()
+         fixture.detectChanges();  // update error message
 
-      expect(errorMessage()).toMatch(/test failure/, 'should display error');
-      expect(quoteEl.textContent).toBe('...', 'should show placeholder');
-    }));
+         expect(errorMessage()).toMatch(/test failure/, 'should display error');
+         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+       }));
   });
 });
 
@@ -5113,7 +5132,7 @@ describe('TwainComponent', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/twain/twain.component.ts]" value="import { Component, OnInit } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
@@ -5160,7 +5179,7 @@ export class TwainComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/twain/twain.data.ts]" value="import { Quote } from './quote';
 
 export const QUOTES: Quote[] = [
@@ -5181,7 +5200,7 @@ export const QUOTES: Quote[] = [
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/twain/twain.service.ts]" value="// Mark Twain Quote service gets quotes from server
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -5232,16 +5251,16 @@ export class TwainService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/welcome/welcome.component.spec.ts]" value="import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
 
-import { UserService }      from '../model/user.service';
+import { UserService } from '../model/user.service';
 import { WelcomeComponent } from './welcome.component';
 
 class MockUserService {
   isLoggedIn = true;
   user = { name: 'Test User'};
-};
+}
 
 describe('WelcomeComponent (class only)', () => {
   let comp: WelcomeComponent;
@@ -5349,7 +5368,7 @@ describe('WelcomeComponent', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/welcome/welcome.component.ts]" value="import { Component, OnInit } from '@angular/core';
 import { UserService } from '../model/user.service';
 
@@ -5371,7 +5390,7 @@ export class WelcomeComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/testing/activated-route-stub.ts]" value="// export for convenience.
 export { ActivatedRoute } from '@angular/router';
 
@@ -5404,7 +5423,7 @@ export class ActivatedRouteStub {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/testing/async-observable-helpers.ts]" value="/*
 * Mock async observables that return asynchronously.
 * The observable either emits once and completes or errors.
@@ -5419,14 +5438,18 @@ can be found in the LICENSE file at http://angular.io/license
 */
 import { defer } from 'rxjs';
 
-/** Create async observable that emits-once and completes
- *  after a JS engine turn */
+/**
+ * Create async observable that emits-once and completes
+ * after a JS engine turn
+ */
 export function asyncData<T>(data: T) {
   return defer(() => Promise.resolve(data));
 }
 
-/** Create async observable error that errors
- *  after a JS engine turn */
+/**
+ * Create async observable error that errors
+ * after a JS engine turn
+ */
 export function asyncError<T>(errorObject: any) {
   return defer(() => Promise.reject(errorObject));
 }
@@ -5435,17 +5458,17 @@ export function asyncError<T>(errorObject: any) {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/testing/global-jasmine.ts]" value="import jasmineRequire from 'jasmine-core/lib/jasmine-core/jasmine.js';
 
-window['jasmineRequire'] = jasmineRequire;
+(window as any).jasmineRequire = jasmineRequire;
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/testing/index.ts]" value="import { DebugElement }           from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/testing/index.ts]" value="import { DebugElement } from '@angular/core';
 import { tick, ComponentFixture } from '@angular/core/testing';
 
 export * from './async-observable-helpers';
@@ -5459,18 +5482,6 @@ export * from './router-link-directive-stub';
 export function advance(f: ComponentFixture<any>): void {
   tick();
   f.detectChanges();
-}
-
-/**
- * Create custom DOM event the old fashioned way
- *
- * https://developer.mozilla.org/en-US/docs/Web/API/Event/initEvent
- * Although officially deprecated, some browsers (phantom) don't accept the preferred &quot;new Event(eventName)&quot;
- */
-export function newEvent(eventName: string, bubbles = false, cancelable = false) {
-  let evt = document.createEvent('CustomEvent');  // MUST be 'CustomEvent'
-  evt.initCustomEvent(eventName, bubbles, cancelable, null);
-  return evt;
 }
 
 // See https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
@@ -5493,8 +5504,9 @@ export function click(el: DebugElement | HTMLElement, eventObj: any = ButtonClic
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/testing/jasmine-matchers.d.ts]" value="declare namespace jasmine {
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/testing/jasmine-matchers.d.ts]" value="// tslint:disable-next-line: no-namespace
+declare namespace jasmine {
   interface Matchers<T> {
     toHaveText(actual: any, expectationFailOutput?: any): jasmine.CustomMatcher;
   }
@@ -5504,27 +5516,28 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/testing/jasmine-matchers.ts]" value="/// <reference path=&quot;./jasmine-matchers.d.ts&quot; />
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/testing/jasmine-matchers.ts]" value="// tslint:disable-next-line: no-reference
+/// <reference path=&quot;./jasmine-matchers.d.ts&quot; />
 
 ////  Jasmine Custom Matchers ////
 // Be sure to extend jasmine-matchers.d.ts when adding matchers
 
 export function addMatchers(): void {
   jasmine.addMatchers({
-    toHaveText: toHaveText
+    toHaveText
   });
 }
 
 function toHaveText(): jasmine.CustomMatcher {
   return {
-    compare: function (actual: any, expectedText: string, expectationFailOutput?: any): jasmine.CustomMatcherResult {
+    compare: (actual: any, expectedText: string, expectationFailOutput?: any): jasmine.CustomMatcherResult => {
       const actualText = elementText(actual);
       const pass = actualText.indexOf(expectedText) > -1;
       const message = pass ? '' : composeMessage();
       return { pass, message };
 
-      function composeMessage () {
+      function composeMessage() {
         const a = (actualText.length < 100 ? actualText : actualText.substr(0, 100) + '...');
         const efo = expectationFailOutput ? ` '${expectationFailOutput}'` : '';
         return `Expected element to have text content '${expectedText}' instead of '${a}'${efo}`;
@@ -5555,13 +5568,13 @@ function elementText(n: any): string {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/testing/router-link-directive-stub.ts]" value="import { Directive, Input, HostListener } from '@angular/core';
 
 // export for convenience.
 export { RouterLink} from '@angular/router';
 
-/* tslint:disable:directive-class-suffix */
+// tslint:disable: directive-class-suffix directive-selector
 @Directive({
   selector: '[routerLink]'
 })
@@ -5589,7 +5602,7 @@ export class RouterStubsModule {}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -5598,7 +5611,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -5620,7 +5633,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -5628,7 +5641,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -5641,6 +5658,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -5662,22 +5680,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -5767,7 +5783,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -5816,8 +5832,8 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Testing - specs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Testing - specs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

@@ -11,9 +11,9 @@ export class AppComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AstronautComponent } from './astronaut.component';
@@ -29,10 +29,17 @@ import { VersionParentComponent } from './version-parent.component';
 import { VoterComponent } from './voter.component';
 import { VoteTakerComponent } from './votetaker.component';
 
-let directives: any[] = [
+
+@NgModule({
+  imports: [
+    BrowserModule,
+  ],
+  declarations: [
     AppComponent,
     AstronautComponent,
+    CountdownLocalVarParentComponent,
     CountdownTimerComponent,
+    CountdownViewChildParentComponent,
     HeroChildComponent,
     HeroParentComponent,
     MissionControlComponent,
@@ -41,29 +48,9 @@ let directives: any[] = [
     VersionChildComponent,
     VersionParentComponent,
     VoterComponent,
-    VoteTakerComponent
-  ];
-
-let schemas: any[] = [];
-
-// Include Countdown examples
-// unless in e2e tests which they break.
-if (!/e2e/.test(location.search)) {
-  console.log('adding countdown timer examples');
-  directives.push(CountdownLocalVarParentComponent);
-  directives.push(CountdownViewChildParentComponent);
-} else {
-  // In e2e test use CUSTOM_ELEMENTS_SCHEMA to suppress unknown element errors
-  schemas.push(CUSTOM_ELEMENTS_SCHEMA);
-}
-
-@NgModule({
-  imports: [
-    BrowserModule
+    VoteTakerComponent,
   ],
-  declarations: directives,
   bootstrap: [ AppComponent ],
-  schemas: schemas
 })
 export class AppModule { }
 
@@ -71,11 +58,11 @@ export class AppModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/astronaut.component.ts]" value="import { Component, Input, OnDestroy } from '@angular/core';
 
 import { MissionService } from './mission.service';
-import { Subscription }   from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-astronaut',
@@ -121,10 +108,10 @@ export class AstronautComponent implements OnDestroy {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/countdown-parent.component.ts]" value="import { AfterViewInit, ViewChild } from '@angular/core';
-import { Component }                from '@angular/core';
-import { CountdownTimerComponent }  from './countdown-timer.component';
+import { Component } from '@angular/core';
+import { CountdownTimerComponent } from './countdown-timer.component';
 
 
 //// Local variable, #timer, version
@@ -175,22 +162,19 @@ export class CountdownViewChildParentComponent implements AfterViewInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/countdown-timer.component.ts]" value="import { Component, OnDestroy, OnInit } from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/countdown-timer.component.ts]" value="import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer',
   template: '<p>{{message}}</p>'
 })
-export class CountdownTimerComponent implements OnInit, OnDestroy {
+export class CountdownTimerComponent implements OnDestroy {
 
   intervalId = 0;
   message = '';
   seconds = 11;
 
-  clearTimer() { clearInterval(this.intervalId); }
-
-  ngOnInit()    { this.start(); }
   ngOnDestroy() { this.clearTimer(); }
 
   start() { this.countDown(); }
@@ -198,6 +182,8 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     this.clearTimer();
     this.message = `Holding at T-${this.seconds} seconds`;
   }
+
+  private clearTimer() { clearInterval(this.intervalId); }
 
   private countDown() {
     this.clearTimer();
@@ -217,7 +203,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-child.component.ts]" value="import { Component, Input } from '@angular/core';
 
 import { Hero } from './hero';
@@ -231,14 +217,14 @@ import { Hero } from './hero';
 })
 export class HeroChildComponent {
   @Input() hero: Hero;
-  @Input('master') masterName: string;
+  @Input('master') masterName: string; // tslint:disable-line: no-input-rename
 }
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-parent.component.ts]" value="import { Component } from '@angular/core';
 
 import { HEROES } from './hero';
@@ -262,7 +248,7 @@ export class HeroParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero.ts]" value="export interface Hero {
   name: string;
 }
@@ -277,9 +263,9 @@ export const HEROES = [
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/mission.service.ts]" value="import { Injectable } from '@angular/core';
-import { Subject }    from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class MissionService {
@@ -306,10 +292,10 @@ export class MissionService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/missioncontrol.component.ts]" value="import { Component }          from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/missioncontrol.component.ts]" value="import { Component } from '@angular/core';
 
-import { MissionService }     from './mission.service';
+import { MissionService } from './mission.service';
 
 @Component({
   selector: 'app-mission-control',
@@ -342,7 +328,7 @@ export class MissionControlComponent {
   }
 
   announce() {
-    let mission = this.missions[this.nextMission++];
+    const mission = this.missions[this.nextMission++];
     this.missionService.announceMission(mission);
     this.history.push(`Mission &quot;${mission}&quot; announced`);
     if (this.nextMission >= this.missions.length) { this.nextMission = 0; }
@@ -353,29 +339,28 @@ export class MissionControlComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/name-child.component.ts]" value="import { Component, Input } from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/name-child.component.ts]" value="// tslint:disable: variable-name
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-name-child',
   template: '<h3>&quot;{{name}}&quot;</h3>'
 })
 export class NameChildComponent {
-  private _name = '';
-
   @Input()
+  get name(): string { return this._name; }
   set name(name: string) {
     this._name = (name &amp;&amp; name.trim()) || '<no name set>';
   }
-
-  get name(): string { return this._name; }
+  private _name = '';
 }
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/name-parent.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -394,9 +379,9 @@ export class NameParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/version-child.component.ts]" value="/* tslint:disable:forin */
-import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-version-child',
@@ -413,15 +398,15 @@ export class VersionChildComponent implements OnChanges {
   @Input() minor: number;
   changeLog: string[] = [];
 
-  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    let log: string[] = [];
-    for (let propName in changes) {
-      let changedProp = changes[propName];
-      let to = JSON.stringify(changedProp.currentValue);
+  ngOnChanges(changes: SimpleChanges) {
+    const log: string[] = [];
+    for (const propName in changes) {
+      const changedProp = changes[propName];
+      const to = JSON.stringify(changedProp.currentValue);
       if (changedProp.isFirstChange()) {
         log.push(`Initial value of ${propName} set to ${to}`);
       } else {
-        let from = JSON.stringify(changedProp.previousValue);
+        const from = JSON.stringify(changedProp.previousValue);
         log.push(`${propName} changed from ${from} to ${to}`);
       }
     }
@@ -433,7 +418,7 @@ export class VersionChildComponent implements OnChanges {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/version-parent.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -463,7 +448,7 @@ export class VersionParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/voter.component.ts]" value="import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
@@ -489,8 +474,8 @@ export class VoterComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/votetaker.component.ts]" value="import { Component }      from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/votetaker.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-vote-taker',
@@ -517,7 +502,7 @@ export class VoteTakerComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -526,7 +511,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -548,7 +533,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -565,7 +550,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -586,7 +571,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -635,7 +620,7 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/assets/demo.css]" value="/* Component Communication cookbook specific styles */
 .seconds {
   background-color: black;
@@ -650,7 +635,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -721,7 +706,7 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.html]" value="<h1 id=&quot;top&quot;>Component Communication Cookbook</h1>
 
 <a href=&quot;#parent-to-child&quot;>Pass data from parent to child with input binding (&quot;Heroes&quot;)</a><br/>
@@ -754,31 +739,30 @@ can be found in the LICENSE file at http://angular.io/license
   <app-vote-taker></app-vote-taker>
 </div>
 <a href=&quot;#top&quot; class=&quot;to-top&quot;>Back to Top</a>
-<hr>
 
+<hr>
 <div id=&quot;parent-to-child-local-var&quot;>
   <app-countdown-parent-lv></app-countdown-parent-lv>
 </div>
 <a href=&quot;#top&quot; class=&quot;to-top&quot;>Back to Top</a>
-<hr>
 
+<hr>
 <div id=&quot;parent-to-view-child&quot;>
   <app-countdown-parent-vc></app-countdown-parent-vc>
 </div>
 <a href=&quot;#top&quot; class=&quot;to-top&quot;>Back to Top</a>
-<hr>
 
+<hr>
 <div id=&quot;bidirectional-service&quot;>
   <app-mission-control></app-mission-control>
 </div>
 <a href=&quot;#top&quot; class=&quot;to-top&quot;>Back to Top</a>
-<hr>
 
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
   <head>
@@ -800,7 +784,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -808,7 +792,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -821,6 +809,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -841,22 +830,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -926,7 +913,7 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="cookbook"><input type="hidden" name="tags[3]" value="component"><input type="hidden" name="description" value="Angular Example - Component Communication Cookbook samples"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="cookbook"><input type="hidden" name="tags[3]" value="component"><input type="hidden" name="description" value="Angular Example - Component Communication Cookbook samples"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

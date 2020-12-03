@@ -15,11 +15,15 @@
      * from the global scope.
      */
     class Adapter {
-        constructor(scope) {
-            // Suffixing `ngsw` with the baseHref to avoid clash of cache names
-            // for SWs with different scopes on the same domain.
-            const baseHref = this.parseUrl(scope.registration.scope).path;
-            this.cacheNamePrefix = 'ngsw:' + baseHref;
+        constructor(scopeUrl) {
+            this.scopeUrl = scopeUrl;
+            const parsedScopeUrl = this.parseUrl(this.scopeUrl);
+            // Determine the origin from the registration scope. This is used to differentiate between
+            // relative and absolute URLs.
+            this.origin = parsedScopeUrl.origin;
+            // Suffixing `ngsw` with the baseHref to avoid clash of cache names for SWs with different
+            // scopes on the same domain.
+            this.cacheNamePrefix = 'ngsw:' + parsedScopeUrl.path;
         }
         /**
          * Wrapper around the `Request` constructor.
@@ -52,7 +56,24 @@
             return Date.now();
         }
         /**
-         * Extract the pathname of a URL.
+         * Get a normalized representation of a URL such as those found in the ServiceWorker's `ngsw.json`
+         * configuration.
+         *
+         * More specifically:
+         * 1. Resolve the URL relative to the ServiceWorker's scope.
+         * 2. If the URL is relative to the ServiceWorker's own origin, then only return the path part.
+         *    Otherwise, return the full URL.
+         *
+         * @param url The raw request URL.
+         * @return A normalized representation of the URL.
+         */
+        normalizeUrl(url) {
+            // Check the URL's origin against the ServiceWorker's.
+            const parsed = this.parseUrl(url, this.scopeUrl);
+            return (parsed.origin === this.origin ? parsed.path : url);
+        }
+        /**
+         * Parse a URL into its different parts, such as `origin`, `path` and `search`.
          */
         parseUrl(url, relativeTo) {
             // Workaround a Safari bug, see
@@ -168,12 +189,21 @@
     OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
     PERFORMANCE OF THIS SOFTWARE.
     ***************************************************************************** */
-
     function __awaiter(thisArg, _arguments, P, generator) {
         function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
         return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+            function fulfilled(value) { try {
+                step(generator.next(value));
+            }
+            catch (e) {
+                reject(e);
+            } }
+            function rejected(value) { try {
+                step(generator["throw"](value));
+            }
+            catch (e) {
+                reject(e);
+            } }
             function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
             step((generator = generator.apply(thisArg, _arguments || [])).next());
         });
@@ -186,12 +216,12 @@
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
-    var UpdateCacheStatus;
-    (function (UpdateCacheStatus) {
+    var UpdateCacheStatus = /*@__PURE__*/ (function (UpdateCacheStatus) {
         UpdateCacheStatus[UpdateCacheStatus["NOT_CACHED"] = 0] = "NOT_CACHED";
         UpdateCacheStatus[UpdateCacheStatus["CACHED_BUT_UNUSED"] = 1] = "CACHED_BUT_UNUSED";
         UpdateCacheStatus[UpdateCacheStatus["CACHED"] = 2] = "CACHED";
-    })(UpdateCacheStatus || (UpdateCacheStatus = {}));
+        return UpdateCacheStatus;
+    })({});
 
     /**
      * @license
@@ -212,6 +242,12 @@
         }
         else {
             return `${error}`;
+        }
+    }
+    class SwUnrecoverableStateError extends SwCriticalError {
+        constructor() {
+            super(...arguments);
+            this.isUnrecoverableState = true;
         }
     }
 
@@ -275,11 +311,11 @@
     function rol32(a, count) {
         return (a << count) | (a >>> (32 - count));
     }
-    var Endian;
-    (function (Endian) {
+    var Endian = /*@__PURE__*/ (function (Endian) {
         Endian[Endian["Little"] = 0] = "Little";
         Endian[Endian["Big"] = 1] = "Big";
-    })(Endian || (Endian = {}));
+        return Endian;
+    })({});
     function fk(index, b, c, d) {
         if (index < 20) {
             return [(b & c) | (~b & d), 0x5a827999];
@@ -377,34 +413,37 @@
              */
             this.inFlightRequests = new Map();
             /**
+             * Normalized resource URLs.
+             */
+            this.urls = [];
+            /**
              * Regular expression patterns.
              */
             this.patterns = [];
             this.name = config.name;
+            // Normalize the config's URLs to take the ServiceWorker's scope into account.
+            this.urls = config.urls.map(url => adapter.normalizeUrl(url));
             // Patterns in the config are regular expressions disguised as strings. Breathe life into them.
-            this.patterns = this.config.patterns.map(pattern => new RegExp(pattern));
+            this.patterns = config.patterns.map(pattern => new RegExp(pattern));
             // This is the primary cache, which holds all of the cached requests for this group. If a
             // resource
             // isn't in this cache, it hasn't been fetched yet.
-            this.cache = this.scope.caches.open(`${this.prefix}:${this.config.name}:cache`);
+            this.cache = scope.caches.open(`${this.prefix}:${config.name}:cache`);
             // This is the metadata table, which holds specific information for each cached URL, such as
             // the timestamp of when it was added to the cache.
-            this.metadata =
-                this.db.open(`${this.prefix}:${this.config.name}:meta`, this.config.cacheQueryOptions);
-            // Determine the origin from the registration scope. This is used to differentiate between
-            // relative and absolute URLs.
-            this.origin = this.adapter.parseUrl(this.scope.registration.scope).origin;
+            this.metadata = this.db.open(`${this.prefix}:${config.name}:meta`, config.cacheQueryOptions);
         }
         cacheStatus(url) {
             return __awaiter(this, void 0, void 0, function* () {
                 const cache = yield this.cache;
                 const meta = yield this.metadata;
-                const res = yield cache.match(this.adapter.newRequest(url), this.config.cacheQueryOptions);
+                const req = this.adapter.newRequest(url);
+                const res = yield cache.match(req, this.config.cacheQueryOptions);
                 if (res === undefined) {
                     return UpdateCacheStatus.NOT_CACHED;
                 }
                 try {
-                    const data = yield meta.read(url);
+                    const data = yield meta.read(req.url);
                     if (!data.used) {
                         return UpdateCacheStatus.CACHED_BUT_UNUSED;
                     }
@@ -429,11 +468,11 @@
          */
         handleFetch(req, ctx) {
             return __awaiter(this, void 0, void 0, function* () {
-                const url = this.getConfigUrl(req.url);
+                const url = this.adapter.normalizeUrl(req.url);
                 // Either the request matches one of the known resource URLs, one of the patterns for
                 // dynamically matched URLs, or neither. Determine which is the case for this request in
                 // order to decide how to handle it.
-                if (this.config.urls.indexOf(url) !== -1 || this.patterns.some(pattern => pattern.test(url))) {
+                if (this.urls.indexOf(url) !== -1 || this.patterns.some(pattern => pattern.test(url))) {
                     // This URL matches a known resource. Either it's been cached already or it's missing, in
                     // which case it needs to be loaded from the network.
                     // Open the cache to check whether this resource is present.
@@ -473,18 +512,6 @@
                     return null;
                 }
             });
-        }
-        getConfigUrl(url) {
-            // If the URL is relative to the SW's own origin, then only consider the path relative to
-            // the domain root. Determine this by checking the URL's origin against the SW's.
-            const parsed = this.adapter.parseUrl(url, this.scope.registration.scope);
-            if (parsed.origin === this.origin) {
-                // The URL is relative to the SW's origin domain.
-                return parsed.path;
-            }
-            else {
-                return url;
-            }
         }
         /**
          * Some resources are cached without a hash, meaning that their expiration is controlled
@@ -573,7 +600,8 @@
                 const cache = yield this.cache;
                 const metaTable = yield this.metadata;
                 // Lookup the response in the cache.
-                const response = yield cache.match(this.adapter.newRequest(url), this.config.cacheQueryOptions);
+                const request = this.adapter.newRequest(url);
+                const response = yield cache.match(request, this.config.cacheQueryOptions);
                 if (response === undefined) {
                     // It's not found, return null.
                     return null;
@@ -581,7 +609,7 @@
                 // Next, lookup the cached metadata.
                 let metadata = undefined;
                 try {
-                    metadata = yield metaTable.read(url);
+                    metadata = yield metaTable.read(request.url);
                 }
                 catch (_a) {
                     // Do nothing, not found. This shouldn't happen, but it can be handled.
@@ -596,9 +624,10 @@
         unhashedResources() {
             return __awaiter(this, void 0, void 0, function* () {
                 const cache = yield this.cache;
-                // Start with the set of all cached URLs.
+                // Start with the set of all cached requests.
                 return (yield cache.keys())
-                    .map(request => request.url)
+                    // Normalize their URLs.
+                    .map(request => this.adapter.normalizeUrl(request.url))
                     // Exclude the URLs which have hashes.
                     .filter(url => !this.hashes.has(url));
             });
@@ -639,7 +668,7 @@
                         yield cache.put(req, res.clone());
                         // If the request is not hashed, update its metadata, especially the timestamp. This is
                         // needed for future determination of whether this cached response is stale or not.
-                        if (!this.hashes.has(req.url)) {
+                        if (!this.hashes.has(this.adapter.normalizeUrl(req.url))) {
                             // Metadata is tracked for requests that are unhashed.
                             const meta = { ts: this.adapter.time, used };
                             const metaTable = yield this.metadata;
@@ -683,7 +712,7 @@
          */
         cacheBustedFetchFromNetwork(req) {
             return __awaiter(this, void 0, void 0, function* () {
-                const url = this.getConfigUrl(req.url);
+                const url = this.adapter.normalizeUrl(req.url);
                 // If a hash is available for this resource, then compare the fetched version with the
                 // canonical hash. Otherwise, the network version will have to be trusted.
                 if (this.hashes.has(url)) {
@@ -707,8 +736,8 @@
                     // reasons: either the non-cache-busted request failed (hopefully transiently) or if the
                     // hash of the content retrieved does not match the canonical hash from the manifest. It's
                     // only valid to access the content of the first response if the request was successful.
-                    let makeCacheBustedRequest = networkResult.ok;
-                    if (makeCacheBustedRequest) {
+                    let makeCacheBustedRequest = !networkResult.ok;
+                    if (networkResult.ok) {
                         // The request was successful. A cache-busted request is only necessary if the hashes
                         // don't match. Compare them, making sure to clone the response so it can be used later
                         // if it proves to be valid.
@@ -726,7 +755,12 @@
                         const cacheBustedResult = yield this.safeFetch(cacheBustReq);
                         // If the response was unsuccessful, there's nothing more that can be done.
                         if (!cacheBustedResult.ok) {
-                            throw new SwCriticalError(`Response not Ok (cacheBustedFetchFromNetwork): cache busted request for ${req.url} returned response ${cacheBustedResult.status} ${cacheBustedResult.statusText}`);
+                            if (cacheBustedResult.status === 404) {
+                                throw new SwUnrecoverableStateError(`Failed to retrieve hashed resource from the server. (AssetGroup: ${this.config.name} | URL: ${url})`);
+                            }
+                            else {
+                                throw new SwCriticalError(`Response not Ok (cacheBustedFetchFromNetwork): cache busted request for ${req.url} returned response ${cacheBustedResult.status} ${cacheBustedResult.statusText}`);
+                            }
                         }
                         // Hash the contents.
                         const cacheBustedHash = sha1Binary(yield cacheBustedResult.clone().arrayBuffer());
@@ -753,7 +787,7 @@
          */
         maybeUpdate(updateFrom, req, cache) {
             return __awaiter(this, void 0, void 0, function* () {
-                const url = this.getConfigUrl(req.url);
+                const url = this.adapter.normalizeUrl(req.url);
                 const meta = yield this.metadata;
                 // Check if this resource is hashed and already exists in the cache of a prior version.
                 if (this.hashes.has(url)) {
@@ -805,7 +839,7 @@
                 // Cache all known resources serially. As this reduce proceeds, each Promise waits
                 // on the last before starting the fetch/cache operation for the next request. Any
                 // errors cause fall-through to the final Promise which rejects.
-                yield this.config.urls.reduce((previous, url) => __awaiter(this, void 0, void 0, function* () {
+                yield this.urls.reduce((previous, url) => __awaiter(this, void 0, void 0, function* () {
                     // Wait on all previous operations to complete.
                     yield previous;
                     // Construct the Request for this url.
@@ -832,8 +866,7 @@
                     yield (yield updateFrom.previouslyCachedResources())
                         // First, narrow down the set of resources to those which are handled by this group.
                         // Either it's a known URL, or it matches a given pattern.
-                        .filter(url => this.config.urls.some(cacheUrl => cacheUrl === url) ||
-                        this.patterns.some(pattern => pattern.test(url)))
+                        .filter(url => this.urls.indexOf(url) !== -1 || this.patterns.some(pattern => pattern.test(url)))
                         // Finally, process each resource in turn.
                         .reduce((previous, url) => __awaiter(this, void 0, void 0, function* () {
                         yield previous;
@@ -853,7 +886,7 @@
                         // Write it into the cache. It may already be expired, but it can still serve
                         // traffic until it's updated (stale-while-revalidate approach).
                         yield cache.put(req, res.response);
-                        yield metaTable.write(url, Object.assign(Object.assign({}, res.metadata), { used: false }));
+                        yield metaTable.write(req.url, Object.assign(Object.assign({}, res.metadata), { used: false }));
                     }), Promise.resolve());
                 }
             });
@@ -870,7 +903,7 @@
                 // Open the cache which actually holds requests.
                 const cache = yield this.cache;
                 // Loop through the listed resources, caching any which are available.
-                yield this.config.urls.reduce((previous, url) => __awaiter(this, void 0, void 0, function* () {
+                yield this.urls.reduce((previous, url) => __awaiter(this, void 0, void 0, function* () {
                     // Wait on all previous operations to complete.
                     yield previous;
                     // Construct the Request for this url.
@@ -1398,17 +1431,21 @@
             this.manifest = manifest;
             this.manifestHash = manifestHash;
             /**
-             * A Map of absolute URL paths (/foo.txt) to the known hash of their
-             * contents (if available).
+             * A Map of absolute URL paths (`/foo.txt`) to the known hash of their contents (if available).
              */
             this.hashTable = new Map();
+            /**
+             * The normalized URL to the file that serves as the index page to satisfy navigation requests.
+             * Usually this is `/index.html`.
+             */
+            this.indexUrl = this.adapter.normalizeUrl(this.manifest.index);
             /**
              * Tracks whether the manifest has encountered any inconsistencies.
              */
             this._okay = true;
             // The hashTable within the manifest is an Object - convert it to a Map for easier lookups.
             Object.keys(this.manifest.hashTable).forEach(url => {
-                this.hashTable.set(url, this.manifest.hashTable[url]);
+                this.hashTable.set(adapter.normalizeUrl(url), this.manifest.hashTable[url]);
             });
             // Process each `AssetGroup` declared in the manifest. Each declared group gets an `AssetGroup`
             // instance
@@ -1509,10 +1546,22 @@
                 }
                 // Next, check if this is a navigation request for a route. Detect circular
                 // navigations by checking if the request URL is the same as the index URL.
-                if (req.url !== this.manifest.index && this.isNavigationRequest(req)) {
+                if (this.adapter.normalizeUrl(req.url) !== this.indexUrl && this.isNavigationRequest(req)) {
+                    if (this.manifest.navigationRequestStrategy === 'freshness') {
+                        // For navigation requests the freshness was configured. The request will always go trough
+                        // the network and fallback to default `handleFetch` behavior in case of failure.
+                        try {
+                            return yield this.scope.fetch(req);
+                        }
+                        catch (_a) {
+                            // Navigation request failed - application is likely offline.
+                            // Proceed forward to the default `handleFetch` behavior, where
+                            // `indexUrl` will be requested and it should be available in the cache.
+                        }
+                    }
                     // This was a navigation request. Re-enter `handleFetch` with a request for
                     // the URL.
-                    return this.handleFetch(this.adapter.newRequest(this.manifest.index), context);
+                    return this.handleFetch(this.adapter.newRequest(this.indexUrl), context);
                 }
                 return null;
             });
@@ -1573,9 +1622,7 @@
          * List all unhashed resources from all asset groups.
          */
         previouslyCachedResources() {
-            return this.assetGroups.reduce((resources, group) => __awaiter(this, void 0, void 0, function* () {
-                return (yield resources).concat(yield group.unhashedResources());
-            }), Promise.resolve([]));
+            return this.assetGroups.reduce((resources, group) => __awaiter(this, void 0, void 0, function* () { return (yield resources).concat(yield group.unhashedResources()); }), Promise.resolve([]));
         }
         recentCacheStatus(url) {
             return __awaiter(this, void 0, void 0, function* () {
@@ -1830,8 +1877,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
         'actions', 'badge', 'body', 'data', 'dir', 'icon', 'image', 'lang', 'renotify',
         'requireInteraction', 'silent', 'tag', 'timestamp', 'title', 'vibrate'
     ];
-    var DriverReadyState;
-    (function (DriverReadyState) {
+    var DriverReadyState = /*@__PURE__*/ (function (DriverReadyState) {
         // The SW is operating in a normal mode, responding to all traffic.
         DriverReadyState[DriverReadyState["NORMAL"] = 0] = "NORMAL";
         // The SW does not have a clean installation of the latest version of the app, but older
@@ -1841,7 +1887,8 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
         // The SW has decided that caching is completely unreliable, and is forgoing request
         // handling until the next restart.
         DriverReadyState[DriverReadyState["SAFE_MODE"] = 2] = "SAFE_MODE";
-    })(DriverReadyState || (DriverReadyState = {}));
+        return DriverReadyState;
+    })({});
     class Driver {
         constructor(scope, adapter, db) {
             // Set up all the event handlers that the SW needs.
@@ -1886,6 +1933,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
              * (See `.onFetch()` for details.)
              */
             this.loggedInvalidOnlyIfCachedRequest = false;
+            this.ngswStatePath = this.adapter.parseUrl('ngsw/state', this.scope.registration.scope).path;
             // The install event is triggered when the service worker is first installed.
             this.scope.addEventListener('install', (event) => {
                 // SW code updates are separate from application updates, so code updates are
@@ -1951,7 +1999,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                 return;
             }
             // The only thing that is served unconditionally is the debug page.
-            if (requestUrlObj.path === '/ngsw/state') {
+            if (requestUrlObj.path === this.ngswStatePath) {
                 // Allow the debugger to handle the request, but don't affect SW state in any other way.
                 event.respondWith(this.debugger.handleFetch(req));
                 return;
@@ -2182,6 +2230,9 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                     res = yield appVersion.handleFetch(event.request, event);
                 }
                 catch (err) {
+                    if (err.isUnrecoverableState) {
+                        yield this.notifyClientsAboutUnrecoverableState(appVersion, err.message);
+                    }
                     if (err.isCritical) {
                         // Something went wrong with the activation of this version.
                         yield this.versionFailed(appVersion, err);
@@ -2231,6 +2282,12 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                         table.read('assignments'),
                         table.read('latest'),
                     ]);
+                    // Make sure latest manifest is correctly installed. If not (e.g. corrupted data),
+                    // it could stay locked in EXISTING_CLIENTS_ONLY or SAFE_MODE state.
+                    if (!this.versions.has(latest.latest) && !manifests.hasOwnProperty(latest.latest)) {
+                        this.debugger.log(`Missing manifest for latest version hash ${latest.latest}`, 'initialize: read from DB');
+                        throw new Error(`Missing manifest for latest hash ${latest.latest}`);
+                    }
                     // Successfully loaded from saved state. This implies a manifest exists, so
                     // the update check needs to happen in the background.
                     this.idle.schedule('init post-load (update, cleanup)', () => __awaiter(this, void 0, void 0, function* () {
@@ -2422,7 +2479,11 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
         deleteAllCaches() {
             return __awaiter(this, void 0, void 0, function* () {
                 yield (yield this.scope.caches.keys())
-                    .filter(key => key.startsWith(`${this.adapter.cacheNamePrefix}:`))
+                    // The Chrome debugger is not able to render the syntax properly when the
+                    // code contains backticks. This is a known issue in Chrome and they have an
+                    // open [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=659515) for that.
+                    // As a work-around for the time being, we can use \\ ` at the end of the line.
+                    .filter(key => key.startsWith(`${this.adapter.cacheNamePrefix}:`)) // `
                     .reduce((previous, key) => __awaiter(this, void 0, void 0, function* () {
                     yield Promise.all([
                         previous,
@@ -2683,6 +2744,23 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                 appData: manifest.appData,
             };
         }
+        notifyClientsAboutUnrecoverableState(appVersion, reason) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const broken = Array.from(this.versions.entries()).find(([hash, version]) => version === appVersion);
+                if (broken === undefined) {
+                    // This version is no longer in use anyway, so nobody cares.
+                    return;
+                }
+                const brokenHash = broken[0];
+                const affectedClients = Array.from(this.clientVersionMap.entries())
+                    .filter(([clientId, hash]) => hash === brokenHash)
+                    .map(([clientId]) => clientId);
+                affectedClients.forEach((clientId) => __awaiter(this, void 0, void 0, function* () {
+                    const client = yield this.scope.clients.get(clientId);
+                    client.postMessage({ type: 'UNRECOVERABLE_STATE', reason });
+                }));
+            });
+        }
         notifyClientsAboutUpdate(next) {
             return __awaiter(this, void 0, void 0, function* () {
                 yield this.initialized;
@@ -2778,7 +2856,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
      * found in the LICENSE file at https://angular.io/license
      */
     const scope = self;
-    const adapter = new Adapter(scope);
+    const adapter = new Adapter(scope.registration.scope);
     const driver = new Driver(scope, adapter, new CacheDatabase(scope, adapter));
 
 }());

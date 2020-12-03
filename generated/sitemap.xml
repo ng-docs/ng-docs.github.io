@@ -37,7 +37,13 @@
     <loc>https://angular.cn/guide/architecture</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/attribute-binding</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/attribute-directives</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/binding-syntax</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/bootstrapping</loc>
@@ -47,6 +53,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/build</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/built-in-directives</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/cheatsheet</loc>
@@ -62,6 +71,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/component-interaction</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/component-overview</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/component-styles</loc>
@@ -91,9 +103,6 @@
     <loc>https://angular.cn/guide/deprecations</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/displaying-data</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/guide/docs-style-guide</loc>
   </url>
   <url>
@@ -107,6 +116,15 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/entry-components</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/event-binding-concepts</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/event-binding</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/example-apps-list</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/feature-modules</loc>
@@ -137,6 +155,12 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/i18n</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/inputs-outputs</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/interpolation</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/ivy-compatibility-examples</loc>
@@ -178,9 +202,6 @@
     <loc>https://angular.cn/guide/migration-renderer</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/migration-solution-style-tsconfig</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/guide/migration-undecorated-classes</loc>
   </url>
   <url>
@@ -220,6 +241,12 @@
     <loc>https://angular.cn/guide/practical-observable-usage</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/property-binding-best-practices</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/property-binding</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/providers</loc>
   </url>
   <url>
@@ -232,7 +259,13 @@
     <loc>https://angular.cn/guide/reusable-animations</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/roadmap</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/route-animations</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/router-tutorial-toh</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/router-tutorial</loc>
@@ -292,7 +325,22 @@
     <loc>https://angular.cn/guide/structural-directives</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/style-precedence</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/styleguide</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/svg-in-templates</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/template-expression-operators</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/template-reference-variables</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/template-statements</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/template-syntax</loc>
@@ -301,10 +349,37 @@
     <loc>https://angular.cn/guide/template-typecheck</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/test-debugging</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/testing-attribute-directives</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/testing-code-coverage</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/testing-components-basics</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/testing-components-scenarios</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/testing-pipes</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/testing-services</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/testing-utility-apis</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/testing</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/transition-and-triggers</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/two-way-binding</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/typescript-configuration</loc>
@@ -313,7 +388,7 @@
     <loc>https://angular.cn/guide/universal</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/updating-to-version-10</loc>
+    <loc>https://angular.cn/guide/updating-to-version-11</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/updating</loc>
@@ -332,6 +407,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/using-libraries</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/view-encapsulation</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/visual-studio-2015</loc>
@@ -463,6 +541,9 @@
     <loc>https://angular.cn/cli/e2e</loc>
   </url>
   <url>
+    <loc>https://angular.cn/cli/extract-i18n</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/cli/generate</loc>
   </url>
   <url>
@@ -488,9 +569,6 @@
   </url>
   <url>
     <loc>https://angular.cn/cli/version</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/cli/xi18n</loc>
   </url>
   <url>
     <loc>https://angular.cn/cli</loc>
@@ -671,6 +749,9 @@
   </url>
   <url>
     <loc>https://angular.cn/api/common/http/HttpParams</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/common/http/HttpParamsOptions</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/common/http/HttpUrlEncodingCodec</loc>
@@ -1147,6 +1228,9 @@
     <loc>https://angular.cn/api/core/Attribute</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/core/AttributeDecorator</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/core/AfterContentChecked</loc>
   </url>
   <url>
@@ -1426,9 +1510,6 @@
     <loc>https://angular.cn/api/core/ChangeDetectorRef</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/CollectionChangeRecord</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/core/DefaultIterableDiffer</loc>
   </url>
   <url>
@@ -1532,6 +1613,9 @@
   </url>
   <url>
     <loc>https://angular.cn/api/core/testing/withModule</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/testing/waitForAsync</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/testing/async</loc>
@@ -1915,66 +1999,6 @@
     <loc>https://angular.cn/api/platform-server/testing/ServerTestingModule</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/platform-webworker</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/bootstrapWorkerUi</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/ClientMessageBroker</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/ClientMessageBrokerFactory</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/FnArg</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/UiArguments</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/MessageBus</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/MessageBusSink</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/MessageBusSource</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/SerializerTypes</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/ReceivedMessage</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/ServiceMessageBroker</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/ServiceMessageBrokerFactory</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/WORKER_UI_LOCATION_PROVIDERS</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/WORKER_APP_LOCATION_PROVIDERS</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/platformWorkerApp</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/WorkerAppModule</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker/platformWorkerUi</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker-dynamic</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/platform-webworker-dynamic/platformWorkerAppDynamic</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/router</loc>
   </url>
   <url>
@@ -2092,6 +2116,9 @@
     <loc>https://angular.cn/api/router/Resolve</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/router/BaseRouteReuseStrategy</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/router/DetachedRouteHandle</loc>
   </url>
   <url>
@@ -2101,10 +2128,16 @@
     <loc>https://angular.cn/api/router/Navigation</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/router/NavigationBehaviorOptions</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/router/NavigationExtras</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/router/Router</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/router/UrlCreationOptions</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/router/ROUTES</loc>
@@ -2213,6 +2246,9 @@
   </url>
   <url>
     <loc>https://angular.cn/api/service-worker</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/service-worker/UnrecoverableStateEvent</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/service-worker/UpdateActivatedEvent</loc>

@@ -8,7 +8,7 @@
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/heroes/heroes.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
@@ -23,7 +23,7 @@ import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    Authorization: 'my-auth-token'
   })
 };
 
@@ -39,7 +39,7 @@ export class HeroesService {
   }
 
   /** GET heroes from the server */
-  getHeroes (): Observable<Hero[]> {
+  getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         catchError(this.handleError('getHeroes', []))
@@ -63,7 +63,7 @@ export class HeroesService {
   //////// Save methods //////////
 
   /** POST: add a new hero to the database */
-  addHero (hero: Hero): Observable<Hero> {
+  addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
       .pipe(
         catchError(this.handleError('addHero', hero))
@@ -71,7 +71,7 @@ export class HeroesService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteHero (id: number): Observable<{}> {
+  deleteHero(id: number): Observable<{}> {
     const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
     return this.http.delete(url, httpOptions)
       .pipe(
@@ -80,7 +80,7 @@ export class HeroesService {
   }
 
   /** PUT: update the hero on the server. Returns the updated hero upon success. */
-  updateHero (hero: Hero): Observable<Hero> {
+  updateHero(hero: Hero): Observable<Hero> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'my-new-auth-token');
 
@@ -95,7 +95,7 @@ export class HeroesService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/heroes/heroes.service.spec.ts]" value="import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 // Other imports
@@ -257,7 +257,7 @@ describe('HeroesService', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/http-error-handler.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -275,8 +275,10 @@ export class HttpErrorHandler {
   constructor(private messageService: MessageService) { }
 
   /** Create curried handleError function that already knows the service name */
-  createHandleError = (serviceName = '') => <T>
-    (operation = 'operation', result = {} as T) => this.handleError(serviceName, operation, result);
+  createHandleError = (serviceName = '') => {
+    return <T>(operation = 'operation', result = {} as T) =>
+      this.handleError(serviceName, operation, result);
+  }
 
   /**
    * Returns a function that handles Http operation failures.
@@ -285,7 +287,7 @@ export class HttpErrorHandler {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  handleError<T> (serviceName = '', operation = 'operation', result = {} as T) {
+  handleError<T>(serviceName = '', operation = 'operation', result = {} as T) {
 
     return (error: HttpErrorResponse): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
@@ -309,7 +311,7 @@ export class HttpErrorHandler {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/message.service.ts]" value="import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -329,16 +331,16 @@ export class MessageService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/testing/global-jasmine.ts]" value="import jasmineRequire from 'jasmine-core/lib/jasmine-core/jasmine.js';
 
-window['jasmineRequire'] = jasmineRequire;
+(window as any).jasmineRequire = jasmineRequire;
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
@@ -403,7 +405,7 @@ describe('HttpClient testing', () => {
 
     // Make an HTTP GET request with specific header
     httpClient.get<Data>(testUrl, {
-        headers: new HttpHeaders({'Authorization': 'my-auth-token'})
+        headers: new HttpHeaders({Authorization: 'my-auth-token'})
       })
       .subscribe(data =>
         expect(data).toEqual(testData)
@@ -412,13 +414,13 @@ describe('HttpClient testing', () => {
       // Find request with a predicate function.
     // Expect one request with an authorization header
     const req = httpTestingController.expectOne(
-      req => req.headers.has('Authorization')
+      request => request.headers.has('Authorization')
     );
     req.flush(testData);
   });
 
   it('can test multiple requests', () => {
-    let testData: Data[] = [
+    const testData: Data[] = [
       { name: 'bob' }, { name: 'carol' },
       { name: 'ted' }, { name: 'alice' }
     ];
@@ -514,7 +516,7 @@ describe('HttpClient testing', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -585,14 +587,14 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import './testing/global-jasmine';
 import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
 import 'jasmine-core/lib/jasmine-core/boot.js';
@@ -617,13 +619,13 @@ import './testing/http-client.spec.ts';
 bootstrap();
 
 //
-function bootstrap () {
-  if (window['jasmineRef']) {
+function bootstrap() {
+  if ((window as any).jasmineRef) {
     location.reload();
     return;
   } else {
     window.onload(undefined);
-    window['jasmineRef'] = jasmine.getEnv();
+    (window as any).jasmineRef = jasmine.getEnv();
   }
 
   // First, initialize the Angular testing environment.
@@ -637,7 +639,7 @@ function bootstrap () {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/index.html]" value="<!--
   Intentionally empty placeholder for Stackblitz.
   Do not need index.html in zip-download either as you should run tests with `npm test`
@@ -647,7 +649,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -656,7 +658,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -678,7 +680,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -686,7 +688,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -699,6 +705,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -720,22 +727,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -825,7 +830,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -874,8 +879,8 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="testing"><input type="hidden" name="description" value="Angular Example - Http Guide Testing"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="testing"><input type="hidden" name="description" value="Angular Example - Http Guide Testing"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

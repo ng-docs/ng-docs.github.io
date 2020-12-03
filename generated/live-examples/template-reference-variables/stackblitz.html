@@ -9,13 +9,41 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('itemForm') form: NgForm;
 
-  private _submitMessage = '';
+  public firstExample = 'Hello, World!';
+  public secondExample = 'Hello, World!';
 
-  get submitMessage() {
-    return this._submitMessage;
-  }
+  public ref2 = '';
+
+  public desugared1 = `
+  <input #ref1 type=&quot;text&quot; [(ngModel)]=&quot;firstExample&quot; /><!-- A new template! -->
+  <ng-template [ngIf]=&quot;true&quot;>
+    <!-- … and it works  -->
+    <span>Value: {{ ref1.value }}</span>
+  </ng-template>`
+  ;
+
+  public desugared2 = `<ng-template [ngIf]=&quot;true&quot;>
+    <!-- The reference, ref2, is defined within a template -->
+    <input #ref2 type=&quot;text&quot; [(ngModel)]=&quot;secondExample&quot; />
+  </ng-template>
+
+  <!-- Attempting to access ref2 from outside the above template doesn't work. -->
+  <span>Value: {{ ref2?.value }}</span>`;
+
+    public ngForExample = `<ng-container *ngFor=&quot;let i of [1,2]&quot;>
+    <input #ref type=&quot;text&quot; [value]=&quot;i&quot; />
+  </ng-container>
+
+  <!-- The template is instantiated twice because *ngFor iterates
+  over the two items in the array, so it's impossible to define what ref2 is referencing.-->
+
+  {{ ref.value }}`;
+
+  @ViewChild('itemForm', { static: false }) form: NgForm;
+
+  get submitMessage() { return this._submitMessage; }
+  private _submitMessage = '';  // tslint:disable-line: variable-name
 
   onSubmit(form: NgForm) {
     this._submitMessage = 'Submitted. Form value is ' + JSON.stringify(form.value);
@@ -29,13 +57,16 @@ export class AppComponent {
     console.warn(`Faxing ${value} ...`);
   }
 
+  log(ref3: any) {
+    console.warn(ref3.constructor);
+  }
 }
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.module.ts]" value="import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -63,7 +94,7 @@ export class AppModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -72,7 +103,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -94,7 +125,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -111,7 +142,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -132,7 +163,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -181,13 +212,27 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.css]" value="
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.css]" value="h3 {
+  font-weight: 700;
+}
+
+pre, .wrapper {
+  background-color: rgb(240, 250, 250);
+  padding: 1rem;
+  border: 1px solid #444;
+}
+
+input {
+  margin: .5rem;
+  padding: .5rem;
+}
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -258,7 +303,7 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>Template reference variables</h1>
 
 <div>
@@ -293,8 +338,7 @@ can be found in the LICENSE file at http://angular.io/license
 
 <h2>Reference variables, forms, and NgForm</h2>
 <form #itemForm=&quot;ngForm&quot; (ngSubmit)=&quot;onSubmit(itemForm)&quot;>
-  <label for=&quot;name&quot;
-    >Name <input class=&quot;form-control&quot; name=&quot;name&quot; ngModel required />
+  <label for=&quot;name&quot;>Name <input class=&quot;form-control&quot; name=&quot;name&quot; ngModel required />
   </label>
   <button type=&quot;submit&quot;>Submit</button>
 </form>
@@ -307,11 +351,62 @@ can be found in the LICENSE file at http://angular.io/license
 
 <p>JSON: {{ itemForm.form.value | json }}</p>
 
+<hr />
+
+<h2>Template Reference Variable Scope</h2>
+
+<p>This section demonstrates in which situations you can access local template reference variables (<code>#ref</code>).</p>
+
+<h3>Accessing in a child template</h3>
+<!-- Accessing a template reference variable from an inner template
+  works as the context is inherited. Try changing the text in the
+  input to see how it is immediately reflected through the template
+  reference variable. -->
+
+<div class=&quot;example&quot;>
+  <input #ref1 type=&quot;text&quot; [(ngModel)]=&quot;firstExample&quot; />
+  <span *ngIf=&quot;true&quot;>Value: {{ ref1.value }}</span>
+</div>
+
+<!-- In this case there's a &quot;hidden&quot; ng-template around the
+  span and the definition of the variable is outside of it. Thus, you access a template variable from a parent template (which is logical as the context is inherited). -->
+
+<p>Here's the desugared syntax:</p>
+<pre><code [innerText]=&quot;desugared1&quot;></code></pre>
+
+<h3>Accessing from outside parent template. (Doesn't work.)</h3>
+<!-- Accessing the template reference variable from outside the parent template does
+not work. The value to the right is empty and changing the
+value of the input will have no effect. -->
+
+<div class=&quot;example&quot;>
+  <input *ngIf=&quot;true&quot; #ref2 type=&quot;text&quot; [(ngModel)]=&quot;secondExample&quot; />
+  <!-- <span>Value: {{ ref2?.value }}</span> -->
+  <!-- uncomment the above and the app breaks -->
+</div>
+
+<p>Here's the desugared syntax:</p>
+<pre><code [innerText]=&quot;desugared2&quot;></code></pre>
+
+<h3>*ngFor and template reference variable scope</h3>
+
+<!-- The template is instantiated twice because *ngFor iterates
+  over the two items in the array, so it's impossible to define what ref2 is referencing. -->
+
+<pre><code [innerText]=&quot;ngForExample&quot;></code></pre>
+
+<h3>Accessing a on an <code>ng-template</code></h3>
+
+See the console output to see that when you declare the variable on an <code>ng-template</code>, the variable refers to a <code>TemplateRef</code> instance, which represents the template.
+
+<ng-template #ref3></ng-template>
+<button (click)=&quot;log(ref3)&quot;>Log type of #ref</button>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<!doctype html>
 <html>
 <head>
@@ -330,7 +425,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -338,7 +433,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -351,6 +450,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -371,22 +471,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -456,7 +554,7 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Template Reference Variables"><input type="hidden" name="description" value="Angular Example - Template Reference Variables"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Template Reference Variables"><input type="hidden" name="description" value="Angular Example - Template Reference Variables"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

@@ -482,6 +482,14 @@
         "securityRisk": false
       },
       {
+        "name": "httpparamsoptions",
+        "title": "HttpParamsOptions",
+        "path": "api/common/http/HttpParamsOptions",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "httpprogressevent",
         "title": "HttpProgressEvent",
         "path": "api/common/http/HttpProgressEvent",
@@ -1504,7 +1512,15 @@
         "name": "attribute",
         "title": "Attribute",
         "path": "api/core/Attribute",
-        "docType": "decorator",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "attributedecorator",
+        "title": "AttributeDecorator",
+        "path": "api/core/AttributeDecorator",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1538,14 +1554,6 @@
         "path": "api/core/ClassSansProvider",
         "docType": "interface",
         "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "collectionchangerecord",
-        "title": "CollectionChangeRecord",
-        "path": "api/core/CollectionChangeRecord",
-        "docType": "interface",
-        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2711,7 +2719,7 @@
         "title": "async",
         "path": "api/core/testing/async",
         "docType": "function",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2846,6 +2854,14 @@
         "name": "tick",
         "title": "tick",
         "path": "api/core/testing/tick",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "waitforasync",
+        "title": "waitForAsync",
+        "path": "api/core/testing/waitForAsync",
         "docType": "function",
         "stability": "stable",
         "securityRisk": false
@@ -3756,164 +3772,6 @@
     ]
   },
   {
-    "name": "platform-webworker",
-    "title": "platform-webworker",
-    "path": "api/platform-webworker",
-    "items": [
-      {
-        "name": "bootstrapworkerui",
-        "title": "bootstrapWorkerUi",
-        "path": "api/platform-webworker/bootstrapWorkerUi",
-        "docType": "function",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "clientmessagebroker",
-        "title": "ClientMessageBroker",
-        "path": "api/platform-webworker/ClientMessageBroker",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "clientmessagebrokerfactory",
-        "title": "ClientMessageBrokerFactory",
-        "path": "api/platform-webworker/ClientMessageBrokerFactory",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "fnarg",
-        "title": "FnArg",
-        "path": "api/platform-webworker/FnArg",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "messagebus",
-        "title": "MessageBus",
-        "path": "api/platform-webworker/MessageBus",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "messagebussink",
-        "title": "MessageBusSink",
-        "path": "api/platform-webworker/MessageBusSink",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "messagebussource",
-        "title": "MessageBusSource",
-        "path": "api/platform-webworker/MessageBusSource",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "platformworkerapp",
-        "title": "platformWorkerApp",
-        "path": "api/platform-webworker/platformWorkerApp",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "platformworkerui",
-        "title": "platformWorkerUi",
-        "path": "api/platform-webworker/platformWorkerUi",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "receivedmessage",
-        "title": "ReceivedMessage",
-        "path": "api/platform-webworker/ReceivedMessage",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "serializertypes",
-        "title": "SerializerTypes",
-        "path": "api/platform-webworker/SerializerTypes",
-        "docType": "enum",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "servicemessagebroker",
-        "title": "ServiceMessageBroker",
-        "path": "api/platform-webworker/ServiceMessageBroker",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "servicemessagebrokerfactory",
-        "title": "ServiceMessageBrokerFactory",
-        "path": "api/platform-webworker/ServiceMessageBrokerFactory",
-        "docType": "interface",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "uiarguments",
-        "title": "UiArguments",
-        "path": "api/platform-webworker/UiArguments",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "worker_app_location_providers",
-        "title": "WORKER_APP_LOCATION_PROVIDERS",
-        "path": "api/platform-webworker/WORKER_APP_LOCATION_PROVIDERS",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "worker_ui_location_providers",
-        "title": "WORKER_UI_LOCATION_PROVIDERS",
-        "path": "api/platform-webworker/WORKER_UI_LOCATION_PROVIDERS",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "workerappmodule",
-        "title": "WorkerAppModule",
-        "path": "api/platform-webworker/WorkerAppModule",
-        "docType": "ngmodule",
-        "stability": "deprecated",
-        "securityRisk": false
-      }
-    ]
-  },
-  {
-    "name": "platform-webworker-dynamic",
-    "title": "platform-webworker-dynamic",
-    "path": "api/platform-webworker-dynamic",
-    "items": [
-      {
-        "name": "platformworkerappdynamic",
-        "title": "platformWorkerAppDynamic",
-        "path": "api/platform-webworker-dynamic/platformWorkerAppDynamic",
-        "docType": "const",
-        "stability": "deprecated",
-        "securityRisk": false
-      }
-    ]
-  },
-  {
     "name": "router",
     "title": "router",
     "path": "api/router",
@@ -3946,6 +3804,14 @@
         "name": "activationstart",
         "title": "ActivationStart",
         "path": "api/router/ActivationStart",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "baseroutereusestrategy",
+        "title": "BaseRouteReuseStrategy",
+        "path": "api/router/BaseRouteReuseStrategy",
         "docType": "class",
         "stability": "stable",
         "securityRisk": false
@@ -4107,6 +3973,14 @@
         "title": "Navigation",
         "path": "api/router/Navigation",
         "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "navigationbehavioroptions",
+        "title": "NavigationBehaviorOptions",
+        "path": "api/router/NavigationBehaviorOptions",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4423,6 +4297,14 @@
         "securityRisk": false
       },
       {
+        "name": "urlcreationoptions",
+        "title": "UrlCreationOptions",
+        "path": "api/router/UrlCreationOptions",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "urlhandlingstrategy",
         "title": "UrlHandlingStrategy",
         "path": "api/router/UrlHandlingStrategy",
@@ -4568,6 +4450,14 @@
         "title": "SwUpdate",
         "path": "api/service-worker/SwUpdate",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "unrecoverablestateevent",
+        "title": "UnrecoverableStateEvent",
+        "path": "api/service-worker/UnrecoverableStateEvent",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },

@@ -13,12 +13,12 @@ export class AppComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule }      from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent }           from './app.component';
+import { AppComponent } from './app.component';
 import { HeroFormTemplateComponent } from './template/hero-form-template.component';
 import { HeroFormReactiveComponent } from './reactive/hero-form-reactive.component';
 import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
@@ -47,7 +47,7 @@ export class AppModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.2.ts]" value="/* tslint:disable: member-ordering forin */
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -69,16 +69,16 @@ export class HeroFormReactiveComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroForm = new FormGroup({
-      'name': new FormControl(this.hero.name, [
+      name: new FormControl(this.hero.name, [
         Validators.required,
         Validators.minLength(4),
         forbiddenNameValidator(/bob/i)
       ]),
-      'alterEgo': new FormControl(this.hero.alterEgo, {
+      alterEgo: new FormControl(this.hero.alterEgo, {
         asyncValidators: [this.alterEgoValidator.validate.bind(this.alterEgoValidator)],
         updateOn: 'blur'
       }),
-      'power': new FormControl(this.hero.power, Validators.required)
+      power: new FormControl(this.hero.power, Validators.required)
     });
   }
 
@@ -95,7 +95,7 @@ export class HeroFormReactiveComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.ts]" value="/* tslint:disable: member-ordering forin */
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -118,16 +118,16 @@ export class HeroFormReactiveComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroForm = new FormGroup({
-      'name': new FormControl(this.hero.name, [
+      name: new FormControl(this.hero.name, [
         Validators.required,
         Validators.minLength(4),
         forbiddenNameValidator(/bob/i)
       ]),
-      'alterEgo': new FormControl(this.hero.alterEgo, {
+      alterEgo: new FormControl(this.hero.alterEgo, {
         asyncValidators: [this.alterEgoValidator.validate.bind(this.alterEgoValidator)],
         updateOn: 'blur'
       }),
-      'power': new FormControl(this.hero.power, Validators.required)
+      power: new FormControl(this.hero.power, Validators.required)
     },  { validators: identityRevealedValidator }); // <-- add custom validator at the FormGroup level
   }
 
@@ -144,7 +144,7 @@ export class HeroFormReactiveComponent implements OnInit {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/alter-ego.directive.ts]" value="import { Directive, forwardRef, Injectable } from '@angular/core';
 import {
   AsyncValidator,
@@ -192,7 +192,7 @@ export class UniqueAlterEgoValidatorDirective {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/forbidden-name.directive.ts]" value="import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators } from '@angular/forms';
 
@@ -200,7 +200,7 @@ import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators } fr
 export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} | null => {
     const forbidden = nameRe.test(control.value);
-    return forbidden ? {'forbiddenName': {value: control.value}} : null;
+    return forbidden ? {forbiddenName: {value: control.value}} : null;
   };
 }
 
@@ -222,7 +222,7 @@ export class ForbiddenValidatorDirective implements Validator {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/heroes.service.ts]" value="import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -242,7 +242,7 @@ export class HeroesService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/shared/identity-revealed.directive.ts]" value="import { Directive } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 
@@ -251,7 +251,7 @@ export const identityRevealedValidator: ValidatorFn = (control: FormGroup): Vali
   const name = control.get('name');
   const alterEgo = control.get('alterEgo');
 
-  return name &amp;&amp; alterEgo &amp;&amp; name.value === alterEgo.value ? { 'identityRevealed': true } : null;
+  return name &amp;&amp; alterEgo &amp;&amp; name.value === alterEgo.value ? { identityRevealed: true } : null;
 };
 
 @Directive({
@@ -260,7 +260,7 @@ export const identityRevealedValidator: ValidatorFn = (control: FormGroup): Vali
 })
 export class IdentityRevealedValidatorDirective implements Validator {
   validate(control: AbstractControl): ValidationErrors {
-    return identityRevealedValidator(control)
+    return identityRevealedValidator(control);
   }
 }
 
@@ -268,7 +268,7 @@ export class IdentityRevealedValidatorDirective implements Validator {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/template/hero-form-template.component.ts]" value="/* tslint:disable: member-ordering */
 import { Component } from '@angular/core';
 
@@ -289,7 +289,7 @@ export class HeroFormTemplateComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -298,7 +298,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -320,7 +320,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -337,7 +337,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -358,7 +358,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -407,7 +407,7 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.css]" value=".cross-validation-error input {
   border-left: 5px solid red;
 }
@@ -415,7 +415,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/template/hero-form-template.component.css]" value=".cross-validation-error input {
   border-left: 5px solid red;
 }
@@ -423,7 +423,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/assets/forms.css]" value="
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
@@ -437,7 +437,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -508,7 +508,7 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.html]" value="<div class=&quot;container&quot;>
 
   <h1>Reactive Form</h1>
@@ -586,7 +586,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/template/hero-form-template.component.html]" value="<div class=&quot;container&quot;>
 
   <h1>Template-Driven Form</h1>
@@ -665,7 +665,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<html lang=&quot;en&quot;>
   <head>
     <title>Hero Form with Validation</title>
@@ -686,7 +686,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -694,7 +694,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -707,6 +711,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -727,22 +732,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -812,7 +815,7 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="description" value="Angular Example - Validation"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="description" value="Angular Example - Validation"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

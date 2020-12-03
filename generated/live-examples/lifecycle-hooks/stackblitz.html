@@ -1,7 +1,7 @@
 <html lang="en"><head></head><body>
         <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/app/after-content.component.ts]" value="import { AfterContentChecked, AfterContentInit, Component, ContentChild } from '@angular/core';
 
-import { LoggerService }  from './logger.service';
+import { LoggerService } from './logger.service';
 
 //////////////////
 @Component({
@@ -59,8 +59,8 @@ export class AfterContentComponent implements AfterContentChecked, AfterContentI
   }
 
   private logIt(method: string) {
-    let child = this.contentChild;
-    let message = `${method}: ${child ? child.hero : 'no'} child content`;
+    const child = this.contentChild;
+    const message = `${method}: ${child ? child.hero : 'no'} child content`;
     this.logger.log(message);
   }
   // ...
@@ -105,10 +105,10 @@ export class AfterContentParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/after-view.component.ts]" value="import { AfterViewChecked, AfterViewInit, Component, ViewChild } from '@angular/core';
 
-import { LoggerService }  from './logger.service';
+import { LoggerService } from './logger.service';
 
 //////////////////
 @Component({
@@ -133,6 +133,7 @@ export class ChildViewComponent {
   `
 })
 export class AfterViewComponent implements  AfterViewChecked, AfterViewInit {
+  comment = '';
   private prevHero = '';
 
   // Query for a VIEW child of type `ChildViewComponent`
@@ -159,11 +160,9 @@ export class AfterViewComponent implements  AfterViewChecked, AfterViewInit {
     }
   }
 
-  comment = '';
-
   // This surrogate for real business logic sets the `comment`
   private doSomething() {
-    let c = this.viewChild.hero.length > 10 ? `That's a long name` : '';
+    const c = this.viewChild.hero.length > 10 ? `That's a long name` : '';
     if (c !== this.comment) {
       // Wait a tick because the component's view has already been checked
       this.logger.tick_then(() => this.comment = c);
@@ -171,8 +170,8 @@ export class AfterViewComponent implements  AfterViewChecked, AfterViewInit {
   }
 
   private logIt(method: string) {
-    let child = this.viewChild;
-    let message = `${method}: ${child ? child.hero : 'no'} child view`;
+    const child = this.viewChild;
+    const message = `${method}: ${child ? child.hero : 'no'} child view`;
     this.logger.log(message);
   }
   // ...
@@ -213,7 +212,7 @@ export class AfterViewParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -225,7 +224,7 @@ export class AppComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -297,13 +296,13 @@ export class AppModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/counter.component.ts]" value="import {
   Component, Input,
   OnChanges, SimpleChanges,
 } from '@angular/core';
 
-import { LoggerService }  from './logger.service';
+import { LoggerService } from './logger.service';
 
 @Component({
   selector: 'app-counter',
@@ -312,7 +311,7 @@ import { LoggerService }  from './logger.service';
     Counter = {{counter}}
 
     <h5>-- Counter Change Log --</h5>
-    <div *ngFor=&quot;let chg of changeLog&quot; mySpy>{{chg}}</div>
+    <div *ngFor=&quot;let chg of changeLog&quot; appSpy>{{chg}}</div>
   </div>
   `,
   styles: ['.counter {background: LightYellow; padding: 8px; margin-top: 8px}']
@@ -330,9 +329,9 @@ export class MyCounterComponent implements OnChanges {
     }
 
     // A change to `counter` is the only change we care about
-    let chng = changes['counter'];
-    let cur = chng.currentValue;
-    let prev = JSON.stringify(chng.previousValue); // first time is {}; after is integer
+    const chng = changes.counter;
+    const cur = chng.currentValue;
+    const prev = JSON.stringify(chng.previousValue); // first time is {}; after is integer
     this.changeLog.push(`counter: currentValue = ${cur}, previousValue = ${prev}`);
   }
 }
@@ -384,7 +383,7 @@ export class CounterParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/do-check.component.ts]" value="/* tslint:disable:forin */
 import { Component, DoCheck, Input, ViewChild } from '@angular/core';
 
@@ -436,8 +435,8 @@ export class DoCheckComponent implements DoCheck {
         this.noChangeCount = 0;
     } else {
         // log that hook was called when there was no relevant change.
-        let count = this.noChangeCount += 1;
-        let noChangeMsg = `DoCheck called ${count}x when no change to hero or power`;
+        const count = this.noChangeCount += 1;
+        const noChangeMsg = `DoCheck called ${count}x when no change to hero or power`;
         if (count === 1) {
           // add new &quot;no change&quot; message
           this.changeLog.push(noChangeMsg);
@@ -480,7 +479,7 @@ export class DoCheckParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/logger.service.ts]" value="import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -512,7 +511,7 @@ export class LoggerService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/on-changes.component.ts]" value="/* tslint:disable:forin */
 import {
   Component, Input, OnChanges,
@@ -545,10 +544,10 @@ export class OnChangesComponent implements OnChanges {
   changeLog: string[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
-    for (let propName in changes) {
-      let chng = changes[propName];
-      let cur  = JSON.stringify(chng.currentValue);
-      let prev = JSON.stringify(chng.previousValue);
+    for (const propName in changes) {
+      const chng = changes[propName];
+      const cur  = JSON.stringify(chng.currentValue);
+      const prev = JSON.stringify(chng.previousValue);
       this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
     }
   }
@@ -584,7 +583,7 @@ export class OnChangesParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/peek-a-boo-parent.component.ts]" value="import { Component } from '@angular/core';
 
 import { LoggerService } from './logger.service';
@@ -643,8 +642,9 @@ export class PeekABooParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/peek-a-boo.component.ts]" value="import {
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/peek-a-boo.component.ts]" value="// tslint:disable: no-conflicting-lifecycle
+import {
   AfterContentChecked,
   AfterContentInit,
   AfterViewChecked,
@@ -657,7 +657,7 @@ can be found in the LICENSE file at http://angular.io/license
   SimpleChanges
 } from '@angular/core';
 import { Component, Input } from '@angular/core';
-import { LoggerService }    from './logger.service';
+import { LoggerService } from './logger.service';
 
 let nextId = 1;
 
@@ -692,16 +692,16 @@ export class PeekABooComponent extends PeekABooDirective implements
   constructor(logger: LoggerService) {
     super(logger);
 
-    let is = this.name ? 'is' : 'is not';
+    const is = this.name ? 'is' : 'is not';
     this.logIt(`name ${is} known at construction`);
   }
 
   // only called for/if there is an @input variable set by parent.
   ngOnChanges(changes: SimpleChanges) {
-    let changesMsgs: string[] = [];
-    for (let propName in changes) {
+    const changesMsgs: string[] = [];
+    for (const propName in changes) {
       if (propName === 'name') {
-        let name = changes['name'].currentValue;
+        const name = changes.name.currentValue;
         changesMsgs.push(`name ${this.verb} to &quot;${name}&quot;`);
       } else {
         changesMsgs.push(propName + ' ' + this.verb);
@@ -734,10 +734,10 @@ export class PeekABooComponent extends PeekABooDirective implements
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/spy.component.ts]" value="import { Component } from '@angular/core';
 
-import { LoggerService }  from './logger.service';
+import { LoggerService } from './logger.service';
 
 @Component({
   selector: 'spy-parent',
@@ -777,7 +777,7 @@ export class SpyParentComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/spy.directive.ts]" value="import { Directive, OnInit, OnDestroy } from '@angular/core';
 
 import { LoggerService } from './logger.service';
@@ -785,8 +785,8 @@ import { LoggerService } from './logger.service';
 let nextId = 1;
 
 // Spy on any element to which it is applied.
-// Usage: <div mySpy>...</div>
-@Directive({selector: '[mySpy]'})
+// Usage: <div appSpy>...</div>
+@Directive({selector: '[appSpy]'})
 export class SpyDirective implements OnInit, OnDestroy {
 
   constructor(private logger: LoggerService) { }
@@ -804,7 +804,7 @@ export class SpyDirective implements OnInit, OnDestroy {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -813,7 +813,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -835,7 +835,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -852,7 +852,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -873,7 +873,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -922,7 +922,7 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/assets/sample.css]" value=".parent {
   color: #666;
   margin: 14px 0;
@@ -941,7 +941,7 @@ input {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -1012,7 +1012,7 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.html]" value="<a id=&quot;top&quot;></a>
 <h1>Component Lifecycle Hooks</h1>
 <a href=&quot;#hooks&quot;>Peek-a-boo: (most) lifecycle hooks</a><br>
@@ -1055,7 +1055,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/do-check-parent.component.html]" value="<div class=&quot;parent&quot;>
   <h2>{{title}}</h2>
 
@@ -1072,7 +1072,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/on-changes-parent.component.html]" value="<div class=&quot;parent&quot;>
   <h2>{{title}}</h2>
 
@@ -1089,7 +1089,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/spy.component.html]" value="<div class=&quot;parent&quot;>
   <h2>Spy Directive</h2>
 
@@ -1098,7 +1098,7 @@ can be found in the LICENSE file at http://angular.io/license
   <button (click)=&quot;reset()&quot;>Reset Heroes</button>
 
   <p></p>
-  <div *ngFor=&quot;let hero of heroes&quot; mySpy class=&quot;heroes&quot;>
+  <div *ngFor=&quot;let hero of heroes&quot; appSpy class=&quot;heroes&quot;>
     {{hero}}
   </div>
   <h4>-- Spy Lifecycle Hook Log --</h4>
@@ -1109,7 +1109,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
   <head>
@@ -1130,7 +1130,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -1138,7 +1138,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -1151,6 +1155,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -1171,22 +1176,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -1256,7 +1259,7 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="lifecycle"><input type="hidden" name="tags[3]" value="hooks"><input type="hidden" name="tags[4]" value="OnInit"><input type="hidden" name="tags[5]" value="OnDestroy"><input type="hidden" name="tags[6]" value="OnChange"><input type="hidden" name="tags[7]" value="DoCheck"><input type="hidden" name="tags[8]" value="AfterContentInit"><input type="hidden" name="tags[9]" value="AfterContentChecked"><input type="hidden" name="tags[10]" value="AfterViewInit"><input type="hidden" name="tags[11]" value="AfterViewChecked"><input type="hidden" name="description" value="Angular Example - Lifecycle Hooks"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="lifecycle"><input type="hidden" name="tags[3]" value="hooks"><input type="hidden" name="tags[4]" value="OnInit"><input type="hidden" name="tags[5]" value="OnDestroy"><input type="hidden" name="tags[6]" value="OnChange"><input type="hidden" name="tags[7]" value="DoCheck"><input type="hidden" name="tags[8]" value="AfterContentInit"><input type="hidden" name="tags[9]" value="AfterContentChecked"><input type="hidden" name="tags[10]" value="AfterViewInit"><input type="hidden" name="tags[11]" value="AfterViewChecked"><input type="hidden" name="description" value="Angular Example - Lifecycle Hooks"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

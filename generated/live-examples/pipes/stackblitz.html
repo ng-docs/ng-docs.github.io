@@ -13,7 +13,7 @@ export class AppComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.module.ts]" value="import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -30,6 +30,7 @@ import { HeroBirthday2Component } from './hero-birthday2.component';
 import { HeroListComponent } from './hero-list.component';
 import { PowerBoostCalculatorComponent } from './power-boost-calculator.component';
 import { PowerBoosterComponent } from './power-booster.component';
+import { PrecedenceComponent } from './precedence.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { PowerBoosterComponent } from './power-booster.component';
     FlyingHeroesPipe,
     FlyingHeroesImpurePipe,
     FetchJsonPipe,
-    ExponentialStrengthPipe
+    ExponentialStrengthPipe,
+    PrecedenceComponent
   ],
   bootstrap: [AppComponent]
 })
@@ -61,7 +63,7 @@ export class AppModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/exponential-strength.pipe.ts]" value="import { Pipe, PipeTransform } from '@angular/core';
 /*
  * Raise the value exponentially
@@ -83,8 +85,8 @@ export class ExponentialStrengthPipe implements PipeTransform {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/fetch-json.pipe.ts]" value="import { HttpClient }          from '@angular/common/http';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/fetch-json.pipe.ts]" value="import { HttpClient } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -112,10 +114,10 @@ export class FetchJsonPipe implements PipeTransform {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/flying-heroes.component.ts]" value="import { Component }              from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/flying-heroes.component.ts]" value="import { Component } from '@angular/core';
 
-import { HEROES }                 from './heroes';
+import { HEROES } from './heroes';
 
 @Component({
   selector: 'app-flying-heroes',
@@ -133,7 +135,7 @@ export class FlyingHeroesComponent {
   addHero(name: string) {
     name = name.trim();
     if (!name) { return; }
-    let hero = {name, canFly: this.canFly};
+    const hero = {name, canFly: this.canFly};
     if (this.mutate) {
     // Pure pipe won't update display because heroes array reference is unchanged
     // Impure pipe will display
@@ -161,7 +163,7 @@ export class FlyingHeroesImpureComponent extends FlyingHeroesComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/flying-heroes.pipe.ts]" value="/* tslint:disable use-pipe-transform-interface */
 import { Pipe, PipeTransform } from '@angular/core';
 
@@ -185,7 +187,7 @@ export class FlyingHeroesImpurePipe extends FlyingHeroesPipe {}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-async-message.component.ts]" value="import { Component } from '@angular/core';
 
 import { Observable, interval } from 'rxjs';
@@ -228,7 +230,7 @@ export class HeroAsyncMessageComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-birthday1.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -243,7 +245,7 @@ export class HeroBirthdayComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-birthday2.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -265,7 +267,7 @@ export class HeroBirthday2Component {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/hero-list.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -287,7 +289,7 @@ export class HeroListComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/heroes.ts]" value="export interface Flyer { canFly: boolean; }
 export const HEROES =  [
   {name: 'Windstorm', canFly: true},
@@ -300,7 +302,7 @@ export const HEROES =  [
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/power-boost-calculator.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -323,7 +325,7 @@ export class PowerBoostCalculatorComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/power-booster.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
@@ -339,7 +341,24 @@ export class PowerBoosterComponent { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/precedence.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-precedence',
+  templateUrl: './precedence.component.html',
+  styles: []
+})
+
+export class PrecedenceComponent {
+  title = 'Pipes and Precedence';
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -348,7 +367,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -370,7 +389,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -387,7 +406,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -408,7 +427,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -457,7 +476,7 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -528,7 +547,7 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.component.html]" value="<a id=&quot;toc&quot;></a>
 <h1>Pipes</h1>
 <a href=&quot;#happy-birthday1&quot;>Happy Birthday v1</a><br>
@@ -541,6 +560,7 @@ can be found in the LICENSE file at http://angular.io/license
 <a href=&quot;#flying-heroes-impure&quot;>Flying Heroes filter pipe (impure)</a><br>
 <a href=&quot;#hero-message&quot;>Async Hero Message and AsyncPipe</a><br>
 <a href=&quot;#hero-list&quot;>Hero List with caching FetchJsonPipe</a><br>
+<a href=&quot;#pipe-precedence&quot;>Pipes and Precedence</a><br>
 
 
 <hr>
@@ -601,13 +621,16 @@ can be found in the LICENSE file at http://angular.io/license
 <a id=&quot;hero-list&quot;></a>
 <app-hero-list></app-hero-list>
 
-<div style=&quot;margin-top:12em;&quot;></div>
+<hr>
+<a id=&quot;pipe-precedence&quot;></a>
+<app-precedence></app-precedence>
+<hr>
 
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/flying-heroes-impure.component.html]" value="<h2>{{title}}</h2>
 <p>
 New hero:
@@ -639,7 +662,7 @@ New hero:
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/flying-heroes.component.html]" value="<h2>{{title}}</h2>
 <p>
 New hero:
@@ -671,7 +694,22 @@ New hero:
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/precedence.component.html]" value="<h2>{{title}}</h2>
+
+<p>Basic uppercase pipe (no precedence considerations necessary): {{ 'text' | uppercase }}</p>
+<p>The following shows that a pipe has higher precedence than a ternary operator. If the pipe precedence were lower than the ternary operator precedence, the output would be 'TRUE'. Instead it is: {{ true ? 'true' : 'false' | uppercase }}</p>
+<p>The following shows how parentheses help Angular evaluate the whole statement:
+<!-- use parentheses in the third operand so the pipe applies to the whole expression -->
+{{ (true ? 'true' : 'false') | uppercase }}
+</p>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
   <head>
@@ -691,7 +729,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -699,7 +737,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -712,6 +754,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -732,22 +775,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             }
@@ -823,7 +864,7 @@ can be found in the LICENSE file at http://angular.io/license
   {&quot;name&quot;: &quot;Magneto&quot;,   &quot;canFly&quot;: false},
   {&quot;name&quot;: &quot;Tornado&quot;,   &quot;canFly&quot;: true}
 ]
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="pipe"><input type="hidden" name="description" value="Angular Example - Pipes"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="pipe"><input type="hidden" name="description" value="Angular Example - Pipes"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

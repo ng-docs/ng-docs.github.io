@@ -1,45 +1,5 @@
 <html lang="en"><head></head><body>
-        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[doc-files/app.locale_data_extra.ts]" value="import { registerLocaleData } from '@angular/common';
-import localeFr from '@angular/common/locales/fr';
-import localeFrExtra from '@angular/common/locales/extra/fr';
-
-registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[doc-files/app.locale_data.ts]" value="import { registerLocaleData } from '@angular/common';
-import localeFr from '@angular/common/locales/fr';
-
-// the second parameter 'fr-FR' is optional
-registerLocaleData(localeFr, 'fr-FR');
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[doc-files/app.module.ts]" value="import { LOCALE_ID, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from '../src/app/app.component';
-
-@NgModule({
-  imports: [ BrowserModule ],
-  declarations: [ AppComponent ],
-  providers: [ { provide: LOCALE_ID, useValue: 'fr' } ],
-  bootstrap: [ AppComponent ]
-})
-export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -63,7 +23,7 @@ export class AppComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -80,7 +40,7 @@ export class AppModule { }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -89,7 +49,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -111,7 +71,7 @@ export const environment = {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -128,8 +88,12 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/***************************************************************************************************
+ * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.
+ */
+import '@angular/localize/init';
+/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
  *
@@ -149,7 +113,7 @@ can be found in the LICENSE file at http://angular.io/license
  * BROWSER POLYFILLS
  */
 
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+/** IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
@@ -198,7 +162,7 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
 h1 {
   color: #369;
@@ -269,84 +233,8 @@ nav a.active {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[doc-files/app.component.html]" value="<h1>Hello i18n!</h1>
-
-<h1 i18n>Hello i18n!</h1>
-
-<h1 i18n=&quot;An introduction header for this sample&quot;>Hello i18n!</h1>
-
-<h1 i18n=&quot;site header|An introduction header for this sample&quot;>Hello i18n!</h1>
-
-<h1 i18n=&quot;An introduction header for this sample@@introductionHeader&quot;>Hello i18n!</h1>
-
-<h1 i18n=&quot;site header|An introduction header for this sample@@introductionHeader&quot;>Hello i18n!</h1>
-
-<h1 i18n=&quot;@@introductionHeader&quot;>Hello i18n!</h1>
-
-<img [src]=&quot;logo&quot; title=&quot;Angular logo&quot;>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[doc-files/messages.fr.xlf.html]" value="<!-- The `messages.fr.xlf` after translation for documentation purposes -->
-<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?>
-<xliff version=&quot;1.2&quot; xmlns=&quot;urn:oasis:names:tc:xliff:document:1.2&quot;>
-  <file source-language=&quot;en&quot; datatype=&quot;plaintext&quot; original=&quot;ng2.template&quot;>
-    <body>
-      <trans-unit id=&quot;introductionHeader&quot; datatype=&quot;html&quot;>
-        <source>Hello i18n!</source>
-        <note priority=&quot;1&quot; from=&quot;description&quot;>An introduction header for this sample</note>
-        <note priority=&quot;1&quot; from=&quot;meaning&quot;>User welcome</note>
-      </trans-unit>
-      <trans-unit id=&quot;introductionHeader&quot; datatype=&quot;html&quot;>
-        <source>Hello i18n!</source>
-        <target>Bonjour i18n !</target>
-        <note priority=&quot;1&quot; from=&quot;description&quot;>An introduction header for this sample</note>
-        <note priority=&quot;1&quot; from=&quot;meaning&quot;>User welcome</note>
-      </trans-unit>
-      <trans-unit id=&quot;ba0cc104d3d69bf669f97b8d96a4c5d8d9559aa3&quot; datatype=&quot;html&quot;>
-        <source>I don&amp;apos;t output any element</source>
-        <target>Je n'affiche aucun élément</target>
-      </trans-unit>
-      <trans-unit id=&quot;701174153757adf13e7c24a248c8a873ac9f5193&quot; datatype=&quot;html&quot;>
-        <source>Angular logo</source>
-        <target>Logo d'Angular</target>
-      </trans-unit>
-      <trans-unit id=&quot;5a134dee893586d02bffc9611056b9cadf9abfad&quot; datatype=&quot;html&quot;>
-        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes ago} }</source>
-        <target>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y a une minute} other {il y a <x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes} }</target>
-      </trans-unit>
-      </trans-unit>
-      <trans-unit id=&quot;f99f34ac9bd4606345071bd813858dec29f3b7d1&quot; datatype=&quot;html&quot;>
-        <source>The author is <x id=&quot;ICU&quot; equiv-text=&quot;{gender, select, male {...} female {...} other {...}}&quot;/></source>
-        <target>L'auteur est <x id=&quot;ICU&quot; equiv-text=&quot;{gender, select, male {...} female {...} other {...}}&quot;/></target>
-      </trans-unit>
-      <trans-unit id=&quot;eff74b75ab7364b6fa888f1cbfae901aaaf02295&quot; datatype=&quot;html&quot;>
-        <source>{VAR_SELECT, select, male {male} female {female} other {other} }</source>
-        <target>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }</target>
-      </trans-unit>
-      <trans-unit id=&quot;972cb0cf3e442f7b1c00d7dab168ac08d6bdf20c&quot; datatype=&quot;html&quot;>
-        <source>Updated: <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/></source>
-        <target>Mis à jour: <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/></target>
-      </trans-unit>
-      <trans-unit id=&quot;7151c2e67748b726f0864fc443861d45df21d706&quot; datatype=&quot;html&quot;>
-        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes ago by {VAR_SELECT, select, male {male} female {female} other {other} }} }</source>
-        <target>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y a une minute} other {il y a <x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }</target>
-      </trans-unit>
-    </body>
-  </file>
-</xliff>
-
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/app/app.component.html]" value="<h1 i18n=&quot;User welcome|An introduction header for this sample@@introductionHeader&quot;>
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.html]" value="<h1 i18n=&quot;User welcome|An introduction header for this sample@@introductionHeader&quot;>
   Hello i18n!
 </h1>
 
@@ -373,7 +261,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
 <html>
   <head>
@@ -391,7 +279,7 @@ can be found in the LICENSE file at http://angular.io/license
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
@@ -399,7 +287,11 @@ can be found in the LICENSE file at http://angular.io/license
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -414,12 +306,12 @@ can be found in the LICENSE file at http://angular.io/license
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
           &quot;options&quot;: {
             &quot;localize&quot;: true,
-            &quot;aot&quot;: true,
             &quot;outputPath&quot;: &quot;dist&quot;,
             &quot;index&quot;: &quot;src/index.html&quot;,
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -440,22 +332,20 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;optimization&quot;: true,
               &quot;outputHashing&quot;: &quot;all&quot;,
               &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
               &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
               &quot;extractLicenses&quot;: true,
               &quot;vendorChunk&quot;: false,
               &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
               ]
             },
@@ -533,16 +423,169 @@ can be found in the LICENSE file at http://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="files[zipper.json]" value="{
-  &quot;files&quot;: [
-    &quot;!dist/&quot;,
-    &quot;!**/*.d.ts&quot;,
-    &quot;!src/**/*.js&quot;,
-    &quot;!doc-files/**/*&quot;,
-    &quot;**/*.xlf&quot;
-  ]
-}
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Angular"><input type="hidden" name="tags[3]" value="i18n"><input type="hidden" name="tags[4]" value="internationalization"><input type="hidden" name="description" value="Angular Example - i18n"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/localize&quot;:&quot;^9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="files[src/locale/messages.fr.xlf]" value="<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?>
+<xliff version=&quot;1.2&quot; xmlns=&quot;urn:oasis:names:tc:xliff:document:1.2&quot;>
+  <file source-language=&quot;en&quot; datatype=&quot;plaintext&quot; original=&quot;ng2.template&quot;>
+    <body>
+      <trans-unit id=&quot;introductionHeader&quot; datatype=&quot;html&quot;>
+        <source>
+    Hello i18n!
+</source>
+        <target>
+    Bonjour i18n !
+</target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>4</context>
+        </context-group>
+        <note priority=&quot;1&quot; from=&quot;description&quot;>An introduction header for this sample</note>
+        <note priority=&quot;1&quot; from=&quot;meaning&quot;>User welcome</note>
+      </trans-unit>
+      <trans-unit id=&quot;ba0cc104d3d69bf669f97b8d96a4c5d8d9559aa3&quot; datatype=&quot;html&quot;>
+        <source>I don&amp;apos;t output any element</source>
+        <target>Je n'affiche aucun élément</target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;701174153757adf13e7c24a248c8a873ac9f5193&quot; datatype=&quot;html&quot;>
+        <source>Angular logo</source>
+        <target>Logo d'Angular</target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;d69f6b42305f49332026fef24b40227f02e34594&quot; datatype=&quot;html&quot;>
+        <source>Updated <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/></source>
+        <target>Mis à jour <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/></target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;5a134dee893586d02bffc9611056b9cadf9abfad&quot; datatype=&quot;html&quot;>
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes ago} }</source>
+        <target>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y a une minute} other {il y a <x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes} }</target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;f99f34ac9bd4606345071bd813858dec29f3b7d1&quot; datatype=&quot;html&quot;>
+        <source>The author is <x id=&quot;ICU&quot; equiv-text=&quot;{gender, select, male {...} female {...} other {...}}&quot;/></source>
+        <target>L'auteur est <x id=&quot;ICU&quot; equiv-text=&quot;{gender, select, male {...} female {...} other {...}}&quot;/></target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;eff74b75ab7364b6fa888f1cbfae901aaaf02295&quot; datatype=&quot;html&quot;>
+        <source>{VAR_SELECT, select, male {male} female {female} other {other} }</source>
+        <target>{VAR_SELECT, select, male {un homme} female {une femme} other {autre} }</target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;972cb0cf3e442f7b1c00d7dab168ac08d6bdf20c&quot; datatype=&quot;html&quot;>
+        <source>Updated: <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/>
+</source>
+        <target>Mis à jour: <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/>
+</target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;7151c2e67748b726f0864fc443861d45df21d706&quot; datatype=&quot;html&quot;>
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes ago by {VAR_SELECT, select, male {male} female {female} other {other} }} }</source>
+        <target>{VAR_PLURAL, plural, =0 {à l'instant} =1 {il y a une minute} other {il y a <x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre} }} }</target>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app\app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>31</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
+"><input type="hidden" name="files[src/locale/messages.xlf]" value="<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?>
+<xliff version=&quot;1.2&quot; xmlns=&quot;urn:oasis:names:tc:xliff:document:1.2&quot;>
+  <file source-language=&quot;en&quot; datatype=&quot;plaintext&quot; original=&quot;ng2.template&quot;>
+    <body>
+      <trans-unit id=&quot;introductionHeader&quot; datatype=&quot;html&quot;>
+        <source>
+  Hello i18n!
+</source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>3</context>
+        </context-group>
+        <note priority=&quot;1&quot; from=&quot;description&quot;>An introduction header for this sample</note>
+        <note priority=&quot;1&quot; from=&quot;meaning&quot;>User welcome</note>
+      </trans-unit>
+      <trans-unit id=&quot;ba0cc104d3d69bf669f97b8d96a4c5d8d9559aa3&quot; datatype=&quot;html&quot;>
+        <source>I don&amp;apos;t output any element</source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;701174153757adf13e7c24a248c8a873ac9f5193&quot; datatype=&quot;html&quot;>
+        <source>Angular logo</source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;d69f6b42305f49332026fef24b40227f02e34594&quot; datatype=&quot;html&quot;>
+        <source>Updated <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/></source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;5a134dee893586d02bffc9611056b9cadf9abfad&quot; datatype=&quot;html&quot;>
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes ago} }</source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;f99f34ac9bd4606345071bd813858dec29f3b7d1&quot; datatype=&quot;html&quot;>
+        <source>The author is <x id=&quot;ICU&quot; equiv-text=&quot;{gender, select, male {...} female {...} other {...}}&quot;/></source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;eff74b75ab7364b6fa888f1cbfae901aaaf02295&quot; datatype=&quot;html&quot;>
+        <source>{VAR_SELECT, select, male {male} female {female} other {other} }</source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;972cb0cf3e442f7b1c00d7dab168ac08d6bdf20c&quot; datatype=&quot;html&quot;>
+        <source>Updated: <x id=&quot;ICU&quot; equiv-text=&quot;{minutes, plural, =0 {...} =1 {...} other {...}}&quot;/>
+</source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id=&quot;7151c2e67748b726f0864fc443861d45df21d706&quot; datatype=&quot;html&quot;>
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id=&quot;INTERPOLATION&quot; equiv-text=&quot;{{minutes}}&quot;/> minutes ago by {VAR_SELECT, select, male {male} female {female} other {other} }} }</source>
+        <context-group purpose=&quot;location&quot;>
+          <context context-type=&quot;sourcefile&quot;>app/app.component.ts</context>
+          <context context-type=&quot;linenumber&quot;>30</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Angular"><input type="hidden" name="tags[3]" value="i18n"><input type="hidden" name="tags[4]" value="internationalization"><input type="hidden" name="description" value="Angular Example - i18n"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~11.0.1&quot;,&quot;@angular/common&quot;:&quot;~11.0.1&quot;,&quot;@angular/compiler&quot;:&quot;~11.0.1&quot;,&quot;@angular/core&quot;:&quot;~11.0.1&quot;,&quot;@angular/forms&quot;:&quot;~11.0.1&quot;,&quot;@angular/localize&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser&quot;:&quot;~11.0.1&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~11.0.1&quot;,&quot;@angular/router&quot;:&quot;~11.0.1&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.6.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;
