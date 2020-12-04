@@ -1028,6 +1028,46 @@
           ]
         }
       ]
+    },
+    {
+      "title": "-",
+      "tooltip": "分割线",
+      "divider": true
+    },
+    {
+      "title": "互助问答",
+      "tooltip": "github 上的中文互助问答区",
+      "url": "https://github.com/ng-docs/ng-docs.github.io/issues"
+    },
+    {
+      "title": "官方 Material 组件库",
+      "tooltip": "Angular Material 组件库的中文文档",
+      "url": "https://material.angular.cn"
+    },
+    {
+      "title": "ng-zorro 组件库",
+      "tooltip": "Ant Design 的 Angular 实现，服务于企业级后台产品。",
+      "url": "https://ng.ant.design/"
+    },
+    {
+      "title": "华为 DevUI 组件库",
+      "tooltip": "“华为云” 开源的企业级组件库，核心设计思想是：致简、沉浸、灵活",
+      "url": "https://devui.design/"
+    },
+    {
+      "title": "ng-nest 组件库",
+      "tooltip": "基于 Angular 和 Nest 的 Web 应用程序框架，UI 库中涵盖了企业开发中需要的大部分组件，table、form、tree、message、dialog、menu、tabs 等一共 60+ 基础组件",
+      "url": "https://ngnest.com/"
+    },
+    {
+      "title": "ng-zorro mobile 组件库",
+      "tooltip": "Ant Design Mobile 的 Angular 实现，服务于无线产品。",
+      "url": "https://ng.mobile.ant.design/"
+    },
+    {
+      "url": "https://flutter.cn/",
+      "tooltip": "Flutter 中文文档站",
+      "title": "友站：Flutter 中文"
     }
   ],
   "Footer": [
@@ -1193,14 +1233,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "281"
+      "282"
     ],
-    "build": "sha.d4b884fe",
-    "version": "11.1.0-build.281",
+    "build": "sha.f0df732c",
+    "version": "11.1.0-build.282",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "11.1.0-build.281+sha.d4b884fe",
+    "full": "11.1.0-build.282+sha.f0df732c",
     "branch": "master",
-    "commitSHA": "d4b884fe1752779371606658b64574b8354b334c"
+    "commitSHA": "f0df732cf8eeb041851c2ae46ddbe2c5044a3f86"
   }
 }
