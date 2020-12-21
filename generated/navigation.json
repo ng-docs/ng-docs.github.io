@@ -1190,23 +1190,23 @@
   "docVersions": [
     {
       "title": "v10",
-      "url": "https://v10.angular.io/"
+      "url": "https://v10.angular.cn/"
     },
     {
       "title": "v9",
-      "url": "https://v9.angular.io/"
+      "url": "https://v9.angular.cn/"
     },
     {
       "title": "v8",
-      "url": "https://v8.angular.io/"
+      "url": "https://v8.angular.cn/"
     },
     {
       "title": "v7",
-      "url": "https://v7.angular.io/"
+      "url": "https://v7.angular.cn/"
     },
     {
       "title": "v6",
-      "url": "https://v6.angular.io/"
+      "url": "https://v6.angular.cn/"
     },
     {
       "title": "v5",
@@ -1218,7 +1218,7 @@
     },
     {
       "title": "v2",
-      "url": "https://v2.angular.io/"
+      "url": "https://v2.angular.cn/"
     }
   ],
   "__versionInfo": {
@@ -1233,14 +1233,14 @@
     "patch": 0,
     "prerelease": [
       "build",
-      "284"
+      "153"
     ],
-    "build": "sha.8523830c",
-    "version": "11.1.0-build.284",
+    "build": "sha.eb40a606",
+    "version": "11.1.0-build.153",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "11.1.0-build.284+sha.8523830c",
+    "full": "11.1.0-build.153+sha.eb40a606",
     "branch": "master",
-    "commitSHA": "8523830ca8703018b88103cdddea2bdeb0459892"
+    "commitSHA": "eb40a606823d967a61c1036060ded1f666c3a899"
   }
 }
