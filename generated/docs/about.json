@@ -1,0 +1,5 @@
+{
+  "id": "about",
+  "title": "Angular Contributors",
+  "contents": "\n\n\n\n<div class=\"content\">\n  <header class=\"marketing-banner\">\n  <h1 class=\"banner-headline no-toc no-anchor\" id=\"angular-contributors\">Angular Contributors</h1>\n</header>\n<article class=\"center-layout-wide\">\n  <h2 id=\"building-for-the-future\">Building For the Future<a title=\"Link to this heading\" class=\"header-link\" aria-hidden=\"true\" href=\"about#building-for-the-future\"><i class=\"material-icons\">link</i></a></h2>\n  <p>\n    Angular is built by a team of engineers who share a passion for making web development feel\n    effortless. We believe that writing beautiful apps should be joyful and fun. We're building a\n    platform for the future.\n  </p>\n<p>  <aio-contributor-list></aio-contributor-list></p>\n</article>\n\n  \n</div>\n\n\n<!-- links to this doc:\n-->\n<!-- links from this doc:\n - about#building-for-the-future\n-->"
+}

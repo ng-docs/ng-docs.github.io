@@ -1,0 +1,5 @@
+{
+  "id": "api/core/Injector",
+  "title": "core/injector (disambiguation)",
+  "contents": "<h1 id=\"coreinjector-disambiguation\">core/injector (disambiguation)</h1>\n\n\n\n<div class=\"content\">\n  There are multiple pages that match this path:\n  <ul>\n    <li>\n      <a href=\"api/core/Injector-0\">core/Injector</a>\n      <p translation-result=\"on\">具体的注入器会实现此接口。配置有<a href=\"guide/glossary#provider\">某些提供者</a>的注入器，这些提供者会将各种类型的依赖项与<a href=\"guide/glossary#di-token\">注入令牌</a>相关联。</p><p translation-origin=\"off\">Concrete injectors implement this interface. Injectors are configured\nwith <a href=\"guide/glossary#provider\">providers</a> that associate\ndependencies of various types with <a href=\"guide/glossary#di-token\">injection tokens</a>.</p>\n\n\n    </li><li>\n      <a href=\"api/core/INJECTOR-1\">core/INJECTOR</a>\n      <p translation-result=\"on\">一个 InjectionToken，用于获取当前 <code>Injector</code> 的 <code>createInjector()</code> 式的注入器。</p><p translation-origin=\"off\">An InjectionToken that gets the current <code>Injector</code> for <code>createInjector()</code>-style injectors.</p>\n\n\n    </li>\n  </ul>\n</div>\n"
+}

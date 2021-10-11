@@ -1,0 +1,2074 @@
+<html lang="en"><head></head><body>
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/index.html]" value="<!-- Run the test app-->
+<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <base href=&quot;/&quot;>
+    <title>App Under Test</title>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/main.ts]" value="// main app entry point
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #264D73;
+  font-size: 2.5rem;
+}
+h2, h3 {
+  color: #444;
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.3rem;
+}
+body {
+  padding: .5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+body, input[text] {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+a {
+  cursor: pointer;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color:  #42545C;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+input[type=&quot;text&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/banner/banner-external.component.css]" value="h1 { color: green; font-size: 350%}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dashboard/dashboard-hero.component.css]" value=".hero {
+	padding: 20px;
+  position: relative;
+	text-align: center;
+	color: #eee;
+	max-height: 120px;
+	min-width: 120px;
+	background-color: #607D8B;
+	border-radius: 2px;
+}
+
+.hero:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+
+@media (max-width: 600px) {
+	.hero {
+	  font-size: 10px;
+	  max-height: 75px; }
+}
+
+@media (max-width: 1024px) {
+	.hero {
+	  min-width: 60px;
+	}
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dashboard/dashboard.component.css]" value="[class*='col-'] {
+  float: left;
+}
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+[class*='col-'] {
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 25%;
+}
+.grid-pad {
+  padding: 10px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+@media (max-width: 1024px) {
+	.grid {
+	  margin: 0;
+	}
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-detail.component.css]" value="label {
+  display: inline-block;
+  width: 3em;
+  margin: .5em 0;
+  color: #607D8B;
+  font-weight: bold;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+}
+button {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-list.component.css]" value=".selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.heroes li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+button {
+  font-family: Arial, sans-serif;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.html]" value="<app-banner></app-banner>
+<app-welcome></app-welcome>
+<nav>
+  <a routerLink=&quot;/dashboard&quot;>Dashboard</a>
+  <a routerLink=&quot;/heroes&quot;>Heroes</a>
+  <a routerLink=&quot;/about&quot;>About</a>
+</nav>
+<router-outlet></router-outlet>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/banner/banner-external.component.html]" value="<h1>{{title}}</h1>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/dashboard/dashboard.component.html]" value="<h2 highlight>{{title}}</h2>
+
+<div class=&quot;grid grid-pad&quot;>
+  <dashboard-hero *ngFor=&quot;let hero of heroes&quot;  class=&quot;col-1-4&quot;
+    [hero]=hero  (selected)=&quot;gotoDetail($event)&quot; >
+  </dashboard-hero>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/demo/demo-external-template.html]" value="<span>from external template</span>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/hero/hero-detail.component.html]" value="<div *ngIf=&quot;hero&quot;>
+  <h2><span>{{hero.name | titlecase}}</span> Details</h2>
+  <div>
+    <label>id: </label>{{hero.id}}</div>
+  <div>
+    <label for=&quot;name&quot;>name: </label>
+    <input id=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot; placeholder=&quot;name&quot; />
+  </div>
+  <button (click)=&quot;save()&quot;>Save</button>
+  <button (click)=&quot;cancel()&quot;>Cancel</button>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/hero/hero-list.component.html]" value="<h2 highlight=&quot;gold&quot;>My Heroes</h2>
+<ul class=&quot;heroes&quot;>
+  <li *ngFor=&quot;let hero of heroes | async &quot;
+    [class.selected]=&quot;hero === selectedHero&quot;
+    (click)=&quot;onSelect(hero)&quot;>
+    <span class=&quot;badge&quot;>{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/app-initial.component.ts]" value="// Reduced version of the initial AppComponent generated by CLI
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: '<h1>Welcome to {{title}}!</h1>'
+})
+export class AppComponent {
+  title = 'app';
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app-routing.module.ts]" value="import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AboutComponent } from './about/about.component';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: 'about', component: AboutComponent },
+  { path: 'heroes', loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule)},
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  exports: [ RouterModule ] // re-export the module declarations
+})
+export class AppRoutingModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AboutComponent } from './about/about.component';
+import { BannerComponent } from './banner/banner.component';
+import { HeroService } from './model/hero.service';
+import { UserService } from './model/user.service';
+import { TwainComponent } from './twain/twain.component';
+import { TwainService } from './twain/twain.service';
+import { WelcomeComponent } from './welcome/welcome.component';
+
+import { DashboardModule } from './dashboard/dashboard.module';
+import { SharedModule } from './shared/shared.module';
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    DashboardModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
+  ],
+  providers: [
+    HeroService,
+    TwainService,
+    UserService
+  ],
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    BannerComponent,
+    TwainComponent,
+    WelcomeComponent,
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dummy.module.ts]" value="// These unused NgModules keep the Angular Language Service happy.
+// The AppModule registers the final versions of these components
+import { NgModule } from '@angular/core';
+
+import { AppComponent as app_initial } from './app-initial.component';
+@NgModule({ declarations: [ app_initial ] })
+export class AppModuleInitial {}
+
+import { BannerComponent as bc_initial } from './banner/banner-initial.component';
+@NgModule({ declarations: [ bc_initial ] })
+export class BannerModuleInitial {}
+
+import { BannerComponent as bc_external } from './banner/banner-external.component';
+@NgModule({ declarations: [ bc_external ] })
+export class BannerModuleExternal {}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/in-memory-data.service.ts]" value="import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { QUOTES } from './twain/twain.data';
+
+// Adjust to reduce number of quotes
+const maxQuotes = Infinity; // 0;
+
+/** Create in-memory database of heroes and quotes */
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
+    const heroes = [
+      { id: 11, name: 'Dr Nice' },
+      { id: 12, name: 'Narco' },
+      { id: 13, name: 'Bombasto' },
+      { id: 14, name: 'Celeritas' },
+      { id: 15, name: 'Magneta' },
+      { id: 16, name: 'RubberMan' },
+      { id: 17, name: 'Dynama' },
+      { id: 18, name: 'Dr IQ' },
+      { id: 19, name: 'Magma' },
+      { id: 20, name: 'Tornado' }
+    ];
+
+    return { heroes, quotes: QUOTES.slice(0, maxQuotes) };
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/about/about.component.ts]" value="import { Component } from '@angular/core';
+@Component({
+  template: `
+  <h2 highlight=&quot;skyblue&quot;>About</h2>
+  <h3>Quote of the day:</h3>
+  <twain-quote></twain-quote>
+  `
+})
+export class AboutComponent { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/banner/banner-external.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-banner',
+  templateUrl: './banner-external.component.html',
+  styleUrls:  ['./banner-external.component.css']
+})
+export class BannerComponent {
+  title = 'Test Tour of Heroes';
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/banner/banner-initial.component.ts]" value="// BannerComponent as initially generated by the CLI
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-banner',
+  template: `<p>banner works!</p>`,
+  styles: []
+})
+export class BannerComponent { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/banner/banner.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-banner',
+  template: '<h1>{{title}}</h1>',
+  styles: ['h1 { color: green; font-size: 350%}']
+})
+export class BannerComponent {
+  title = 'Test Tour of Heroes';
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dashboard/dashboard-hero.component.ts]" value="import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { Hero } from '../model/hero';
+
+@Component({
+  selector: 'dashboard-hero',
+  template: `
+    <div (click)=&quot;click()&quot; class=&quot;hero&quot;>
+      {{hero.name | uppercase}}
+    </div>`,
+  styleUrls: [ './dashboard-hero.component.css' ]
+})
+export class DashboardHeroComponent {
+  @Input() hero!: Hero;
+  @Output() selected = new EventEmitter<Hero>();
+  click() { this.selected.emit(this.hero); }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dashboard/dashboard.component.ts]" value="import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Hero } from '../model/hero';
+import { HeroService } from '../model/hero.service';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
+})
+export class DashboardComponent implements OnInit {
+
+  heroes: Hero[] = [];
+
+  constructor(
+    private router: Router,
+    private heroService: HeroService) {
+  }
+
+  ngOnInit() {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+  }
+
+  gotoDetail(hero: Hero) {
+    const url = `/heroes/${hero.id}`;
+    this.router.navigateByUrl(url);
+  }
+
+  get title() {
+    const cnt = this.heroes.length;
+    return cnt === 0 ? 'No Heroes' :
+      cnt === 1 ? 'Top Hero' :  `Top ${cnt} Heroes`;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/dashboard/dashboard.module.ts]" value="import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { SharedModule } from '../shared/shared.module';
+
+import { DashboardComponent } from './dashboard.component';
+import { DashboardHeroComponent } from './dashboard-hero.component';
+
+const routes: Routes =  [
+  { path: 'dashboard',  component: DashboardComponent },
+];
+
+@NgModule({
+  imports:      [
+    SharedModule,
+    RouterModule.forChild(routes)
+  ],
+  declarations: [ DashboardComponent, DashboardHeroComponent ]
+})
+export class DashboardModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/demo/demo-main.ts]" value="// main app entry point
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { DemoModule } from './demo';
+
+platformBrowserDynamic().bootstrapModule(DemoModule);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/demo/demo.ts]" value="// tslint:disable: directive-selector forin no-input-rename
+import { Component, ContentChildren, Directive, EventEmitter,
+         Injectable, Input, Output, Optional,
+         HostBinding, HostListener,
+         OnInit, OnChanges, OnDestroy,
+         Pipe, PipeTransform,
+         SimpleChanges } from '@angular/core';
+
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+
+////////// The App: Services and Components for the tests. //////////////
+
+export interface Hero {
+  name: string;
+}
+
+////////// Services ///////////////
+@Injectable()
+export class ValueService {
+  value = 'real value';
+
+  getValue() { return this.value; }
+  setValue(value: string) { this.value = value; }
+
+  getObservableValue() { return of('observable value'); }
+
+  getPromiseValue() { return Promise.resolve('promise value'); }
+
+  getObservableDelayValue() {
+    return of('observable delay value').pipe(delay(10));
+  }
+}
+
+@Injectable()
+export class MasterService {
+  constructor(private valueService: ValueService) { }
+  getValue() { return this.valueService.getValue(); }
+}
+
+/////////// Pipe ////////////////
+/*
+ * Reverse the input string.
+*/
+@Pipe({ name: 'reverse' })
+export class ReversePipe implements PipeTransform {
+  transform(s: string) {
+    let r = '';
+    for (let i = s.length; i; ) { r += s[--i]; }
+    return r;
+  }
+}
+
+//////////// Components /////////////
+@Component({
+  selector: 'bank-account',
+  template: `
+   Bank Name: {{bank}}
+   Account Id: {{id}}
+ `
+})
+export class BankAccountComponent {
+  @Input() bank = '';
+  @Input('account') id = '';
+
+  // Removed on 12/02/2016 when ceased public discussion of the `Renderer`. Revive in future?
+  // constructor(private renderer: Renderer, private el: ElementRef ) {
+  //   renderer.setElementProperty(el.nativeElement, 'customProperty', true);
+  // }
+}
+
+/** A component with attributes, styles, classes, and property setting */
+@Component({
+  selector: 'bank-account-parent',
+  template: `
+   <bank-account
+      bank=&quot;RBC&quot;
+      account=&quot;4747&quot;
+      [style.width.px]=&quot;width&quot;
+      [style.color]=&quot;color&quot;
+      [class.closed]=&quot;isClosed&quot;
+      [class.open]=&quot;!isClosed&quot;>
+   </bank-account>
+ `
+})
+export class BankAccountParentComponent {
+  width = 200;
+  color = 'red';
+  isClosed = true;
+}
+
+@Component({
+  selector: 'lightswitch-comp',
+  template: `
+    <button (click)=&quot;clicked()&quot;>Click me!</button>
+    <span>{{message}}</span>`
+})
+export class LightswitchComponent {
+  isOn = false;
+  clicked() { this.isOn = !this.isOn; }
+  get message() { return `The light is ${this.isOn ? 'On' : 'Off'}`; }
+}
+
+@Component({
+  selector: 'child-1',
+  template: `<span>Child-1({{text}})</span>`
+})
+export class Child1Component {
+  @Input() text = 'Original';
+}
+
+@Component({
+  selector: 'child-2',
+  template: '<div>Child-2({{text}})</div>'
+})
+export class Child2Component {
+  @Input() text = '';
+}
+
+@Component({
+  selector: 'child-3',
+  template: '<div>Child-3({{text}})</div>'
+})
+export class Child3Component {
+  @Input() text = '';
+}
+
+@Component({
+  selector: 'input-comp',
+  template: `<input [(ngModel)]=&quot;name&quot;>`
+})
+export class InputComponent {
+  name = 'John';
+}
+
+/* Prefer this metadata syntax */
+// @Directive({
+//   selector: 'input[value]',
+//   host: {
+//     '[value]': 'value',
+//     '(input)': 'valueChange.emit($event.target.value)'
+//   },
+//   inputs:  ['value'],
+//   outputs: ['valueChange']
+// })
+// export class InputValueBinderDirective {
+//   value: any;
+//   valueChange: EventEmitter<any> = new EventEmitter();
+// }
+
+// As the styleguide recommends
+@Directive({ selector: 'input[value]' })
+export class InputValueBinderDirective {
+  @HostBinding()
+  @Input()
+  value: any;
+
+  @Output()
+  valueChange: EventEmitter<any> = new EventEmitter();
+
+  @HostListener('input', ['$event.target.value'])
+  onInput(value: any) { this.valueChange.emit(value); }
+}
+
+@Component({
+  selector: 'input-value-comp',
+  template: `
+    Name: <input [(value)]=&quot;name&quot;> {{name}}
+  `
+})
+export class InputValueBinderComponent {
+  name = 'Sally'; // initial value
+}
+
+@Component({
+  selector: 'parent-comp',
+  template: `Parent(<child-1></child-1>)`
+})
+export class ParentComponent { }
+
+@Component({
+  selector: 'io-comp',
+  template: `<div class=&quot;hero&quot; (click)=&quot;click()&quot;>Original {{hero.name}}</div>`
+})
+export class IoComponent {
+  @Input() hero!: Hero;
+  @Output() selected = new EventEmitter<Hero>();
+  click() { this.selected.emit(this.hero); }
+}
+
+@Component({
+  selector: 'io-parent-comp',
+  template: `
+  <p *ngIf=&quot;!selectedHero&quot;><i>Click to select a hero</i></p>
+  <p *ngIf=&quot;selectedHero&quot;>The selected hero is {{selectedHero.name}}</p>
+  <io-comp
+    *ngFor=&quot;let hero of heroes&quot;
+    [hero]=hero
+    (selected)=&quot;onSelect($event)&quot;>
+  </io-comp>
+  `
+})
+export class IoParentComponent {
+  heroes: Hero[] = [ {name: 'Bob'}, {name: 'Carol'}, {name: 'Ted'}, {name: 'Alice'} ];
+  selectedHero!: Hero;
+  onSelect(hero: Hero) { this.selectedHero = hero; }
+}
+
+@Component({
+  selector: 'my-if-comp',
+  template: `MyIf(<span *ngIf=&quot;showMore&quot;>More</span>)`
+})
+export class MyIfComponent {
+  showMore = false;
+}
+
+@Component({
+  selector: 'my-service-comp',
+  template: `injected value: {{valueService.value}}`,
+  providers: [ValueService]
+})
+export class TestProvidersComponent {
+  constructor(public valueService: ValueService) {}
+}
+
+
+@Component({
+  selector: 'my-service-comp',
+  template: `injected value: {{valueService.value}}`,
+  viewProviders: [ValueService]
+})
+export class TestViewProvidersComponent {
+  constructor(public valueService: ValueService) {}
+}
+
+@Component({
+  selector: 'external-template-comp',
+  templateUrl: './demo-external-template.html'
+})
+export class ExternalTemplateComponent implements OnInit {
+  serviceValue = '';
+
+  constructor(@Optional() private service?: ValueService) {  }
+
+  ngOnInit() {
+    if (this.service) { this.serviceValue = this.service.getValue(); }
+  }
+}
+
+@Component({
+  selector: 'comp-w-ext-comp',
+  template: `
+  <h3>comp-w-ext-comp</h3>
+  <external-template-comp></external-template-comp>
+  `
+})
+export class InnerCompWithExternalTemplateComponent { }
+
+@Component({selector: 'needs-content', template: '<ng-content></ng-content>'})
+export class NeedsContentComponent {
+  // children with #content local variable
+  @ContentChildren('content') children: any;
+}
+
+///////// MyIfChildComp ////////
+@Component({
+  selector: 'my-if-child-1',
+
+  template: `
+    <h4>MyIfChildComp</h4>
+    <div>
+      <label>Child value: <input [(ngModel)]=&quot;childValue&quot;> </label>
+    </div>
+    <p><i>Change log:</i></p>
+    <div *ngFor=&quot;let log of changeLog; let i=index&quot;>{{i + 1}} - {{log}}</div>`
+})
+export class MyIfChildComponent implements OnInit, OnChanges, OnDestroy {
+  @Input() value = '';
+  @Output() valueChange = new EventEmitter<string>();
+
+  get childValue() { return this.value; }
+  set childValue(v: string) {
+    if (this.value === v) { return; }
+    this.value = v;
+    this.valueChange.emit(v);
+  }
+
+  changeLog: string[] = [];
+
+  ngOnInitCalled = false;
+  ngOnChangesCounter = 0;
+  ngOnDestroyCalled = false;
+
+  ngOnInit()    {
+    this.ngOnInitCalled = true;
+    this.changeLog.push('ngOnInit called');
+  }
+
+  ngOnDestroy() {
+    this.ngOnDestroyCalled = true;
+    this.changeLog.push('ngOnDestroy called');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    for (const propName in changes) {
+      this.ngOnChangesCounter += 1;
+      const prop = changes[propName];
+      const cur  = JSON.stringify(prop.currentValue);
+      const prev = JSON.stringify(prop.previousValue);
+      this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+    }
+  }
+}
+
+///////// MyIfParentComp ////////
+
+@Component({
+  selector: 'my-if-parent-comp',
+  template: `
+    <h3>MyIfParentComp</h3>
+    <label>Parent value:
+      <input [(ngModel)]=&quot;parentValue&quot;>
+    </label>
+    <button (click)=&quot;clicked()&quot;>{{toggleLabel}} Child</button><br>
+    <div *ngIf=&quot;showChild&quot;
+         style=&quot;margin: 4px; padding: 4px; background-color: aliceblue;&quot;>
+      <my-if-child-1  [(value)]=&quot;parentValue&quot;></my-if-child-1>
+    </div>
+  `
+})
+export class MyIfParentComponent implements OnInit {
+  ngOnInitCalled = false;
+  parentValue = 'Hello, World';
+  showChild = false;
+  toggleLabel = 'Unknown';
+
+  ngOnInit() {
+    this.ngOnInitCalled = true;
+    this.clicked();
+  }
+
+  clicked() {
+    this.showChild = !this.showChild;
+    this.toggleLabel = this.showChild ? 'Close' : 'Show';
+  }
+}
+
+
+@Component({
+  selector: 'reverse-pipe-comp',
+  template: `
+    <input [(ngModel)]=&quot;text&quot;>
+    <span>{{text | reverse}}</span>
+  `
+})
+export class ReversePipeComponent {
+  text = 'my dog has fleas.';
+}
+
+@Component({template: '<div>Replace Me</div>'})
+export class ShellComponent { }
+
+@Component({
+  selector: 'demo-comp',
+  template: `
+    <h1>Specs Demo</h1>
+    <my-if-parent-comp></my-if-parent-comp>
+    <hr>
+    <h3>Input/Output Component</h3>
+    <io-parent-comp></io-parent-comp>
+    <hr>
+    <h3>External Template Component</h3>
+    <external-template-comp></external-template-comp>
+    <hr>
+    <h3>Component With External Template Component</h3>
+    <comp-w-ext-comp></comp-w-ext-comp>
+    <hr>
+    <h3>Reverse Pipe</h3>
+    <reverse-pipe-comp></reverse-pipe-comp>
+    <hr>
+    <h3>InputValueBinder Directive</h3>
+    <input-value-comp></input-value-comp>
+    <hr>
+    <h3>Button Component</h3>
+    <lightswitch-comp></lightswitch-comp>
+    <hr>
+    <h3>Needs Content</h3>
+    <needs-content #nc>
+      <child-1 #content text=&quot;My&quot;></child-1>
+      <child-2 #content text=&quot;dog&quot;></child-2>
+      <child-2 text=&quot;has&quot;></child-2>
+      <child-3 #content text=&quot;fleas&quot;></child-3>
+      <div #content>!</div>
+    </needs-content>
+  `
+})
+export class DemoComponent { }
+//////// Aggregations ////////////
+
+export const demoDeclarations = [
+  DemoComponent,
+  BankAccountComponent, BankAccountParentComponent,
+  LightswitchComponent,
+  Child1Component, Child2Component, Child3Component,
+  ExternalTemplateComponent, InnerCompWithExternalTemplateComponent,
+  InputComponent,
+  InputValueBinderDirective, InputValueBinderComponent,
+  IoComponent, IoParentComponent,
+  MyIfComponent, MyIfChildComponent, MyIfParentComponent,
+  NeedsContentComponent, ParentComponent,
+  TestProvidersComponent, TestViewProvidersComponent,
+  ReversePipe, ReversePipeComponent, ShellComponent
+];
+
+export const demoProviders = [MasterService, ValueService];
+
+////////////////////
+////////////
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [BrowserModule, FormsModule],
+  declarations: demoDeclarations,
+  providers:    demoProviders,
+  entryComponents: [DemoComponent],
+  bootstrap:       [DemoComponent]
+})
+export class DemoModule { }
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-detail.component.ts]" value="/* tslint:disable:member-ordering */
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { Hero } from '../model/hero';
+import { HeroDetailService } from './hero-detail.service';
+
+@Component({
+  selector:    'app-hero-detail',
+  templateUrl: './hero-detail.component.html',
+  styleUrls:  ['./hero-detail.component.css' ],
+  providers:  [ HeroDetailService ]
+})
+export class HeroDetailComponent implements OnInit {
+  constructor(
+    private heroDetailService: HeroDetailService,
+    private route: ActivatedRoute,
+    private router: Router) {
+  }
+
+  @Input() hero!: Hero;
+
+  ngOnInit(): void {
+    // get hero when `id` param changes
+    this.route.paramMap.subscribe(pmap => this.getHero(pmap.get('id')));
+  }
+
+  private getHero(id: string | null): void {
+    // when no id or id===0, create new blank hero
+    if (!id) {
+      this.hero = { id: 0, name: '' } as Hero;
+      return;
+    }
+
+    this.heroDetailService.getHero(id).subscribe(hero => {
+      if (hero) {
+        this.hero = hero;
+      } else {
+        this.gotoList(); // id not found; navigate to list
+      }
+    });
+  }
+
+  save(): void {
+    this.heroDetailService.saveHero(this.hero).subscribe(() => this.gotoList());
+  }
+
+  cancel() { this.gotoList(); }
+
+  gotoList() {
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-detail.service.ts]" value="import { Injectable } from '@angular/core';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { Hero } from '../model/hero';
+import { HeroService } from '../model/hero.service';
+
+@Injectable()
+export class HeroDetailService {
+  constructor(private heroService: HeroService) {  }
+
+  // Returns a clone which caller may modify safely
+  getHero(id: number | string): Observable<Hero | null> {
+    if (typeof id === 'string') {
+      id = parseInt(id, 10);
+    }
+    return this.heroService.getHero(id).pipe(
+      map(hero => {
+        return hero ? Object.assign({}, hero) : null; // clone or null
+      })
+    );
+  }
+
+  saveHero(hero: Hero) {
+    return this.heroService.updateHero(hero);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-list.component.ts]" value="import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Observable } from 'rxjs';
+
+import { Hero } from '../model/hero';
+import { HeroService } from '../model/hero.service';
+
+@Component({
+  selector: 'app-heroes',
+  templateUrl: './hero-list.component.html',
+  styleUrls: [ './hero-list.component.css' ]
+})
+export class HeroListComponent {
+  heroes: Observable<Hero[]>;
+  selectedHero!: Hero;
+
+  constructor(
+    private router: Router,
+    private heroService: HeroService) {
+    this.heroes = this.heroService.getHeroes();
+  }
+
+  onSelect(hero: Hero) {
+    this.selectedHero = hero;
+    this.router.navigate(['../heroes', this.selectedHero.id ]);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero-routing.module.ts]" value="import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { HeroListComponent } from './hero-list.component';
+import { HeroDetailComponent } from './hero-detail.component';
+
+const routes: Routes =  [
+  { path: '',    component: HeroListComponent },
+  { path: ':id', component: HeroDetailComponent }
+];
+
+export const routedComponents = [HeroDetailComponent, HeroListComponent];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class HeroRoutingModule {}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero/hero.module.ts]" value="import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
+import { routedComponents, HeroRoutingModule } from './hero-routing.module';
+
+@NgModule({
+  imports:      [ SharedModule, HeroRoutingModule ],
+  declarations: [ routedComponents ]
+})
+export class HeroModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/model/hero.service.ts]" value="import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+
+import { Hero } from './hero';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
+@Injectable()
+export class HeroService {
+
+  readonly heroesUrl = 'api/heroes';  // URL to web api
+
+  constructor(private http: HttpClient) { }
+
+  /** GET heroes from the server */
+  getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.heroesUrl)
+      .pipe(
+        tap(heroes => this.log(`fetched heroes`)),
+        catchError(this.handleError('getHeroes'))
+      ) as Observable<Hero[]>;
+  }
+
+  /** GET hero by id. Return `undefined` when id not found */
+  getHero<Data>(id: number | string): Observable<Hero> {
+    if (typeof id === 'string') {
+      id = parseInt(id, 10);
+    }
+    const url = `${this.heroesUrl}/?id=${id}`;
+    return this.http.get<Hero[]>(url)
+      .pipe(
+        map(heroes => heroes[0]), // returns a {0|1} element array
+        tap(h => {
+          const outcome = h ? `fetched` : `did not find`;
+          this.log(`${outcome} hero id=${id}`);
+        }),
+        catchError(this.handleError<Hero>(`getHero id=${id}`))
+      );
+  }
+
+  //////// Save methods //////////
+
+  /** POST: add a new hero to the server */
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+      tap((addedHero) => this.log(`added hero w/ id=${addedHero.id}`)),
+      catchError(this.handleError<Hero>('addHero'))
+    );
+  }
+  /** DELETE: delete the hero from the server */
+  deleteHero(hero: Hero | number): Observable<Hero> {
+    const id = typeof hero === 'number' ? hero : hero.id;
+    const url = `${this.heroesUrl}/${id}`;
+
+    return this.http.delete<Hero>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted hero id=${id}`)),
+      catchError(this.handleError<Hero>('deleteHero'))
+    );
+  }
+
+  /** PUT: update the hero on the server */
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
+      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+  /**
+   * Returns a function that handles Http operation failures.
+   * This error handler lets the app continue to run as if no error occurred.
+   * @param operation - name of the operation that failed
+   */
+  private handleError<T>(operation = 'operation') {
+    return (error: HttpErrorResponse): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      const message = (error.error instanceof ErrorEvent) ?
+        error.error.message :
+       `server returned code ${error.status} with body &quot;${error.error}&quot;`;
+
+      // TODO: better job of transforming error for user consumption
+      throw new Error(`${operation} failed: ${message}`);
+    };
+
+  }
+
+  private log(message: string) {
+    console.log('HeroService: ' + message);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/model/hero.ts]" value="export interface Hero {
+  id: number;
+  name: string;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/model/index.ts]" value="export * from './hero';
+export * from './hero.service';
+export * from './user.service';
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/model/user.service.ts]" value="import { Injectable } from '@angular/core';
+
+@Injectable()
+export class UserService {
+  isLoggedIn = true;
+  user = {name: 'Sam Spade'};
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/canvas.component.ts]" value="// Import patch to make async `HTMLCanvasElement` methods (such as `.toBlob()`) Zone.js-aware.
+// Either import in `polyfills.ts` (if used in more than one places in the app) or in the component
+// file using `HTMLCanvasElement` (if it is only used in a single file).
+import 'zone.js/plugins/zone-patch-canvas';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+
+@Component({
+  selector: 'sample-canvas',
+  template: '<canvas #sampleCanvas width=&quot;200&quot; height=&quot;200&quot;></canvas>',
+})
+export class CanvasComponent implements AfterViewInit {
+  blobSize = 0;
+  @ViewChild('sampleCanvas') sampleCanvas!: ElementRef;
+
+  ngAfterViewInit() {
+    const canvas: HTMLCanvasElement = this.sampleCanvas.nativeElement;
+    const context = canvas.getContext('2d')!;
+
+    context.clearRect(0, 0, 200, 200);
+    context.fillStyle = '#FF1122';
+    context.fillRect(0, 0, 200, 200);
+
+    canvas.toBlob(blob => {
+      this.blobSize = blob?.size ?? 0;
+    });
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/highlight.directive.ts]" value="// tslint:disable: directive-selector
+import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+
+@Directive({ selector: '[highlight]' })
+/**
+ * Set backgroundColor for the attached element to highlight color
+ * and set the element's customProperty to true
+ */
+export class HighlightDirective implements OnChanges {
+
+  defaultColor =  'rgb(211, 211, 211)'; // lightgray
+
+  @Input('highlight') bgColor = '';
+
+  constructor(private el: ElementRef) {
+    el.nativeElement.style.customProperty = true;
+  }
+
+  ngOnChanges() {
+    this.el.nativeElement.style.backgroundColor = this.bgColor || this.defaultColor;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/shared.module.ts]" value="import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { HighlightDirective } from './highlight.directive';
+import { TitleCasePipe } from './title-case.pipe';
+import { CanvasComponent } from './canvas.component';
+
+@NgModule({
+  imports: [ CommonModule ],
+  exports: [
+    CommonModule,
+    // SharedModule importers won't have to import FormsModule too
+    FormsModule,
+    HighlightDirective,
+    TitleCasePipe,
+    CanvasComponent
+  ],
+  declarations: [ HighlightDirective, TitleCasePipe, CanvasComponent ]
+})
+export class SharedModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/title-case.pipe.ts]" value="import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({name: 'titlecase', pure: true})
+/** Transform to Title Case: uppercase the first letter of the words in a string. */
+export class TitleCasePipe implements PipeTransform {
+  transform(input: string): string {
+    return input.length === 0 ? '' :
+      input.replace(/\w\S*/g, (txt => txt[0].toUpperCase() + txt.substr(1).toLowerCase() ));
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/twain/quote.ts]" value="export interface Quote {
+  id: number;
+  quote: string;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/twain/twain.component.ts]" value="import { Component, OnInit } from '@angular/core';
+
+import { Observable, of } from 'rxjs';
+import { catchError, startWith } from 'rxjs/operators';
+
+import { TwainService } from './twain.service';
+
+@Component({
+  selector: 'twain-quote',
+  template: `
+    <p class=&quot;twain&quot;><i>{{quote | async}}</i></p>
+    <button (click)=&quot;getQuote()&quot;>Next quote</button>
+    <p class=&quot;error&quot; *ngIf=&quot;errorMessage&quot;>{{ errorMessage }}</p>`,
+  styles: [
+    `.twain { font-style: italic; } .error { color: red; }`
+  ]
+
+})
+export class TwainComponent implements OnInit {
+  errorMessage!: string;
+  quote!: Observable<string>;
+
+  constructor(private twainService: TwainService) {}
+
+  ngOnInit(): void {
+    this.getQuote();
+  }
+
+  getQuote() {
+    this.errorMessage = '';
+    this.quote = this.twainService.getQuote().pipe(
+      startWith('...'),
+      catchError( (err: any) => {
+        // Wait a turn because errorMessage already set once this turn
+        setTimeout(() => this.errorMessage = err.message || err.toString());
+        return of('...'); // reset message to placeholder
+      })
+    );
+  }
+
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/twain/twain.data.ts]" value="import { Quote } from './quote';
+
+export const QUOTES: Quote[] = [
+  'Always do right. This will gratify some people and astonish the rest.',
+  'I have never let my schooling interfere with my education.',
+  'Don\'t go around saying the world owes you a living. The world owes you nothing. It was here first.',
+  'Whenever you find yourself on the side of the majority, it is time to pause and reflect.',
+  'If you tell the truth, you don\'t have to remember anything.',
+  'Clothes make the man. Naked people have little or no influence on society.',
+  'It\'s not the size of the dog in the fight, it\'s the size of the fight in the dog.',
+  'Truth is stranger than fiction, but it is because Fiction is obliged to stick to possibilities; Truth isn\'t.',
+  'The man who does not read good books has no advantage over the man who cannot read them.',
+  'Get your facts first, and then you can distort them as much as you please.',
+]
+.map((q, i) => ({ id: i + 1, quote: q }));
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/twain/twain.service.ts]" value="// Mark Twain Quote service gets quotes from server
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+
+import { Observable, of, throwError, Observer } from 'rxjs';
+import { concat, map, retryWhen, switchMap, take, tap } from 'rxjs/operators';
+
+import { Quote } from './quote';
+
+@Injectable()
+export class TwainService {
+  constructor(private http: HttpClient) { }
+
+  private nextId = 1;
+
+  getQuote(): Observable<string> {
+    return Observable.create((observer: Observer<number>) => observer.next(this.nextId++)).pipe(
+
+      // tap((id: number) => console.log(id)),
+      // tap((id: number) => { throw new Error('Simulated server error'); }),
+
+      switchMap((id: number) => this.http.get<Quote>(`api/quotes/${id}`)),
+      // tap((q : Quote) => console.log(q)),
+      map((q: Quote) => q.quote),
+
+      // `errors` is observable of http.get errors
+      retryWhen(errors => errors.pipe(
+        switchMap((error: HttpErrorResponse)  => {
+          if (error.status === 404) {
+            // Queried for quote that doesn't exist.
+            this.nextId = 1; // retry with quote id:1
+            return of(null); // signal OK to retry
+          }
+          // Some other HTTP error.
+          console.error(error);
+          return throwError('Cannot get Twain quotes from the server');
+        }),
+        take(2),
+        // If a second retry value, then didn't find id:1 and triggers the following error
+        concat(throwError('There are no Twain quotes')) // didn't find id:1
+      ))
+    );
+  }
+}
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/welcome/welcome.component.ts]" value="import { Component, OnInit } from '@angular/core';
+import { UserService } from '../model/user.service';
+
+@Component({
+  selector: 'app-welcome',
+  template: '<h3 class=&quot;welcome&quot;><i>{{welcome}}</i></h3>'
+})
+export class WelcomeComponent implements OnInit {
+  welcome = '';
+  constructor(private userService: UserService) { }
+
+  ngOnInit(): void {
+    this.welcome = this.userService.isLoggedIn ?
+      'Welcome, ' + this.userService.user.name : 'Please log in.';
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/model/testing/index.ts]" value="export * from './test-hero.service';
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/model/testing/test-hero.service.ts]" value="import { Injectable } from '@angular/core';
+
+import { Observable } from 'rxjs';
+import { asyncData } from '../../../testing';
+
+import { map } from 'rxjs/operators';
+
+// re-export for tester convenience
+export { Hero } from '../hero';
+export { HeroService } from '../hero.service';
+export { getTestHeroes } from './test-heroes';
+
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
+import { getTestHeroes } from './test-heroes';
+
+@Injectable()
+/**
+ * FakeHeroService pretends to make real http requests.
+ * implements only as much of HeroService as is actually consumed by the app
+ */
+export class TestHeroService extends HeroService {
+
+  constructor() {
+    // This is a fake testing service that won't be making HTTP
+    // requests so we can pass in `null` as the HTTP client.
+    super(null!);
+  }
+
+  heroes = getTestHeroes();
+  lastResult!: Observable<any>; // result from last method call
+
+  addHero(hero: Hero): Observable<Hero> {
+    throw new Error('Method not implemented.');
+  }
+
+  deleteHero(hero: number | Hero): Observable<Hero> {
+    throw new Error('Method not implemented.');
+  }
+
+  getHeroes(): Observable<Hero[]> {
+    return this.lastResult = asyncData(this.heroes);
+  }
+
+  getHero(id: number | string): Observable<Hero> {
+    if (typeof id === 'string') {
+      id = parseInt(id, 10);
+    }
+    const hero = this.heroes.find(h => h.id === id);
+    this.lastResult = asyncData(hero);
+    return this.lastResult;
+  }
+
+  updateHero(hero: Hero): Observable<Hero> {
+    return this.lastResult = this.getHero(hero.id).pipe(
+      map(h => {
+        if (h) {
+          return Object.assign(h, hero);
+        }
+        throw new Error(`Hero ${hero.id} not found`);
+      })
+    );
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/model/testing/test-heroes.ts]" value="import { Hero } from '../hero';
+
+/** return fresh array of test heroes */
+export function getTestHeroes(): Hero[] {
+  return [
+    {id: 41, name: 'Bob' },
+    {id: 42, name: 'Carol' },
+    {id: 43, name: 'Ted' },
+    {id: 44, name: 'Alice' },
+    {id: 45, name: 'Speedy' },
+    {id: 46, name: 'Stealthy' }
+  ];
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;aot&quot;: true,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;,
+              &quot;src/test.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;namedChunks&quot;: false,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true,
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;tsconfig.app.json&quot;,
+              &quot;tsconfig.spec.json&quot;,
+              &quot;e2e/tsconfig.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+}
+"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/**
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
+ */
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[tsconfig.json]" value="{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;downlevelIteration&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;importHelpers&quot;: true,
+    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;module&quot;: &quot;es2020&quot;,
+    &quot;lib&quot;: [
+      &quot;es2018&quot;,
+      &quot;dom&quot;
+    ]
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
+    &quot;strictInjectionParameters&quot;: true,
+    &quot;strictInputAccessModifiers&quot;: true,
+    &quot;strictTemplates&quot;: true,
+    &quot;enableIvy&quot;: true
+  }
+}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="testing"><input type="hidden" name="description" value="Angular Example - Heroes Test App"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~12.0.0&quot;,&quot;@angular/common&quot;:&quot;~12.0.0&quot;,&quot;@angular/compiler&quot;:&quot;~12.0.0&quot;,&quot;@angular/core&quot;:&quot;~12.0.0&quot;,&quot;@angular/forms&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~12.0.0&quot;,&quot;@angular/router&quot;:&quot;~12.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.7.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+        <script>
+          var embedded = 'ctl=1';
+          var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+          if (isEmbedded) {
+            var form = document.getElementById('mainForm');
+            var action = form.action;
+            var actionHasParams = action.indexOf('?') > -1;
+            var symbol = actionHasParams ? '&' : '?'
+            form.action = form.action + symbol + embedded;
+          }
+          document.getElementById("mainForm").submit();
+        </script>
+      </body></html>

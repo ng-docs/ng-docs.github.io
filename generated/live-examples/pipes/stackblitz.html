@@ -1,0 +1,938 @@
+<html lang="en"><head></head><body>
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/**
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
+ */
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  birthday = new Date(1988, 3, 15); // April 15, 1988 -- since month parameter is zero-based
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { ExponentialStrengthPipe } from './exponential-strength.pipe';
+import { FetchJsonPipe } from './fetch-json.pipe';
+import { FlyingHeroesComponent, FlyingHeroesImpureComponent } from './flying-heroes.component';
+import { FlyingHeroesImpurePipe, FlyingHeroesPipe } from './flying-heroes.pipe';
+import { HeroAsyncMessageComponent } from './hero-async-message.component';
+import { HeroBirthdayComponent } from './hero-birthday1.component';
+import { HeroBirthday2Component } from './hero-birthday2.component';
+import { HeroListComponent } from './hero-list.component';
+import { PowerBoostCalculatorComponent } from './power-boost-calculator.component';
+import { PowerBoosterComponent } from './power-booster.component';
+import { PrecedenceComponent } from './precedence.component';
+
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  declarations: [
+    AppComponent,
+    FlyingHeroesComponent,
+    FlyingHeroesImpureComponent,
+    HeroAsyncMessageComponent,
+    HeroBirthdayComponent,
+    HeroBirthday2Component,
+    HeroListComponent,
+    PowerBoosterComponent,
+    PowerBoostCalculatorComponent,
+    FlyingHeroesPipe,
+    FlyingHeroesImpurePipe,
+    FetchJsonPipe,
+    ExponentialStrengthPipe,
+    PrecedenceComponent
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/exponential-strength.pipe.ts]" value="import { Pipe, PipeTransform } from '@angular/core';
+/*
+ * Raise the value exponentially
+ * Takes an exponent argument that defaults to 1.
+ * Usage:
+ *   value | exponentialStrength:exponent
+ * Example:
+ *   {{ 2 | exponentialStrength:10 }}
+ *   formats to: 1024
+*/
+@Pipe({name: 'exponentialStrength'})
+export class ExponentialStrengthPipe implements PipeTransform {
+  transform(value: number, exponent = 1): number {
+    return Math.pow(value, exponent);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/fetch-json.pipe.ts]" value="import { HttpClient } from '@angular/common/http';
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'fetch',
+  pure: false
+})
+export class FetchJsonPipe implements PipeTransform {
+  private cachedData: any = null;
+  private cachedUrl = '';
+
+  constructor(private http: HttpClient) { }
+
+  transform(url: string): any {
+    if (url !== this.cachedUrl) {
+      this.cachedData = null;
+      this.cachedUrl = url;
+      this.http.get(url).subscribe(result => this.cachedData = result);
+    }
+
+    return this.cachedData;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/flying-heroes.component.ts]" value="import { Component } from '@angular/core';
+
+import { HEROES } from './heroes';
+
+@Component({
+  selector: 'app-flying-heroes',
+  templateUrl: './flying-heroes.component.html',
+  styles: ['#flyers, #all {font-style: italic}']
+})
+export class FlyingHeroesComponent {
+  heroes: any[] = [];
+  canFly = true;
+  mutate = true;
+  title = 'Flying Heroes (pure pipe)';
+
+  constructor() { this.reset(); }
+
+  addHero(name: string) {
+    name = name.trim();
+    if (!name) { return; }
+    const hero = {name, canFly: this.canFly};
+    if (this.mutate) {
+    // Pure pipe won't update display because heroes array reference is unchanged
+    // Impure pipe will display
+    this.heroes.push(hero);
+    } else {
+      // Pipe updates display because heroes array is a new object
+      this.heroes = this.heroes.concat(hero);
+    }
+  }
+
+  reset() { this.heroes = HEROES.slice(); }
+}
+
+////// Identical except for impure pipe //////
+@Component({
+  selector: 'app-flying-heroes-impure',
+  templateUrl: './flying-heroes-impure.component.html',
+  styles: ['.flyers, .all {font-style: italic}'],
+})
+export class FlyingHeroesImpureComponent extends FlyingHeroesComponent {
+  title = 'Flying Heroes (impure pipe)';
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/flying-heroes.pipe.ts]" value="/* tslint:disable use-pipe-transform-interface */
+import { Pipe, PipeTransform } from '@angular/core';
+
+import { Hero } from './heroes';
+
+@Pipe({ name: 'flyingHeroes' })
+export class FlyingHeroesPipe implements PipeTransform {
+  transform(allHeroes: Hero[]) {
+    return allHeroes.filter(hero => hero.canFly);
+  }
+}
+
+/////// Identical except for the pure flag
+@Pipe({
+  name: 'flyingHeroesImpure',
+  pure: false
+})
+export class FlyingHeroesImpurePipe extends FlyingHeroesPipe {}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero-async-message.component.ts]" value="import { Component } from '@angular/core';
+
+import { Observable, interval } from 'rxjs';
+import { map, take } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-hero-message',
+  template: `
+    <h2>Async Hero Message and AsyncPipe</h2>
+    <p>Message: {{ message$ | async }}</p>
+    <button (click)=&quot;resend()&quot;>Resend</button>`,
+})
+export class HeroAsyncMessageComponent {
+  message$: Observable<string>;
+
+  private messages = [
+    'You are my hero!',
+    'You are the best hero!',
+    'Will you be my hero?'
+  ];
+
+  constructor() {
+    this.message$ = this.getResendObservable();
+  }
+
+  resend() {
+    this.message$ = this.getResendObservable();
+  }
+
+  private getResendObservable() {
+    return interval(500).pipe(
+      map(i => this.messages[i]),
+      take(this.messages.length)
+    );
+  }
+}
+
+// Alternative message$ formula:
+// this.message$ = fromArray(this.messages).pipe(
+//   map(message => timer(500),
+//   map(() => message)),
+//   concatAll()
+// );
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero-birthday1.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-birthday',
+  template: `<p>The hero's birthday is {{ birthday | date }}</p>`
+})
+export class HeroBirthdayComponent {
+  birthday = new Date(1988, 3, 15); // April 15, 1988 -- since month parameter is zero-based
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero-birthday2.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-birthday2',
+  template: `
+    <p>The hero's birthday is {{ birthday | date:format }}</p>
+    <button (click)=&quot;toggleFormat()&quot;>Toggle Format</button>
+  `
+})
+export class HeroBirthday2Component {
+  birthday = new Date(1988, 3, 15); // April 15, 1988 -- since month parameter is zero-based
+  toggle = true; // start with true == shortDate
+
+  get format()   { return this.toggle ? 'shortDate' : 'fullDate'; }
+  toggleFormat() { this.toggle = !this.toggle; }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/hero-list.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-list',
+  template: `
+    <h2>Heroes from JSON File</h2>
+
+    <div *ngFor=&quot;let hero of ('assets/heroes.json' | fetch) &quot;>
+      {{hero.name}}
+    </div>
+
+    <p>Heroes as JSON:
+      {{'assets/heroes.json' | fetch | json}}
+    </p>`
+})
+export class HeroListComponent { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/heroes.ts]" value="export interface Hero { name: string; canFly: boolean; }
+export const HEROES: Hero[] =  [
+  {name: 'Windstorm', canFly: true},
+  {name: 'Bombasto',  canFly: false},
+  {name: 'Magneto',   canFly: false},
+  {name: 'Tornado',   canFly: true}
+];
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/power-boost-calculator.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-power-boost-calculator',
+  template: `
+    <h2>Power Boost Calculator</h2>
+    <div>Normal power: <input [(ngModel)]=&quot;power&quot;></div>
+    <div>Boost factor: <input [(ngModel)]=&quot;factor&quot;></div>
+    <p>
+      Super Hero Power: {{power | exponentialStrength: factor}}
+    </p>
+  `
+})
+export class PowerBoostCalculatorComponent {
+  power = 5;
+  factor = 1;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/power-booster.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-power-booster',
+  template: `
+    <h2>Power Booster</h2>
+    <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
+  `
+})
+export class PowerBoosterComponent { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/precedence.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-precedence',
+  templateUrl: './precedence.component.html',
+  styles: []
+})
+
+export class PrecedenceComponent {
+  title = 'Pipes and Precedence';
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #264D73;
+  font-size: 2.5rem;
+}
+h2, h3 {
+  color: #444;
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.3rem;
+}
+body {
+  padding: .5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+body, input[text] {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+a {
+  cursor: pointer;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color:  #42545C;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+input[type=&quot;text&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <title>Pipes</title>
+    <base href=&quot;/&quot;>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/app.component.html]" value="<a id=&quot;toc&quot;></a>
+<h1>Pipes</h1>
+<a href=&quot;#happy-birthday1&quot;>Happy Birthday v1</a><br>
+<a href=&quot;#birthday-date-pipe&quot;>Birthday DatePipe</a><br>
+<a href=&quot;#happy-birthday2&quot;>Happy Birthday v2</a><br>
+<a href=&quot;#birthday-pipe-chaining&quot;>Birthday Pipe Chaining</a><br>
+<a href=&quot;#power-booster&quot;>Power Booster custom pipe</a><br>
+<a href=&quot;#power-boost-calc&quot;>Power Boost Calculator custom pipe with params</a><br>
+<a href=&quot;#flying-heroes&quot;>Flying Heroes filter pipe (pure)</a><br>
+<a href=&quot;#flying-heroes-impure&quot;>Flying Heroes filter pipe (impure)</a><br>
+<a href=&quot;#hero-message&quot;>Async Hero Message and AsyncPipe</a><br>
+<a href=&quot;#hero-list&quot;>Hero List with caching FetchJsonPipe</a><br>
+<a href=&quot;#pipe-precedence&quot;>Pipes and Precedence</a><br>
+
+
+<hr>
+<a id=&quot;happy-birthday1&quot;></a>
+<h2>Hero Birthday v1</h2>
+<app-hero-birthday></app-hero-birthday>
+
+<hr>
+<a id=&quot;birthday-date-pipe&quot;></a>
+<h2>Birthday DatePipe</h2>
+<p>The hero's birthday is {{ birthday | date }}</p>
+
+<p>The hero's birthday is {{ birthday | date:&quot;MM/dd/yy&quot; }} </p>
+
+<hr>
+<a id=&quot;happy-birthday2&quot;></a>
+<h2>Hero Birthday v2</h2>
+<app-hero-birthday2></app-hero-birthday2>
+
+<hr>
+<a id=&quot;birthday-pipe-chaining&quot;></a>
+<h2>Birthday Pipe Chaining</h2>
+<p>
+  The chained hero's birthday is
+  {{ birthday | date | uppercase}}
+</p>
+
+<p>
+  The chained hero's birthday is
+  {{  birthday | date:'fullDate' | uppercase}}
+</p>
+<p>
+  The chained hero's birthday is
+  {{ ( birthday | date:'fullDate' ) | uppercase}}
+</p>
+<hr>
+<a id=&quot;power-booster&quot;></a>
+<app-power-booster></app-power-booster>
+
+<hr>
+<a id=&quot;power-boost-calc&quot;></a>
+<app-power-boost-calculator>loading</app-power-boost-calculator>
+
+<hr>
+<a id=&quot;flying-heroes&quot;></a>
+<app-flying-heroes></app-flying-heroes>
+
+<hr>
+<a id=&quot;flying-heroes-impure&quot;></a>
+<app-flying-heroes-impure></app-flying-heroes-impure>
+
+<hr>
+<a id=&quot;hero-message&quot;></a>
+<!-- async examples at the top so can see them in action -->
+<app-hero-message></app-hero-message>
+
+<hr>
+<a id=&quot;hero-list&quot;></a>
+<app-hero-list></app-hero-list>
+
+<hr>
+<a id=&quot;pipe-precedence&quot;></a>
+<app-precedence></app-precedence>
+<hr>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/flying-heroes-impure.component.html]" value="<h2>{{title}}</h2>
+<p>
+New hero:
+  <input type=&quot;text&quot; #box
+          (keyup.enter)=&quot;addHero(box.value); box.value=''&quot;
+          placeholder=&quot;hero name&quot;>
+  <input id=&quot;can-fly&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;canFly&quot;> can fly
+</p>
+<p>
+  <input id=&quot;mutate&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;mutate&quot;>Mutate array
+  <button (click)=&quot;reset()&quot;>Reset</button>
+</p>
+
+<h4>Heroes who fly (piped)</h4>
+<div id=&quot;flyers&quot;>
+  <div *ngFor=&quot;let hero of (heroes | flyingHeroesImpure)&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+<h4>All Heroes (no pipe)</h4>
+<div id=&quot;all&quot;>
+  <div *ngFor=&quot;let hero of heroes&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/flying-heroes.component.html]" value="<h2>{{title}}</h2>
+<p>
+New hero:
+  <input type=&quot;text&quot; #box
+          (keyup.enter)=&quot;addHero(box.value); box.value=''&quot;
+          placeholder=&quot;hero name&quot;>
+  <input id=&quot;can-fly&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;canFly&quot;> can fly
+</p>
+<p>
+  <input id=&quot;mutate&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;mutate&quot;>Mutate array
+  <button (click)=&quot;reset()&quot;>Reset</button>
+</p>
+
+<h4>Heroes who fly (piped)</h4>
+<div id=&quot;flyers&quot;>
+  <div *ngFor=&quot;let hero of (heroes | flyingHeroes)&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+<h4>All Heroes (no pipe)</h4>
+<div id=&quot;all&quot;>
+  <div *ngFor=&quot;let hero of heroes&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/precedence.component.html]" value="<h2>{{title}}</h2>
+
+<p>Basic uppercase pipe (no precedence considerations necessary): {{ 'text' | uppercase }}</p>
+<p>The following shows that a pipe has higher precedence than a ternary operator. If the pipe precedence were lower than the ternary operator precedence, the output would be 'TRUE'. Instead it is: {{ true ? 'true' : 'false' | uppercase }}</p>
+<p>The following shows how parentheses help Angular evaluate the whole statement:
+<!-- use parentheses in the third operand so the pipe applies to the whole expression -->
+{{ (true ? 'true' : 'false') | uppercase }}
+</p>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: [],
+            &quot;vendorChunk&quot;: true,
+            &quot;extractLicenses&quot;: false,
+            &quot;buildOptimizer&quot;: false,
+            &quot;sourceMap&quot;: true,
+            &quot;optimization&quot;: false,
+            &quot;namedChunks&quot;: true
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;namedChunks&quot;: false,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true,
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;tsconfig.app.json&quot;,
+              &quot;tsconfig.spec.json&quot;,
+              &quot;e2e/tsconfig.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+}
+"><input type="hidden" name="files[tsconfig.json]" value="{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;downlevelIteration&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;importHelpers&quot;: true,
+    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;module&quot;: &quot;es2020&quot;,
+    &quot;lib&quot;: [
+      &quot;es2018&quot;,
+      &quot;dom&quot;
+    ]
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
+    &quot;strictInjectionParameters&quot;: true,
+    &quot;strictInputAccessModifiers&quot;: true,
+    &quot;strictTemplates&quot;: true,
+    &quot;enableIvy&quot;: true
+  }
+}"><input type="hidden" name="files[src/assets/heroes.json]" value="[
+  {&quot;name&quot;: &quot;Windstorm&quot;, &quot;canFly&quot;: true},
+  {&quot;name&quot;: &quot;Bombasto&quot;,  &quot;canFly&quot;: false},
+  {&quot;name&quot;: &quot;Magneto&quot;,   &quot;canFly&quot;: false},
+  {&quot;name&quot;: &quot;Tornado&quot;,   &quot;canFly&quot;: true}
+]
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="pipe"><input type="hidden" name="description" value="Angular Example - Pipes"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~12.0.0&quot;,&quot;@angular/common&quot;:&quot;~12.0.0&quot;,&quot;@angular/compiler&quot;:&quot;~12.0.0&quot;,&quot;@angular/core&quot;:&quot;~12.0.0&quot;,&quot;@angular/forms&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~12.0.0&quot;,&quot;@angular/router&quot;:&quot;~12.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.7.0&quot;}"></form>
+        <script>
+          var embedded = 'ctl=1';
+          var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+          if (isEmbedded) {
+            var form = document.getElementById('mainForm');
+            var action = form.action;
+            var actionHasParams = action.indexOf('?') > -1;
+            var symbol = actionHasParams ? '&' : '?'
+            form.action = form.action + symbol + embedded;
+          }
+          document.getElementById("mainForm").submit();
+        </script>
+      </body></html>

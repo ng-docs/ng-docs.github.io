@@ -1,0 +1,913 @@
+<html lang="en"><head></head><body>
+        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
+ * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/** IE11 requires the following for NgClass support on SVG elements */
+// import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/**
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
+ */
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `<h1>Form validation example</h1>
+             <app-hero-form-template></app-hero-form-template>
+             <hr>
+             <app-hero-form-reactive></app-hero-form-reactive>`
+})
+export class AppComponent { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { HeroFormTemplateComponent } from './template/hero-form-template.component';
+import { HeroFormReactiveComponent } from './reactive/hero-form-reactive.component';
+import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
+import { IdentityRevealedValidatorDirective } from './shared/identity-revealed.directive';
+import { UniqueAlterEgoValidatorDirective } from './shared/alter-ego.directive';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  declarations: [
+    AppComponent,
+    HeroFormTemplateComponent,
+    HeroFormReactiveComponent,
+    ForbiddenValidatorDirective,
+    IdentityRevealedValidatorDirective,
+    UniqueAlterEgoValidatorDirective
+  ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.2.ts]" value="/* tslint:disable: member-ordering forin */
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { forbiddenNameValidator } from '../shared/forbidden-name.directive';
+import { UniqueAlterEgoValidator } from '../shared/alter-ego.directive';
+
+@Component({
+  selector: 'app-hero-form-reactive',
+  templateUrl: './hero-form-reactive.component.html',
+  styleUrls: ['./hero-form-reactive.component.css'],
+})
+export class HeroFormReactiveComponent implements OnInit {
+
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+
+  hero = { name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0] };
+
+  heroForm: FormGroup;
+
+  ngOnInit(): void {
+    this.heroForm = new FormGroup({
+      name: new FormControl(this.hero.name, [
+        Validators.required,
+        Validators.minLength(4),
+        forbiddenNameValidator(/bob/i)
+      ]),
+      alterEgo: new FormControl(this.hero.alterEgo, {
+        asyncValidators: [this.alterEgoValidator.validate.bind(this.alterEgoValidator)],
+        updateOn: 'blur'
+      }),
+      power: new FormControl(this.hero.power, Validators.required)
+    });
+  }
+
+  get name() { return this.heroForm.get('name'); }
+
+  get power() { return this.heroForm.get('power'); }
+
+  get alterEgo() { return this.heroForm.get('alterEgo'); }
+
+  constructor(private alterEgoValidator: UniqueAlterEgoValidator) {}
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.ts]" value="/* tslint:disable: member-ordering forin */
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { forbiddenNameValidator } from '../shared/forbidden-name.directive';
+import { identityRevealedValidator } from '../shared/identity-revealed.directive';
+import { UniqueAlterEgoValidator } from '../shared/alter-ego.directive';
+
+@Component({
+  selector: 'app-hero-form-reactive',
+  templateUrl: './hero-form-reactive.component.html',
+  styleUrls: ['./hero-form-reactive.component.css'],
+})
+export class HeroFormReactiveComponent implements OnInit {
+
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+
+  hero = { name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0] };
+
+  heroForm!: FormGroup;
+
+  ngOnInit(): void {
+    this.heroForm = new FormGroup({
+      name: new FormControl(this.hero.name, [
+        Validators.required,
+        Validators.minLength(4),
+        forbiddenNameValidator(/bob/i)
+      ]),
+      alterEgo: new FormControl(this.hero.alterEgo, {
+        asyncValidators: [this.alterEgoValidator.validate.bind(this.alterEgoValidator)],
+        updateOn: 'blur'
+      }),
+      power: new FormControl(this.hero.power, Validators.required)
+    },  { validators: identityRevealedValidator }); // <-- add custom validator at the FormGroup level
+  }
+
+  get name() { return this.heroForm.get('name')!; }
+
+  get power() { return this.heroForm.get('power')!; }
+
+  get alterEgo() { return this.heroForm.get('alterEgo')!; }
+
+  constructor(private alterEgoValidator: UniqueAlterEgoValidator) { }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/alter-ego.directive.ts]" value="import { Directive, forwardRef, Injectable } from '@angular/core';
+import {
+  AsyncValidator,
+  AbstractControl,
+  NG_ASYNC_VALIDATORS,
+  ValidationErrors
+} from '@angular/forms';
+import { catchError, map } from 'rxjs/operators';
+import { HeroesService } from './heroes.service';
+import { Observable, of } from 'rxjs';
+
+@Injectable({ providedIn: 'root' })
+export class UniqueAlterEgoValidator implements AsyncValidator {
+  constructor(private heroesService: HeroesService) {}
+
+  validate(
+    ctrl: AbstractControl
+  ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
+    return this.heroesService.isAlterEgoTaken(ctrl.value).pipe(
+      map(isTaken => (isTaken ? { uniqueAlterEgo: true } : null)),
+      catchError(() => of(null))
+    );
+  }
+}
+
+@Directive({
+  selector: '[appUniqueAlterEgo]',
+  providers: [
+    {
+      provide: NG_ASYNC_VALIDATORS,
+      useExisting: forwardRef(() => UniqueAlterEgoValidator),
+      multi: true
+    }
+  ]
+})
+export class UniqueAlterEgoValidatorDirective {
+  constructor(private validator: UniqueAlterEgoValidator) {}
+
+  validate(control: AbstractControl) {
+    this.validator.validate(control);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/forbidden-name.directive.ts]" value="import { Directive, Input } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
+
+/** A hero's name can't match the given regular expression */
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const forbidden = nameRe.test(control.value);
+    return forbidden ? {forbiddenName: {value: control.value}} : null;
+  };
+}
+
+@Directive({
+  selector: '[appForbiddenName]',
+  providers: [{provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true}]
+})
+export class ForbiddenValidatorDirective implements Validator {
+  @Input('appForbiddenName') forbiddenName = '';
+
+  validate(control: AbstractControl): ValidationErrors | null {
+    return this.forbiddenName ? forbiddenNameValidator(new RegExp(this.forbiddenName, 'i'))(control)
+                              : null;
+  }
+}
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/heroes.service.ts]" value="import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+
+const ALTER_EGOS = ['Eric'];
+
+@Injectable({ providedIn: 'root' })
+export class HeroesService {
+  isAlterEgoTaken(alterEgo: string): Observable<boolean> {
+    const isTaken = ALTER_EGOS.includes(alterEgo);
+
+    return of(isTaken).pipe(delay(400));
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/shared/identity-revealed.directive.ts]" value="import { Directive } from '@angular/core';
+import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
+
+/** A hero's name can't match the hero's alter ego */
+export const identityRevealedValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+  const name = control.get('name');
+  const alterEgo = control.get('alterEgo');
+
+  return name &amp;&amp; alterEgo &amp;&amp; name.value === alterEgo.value ? { identityRevealed: true } : null;
+};
+
+@Directive({
+  selector: '[appIdentityRevealed]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: IdentityRevealedValidatorDirective, multi: true }]
+})
+export class IdentityRevealedValidatorDirective implements Validator {
+  validate(control: AbstractControl): ValidationErrors | null {
+    return identityRevealedValidator(control);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/template/hero-form-template.component.ts]" value="/* tslint:disable: member-ordering */
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-form-template',
+  templateUrl: './hero-form-template.component.html',
+  styleUrls: ['./hero-form-template.component.css'],
+})
+export class HeroFormTemplateComponent {
+
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+
+  hero = {name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0]};
+
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #264D73;
+  font-size: 2.5rem;
+}
+h2, h3 {
+  color: #444;
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.3rem;
+}
+body {
+  padding: .5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+body, input[text] {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+a {
+  cursor: pointer;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color:  #42545C;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+input[type=&quot;text&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/assets/forms.css]" value="
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.alert div {
+  background-color: #fed3d3;
+  color: #820000;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+select {
+  width: 100%;
+  padding: .5rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.css]" value=".cross-validation-error input {
+  border-left: 5px solid red;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/app/template/hero-form-template.component.css]" value=".cross-validation-error input {
+  border-left: 5px solid #a94442;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="files[src/index.html]" value="<html lang=&quot;en&quot;>
+  <head>
+    <title>Hero Form with Validation</title>
+    <base href=&quot;/&quot;>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/forms.css&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/reactive/hero-form-reactive.component.html]" value="<div class=&quot;container&quot;>
+
+  <h2>Reactive Form</h2>
+
+  <form [formGroup]=&quot;heroForm&quot; #formDir=&quot;ngForm&quot;>
+
+    <div [hidden]=&quot;formDir.submitted&quot;>
+
+      <div class=&quot;cross-validation&quot; [class.cross-validation-error]=&quot;heroForm.errors?.identityRevealed &amp;&amp; (heroForm.touched || heroForm.dirty)&quot;>
+        <div class=&quot;form-group&quot;>
+
+          <label for=&quot;name&quot;>Name</label>
+          <input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+                formControlName=&quot;name&quot; required>
+
+          <div *ngIf=&quot;name.invalid &amp;&amp; (name.dirty || name.touched)&quot;
+              class=&quot;alert alert-danger&quot;>
+
+            <div *ngIf=&quot;name.errors?.required&quot;>
+              Name is required.
+            </div>
+            <div *ngIf=&quot;name.errors?.minlength&quot;>
+              Name must be at least 4 characters long.
+            </div>
+            <div *ngIf=&quot;name.errors?.forbiddenName&quot;>
+              Name cannot be Bob.
+            </div>
+          </div>
+        </div>
+
+        <div class=&quot;form-group&quot;>
+          <label for=&quot;alterEgo&quot;>Alter Ego</label>
+          <input type=&quot;text&quot; id=&quot;alterEgo&quot; class=&quot;form-control&quot;
+              formControlName=&quot;alterEgo&quot;>
+
+          <div *ngIf=&quot;alterEgo.pending&quot;>Validating...</div>
+          <div *ngIf=&quot;alterEgo.invalid&quot; class=&quot;alert alert-danger alter-ego-errors&quot;>
+            <div *ngIf=&quot;alterEgo.errors?.uniqueAlterEgo&quot;>
+              Alter ego is already taken.
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf=&quot;heroForm.errors?.identityRevealed &amp;&amp; (heroForm.touched || heroForm.dirty)&quot; class=&quot;cross-validation-error-message alert alert-danger&quot;>
+            Name cannot match alter ego.
+        </div>
+      </div>
+
+      <div class=&quot;form-group&quot;>
+        <label for=&quot;power&quot;>Hero Power</label>
+        <select id=&quot;power&quot; class=&quot;form-control&quot;
+            formControlName=&quot;power&quot; required>
+          <option *ngFor=&quot;let p of powers&quot; [value]=&quot;p&quot;>{{p}}</option>
+        </select>
+
+        <div *ngIf=&quot;power.invalid &amp;&amp; power.touched&quot; class=&quot;alert alert-danger&quot;>
+          <div *ngIf=&quot;power.errors?.required&quot;>Power is required.</div>
+        </div>
+      </div>
+
+      <p>Complete the form to enable the Submit button.</p>
+      <button type=&quot;submit&quot;
+              class=&quot;btn btn-default&quot;
+              [disabled]=&quot;heroForm.invalid&quot;>Submit</button>
+      <button type=&quot;button&quot; class=&quot;btn btn-default&quot;
+             (click)=&quot;formDir.resetForm({})&quot;>Reset</button>
+    </div>
+  </form>
+
+  <div class=&quot;submitted-message&quot; *ngIf=&quot;formDir.submitted&quot;>
+    <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
+    <button (click)=&quot;formDir.resetForm({})&quot;>Add new hero</button>
+  </div>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[src/app/template/hero-form-template.component.html]" value="<div>
+
+  <h2>Template-Driven Form</h2>
+  <form #heroForm=&quot;ngForm&quot; appIdentityRevealed>
+    <div [hidden]=&quot;heroForm.submitted&quot;>
+      <div class=&quot;cross-validation&quot; [class.cross-validation-error]=&quot;heroForm.errors?.identityRevealed &amp;&amp; (heroForm.touched || heroForm.dirty)&quot;>
+        <div class=&quot;form-group&quot;>
+          <label for=&quot;name&quot;>Name</label>
+          <input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; class=&quot;form-control&quot;
+                required minlength=&quot;4&quot; appForbiddenName=&quot;bob&quot;
+                [(ngModel)]=&quot;hero.name&quot; #name=&quot;ngModel&quot;>
+
+          <div *ngIf=&quot;name.invalid &amp;&amp; (name.dirty || name.touched)&quot;
+              class=&quot;alert&quot;>
+
+            <div *ngIf=&quot;name.errors?.required&quot;>
+              Name is required.
+            </div>
+            <div *ngIf=&quot;name.errors?.minlength&quot;>
+              Name must be at least 4 characters long.
+            </div>
+            <div *ngIf=&quot;name.errors?.forbiddenName&quot;>
+              Name cannot be Bob.
+            </div>
+
+          </div>
+        </div>
+
+        <div class=&quot;form-group&quot;>
+          <label for=&quot;alterEgo&quot;>Alter Ego</label>
+          <input type=&quot;text&quot;
+                 id=&quot;alterEgo&quot;
+                 name=&quot;alterEgo&quot;
+                 #alterEgo=&quot;ngModel&quot;
+                 [(ngModel)]=&quot;hero.alterEgo&quot;
+                 [ngModelOptions]=&quot;{ updateOn: 'blur' }&quot;
+                 appUniqueAlterEgo>
+
+          <div *ngIf=&quot;alterEgo.pending&quot;>Validating...</div>
+          <div *ngIf=&quot;alterEgo.invalid&quot; class=&quot;alert alter-ego-errors&quot;>
+            <div *ngIf=&quot;alterEgo.errors?.uniqueAlterEgo&quot;>
+              Alter ego is already taken.
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf=&quot;heroForm.errors?.identityRevealed &amp;&amp; (heroForm.touched || heroForm.dirty)&quot; class=&quot;cross-validation-error-message alert&quot;>
+            Name cannot match alter ego.
+        </div>
+      </div>
+
+      <div class=&quot;form-group&quot;>
+        <label for=&quot;power&quot;>Hero Power</label>
+        <select id=&quot;power&quot;
+                name=&quot;power&quot;
+                required [(ngModel)]=&quot;hero.power&quot;
+                #power=&quot;ngModel&quot;>
+          <option *ngFor=&quot;let p of powers&quot; [value]=&quot;p&quot;>{{p}}</option>
+        </select>
+
+        <div *ngIf=&quot;power.errors &amp;&amp; power.touched&quot; class=&quot;alert&quot;>
+          <div *ngIf=&quot;power.errors.required&quot;>Power is required.</div>
+        </div>
+      </div>
+
+      <p>Complete the form to enable the Submit button.</p>
+      <button type=&quot;submit&quot;
+              [disabled]=&quot;heroForm.invalid&quot;>Submit</button>
+      <button type=&quot;button&quot;
+              (click)=&quot;heroForm.resetForm({})&quot;>Reset</button>
+    </div>
+
+    <div class=&quot;submitted-message&quot; *ngIf=&quot;heroForm.submitted&quot;>
+      <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
+      <button (click)=&quot;heroForm.resetForm({})&quot;>Add new hero</button>
+    </div>
+  </form>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="files[angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: [],
+            &quot;vendorChunk&quot;: true,
+            &quot;extractLicenses&quot;: false,
+            &quot;buildOptimizer&quot;: false,
+            &quot;sourceMap&quot;: true,
+            &quot;optimization&quot;: false,
+            &quot;namedChunks&quot;: true
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;optimization&quot;: true,
+              &quot;outputHashing&quot;: &quot;all&quot;,
+              &quot;sourceMap&quot;: false,
+              &quot;namedChunks&quot;: false,
+              &quot;extractLicenses&quot;: true,
+              &quot;vendorChunk&quot;: false,
+              &quot;buildOptimizer&quot;: true,
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            }
+          }
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;lint&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
+          &quot;options&quot;: {
+            &quot;tsConfig&quot;: [
+              &quot;tsconfig.app.json&quot;,
+              &quot;tsconfig.spec.json&quot;,
+              &quot;e2e/tsconfig.json&quot;
+            ],
+            &quot;exclude&quot;: [
+              &quot;**/node_modules/**&quot;
+            ]
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+}
+"><input type="hidden" name="files[tsconfig.json]" value="{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;downlevelIteration&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;importHelpers&quot;: true,
+    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;module&quot;: &quot;es2020&quot;,
+    &quot;lib&quot;: [
+      &quot;es2018&quot;,
+      &quot;dom&quot;
+    ]
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
+    &quot;strictInjectionParameters&quot;: true,
+    &quot;strictInputAccessModifiers&quot;: true,
+    &quot;strictTemplates&quot;: true,
+    &quot;enableIvy&quot;: true
+  }
+}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="description" value="Angular Example - Validation"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~12.0.0&quot;,&quot;@angular/common&quot;:&quot;~12.0.0&quot;,&quot;@angular/compiler&quot;:&quot;~12.0.0&quot;,&quot;@angular/core&quot;:&quot;~12.0.0&quot;,&quot;@angular/forms&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~12.0.0&quot;,&quot;@angular/router&quot;:&quot;~12.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;}"></form>
+        <script>
+          var embedded = 'ctl=1';
+          var isEmbedded = window.location.search.indexOf(embedded) > -1;
+
+          if (isEmbedded) {
+            var form = document.getElementById('mainForm');
+            var action = form.action;
+            var actionHasParams = action.indexOf('?') > -1;
+            var symbol = actionHasParams ? '&' : '?'
+            form.action = form.action + symbol + embedded;
+          }
+          document.getElementById("mainForm").submit();
+        </script>
+      </body></html>

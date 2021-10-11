@@ -1,0 +1,5 @@
+{
+  "id": "api/core/inject",
+  "title": "core/inject (disambiguation)",
+  "contents": "<h1 id=\"coreinject-disambiguation\">core/inject (disambiguation)</h1>\n\n\n\n<div class=\"content\">\n  There are multiple pages that match this path:\n  <ul>\n    <li>\n      <a href=\"api/core/inject-0\">core/inject</a>\n      <p translation-result=\"on\">从当前活动的注入器中注入令牌。</p><p translation-origin=\"off\">Injects a token from the currently active injector.</p>\n\n\n    </li><li>\n      <a href=\"api/core/Inject-1\">core/Inject</a>\n      <p translation-result=\"on\">类构造函数中依赖项参数上的参数装饰器，用于指定依赖项的自定义提供者。</p><p translation-origin=\"off\">Parameter decorator on a dependency parameter of a class constructor\nthat specifies a custom provider of the dependency.</p>\n\n\n    </li>\n  </ul>\n</div>\n"
+}
