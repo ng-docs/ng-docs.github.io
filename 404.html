@@ -82,56 +82,37 @@
 <style>html{font-size:62.5%;}body{font-family:Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;margin:0;color:#444;font-size:16px;font-size:1.6rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}body,html{height:100%;}body{background-color:#fff;}@media print{*{box-shadow:none!important;}body{background:none!important;}}</style><link rel="stylesheet" href="styles.26c7acdc1e2d44a6f9e6.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.26c7acdc1e2d44a6f9e6.css"></noscript></head>
 
 <body>
+
+  <aio-shell></aio-shell>
+
+  <noscript>
+    <div class="background-sky hero"></div>
+    <section id="intro" style="text-shadow: 1px 1px #1976d2;">
+      <div class="hero-logo">
+        <img src="assets/images/logos/angular/angular.svg" width="250" height="250" alt="Angular">
+      </div>
+      <div class="homepage-container">
+        <div class="hero-headline">现代 Web 开发平台</div>
+      </div>
+    </section>
+    <h2 style="color: red; margin-top: 40px; position: relative; text-align: center; text-shadow: 1px 1px #fafafa;">
+      <b><i>该网站需要浏览器支持 JavaScript </i></b>
+    </h2>
+  </noscript>
+
   <!--
-    This content replaces the `<body>` content of `index.html` to generate our custom `404.html` page.
-    The content must visually and structurally resemble the resulting HTML of the main app for not
-    found pages (e.g. https://angular.io/not/exist.ing).
+    Custom Elements polyfills required for browsers that natively support Custom Elements but not
+    ES2015 modules. (See `custom-elements-es5-polyfills.js` for more info.)
+
+    NOTE:
+    The polyfills here will be loaded before the ones in `polyfills.ts` (including
+    `@webcomponents/custom-elements`). This is fine, because the polyfills here are only needed on
+    browsers that natively support Custom Elements, on which `@webcomponents/custom-elements` will
+    be a no-op (so the order of loading does not matter).
   -->
+  <script src="generated/js/custom-elements-es5-polyfills.js" nomodule></script>
 
-  <style>
-    .mat-toolbar-row{display:flex;box-sizing:border-box;padding:0 16px;width:100%;flex-direction:row;align-items:center;white-space:nowrap}
-    .mat-toolbar-row{height:64px}
-    @media (max-width:600px){.mat-toolbar-row{height:56px}}
-    .nav-link.home{margin-left:24px}
-  </style>
+<script src="runtime-es2015.21b5bccd7c09e26ec8c2.js" type="module"></script><script src="runtime-es5.21b5bccd7c09e26ec8c2.js" nomodule defer></script><script src="polyfills-es5.bdf52e612630cfccaf6d.js" nomodule defer></script><script src="polyfills-es2015.e88e400822cab8b930d3.js" type="module"></script><script src="main-es2015.2bf9ef987c7f9c062694.js" type="module"></script><script src="main-es5.2bf9ef987c7f9c062694.js" nomodule defer></script>
 
-  <aio-shell class="mode-stable page-file-not-found folder-file-not-found view- aio-notification-hide">
 
-    <mat-toolbar class="app-toolbar no-print mat-toolbar mat-primary">
-      <mat-toolbar-row class="mat-toolbar-row">
-        <a class="nav-link home" href="/">
-          <img alt="Home" height="40" src="assets/images/logos/angular/logo-nav@2x.png" title="Home" width="150">
-        </a>
-      </mat-toolbar-row>
-    </mat-toolbar>
-
-    <mat-sidenav-container class="sidenav-container mat-drawer-container mat-sidenav-container" role="main">
-      <mat-sidenav-content class="mat-drawer-content mat-sidenav-content">
-        <section class="sidenav-content" role="article">
-          <aio-doc-viewer>
-            <div class="content">
-              <div class="nf-container l-flex-wrap flex-center">
-                <img src="assets/images/support/angular-404.svg" width="300" height="300" />
-                <div class="nf-response l-flex-wrap">
-                  <h1 class="no-toc" id="page-not-found">Resource Not Found</h1>
-                  <p>We're sorry. The resource you are looking for cannot be found.</p>
-                </div>
-              </div>
-            </div>
-          </aio-doc-viewer>
-        </section>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-
-    <footer class="no-print">
-      <aio-footer>
-        <p>
-          Powered by Google ©2010-2021.
-          Code licensed under an <a href="license" title="License text">MIT-style License</a>.
-          Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
-        </p>
-      </aio-footer>
-    </footer>
-
-  </aio-shell>
 </body></html>
