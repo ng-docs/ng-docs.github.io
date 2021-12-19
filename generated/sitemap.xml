@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://angular.cn/api/core/ng-container</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/ng-content</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/ng-template</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/accessibility</loc>
   </url>
   <url>
@@ -163,7 +172,46 @@
     <loc>https://angular.cn/guide/http</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/i18n</loc>
+    <loc>https://angular.cn/guide/i18n-common-add-package</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-common-deploy</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-common-format-data-locale</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-common-locale-id</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-common-merge</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-common-prepare</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-common-translation-files</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-common</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-example</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-optional-import-global-variants</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-optional-manage-marked-text</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-optional-manual-source-locale</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-optional</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/i18n-overview</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/inputs-outputs</loc>
@@ -194,6 +242,12 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/lightweight-injection-tokens</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/localized-documentation</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/localizing-angular</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/migration-dynamic-flag</loc>
@@ -253,6 +307,9 @@
     <loc>https://angular.cn/guide/practical-observable-usage</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/prerendering</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/property-binding-best-practices</loc>
   </url>
   <url>
@@ -295,6 +352,9 @@
     <loc>https://angular.cn/guide/routing-overview</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/routing-with-urlmatcher</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/rx-library</loc>
   </url>
   <url>
@@ -323,6 +383,9 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/service-worker-intro</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/service-worker-notifications</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/set-document-title</loc>
@@ -437,9 +500,6 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/view-encapsulation</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/guide/visual-studio-2015</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/web-worker</loc>
@@ -626,6 +686,9 @@
   </url>
   <url>
     <loc>https://angular.cn/errors/NG2003</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/errors/NG2009</loc>
   </url>
   <url>
     <loc>https://angular.cn/errors/NG3003</loc>
@@ -1057,6 +1120,9 @@
     <loc>https://angular.cn/api/common/DatePipe</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/common/DATE_PIPE_DEFAULT_TIMEZONE</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/common/I18nPluralPipe</loc>
   </url>
   <url>
@@ -1306,6 +1372,9 @@
     <loc>https://angular.cn/api/core/Sanitizer</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/core/createNgModuleRef</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/core/Attribute</loc>
   </url>
   <url>
@@ -1426,16 +1495,16 @@
     <loc>https://angular.cn/api/core/InjectableProvider</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/Injector-0</loc>
+    <loc>https://angular.cn/api/core/Injector</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/ProviderToken</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/inject-0</loc>
+    <loc>https://angular.cn/api/core/inject</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/INJECTOR-1</loc>
+    <loc>https://angular.cn/api/core/INJECTOR</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/ReflectiveInjector</loc>
@@ -1498,7 +1567,7 @@
     <loc>https://angular.cn/api/core/InjectionToken</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/Inject-1</loc>
+    <loc>https://angular.cn/api/core/Inject</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/Optional</loc>
@@ -1564,16 +1633,10 @@
     <loc>https://angular.cn/api/core/getModuleFactory</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/NgModuleFactoryLoader</loc>
+    <loc>https://angular.cn/api/core/getNgModuleById</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/QueryList</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/SystemJsNgModuleLoader</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/SystemJsNgModuleLoaderConfig</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/TemplateRef</loc>
@@ -1642,9 +1705,6 @@
     <loc>https://angular.cn/api/core/TrackByFunction</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/WrappedValue</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/core/platformCore</loc>
   </url>
   <url>
@@ -1708,6 +1768,27 @@
     <loc>https://angular.cn/api/core/testing/withModule</loc>
   </url>
   <url>
+    <loc>https://angular.cn/api/core/testing/TestComponentRenderer</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/testing/ComponentFixtureAutoDetect</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/testing/ComponentFixtureNoNgZone</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/testing/TestModuleMetadata</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/testing/TestEnvironmentOptions</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/testing/ModuleTeardownOptions</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/core/testing/TestBedStatic</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/api/core/testing/waitForAsync</loc>
   </url>
   <url>
@@ -1733,21 +1814,6 @@
   </url>
   <url>
     <loc>https://angular.cn/api/core/testing/flushMicrotasks</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/testing/TestComponentRenderer</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/testing/ComponentFixtureAutoDetect</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/testing/ComponentFixtureNoNgZone</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/testing/TestModuleMetadata</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/testing/TestBedStatic</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/core/testing/MetadataOverride</loc>
@@ -2131,9 +2197,6 @@
     <loc>https://angular.cn/api/router/Data</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/router/DeprecatedLoadChildren</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/router/LoadChildren</loc>
   </url>
   <url>
@@ -2149,7 +2212,7 @@
     <loc>https://angular.cn/api/router/Route</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/router/Routes-0</loc>
+    <loc>https://angular.cn/api/router/Routes</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/router/RunGuardsAndResolvers</loc>
@@ -2269,7 +2332,7 @@
     <loc>https://angular.cn/api/router/UrlCreationOptions</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/router/ROUTES-1</loc>
+    <loc>https://angular.cn/api/router/ROUTES</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/router/ExtraOptions</loc>
@@ -2359,9 +2422,6 @@
     <loc>https://angular.cn/api/router/testing/setupTestingRouter</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/router/testing/SpyNgModuleFactoryLoader</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/router/testing/RouterTestingModule</loc>
   </url>
   <url>
@@ -2387,6 +2447,18 @@
   </url>
   <url>
     <loc>https://angular.cn/api/service-worker/UpdateAvailableEvent</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/service-worker/VersionDetectedEvent</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/service-worker/VersionEvent</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/service-worker/VersionInstallationFailedEvent</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/service-worker/VersionReadyEvent</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/service-worker/ServiceWorkerModule</loc>
@@ -2447,14 +2519,5 @@
   </url>
   <url>
     <loc>https://angular.cn/api/upgrade/static/testing/createAngularJSTestingModule</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/Injector</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/core/inject</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/api/router/Routes</loc>
   </url>
 </urlset>

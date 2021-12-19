@@ -156,7 +156,7 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
@@ -341,74 +341,41 @@ input[type=&quot;text&quot;] {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.css]" value="
+*/"><input type="hidden" name="files[src/app/app.component.css]" value="nav a {
+  padding: 1rem;
+}
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/name-editor/name-editor.component.css]" value=":host {
-  display: flex;
-  flex-direction: column;
-  padding-top: 24px;
-}
-
-label {
-  display: block;
-  width: 6em;
-  margin: .5em 0;
-  color: #607D8B;
+*/"><input type="hidden" name="files[src/app/name-editor/name-editor.component.css]" value="label {
   font-weight: bold;
+  padding-bottom: .5rem;
+  padding-top: 1rem;
+  display: inline-block;
 }
 
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
+button {
+  max-width: 300px;
 }
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/app/profile-editor/profile-editor.component.css]" value="/* ProfileEditorComponent's private CSS styles */
-:host {
-  display: flex;
-  flex-direction: column;
-  padding-top: 24px;
+
+form {
+  padding-top: 1rem;
 }
 
 label {
   display: block;
-  width: 6em;
   margin: .5em 0;
-  color: #607D8B;
   font-weight: bold;
-}
-
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
-}
-
-button {
-  font-family: Arial, sans-serif;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #cfd8dc;
-}
-
-button:disabled {
-  background-color: #eee;
-  color: #ccc;
-  cursor: auto;
 }
 
 
@@ -451,21 +418,12 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/name-editor/name-editor.component.html]" value="<label>
-  Name:
-  <input type=&quot;text&quot; [formControl]=&quot;name&quot;>
-</label>
+-->"><input type="hidden" name="files[src/app/name-editor/name-editor.component.html]" value="<label for=&quot;name&quot;>Name: </label>
+<input id=&quot;name&quot; type=&quot;text&quot; [formControl]=&quot;name&quot;>
 
+<p>Value: {{ name.value }}</p>
 
-
-<p>
-  Value: {{ name.value }}
-</p>
-
-
-<p>
-  <button (click)=&quot;updateName()&quot;>Update Name</button>
-</p>
+<button (click)=&quot;updateName()&quot;>Update Name</button>
 
 
 <!-- 
@@ -473,69 +431,51 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/profile-editor/profile-editor.component.html]" value="<form [formGroup]=&quot;profileForm&quot; (ngSubmit)=&quot;onSubmit()&quot;>
-  <label>
-    First Name:
-    <input type=&quot;text&quot; formControlName=&quot;firstName&quot; required>
-  </label>
+  <label for=&quot;first-name&quot;>First Name: </label>
+  <input id=&quot;first-name&quot; type=&quot;text&quot; formControlName=&quot;firstName&quot; required>
 
-  <label>
-    Last Name:
-    <input type=&quot;text&quot; formControlName=&quot;lastName&quot;>
-  </label>
+  <label for=&quot;last-name&quot;>Last Name: </label>
+  <input id=&quot;last-name&quot; type=&quot;text&quot; formControlName=&quot;lastName&quot;>
 
   <div formGroupName=&quot;address&quot;>
-    <h3>Address</h3>
+    <h2>Address</h2>
 
-    <label>
-      Street:
-      <input type=&quot;text&quot; formControlName=&quot;street&quot;>
-    </label>
+    <label for=&quot;street&quot;>Street: </label>
+    <input id=&quot;street&quot; type=&quot;text&quot; formControlName=&quot;street&quot;>
 
-    <label>
-      City:
-      <input type=&quot;text&quot; formControlName=&quot;city&quot;>
-    </label>
-    
-    <label>
-      State:
-      <input type=&quot;text&quot; formControlName=&quot;state&quot;>
-    </label>
+    <label for=&quot;city&quot;>City: </label>
+    <input id=&quot;city&quot; type=&quot;text&quot; formControlName=&quot;city&quot;>
 
-    <label>
-      Zip Code:
-      <input type=&quot;text&quot; formControlName=&quot;zip&quot;>
-    </label>
+    <label for=&quot;state&quot;>State: </label>
+    <input id=&quot;state&quot; type=&quot;text&quot; formControlName=&quot;state&quot;>
+
+    <label for=&quot;zip&quot;>Zip Code: </label>
+    <input id=&quot;zip&quot;type=&quot;text&quot; formControlName=&quot;zip&quot;>
   </div>
 
   <div formArrayName=&quot;aliases&quot;>
-    <h3>Aliases</h3> <button (click)=&quot;addAlias()&quot;>Add Alias</button>
+    <h2>Aliases</h2>
+    <button (click)=&quot;addAlias()&quot; type=&quot;button&quot;>+ Add another alias</button>
 
     <div *ngFor=&quot;let alias of aliases.controls; let i=index&quot;>
       <!-- The repeated alias template -->
-      <label>
-        Alias:
-        <input type=&quot;text&quot; [formControlName]=&quot;i&quot;>
-      </label>
+      <label for=&quot;alias-{{ i }}&quot;>Alias:</label>
+      <input id=&quot;alias-{{ i }}&quot; type=&quot;text&quot; [formControlName]=&quot;i&quot;>
     </div>
   </div>
 
+
+  <p>Complete the form to enable button.</p>
   <button type=&quot;submit&quot; [disabled]=&quot;!profileForm.valid&quot;>Submit</button>
 </form>
 
 <hr>
 
-<p>
-  Form Value: {{ profileForm.value | json }}
-</p>
+<p>Form Value: {{ profileForm.value | json }}</p>
 
+<p>Form Status: {{ profileForm.status }}</p>
 
-<p>
-  Form Status: {{ profileForm.status }}
-</p>
-
-<p>
-  <button (click)=&quot;updateProfile()&quot;>Update Profile</button>
-</p>
+<button (click)=&quot;updateProfile()&quot;>Update Profile</button>
 
 
 <!-- 
@@ -573,29 +513,10 @@ can be found in the LICENSE file at https://angular.io/license
             &quot;styles&quot;: [
               &quot;src/styles.css&quot;
             ],
-            &quot;scripts&quot;: [],
-            &quot;vendorChunk&quot;: true,
-            &quot;extractLicenses&quot;: false,
-            &quot;buildOptimizer&quot;: false,
-            &quot;sourceMap&quot;: true,
-            &quot;optimization&quot;: false,
-            &quot;namedChunks&quot;: true
+            &quot;scripts&quot;: []
           },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
-                }
-              ],
-              &quot;optimization&quot;: true,
-              &quot;outputHashing&quot;: &quot;all&quot;,
-              &quot;sourceMap&quot;: false,
-              &quot;namedChunks&quot;: false,
-              &quot;extractLicenses&quot;: true,
-              &quot;vendorChunk&quot;: false,
-              &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
@@ -607,20 +528,37 @@ can be found in the LICENSE file at https://angular.io/license
                   &quot;maximumWarning&quot;: &quot;2kb&quot;,
                   &quot;maximumError&quot;: &quot;4kb&quot;
                 }
-              ]
+              ],
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;outputHashing&quot;: &quot;all&quot;
+            },
+            &quot;development&quot;: {
+              &quot;buildOptimizer&quot;: false,
+              &quot;optimization&quot;: false,
+              &quot;vendorChunk&quot;: true,
+              &quot;extractLicenses&quot;: false,
+              &quot;sourceMap&quot;: true,
+              &quot;namedChunks&quot;: true
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;production&quot;
         },
         &quot;serve&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
               &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            },
+            &quot;development&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;development&quot;
         },
         &quot;extract-i18n&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
@@ -643,19 +581,6 @@ can be found in the LICENSE file at https://angular.io/license
               &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: []
-          }
-        },
-        &quot;lint&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
-          &quot;options&quot;: {
-            &quot;tsConfig&quot;: [
-              &quot;tsconfig.app.json&quot;,
-              &quot;tsconfig.spec.json&quot;,
-              &quot;e2e/tsconfig.json&quot;
-            ],
-            &quot;exclude&quot;: [
-              &quot;**/node_modules/**&quot;
-            ]
           }
         },
         &quot;e2e&quot;: {
@@ -690,7 +615,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;target&quot;: &quot;es2017&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
       &quot;es2018&quot;,
@@ -704,7 +629,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;strictTemplates&quot;: true,
     &quot;enableIvy&quot;: true
   }
-}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="reactive"><input type="hidden" name="tags[3]" value="forms"><input type="hidden" name="description" value="Angular Example - Angular Reactive Forms (Demo runner)"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~12.0.0&quot;,&quot;@angular/common&quot;:&quot;~12.0.0&quot;,&quot;@angular/compiler&quot;:&quot;~12.0.0&quot;,&quot;@angular/core&quot;:&quot;~12.0.0&quot;,&quot;@angular/forms&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~12.0.0&quot;,&quot;@angular/router&quot;:&quot;~12.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.7.0&quot;}"></form>
+}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="reactive"><input type="hidden" name="tags[3]" value="forms"><input type="hidden" name="description" value="Angular Example - Angular Reactive Forms (Demo runner)"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/common&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/compiler&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/core&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/forms&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/router&quot;:&quot;13.0.0-next.7&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.3.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.8.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

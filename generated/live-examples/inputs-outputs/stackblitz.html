@@ -179,7 +179,7 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
@@ -223,12 +223,12 @@ export class AliasingComponent {
 
 
   saveIt() {
-    console.warn('Child says: emiting outputEvent1 with', this.input1);
+    console.warn('Child says: emitting outputEvent1 with', this.input1);
     this.outputEvent1.emit(this.input1);
   }
 
   wishForIt() {
-    console.warn('Child says: emiting outputEvent2', this.input2);
+    console.warn('Child says: emitting outputEvent2', this.input2);
     this.outputEvent2.emit(this.input2);
   }
 
@@ -265,7 +265,7 @@ export class InTheMetadataComponent  {
   clearanceItem = '';
 
   buyIt() {
-    console.warn('Child says: emiting buyEvent with', this.clearanceItem);
+    console.warn('Child says: emitting buyEvent with', this.clearanceItem);
     this.buyEvent.emit(this.clearanceItem);
   }
 
@@ -287,13 +287,14 @@ can be found in the LICENSE file at https://angular.io/license
   styleUrls: ['./input-output.component.css']
 })
 export class InputOutputComponent {
+
   @Input() item = '';
   @Output() deleteRequest = new EventEmitter<string>();
 
   lineThrough = '';
 
   delete() {
-    console.warn('Child says: emiting item deleteRequest with', this.item);
+    console.warn('Child says: emitting item deleteRequest with', this.item);
     this.deleteRequest.emit(this.item);
     this.lineThrough = this.lineThrough ? '' : 'line-through';
   }
@@ -328,7 +329,6 @@ can be found in the LICENSE file at https://angular.io/license
   templateUrl: './item-output.component.html',
   styleUrls: ['./item-output.component.css']
 })
-
 export class ItemOutputComponent {
 
   @Output() newItemEvent = new EventEmitter<string>();
@@ -503,14 +503,20 @@ can be found in the LICENSE file at https://angular.io/license
 <h2>Input and Output together</h2>
 <p>Open the console to see the EventEmitter at work when you click Delete.</p>
 
-<app-input-output [item]=&quot;currentItem&quot; (deleteRequest)=&quot;crossOffItem($event)&quot;></app-input-output>
+<app-input-output
+  [item]=&quot;currentItem&quot;
+  (deleteRequest)=&quot;crossOffItem($event)&quot;>
+</app-input-output>
 
 <hr>
 
 <h2>Input and Output in the component class metadata</h2>
 <p>Open the console to see the EventEmitter at work when you click Buy.</p>
 
-<app-in-the-metadata [clearanceItem]=&quot;lastChanceItem&quot; (buyEvent)=&quot;buyClearanceItem($event)&quot;></app-in-the-metadata>
+<app-in-the-metadata
+  [clearanceItem]=&quot;lastChanceItem&quot;
+  (buyEvent)=&quot;buyClearanceItem($event)&quot;>
+</app-in-the-metadata>
 
 
 <hr>
@@ -518,7 +524,12 @@ can be found in the LICENSE file at https://angular.io/license
 <h2>Aliasing Inputs and Outputs</h2>
 <p>See aliasing.component.ts for aliases and the console for the EventEmitter console logs.</p>
 
-<app-aliasing [saveForLaterItem]=&quot;currentItem&quot; (saveForLaterEvent)=&quot;saveForLater($event)&quot; [wishListItem]=&quot;currentItem&quot; (wishEvent)=&quot;addToWishList($event)&quot;></app-aliasing>
+<app-aliasing
+  [saveForLaterItem]=&quot;currentItem&quot;
+  [wishListItem]=&quot;currentItem&quot;
+  (saveForLaterEvent)=&quot;saveForLater($event)&quot;
+  (wishEvent)=&quot;addToWishList($event)&quot;>
+</app-aliasing>
 
 <h2>Wishlist:</h2>
 <ul>
@@ -534,9 +545,8 @@ can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/aliasing/aliasing.component.html]" value="<p>Save for later item: {{input1}}</p>
 <button (click)=&quot;saveIt()&quot;> Save for later</button>
 
-
-  <p>Item for wishlist: {{input2}}</p>
-  <button (click)=&quot;wishForIt()&quot;> Add to wishlist</button>
+<p>Item for wishlist: {{input2}}</p>
+<button (click)=&quot;wishForIt()&quot;> Add to wishlist</button>
 
 
 
@@ -615,29 +625,10 @@ can be found in the LICENSE file at https://angular.io/license
             &quot;styles&quot;: [
               &quot;src/styles.css&quot;
             ],
-            &quot;scripts&quot;: [],
-            &quot;vendorChunk&quot;: true,
-            &quot;extractLicenses&quot;: false,
-            &quot;buildOptimizer&quot;: false,
-            &quot;sourceMap&quot;: true,
-            &quot;optimization&quot;: false,
-            &quot;namedChunks&quot;: true
+            &quot;scripts&quot;: []
           },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
-                }
-              ],
-              &quot;optimization&quot;: true,
-              &quot;outputHashing&quot;: &quot;all&quot;,
-              &quot;sourceMap&quot;: false,
-              &quot;namedChunks&quot;: false,
-              &quot;extractLicenses&quot;: true,
-              &quot;vendorChunk&quot;: false,
-              &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
@@ -649,20 +640,37 @@ can be found in the LICENSE file at https://angular.io/license
                   &quot;maximumWarning&quot;: &quot;2kb&quot;,
                   &quot;maximumError&quot;: &quot;4kb&quot;
                 }
-              ]
+              ],
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;outputHashing&quot;: &quot;all&quot;
+            },
+            &quot;development&quot;: {
+              &quot;buildOptimizer&quot;: false,
+              &quot;optimization&quot;: false,
+              &quot;vendorChunk&quot;: true,
+              &quot;extractLicenses&quot;: false,
+              &quot;sourceMap&quot;: true,
+              &quot;namedChunks&quot;: true
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;production&quot;
         },
         &quot;serve&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
               &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            },
+            &quot;development&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;development&quot;
         },
         &quot;extract-i18n&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
@@ -685,19 +693,6 @@ can be found in the LICENSE file at https://angular.io/license
               &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: []
-          }
-        },
-        &quot;lint&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
-          &quot;options&quot;: {
-            &quot;tsConfig&quot;: [
-              &quot;tsconfig.app.json&quot;,
-              &quot;tsconfig.spec.json&quot;,
-              &quot;e2e/tsconfig.json&quot;
-            ],
-            &quot;exclude&quot;: [
-              &quot;**/node_modules/**&quot;
-            ]
           }
         },
         &quot;e2e&quot;: {
@@ -732,7 +727,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;target&quot;: &quot;es2017&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
       &quot;es2018&quot;,
@@ -746,7 +741,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;strictTemplates&quot;: true,
     &quot;enableIvy&quot;: true
   }
-}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Inputs and Outputs"><input type="hidden" name="description" value="Angular Example - Inputs and Outputs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~12.0.0&quot;,&quot;@angular/common&quot;:&quot;~12.0.0&quot;,&quot;@angular/compiler&quot;:&quot;~12.0.0&quot;,&quot;@angular/core&quot;:&quot;~12.0.0&quot;,&quot;@angular/forms&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~12.0.0&quot;,&quot;@angular/router&quot;:&quot;~12.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.7.0&quot;}"></form>
+}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Inputs and Outputs"><input type="hidden" name="description" value="Angular Example - Inputs and Outputs"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/common&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/compiler&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/core&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/forms&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/router&quot;:&quot;13.0.0-next.7&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.3.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.8.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

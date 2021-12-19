@@ -626,7 +626,7 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
@@ -959,7 +959,6 @@ button</button>
 <br><br>
 
 <img [src]=&quot;iconUrl&quot;/>
-<img bind-src=&quot;heroImageUrl&quot;/>
 <img [attr.src]=&quot;villainImageUrl&quot;/>
 
 <a class=&quot;to-toc&quot; href=&quot;#toc&quot;>top</a>
@@ -974,7 +973,6 @@ button</button>
 <button disabled>disabled by attribute</button>
 <button [disabled]=&quot;isUnchanged&quot;>disabled by property binding</button>
 <br><br>
-<button bind-disabled=&quot;isUnchanged&quot; on-click=&quot;onSave($event)&quot;>Disabled Cancel</button>
 <button [disabled]=&quot;!canSave&quot; (click)=&quot;onSave($event)&quot;>Enabled Save</button>
 
 <a class=&quot;to-toc&quot; href=&quot;#toc&quot;>top</a>
@@ -986,7 +984,6 @@ button</button>
 <button [disabled]=&quot;isUnchanged&quot;>Cancel is disabled</button>
 <div [ngClass]=&quot;classes&quot;>[ngClass] binding to the classes property</div>
 <app-hero-detail [hero]=&quot;currentHero&quot;></app-hero-detail>
-<img bind-src=&quot;heroImageUrl&quot;>
 
 <!-- ERROR: HeroDetailComponent.hero expects a Hero object, not the string &quot;currentHero&quot; -->
 <!-- <app-hero-detail hero=&quot;currentHero&quot;></app-hero-detail> -->
@@ -1058,8 +1055,6 @@ button</button>
 <div class=&quot;special&quot;
      [class.special]=&quot;!isSpecial&quot;>This one is not so special</div>
 
-<div bind-class.special=&quot;isSpecial&quot;>This class binding is special too</div>
-
 <a class=&quot;to-toc&quot; href=&quot;#toc&quot;>top</a>
 
 <!--style binding -->
@@ -1077,8 +1072,6 @@ button</button>
 <hr><h2 id=&quot;event-binding&quot;>Event Binding</h2>
 
 <button (click)=&quot;onSave()&quot;>Save</button>
-
-<button on-click=&quot;onSave()&quot;>On Save</button>
 
 <div>
 <!-- `myClick` is an event on the custom `ClickDirective` -->
@@ -1138,9 +1131,6 @@ without NgModel
 <br>
 <input [(ngModel)]=&quot;currentHero.name&quot;>
 [(ngModel)]
-<br>
-<input bindon-ngModel=&quot;currentHero.name&quot;>
-bindon-ngModel
 <br>
 <input
   [ngModel]=&quot;currentHero.name&quot;
@@ -1345,9 +1335,6 @@ bindon-ngModel
 <!-- phone refers to the input element; pass its `value` to an event handler -->
 <button (click)=&quot;callPhone(phone.value)&quot;>Call</button>
 
-<input ref-fax placeholder=&quot;fax number&quot;>
-<button (click)=&quot;callFax(fax.value)&quot;>Fax</button>
-
 <!-- btn refers to the button element; show its disabled state -->
 <button #btn disabled [innerHTML]=&quot;'disabled by attribute: '+btn.disabled&quot;></button>
 
@@ -1488,9 +1475,15 @@ can be found in the LICENSE file at https://angular.io/license
 -->"><input type="hidden" name="files[src/app/hero-form.component.html]" value="<div id=&quot;heroForm&quot;>
   <form (ngSubmit)=&quot;onSubmit(heroForm)&quot; #heroForm=&quot;ngForm&quot;>
     <div class=&quot;form-group&quot;>
-      <label for=&quot;name&quot;>Name
-        <input class=&quot;form-control&quot; name=&quot;name&quot; required [(ngModel)]=&quot;hero.name&quot;>
-      </label>
+      <label for=&quot;name&quot;>Name</label>
+      <input
+        type=&quot;text&quot;
+        id=&quot;name&quot;
+        class=&quot;form-control&quot;
+        name=&quot;name&quot;
+        required
+        [(ngModel)]=&quot;hero.name&quot;
+      />
     </div>
     <button type=&quot;submit&quot; [disabled]=&quot;!heroForm.form.valid&quot;>Submit</button>
   </form>
@@ -1535,29 +1528,10 @@ can be found in the LICENSE file at https://angular.io/license
             &quot;styles&quot;: [
               &quot;src/styles.css&quot;
             ],
-            &quot;scripts&quot;: [],
-            &quot;vendorChunk&quot;: true,
-            &quot;extractLicenses&quot;: false,
-            &quot;buildOptimizer&quot;: false,
-            &quot;sourceMap&quot;: true,
-            &quot;optimization&quot;: false,
-            &quot;namedChunks&quot;: true
+            &quot;scripts&quot;: []
           },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
-                }
-              ],
-              &quot;optimization&quot;: true,
-              &quot;outputHashing&quot;: &quot;all&quot;,
-              &quot;sourceMap&quot;: false,
-              &quot;namedChunks&quot;: false,
-              &quot;extractLicenses&quot;: true,
-              &quot;vendorChunk&quot;: false,
-              &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
@@ -1569,20 +1543,37 @@ can be found in the LICENSE file at https://angular.io/license
                   &quot;maximumWarning&quot;: &quot;2kb&quot;,
                   &quot;maximumError&quot;: &quot;4kb&quot;
                 }
-              ]
+              ],
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;outputHashing&quot;: &quot;all&quot;
+            },
+            &quot;development&quot;: {
+              &quot;buildOptimizer&quot;: false,
+              &quot;optimization&quot;: false,
+              &quot;vendorChunk&quot;: true,
+              &quot;extractLicenses&quot;: false,
+              &quot;sourceMap&quot;: true,
+              &quot;namedChunks&quot;: true
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;production&quot;
         },
         &quot;serve&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
               &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            },
+            &quot;development&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;development&quot;
         },
         &quot;extract-i18n&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
@@ -1605,19 +1596,6 @@ can be found in the LICENSE file at https://angular.io/license
               &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: []
-          }
-        },
-        &quot;lint&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
-          &quot;options&quot;: {
-            &quot;tsConfig&quot;: [
-              &quot;tsconfig.app.json&quot;,
-              &quot;tsconfig.spec.json&quot;,
-              &quot;e2e/tsconfig.json&quot;
-            ],
-            &quot;exclude&quot;: [
-              &quot;**/node_modules/**&quot;
-            ]
           }
         },
         &quot;e2e&quot;: {
@@ -1652,7 +1630,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;target&quot;: &quot;es2017&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
       &quot;es2018&quot;,
@@ -1672,7 +1650,7 @@ can be found in the LICENSE file at https://angular.io/license
     <text x=&quot;120&quot; y=&quot;50&quot;>click the rectangle to change the fill color</text>
   </g>
 </svg>
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="template"><input type="hidden" name="description" value="Angular Example - Template Syntax Collection"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~12.0.0&quot;,&quot;@angular/common&quot;:&quot;~12.0.0&quot;,&quot;@angular/compiler&quot;:&quot;~12.0.0&quot;,&quot;@angular/core&quot;:&quot;~12.0.0&quot;,&quot;@angular/forms&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~12.0.0&quot;,&quot;@angular/router&quot;:&quot;~12.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.7.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="template"><input type="hidden" name="description" value="Angular Example - Template Syntax Collection"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/common&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/compiler&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/core&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/forms&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/router&quot;:&quot;13.0.0-next.7&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.3.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.8.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

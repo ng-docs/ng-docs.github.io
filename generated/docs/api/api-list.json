@@ -696,6 +696,14 @@
         "securityRisk": false
       },
       {
+        "name": "date_pipe_default_timezone",
+        "title": "DATE_PIPE_DEFAULT_TIMEZONE",
+        "path": "api/common/DATE_PIPE_DEFAULT_TIMEZONE",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "datepipe",
         "title": "DatePipe",
         "path": "api/common/DatePipe",
@@ -1429,6 +1437,30 @@
     "path": "api/core",
     "items": [
       {
+        "name": "<ng-container>",
+        "title": "<ng-container>",
+        "path": "api/core/ng-container",
+        "docType": "element",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "<ng-content>",
+        "title": "<ng-content>",
+        "path": "api/core/ng-content",
+        "docType": "element",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "<ng-template>",
+        "title": "<ng-template>",
+        "path": "api/core/ng-template",
+        "docType": "element",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "abstracttype",
         "title": "AbstractType",
         "path": "api/core/AbstractType",
@@ -1593,7 +1625,7 @@
         "title": "Compiler",
         "path": "api/core/Compiler",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -1609,7 +1641,7 @@
         "title": "CompilerFactory",
         "path": "api/core/CompilerFactory",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -1681,6 +1713,14 @@
         "title": "ContentChildren",
         "path": "api/core/ContentChildren",
         "docType": "decorator",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "createngmoduleref",
+        "title": "createNgModuleRef",
+        "path": "api/core/createNgModuleRef",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1889,6 +1929,14 @@
         "title": "getModuleFactory",
         "path": "api/core/getModuleFactory",
         "docType": "const",
+        "stability": "deprecated",
+        "securityRisk": false
+      },
+      {
+        "name": "getngmodulebyid",
+        "title": "getNgModuleById",
+        "path": "api/core/getNgModuleById",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1935,7 +1983,7 @@
       {
         "name": "inject",
         "title": "inject",
-        "path": "api/core/inject-0",
+        "path": "api/core/inject",
         "docType": "const",
         "stability": "stable",
         "securityRisk": false
@@ -1943,7 +1991,7 @@
       {
         "name": "inject",
         "title": "Inject",
-        "path": "api/core/Inject-1",
+        "path": "api/core/Inject",
         "docType": "decorator",
         "stability": "stable",
         "securityRisk": false
@@ -1991,7 +2039,7 @@
       {
         "name": "injector",
         "title": "Injector",
-        "path": "api/core/Injector-0",
+        "path": "api/core/Injector",
         "docType": "class",
         "stability": "stable",
         "securityRisk": false
@@ -1999,7 +2047,7 @@
       {
         "name": "injector",
         "title": "INJECTOR",
-        "path": "api/core/INJECTOR-1",
+        "path": "api/core/INJECTOR",
         "docType": "const",
         "stability": "stable",
         "securityRisk": false
@@ -2129,7 +2177,7 @@
         "title": "ModuleWithComponentFactories",
         "path": "api/core/ModuleWithComponentFactories",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2160,14 +2208,6 @@
         "name": "ngmodulefactory",
         "title": "NgModuleFactory",
         "path": "api/core/NgModuleFactory",
-        "docType": "class",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "ngmodulefactoryloader",
-        "title": "NgModuleFactoryLoader",
-        "path": "api/core/NgModuleFactoryLoader",
         "docType": "class",
         "stability": "deprecated",
         "securityRisk": false
@@ -2501,22 +2541,6 @@
         "securityRisk": false
       },
       {
-        "name": "systemjsngmoduleloader",
-        "title": "SystemJsNgModuleLoader",
-        "path": "api/core/SystemJsNgModuleLoader",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
-        "name": "systemjsngmoduleloaderconfig",
-        "title": "SystemJsNgModuleLoaderConfig",
-        "path": "api/core/SystemJsNgModuleLoaderConfig",
-        "docType": "class",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
         "name": "templateref",
         "title": "TemplateRef",
         "path": "api/core/TemplateRef",
@@ -2650,14 +2674,6 @@
         "path": "api/core/ViewRef",
         "docType": "class",
         "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "wrappedvalue",
-        "title": "WrappedValue",
-        "path": "api/core/WrappedValue",
-        "docType": "class",
-        "stability": "deprecated",
         "securityRisk": false
       }
     ]
@@ -2875,6 +2891,14 @@
         "securityRisk": false
       },
       {
+        "name": "moduleteardownoptions",
+        "title": "ModuleTeardownOptions",
+        "path": "api/core/testing/ModuleTeardownOptions",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "resetfakeasynczone",
         "title": "resetFakeAsyncZone",
         "path": "api/core/testing/resetFakeAsyncZone",
@@ -2903,6 +2927,14 @@
         "title": "TestComponentRenderer",
         "path": "api/core/testing/TestComponentRenderer",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "testenvironmentoptions",
+        "title": "TestEnvironmentOptions",
+        "path": "api/core/testing/TestEnvironmentOptions",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3743,7 +3775,7 @@
         "title": "JitCompilerFactory",
         "path": "api/platform-browser-dynamic/JitCompilerFactory",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3853,7 +3885,7 @@
         "title": "renderModuleFactory",
         "path": "api/platform-server/renderModuleFactory",
         "docType": "function",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -4029,14 +4061,6 @@
         "securityRisk": false
       },
       {
-        "name": "deprecatedloadchildren",
-        "title": "DeprecatedLoadChildren",
-        "path": "api/router/DeprecatedLoadChildren",
-        "docType": "type-alias",
-        "stability": "deprecated",
-        "securityRisk": false
-      },
-      {
         "name": "detachedroutehandle",
         "title": "DetachedRouteHandle",
         "path": "api/router/DetachedRouteHandle",
@@ -4112,7 +4136,7 @@
         "name": "navigation",
         "title": "Navigation",
         "path": "api/router/Navigation",
-        "docType": "type-alias",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4407,7 +4431,7 @@
       {
         "name": "routes",
         "title": "Routes",
-        "path": "api/router/Routes-0",
+        "path": "api/router/Routes",
         "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
@@ -4415,7 +4439,7 @@
       {
         "name": "routes",
         "title": "ROUTES",
-        "path": "api/router/ROUTES-1",
+        "path": "api/router/ROUTES",
         "docType": "const",
         "stability": "stable",
         "securityRisk": false
@@ -4530,14 +4554,6 @@
         "docType": "function",
         "stability": "stable",
         "securityRisk": false
-      },
-      {
-        "name": "spyngmodulefactoryloader",
-        "title": "SpyNgModuleFactoryLoader",
-        "path": "api/router/testing/SpyNgModuleFactoryLoader",
-        "docType": "class",
-        "stability": "stable",
-        "securityRisk": false
       }
     ]
   },
@@ -4614,13 +4630,45 @@
         "title": "UpdateActivatedEvent",
         "path": "api/service-worker/UpdateActivatedEvent",
         "docType": "interface",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
         "name": "updateavailableevent",
         "title": "UpdateAvailableEvent",
         "path": "api/service-worker/UpdateAvailableEvent",
+        "docType": "interface",
+        "stability": "deprecated",
+        "securityRisk": false
+      },
+      {
+        "name": "versiondetectedevent",
+        "title": "VersionDetectedEvent",
+        "path": "api/service-worker/VersionDetectedEvent",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "versionevent",
+        "title": "VersionEvent",
+        "path": "api/service-worker/VersionEvent",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "versioninstallationfailedevent",
+        "title": "VersionInstallationFailedEvent",
+        "path": "api/service-worker/VersionInstallationFailedEvent",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "versionreadyevent",
+        "title": "VersionReadyEvent",
+        "path": "api/service-worker/VersionReadyEvent",
         "docType": "interface",
         "stability": "stable",
         "securityRisk": false

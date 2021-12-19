@@ -58,13 +58,18 @@
             "desc": "Add API Based CMS to your Angular app",
             "url": "https://github.com/ButterCMS/buttercms-angular-tutorial",
             "title": "API Based CMS with Butter"
+          },
+          "angular-community-meetup": {
+            "desc": "Come learn technical skills and network at this monthly, multi-series, multi-event, multi-timezone online meetup.",
+            "url": "https://angularcommunity.net",
+            "title": "Angular Community Meetup"
           }
         }
       },
       "Podcasts 视频": {
         "order": 3,
         "resources": {
-          "sdfjkdkfj": {
+          "adventures-in-angular": {
             "desc": "Adventures in Angular is a weekly podcast dedicated to the Angular platform and related technologies, tools, languages, and practices.",
             "descCn": "Angular 历险记是一个每周播客，致力于 Angular 平台以及相关技术、工具、语言和实践。",
             "logo": "",
@@ -72,18 +77,30 @@
             "titleCn": "Angular 历险记",
             "url": "https://devchat.tv/adv-in-angular/"
           },
-          "sdlkfjsldfkj": {
+          "angular-show": {
+            "desc": "ng-conf's official all-Angular podcast.",
+            "logo": "",
+            "title": "The Angular Show",
+            "url": "https://www.spreaker.com/show/angular-show"
+          },
+          "angular-air": {
             "desc": "Weekly video podcast hosted by Jeff Whelpley with all the latest and greatest happenings in the wild world of Angular.",
             "descCn": "由 Jeff Whelpley 主持的每周视频播客，其中包含 Angular 世界中的所有最新和最大的事件。",
             "logo": "",
             "title": "AngularAir",
             "url": "https://angularair.com/"
           },
-          "sdlkfjsldfkz": {
+          "angular-rocks": {
+            "desc": "Podcast for those who want to know more about Angular 🚀",
+            "logo": "",
+            "title": "Angular Rocks",
+            "url": "https://angularrocks.com"
+          },
+          "happy-angular": {
             "desc": "A weekly German podcast for Angular on the go",
             "descCn": "德国的 Angular 每周播客",
             "logo": "",
-            "title": "Happy Angular Podcast",
+            "title": "Happy Angular",
             "titleCn": "开心 Angular 播客",
             "url": "https://happy-angular.de/"
           },
@@ -94,13 +111,13 @@
             "title": "NgRuAir",
             "url": "https://github.com/ngRuAir/ngruair"
           },
-          "the-deep-dive": {
-            "desc": "The advanced web development podcast about Angular, RxJS, TypeScript and other technologies. English, audio only.",
+          "ngxp": {
+            "desc": "Weekly technical-adjacent podcast by Brooke Avery & Erik Slack. Don't just code in Angular, come enjoy the Angular Experience!",
             "descCn": "有关 Angular、RxJS、TypeScript 和其他技术的高级 Web 开发播客。仅英语，音频。",
-            "logo": "https://i.imgur.com/mmE5Feq.jpg",
-            "title": "The Deep Dive",
+            "logo": "",
+            "title": "Angular Experience (NgXP)",
             "titleCn": "深度剖析",
-            "url": "https://thedeepdive.simplecast.com"
+            "url": "https://ngxp.show"
           }
         }
       }
@@ -128,7 +145,7 @@
           },
           "ab": {
             "desc": "NativeScript is how you build cross-platform, native iOS and Android apps with Angular and TypeScript. Get 100% access to native APIs via JavaScript and reuse of packages from NPM, CocoaPods and Gradle. Open source and backed by Telerik.",
-            "descCn": "NativeScript 能让你使用 Angular 和 TypeScript 构建跨平台、本机 iOS 和 Android 应用程序。通过 JavaScript 以及对 NPM、CocoaPods 和 Gradle 中包的重用，可 100％访问原生 API。开源并得到 Telerik 的支持。",
+            "descCn": "NativeScript 能让你使用 Angular 和 TypeScript 构建跨平台、本机 iOS 和 Android 应用程序。通过 JavaScript 以及对 NPM、CocoaPods 和 Gradle 中包的复用，可 100％访问原生 API。开源并得到 Telerik 的支持。",
             "logo": "",
             "title": "NativeScript",
             "url": "https://docs.nativescript.org/angular/start/introduction"
@@ -184,14 +201,14 @@
           "ab2": {
             "desc": "Use Angular and Meteor to build full-stack JavaScript apps  for Mobile and Desktop.",
             "descCn": "使用 Angular 和 Meteor 构建用于移动和桌面的全栈 JavaScript 应用。",
-            "logo": "http://www.angular-meteor.com/images/logo.png",
+            "logo": "https://angular-meteor.com/assets/images/logo-large.png",
             "title": "Meteor",
             "url": "https://github.com/urigo/angular-meteor"
           },
           "ab3": {
             "desc": "Apollo is a data stack for modern apps, built with GraphQL.",
             "descCn": "Apollo 是使用 GraphQL 构建现代应用程序的数据技术栈。",
-            "logo": "http://docs.apollostack.com/logo/large.png",
+            "logo": "",
             "title": "Apollo",
             "url": "https://www.apollographql.com/docs/angular/"
           },
@@ -399,7 +416,7 @@
           "a2b": {
             "desc": "PrimeNG is a collection of rich UI components for Angular",
             "descCn": "PrimeNG 是 Angular 的富 UI 组件集合",
-            "logo": "http://www.primefaces.org/primeng/showcase/resources/images/primeng.svg",
+            "logo": "https://www.primefaces.org/primeng/resources/images/logo-primeng.svg",
             "title": "Prime Faces",
             "url": "https://www.primefaces.org/primeng/"
           },
@@ -413,7 +430,7 @@
           "a5b": {
             "desc": "High-performance UI controls with the most complete Angular support available. Wijmo’s controls are all written in TypeScript and have zero dependencies. FlexGrid control includes full declarative markup, including cell templates.",
             "descCn": "具有最完整的 Angular 支持的高性能 UI 控件。 Wijmo 的控件全部用 TypeScript 编写，并且具有零依赖性。 FlexGrid 控件包括完整的声明性标记语言，包括单元格模板。",
-            "logo": "http://wijmocdn.azureedge.net/wijmositeblob/wijmo-theme/logos/wijmo-55.png",
+            "logo": "",
             "title": "Wijmo",
             "url": "https://www.grapecity.com/wijmo"
           },
@@ -451,7 +468,7 @@
             "url": "https://mdbootstrap.com/docs/angular/"
           },
           "mcc": {
-            "desc": "Material components made by the community",
+            "desc": "Material components made by the community that includes Color Picker, Timer Picker, Speed Dial and Scrollspy",
             "descCn": "社区开发的一些 Material 组件",
             "logo": "",
             "title": "Material Community Components",
@@ -516,7 +533,7 @@
             "title": "Amexio - Angular Extensions",
             "titleCn": "Amexio - Angular 扩展",
             "url": "https://amexio.tech/",
-            "logo": "http://www.amexio.org/amexio-logo.png"
+            "logo": ""
           },
           "bm": {
             "desc": "A lightweight Material Design library for Angular, based upon Google's Material Components for the Web",
@@ -713,6 +730,11 @@
             "desc": "Integrate a Headless CMS into your Angular App, create blog posts and pages",
             "url": "https://medium.com/orlyknop/how-to-integrate-buttercms-into-angular-2-app-a1baaa51402",
             "logo": ""
+          },
+          "angular-projects": {
+            "title": "Angular Projects - Second Edition",
+            "desc": "Build modern web apps by exploring Angular with 10 different projects and cutting-edge technologies",
+            "url": "https://www.packtpub.com/product/angular-projects-second-edition/9781800205260"
           }
         }
       },
@@ -864,6 +886,11 @@
             "logo": "",
             "title": "DotNetTricks",
             "url": "https://www.dotnettricks.com/courses/angular"
+          },
+          "architect-angular-nation": {
+            "desc": "Whether you're already an architect or you'd like to become one, come learn how to keep your apps clean and fast (especially at the enterprise level). Four weeks of training includes live office hours every week with an Angular GDE, diversity discounts, and scholarships available!",
+            "title": "Angular Architect Training",
+            "url": "https://www.angularnation.net/"
           }
         }
       },
@@ -930,7 +957,7 @@
             "descCn": "向以色列的 Angular 咨询公司 500Tech 学习。本课程由整天使用 Angular 的专业开发人员构建，并具有实际的大型 Angular 应用程序实践经验。",
             "title": "Angular Hands-on Course (Israel)",
             "titleCn": "Angular 动手课程（以色列）",
-            "url": "http://angular2.courses.500tech.com/"
+            "url": "https://500tech.com/courses/angular/"
           },
           "9ab": {
             "desc": "OnSite Training From the Authors of  \"Become A Ninja with Angular\"",

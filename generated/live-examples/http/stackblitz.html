@@ -261,7 +261,12 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 13, name: 'Bombasto' },
       { id: 14, name: 'Celeritas' },
     ];
-    return {heroes};
+    const query = [
+      { name: '@angular/core', version: '20.1.0', description: 'angular core package' },
+      { name: '@angular/common', version: '20.1.0', description: 'angular common package' },
+      { name: '@angular/material', version: '20.1.5', description: 'angular material package' },
+    ];
+    return {heroes, query};
   }
 }
 
@@ -364,7 +369,7 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
@@ -513,8 +518,7 @@ export class ConfigService {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
       console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+        `Backend returned code ${error.status}, body was: `, error.error);
     }
     // Return an observable with a user-facing error message.
     return throwError(
@@ -886,11 +890,7 @@ function sendRequest(
   req: HttpRequest<any>,
   next: HttpHandler,
   cache: RequestCache): Observable<HttpEvent<any>> {
-
-  // No headers allowed in npm search request
-  const noHeaderReq = req.clone({ headers: new HttpHeaders() });
-
-  return next.handle(noHeaderReq).pipe(
+  return next.handle(req).pipe(
     tap(event => {
       // There may be other events besides the response.
       if (event instanceof HttpResponse) {
@@ -1003,7 +1003,7 @@ import { LoggingInterceptor } from './logging-interceptor';
 import { NoopInterceptor } from './noop-interceptor';
 import { TrimNameInterceptor } from './trim-name-interceptor';
 import { UploadInterceptor } from './upload-interceptor';
-
+import { RetryInterceptor } from './retry-interceptor';
 
 /** Http interceptor providers in outside-in order */
 export const httpInterceptorProviders = [
@@ -1118,7 +1118,7 @@ export class RetryInterceptor implements HttpInterceptor {
         tap(null,
             () => {
               // An error has occurred, so increment this request's ERROR_COUNT.
-              req.set(ERROR_COUNT, req.get(ERROR_COUNT) + 1);
+              req.context.set(ERROR_COUNT, req.context.get(ERROR_COUNT) + 1);
             }),
         // Retry the request a configurable number of times.
         retry(retryCount),
@@ -1292,7 +1292,7 @@ can be found in the LICENSE file at https://angular.io/license
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 
@@ -1302,12 +1302,12 @@ export interface NpmPackageInfo {
   description: string;
 }
 
-export const searchUrl = 'https://npmsearch.com/query';
+export const searchUrl = '/packages/query';
 
 function createHttpOptions(packageName: string, refresh = false) {
-    // npm package name search api
-    // e.g., http://npmsearch.com/query?q=dom'
-    const params = new HttpParams({ fromObject: { q: packageName } });
+    // package name search api
+    // e.g., /packages/query?name=dom'
+    const params = new HttpParams({ fromObject: { name: packageName } });
     const headerMap: Record<string, string> = refresh ? {'x-refresh': 'true'} : {};
     const headers = new HttpHeaders(headerMap) ;
     return { headers, params };
@@ -1320,7 +1320,7 @@ export class PackageSearchService {
   constructor(
     private http: HttpClient,
     httpErrorHandler: HttpErrorHandler) {
-    this.handleError = httpErrorHandler.createHandleError('HeroesService');
+    this.handleError = httpErrorHandler.createHandleError('PackageSearchService');
   }
 
   search(packageName: string, refresh = false): Observable<NpmPackageInfo[]> {
@@ -1329,16 +1329,7 @@ export class PackageSearchService {
 
     const options = createHttpOptions(packageName, refresh);
 
-    // TODO: Add error handling
-    return this.http.get(searchUrl, options).pipe(
-      map((data: any) => {
-        return data.results.map((entry: any) => ({
-            name: entry.name[0],
-            version: entry.version[0],
-            description: entry.description[0]
-          } as NpmPackageInfo )
-        );
-      }),
+    return this.http.get<NpmPackageInfo[]>(searchUrl, options).pipe(
       catchError(this.handleError('search', []))
     );
   }
@@ -1844,7 +1835,6 @@ can be found in the LICENSE file at https://angular.io/license
             &quot;main&quot;: &quot;src/main.ts&quot;,
             &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
-            &quot;aot&quot;: true,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -1857,19 +1847,6 @@ can be found in the LICENSE file at https://angular.io/license
           },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
-                }
-              ],
-              &quot;optimization&quot;: true,
-              &quot;outputHashing&quot;: &quot;all&quot;,
-              &quot;sourceMap&quot;: false,
-              &quot;namedChunks&quot;: false,
-              &quot;extractLicenses&quot;: true,
-              &quot;vendorChunk&quot;: false,
-              &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
@@ -1881,20 +1858,37 @@ can be found in the LICENSE file at https://angular.io/license
                   &quot;maximumWarning&quot;: &quot;2kb&quot;,
                   &quot;maximumError&quot;: &quot;4kb&quot;
                 }
-              ]
+              ],
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;outputHashing&quot;: &quot;all&quot;
+            },
+            &quot;development&quot;: {
+              &quot;buildOptimizer&quot;: false,
+              &quot;optimization&quot;: false,
+              &quot;vendorChunk&quot;: true,
+              &quot;extractLicenses&quot;: false,
+              &quot;sourceMap&quot;: true,
+              &quot;namedChunks&quot;: true
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;production&quot;
         },
         &quot;serve&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
               &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            },
+            &quot;development&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;development&quot;
         },
         &quot;extract-i18n&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
@@ -1917,19 +1911,6 @@ can be found in the LICENSE file at https://angular.io/license
               &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: []
-          }
-        },
-        &quot;lint&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
-          &quot;options&quot;: {
-            &quot;tsConfig&quot;: [
-              &quot;tsconfig.app.json&quot;,
-              &quot;tsconfig.spec.json&quot;,
-              &quot;e2e/tsconfig.json&quot;
-            ],
-            &quot;exclude&quot;: [
-              &quot;**/node_modules/**&quot;
-            ]
           }
         },
         &quot;e2e&quot;: {
@@ -1964,7 +1945,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;target&quot;: &quot;es2017&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
       &quot;es2018&quot;,
@@ -1983,7 +1964,7 @@ can be found in the LICENSE file at https://angular.io/license
   &quot;textfile&quot;: &quot;assets/textfile.txt&quot;,
   &quot;date&quot;: &quot;2020-01-29&quot;
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="description" value="Angular Example - Http"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~12.0.0&quot;,&quot;@angular/common&quot;:&quot;~12.0.0&quot;,&quot;@angular/compiler&quot;:&quot;~12.0.0&quot;,&quot;@angular/core&quot;:&quot;~12.0.0&quot;,&quot;@angular/forms&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser&quot;:&quot;~12.0.0&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~12.0.0&quot;,&quot;@angular/router&quot;:&quot;~12.0.0&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.0.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.7.0&quot;}"></form>
+"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="description" value="Angular Example - Http"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/common&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/compiler&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/core&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/forms&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/router&quot;:&quot;13.0.0-next.7&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.3.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.8.0&quot;}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;
