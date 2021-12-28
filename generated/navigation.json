@@ -379,7 +379,7 @@
               "url": "guide/router",
               "titleCn": "常见路由任务",
               "title": "Common routing tasks",
-              "tooltipCn": "与 Angular 路由相关的许多常见任务的基于任务的内容，例如定义路由、设置通配符路由和重定向。",
+              "tooltipCn": "与 Angular 路由相关的许多常见任务的基于任务的内容，比如定义路由、设置通配符路由和重定向。",
               "tooltip": "Task-based content on many of the common tasks associated with Angular routing, such as defining routs, setting up wildcard routes, and redirects."
             },
             {
@@ -542,7 +542,7 @@
             {
               "titleCn": "常见的国际化任务",
               "title": "Common internationalization tasks",
-              "tooltipCn": "与 Angular 国际化相关的许多常见任务的基于任务的内容，例如添加语言环境包和格式化语言环境的数据",
+              "tooltipCn": "与 Angular 国际化相关的许多常见任务的基于任务的内容，比如添加语言环境包和格式化语言环境的数据",
               "tooltip": "Task-based content on many of the common tasks associated with Angular internationalization, such as adding the locale package and formatting data for a locale",
               "children": [
                 {
