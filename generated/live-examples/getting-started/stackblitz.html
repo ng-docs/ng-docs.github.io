@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/product-list/product-list.component.html" target="_self"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
+        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/product-list/product-list.component.html" target="_self"><input type="hidden" name="project[files][src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -17,7 +17,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
+*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
  *
@@ -27,8 +27,8 @@ can be found in the LICENSE file at https://angular.io/license
  *      file.
  *
  * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
- * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
- * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
+ * automatically update themselves. This includes recent versions of Safari, Chrome (including
+ * Opera), Edge on the desktop, and iOS and Chrome on mobile.
  *
  * Learn more in https://angular.io/guide/browser-support
  */
@@ -36,16 +36,6 @@ can be found in the LICENSE file at https://angular.io/license
 /***************************************************************************************************
  * BROWSER POLYFILLS
  */
-
-/** IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
-
-/**
- * Web Animations `@angular/platform-browser/animations`
- * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
- * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
- */
-// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 
 /**
  * By default, zone.js will patch all possible macroTask and DomEvents
@@ -87,7 +77,39 @@ import 'zone.js'; // Included with Angular CLI.
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/test.ts]" value="// This file is required by karma.conf.js and loads recursively all the .spec and framework files
+
+import 'zone.js/testing';
+import { getTestBed } from '@angular/core/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
+
+declare const require: {
+  context(path: string, deep?: boolean, filter?: RegExp): {
+    keys(): string[];
+    <T>(id: string): T;
+  };
+};
+
+// First, initialize the Angular testing environment.
+getTestBed().initTestEnvironment(
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting(),
+);
+
+// Then we find all the tests.
+const context = require.context('./', true, /\.spec\.ts$/);
+// And load the modules.
+context.keys().map(context);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/app.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -101,7 +123,7 @@ export class AppComponent { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -148,7 +170,7 @@ export class AppModule { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/cart.service.ts]" value="import { Injectable } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/cart.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './products';
 
@@ -185,7 +207,7 @@ export class CartService {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/products.ts]" value="export interface Product {
+*/"><input type="hidden" name="project[files][src/app/products.ts]" value="export interface Product {
   id: number;
   name: string;
   price: number;
@@ -218,7 +240,7 @@ export const products: Product[] = [
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+*/"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
 
@@ -227,7 +249,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+*/"><input type="hidden" name="project[files][src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
@@ -249,7 +271,7 @@ export const environment = {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/cart/cart.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/cart/cart.component.ts]" value="import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 import { CartService } from '../cart.service';
@@ -286,7 +308,7 @@ export class CartComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/product-alerts/product-alerts.component.ts]" value="import { Component, Input, Output, EventEmitter } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/product-alerts/product-alerts.component.ts]" value="import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../products';
 
 @Component({
@@ -304,7 +326,7 @@ export class ProductAlertsComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/product-details/product-details.component.ts]" value="import { Component, OnInit } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/product-details/product-details.component.ts]" value="import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Product, products } from '../products';
@@ -344,7 +366,7 @@ export class ProductDetailsComponent implements OnInit {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/product-list/product-list.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/product-list/product-list.component.ts]" value="import { Component } from '@angular/core';
 
 import { products } from '../products';
 
@@ -371,7 +393,7 @@ export class ProductListComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/shipping/shipping.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/shipping/shipping.component.ts]" value="import { Component } from '@angular/core';
 
 import { CartService } from '../cart.service';
 
@@ -394,7 +416,7 @@ export class ShippingComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/top-bar/top-bar.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/top-bar/top-bar.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
@@ -408,7 +430,7 @@ export class TopBarComponent { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
 
 * {
   font-family: 'Roboto', Arial, sans-serif;
@@ -552,49 +574,49 @@ app-top-bar h1 {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.css]" value="
+*/"><input type="hidden" name="project[files][src/app/app.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/cart/cart.component.css]" value="
+*/"><input type="hidden" name="project[files][src/app/cart/cart.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/product-alerts/product-alerts.component.css]" value="
+*/"><input type="hidden" name="project[files][src/app/product-alerts/product-alerts.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/product-details/product-details.component.css]" value="
+*/"><input type="hidden" name="project[files][src/app/product-details/product-details.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/product-list/product-list.component.css]" value="
+*/"><input type="hidden" name="project[files][src/app/product-list/product-list.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/shipping/shipping.component.css]" value="
+*/"><input type="hidden" name="project[files][src/app/shipping/shipping.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/top-bar/top-bar.component.css]" value="
+*/"><input type="hidden" name="project[files][src/app/top-bar/top-bar.component.css]" value="
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/index.html]" value="<!DOCTYPE html>
+*/"><input type="hidden" name="project[files][src/index.html]" value="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
   <head>
     <meta charset=&quot;utf-8&quot; />
@@ -618,7 +640,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/app.component.html]" value="<app-top-bar></app-top-bar>
+-->"><input type="hidden" name="project[files][src/app/app.component.html]" value="<app-top-bar></app-top-bar>
 
 <div class=&quot;container&quot;>
   <router-outlet></router-outlet>
@@ -628,7 +650,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/cart/cart.component.html]" value="<h3>Cart</h3>
+-->"><input type="hidden" name="project[files][src/app/cart/cart.component.html]" value="<h3>Cart</h3>
 
 <p>
   <a routerLink=&quot;/shipping&quot;>Shipping Prices</a>
@@ -664,7 +686,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/product-alerts/product-alerts.component.html]" value="<p *ngIf=&quot;product &amp;&amp; product.price > 700&quot;>
+-->"><input type="hidden" name="project[files][src/app/product-alerts/product-alerts.component.html]" value="<p *ngIf=&quot;product &amp;&amp; product.price > 700&quot;>
   <button (click)=&quot;notify.emit()&quot;>Notify Me</button>
 </p>
 
@@ -673,7 +695,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/product-details/product-details.component.html]" value="<h2>Product Details</h2>
+-->"><input type="hidden" name="project[files][src/app/product-details/product-details.component.html]" value="<h2>Product Details</h2>
 
 <div *ngIf=&quot;product&quot;>
   <h3>{{ product.name }}</h3>
@@ -687,7 +709,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/product-list/product-list.component.html]" value="<h2>Products</h2>
+-->"><input type="hidden" name="project[files][src/app/product-list/product-list.component.html]" value="<h2>Products</h2>
 
 <div *ngFor=&quot;let product of products&quot;>
 
@@ -719,7 +741,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/shipping/shipping.component.html]" value="<h3>Shipping Prices</h3>
+-->"><input type="hidden" name="project[files][src/app/shipping/shipping.component.html]" value="<h3>Shipping Prices</h3>
 
 <div class=&quot;shipping-item&quot; *ngFor=&quot;let shipping of shippingCosts | async&quot;>
   <span>{{ shipping.type }}</span>
@@ -731,7 +753,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/app/top-bar/top-bar.component.html]" value="<a routerLink=&quot;/&quot;>
+-->"><input type="hidden" name="project[files][src/app/top-bar/top-bar.component.html]" value="<a routerLink=&quot;/&quot;>
   <h1>My Store</h1>
 </a>
 
@@ -744,7 +766,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[angular.json]" value="{
+-->"><input type="hidden" name="project[files][angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
   &quot;newProjectRoot&quot;: &quot;projects&quot;,
@@ -862,13 +884,95 @@ can be found in the LICENSE file at https://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="files[tsconfig.json]" value="{
+"><input type="hidden" name="project[files][package.json]" value="{
+  &quot;name&quot;: &quot;angular.io-example&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;description&quot;: &quot;Example project from an angular.io guide.&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;scripts&quot;: {
+    &quot;ng&quot;: &quot;ng&quot;,
+    &quot;start&quot;: &quot;ng serve&quot;,
+    &quot;build&quot;: &quot;ng build&quot;,
+    &quot;watch&quot;: &quot;ng build --watch --configuration development&quot;,
+    &quot;test&quot;: &quot;ng test&quot;,
+    &quot;e2e&quot;: &quot;ng e2e&quot;
+  },
+  &quot;private&quot;: true,
+  &quot;dependencies&quot;: {
+    &quot;@angular/animations&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/common&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/core&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/forms&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/router&quot;: &quot;~13.1.0&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.11.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.4.0&quot;,
+    &quot;tslib&quot;: &quot;^2.3.0&quot;,
+    &quot;zone.js&quot;: &quot;~0.11.4&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@angular-devkit/build-angular&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/cli&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;~13.1.0&quot;,
+    &quot;@types/jasmine&quot;: &quot;~3.10.0&quot;,
+    &quot;@types/node&quot;: &quot;^12.11.1&quot;,
+    &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
+    &quot;jasmine-core&quot;: &quot;~3.10.0&quot;,
+    &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
+    &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
+    &quot;karma&quot;: &quot;~6.3.0&quot;,
+    &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.0.3&quot;,
+    &quot;karma-jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
+    &quot;protractor&quot;: &quot;~7.0.0&quot;,
+    &quot;ts-node&quot;: &quot;~10.1.0&quot;,
+    &quot;typescript&quot;: &quot;~4.5.2&quot;
+  }
+}
+"><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;./out-tsc/app&quot;,
+    &quot;types&quot;: []
+  },
+  &quot;files&quot;: [
+    &quot;src/main.ts&quot;,
+    &quot;src/polyfills.ts&quot;
+  ],
+  &quot;include&quot;: [
+    &quot;src/**/*.d.ts&quot;
+  ],
+  &quot;exclude&quot;: [
+    &quot;src/test.ts&quot;,
+    &quot;src/**/*.spec.ts&quot;,
+    &quot;src/**/*-specs.ts&quot;,
+    &quot;src/**/*.avoid.ts&quot;,
+    &quot;src/**/*.0.ts&quot;,
+    &quot;src/**/*.1.ts&quot;,
+    &quot;src/**/*.1b.ts&quot;,
+    &quot;src/**/*.2.ts&quot;,
+    &quot;src/**/*.3.ts&quot;,
+    &quot;src/**/*.4.ts&quot;,
+    &quot;src/**/*.5.ts&quot;,
+    &quot;src/**/*.6.ts&quot;,
+    &quot;src/**/*.7.ts&quot;,
+    &quot;src/**/testing&quot;
+  ]
+}
+"><input type="hidden" name="project[files][tsconfig.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
   &quot;compileOnSave&quot;: false,
   &quot;compilerOptions&quot;: {
     &quot;baseUrl&quot;: &quot;./&quot;,
     &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
     &quot;forceConsistentCasingInFileNames&quot;: true,
     &quot;strict&quot;: true,
+    &quot;noImplicitOverride&quot;: true,
+    &quot;noPropertyAccessFromIndexSignature&quot;: true,
     &quot;noImplicitReturns&quot;: true,
     &quot;noFallthroughCasesInSwitch&quot;: true,
     &quot;sourceMap&quot;: true,
@@ -880,7 +984,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;target&quot;: &quot;es2017&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
-      &quot;es2018&quot;,
+      &quot;es2020&quot;,
       &quot;dom&quot;
     ]
   },
@@ -888,10 +992,10 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;enableI18nLegacyMessageIdFormat&quot;: false,
     &quot;strictInjectionParameters&quot;: true,
     &quot;strictInputAccessModifiers&quot;: true,
-    &quot;strictTemplates&quot;: true,
-    &quot;enableIvy&quot;: true
+    &quot;strictTemplates&quot;: true
   }
-}"><input type="hidden" name="files[src/assets/shipping.json]" value="[
+}
+"><input type="hidden" name="project[files][src/assets/shipping.json]" value="[
   {
     &quot;type&quot;: &quot;Overnight&quot;,
     &quot;price&quot;: 25.99
@@ -904,7 +1008,32 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;type&quot;: &quot;Postal&quot;,
     &quot;price&quot;: 2.99
   }
-]"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="Angular"><input type="hidden" name="tags[3]" value="getting started"><input type="hidden" name="tags[4]" value="tutorial"><input type="hidden" name="description" value="Angular Example - Getting Started"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/common&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/compiler&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/core&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/forms&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/router&quot;:&quot;13.0.0-next.7&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.3.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;}"></form>
+]"><input type="hidden" name="project[files][tsconfig.0.json]" value="// This tsconfig is used in the TypeScript
+// configuration guide (../guide/typescript-configuration.md) 
+// to display the latest default configuration
+// Note: Update with every major release to the latest default
+{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;module&quot;: &quot;esnext&quot;,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;importHelpers&quot;: true,
+    &quot;target&quot;: &quot;es2015&quot;,
+    &quot;typeRoots&quot;: [
+      &quot;node_modules/@types&quot;
+    ],
+    &quot;lib&quot;: [
+      &quot;es2018&quot;,
+      &quot;dom&quot;
+    ]
+  }
+}
+"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="Angular"><input type="hidden" name="project[tags][3]" value="getting started"><input type="hidden" name="project[tags][4]" value="tutorial"><input type="hidden" name="project[description]" value="Angular Example - Getting Started"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

@@ -19,6 +19,9 @@
     <loc>https://angular.cn/guide/angular-compiler-options</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/angular-package-format</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/animations</loc>
   </url>
   <url>
@@ -118,6 +121,9 @@
     <loc>https://angular.cn/guide/deprecations</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/developer-guide-overview</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/devtools</loc>
   </url>
   <url>
@@ -187,13 +193,13 @@
     <loc>https://angular.cn/guide/i18n-common-merge</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/i18n-common-overview</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/i18n-common-prepare</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/i18n-common-translation-files</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/guide/i18n-common</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/i18n-example</loc>
@@ -205,10 +211,10 @@
     <loc>https://angular.cn/guide/i18n-optional-manage-marked-text</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/i18n-optional-manual-source-locale</loc>
+    <loc>https://angular.cn/guide/i18n-optional-manual-runtime-locale</loc>
   </url>
   <url>
-    <loc>https://angular.cn/guide/i18n-optional</loc>
+    <loc>https://angular.cn/guide/i18n-optional-overview</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/i18n-overview</loc>
@@ -218,15 +224,6 @@
   </url>
   <url>
     <loc>https://angular.cn/guide/interpolation</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/guide/ivy-compatibility-examples</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/guide/ivy-compatibility</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/guide/ivy</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/language-service</loc>
@@ -469,16 +466,19 @@
     <loc>https://angular.cn/guide/typescript-configuration</loc>
   </url>
   <url>
+    <loc>https://angular.cn/guide/understanding-angular-overview</loc>
+  </url>
+  <url>
     <loc>https://angular.cn/guide/universal</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/guide/update-to-latest-version</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/updating-content-github-ui</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/updating-search-keywords</loc>
-  </url>
-  <url>
-    <loc>https://angular.cn/guide/updating-to-version-12</loc>
   </url>
   <url>
     <loc>https://angular.cn/guide/updating</loc>
@@ -656,6 +656,9 @@
   </url>
   <url>
     <loc>https://angular.cn/cli/version</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/cli/cache</loc>
   </url>
   <url>
     <loc>https://angular.cn/cli</loc>
@@ -1378,9 +1381,6 @@
     <loc>https://angular.cn/api/core/Attribute</loc>
   </url>
   <url>
-    <loc>https://angular.cn/api/core/AttributeDecorator</loc>
-  </url>
-  <url>
     <loc>https://angular.cn/api/core/AfterContentChecked</loc>
   </url>
   <url>
@@ -1979,6 +1979,12 @@
   </url>
   <url>
     <loc>https://angular.cn/api/forms/FormControl</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/forms/FormControlOptions</loc>
+  </url>
+  <url>
+    <loc>https://angular.cn/api/forms/FormControlStatus</loc>
   </url>
   <url>
     <loc>https://angular.cn/api/forms/FormGroup</loc>

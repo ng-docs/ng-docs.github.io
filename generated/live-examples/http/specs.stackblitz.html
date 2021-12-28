@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/app/heroes/hero.ts]" value="export interface Hero {
+        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/app.component.html" target="_self"><input type="hidden" name="project[files][src/app/heroes/hero.ts]" value="export interface Hero {
   id: number;
   name: string;
 }
@@ -9,7 +9,7 @@
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/heroes/heroes.service.ts]" value="import { Injectable } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/heroes/heroes.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -96,7 +96,7 @@ export class HeroesService {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/heroes/heroes.service.spec.ts]" value="import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+*/"><input type="hidden" name="project[files][src/app/heroes/heroes.service.spec.ts]" value="import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 // Other imports
 import { TestBed } from '@angular/core/testing';
@@ -258,7 +258,7 @@ describe('HeroesService', () => {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/http-error-handler.service.ts]" value="import { Injectable } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/http-error-handler.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
@@ -275,14 +275,14 @@ export class HttpErrorHandler {
   constructor(private messageService: MessageService) { }
 
   /** Create curried handleError function that already knows the service name */
-  createHandleError = (serviceName = '') => {
-    return <T>(operation = 'operation', result = {} as T) =>
+  createHandleError = (serviceName = '') =>
+    <T>(operation = 'operation', result = {} as T) =>
       this.handleError(serviceName, operation, result);
-  }
 
   /**
    * Returns a function that handles Http operation failures.
    * This error handler lets the app continue to run as if no error occurred.
+   *
    * @param serviceName = name of the data service that attempted the operation
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
@@ -312,7 +312,7 @@ export class HttpErrorHandler {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/app/message.service.ts]" value="import { Injectable } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/message.service.ts]" value="import { Injectable } from '@angular/core';
 
 @Injectable()
 export class MessageService {
@@ -332,7 +332,7 @@ export class MessageService {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
+*/"><input type="hidden" name="project[files][src/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 // Other imports
@@ -453,28 +453,20 @@ describe('HttpClient testing', () => {
     req.flush(emsg, { status: 404, statusText: 'Not Found' });
   });
 
-  it('can test for network error', () => {
-    const emsg = 'simulated network error';
+  it('can test for network error', done => {
+    // Create mock ProgressEvent with type `error`, raised when something goes wrong
+    // at network level. e.g. Connection timeout, DNS error, offline, etc.
+    const mockError = new ProgressEvent('error');
 
     httpClient.get<Data[]>(testUrl).subscribe(
       data => fail('should have failed with the network error'),
       (error: HttpErrorResponse) => {
-        expect(error.error.message).toEqual(emsg, 'message');
+        expect(error.error).toBe(mockError);
+        done();
       }
     );
 
     const req = httpTestingController.expectOne(testUrl);
-
-    // Create mock ErrorEvent, raised when something goes wrong at the network level.
-    // Connection timeout, DNS error, offline, etc
-    const mockError = new ErrorEvent('Network error', {
-      message: emsg,
-      // The rest of this is optional and not used.
-      // Just showing that you could provide this too.
-      filename: 'HeroService.ts',
-      lineno: 42,
-      colno: 21
-    });
 
     // Respond with mock error
     req.error(mockError);
@@ -508,7 +500,7 @@ describe('HttpClient testing', () => {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
+*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -596,17 +588,17 @@ input[type=&quot;text&quot;] {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
+*/"><input type="hidden" name="project[files][src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/main.ts]" value="import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
+*/"><input type="hidden" name="project[files][src/main.ts]" value="import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
 import 'jasmine-core/lib/jasmine-core/boot.js';
 
-declare var jasmine: any;
+declare const jasmine: any;
 
 import './polyfills';
 
@@ -647,7 +639,7 @@ function bootstrap() {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/index.html]" value="<!--
+*/"><input type="hidden" name="project[files][src/index.html]" value="<!--
   Intentionally empty placeholder for Stackblitz.
   Do not need index.html in zip-download either as you should run tests with `npm test`
  -->
@@ -657,7 +649,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
+-->"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
 
@@ -666,7 +658,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+*/"><input type="hidden" name="project[files][src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
@@ -688,7 +680,67 @@ export const environment = {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[angular.json]" value="{
+*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes recent versions of Safari, Chrome (including
+ * Opera), Edge on the desktop, and iOS and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
   &quot;newProjectRoot&quot;: &quot;projects&quot;,
@@ -807,83 +859,95 @@ can be found in the LICENSE file at https://angular.io/license
   },
   &quot;defaultProject&quot;: &quot;angular.io-example&quot;
 }
-"><input type="hidden" name="files[src/polyfills.ts]" value="/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
- * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
- * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
-
-/***************************************************************************************************
- * BROWSER POLYFILLS
- */
-
-/** IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
-
-/**
- * Web Animations `@angular/platform-browser/animations`
- * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
- * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
- */
-// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
-
-/**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
- * requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
- * specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
-
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
-import 'zone.js'; // Included with Angular CLI.
-
-/***************************************************************************************************
- * APPLICATION IMPORTS
- */
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="files[tsconfig.json]" value="{
+"><input type="hidden" name="project[files][package.json]" value="{
+  &quot;name&quot;: &quot;angular.io-example&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;description&quot;: &quot;Example project from an angular.io guide.&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;scripts&quot;: {
+    &quot;ng&quot;: &quot;ng&quot;,
+    &quot;start&quot;: &quot;ng serve&quot;,
+    &quot;build&quot;: &quot;ng build&quot;,
+    &quot;watch&quot;: &quot;ng build --watch --configuration development&quot;,
+    &quot;test&quot;: &quot;ng test&quot;,
+    &quot;e2e&quot;: &quot;ng e2e&quot;
+  },
+  &quot;private&quot;: true,
+  &quot;dependencies&quot;: {
+    &quot;@angular/animations&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/common&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/core&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/forms&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/router&quot;: &quot;~13.1.0&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.11.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.4.0&quot;,
+    &quot;tslib&quot;: &quot;^2.3.0&quot;,
+    &quot;zone.js&quot;: &quot;~0.11.4&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@angular-devkit/build-angular&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/cli&quot;: &quot;~13.1.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;~13.1.0&quot;,
+    &quot;@types/jasmine&quot;: &quot;~3.10.0&quot;,
+    &quot;@types/node&quot;: &quot;^12.11.1&quot;,
+    &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
+    &quot;jasmine-core&quot;: &quot;~3.10.0&quot;,
+    &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
+    &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
+    &quot;karma&quot;: &quot;~6.3.0&quot;,
+    &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.0.3&quot;,
+    &quot;karma-jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
+    &quot;protractor&quot;: &quot;~7.0.0&quot;,
+    &quot;ts-node&quot;: &quot;~10.1.0&quot;,
+    &quot;typescript&quot;: &quot;~4.5.2&quot;
+  }
+}
+"><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;../out-tsc/app&quot;,
+    &quot;types&quot;: []
+  },
+  &quot;files&quot;: [
+    &quot;src/main.ts&quot;,
+    &quot;src/polyfills.ts&quot;
+  ],
+  &quot;include&quot;: [
+    &quot;src/**/*.d.ts&quot;
+  ],
+  &quot;exclude&quot;: [
+    &quot;src/test.ts&quot;,
+    &quot;src/**/*.spec.ts&quot;,
+    &quot;src/**/*-specs.ts&quot;,
+    &quot;src/**/*.avoid.ts&quot;,
+    &quot;src/**/*.0.ts&quot;,
+    &quot;src/**/*.1.ts&quot;,
+    &quot;src/**/*.1b.ts&quot;,
+    &quot;src/**/*.2.ts&quot;,
+    &quot;src/**/*.3.ts&quot;,
+    &quot;src/**/*.4.ts&quot;,
+    &quot;src/**/*.5.ts&quot;,
+    &quot;src/**/*.6.ts&quot;,
+    &quot;src/**/*.7.ts&quot;,
+    &quot;src/**/testing&quot;
+  ]
+}
+"><input type="hidden" name="project[files][tsconfig.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
   &quot;compileOnSave&quot;: false,
   &quot;compilerOptions&quot;: {
     &quot;baseUrl&quot;: &quot;./&quot;,
     &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
     &quot;forceConsistentCasingInFileNames&quot;: true,
     &quot;strict&quot;: true,
+    &quot;noImplicitOverride&quot;: true,
+    &quot;noPropertyAccessFromIndexSignature&quot;: true,
     &quot;noImplicitReturns&quot;: true,
     &quot;noFallthroughCasesInSwitch&quot;: true,
     &quot;sourceMap&quot;: true,
@@ -895,7 +959,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;target&quot;: &quot;es2017&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
-      &quot;es2018&quot;,
+      &quot;es2020&quot;,
       &quot;dom&quot;
     ]
   },
@@ -903,10 +967,29 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;enableI18nLegacyMessageIdFormat&quot;: false,
     &quot;strictInjectionParameters&quot;: true,
     &quot;strictInputAccessModifiers&quot;: true,
-    &quot;strictTemplates&quot;: true,
-    &quot;enableIvy&quot;: true
+    &quot;strictTemplates&quot;: true
   }
-}"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="testing"><input type="hidden" name="description" value="Angular Example - Http Guide Testing"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/common&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/compiler&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/core&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/forms&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;13.0.0-next.7&quot;,&quot;@angular/router&quot;:&quot;13.0.0-next.7&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.6.0&quot;,&quot;tslib&quot;:&quot;^2.3.0&quot;,&quot;zone.js&quot;:&quot;~0.11.4&quot;,&quot;jasmine-core&quot;:&quot;~3.8.0&quot;}"></form>
+}
+"><input type="hidden" name="project[files][tsconfig.spec.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;./out-tsc/spec&quot;,
+    &quot;types&quot;: [
+      &quot;jasmine&quot;
+    ]
+  },
+  &quot;files&quot;: [
+    &quot;src/test.ts&quot;,
+    &quot;src/polyfills.ts&quot;
+  ],
+  &quot;include&quot;: [
+    &quot;src/**/*.spec.ts&quot;,
+    &quot;src/**/*.d.ts&quot;,
+    &quot;src/testing&quot;
+  ]
+}
+"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="http"><input type="hidden" name="project[tags][3]" value="testing"><input type="hidden" name="project[description]" value="Angular Example - Http Guide Testing"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

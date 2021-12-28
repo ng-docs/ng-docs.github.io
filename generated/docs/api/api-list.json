@@ -1576,15 +1576,7 @@
         "name": "attribute",
         "title": "Attribute",
         "path": "api/core/Attribute",
-        "docType": "class",
-        "stability": "stable",
-        "securityRisk": false
-      },
-      {
-        "name": "attributedecorator",
-        "title": "AttributeDecorator",
-        "path": "api/core/AttributeDecorator",
-        "docType": "interface",
+        "docType": "decorator",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1720,7 +1712,7 @@
         "name": "createngmoduleref",
         "title": "createNgModuleRef",
         "path": "api/core/createNgModuleRef",
-        "docType": "const",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1928,7 +1920,7 @@
         "name": "getmodulefactory",
         "title": "getModuleFactory",
         "path": "api/core/getModuleFactory",
-        "docType": "const",
+        "docType": "function",
         "stability": "deprecated",
         "securityRisk": false
       },
@@ -1936,7 +1928,7 @@
         "name": "getngmodulebyid",
         "title": "getNgModuleById",
         "path": "api/core/getNgModuleById",
-        "docType": "const",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3205,6 +3197,22 @@
         "title": "FormControlName",
         "path": "api/forms/FormControlName",
         "docType": "directive",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "formcontroloptions",
+        "title": "FormControlOptions",
+        "path": "api/forms/FormControlOptions",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "formcontrolstatus",
+        "title": "FormControlStatus",
+        "path": "api/forms/FormControlStatus",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
