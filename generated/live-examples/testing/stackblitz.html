@@ -48,8 +48,8 @@ import {
 
 declare const require: {
   context(path: string, deep?: boolean, filter?: RegExp): {
-    keys(): string[];
     <T>(id: string): T;
+    keys(): string[];
   };
 };
 
@@ -62,7 +62,7 @@ getTestBed().initTestEnvironment(
 // Then we find all the tests.
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
-context.keys().map(context);
+context.keys().forEach(context);
 
 
 /*
@@ -164,259 +164,124 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/banner/banner-external.component.css]" value="h1 { color: green; font-size: 350%}
+*/"><input type="hidden" name="project[files][src/expected.ts]" value="/* Ignore. Satisfies static analysis of router config in app.component.router.spec.ts */
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/dashboard/dashboard-hero.component.css]" value=".hero {
-	padding: 20px;
-  position: relative;
-	text-align: center;
-	color: #eee;
-	max-height: 120px;
-	min-width: 120px;
-	background-color: #607D8B;
-	border-radius: 2px;
-}
+*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes recent versions of Safari, Chrome (including
+ * Opera), Edge on the desktop, and iOS and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
 
-.hero:hover {
-  background-color: #EEE;
-  cursor: pointer;
-  color: #607d8b;
-}
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
 
-@media (max-width: 600px) {
-	.hero {
-	  font-size: 10px;
-	  max-height: 75px; }
-}
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
 
-@media (max-width: 1024px) {
-	.hero {
-	  min-width: 60px;
-	}
-}
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js'; // Included with Angular CLI.
 
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/dashboard/dashboard.component.css]" value="[class*='col-'] {
-  float: left;
-}
-*, *::after, *::before {
-	box-sizing: border-box;
-}
-h3 {
-  text-align: center;
-  margin-bottom: 0;
-}
-[class*='col-'] {
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
-[class*='col-']:last-of-type {
-  padding-right: 0;
-}
-.grid {
-  margin: 0;
-}
-.col-1-4 {
-  width: 25%;
-}
-.grid-pad {
-  padding: 10px 0;
-}
-.grid-pad > [class*='col-']:last-of-type {
-  padding-right: 20px;
-}
-@media (max-width: 1024px) {
-	.grid {
-	  margin: 0;
-	}
-}
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero/hero-detail.component.css]" value="label {
-  display: inline-block;
-  width: 3em;
-  margin: .5em 0;
-  color: #607D8B;
-  font-weight: bold;
-}
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
-}
-button {
-  margin-top: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #ccc;
-  cursor: auto;
-}
+*/"><input type="hidden" name="project[files][karma.conf.js]" value="// Karma configuration file, see link for more information
+// https://karma-runner.github.io/1.0/config/configuration-file.html
+
+module.exports = function (config) {
+  config.set({
+    basePath: '',
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma')
+    ],
+    client: {
+      jasmine: {
+        // you can add configuration options for Jasmine here
+        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
+        // for example, you can disable the random execution with `random: false`
+        // or set a specific seed with `seed: 4321`
+      },
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+    jasmineHtmlReporter: {
+      suppressAll: true // removes the duplicated traces
+    },
+    coverageReporter: {
+      dir: require('path').join(__dirname, './coverage/angular.io-example'),
+      subdir: '.',
+      reporters: [
+        { type: 'html' },
+        { type: 'text-summary' }
+      ]
+    },
+    reporters: ['progress', 'kjhtml'],
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    browsers: ['Chrome'],
+    singleRun: false,
+    restartOnFileChange: true
+  });
+};
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero/hero-list.component.css]" value=".selected {
-  background-color: #CFD8DC !important;
-  color: white;
-}
-.heroes {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
-}
-.heroes li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
-}
-.heroes li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-.heroes li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
-}
-.heroes .text {
-  position: relative;
-  top: -3px;
-}
-.heroes .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-button {
-  font-family: Arial, sans-serif;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/app.component.html]" value="<app-banner></app-banner>
-<app-welcome></app-welcome>
-<nav>
-  <a routerLink=&quot;/dashboard&quot;>Dashboard</a>
-  <a routerLink=&quot;/heroes&quot;>Heroes</a>
-  <a routerLink=&quot;/about&quot;>About</a>
-</nav>
-<router-outlet></router-outlet>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/banner/banner-external.component.html]" value="<h1>{{title}}</h1>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/dashboard/dashboard.component.html]" value="<h2 highlight>{{title}}</h2>
-
-<div class=&quot;grid grid-pad&quot;>
-  <dashboard-hero *ngFor=&quot;let hero of heroes&quot;  class=&quot;col-1-4&quot;
-    [hero]=hero  (selected)=&quot;gotoDetail($event)&quot; >
-  </dashboard-hero>
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/demo/demo-external-template.html]" value="<span>from external template</span>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/hero/hero-detail.component.html]" value="<div *ngIf=&quot;hero&quot;>
-  <h2><span>{{hero.name | titlecase}}</span> Details</h2>
-  <div>
-    <label>id: </label>{{hero.id}}</div>
-  <div>
-    <label for=&quot;name&quot;>name: </label>
-    <input id=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot; placeholder=&quot;name&quot; />
-  </div>
-  <button (click)=&quot;save()&quot;>Save</button>
-  <button (click)=&quot;cancel()&quot;>Cancel</button>
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/hero/hero-list.component.html]" value="<h2 highlight=&quot;gold&quot;>My Heroes</h2>
-<ul class=&quot;heroes&quot;>
-  <li *ngFor=&quot;let hero of heroes | async &quot;
-    [class.selected]=&quot;hero === selectedHero&quot;
-    (click)=&quot;onSelect(hero)&quot;>
-    <span class=&quot;badge&quot;>{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/app-initial.component.spec.ts]" value="import { TestBed, waitForAsync } from '@angular/core/testing';
+*/"><input type="hidden" name="project[files][src/app/app-initial.component.spec.ts]" value="import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app-initial.component';
 /*
 import { AppComponent } from './app.component';
@@ -527,8 +392,22 @@ export class AppRoutingModule { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/app.component.router.spec.ts]" value="// For more examples:
-//   https://github.com/angular/angular/blob/master/modules/@angular/router/test/integration.spec.ts
+*/"><input type="hidden" name="project[files][src/app/app.component.html]" value="<app-banner></app-banner>
+<app-welcome></app-welcome>
+<nav>
+  <a routerLink=&quot;/dashboard&quot;>Dashboard</a>
+  <a routerLink=&quot;/heroes&quot;>Heroes</a>
+  <a routerLink=&quot;/about&quot;>About</a>
+</nav>
+<router-outlet></router-outlet>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/app.component.router.spec.ts]" value="// For more examples:
+//   https://github.com/angular/angular/blob/main/packages/router/test/integration.spec.ts
 
 import { waitForAsync, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
@@ -699,12 +578,16 @@ class Page {
 }
 
 function expectPathToBe(path: string, expectationFailOutput?: any) {
-  expect(location.path()).toEqual(path, expectationFailOutput || 'location.path()');
+  expect(location.path())
+  .withContext(expectationFailOutput || 'location.path()')
+  .toEqual(path);
 }
 
 function expectElementOf(type: Type<any>): any {
   const el = fixture.debugElement.query(By.directive(type));
-  expect(el).toBeTruthy('expected an element for ' + type.name);
+  expect(el)
+    .withContext(`expected an element for ${type.name}`)
+    .toBeTruthy();
   return el;
 }
 
@@ -824,7 +707,9 @@ function tests() {
   });
 
   it('can get RouterLinks from template', () => {
-    expect(routerLinks.length).toBe(3, 'should have 3 routerLinks');
+    expect(routerLinks.length)
+      .withContext('should have 3 routerLinks')
+      .toBe(3);
     expect(routerLinks[0].linkParams).toBe('/dashboard');
     expect(routerLinks[1].linkParams).toBe('/heroes');
     expect(routerLinks[2].linkParams).toBe('/about');
@@ -834,9 +719,11 @@ function tests() {
     const heroesLinkDe = linkDes[1];    // heroes link DebugElement
     const heroesLink = routerLinks[1];  // heroes link directive
 
-    expect(heroesLink.navigatedTo).toBeNull('should not have navigated yet');
+    expect(heroesLink.navigatedTo)
+      .withContext('should not have navigated yet')
+      .toBeNull();
 
-    heroesLinkDe.triggerEventHandler('click', null);
+    heroesLinkDe.triggerEventHandler('click');
     fixture.detectChanges();
 
     expect(heroesLink.navigatedTo).toBe('/heroes');
@@ -948,14 +835,13 @@ const maxQuotes = Infinity; // 0;
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 11, name: 'Dr Nice' },
-      { id: 12, name: 'Narco' },
+      { id: 12, name: 'Dr. Nice' },
       { id: 13, name: 'Bombasto' },
       { id: 14, name: 'Celeritas' },
       { id: 15, name: 'Magneta' },
       { id: 16, name: 'RubberMan' },
       { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr IQ' },
+      { id: 18, name: 'Dr. IQ' },
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
@@ -1014,7 +900,21 @@ export class AboutComponent { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/banner/banner-external.component.spec.ts]" value="import { ComponentFixture, TestBed } from '@angular/core/testing';
+*/"><input type="hidden" name="project[files][src/app/banner/banner-external.component.css]" value="h1 { color: green; font-size: 350%}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/banner/banner-external.component.html]" value="<h1>{{title}}</h1>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/banner/banner-external.component.spec.ts]" value="import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BannerComponent } from './banner-external.component';
 
@@ -1311,6 +1211,41 @@ export class BannerComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/dashboard/dashboard-hero.component.css]" value=".hero {
+	padding: 20px;
+  position: relative;
+	text-align: center;
+	color: #eee;
+	max-height: 120px;
+	width: 100%;
+	min-width: 120px;
+	background-color: #607D8B;
+	border-radius: 2px;
+}
+
+.hero:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+
+@media (max-width: 600px) {
+	.hero {
+	  font-size: 10px;
+	  max-height: 75px; }
+}
+
+@media (max-width: 1024px) {
+	.hero {
+	  min-width: 60px;
+	}
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="project[files][src/app/dashboard/dashboard-hero.component.spec.ts]" value="
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
@@ -1375,7 +1310,7 @@ describe('DashboardHeroComponent when tested directly', () => {
     let selectedHero: Hero | undefined;
     comp.selected.pipe(first()).subscribe((hero: Hero) => selectedHero = hero);
 
-    heroDe.triggerEventHandler('click', null);
+    heroDe.triggerEventHandler('click');
     expect(selectedHero).toBe(expectedHero);
   });
 
@@ -1468,9 +1403,9 @@ import { Hero } from '../model/hero';
 @Component({
   selector: 'dashboard-hero',
   template: `
-    <div (click)=&quot;click()&quot; class=&quot;hero&quot;>
+    <button type=&quot;button&quot; (click)=&quot;click()&quot; class=&quot;hero&quot;>
       {{hero.name | uppercase}}
-    </div>
+    </button>
   `,
   styleUrls: [ './dashboard-hero.component.css' ]
 })
@@ -1485,7 +1420,60 @@ export class DashboardHeroComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/dashboard/dashboard.component.no-testbed.spec.ts]" value="import { Router } from '@angular/router';
+*/"><input type="hidden" name="project[files][src/app/dashboard/dashboard.component.css]" value="[class*='col-'] {
+  float: left;
+}
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+[class*='col-'] {
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 25%;
+}
+.grid-pad {
+  padding: 10px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+@media (max-width: 1024px) {
+	.grid {
+	  margin: 0;
+	}
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/dashboard/dashboard.component.html]" value="<h2 highlight>{{title}}</h2>
+
+<div class=&quot;grid grid-pad&quot;>
+  <dashboard-hero *ngFor=&quot;let hero of heroes&quot;  class=&quot;col-1-4&quot;
+    [hero]=hero  (selected)=&quot;gotoDetail($event)&quot; >
+  </dashboard-hero>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/dashboard/dashboard.component.no-testbed.spec.ts]" value="import { Router } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
 import { Hero } from '../model/hero';
@@ -1510,27 +1498,31 @@ describe('DashboardComponent class only', () => {
   });
 
   it('should NOT have heroes before calling OnInit', () => {
-    expect(comp.heroes.length).toBe(0,
-      'should not have heroes before OnInit');
+    expect(comp.heroes.length)
+      .withContext('should not have heroes before OnInit')
+      .toBe(0);
   });
 
   it('should NOT have heroes immediately after OnInit', () => {
     comp.ngOnInit(); // ngOnInit -> getHeroes
-    expect(comp.heroes.length).toBe(0,
-      'should not have heroes until service promise resolves');
+    expect(comp.heroes.length)
+      .withContext('should not have heroes until service promise resolves')
+      .toBe(0);
   });
 
   it('should HAVE heroes after HeroService gets them', (done: DoneFn) => {
     comp.ngOnInit(); // ngOnInit -> getHeroes
     heroService.lastResult // the one from getHeroes
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
         // throw new Error('deliberate error'); // see it fail gracefully
-        expect(comp.heroes.length).toBeGreaterThan(0,
-          'should have heroes after service promise resolves');
-        done();
-      },
-      done.fail);
+          expect(comp.heroes.length)
+            .withContext('should have heroes after service promise resolves')
+            .toBeGreaterThan(0);
+          done();
+        },
+        error: done.fail
+      });
   });
 
   it('should tell ROUTER to navigate by hero id', () => {
@@ -1540,7 +1532,9 @@ describe('DashboardComponent class only', () => {
     comp.gotoDetail(hero);
 
     const navArgs = spy.calls.mostRecent().args[0];
-    expect(navArgs).toBe('/heroes/42', 'should nav to HeroDetail for Hero 42');
+    expect(navArgs)
+      .withContext('should nav to HeroDetail for Hero 42')
+      .toBe('/heroes/42');
   });
 
 });
@@ -1636,13 +1630,17 @@ function compileAndCreate() {
 function tests(heroClick: () => void) {
 
   it('should NOT have heroes before ngOnInit', () => {
-    expect(comp.heroes.length).toBe(0, 'should not have heroes before ngOnInit');
+    expect(comp.heroes.length)
+      .withContext('should not have heroes before ngOnInit')
+      .toBe(0);
   });
 
   it('should NOT have heroes immediately after ngOnInit', () => {
     fixture.detectChanges();  // runs initial lifecycle hooks
 
-    expect(comp.heroes.length).toBe(0, 'should not have heroes until service promise resolves');
+    expect(comp.heroes.length)
+      .withContext('should not have heroes until service promise resolves')
+      .toBe(0);
   });
 
   describe('after get dashboard heroes', () => {
@@ -1658,14 +1656,17 @@ function tests(heroClick: () => void) {
 
     it('should HAVE heroes', () => {
       expect(comp.heroes.length)
-          .toBeGreaterThan(0, 'should have heroes after service promise resolves');
+        .withContext('should have heroes after service promise resolves')
+        .toBeGreaterThan(0);
     });
 
     it('should DISPLAY heroes', () => {
       // Find and examine the displayed heroes
       // Look for them in the DOM by css class
       const heroes = fixture.nativeElement.querySelectorAll('dashboard-hero');
-      expect(heroes.length).toBe(4, 'should display 4 heroes');
+      expect(heroes.length)
+        .withContext('should display 4 heroes')
+        .toBe(4);
     });
 
     it('should tell ROUTER to navigate when hero clicked', () => {
@@ -1677,7 +1678,9 @@ function tests(heroClick: () => void) {
 
       // expecting to navigate to id of the component's first hero
       const id = comp.heroes[0].id;
-      expect(navArgs).toBe('/heroes/' + id, 'should nav to HeroDetail for first hero');
+      expect(navArgs)
+        .withContext('should nav to HeroDetail for first hero')
+        .toBe('/heroes/' + id);
     });
   });
 }
@@ -1768,7 +1771,9 @@ describe('Angular async helper', () => {
     });
 
     afterEach(() => {
-      expect(actuallyDone).toBe(true, 'actuallyDone should be true');
+      expect(actuallyDone)
+        .withContext('actuallyDone should be true')
+        .toBe(true);
     });
 
     it('should run normal test', () => {
@@ -1816,17 +1821,24 @@ describe('Angular async helper', () => {
     // Use done. Can also use async or fakeAsync.
     it('should run async test with successful delayed Observable', (done: DoneFn) => {
       const source = of(true).pipe(delay(10));
-      source.subscribe(val => actuallyDone = true, err => fail(err), done);
+      source.subscribe({
+        next: val => actuallyDone = true,
+        error: err => fail(err),
+        complete: done});
     });
 
     it('should run async test with successful delayed Observable', waitForAsync(() => {
          const source = of(true).pipe(delay(10));
-         source.subscribe(val => actuallyDone = true, err => fail(err));
+         source.subscribe({
+           next: val => actuallyDone = true,
+           error: err => fail(err)});
        }));
 
     it('should run async test with successful delayed Observable', fakeAsync(() => {
          const source = of(true).pipe(delay(10));
-         source.subscribe(val => actuallyDone = true, err => fail(err));
+         source.subscribe({
+           next: val => actuallyDone = true,
+           error: err => fail(err)});
 
          tick(10);
        }));
@@ -1947,7 +1959,14 @@ describe('Angular async helper', () => {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/demo/demo-main.ts]" value="// main app entry point
+*/"><input type="hidden" name="project[files][src/app/demo/demo-external-template.html]" value="<span>from external template</span>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/demo/demo-main.ts]" value="// main app entry point
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { DemoModule } from './demo';
 
@@ -2030,9 +2049,11 @@ describe('demo (no TestBed):', () => {
       masterService = new MasterService(valueServiceSpy);
 
       expect(masterService.getValue())
-        .toBe(stubValue, 'service returned stub value');
+        .withContext('service returned stub value')
+        .toBe(stubValue);
       expect(valueServiceSpy.getValue.calls.count())
-        .toBe(1, 'spy method was called once');
+        .withContext('spy method was called once')
+        .toBe(1);
       expect(valueServiceSpy.getValue.calls.mostRecent().returnValue)
         .toBe(stubValue);
     });
@@ -2042,9 +2063,11 @@ describe('demo (no TestBed):', () => {
     it('#getValue should return stubbed value from a spy', () => {
       const { masterService, stubValue, valueServiceSpy } = setup();
       expect(masterService.getValue())
-        .toBe(stubValue, 'service returned stub value');
+        .withContext('service returned stub value')
+        .toBe(stubValue);
       expect(valueServiceSpy.getValue.calls.count())
-        .toBe(1, 'spy method was called once');
+        .withContext('spy method was called once')
+        .toBe(1);
       expect(valueServiceSpy.getValue.calls.mostRecent().returnValue)
         .toBe(stubValue);
     });
@@ -2079,18 +2102,28 @@ describe('demo (no TestBed):', () => {
   describe('LightswitchComp', () => {
     it('#clicked() should toggle #isOn', () => {
       const comp = new LightswitchComponent();
-      expect(comp.isOn).toBe(false, 'off at first');
+      expect(comp.isOn)
+        .withContext('off at first')
+        .toBe(false);
       comp.clicked();
-      expect(comp.isOn).toBe(true, 'on after click');
+      expect(comp.isOn)
+        .withContext('on after click')
+        .toBe(true);
       comp.clicked();
-      expect(comp.isOn).toBe(false, 'off after second click');
+      expect(comp.isOn)
+        .withContext('off after second click')
+        .toBe(false);
     });
 
     it('#clicked() should set #message to &quot;is on&quot;', () => {
       const comp = new LightswitchComponent();
-      expect(comp.message).toMatch(/is off/i, 'off at first');
+      expect(comp.message)
+        .withContext('off at first')
+        .toMatch(/is off/i);
       comp.clicked();
-      expect(comp.message).toMatch(/is on/i, 'on after clicked');
+      expect(comp.message)
+        .withContext('on after clicked')
+        .toMatch(/is on/i);
     });
   });
 
@@ -2209,9 +2242,11 @@ describe('demo (with TestBed):', () => {
       valueServiceSpy.getValue.and.returnValue(stubValue);
 
       expect(masterService.getValue())
-        .toBe(stubValue, 'service returned stub value');
+        .withContext('service returned stub value')
+        .toBe(stubValue);
       expect(valueServiceSpy.getValue.calls.count())
-        .toBe(1, 'spy method was called once');
+        .withContext('spy method was called once')
+        .toBe(1);
       expect(valueServiceSpy.getValue.calls.mostRecent().returnValue)
         .toBe(stubValue);
     });
@@ -2290,7 +2325,9 @@ describe('demo (with TestBed):', () => {
 
       fixture.detectChanges();
       const heroes = fixture.debugElement.queryAll(By.css('.hero'));
-      expect(heroes.length).toBeGreaterThan(0, 'has heroes');
+      expect(heroes.length)
+        .withContext('has heroes')
+        .toBeGreaterThan(0);
 
       const comp = fixture.componentInstance;
       const hero = comp.heroes[0];
@@ -2311,12 +2348,18 @@ describe('demo (with TestBed):', () => {
       const ngForRow = fixture.debugElement.query(By.directive(IoComponent)); // first hero ngForRow
 
       const hero = ngForRow.context.hero; // the hero object passed into the row
-      expect(hero.name).toBe(heroName, 'ngRow.context.hero');
+      expect(hero.name)
+        .withContext('ngRow.context.hero')
+        .toBe(heroName);
 
       const rowComp = ngForRow.componentInstance;
       // jasmine.any is an &quot;instance-of-type&quot; test.
-      expect(rowComp).toEqual(jasmine.any(IoComponent), 'component is IoComp');
-      expect(rowComp.hero.name).toBe(heroName, 'component.hero');
+      expect(rowComp)
+        .withContext('component is IoComp')
+        .toEqual(jasmine.any(IoComponent));
+      expect(rowComp.hero.name)
+        .withContext('component.hero')
+        .toBe(heroName);
     });
 
     it('should support clicking a button', () => {
@@ -2325,11 +2368,15 @@ describe('demo (with TestBed):', () => {
       const span = fixture.debugElement.query(By.css('span')).nativeElement;
 
       fixture.detectChanges();
-      expect(span.textContent).toMatch(/is off/i, 'before click');
+      expect(span.textContent)
+        .withContext('before click')
+        .toMatch(/is off/i);
 
       click(btn);
       fixture.detectChanges();
-      expect(span.textContent).toMatch(/is on/i, 'after click');
+      expect(span.textContent)
+        .withContext('after click')
+        .toMatch(/is on/i);
     });
 
     // ngModel is async so we must wait for it with promise-based `whenStable`
@@ -2343,31 +2390,33 @@ describe('demo (with TestBed):', () => {
       const comp = fixture.componentInstance;
       const input = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
 
-      expect(comp.name).toBe(expectedOrigName,
-        `At start name should be ${expectedOrigName} `);
+      expect(comp.name)
+        .withContext(`At start name should be ${expectedOrigName} `)
+        .toBe(expectedOrigName);
 
       // wait until ngModel binds comp.name to input box
       fixture.whenStable().then(() => {
-        expect(input.value).toBe(expectedOrigName,
-          `After ngModel updates input box, input.value should be ${expectedOrigName} `);
+        expect(input.value)
+          .withContext(`After ngModel updates input box, input.value should be ${expectedOrigName} `)
+          .toBe(expectedOrigName);
 
         // simulate user entering new name in input
         input.value = expectedNewName;
 
         // that change doesn't flow to the component immediately
-        expect(comp.name).toBe(expectedOrigName,
-          `comp.name should still be ${expectedOrigName} after value change, before binding happens`);
+        expect(comp.name)
+          .withContext(`comp.name should still be ${expectedOrigName} after value change, before binding happens`)
+          .toBe(expectedOrigName);
 
         // Dispatch a DOM event so that Angular learns of input value change.
         // then wait while ngModel pushes input.box value to comp.name
-        // In older browsers, such as IE, you might need a CustomEvent instead. See
-        // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
         input.dispatchEvent(new Event('input'));
         return fixture.whenStable();
       })
         .then(() => {
-          expect(comp.name).toBe(expectedNewName,
-            `After ngModel updates the model, comp.name should be ${expectedNewName} `);
+          expect(comp.name)
+            .withContext(`After ngModel updates the model, comp.name should be ${expectedNewName} `)
+            .toBe(expectedNewName);
         });
     }));
 
@@ -2383,29 +2432,31 @@ describe('demo (with TestBed):', () => {
       const comp =  fixture.componentInstance;
       const input = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
 
-      expect(comp.name).toBe(expectedOrigName,
-        `At start name should be ${expectedOrigName} `);
+      expect(comp.name)
+        .withContext(`At start name should be ${expectedOrigName} `)
+        .toBe(expectedOrigName);
 
       // wait until ngModel binds comp.name to input box
       tick();
-      expect(input.value).toBe(expectedOrigName,
-        `After ngModel updates input box, input.value should be ${expectedOrigName} `);
+      expect(input.value)
+        .withContext(`After ngModel updates input box, input.value should be ${expectedOrigName} `)
+        .toBe(expectedOrigName);
 
       // simulate user entering new name in input
       input.value = expectedNewName;
 
       // that change doesn't flow to the component immediately
-      expect(comp.name).toBe(expectedOrigName,
-        `comp.name should still be ${expectedOrigName} after value change, before binding happens`);
+      expect(comp.name)
+        .withContext(`comp.name should still be ${expectedOrigName} after value change, before binding happens`)
+        .toBe(expectedOrigName);
 
       // Dispatch a DOM event so that Angular learns of input value change.
       // then wait a tick while ngModel pushes input.box value to comp.name
-      // In older browsers, such as IE, you might need a CustomEvent instead. See
-      // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
       input.dispatchEvent(new Event('input'));
       tick();
-      expect(comp.name).toBe(expectedNewName,
-        `After ngModel updates the model, comp.name should be ${expectedNewName} `);
+      expect(comp.name)
+        .withContext(`After ngModel updates the model, comp.name should be ${expectedNewName} `)
+        .toBe(expectedNewName);
     }));
 
     it('ReversePipeComp should reverse the input text', fakeAsync(() => {
@@ -2425,13 +2476,15 @@ describe('demo (with TestBed):', () => {
       // Dispatch a DOM event so that Angular learns of input value change.
       // then wait a tick while ngModel pushes input.box value to comp.text
       // and Angular updates the output span
-      // In older browsers, such as IE, you might need a CustomEvent instead. See
-      // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
       input.dispatchEvent(new Event('input'));
       tick();
       fixture.detectChanges();
-      expect(span.textContent).toBe(expectedText, 'output span');
-      expect(comp.text).toBe(inputText, 'component.text');
+      expect(span.textContent)
+        .withContext('output span')
+        .toBe(expectedText);
+      expect(comp.text)
+        .withContext('component.text')
+        .toBe(inputText);
     }));
 
     // Use this technique to find attached directives of any kind
@@ -2441,12 +2494,18 @@ describe('demo (with TestBed):', () => {
 
       const inputEl = fixture.debugElement.query(By.css('input'));
 
-      expect(inputEl.providerTokens).toContain(NgModel, 'NgModel directive');
+      expect(inputEl.providerTokens)
+        .withContext('NgModel directive')
+        .toContain(NgModel);
 
       const ngControl = inputEl.injector.get(NgControl);
-      expect(ngControl).toEqual(jasmine.any(NgControl), 'NgControl directive');
+      expect(ngControl)
+        .withContext('NgControl directive')
+        .toEqual(jasmine.any(NgControl));
 
-      expect(inputEl.listeners.length).toBeGreaterThan(2, 'several listeners attached');
+      expect(inputEl.listeners.length)
+        .withContext('several listeners attached')
+        .toBeGreaterThan(2);
     });
 
     it('BankAccountComponent should set attributes, styles, classes, and properties', () => {
@@ -2459,16 +2518,30 @@ describe('demo (with TestBed):', () => {
       const childComp = el.componentInstance as BankAccountComponent;
       expect(childComp).toEqual(jasmine.any(BankAccountComponent));
 
-      expect(el.context).toBe(childComp, 'context is the child component');
+      expect(el.context)
+        .withContext('context is the child component')
+        .toBe(childComp);
 
-      expect(el.attributes['account']).toBe(childComp.id, 'account attribute');
-      expect(el.attributes['bank']).toBe(childComp.bank, 'bank attribute');
+      expect(el.attributes['account'])
+        .withContext('account attribute')
+        .toBe(childComp.id);
+      expect(el.attributes['bank'])
+        .withContext('bank attribute')
+        .toBe(childComp.bank);
 
-      expect(el.classes['closed']).toBe(true, 'closed class');
-      expect(el.classes['open']).toBeFalsy('open class');
+      expect(el.classes['closed'])
+        .withContext('closed class')
+        .toBe(true);
+      expect(el.classes['open'])
+        .withContext('open class')
+        .toBeFalsy();
 
-      expect(el.styles['color']).toBe(comp.color, 'color style');
-      expect(el.styles['width']).toBe(comp.width + 'px', 'width style');
+      expect(el.styles['color'])
+        .withContext('color style')
+        .toBe(comp.color);
+      expect(el.styles['width'])
+        .withContext('width style')
+        .toBe(comp.width + 'px');
 
       // Removed on 12/02/2016 when ceased public discussion of the `Renderer`. Revive in future?
       // expect(el.properties['customProperty']).toBe(true, 'customProperty');
@@ -2512,9 +2585,15 @@ describe('demo (with TestBed):', () => {
 
       // Explore the providerTokens
       const tokens = fixture.debugElement.providerTokens;
-      expect(tokens).toContain(fixture.componentInstance.constructor, 'component ctor');
-      expect(tokens).toContain(TestProvidersComponent, 'TestProvidersComp');
-      expect(tokens).toContain(ValueService, 'ValueService');
+      expect(tokens)
+        .withContext('component ctor')
+        .toContain(fixture.componentInstance.constructor);
+      expect(tokens)
+        .withContext('TestProvidersComp')
+        .toContain(TestProvidersComponent);
+      expect(tokens)
+        .withContext('ValueService')
+        .toContain(ValueService);
     });
 
     it(&quot;should override TestViewProvidersComp's ValueService viewProvider&quot;, () => {
@@ -2560,12 +2639,22 @@ describe('demo (with TestBed):', () => {
       const tcProvider = fixture.debugElement.injector.get(ValueService) as ValueService;
       const tpcProvider = fixture.debugElement.children[0].injector.get(ValueService) as FakeValueService;
 
-      expect(testBedProvider).not.toBe(tcProvider, 'testBed/tc not same providers');
-      expect(testBedProvider).not.toBe(tpcProvider, 'testBed/tpc not same providers');
+      expect(testBedProvider)
+        .withContext('testBed/tc not same providers')
+        .not.toBe(tcProvider);
+      expect(testBedProvider)
+        .withContext('testBed/tpc not same providers')
+        .not.toBe(tpcProvider);
 
-      expect(testBedProvider instanceof ValueService).toBe(true, 'testBedProvider is ValueService');
-      expect(tcProvider).toEqual({} as ValueService, 'tcProvider is {}');
-      expect(tpcProvider instanceof FakeValueService).toBe(true, 'tpcProvider is FakeValueService');
+      expect(testBedProvider instanceof ValueService)
+        .withContext('testBedProvider is ValueService')
+        .toBe(true);
+      expect(tcProvider)
+        .withContext('tcProvider is {}')
+        .toEqual({} as ValueService);
+      expect(tpcProvider instanceof FakeValueService)
+        .withContext('tpcProvider is FakeValueService')
+        .toBe(true);
     });
 
     it('can access template local variables as references', () => {
@@ -2594,14 +2683,19 @@ describe('demo (with TestBed):', () => {
       const el = fixture.debugElement.children[0];
       const comp = el.componentInstance;
 
-      expect(comp.children.toArray().length).toBe(4,
-        'three different child components and an ElementRef with #content');
+      expect(comp.children.toArray().length)
+        .withContext('three different child components and an ElementRef with #content')
+        .toBe(4);
 
-      expect(el.references['nc']).toBe(comp, '#nc reference to component');
+      expect(el.references['nc'])
+        .withContext('#nc reference to component')
+        .toBe(comp);
 
       // Filter for DebugElements with a #content reference
       const contentRefs = el.queryAll( de => de.references['content']);
-      expect(contentRefs.length).toBe(4, 'elements w/ a #content reference');
+      expect(contentRefs.length)
+        .withContext('elements w/ a #content reference')
+        .toBe(4);
     });
 
   });
@@ -2652,7 +2746,9 @@ describe('demo (with TestBed):', () => {
     });
 
     it('should instantiate parent component', () => {
-      expect(parent).not.toBeNull('parent component should exist');
+      expect(parent)
+        .withContext('parent component should exist')
+        .not.toBeNull();
     });
 
     it('parent component OnInit should NOT be called before first detectChanges()', () => {
@@ -2667,7 +2763,9 @@ describe('demo (with TestBed):', () => {
     it('child component should exist after OnInit', () => {
       fixture.detectChanges();
       getChild();
-      expect(child instanceof MyIfChildComponent).toBe(true, 'should create child');
+      expect(child instanceof MyIfChildComponent)
+        .withContext('should create child')
+        .toBe(true);
     });
 
     it(&quot;should have called child component's OnInit &quot;, () => {
@@ -2689,10 +2787,12 @@ describe('demo (with TestBed):', () => {
       parent.parentValue = 'foo';
       fixture.detectChanges();
 
-      expect(child.ngOnChangesCounter).toBe(2,
-        'expected 2 changes: initial value and changed value');
-      expect(child.childValue).toBe('foo',
-        'childValue should eq changed parent value');
+      expect(child.ngOnChangesCounter)
+        .withContext('expected 2 changes: initial value and changed value')
+        .toBe(2);
+      expect(child.childValue)
+        .withContext('childValue should eq changed parent value')
+        .toBe('foo');
     });
 
     // must be async test to see child flow to parent
@@ -2709,10 +2809,12 @@ describe('demo (with TestBed):', () => {
         .then(() => {
           fixture.detectChanges();
 
-          expect(child.ngOnChangesCounter).toBe(2,
-            'expected 2 changes: initial value and changed value');
-          expect(parent.parentValue).toBe('bar',
-            'parentValue should eq changed parent value');
+          expect(child.ngOnChangesCounter)
+            .withContext('expected 2 changes: initial value and changed value')
+            .toBe(2);
+          expect(parent.parentValue)
+            .withContext('parentValue should eq changed parent value')
+            .toBe('bar');
         });
 
     }));
@@ -2884,7 +2986,7 @@ export class BankAccountParentComponent {
 @Component({
   selector: 'lightswitch-comp',
   template: `
-    <button (click)=&quot;clicked()&quot;>Click me!</button>
+    <button type=&quot;button&quot; (click)=&quot;clicked()&quot;>Click me!</button>
     <span>{{message}}</span>`
 })
 export class LightswitchComponent {
@@ -2972,7 +3074,7 @@ export class ParentComponent { }
 
 @Component({
   selector: 'io-comp',
-  template: '<div class=&quot;hero&quot; (click)=&quot;click()&quot;>Original {{hero.name}}</div>'
+  template: '<button type=&quot;button&quot; class=&quot;hero&quot; (click)=&quot;click()&quot;>Original {{hero.name}}</button>'
 })
 export class IoComponent {
   @Input() hero!: Hero;
@@ -3113,7 +3215,7 @@ export class MyIfChildComponent implements OnInit, OnChanges, OnDestroy {
     <label>Parent value:
       <input [(ngModel)]=&quot;parentValue&quot;>
     </label>
-    <button (click)=&quot;clicked()&quot;>{{toggleLabel}} Child</button><br>
+    <button type=&quot;button&quot; (click)=&quot;clicked()&quot;>{{toggleLabel}} Child</button><br>
     <div *ngIf=&quot;showChild&quot;
          style=&quot;margin: 4px; padding: 4px; background-color: aliceblue;&quot;>
       <my-if-child-1  [(value)]=&quot;parentValue&quot;></my-if-child-1>
@@ -3226,7 +3328,59 @@ export class DemoModule { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero/hero-detail.component.no-testbed.spec.ts]" value="import { Router } from '@angular/router';
+*/"><input type="hidden" name="project[files][src/app/hero/hero-detail.component.css]" value="label {
+  display: inline-block;
+  width: 3em;
+  margin: .5em 0;
+  color: #607D8B;
+  font-weight: bold;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+}
+button {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero/hero-detail.component.html]" value="<div *ngIf=&quot;hero&quot;>
+  <h2><span>{{hero.name | titlecase}}</span> Details</h2>
+  <div>
+    <span>id: </span>{{hero.id}}</div>
+  <div>
+    <label for=&quot;name&quot;>name: </label>
+    <input id=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot; placeholder=&quot;name&quot; />
+  </div>
+  <button type=&quot;button&quot; (click)=&quot;save()&quot;>Save</button>
+  <button type=&quot;button&quot; (click)=&quot;cancel()&quot;>Cancel</button>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/hero/hero-detail.component.no-testbed.spec.ts]" value="import { Router } from '@angular/router';
 
 import { asyncData, ActivatedRouteStub } from '../../testing';
 
@@ -3243,7 +3397,7 @@ describe('HeroDetailComponent - no TestBed', () => {
   let router: jasmine.SpyObj<Router>;
 
   beforeEach((done: DoneFn) => {
-    expectedHero = {id: 42, name: 'Bubba' };
+    expectedHero = { id: 42, name: 'Bubba' };
     const activatedRoute = new ActivatedRouteStub({ id: expectedHero.id });
     router = jasmine.createSpyObj('Router', ['navigate']);
 
@@ -3255,7 +3409,7 @@ describe('HeroDetailComponent - no TestBed', () => {
     comp.ngOnInit();
 
     // OnInit calls HDS.getHero; wait for it to get the fake hero
-    hds.getHero.calls.first().returnValue.subscribe(done);
+    hds.getHero.calls.first().returnValue.subscribe(() => done());
   });
 
   it('should expose the hero retrieved from the service', () => {
@@ -3264,13 +3418,19 @@ describe('HeroDetailComponent - no TestBed', () => {
 
   it('should navigate when click cancel', () => {
     comp.cancel();
-    expect(router.navigate.calls.any()).toBe(true, 'router.navigate called');
+    expect(router.navigate.calls.any())
+      .withContext('router.navigate called')
+      .toBe(true);
   });
 
   it('should save when click save', () => {
     comp.save();
-    expect(hds.saveHero.calls.any()).toBe(true, 'HeroDetailService.save called');
-    expect(router.navigate.calls.any()).toBe(false, 'router.navigate not called yet');
+    expect(hds.saveHero.calls.any())
+      .withContext('HeroDetailService.save called')
+      .toBe(true);
+    expect(router.navigate.calls.any())
+      .withContext('router.navigate not called yet')
+      .toBe(false);
   });
 
   it('should navigate when click save resolves', (done: DoneFn) => {
@@ -3278,7 +3438,9 @@ describe('HeroDetailComponent - no TestBed', () => {
     // waits for async save to complete before navigating
     hds.saveHero.calls.first().returnValue
     .subscribe(() => {
-      expect(router.navigate.calls.any()).toBe(true, 'router.navigate called');
+      expect(router.navigate.calls.any())
+        .withContext('router.navigate called')
+        .toBe(true);
       done();
     });
   });
@@ -3369,7 +3531,9 @@ function overrideSetup() {
   });
 
   it('should have called `getHero`', () => {
-    expect(hdsSpy.getHero.calls.count()).toBe(1, 'getHero called once');
+    expect(hdsSpy.getHero.calls.count())
+      .withContext('getHero called once')
+      .toBe(1, 'getHero called once');
   });
 
   it(&quot;should display stub hero's name&quot;, () => {
@@ -3382,19 +3546,27 @@ function overrideSetup() {
 
        page.nameInput.value = newName;
 
-       // In older browsers, such as IE, you might need a CustomEvent instead. See
-       // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
        page.nameInput.dispatchEvent(new Event('input')); // tell Angular
 
-       expect(component.hero.name).toBe(newName, 'component hero has new name');
-       expect(hdsSpy.testHero.name).toBe(origName, 'service hero unchanged before save');
+       expect(component.hero.name)
+        .withContext('component hero has new name')
+        .toBe(newName);
+       expect(hdsSpy.testHero.name)
+        .withContext('service hero unchanged before save')
+        .toBe(origName);
 
        click(page.saveBtn);
-       expect(hdsSpy.saveHero.calls.count()).toBe(1, 'saveHero called once');
+       expect(hdsSpy.saveHero.calls.count())
+        .withContext('saveHero called once')
+        .toBe(1);
 
        tick();  // wait for async save to complete
-       expect(hdsSpy.testHero.name).toBe(newName, 'service hero has new name after save');
-       expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
+       expect(hdsSpy.testHero.name)
+        .withContext('service hero has new name after save')
+        .toBe(newName);
+       expect(page.navigateSpy.calls.any())
+        .withContext('router.navigate called')
+        .toBe(true);
      }));
 
   it('fixture injected service is not the component injected service',
@@ -3403,7 +3575,9 @@ function overrideSetup() {
        // use `fixture.debugElement.injector` to get service from component
        const componentService = fixture.debugElement.injector.get(HeroDetailService);
 
-       expect(fixtureService).not.toBe(componentService, 'service injected from fixture');
+       expect(fixtureService)
+        .withContext('service injected from fixture')
+        .not.toBe(componentService);
      }));
 }
 
@@ -3444,7 +3618,9 @@ function heroModuleSetup() {
 
     it('should navigate when click cancel', () => {
       click(page.cancelBtn);
-      expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
+      expect(page.navigateSpy.calls.any())
+        .withContext('router.navigate called')
+        .toBe(true);
     });
 
     it('should save when click save but not navigate immediately', () => {
@@ -3454,14 +3630,20 @@ function heroModuleSetup() {
       const saveSpy = spyOn(hds, 'saveHero').and.callThrough();
 
       click(page.saveBtn);
-      expect(saveSpy.calls.any()).toBe(true, 'HeroDetailService.save called');
-      expect(page.navigateSpy.calls.any()).toBe(false, 'router.navigate not called');
+      expect(saveSpy.calls.any())
+        .withContext('HeroDetailService.save called')
+        .toBe(true);
+      expect(page.navigateSpy.calls.any())
+        .withContext('router.navigate not called')
+        .toBe(false);
     });
 
     it('should navigate when click save and save resolves', fakeAsync(() => {
          click(page.saveBtn);
          tick();  // wait for async save to complete
-         expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
+         expect(page.navigateSpy.calls.any())
+          .withContext('router.navigate called')
+          .toBe(true);
        }));
 
     it('should convert hero name to Title Case', () => {
@@ -3474,8 +3656,6 @@ function heroModuleSetup() {
       nameInput.value = 'quick BROWN  fOx';
 
       // Dispatch a DOM event so that Angular learns of input value change.
-      // In older browsers, such as IE, you might need a CustomEvent instead. See
-      // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
       nameInput.dispatchEvent(new Event('input'));
 
       // Tell Angular to update the display binding through the title pipe
@@ -3506,8 +3686,12 @@ function heroModuleSetup() {
     });
 
     it('should try to navigate back to hero list', () => {
-      expect(page.gotoListSpy.calls.any()).toBe(true, 'comp.gotoList called');
-      expect(page.navigateSpy.calls.any()).toBe(true, 'router.navigate called');
+      expect(page.gotoListSpy.calls.any())
+        .withContext('comp.gotoList called')
+        .toBe(true);
+      expect(page.navigateSpy.calls.any())
+        .withContext('router.navigate called')
+        .toBe(true);
     });
   });
 
@@ -3523,7 +3707,9 @@ function heroModuleSetup() {
 
     // get `HeroDetailService` with component's own injector
     service = fixture.debugElement.injector.get(HeroDetailService);
-    expect(service).toBeDefined('debugElement.injector');
+    expect(service)
+      .withContext('debugElement.injector')
+      .toBeDefined();
   });
 }
 
@@ -3742,7 +3928,98 @@ export class HeroDetailService {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero/hero-list.component.spec.ts]" value="import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync
+*/"><input type="hidden" name="project[files][src/app/hero/hero-list.component.css]" value=".selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.heroes li {
+  display: flex;
+}
+
+.heroes button {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch;
+  height: 1.8em;
+}
+
+.heroes button:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.heroes button:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.heroes button.selected {
+  background-color: black;
+  color: white;
+}
+
+.heroes button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.heroes button.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.heroes .name {
+  align-self: center;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero/hero-list.component.html]" value="<h2 highlight=&quot;gold&quot;>My Heroes</h2>
+<ul class=&quot;heroes&quot;>
+  <li *ngFor=&quot;let hero of heroes | async &quot;>
+    <button [class.selected]=&quot;hero === selectedHero&quot; type=&quot;button&quot; (click)=&quot;onSelect(hero)&quot;>
+      <span class=&quot;badge&quot;>{{hero.id}}</span>
+      <span class=&quot;name&quot;>{{hero.name}}</span>
+    </button>
+  </li>
+</ul>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/hero/hero-list.component.spec.ts]" value="import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync
 } from '@angular/core/testing';
 
 import { By } from '@angular/platform-browser';
@@ -3790,17 +4067,19 @@ describe('HeroListComponent', () => {
   it('1st hero should match 1st test hero', () => {
     const expectedHero = HEROES[0];
     const actualHero = page.heroRows[0].textContent;
-    expect(actualHero).toContain(expectedHero.id.toString(), 'hero.id');
-    expect(actualHero).toContain(expectedHero.name, 'hero.name');
+    expect(actualHero)
+      .withContext('hero.id')
+      .toContain(expectedHero.id.toString());
+    expect(actualHero)
+      .withContext('hero.name')
+      .toContain(expectedHero.name);
   });
 
   it('should select hero on click', fakeAsync(() => {
        const expectedHero = HEROES[1];
-       const li = page.heroRows[1];
+       const btn = page.heroRows[1].querySelector('button');
 
-       // In older browsers, such as IE, you might need a CustomEvent instead. See
-       // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
-       li.dispatchEvent(new Event('click'));
+       btn!.dispatchEvent(new Event('click'));
        tick();
        // `.toEqual` because selectedHero is clone of expectedHero; see FakeHeroService
        expect(comp.selectedHero).toEqual(expectedHero);
@@ -3808,22 +4087,26 @@ describe('HeroListComponent', () => {
 
   it('should navigate to selected hero detail on click', fakeAsync(() => {
        const expectedHero = HEROES[1];
-       const li = page.heroRows[1];
+       const btn = page.heroRows[1].querySelector('button');
 
-       // In older browsers, such as IE, you might need a CustomEvent instead. See
-       // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
-       li.dispatchEvent(new Event('click'));
+       btn!.dispatchEvent(new Event('click'));
        tick();
 
        // should have navigated
-       expect(page.navSpy.calls.any()).toBe(true, 'navigate called');
+       expect(page.navSpy.calls.any())
+        .withContext('navigate called')
+        .toBe(true);
 
        // composed hero detail will be URL like 'heroes/42'
        // expect link array with the route path and hero id
        // first argument to router.navigate is link array
        const navArgs = page.navSpy.calls.first().args[0];
-       expect(navArgs[0]).toContain('heroes', 'nav to heroes detail URL');
-       expect(navArgs[1]).toBe(expectedHero.id, 'expected hero.id');
+       expect(navArgs[0])
+        .withContext('nav to heroes detail URL')
+        .toContain('heroes');
+       expect(navArgs[1])
+        .withContext('expected hero.id')
+        .toBe(expectedHero.id);
      }));
 
   it('should find `HighlightDirective` with `By.directive', () => {
@@ -3839,11 +4122,15 @@ describe('HeroListComponent', () => {
 
     // different browsers report color values differently
     const isExpectedColor = bgColor === 'gold' || bgColor === 'rgb(255, 215, 0)';
-    expect(isExpectedColor).toBe(true, 'backgroundColor');
+    expect(isExpectedColor)
+      .withContext('backgroundColor')
+      .toBe(true);
   });
 
   it(&quot;the `HighlightDirective` is among the element's providers&quot;, () => {
-    expect(page.highlightDe.providerTokens).toContain(HighlightDirective, 'HighlightDirective');
+    expect(page.highlightDe.providerTokens)
+      .withContext('HighlightDirective')
+      .toContain(HighlightDirective);
   });
 });
 
@@ -3993,14 +4280,18 @@ describe ('HeroesService (with spies)', () => {
 
     httpClientSpy.get.and.returnValue(asyncData(expectedHeroes));
 
-    heroService.getHeroes().subscribe(
-      heroes => {
-        expect(heroes).toEqual(expectedHeroes, 'expected heroes');
+    heroService.getHeroes().subscribe({
+      next: heroes => {
+        expect(heroes)
+          .withContext('expected heroes')
+          .toEqual(expectedHeroes);
         done();
       },
-      done.fail
-    );
-    expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
+      error: done.fail
+    });
+    expect(httpClientSpy.get.calls.count())
+      .withContext('one call')
+      .toBe(1);
   });
 
   it('should return an error when the server returns a 404', (done: DoneFn) => {
@@ -4011,13 +4302,13 @@ describe ('HeroesService (with spies)', () => {
 
     httpClientSpy.get.and.returnValue(asyncError(errorResponse));
 
-    heroService.getHeroes().subscribe(
-      heroes => done.fail('expected an error, not heroes'),
-      error  => {
+    heroService.getHeroes().subscribe({
+      next: heroes => done.fail('expected an error, not heroes'),
+      error: error  => {
         expect(error.message).toContain('test 404 error');
         done();
       }
-    );
+    });
   });
 
 });
@@ -4060,10 +4351,12 @@ describe('HeroesService (with mocks)', () => {
     });
 
     it('should return expected heroes (called once)', () => {
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes)
+          .withContext('should return expected heroes')
+          .toEqual(expectedHeroes),
+        error: fail
+      });
 
       // HeroService should have made one request to GET heroes from expected URL
       const req = httpTestingController.expectOne(heroService.heroesUrl);
@@ -4074,10 +4367,12 @@ describe('HeroesService (with mocks)', () => {
     });
 
     it('should be OK returning no heroes', () => {
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes.length).toEqual(0, 'should have empty heroes array'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes.length)
+          .withContext('should have empty heroes array')
+          .toEqual(0),
+        error: fail
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
       req.flush([]); // Respond with no heroes
@@ -4085,10 +4380,10 @@ describe('HeroesService (with mocks)', () => {
 
     it('should turn 404 into a user-friendly error', () => {
       const msg = 'Deliberate 404';
-      heroService.getHeroes().subscribe(
-        heroes => fail('expected to fail'),
-        error => expect(error.message).toContain(msg)
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => fail('expected to fail'),
+        error: error => expect(error.message).toContain(msg)
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
 
@@ -4099,13 +4394,17 @@ describe('HeroesService (with mocks)', () => {
     it('should return expected heroes (called multiple times)', () => {
       heroService.getHeroes().subscribe();
       heroService.getHeroes().subscribe();
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes)
+          .withContext('should return expected heroes')
+          .toEqual(expectedHeroes),
+        error: fail
+      });
 
       const requests = httpTestingController.match(heroService.heroesUrl);
-      expect(requests.length).toEqual(3, 'calls to getHeroes()');
+      expect(requests.length)
+        .withContext('calls to getHeroes()')
+        .toEqual(3);
 
       // Respond to each request with different mock hero results
       requests[0].flush([]);
@@ -4122,10 +4421,12 @@ describe('HeroesService (with mocks)', () => {
 
       const updateHero: Hero = { id: 1, name: 'A' };
 
-      heroService.updateHero(updateHero).subscribe(
-        data => expect(data).toEqual(updateHero, 'should return the hero'),
-        fail
-      );
+      heroService.updateHero(updateHero).subscribe({
+        next: data => expect(data)
+          .withContext('should return the hero')
+          .toEqual(updateHero),
+        error: fail
+      });
 
       // HeroService should have made one request to PUT hero
       const req = httpTestingController.expectOne(heroService.heroesUrl);
@@ -4141,10 +4442,10 @@ describe('HeroesService (with mocks)', () => {
     it('should turn 404 error into user-facing error', () => {
       const msg = 'Deliberate 404';
       const updateHero: Hero = { id: 1, name: 'A' };
-      heroService.updateHero(updateHero).subscribe(
-        heroes => fail('expected to fail'),
-        error => expect(error.message).toContain(msg)
-      );
+      heroService.updateHero(updateHero).subscribe({
+        next: heroes => fail('expected to fail'),
+        error: error => expect(error.message).toContain(msg)
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
 
@@ -4158,13 +4459,13 @@ describe('HeroesService (with mocks)', () => {
       const errorEvent = new ProgressEvent('error');
 
       const updateHero: Hero = { id: 1, name: 'A' };
-      heroService.updateHero(updateHero).subscribe(
-        heroes => fail('expected to fail'),
-        error => {
+      heroService.updateHero(updateHero).subscribe({
+        next: heroes => fail('expected to fail'),
+        error: error => {
           expect(error).toBe(errorEvent);
           done();
         }
-      );
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
 
@@ -4446,17 +4747,19 @@ describe('HighlightDirective', () => {
   it('should bind <input> background to value color', () => {
     // easier to work with nativeElement
     const input = des[2].nativeElement as HTMLInputElement;
-    expect(input.style.backgroundColor).toBe('cyan', 'initial backgroundColor');
+    expect(input.style.backgroundColor)
+      .withContext('initial backgroundColor')
+      .toBe('cyan');
 
     input.value = 'green';
 
     // Dispatch a DOM event so that Angular responds to the input value change.
-    // In older browsers, such as IE, you might need a CustomEvent instead. See
-    // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
     input.dispatchEvent(new Event('input'));
     fixture.detectChanges();
 
-    expect(input.style.backgroundColor).toBe('green', 'changed backgroundColor');
+    expect(input.style.backgroundColor)
+      .withContext('changed backgroundColor')
+      .toBe('green');
   });
 
 
@@ -4593,7 +4896,7 @@ can be found in the LICENSE file at https://angular.io/license
 export class TitleCasePipe implements PipeTransform {
   transform(input: string): string {
     return input.length === 0 ? '' :
-      input.replace(/\w\S*/g, (txt => txt[0].toUpperCase() + txt.substr(1).toLowerCase() ));
+      input.replace(/\w\S*/g, (txt => txt[0].toUpperCase() + txt.slice(1).toLowerCase() ));
   }
 }
 
@@ -4612,7 +4915,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/twain/twain.component.marbles.spec.ts]" value="import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+*/"><input type="hidden" name="project[files][src/app/twain/twain.component.marbles.spec.ts]" value="import { fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
 
 import { cold, getTestScheduler } from 'jasmine-marbles';
 
@@ -4659,14 +4962,20 @@ describe('TwainComponent (marbles)', () => {
     getQuoteSpy.and.returnValue( q$ );
 
     fixture.detectChanges(); // ngOnInit()
-    expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+    expect(quoteEl.textContent)
+      .withContext('should show placeholder')
+      .toBe('...');
 
     getTestScheduler().flush(); // flush the observables
 
     fixture.detectChanges(); // update view
 
-    expect(quoteEl.textContent).toBe(testQuote, 'should show quote');
-    expect(errorMessage()).toBeNull('should not show error');
+    expect(quoteEl.textContent)
+      .withContext('should show quote')
+      .toBe(testQuote);
+    expect(errorMessage())
+      .withContext('should not show error')
+      .toBeNull();
   });
 
   // Still need fakeAsync() because of component's setTimeout()
@@ -4676,14 +4985,20 @@ describe('TwainComponent (marbles)', () => {
     getQuoteSpy.and.returnValue( q$ );
 
     fixture.detectChanges(); // ngOnInit()
-    expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+    expect(quoteEl.textContent)
+      .withContext('should show placeholder')
+      .toBe('...');
 
     getTestScheduler().flush(); // flush the observables
     tick();                     // component shows error after a setTimeout()
     fixture.detectChanges();    // update error message
 
-    expect(errorMessage()).toMatch(/test failure/, 'should display error');
-    expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+    expect(errorMessage())
+      .withContext('should display error')
+      .toMatch(/test failure/);
+    expect(quoteEl.textContent)
+      .withContext('should show placeholder')
+      .toBe('...');
   }));
 });
 
@@ -4736,9 +5051,15 @@ describe('TwainComponent', () => {
 
   describe('when test with synchronous observable', () => {
     it('should not show quote before OnInit', () => {
-      expect(quoteEl.textContent).toBe('', 'nothing displayed');
-      expect(errorMessage()).toBeNull('should not show error element');
-      expect(getQuoteSpy.calls.any()).toBe(false, 'getQuote not yet called');
+      expect(quoteEl.textContent)
+        .withContext('nothing displayed')
+        .toBe('');
+      expect(errorMessage())
+        .withContext('should not show error element')
+        .toBeNull();
+      expect(getQuoteSpy.calls.any())
+        .withContext('getQuote not yet called')
+        .toBe(false);
     });
 
     // The quote would not be immediately available if the service were truly async.
@@ -4747,7 +5068,9 @@ describe('TwainComponent', () => {
 
       // sync spy result shows testQuote immediately after init
       expect(quoteEl.textContent).toBe(testQuote);
-      expect(getQuoteSpy.calls.any()).toBe(true, 'getQuote called');
+      expect(getQuoteSpy.calls.any())
+        .withContext('getQuote called')
+        .toBe(true);
     });
 
 
@@ -4755,8 +5078,7 @@ describe('TwainComponent', () => {
     // Use `fakeAsync` because the component error calls `setTimeout`
     it('should display error when TwainService fails', fakeAsync(() => {
          // tell spy to return an error observable
-         getQuoteSpy.and.returnValue(throwError('TwainService test failure'));
-
+         getQuoteSpy.and.returnValue(throwError(() => new Error('TwainService test failure')));
          fixture.detectChanges();  // onInit()
          // sync spy errors immediately after init
 
@@ -4764,8 +5086,12 @@ describe('TwainComponent', () => {
 
          fixture.detectChanges();  // update errorMessage within setTimeout()
 
-         expect(errorMessage()).toMatch(/test failure/, 'should display error');
-         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+         expect(errorMessage())
+          .withContext('should display error')
+          .toMatch(/test failure/, );
+         expect(quoteEl.textContent)
+          .withContext('should show placeholder')
+          .toBe('...');
        }));
   });
 
@@ -4776,39 +5102,61 @@ describe('TwainComponent', () => {
     });
 
     it('should not show quote before OnInit', () => {
-      expect(quoteEl.textContent).toBe('', 'nothing displayed');
-      expect(errorMessage()).toBeNull('should not show error element');
-      expect(getQuoteSpy.calls.any()).toBe(false, 'getQuote not yet called');
+      expect(quoteEl.textContent)
+        .withContext('nothing displayed')
+        .toBe('');
+      expect(errorMessage())
+        .withContext('should not show error element')
+        .toBeNull();
+      expect(getQuoteSpy.calls.any())
+        .withContext('getQuote not yet called')
+        .toBe(false);
     });
 
     it('should still not show quote after component initialized', () => {
       fixture.detectChanges();
       // getQuote service is async => still has not returned with quote
       // so should show the start value, '...'
-      expect(quoteEl.textContent).toBe('...', 'should show placeholder');
-      expect(errorMessage()).toBeNull('should not show error');
-      expect(getQuoteSpy.calls.any()).toBe(true, 'getQuote called');
+      expect(quoteEl.textContent)
+        .withContext('should show placeholder')
+        .toBe('...');
+      expect(errorMessage())
+        .withContext('should not show error')
+        .toBeNull();
+      expect(getQuoteSpy.calls.any())
+        .withContext('getQuote called')
+        .toBe(true);
     });
 
     it('should show quote after getQuote (fakeAsync)', fakeAsync(() => {
          fixture.detectChanges();  // ngOnInit()
-         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+         expect(quoteEl.textContent)
+          .withContext('should show placeholder')
+          .toBe('...');
 
          tick();                   // flush the observable to get the quote
          fixture.detectChanges();  // update view
 
-         expect(quoteEl.textContent).toBe(testQuote, 'should show quote');
-         expect(errorMessage()).toBeNull('should not show error');
+         expect(quoteEl.textContent)
+          .withContext('should show quote')
+          .toBe(testQuote);
+         expect(errorMessage())
+          .withContext('should not show error')
+          .toBeNull();
        }));
 
     it('should show quote after getQuote (waitForAsync)', waitForAsync(() => {
          fixture.detectChanges();  // ngOnInit()
-         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+         expect(quoteEl.textContent)
+          .withContext('should show placeholder')
+          .toBe('...');
 
          fixture.whenStable().then(() => {  // wait for async getQuote
            fixture.detectChanges();         // update view with quote
            expect(quoteEl.textContent).toBe(testQuote);
-           expect(errorMessage()).toBeNull('should not show error');
+           expect(errorMessage())
+            .withContext('should not show error')
+            .toBeNull();
          });
        }));
 
@@ -4819,7 +5167,9 @@ describe('TwainComponent', () => {
       component.quote.pipe(last()).subscribe(() => {
         fixture.detectChanges();  // update view with quote
         expect(quoteEl.textContent).toBe(testQuote);
-        expect(errorMessage()).toBeNull('should not show error');
+        expect(errorMessage())
+          .withContext('should not show error')
+          .toBeNull();
         done();
       });
     });
@@ -4831,7 +5181,9 @@ describe('TwainComponent', () => {
       getQuoteSpy.calls.mostRecent().returnValue.subscribe(() => {
         fixture.detectChanges();  // update view with quote
         expect(quoteEl.textContent).toBe(testQuote);
-        expect(errorMessage()).toBeNull('should not show error');
+        expect(errorMessage())
+          .withContext('should not show error')
+          .toBeNull();
         done();
       });
     });
@@ -4844,8 +5196,12 @@ describe('TwainComponent', () => {
          tick();                   // component shows error after a setTimeout()
          fixture.detectChanges();  // update error message
 
-         expect(errorMessage()).toMatch(/test failure/, 'should display error');
-         expect(quoteEl.textContent).toBe('...', 'should show placeholder');
+         expect(errorMessage())
+          .withContext('should display error')
+          .toMatch(/test failure/);
+         expect(quoteEl.textContent)
+          .withContext('should show placeholder')
+          .toBe('...');
        }));
   });
 });
@@ -4866,7 +5222,7 @@ import { TwainService } from './twain.service';
   selector: 'twain-quote',
   template: `
     <p class=&quot;twain&quot;><i>{{quote | async}}</i></p>
-    <button (click)=&quot;getQuote()&quot;>Next quote</button>
+    <button type=&quot;button&quot; (click)=&quot;getQuote()&quot;>Next quote</button>
     <p class=&quot;error&quot; *ngIf=&quot;errorMessage&quot;>{{ errorMessage }}</p>`,
   styles: [
     '.twain { font-style: italic; } .error { color: red; }'
@@ -5058,8 +5414,12 @@ describe('WelcomeComponent', () => {
   it('should welcome the user', () => {
     fixture.detectChanges();
     const content = el.textContent;
-    expect(content).toContain('Welcome', '&quot;Welcome ...&quot;');
-    expect(content).toContain('Test User', 'expected name');
+    expect(content)
+      .withContext('&quot;Welcome ...&quot;')
+      .toContain('Welcome');
+    expect(content)
+      .withContext('expected name')
+      .toContain('Test User');
   });
 
   it('should welcome &quot;Bubba&quot;', () => {
@@ -5072,8 +5432,12 @@ describe('WelcomeComponent', () => {
     userService.isLoggedIn = false; // welcome message hasn't been shown yet
     fixture.detectChanges();
     const content = el.textContent;
-    expect(content).not.toContain('Welcome', 'not welcomed');
-    expect(content).toMatch(/log in/i, '&quot;log in&quot;');
+    expect(content)
+      .withContext('not welcomed')
+      .not.toContain('Welcome');
+    expect(content)
+      .withContext('&quot;log in&quot;')
+      .toMatch(/log in/i);
   });
 
   it(&quot;should inject the component's UserService instance&quot;,
@@ -5201,13 +5565,19 @@ describe('HttpClient testing', () => {
 
     // Make three requests in a row
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d.length).toEqual(0, 'should have no data'));
+      .subscribe(d => expect(d.length)
+        .withContext('should have no data')
+        .toEqual(0));
 
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).toEqual([testData[0]], 'should be one element array'));
+      .subscribe(d => expect(d)
+        .withContext('should be one element array')
+        .toEqual([testData[0]]));
 
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).toEqual(testData, 'should be expected data'));
+      .subscribe(d => expect(d)
+        .withContext('should be expected data')
+        .toEqual(testData));
 
     // get all pending requests that match the given URL
     const requests = httpTestingController.match(testUrl);
@@ -5222,12 +5592,16 @@ describe('HttpClient testing', () => {
   it('can test for 404 error', () => {
     const emsg = 'deliberate 404 error';
 
-    httpClient.get<Data[]>(testUrl).subscribe(
-      data => fail('should have failed with the 404 error'),
-      (error: HttpErrorResponse) => {
-        expect(error.status).toEqual(404, 'status');
-        expect(error.error).toEqual(emsg, 'message');
-      }
+    httpClient.get<Data[]>(testUrl).subscribe({
+      next: data => fail('should have failed with the 404 error'),
+      error: (error: HttpErrorResponse) => {
+        expect(error.status)
+          .withContext('status')
+          .toEqual(404);
+        expect(error.error)
+          .withContext('message')
+          .toEqual(emsg);
+      }}
     );
 
     const req = httpTestingController.expectOne(testUrl);
@@ -5241,12 +5615,12 @@ describe('HttpClient testing', () => {
     // the network level. Connection timeout, DNS error, offline, etc.
     const errorEvent = new ProgressEvent('error');
 
-    httpClient.get<Data[]>(testUrl).subscribe(
-      data => fail('should have failed with the network error'),
-      (error: HttpErrorResponse) => {
+    httpClient.get<Data[]>(testUrl).subscribe({
+      next: data => fail('should have failed with the network error'),
+      error: (error: HttpErrorResponse) => {
         expect(error.error).toBe(errorEvent);
         done();
-      }
+      }}
     );
 
     const req = httpTestingController.expectOne(testUrl);
@@ -5515,7 +5889,7 @@ function toHaveText(): jasmine.CustomMatcher {
       return { pass, message };
 
       function composeMessage() {
-        const a = (actualText.length < 100 ? actualText : actualText.substr(0, 100) + '...');
+        const a = (actualText.length < 100 ? actualText : actualText.slice(0, 100) + '...');
         const efo = expectationFailOutput ? ` '${expectationFailOutput}'` : '';
         return `Expected element to have text content '${expectedText}' instead of '${a}'${efo}`;
       }
@@ -5579,63 +5953,6 @@ export class RouterStubsModule {}
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/expected.ts]" value="/* Ignore. Satisfies static analysis of router config in app.component.router.spec.ts */
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][karma.conf.js]" value="// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
-
-module.exports = function (config) {
-  config.set({
-    basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
-    plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
-    ],
-    client: {
-      jasmine: {
-        // you can add configuration options for Jasmine here
-        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
-        // for example, you can disable the random execution with `random: false`
-        // or set a specific seed with `seed: 4321`
-      },
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
-    },
-    jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
-    },
-    coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular.io-example'),
-      subdir: '.',
-      reporters: [
-        { type: 'html' },
-        { type: 'text-summary' }
-      ]
-    },
-    reporters: ['progress', 'kjhtml'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
-  });
-};
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
@@ -5661,66 +5978,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
- * automatically update themselves. This includes recent versions of Safari, Chrome (including
- * Opera), Edge on the desktop, and iOS and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
-
-/***************************************************************************************************
- * BROWSER POLYFILLS
- */
-
-/**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
- * requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
- * specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
-
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
-import 'zone.js'; // Included with Angular CLI.
-
-/***************************************************************************************************
- * APPLICATION IMPORTS
- */
 
 
 /*
@@ -5843,8 +6100,7 @@ can be found in the LICENSE file at https://angular.io/license
         }
       }
     }
-  },
-  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+  }
 }
 "><input type="hidden" name="project[files][package.json]" value="{
   &quot;name&quot;: &quot;angular.io-example&quot;,
@@ -5861,37 +6117,37 @@ can be found in the LICENSE file at https://angular.io/license
   },
   &quot;private&quot;: true,
   &quot;dependencies&quot;: {
-    &quot;@angular/animations&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/common&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/core&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/forms&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser-dynamic&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/router&quot;: &quot;~13.1.0&quot;,
-    &quot;angular-in-memory-web-api&quot;: &quot;~0.11.0&quot;,
-    &quot;rxjs&quot;: &quot;~7.4.0&quot;,
+    &quot;@angular/animations&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/common&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/core&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/forms&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/router&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.13.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.5.0&quot;,
     &quot;tslib&quot;: &quot;^2.3.0&quot;,
     &quot;zone.js&quot;: &quot;~0.11.4&quot;
   },
   &quot;devDependencies&quot;: {
-    &quot;@angular-devkit/build-angular&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler-cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@types/jasmine&quot;: &quot;~3.10.0&quot;,
-    &quot;@types/node&quot;: &quot;^12.11.1&quot;,
+    &quot;@angular-devkit/build-angular&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/cli&quot;: &quot;~14.0.0-rc.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@types/jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;@types/node&quot;: &quot;^16.11.35&quot;,
     &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
-    &quot;jasmine-core&quot;: &quot;~3.10.0&quot;,
+    &quot;jasmine-core&quot;: &quot;~4.1.0&quot;,
     &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
     &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
     &quot;karma&quot;: &quot;~6.3.0&quot;,
     &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
-    &quot;karma-coverage&quot;: &quot;~2.0.3&quot;,
-    &quot;karma-jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.2.0&quot;,
+    &quot;karma-jasmine&quot;: &quot;~5.0.0&quot;,
     &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
     &quot;protractor&quot;: &quot;~7.0.0&quot;,
-    &quot;ts-node&quot;: &quot;~10.1.0&quot;,
-    &quot;typescript&quot;: &quot;~4.5.2&quot;
+    &quot;ts-node&quot;: &quot;~10.8.0&quot;,
+    &quot;typescript&quot;: &quot;~4.7.2&quot;
   }
 }
 "><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
@@ -5943,7 +6199,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2017&quot;,
+    &quot;target&quot;: &quot;es2020&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
       &quot;es2020&quot;,

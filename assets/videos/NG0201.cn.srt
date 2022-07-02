@@ -212,7 +212,7 @@ for the injectable class.\h
 
 51
 00:03:59,200 --> 00:04:04,560
-在依赖它的模块（AppModule ）中导入其对应的 ngModule
+在依赖它的模块（AppModule）中导入其对应的 ngModule
 
 52
 00:04:04,560 --> 00:04:09,520

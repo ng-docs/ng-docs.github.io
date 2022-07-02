@@ -1,1423 +1,5 @@
 <html lang="en"><head></head><body>
-        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/app.component.ts" target="_self"><input type="hidden" name="project[files][src/main.ts]" value="import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
- * automatically update themselves. This includes recent versions of Safari, Chrome (including
- * Opera), Edge on the desktop, and iOS and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
-
-/***************************************************************************************************
- * BROWSER POLYFILLS
- */
-
-/**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
- * requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
- * specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
-
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
-import 'zone.js'; // Included with Angular CLI.
-
-/***************************************************************************************************
- * APPLICATION IMPORTS
- */
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/test.ts]" value="// This file is required by karma.conf.js and loads recursively all the .spec and framework files
-
-import 'zone.js/testing';
-import { getTestBed } from '@angular/core/testing';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
-
-declare const require: {
-  context(path: string, deep?: boolean, filter?: RegExp): {
-    keys(): string[];
-    <T>(id: string): T;
-  };
-};
-
-// First, initialize the Angular testing environment.
-getTestBed().initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting(),
-);
-
-// Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
-// And load the modules.
-context.keys().map(context);
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/about.component.ts]" value="import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
-})
-export class AboutComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/animations.ts]" value="import {
-  animation, trigger, animateChild, group,
-  transition, animate, style, query
-} from '@angular/animations';
-
-export const transitionAnimation = animation([
-  style({
-    height: '{{ height }}',
-    opacity: '{{ opacity }}',
-    backgroundColor: '{{ backgroundColor }}'
-  }),
-  animate('{{ time }}')
-]);
-
-// Routable animations
-export const slideInAnimation =
-  trigger('routeAnimations', [
-    transition('HomePage <=> AboutPage', [
-      style({ position: 'relative' }),
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%'
-        })
-      ]),
-      query(':enter', [
-        style({ left: '-100%' })
-      ]),
-      query(':leave', animateChild()),
-      group([
-        query(':leave', [
-          animate('300ms ease-out', style({ left: '100%' }))
-        ]),
-        query(':enter', [
-          animate('300ms ease-out', style({ left: '0%' }))
-        ])
-      ]),
-      query(':enter', animateChild()),
-    ]),
-    transition('* <=> FilterPage', [
-      style({ position: 'relative' }),
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%'
-        })
-      ]),
-      query(':enter', [
-        style({ left: '-100%' })
-      ]),
-      query(':leave', animateChild()),
-      group([
-        query(':leave', [
-          animate('200ms ease-out', style({ left: '100%' }))
-        ]),
-        query(':enter', [
-          animate('300ms ease-out', style({ left: '0%' }))
-        ])
-      ]),
-      query(':enter', animateChild()),
-    ])
-  ]);
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/app.component.ts]" value="import { Component, HostBinding } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
-
-import { RouterOutlet } from '@angular/router';
-import { slideInAnimation } from './animations';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
-  animations: [
-    slideInAnimation
-    // animation triggers go here
-  ]
-})
-export class AppComponent {
-  @HostBinding('@.disabled')
-  public animationsDisabled = false;
-
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet?.activatedRouteData?.['animation'];
-  }
-
-
-  toggleAnimations() {
-    this.animationsDisabled = !this.animationsDisabled;
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { OpenCloseComponent } from './open-close.component';
-import { OpenClosePageComponent } from './open-close-page.component';
-import { OpenCloseChildComponent } from './open-close.component.4';
-import { ToggleAnimationsPageComponent } from './toggle-animations-page.component';
-import { StatusSliderComponent } from './status-slider.component';
-import { StatusSliderPageComponent } from './status-slider-page.component';
-import { HeroListPageComponent } from './hero-list-page.component';
-import { HeroListGroupPageComponent } from './hero-list-group-page.component';
-import { HeroListGroupsComponent } from './hero-list-groups.component';
-import { HeroListEnterLeavePageComponent } from './hero-list-enter-leave-page.component';
-import { HeroListEnterLeaveComponent } from './hero-list-enter-leave.component';
-import { HeroListAutoCalcPageComponent } from './hero-list-auto-page.component';
-import { HeroListAutoComponent } from './hero-list-auto.component';
-import { HomeComponent } from './home.component';
-import { AboutComponent } from './about.component';
-import { InsertRemoveComponent } from './insert-remove.component';
-
-
-@NgModule({
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: '/enter-leave' },
-      { path: 'open-close', component: OpenClosePageComponent },
-      { path: 'status', component: StatusSliderPageComponent },
-      { path: 'toggle', component: ToggleAnimationsPageComponent },
-      { path: 'heroes', component: HeroListPageComponent,
-        data: { animation: 'FilterPage' } },
-      { path: 'hero-groups', component: HeroListGroupPageComponent },
-      { path: 'enter-leave', component: HeroListEnterLeavePageComponent },
-      { path: 'auto', component: HeroListAutoCalcPageComponent },
-      { path: 'insert-remove', component: InsertRemoveComponent},
-      { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
-      { path: 'about', component: AboutComponent, data: { animation: 'AboutPage' } },
-    ])
-  ],
-  declarations: [
-    AppComponent,
-    StatusSliderComponent,
-    OpenCloseComponent,
-    OpenCloseChildComponent,
-    OpenClosePageComponent,
-    StatusSliderPageComponent,
-    ToggleAnimationsPageComponent,
-    HeroListPageComponent,
-    HeroListGroupsComponent,
-    HeroListGroupPageComponent,
-    HeroListEnterLeavePageComponent,
-    HeroListEnterLeaveComponent,
-    HeroListAutoCalcPageComponent,
-    HeroListAutoComponent,
-    HomeComponent,
-    InsertRemoveComponent,
-    AboutComponent
-  ],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-auto-page.component.ts]" value="import { Component } from '@angular/core';
-import { HEROES } from './mock-heroes';
-
-@Component({
-  selector: 'app-hero-list-auto-page',
-  template: `
-    <section>
-      <h2>Automatic Calculation</h2>
-
-      <app-hero-list-auto [heroes]=&quot;heroes&quot; (remove)=&quot;onRemove($event)&quot;></app-hero-list-auto>
-    </section>
-  `
-})
-export class HeroListAutoCalcPageComponent {
-  heroes = HEROES.slice();
-
-  onRemove(id: number) {
-    this.heroes = this.heroes.filter(hero => hero.id !== id);
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-auto.component.ts]" value="import {
-  Component,
-  Input,
-  Output,
-  EventEmitter
-} from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
-
-import { Hero } from './hero';
-
-@Component({
-  selector: 'app-hero-list-auto',
-  templateUrl: 'hero-list-auto.component.html',
-  styleUrls: ['./hero-list-page.component.css'],
-  animations: [
-    trigger('shrinkOut', [
-      state('in', style({ height: '*' })),
-      transition('* => void', [
-        style({ height: '*' }),
-        animate(250, style({ height: 0 }))
-      ])
-    ])
-  ]
-})
-export class HeroListAutoComponent {
-   @Input() heroes: Hero[] = [];
-
-   @Output() remove = new EventEmitter<number>();
-
-   removeHero(id: number) {
-     this.remove.emit(id);
-   }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-enter-leave-page.component.ts]" value="import { Component } from '@angular/core';
-import { HEROES } from './mock-heroes';
-
-@Component({
-  selector: 'app-hero-list-enter-leave-page',
-  template: `
-    <section>
-      <h2>Enter/Leave</h2>
-
-      <app-hero-list-enter-leave [heroes]=&quot;heroes&quot; (remove)=&quot;onRemove($event)&quot;></app-hero-list-enter-leave>
-    </section>
-  `
-})
-export class HeroListEnterLeavePageComponent {
-  heroes = HEROES.slice();
-
-  onRemove(id: number) {
-    this.heroes = this.heroes.filter(hero => hero.id !== id);
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-enter-leave.component.ts]" value="import {
-  Component,
-  Input,
-  Output,
-  EventEmitter
-} from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
-
-import { Hero } from './hero';
-
-@Component({
-  selector: 'app-hero-list-enter-leave',
-  template: `
-    <ul class=&quot;heroes&quot;>
-      <li *ngFor=&quot;let hero of heroes&quot;
-          [@flyInOut]=&quot;'in'&quot; (click)=&quot;removeHero(hero.id)&quot;>
-          <div class=&quot;inner&quot;>
-            <span class=&quot;badge&quot;>{{ hero.id }}</span>
-            <span>{{ hero.name }}</span>
-          </div>
-      </li>
-    </ul>
-  `,
-  styleUrls: ['./hero-list-page.component.css'],
-  animations: [
-    trigger('flyInOut', [
-      state('in', style({ transform: 'translateX(0)' })),
-      transition('void => *', [
-        style({ transform: 'translateX(-100%)' }),
-        animate(100)
-      ]),
-      transition('* => void', [
-        animate(100, style({ transform: 'translateX(100%)' }))
-      ])
-    ])
-  ]
-})
-export class HeroListEnterLeaveComponent {
-  @Input() heroes: Hero[] = [];
-
-  @Output() remove = new EventEmitter<number>();
-
-  removeHero(id: number) {
-    this.remove.emit(id);
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-group-page.component.ts]" value="import { Component } from '@angular/core';
-import { HEROES } from './mock-heroes';
-
-@Component({
-  selector: 'app-hero-list-groups-page',
-  template: `
-    <section>
-      <h2>Hero List Group</h2>
-
-      <app-hero-list-groups [heroes]=&quot;heroes&quot; (remove)=&quot;onRemove($event)&quot;></app-hero-list-groups>
-    </section>
-  `
-})
-export class HeroListGroupPageComponent {
-  heroes = HEROES.slice();
-
-  onRemove(id: number) {
-    this.heroes = this.heroes.filter(hero => hero.id !== id);
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-groups.component.ts]" value="import {
-  Component,
-  Input,
-  Output,
-  EventEmitter
-} from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  group
-} from '@angular/animations';
-
-import { Hero } from './hero';
-
-@Component({
-  selector: 'app-hero-list-groups',
-  template: `
-    <ul class=&quot;heroes&quot;>
-      <li *ngFor=&quot;let hero of heroes&quot;
-          [@flyInOut]=&quot;'in'&quot; (click)=&quot;removeHero(hero.id)&quot;>
-          <div class=&quot;inner&quot;>
-            <span class=&quot;badge&quot;>{{ hero.id }}</span>
-            <span>{{ hero.name }}</span>
-          </div>
-      </li>
-    </ul>
-  `,
-  styleUrls: ['./hero-list-page.component.css'],
-  animations: [
-    trigger('flyInOut', [
-      state('in', style({
-        width: 120,
-        transform: 'translateX(0)', opacity: 1
-      })),
-      transition(':enter', [
-        style({ width: 10, transform: 'translateX(50px)', opacity: 0 }),
-        group([
-          animate('0.3s 0.1s ease', style({
-            transform: 'translateX(0)',
-            width: 120
-          })),
-          animate('0.3s ease', style({
-            opacity: 1
-          }))
-        ])
-      ]),
-      transition(':leave', [
-        group([
-          animate('0.3s ease', style({
-            transform: 'translateX(50px)',
-            width: 10
-          })),
-          animate('0.3s 0.2s ease', style({
-            opacity: 0
-          }))
-        ])
-      ])
-    ])
-  ]
-})
-export class HeroListGroupsComponent {
-   @Input() heroes: Hero[] = [];
-
-   @Output() remove = new EventEmitter<number>();
-
-   removeHero(id: number) {
-     this.remove.emit(id);
-   }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-page.component.ts]" value="import { Component, HostBinding, OnInit } from '@angular/core';
-import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
-import { HEROES } from './mock-heroes';
-import { Hero } from './hero';
-
-@Component({
-  selector: 'app-hero-list-page',
-  templateUrl: 'hero-list-page.component.html',
-  styleUrls: ['hero-list-page.component.css'],
-  animations: [
-    trigger('pageAnimations', [
-      transition(':enter', [
-        query('.hero', [
-          style({opacity: 0, transform: 'translateY(-100px)'}),
-          stagger(30, [
-            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)',
-            style({ opacity: 1, transform: 'none' }))
-          ])
-        ])
-      ])
-    ]),
-    trigger('filterAnimation', [
-      transition(':enter, * => 0, * => -1', []),
-      transition(':increment', [
-        query(':enter', [
-          style({ opacity: 0, width: 0 }),
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 1, width: '*' })),
-          ]),
-        ], { optional: true })
-      ]),
-      transition(':decrement', [
-        query(':leave', [
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 0, width: 0 })),
-          ]),
-        ])
-      ]),
-    ]),
-  ]
-})
-export class HeroListPageComponent implements OnInit {
-  @HostBinding('@pageAnimations')
-  public animatePage = true;
-
-  heroesTotal = -1;
-
-  get heroes() { return this._heroes; }
-  private _heroes: Hero[] = [];
-
-  ngOnInit() {
-    this._heroes = HEROES;
-  }
-
-  updateCriteria(criteria: string) {
-    criteria = criteria ? criteria.trim() : '';
-
-    this._heroes = HEROES.filter(hero => hero.name.toLowerCase().includes(criteria.toLowerCase()));
-    const newTotal = this.heroes.length;
-
-    if (this.heroesTotal !== newTotal) {
-      this.heroesTotal = newTotal;
-    } else if (!criteria) {
-      this.heroesTotal = -1;
-    }
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero.ts]" value="export interface Hero {
-  id: number;
-  name: string;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/home.component.ts]" value="import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
-})
-export class HomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/insert-remove.component.ts]" value="import { Component } from '@angular/core';
-import { trigger, transition, animate, style } from '@angular/animations';
-
-@Component({
-  selector: 'app-insert-remove',
-  animations: [
-    trigger('myInsertRemoveTrigger', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('100ms', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('100ms', style({ opacity: 0 }))
-      ])
-    ]),
-  ],
-  templateUrl: 'insert-remove.component.html',
-  styleUrls: ['insert-remove.component.css']
-})
-export class InsertRemoveComponent {
-  isShown = false;
-
-  toggle() {
-    this.isShown = !this.isShown;
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/mock-heroes.ts]" value="import { Hero } from './hero';
-
-export const HEROES: Hero[] = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/open-close-page.component.ts]" value="import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-open-close-page',
-  template: `
-    <section>
-      <h2>Open Close Component</h2>
-      <input type=&quot;checkbox&quot; id=&quot;log-checkbox&quot; [checked]=&quot;logging&quot; (click)=&quot;toggleLogging()&quot;/>
-      <label for=&quot;log-checkbox&quot;>Console Log Animation Events</label>
-
-      <app-open-close [logging]=&quot;logging&quot;></app-open-close>
-    </section>
-  `
-})
-export class OpenClosePageComponent {
-  logging = false;
-
-  toggleLogging() {
-    this.logging = !this.logging;
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/open-close.component.4.ts]" value="import { Component } from '@angular/core';
-import { trigger, transition, state, animate, style } from '@angular/animations';
-
-@Component({
-  selector: 'app-open-close-toggle',
-  templateUrl: 'open-close.component.4.html',
-  styleUrls: ['open-close.component.css'],
-  animations: [
-    trigger('childAnimation', [
-      // ...
-      state('open', style({
-        width: '250px',
-        opacity: 1,
-        backgroundColor: 'yellow'
-      })),
-      state('closed', style({
-        width: '100px',
-        opacity: 0.8,
-        backgroundColor: 'blue'
-      })),
-      transition('* => *', [
-        animate('1s')
-      ]),
-    ]),
-  ],
-})
-export class OpenCloseChildComponent {
-  isDisabled = false;
-  isOpen = false;
-  toggleAnimations() {
-    this.isDisabled = !this.isDisabled;
-  }
-
-  toggle() {
-    this.isOpen = !this.isOpen;
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/open-close.component.ts]" value="import { Component, Input } from '@angular/core';
-import { trigger, transition, state, animate, style, AnimationEvent } from '@angular/animations';
-
-@Component({
-  selector: 'app-open-close',
-  animations: [
-    trigger('openClose', [
-      // ...
-      state('open', style({
-        height: '200px',
-        opacity: 1,
-        backgroundColor: 'yellow'
-      })),
-      state('closed', style({
-        height: '100px',
-        opacity: 0.8,
-        backgroundColor: 'blue'
-      })),
-      transition('open => closed', [
-        animate('1s')
-      ]),
-      transition('closed => open', [
-        animate('0.5s')
-      ]),
-      transition('* => closed', [
-        animate('1s')
-      ]),
-      transition('* => open', [
-        animate('0.5s')
-      ]),
-      transition('open <=> closed', [
-        animate('0.5s')
-      ]),
-      transition ('* => open', [
-        animate ('1s',
-          style ({ opacity: '*' }),
-        ),
-      ]),
-      transition('* => *', [
-        animate('1s')
-      ]),
-    ]),
-  ],
-  templateUrl: 'open-close.component.html',
-  styleUrls: ['open-close.component.css']
-})
-export class OpenCloseComponent {
-  @Input() logging = false;
-  isOpen = true;
-
-  toggle() {
-    this.isOpen = !this.isOpen;
-  }
-
-  onAnimationEvent(event: AnimationEvent) {
-    if (!this.logging) {
-      return;
-    }
-    // openClose is trigger name in this example
-    console.warn(`Animation Trigger: ${event.triggerName}`);
-
-    // phaseName is &quot;start&quot; or &quot;done&quot;
-    console.warn(`Phase: ${event.phaseName}`);
-
-    // in our example, totalTime is 1000 (number of milliseconds in a second)
-    console.warn(`Total time: ${event.totalTime}`);
-
-    // in our example, fromState is either &quot;open&quot; or &quot;closed&quot;
-    console.warn(`From: ${event.fromState}`);
-
-    // in our example, toState either &quot;open&quot; or &quot;closed&quot;
-    console.warn(`To: ${event.toState}`);
-
-    // the HTML element itself, the button in this case
-    console.warn(`Element: ${event.element}`);
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/status-slider-page.component.ts]" value="import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-status-slider-page',
-  template: `
-    <section>
-      <h2>Status Slider</h2>
-      <app-status-slider></app-status-slider>
-    </section>
-  `
-})
-export class StatusSliderPageComponent {}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/status-slider.component.ts]" value="import { Component } from '@angular/core';
-import { trigger, transition, state, animate, style, keyframes } from '@angular/animations';
-
-@Component({
-  selector: 'app-status-slider',
-  templateUrl: 'status-slider.component.html',
-  styleUrls: ['status-slider.component.css'],
-  animations: [
-    trigger('slideStatus', [
-      state('inactive', style({ backgroundColor: 'blue' })),
-      state('active', style({ backgroundColor: '#754600' })),
-
-      transition('* => active', [
-        animate('2s', keyframes([
-          style({ backgroundColor: 'blue', offset: 0}),
-          style({ backgroundColor: 'red', offset: 0.8}),
-          style({ backgroundColor: '#754600', offset: 1.0})
-        ])),
-      ]),
-      transition('* => inactive', [
-        animate('2s', keyframes([
-          style({ backgroundColor: '#754600', offset: 0}),
-          style({ backgroundColor: 'red', offset: 0.2}),
-          style({ backgroundColor: 'blue', offset: 1.0})
-        ]))
-      ]),
-
-      transition('* => active', [
-        animate('2s', keyframes([
-          style({ backgroundColor: 'blue' }),
-          style({ backgroundColor: 'red' }),
-          style({ backgroundColor: 'orange' })
-        ]))
-      ]),
-    ])
-  ]
-})
-export class StatusSliderComponent {
-  status: 'active' | 'inactive' = 'inactive';
-
-  toggle() {
-    if (this.status === 'active') {
-      this.status = 'inactive';
-    } else {
-      this.status = 'active';
-    }
-  }
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/toggle-animations-page.component.ts]" value="import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-toggle-animations-child-page',
-  template: `
-    <section>
-      <h2>Toggle Animations</h2>
-
-      <app-open-close-toggle></app-open-close-toggle>
-    </section>
-  `
-})
-export class ToggleAnimationsPageComponent {}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
-  production: true
-};
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
-};
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-h1 {
-  color: #264D73;
-  font-size: 2.5rem;
-}
-h2, h3 {
-  color: #444;
-  font-weight: lighter;
-}
-h3 {
-  font-size: 1.3rem;
-}
-body {
-  padding: .5rem;
-  max-width: 1000px;
-  margin: auto;
-}
-@media (min-width: 600px) {
-  body {
-    padding: 2rem;
-  }
-}
-body, input[text] {
-  color: #333;
-  font-family: Cambria, Georgia, serif;
-}
-a {
-  cursor: pointer;
-}
-button {
-  background-color: #eee;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: black;
-  font-size: 1.2rem;
-  padding: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-button:hover {
-  background-color: black;
-  color: white;
-}
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
-
-/* Navigation link styles */
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #e8e8e8;
-  color: #3d3d3d;
-  border-radius: 4px;
-}
-
-nav a:hover {
-  color: white;
-  background-color:  #42545C;
-}
-nav a.active {
-  background-color: black;
-  color: white;
-}
-hr {
-  margin: 1.5rem 0;
-}
-input[type=&quot;text&quot;] {
-  box-sizing: border-box;
-  width: 100%;
-  padding: .5rem;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/about.component.css]" value="
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/app.component.css]" value="nav a {
-  padding: .7rem;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list-page.component.css]" value=".heroes {
-  list-style-type: none;
-  padding: 0;
-}
-
-.heroes li {
-  overflow:hidden;
-  margin: .5em 0;
-}
-
-.heroes li > .inner {
-  cursor: pointer;
-  background-color: #EEE;
-  padding: .3rem 0;
-  height: 1.6rem;
-  border-radius: 4px;
-}
-
-.heroes li:hover > .inner {
-  color: black;
-  background-color: #DDD;
-  transform: translateX(.1em);
-}
-
-.heroes .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #3d5157;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-label {
-  display: block;
-  padding-bottom: .5rem;
-}
-
-input {
-  font-size: 100%;
-  margin-bottom: 1rem;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/hero-list.component.css]" value="ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: block;
-  width: 120px;
-  line-height: 50px;
-  padding: 0 10px;
-  box-sizing: border-box;
-  background-color: #eee;
-  border-radius: 4px;
-  margin: 10px;
-  cursor: pointer;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.active {
-  background-color: #cfd8dc;
-  transform: scale(1.1);
-}
-.inactive {
-  background-color: #eee;
-  transform: scale(1);
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/home.component.css]" value="
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/insert-remove.component.css]" value=":host {
-  display: block;
-}
-
-.insert-remove-container {
-  border: 1px solid #dddddd;
-  margin-top: 1em;
-  padding: 20px 20px 0px 20px;
-  color: #000000;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/open-close.component.css]" value=":host {
-  display: block;
-  margin-top: 1rem;
-}
-
-.open-close-container {
-  border: 1px solid #dddddd;
-  margin-top: 1em;
-  padding: 20px 20px 0px 20px;
-  color: #000000;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/status-slider.component.css]" value=":host {
-  display: block;
-}
-
-.box {
-  width: 300px;
-  border: 5px solid black;
-  display: block;
-  line-height: 300px;
-  text-align: center;
-  font-size: 50px;
-  color: white;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/index.html]" value="<!DOCTYPE html>
-<html lang=&quot;en&quot;>
- <head>
-    <meta charset=&quot;UTF-8&quot;>
-    <title>Animations</title>
-    <base href=&quot;/&quot;>
-    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
-  </head>
-
-  <body>
-    <app-root></app-root>
-  </body>
-
-</html>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/about.component.html]" value="<p>
-  Angular's animations library makes it easy to define and apply animation effects such as page and list transitions.
-</p>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/app.component.html]" value="<h1>Animations</h1>
-
-<input type=&quot;checkbox&quot;
-       id=&quot;animation-toggle&quot;
-       [checked]=&quot;!animationsDisabled&quot;
-       (click)=&quot;toggleAnimations()&quot;>
-<label for=&quot;animation-toggle&quot;>Toggle All Animations</label>
-
-<nav>
-  <a id=&quot;home&quot; routerLink=&quot;/home&quot; routerLinkActive=&quot;active&quot;>Home</a>
-  <a id=&quot;about&quot; routerLink=&quot;/about&quot; routerLinkActive=&quot;active&quot;>About</a>
-  <a id=&quot;open-close&quot; routerLink=&quot;/open-close&quot; routerLinkActive=&quot;active&quot;>Open/Close</a>
-  <a id=&quot;status&quot; routerLink=&quot;/status&quot; routerLinkActive=&quot;active&quot;>Status Slider</a>
-  <a id=&quot;toggle&quot; routerLink=&quot;/toggle&quot; routerLinkActive=&quot;active&quot;>Toggle Animations</a>
-  <a id=&quot;enter-leave&quot; routerLink=&quot;/enter-leave&quot; routerLinkActive=&quot;active&quot;>Enter/Leave</a>
-  <a id=&quot;auto&quot; routerLink=&quot;/auto&quot; routerLinkActive=&quot;active&quot;>Auto Calculation</a>
-  <a id=&quot;heroes&quot; routerLink=&quot;/heroes&quot; routerLinkActive=&quot;active&quot;>Filter/Stagger</a>
-  <a id=&quot;hero-groups&quot; routerLink=&quot;/hero-groups&quot; routerLinkActive=&quot;active&quot;>Hero Groups</a>
-  <a id=&quot;insert-remove&quot; routerLink=&quot;/insert-remove&quot; routerLinkActive=&quot;active&quot;>Insert/Remove</a>
-
-</nav>
-
-<div [@routeAnimations]=&quot;prepareRoute(outlet)&quot;>
-  <router-outlet #outlet=&quot;outlet&quot;></router-outlet>
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/hero-list-auto.component.html]" value="<ul class=&quot;heroes&quot;>
-  <li *ngFor=&quot;let hero of heroes&quot;
-      [@shrinkOut]=&quot;'in'&quot; (click)=&quot;removeHero(hero.id)&quot;>
-      <div class=&quot;inner&quot;>
-        <span class=&quot;badge&quot;>{{ hero.id }}</span>
-        <span>{{ hero.name }}</span>
-      </div>
-  </li>
-</ul>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/hero-list-page.component.html]" value="<h2>Filter/Stagger</h2>
-
-<label for=&quot;search&quot;>Search heroes: </label>
-<input type=&quot;text&quot; id=&quot;search&quot; #criteria
-       (input)=&quot;updateCriteria(criteria.value)&quot;
-       placeholder=&quot;Search heroes&quot;>
-
-<ul class=&quot;heroes&quot; [@filterAnimation]=&quot;heroesTotal&quot;>
-  <li *ngFor=&quot;let hero of heroes&quot; class=&quot;hero&quot;>
-    <div class=&quot;inner&quot;>
-      <span class=&quot;badge&quot;>{{ hero.id }}</span>
-      <span>{{ hero.name }}</span>
-    </div>
-  </li>
-</ul>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/home.component.html]" value="<p>
-  Welcome to Animations in Angular!
-</p>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/insert-remove.component.html]" value="
-<h2>Insert/Remove</h2>
-
-<nav>
-  <button (click)=&quot;toggle()&quot;>Toggle Insert/Remove</button>
-</nav>
-
-<div @myInsertRemoveTrigger *ngIf=&quot;isShown&quot; class=&quot;insert-remove-container&quot;>
-  <p>The box is inserted</p>
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/open-close.component.4.html]" value="<nav>
-  <button (click)=&quot;toggleAnimations()&quot;>Toggle Animations</button>
-  <button (click)=&quot;toggle()&quot;>Toggle Open/Closed</button>
-</nav>
-<div [@.disabled]=&quot;isDisabled&quot;>
-  <div [@childAnimation]=&quot;isOpen ? 'open' : 'closed'&quot;
-    class=&quot;open-close-container&quot;>
-    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
-  </div>
-</div>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/open-close.component.html]" value="<button (click)=&quot;toggle()&quot;>Toggle Open/Close</button>
-
-<div [@openClose]=&quot;isOpen ? 'open' : 'closed'&quot;
-  (@openClose.start)=&quot;onAnimationEvent($event)&quot;
-  (@openClose.done)=&quot;onAnimationEvent($event)&quot;
-  class=&quot;open-close-container&quot;>
-  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/status-slider.component.html]" value="<nav>
-  <button (click)=&quot;toggle()&quot;>Toggle Status</button>
-</nav>
-
-<div [@slideStatus]=&quot;status&quot; class=&quot;box&quot;>
-  {{ status == 'active' ? 'Active' : 'Inactive' }}
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][angular.json]" value="{
+        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/app.component.ts" target="_self"><input type="hidden" name="project[files][angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
   &quot;newProjectRoot&quot;: &quot;projects&quot;,
@@ -1532,8 +114,7 @@ can be found in the LICENSE file at https://angular.io/license
         }
       }
     }
-  },
-  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+  }
 }
 "><input type="hidden" name="project[files][package.json]" value="{
   &quot;name&quot;: &quot;angular.io-example&quot;,
@@ -1550,37 +131,37 @@ can be found in the LICENSE file at https://angular.io/license
   },
   &quot;private&quot;: true,
   &quot;dependencies&quot;: {
-    &quot;@angular/animations&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/common&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/core&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/forms&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser-dynamic&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/router&quot;: &quot;~13.1.0&quot;,
-    &quot;angular-in-memory-web-api&quot;: &quot;~0.11.0&quot;,
-    &quot;rxjs&quot;: &quot;~7.4.0&quot;,
+    &quot;@angular/animations&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/common&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/core&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/forms&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/router&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.13.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.5.0&quot;,
     &quot;tslib&quot;: &quot;^2.3.0&quot;,
     &quot;zone.js&quot;: &quot;~0.11.4&quot;
   },
   &quot;devDependencies&quot;: {
-    &quot;@angular-devkit/build-angular&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler-cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@types/jasmine&quot;: &quot;~3.10.0&quot;,
-    &quot;@types/node&quot;: &quot;^12.11.1&quot;,
+    &quot;@angular-devkit/build-angular&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/cli&quot;: &quot;~14.0.0-rc.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@types/jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;@types/node&quot;: &quot;^16.11.35&quot;,
     &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
-    &quot;jasmine-core&quot;: &quot;~3.10.0&quot;,
+    &quot;jasmine-core&quot;: &quot;~4.1.0&quot;,
     &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
     &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
     &quot;karma&quot;: &quot;~6.3.0&quot;,
     &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
-    &quot;karma-coverage&quot;: &quot;~2.0.3&quot;,
-    &quot;karma-jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.2.0&quot;,
+    &quot;karma-jasmine&quot;: &quot;~5.0.0&quot;,
     &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
     &quot;protractor&quot;: &quot;~7.0.0&quot;,
-    &quot;ts-node&quot;: &quot;~10.1.0&quot;,
-    &quot;typescript&quot;: &quot;~4.5.2&quot;
+    &quot;ts-node&quot;: &quot;~10.8.0&quot;,
+    &quot;typescript&quot;: &quot;~4.7.2&quot;
   }
 }
 "><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
@@ -1632,7 +213,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2017&quot;,
+    &quot;target&quot;: &quot;es2020&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
       &quot;es2020&quot;,
@@ -1646,7 +227,1636 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;strictTemplates&quot;: true
   }
 }
-"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="animations"><input type="hidden" name="project[description]" value="Angular Example - Angular Animations Guide"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
+"><input type="hidden" name="project[files][src/index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+ <head>
+    <meta charset=&quot;UTF-8&quot;>
+    <title>Animations</title>
+    <base href=&quot;/&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/main.ts]" value="import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
+ * automatically update themselves. This includes recent versions of Safari, Chrome (including
+ * Opera), Edge on the desktop, and iOS and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
+ * requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
+ * specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js'; // Included with Angular CLI.
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #264D73;
+  font-size: 2.5rem;
+}
+h2, h3 {
+  color: #444;
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.3rem;
+}
+body {
+  padding: .5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+body, input[text] {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+a {
+  cursor: pointer;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color:  #42545C;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+input[type=&quot;text&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/test.ts]" value="// This file is required by karma.conf.js and loads recursively all the .spec and framework files
+
+import 'zone.js/testing';
+import { getTestBed } from '@angular/core/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
+
+declare const require: {
+  context(path: string, deep?: boolean, filter?: RegExp): {
+    <T>(id: string): T;
+    keys(): string[];
+  };
+};
+
+// First, initialize the Angular testing environment.
+getTestBed().initTestEnvironment(
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting(),
+);
+
+// Then we find all the tests.
+const context = require.context('./', true, /\.spec\.ts$/);
+// And load the modules.
+context.keys().forEach(context);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/about.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/about.component.html]" value="<p>
+  Angular's animations library makes it easy to define and apply animation effects such as page and list transitions.
+</p>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/about.component.ts]" value="import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css']
+})
+export class AboutComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/animations.ts]" value="import {
+  animation, trigger, animateChild, group,
+  transition, animate, style, query
+} from '@angular/animations';
+
+export const transitionAnimation = animation([
+  style({
+    height: '{{ height }}',
+    opacity: '{{ opacity }}',
+    backgroundColor: '{{ backgroundColor }}'
+  }),
+  animate('{{ time }}')
+]);
+
+// Routable animations
+export const slideInAnimation =
+  trigger('routeAnimations', [
+    transition('HomePage <=> AboutPage', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%' })
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ left: '100%' }))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' }))
+        ]),
+      ]),
+    ]),
+    transition('* <=> *', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%' })
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('200ms ease-out', style({ left: '100%', opacity: 0 }))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' }))
+        ]),
+        query('@*', animateChild())
+      ]),
+    ])
+  ]);
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/app.component.css]" value="nav a {
+  padding: .7rem;
+}
+
+h1 {
+  margin-bottom: .3rem;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+nav {
+  padding-bottom: 3rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/app.component.html]" value="<h1>Animations</h1>
+
+<input type=&quot;checkbox&quot;
+       id=&quot;animation-toggle&quot;
+       [checked]=&quot;!animationsDisabled&quot;
+       (click)=&quot;toggleAnimations()&quot;>
+<label for=&quot;animation-toggle&quot;>Toggle All Animations</label>
+
+<nav>
+  <a id=&quot;home&quot; routerLink=&quot;/home&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Home</a>
+  <a id=&quot;about&quot; routerLink=&quot;/about&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>About</a>
+  <a id=&quot;open-close&quot; routerLink=&quot;/open-close&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Open/Close</a>
+  <a id=&quot;status&quot; routerLink=&quot;/status&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Status Slider</a>
+  <a id=&quot;toggle&quot; routerLink=&quot;/toggle&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Toggle Animations</a>
+  <a id=&quot;enter-leave&quot; routerLink=&quot;/enter-leave&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Enter/Leave</a>
+  <a id=&quot;auto&quot; routerLink=&quot;/auto&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Auto Calculation</a>
+  <a id=&quot;heroes&quot; routerLink=&quot;/heroes&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Filter/Stagger</a>
+  <a id=&quot;hero-groups&quot; routerLink=&quot;/hero-groups&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Hero Groups</a>
+  <a id=&quot;insert-remove&quot; routerLink=&quot;/insert-remove&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Insert/Remove</a>
+  <a id=&quot;querying&quot; routerLink=&quot;/querying&quot; routerLinkActive=&quot;active&quot; ariaCurrentWhenActive=&quot;page&quot;>Querying</a>
+</nav>
+
+<div [@routeAnimations]=&quot;getRouteAnimationData()&quot;>
+  <router-outlet></router-outlet>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/app.component.ts]" value="import { Component, HostBinding } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+
+import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
+import { slideInAnimation } from './animations';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
+  animations: [
+    slideInAnimation
+    // animation triggers go here
+  ]
+})
+export class AppComponent {
+  @HostBinding('@.disabled')
+  public animationsDisabled = false;
+
+  constructor(private contexts: ChildrenOutletContexts) {}
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  }
+
+  toggleAnimations() {
+    this.animationsDisabled = !this.animationsDisabled;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/app.module.ts]" value="import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { OpenCloseComponent } from './open-close.component';
+import { OpenClosePageComponent } from './open-close-page.component';
+import { OpenCloseChildComponent } from './open-close.component.4';
+import { ToggleAnimationsPageComponent } from './toggle-animations-page.component';
+import { StatusSliderComponent } from './status-slider.component';
+import { StatusSliderPageComponent } from './status-slider-page.component';
+import { HeroListPageComponent } from './hero-list-page.component';
+import { HeroListGroupPageComponent } from './hero-list-group-page.component';
+import { HeroListGroupsComponent } from './hero-list-groups.component';
+import { HeroListEnterLeavePageComponent } from './hero-list-enter-leave-page.component';
+import { HeroListEnterLeaveComponent } from './hero-list-enter-leave.component';
+import { HeroListAutoCalcPageComponent } from './hero-list-auto-page.component';
+import { HeroListAutoComponent } from './hero-list-auto.component';
+import { HomeComponent } from './home.component';
+import { AboutComponent } from './about.component';
+import { InsertRemoveComponent } from './insert-remove.component';
+import { QueryingComponent } from './querying.component';
+
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: '/enter-leave' },
+      {
+        path: 'open-close',
+        component: OpenClosePageComponent,
+        data: { animation: 'openClosePage' }
+      },
+      {
+        path: 'status',
+        component: StatusSliderPageComponent,
+        data: { animation: 'statusPage' }
+      },
+      {
+        path: 'toggle',
+        component: ToggleAnimationsPageComponent,
+        data: { animation: 'togglePage' }
+      },
+      {
+        path: 'heroes',
+        component: HeroListPageComponent,
+        data: { animation: 'filterPage' }
+      },
+      {
+        path: 'hero-groups',
+        component: HeroListGroupPageComponent,
+        data: { animation: 'heroGroupPage' }
+      },
+      {
+        path: 'enter-leave',
+        component: HeroListEnterLeavePageComponent,
+        data: { animation: 'enterLeavePage' }
+      },
+      {
+        path: 'auto',
+        component: HeroListAutoCalcPageComponent,
+        data: { animation: 'autoPage' }
+      },
+      {
+        path: 'insert-remove',
+        component: InsertRemoveComponent,
+        data: { animation: 'insertRemovePage' }
+      },
+      {
+        path: 'querying',
+        component: QueryingComponent,
+        data: { animation: 'queryingPage' }
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+        data: { animation: 'HomePage' }
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        data: { animation: 'AboutPage' }
+      },
+    ])
+  ],
+  declarations: [
+    AppComponent,
+    StatusSliderComponent,
+    OpenCloseComponent,
+    OpenCloseChildComponent,
+    OpenClosePageComponent,
+    StatusSliderPageComponent,
+    ToggleAnimationsPageComponent,
+    HeroListPageComponent,
+    HeroListGroupsComponent,
+    HeroListGroupPageComponent,
+    HeroListEnterLeavePageComponent,
+    HeroListEnterLeaveComponent,
+    HeroListAutoCalcPageComponent,
+    HeroListAutoComponent,
+    HomeComponent,
+    InsertRemoveComponent,
+    QueryingComponent,
+    AboutComponent
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-auto-page.component.ts]" value="import { Component } from '@angular/core';
+import { HEROES } from './mock-heroes';
+
+@Component({
+  selector: 'app-hero-list-auto-page',
+  template: `
+    <section>
+      <h2>Automatic Calculation</h2>
+
+      <app-hero-list-auto [heroes]=&quot;heroes&quot; (remove)=&quot;onRemove($event)&quot;></app-hero-list-auto>
+    </section>
+  `
+})
+export class HeroListAutoCalcPageComponent {
+  heroes = HEROES.slice();
+
+  onRemove(id: number) {
+    this.heroes = this.heroes.filter(hero => hero.id !== id);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-auto.component.html]" value="<ul class=&quot;heroes&quot;>
+  <li *ngFor=&quot;let hero of heroes&quot;
+      [@shrinkOut]=&quot;'in'&quot;>
+      <button class=&quot;inner&quot; type=&quot;button&quot; (click)=&quot;removeHero(hero.id)&quot;>
+        <span class=&quot;badge&quot;>{{ hero.id }}</span>
+        <span class=&quot;name&quot;>{{ hero.name }}</span>
+      </button>
+  </li>
+</ul>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/hero-list-auto.component.ts]" value="import {
+  Component,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-list-auto',
+  templateUrl: 'hero-list-auto.component.html',
+  styleUrls: ['./hero-list-page.component.css'],
+  animations: [
+    trigger('shrinkOut', [
+      state('in', style({ height: '*' })),
+      transition('* => void', [
+        style({ height: '*' }),
+        animate(250, style({ height: 0 }))
+      ])
+    ])
+  ]
+})
+export class HeroListAutoComponent {
+   @Input() heroes: Hero[] = [];
+
+   @Output() remove = new EventEmitter<number>();
+
+   removeHero(id: number) {
+     this.remove.emit(id);
+   }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-enter-leave-page.component.ts]" value="import { Component } from '@angular/core';
+import { HEROES } from './mock-heroes';
+
+@Component({
+  selector: 'app-hero-list-enter-leave-page',
+  template: `
+    <section>
+      <h2>Enter/Leave</h2>
+
+      <app-hero-list-enter-leave [heroes]=&quot;heroes&quot; (remove)=&quot;onRemove($event)&quot;></app-hero-list-enter-leave>
+    </section>
+  `
+})
+export class HeroListEnterLeavePageComponent {
+  heroes = HEROES.slice();
+
+  onRemove(id: number) {
+    this.heroes = this.heroes.filter(hero => hero.id !== id);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-enter-leave.component.ts]" value="import {
+  Component,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-list-enter-leave',
+  template: `
+    <ul class=&quot;heroes&quot;>
+      <li *ngFor=&quot;let hero of heroes&quot;
+          [@flyInOut]=&quot;'in'&quot;>
+          <button class=&quot;inner&quot; type=&quot;button&quot; (click)=&quot;removeHero(hero.id)&quot;>
+            <span class=&quot;badge&quot;>{{ hero.id }}</span>
+            <span class=&quot;name&quot;>{{ hero.name }}</span>
+          </button>
+      </li>
+    </ul>
+  `,
+  styleUrls: ['./hero-list-page.component.css'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      transition('void => *', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(100, style({ transform: 'translateX(100%)' }))
+      ])
+    ])
+  ]
+})
+export class HeroListEnterLeaveComponent {
+  @Input() heroes: Hero[] = [];
+
+  @Output() remove = new EventEmitter<number>();
+
+  removeHero(id: number) {
+    this.remove.emit(id);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-group-page.component.ts]" value="import { Component } from '@angular/core';
+import { HEROES } from './mock-heroes';
+
+@Component({
+  selector: 'app-hero-list-groups-page',
+  template: `
+    <section>
+      <h2>Hero List Group</h2>
+
+      <app-hero-list-groups [heroes]=&quot;heroes&quot; (remove)=&quot;onRemove($event)&quot;></app-hero-list-groups>
+    </section>
+  `
+})
+export class HeroListGroupPageComponent {
+  heroes = HEROES.slice();
+
+  onRemove(id: number) {
+    this.heroes = this.heroes.filter(hero => hero.id !== id);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-groups.component.ts]" value="import {
+  Component,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  group
+} from '@angular/animations';
+
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-list-groups',
+  template: `
+    <ul class=&quot;heroes&quot;>
+      <li *ngFor=&quot;let hero of heroes&quot; [@flyInOut]=&quot;'in'&quot;>
+          <button class=&quot;inner&quot; type=&quot;button&quot; (click)=&quot;removeHero(hero.id)&quot;>
+            <span class=&quot;badge&quot;>{{ hero.id }}</span>
+            <span class=&quot;name&quot;>{{ hero.name }}</span>
+          </button>
+      </li>
+    </ul>
+  `,
+  styleUrls: ['./hero-list-page.component.css'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({
+        width: '*',
+        transform: 'translateX(0)', opacity: 1
+      })),
+      transition(':enter', [
+        style({ width: 10, transform: 'translateX(50px)', opacity: 0 }),
+        group([
+          animate('0.3s 0.1s ease', style({
+            transform: 'translateX(0)',
+            width: '*'
+          })),
+          animate('0.3s ease', style({
+            opacity: 1
+          }))
+        ])
+      ]),
+      transition(':leave', [
+        group([
+          animate('0.3s ease', style({
+            transform: 'translateX(50px)',
+            width: 10
+          })),
+          animate('0.3s 0.2s ease', style({
+            opacity: 0
+          }))
+        ])
+      ])
+    ])
+  ]
+})
+export class HeroListGroupsComponent {
+   @Input() heroes: Hero[] = [];
+
+   @Output() remove = new EventEmitter<number>();
+
+   removeHero(id: number) {
+     this.remove.emit(id);
+   }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-page.component.css]" value=".heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.heroes li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroes .inner {
+  flex: 1;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch;
+}
+
+.heroes button.inner {
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.heroes button.inner:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.heroes button.inner:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.heroes button.inner.selected {
+  background-color: black;
+  color: white;
+}
+
+.heroes button.inner.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.heroes button.inner.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.heroes .name {
+  min-width: max-content;
+  padding: 0.5rem 0;
+}
+
+label {
+  display: block;
+  padding-bottom: .5rem;
+}
+
+input {
+  font-size: 100%;
+  margin-bottom: 1rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list-page.component.html]" value="<h2>Filter/Stagger</h2>
+
+<label for=&quot;search&quot;>Search heroes: </label>
+<input type=&quot;text&quot; id=&quot;search&quot; #criteria
+       (input)=&quot;updateCriteria(criteria.value)&quot;
+       placeholder=&quot;Search heroes&quot;>
+
+<ul class=&quot;heroes&quot; [@filterAnimation]=&quot;heroesTotal&quot;>
+  <li *ngFor=&quot;let hero of heroes&quot; class=&quot;hero&quot;>
+    <div class=&quot;inner&quot;>
+      <span class=&quot;badge&quot;>{{ hero.id }}</span>
+      <span class=&quot;name&quot;>{{ hero.name }}</span>
+    </div>
+  </li>
+</ul>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/hero-list-page.component.ts]" value="import { Component, HostBinding, OnInit } from '@angular/core';
+import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
+import { HEROES } from './mock-heroes';
+import { Hero } from './hero';
+
+@Component({
+  selector: 'app-hero-list-page',
+  templateUrl: 'hero-list-page.component.html',
+  styleUrls: ['hero-list-page.component.css'],
+  animations: [
+    trigger('pageAnimations', [
+      transition(':enter', [
+        query('.hero', [
+          style({opacity: 0, transform: 'translateY(-100px)'}),
+          stagger(30, [
+            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)',
+            style({ opacity: 1, transform: 'none' }))
+          ])
+        ])
+      ])
+    ]),
+    trigger('filterAnimation', [
+      transition(':enter, * => 0, * => -1', []),
+      transition(':increment', [
+        query(':enter', [
+          style({ opacity: 0, width: 0 }),
+          stagger(50, [
+            animate('300ms ease-out', style({ opacity: 1, width: '*' })),
+          ]),
+        ], { optional: true })
+      ]),
+      transition(':decrement', [
+        query(':leave', [
+          stagger(50, [
+            animate('300ms ease-out', style({ opacity: 0, width: 0 })),
+          ]),
+        ])
+      ]),
+    ]),
+  ]
+})
+export class HeroListPageComponent implements OnInit {
+  @HostBinding('@pageAnimations')
+  public animatePage = true;
+
+  heroesTotal = -1;
+
+  get heroes() { return this._heroes; }
+  private _heroes: Hero[] = [];
+
+  ngOnInit() {
+    this._heroes = HEROES;
+  }
+
+  updateCriteria(criteria: string) {
+    criteria = criteria ? criteria.trim() : '';
+
+    this._heroes = HEROES.filter(hero => hero.name.toLowerCase().includes(criteria.toLowerCase()));
+    const newTotal = this.heroes.length;
+
+    if (this.heroesTotal !== newTotal) {
+      this.heroesTotal = newTotal;
+    } else if (!criteria) {
+      this.heroesTotal = -1;
+    }
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero-list.component.css]" value="ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: block;
+  width: 120px;
+  line-height: 50px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-color: #eee;
+  border-radius: 4px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.active {
+  background-color: #cfd8dc;
+  transform: scale(1.1);
+}
+.inactive {
+  background-color: #eee;
+  transform: scale(1);
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/hero.ts]" value="export interface Hero {
+  id: number;
+  name: string;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/home.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/home.component.html]" value="<p>
+  Welcome to Animations in Angular!
+</p>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/home.component.ts]" value="import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/insert-remove.component.css]" value=":host {
+  display: block;
+}
+
+.insert-remove-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/insert-remove.component.html]" value="
+<h2>Insert/Remove</h2>
+
+<nav>
+  <button type=&quot;button&quot; (click)=&quot;toggle()&quot;>Toggle Insert/Remove</button>
+</nav>
+
+<div @myInsertRemoveTrigger *ngIf=&quot;isShown&quot; class=&quot;insert-remove-container&quot;>
+  <p>The box is inserted</p>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/insert-remove.component.ts]" value="import { Component } from '@angular/core';
+import { trigger, transition, animate, style } from '@angular/animations';
+
+@Component({
+  selector: 'app-insert-remove',
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('100ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('100ms', style({ opacity: 0 }))
+      ])
+    ]),
+  ],
+  templateUrl: 'insert-remove.component.html',
+  styleUrls: ['insert-remove.component.css']
+})
+export class InsertRemoveComponent {
+  isShown = false;
+
+  toggle() {
+    this.isShown = !this.isShown;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/mock-heroes.ts]" value="import { Hero } from './hero';
+
+export const HEROES: Hero[] = [
+  { id: 12, name: 'Dr. Nice' },
+  { id: 13, name: 'Bombasto' },
+  { id: 14, name: 'Celeritas' },
+  { id: 15, name: 'Magneta' },
+  { id: 16, name: 'RubberMan' },
+  { id: 17, name: 'Dynama' },
+  { id: 18, name: 'Dr. IQ' },
+  { id: 19, name: 'Magma' },
+  { id: 20, name: 'Tornado' }
+];
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/open-close-page.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-open-close-page',
+  template: `
+    <section>
+      <h2>Open Close Component</h2>
+      <input type=&quot;checkbox&quot; id=&quot;log-checkbox&quot; [checked]=&quot;logging&quot; (click)=&quot;toggleLogging()&quot;/>
+      <label for=&quot;log-checkbox&quot;>Console Log Animation Events</label>
+
+      <app-open-close [logging]=&quot;logging&quot;></app-open-close>
+    </section>
+  `
+})
+export class OpenClosePageComponent {
+  logging = false;
+
+  toggleLogging() {
+    this.logging = !this.logging;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/open-close.component.4.html]" value="<nav>
+  <button type=&quot;button&quot; (click)=&quot;toggleAnimations()&quot;>Toggle Animations</button>
+  <button type=&quot;button&quot; (click)=&quot;toggle()&quot;>Toggle Open/Closed</button>
+</nav>
+<div [@.disabled]=&quot;isDisabled&quot;>
+  <div [@childAnimation]=&quot;isOpen ? 'open' : 'closed'&quot;
+    class=&quot;open-close-container&quot;>
+    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+  </div>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/open-close.component.4.ts]" value="import { Component } from '@angular/core';
+import { trigger, transition, state, animate, style } from '@angular/animations';
+
+@Component({
+  selector: 'app-open-close-toggle',
+  templateUrl: 'open-close.component.4.html',
+  styleUrls: ['open-close.component.css'],
+  animations: [
+    trigger('childAnimation', [
+      // ...
+      state('open', style({
+        width: '250px',
+        opacity: 1,
+        backgroundColor: 'yellow'
+      })),
+      state('closed', style({
+        width: '100px',
+        opacity: 0.8,
+        backgroundColor: 'blue'
+      })),
+      transition('* => *', [
+        animate('1s')
+      ]),
+    ]),
+  ],
+})
+export class OpenCloseChildComponent {
+  isDisabled = false;
+  isOpen = false;
+  toggleAnimations() {
+    this.isDisabled = !this.isDisabled;
+  }
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/open-close.component.css]" value=":host {
+  display: block;
+  margin-top: 1rem;
+}
+
+.open-close-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/open-close.component.html]" value="<button type=&quot;button&quot; (click)=&quot;toggle()&quot;>Toggle Open/Close</button>
+
+<div [@openClose]=&quot;isOpen ? 'open' : 'closed'&quot;
+  (@openClose.start)=&quot;onAnimationEvent($event)&quot;
+  (@openClose.done)=&quot;onAnimationEvent($event)&quot;
+  class=&quot;open-close-container&quot;>
+  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/open-close.component.ts]" value="import { Component, Input } from '@angular/core';
+import { trigger, transition, state, animate, style, AnimationEvent } from '@angular/animations';
+
+@Component({
+  selector: 'app-open-close',
+  animations: [
+    trigger('openClose', [
+      // ...
+      state('open', style({
+        height: '200px',
+        opacity: 1,
+        backgroundColor: 'yellow'
+      })),
+      state('closed', style({
+        height: '100px',
+        opacity: 0.8,
+        backgroundColor: 'blue'
+      })),
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+      transition('* => closed', [
+        animate('1s')
+      ]),
+      transition('* => open', [
+        animate('0.5s')
+      ]),
+      transition('open <=> closed', [
+        animate('0.5s')
+      ]),
+      transition ('* => open', [
+        animate ('1s',
+          style ({ opacity: '*' }),
+        ),
+      ]),
+      transition('* => *', [
+        animate('1s')
+      ]),
+    ]),
+  ],
+  templateUrl: 'open-close.component.html',
+  styleUrls: ['open-close.component.css']
+})
+export class OpenCloseComponent {
+  @Input() logging = false;
+  isOpen = true;
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+  onAnimationEvent(event: AnimationEvent) {
+    if (!this.logging) {
+      return;
+    }
+    // openClose is trigger name in this example
+    console.warn(`Animation Trigger: ${event.triggerName}`);
+
+    // phaseName is &quot;start&quot; or &quot;done&quot;
+    console.warn(`Phase: ${event.phaseName}`);
+
+    // in our example, totalTime is 1000 (number of milliseconds in a second)
+    console.warn(`Total time: ${event.totalTime}`);
+
+    // in our example, fromState is either &quot;open&quot; or &quot;closed&quot;
+    console.warn(`From: ${event.fromState}`);
+
+    // in our example, toState either &quot;open&quot; or &quot;closed&quot;
+    console.warn(`To: ${event.toState}`);
+
+    // the HTML element itself, the button in this case
+    console.warn(`Element: ${event.element}`);
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/querying.component.css]" value="section {
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+section > * {
+  margin: 1rem;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  color: black;
+  background-color: #DDD;
+}
+
+.hero .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.5rem;
+  background-color: #3d5157;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+  align-self: stretch;
+}
+
+.hero .name {
+  height: min-content;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/querying.component.ts]" value="import {
+  Component,
+} from '@angular/core';
+import {
+  trigger,
+  style,
+  animate,
+  transition,
+  group,
+  query,
+  animateChild,
+  keyframes
+} from '@angular/animations';
+
+import { HEROES } from './mock-heroes';
+
+@Component({
+  selector: 'app-querying',
+  template: `
+    <nav>
+      <button class=&quot;toggle&quot; (click)=&quot;show = !show&quot; [disabled]=&quot;toggleDisabled&quot;>Toggle View</button>
+    </nav>
+    <section *ngIf=&quot;show&quot; @query (@query.start)=&quot;toggleDisabled = true&quot; (@query.done)=&quot;toggleDisabled = false&quot;>
+      <p>I am a simple child element</p>
+      <p *ngIf=&quot;show&quot;>I am a child element that enters and leaves with its parent</p>
+      <p @animateMe>I am a child element with an animation trigger</p>
+      <div class=&quot;hero&quot;>
+        <span class=&quot;badge&quot;>{{ hero.id }}</span>
+        <span class=&quot;name&quot;>{{ hero.name }} <small>(heroes are always animated!)</small></span>
+    </div>
+    </section>
+  `,
+  styleUrls: ['./querying.component.css'],
+  animations: [
+    trigger('query', [
+      transition(':enter', [
+        style({ height: 0 }),
+        group([
+          animate(500, style({ height: '*' })),
+          query(':enter', [
+            style({ opacity: 0, transform: 'scale(0)'}),
+            animate(2000, style({ opacity: 1, transform: 'scale(1)' }))
+          ]),
+          query('.hero', [
+            style({ transform: 'translateX(-100%)'}),
+            animate('.7s 500ms ease-in', style({ transform: 'translateX(0)' }))
+          ]),
+        ]),
+        query('@animateMe', animateChild()),
+      ]),
+      transition(':leave', [
+        style({ height: '*' }),
+        query('@animateMe', animateChild()),
+        group([
+          animate('500ms 500ms', style({ height: '0', padding: '0' })),
+          query(':leave', [
+            style({ opacity: 1, transform: 'scale(1)'}),
+            animate('1s', style({ opacity: 0, transform: 'scale(0)' }))
+          ]),
+          query('.hero', [
+            style({ transform: 'translateX(0)'}),
+            animate('.7s ease-out', style({ transform: 'translateX(-100%)' }))
+          ]),
+        ]),
+      ]),
+    ]),
+    trigger('animateMe', [
+      transition('* <=> *', animate('500ms cubic-bezier(.68,-0.73,.26,1.65)', keyframes([
+        style({ backgroundColor: &quot;transparent&quot;, color: '*', offset: 0 }),
+        style({ backgroundColor: &quot;blue&quot;, color: 'white', offset: 0.2 }),
+        style({ backgroundColor: &quot;transparent&quot;, color: '*', offset: 1 })
+      ])))
+    ]),
+  ]
+})
+export class QueryingComponent {
+  toggleDisabled = false;
+  show = true;
+  hero = HEROES[0];
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/status-slider-page.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-status-slider-page',
+  template: `
+    <section>
+      <h2>Status Slider</h2>
+      <app-status-slider></app-status-slider>
+    </section>
+  `
+})
+export class StatusSliderPageComponent {}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/status-slider.component.css]" value=":host {
+  display: block;
+}
+
+.box {
+  width: 300px;
+  border: 5px solid black;
+  display: block;
+  line-height: 300px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/status-slider.component.html]" value="<nav>
+  <button type=&quot;button&quot; (click)=&quot;toggle()&quot;>Toggle Status</button>
+</nav>
+
+<div [@slideStatus]=&quot;status&quot; class=&quot;box&quot;>
+  {{ status == 'active' ? 'Active' : 'Inactive' }}
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/status-slider.component.ts]" value="import { Component } from '@angular/core';
+import { trigger, transition, state, animate, style, keyframes } from '@angular/animations';
+
+@Component({
+  selector: 'app-status-slider',
+  templateUrl: 'status-slider.component.html',
+  styleUrls: ['status-slider.component.css'],
+  animations: [
+    trigger('slideStatus', [
+      state('inactive', style({ backgroundColor: 'blue' })),
+      state('active', style({ backgroundColor: '#754600' })),
+
+      transition('* => active', [
+        animate('2s', keyframes([
+          style({ backgroundColor: 'blue', offset: 0}),
+          style({ backgroundColor: 'red', offset: 0.8}),
+          style({ backgroundColor: '#754600', offset: 1.0})
+        ])),
+      ]),
+      transition('* => inactive', [
+        animate('2s', keyframes([
+          style({ backgroundColor: '#754600', offset: 0}),
+          style({ backgroundColor: 'red', offset: 0.2}),
+          style({ backgroundColor: 'blue', offset: 1.0})
+        ]))
+      ]),
+
+      transition('* => active', [
+        animate('2s', keyframes([
+          style({ backgroundColor: 'blue' }),
+          style({ backgroundColor: 'red' }),
+          style({ backgroundColor: 'orange' })
+        ]))
+      ]),
+    ])
+  ]
+})
+export class StatusSliderComponent {
+  status: 'active' | 'inactive' = 'inactive';
+
+  toggle() {
+    if (this.status === 'active') {
+      this.status = 'inactive';
+    } else {
+      this.status = 'active';
+    }
+  }
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/toggle-animations-page.component.ts]" value="import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-toggle-animations-child-page',
+  template: `
+    <section>
+      <h2>Toggle Animations</h2>
+
+      <app-open-close-toggle></app-open-close-toggle>
+    </section>
+  `
+})
+export class ToggleAnimationsPageComponent {}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="animations"><input type="hidden" name="project[description]" value="Angular Example - Angular Animations Guide"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

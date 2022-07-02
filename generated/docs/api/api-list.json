@@ -1509,6 +1509,14 @@
         "securityRisk": false
       },
       {
+        "name": "animation_module_type",
+        "title": "ANIMATION_MODULE_TYPE",
+        "path": "api/core/ANIMATION_MODULE_TYPE",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "app_bootstrap_listener",
         "title": "APP_BOOTSTRAP_LISTENER",
         "path": "api/core/APP_BOOTSTRAP_LISTENER",
@@ -1657,7 +1665,7 @@
         "title": "ComponentFactory",
         "path": "api/core/ComponentFactory",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -1665,7 +1673,7 @@
         "title": "ComponentFactoryResolver",
         "path": "api/core/ComponentFactoryResolver",
         "docType": "class",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -1705,6 +1713,14 @@
         "title": "ContentChildren",
         "path": "api/core/ContentChildren",
         "docType": "decorator",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "createenvironmentinjector",
+        "title": "createEnvironmentInjector",
+        "path": "api/core/createEnvironmentInjector",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1845,6 +1861,22 @@
         "securityRisk": false
       },
       {
+        "name": "environment_initializer",
+        "title": "ENVIRONMENT_INITIALIZER",
+        "path": "api/core/ENVIRONMENT_INITIALIZER",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "environmentinjector",
+        "title": "EnvironmentInjector",
+        "path": "api/core/EnvironmentInjector",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "errorhandler",
         "title": "ErrorHandler",
         "path": "api/core/ErrorHandler",
@@ -1912,7 +1944,7 @@
         "name": "getdebugnode",
         "title": "getDebugNode",
         "path": "api/core/getDebugNode",
-        "docType": "const",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1973,10 +2005,34 @@
         "securityRisk": false
       },
       {
+        "name": "importedngmoduleproviders",
+        "title": "ImportedNgModuleProviders",
+        "path": "api/core/ImportedNgModuleProviders",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "importprovidersfrom",
+        "title": "importProvidersFrom",
+        "path": "api/core/importProvidersFrom",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "importproviderssource",
+        "title": "ImportProvidersSource",
+        "path": "api/core/ImportProvidersSource",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "inject",
         "title": "inject",
         "path": "api/core/inject",
-        "docType": "const",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2934,7 +2990,7 @@
         "name": "testmodulemetadata",
         "title": "TestModuleMetadata",
         "path": "api/core/testing/TestModuleMetadata",
-        "docType": "type-alias",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3209,6 +3265,14 @@
         "securityRisk": false
       },
       {
+        "name": "formcontrolstate",
+        "title": "FormControlState",
+        "path": "api/forms/FormControlState",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "formcontrolstatus",
         "title": "FormControlStatus",
         "path": "api/forms/FormControlStatus",
@@ -3237,6 +3301,14 @@
         "title": "FormGroupName",
         "path": "api/forms/FormGroupName",
         "docType": "directive",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "formrecord",
+        "title": "FormRecord",
+        "path": "api/forms/FormRecord",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3361,6 +3433,14 @@
         "securityRisk": false
       },
       {
+        "name": "nonnullableformbuilder",
+        "title": "NonNullableFormBuilder",
+        "path": "api/forms/NonNullableFormBuilder",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "numbervalueaccessor",
         "title": "NumberValueAccessor",
         "path": "api/forms/NumberValueAccessor",
@@ -3425,6 +3505,38 @@
         "securityRisk": false
       },
       {
+        "name": "untypedformarray",
+        "title": "UntypedFormArray",
+        "path": "api/forms/UntypedFormArray",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "untypedformbuilder",
+        "title": "UntypedFormBuilder",
+        "path": "api/forms/UntypedFormBuilder",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "untypedformcontrol",
+        "title": "UntypedFormControl",
+        "path": "api/forms/UntypedFormControl",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "untypedformgroup",
+        "title": "UntypedFormGroup",
+        "path": "api/forms/UntypedFormGroup",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "validationerrors",
         "title": "ValidationErrors",
         "path": "api/forms/ValidationErrors",
@@ -3478,6 +3590,22 @@
         "docType": "function",
         "stability": "stable",
         "securityRisk": false
+      },
+      {
+        "name": "messageid",
+        "title": "MessageId",
+        "path": "api/localize/MessageId",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "targetmessage",
+        "title": "TargetMessage",
+        "path": "api/localize/TargetMessage",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
       }
     ]
   },
@@ -3501,6 +3629,22 @@
     "title": "platform-browser",
     "path": "api/platform-browser",
     "items": [
+      {
+        "name": "applicationconfig",
+        "title": "ApplicationConfig",
+        "path": "api/platform-browser/ApplicationConfig",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "bootstrapapplication",
+        "title": "bootstrapApplication",
+        "path": "api/platform-browser/bootstrapApplication",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
       {
         "name": "browsermodule",
         "title": "BrowserModule",
@@ -3634,6 +3778,14 @@
         "title": "platformBrowser",
         "path": "api/platform-browser/platformBrowser",
         "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "provideprotractortestingsupport",
+        "title": "provideProtractorTestingSupport",
+        "path": "api/platform-browser/provideProtractorTestingSupport",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3799,7 +3951,7 @@
         "title": "RESOURCE_CACHE_PROVIDER",
         "path": "api/platform-browser-dynamic/RESOURCE_CACHE_PROVIDER",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       }
     ]
@@ -3877,6 +4029,14 @@
         "title": "PlatformState",
         "path": "api/platform-server/PlatformState",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "renderapplication",
+        "title": "renderApplication",
+        "path": "api/platform-server/renderApplication",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4053,10 +4213,26 @@
         "securityRisk": false
       },
       {
+        "name": "createurltreefromsnapshot",
+        "title": "createUrlTreeFromSnapshot",
+        "path": "api/router/createUrlTreeFromSnapshot",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "data",
         "title": "Data",
         "path": "api/router/Data",
         "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "defaulttitlestrategy",
+        "title": "DefaultTitleStrategy",
+        "path": "api/router/DefaultTitleStrategy",
+        "docType": "class",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4081,6 +4257,14 @@
         "title": "Event",
         "path": "api/router/Event",
         "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "eventtype",
+        "title": "EventType",
+        "path": "api/router/EventType",
+        "docType": "enum",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4477,6 +4661,14 @@
         "securityRisk": false
       },
       {
+        "name": "titlestrategy",
+        "title": "TitleStrategy",
+        "path": "api/router/TitleStrategy",
+        "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "urlcreationoptions",
         "title": "UrlCreationOptions",
         "path": "api/router/UrlCreationOptions",
@@ -4559,6 +4751,14 @@
         "name": "setuptestingrouter",
         "title": "setupTestingRouter",
         "path": "api/router/testing/setupTestingRouter",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "setuptestingrouterinternal",
+        "title": "setupTestingRouterInternal",
+        "path": "api/router/testing/setupTestingRouterInternal",
         "docType": "function",
         "stability": "stable",
         "securityRisk": false

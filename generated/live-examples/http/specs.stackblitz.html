@@ -151,10 +151,10 @@ describe('HeroesService', () => {
 
     it('should return expected heroes (called once)', () => {
 
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
+        error: fail,
+      });
 
       // HeroService should have made one request to GET heroes from expected URL
       const req = httpTestingController.expectOne(heroService.heroesUrl);
@@ -166,10 +166,10 @@ describe('HeroesService', () => {
 
     it('should be OK returning no heroes', () => {
 
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes.length).toEqual(0, 'should have empty heroes array'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes.length).toEqual(0, 'should have empty heroes array'),
+        error: fail,
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
       req.flush([]); // Respond with no heroes
@@ -178,10 +178,10 @@ describe('HeroesService', () => {
     // This service reports the error but finds a way to let the app keep going.
     it('should turn 404 into an empty heroes result', () => {
 
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes.length).toEqual(0, 'should return empty heroes array'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes.length).toEqual(0, 'should return empty heroes array'),
+        error: fail,
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
 
@@ -194,10 +194,10 @@ describe('HeroesService', () => {
 
       heroService.getHeroes().subscribe();
       heroService.getHeroes().subscribe();
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
+        error: fail,
+      });
 
       const requests = httpTestingController.match(heroService.heroesUrl);
       expect(requests.length).toEqual(3, 'calls to getHeroes()');
@@ -217,10 +217,10 @@ describe('HeroesService', () => {
 
       const updateHero: Hero = { id: 1, name: 'A' };
 
-      heroService.updateHero(updateHero).subscribe(
-        data => expect(data).toEqual(updateHero, 'should return the hero'),
-        fail
-      );
+      heroService.updateHero(updateHero).subscribe({
+        next: data => expect(data).toEqual(updateHero, 'should return the hero'),
+        error: fail,
+      });
 
       // HeroService should have made one request to PUT hero
       const req = httpTestingController.expectOne(heroService.heroesUrl);
@@ -237,10 +237,10 @@ describe('HeroesService', () => {
     it('should turn 404 error into return of the update hero', () => {
       const updateHero: Hero = { id: 1, name: 'A' };
 
-      heroService.updateHero(updateHero).subscribe(
-        data => expect(data).toEqual(updateHero, 'should return the update hero'),
-        fail
-      );
+      heroService.updateHero(updateHero).subscribe({
+        next: data => expect(data).toEqual(updateHero, 'should return the update hero'),
+        error: fail,
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
 
@@ -326,174 +326,6 @@ export class MessageService {
     this.messages = [];
   }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
-// Other imports
-import { TestBed } from '@angular/core/testing';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-
-import { HttpHeaders } from '@angular/common/http';
-
-interface Data {
-  name: string;
-}
-
-const testUrl = '/data';
-
-describe('HttpClient testing', () => {
-  let httpClient: HttpClient;
-  let httpTestingController: HttpTestingController;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ]
-    });
-
-    // Inject the http service and test controller for each test
-    httpClient = TestBed.inject(HttpClient);
-    httpTestingController = TestBed.inject(HttpTestingController);
-  });
-  afterEach(() => {
-    // After every test, assert that there are no more pending requests.
-    httpTestingController.verify();
-  });
-  /// Tests begin ///
-  it('can test HttpClient.get', () => {
-    const testData: Data = {name: 'Test Data'};
-
-    // Make an HTTP GET request
-    httpClient.get<Data>(testUrl)
-      .subscribe(data =>
-        // When observable resolves, result should match test data
-        expect(data).toEqual(testData)
-      );
-
-    // The following `expectOne()` will match the request's URL.
-    // If no requests or multiple requests matched that URL
-    // `expectOne()` would throw.
-    const req = httpTestingController.expectOne('/data');
-
-    // Assert that the request is a GET.
-    expect(req.request.method).toEqual('GET');
-
-    // Respond with mock data, causing Observable to resolve.
-    // Subscribe callback asserts that correct data was returned.
-    req.flush(testData);
-
-    // Finally, assert that there are no outstanding requests.
-    httpTestingController.verify();
-  });
-
-  it('can test HttpClient.get with matching header', () => {
-    const testData: Data = {name: 'Test Data'};
-
-    // Make an HTTP GET request with specific header
-    httpClient.get<Data>(testUrl, {
-        headers: new HttpHeaders({Authorization: 'my-auth-token'})
-      })
-      .subscribe(data =>
-        expect(data).toEqual(testData)
-      );
-
-      // Find request with a predicate function.
-    // Expect one request with an authorization header
-    const req = httpTestingController.expectOne(
-      request => request.headers.has('Authorization')
-    );
-    req.flush(testData);
-  });
-
-  it('can test multiple requests', () => {
-    const testData: Data[] = [
-      { name: 'bob' }, { name: 'carol' },
-      { name: 'ted' }, { name: 'alice' }
-    ];
-
-    // Make three requests in a row
-    httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d.length).toEqual(0, 'should have no data'));
-
-    httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).toEqual([testData[0]], 'should be one element array'));
-
-    httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).toEqual(testData, 'should be expected data'));
-
-    // get all pending requests that match the given URL
-    const requests = httpTestingController.match(testUrl);
-    expect(requests.length).toEqual(3);
-
-    // Respond to each request with different results
-    requests[0].flush([]);
-    requests[1].flush([testData[0]]);
-    requests[2].flush(testData);
-  });
-
-  it('can test for 404 error', () => {
-    const emsg = 'deliberate 404 error';
-
-    httpClient.get<Data[]>(testUrl).subscribe(
-      data => fail('should have failed with the 404 error'),
-      (error: HttpErrorResponse) => {
-        expect(error.status).toEqual(404, 'status');
-        expect(error.error).toEqual(emsg, 'message');
-      }
-    );
-
-    const req = httpTestingController.expectOne(testUrl);
-
-    // Respond with mock error
-    req.flush(emsg, { status: 404, statusText: 'Not Found' });
-  });
-
-  it('can test for network error', done => {
-    // Create mock ProgressEvent with type `error`, raised when something goes wrong
-    // at network level. e.g. Connection timeout, DNS error, offline, etc.
-    const mockError = new ProgressEvent('error');
-
-    httpClient.get<Data[]>(testUrl).subscribe(
-      data => fail('should have failed with the network error'),
-      (error: HttpErrorResponse) => {
-        expect(error.error).toBe(mockError);
-        done();
-      }
-    );
-
-    const req = httpTestingController.expectOne(testUrl);
-
-    // Respond with mock error
-    req.error(mockError);
-  });
-
-  it('httpTestingController.verify should fail if HTTP response not simulated', () => {
-    // Sends request
-    httpClient.get('some/api').subscribe();
-
-    // verify() should fail because haven't handled the pending request.
-    expect(() => httpTestingController.verify()).toThrow();
-
-    // Now get and flush the request so that afterEach() doesn't fail
-    const req = httpTestingController.expectOne('some/api');
-    req.flush(null);
-  });
-
-  // Proves that verify in afterEach() really would catch error
-  // if test doesn't simulate the HTTP response.
-  //
-  // Must disable this test because can't catch an error in an afterEach().
-  // Uncomment if you want to confirm that afterEach() does the job.
-  // it('afterEach() should fail when HTTP response not simulated',() => {
-  //   // Sends request which is never handled by this test
-  //   httpClient.get('some/api').subscribe();
-  // });
-});
 
 
 /*
@@ -649,38 +481,7 @@ can be found in the LICENSE file at https://angular.io/license
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
-  production: true
-};
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
-};
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
+-->"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
  *
@@ -734,6 +535,205 @@ import 'zone.js'; // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+
+// Other imports
+import { TestBed } from '@angular/core/testing';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+
+import { HttpHeaders } from '@angular/common/http';
+
+interface Data {
+  name: string;
+}
+
+const testUrl = '/data';
+
+describe('HttpClient testing', () => {
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    });
+
+    // Inject the http service and test controller for each test
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
+  });
+  afterEach(() => {
+    // After every test, assert that there are no more pending requests.
+    httpTestingController.verify();
+  });
+  /// Tests begin ///
+  it('can test HttpClient.get', () => {
+    const testData: Data = {name: 'Test Data'};
+
+    // Make an HTTP GET request
+    httpClient.get<Data>(testUrl)
+      .subscribe(data =>
+        // When observable resolves, result should match test data
+        expect(data).toEqual(testData)
+      );
+
+    // The following `expectOne()` will match the request's URL.
+    // If no requests or multiple requests matched that URL
+    // `expectOne()` would throw.
+    const req = httpTestingController.expectOne('/data');
+
+    // Assert that the request is a GET.
+    expect(req.request.method).toEqual('GET');
+
+    // Respond with mock data, causing Observable to resolve.
+    // Subscribe callback asserts that correct data was returned.
+    req.flush(testData);
+
+    // Finally, assert that there are no outstanding requests.
+    httpTestingController.verify();
+  });
+
+  it('can test HttpClient.get with matching header', () => {
+    const testData: Data = {name: 'Test Data'};
+
+    // Make an HTTP GET request with specific header
+    httpClient.get<Data>(testUrl, {
+        headers: new HttpHeaders({Authorization: 'my-auth-token'})
+      })
+      .subscribe(data =>
+        expect(data).toEqual(testData)
+      );
+
+      // Find request with a predicate function.
+    // Expect one request with an authorization header
+    const req = httpTestingController.expectOne(
+      request => request.headers.has('Authorization')
+    );
+    req.flush(testData);
+  });
+
+  it('can test multiple requests', () => {
+    const testData: Data[] = [
+      { name: 'bob' }, { name: 'carol' },
+      { name: 'ted' }, { name: 'alice' }
+    ];
+
+    // Make three requests in a row
+    httpClient.get<Data[]>(testUrl)
+      .subscribe(d => expect(d.length).withContext('should have no data').toEqual(0));
+
+    httpClient.get<Data[]>(testUrl)
+      .subscribe(d => expect(d).withContext('should be one element array').toEqual([testData[0]]));
+
+    httpClient.get<Data[]>(testUrl)
+      .subscribe(d => expect(d).withContext('should be expected data').toEqual(testData));
+
+    // get all pending requests that match the given URL
+    const requests = httpTestingController.match(testUrl);
+    expect(requests.length).toEqual(3);
+
+    // Respond to each request with different results
+    requests[0].flush([]);
+    requests[1].flush([testData[0]]);
+    requests[2].flush(testData);
+  });
+
+  it('can test for 404 error', () => {
+    const emsg = 'deliberate 404 error';
+
+    httpClient.get<Data[]>(testUrl).subscribe({
+      next: () => fail('should have failed with the 404 error'),
+      error: (error: HttpErrorResponse) => {
+        expect(error.status).withContext('status').toEqual(404);
+        expect(error.error).withContext('message').toEqual(emsg);
+      },
+    });
+
+    const req = httpTestingController.expectOne(testUrl);
+
+    // Respond with mock error
+    req.flush(emsg, { status: 404, statusText: 'Not Found' });
+  });
+
+  it('can test for network error', done => {
+    // Create mock ProgressEvent with type `error`, raised when something goes wrong
+    // at network level. e.g. Connection timeout, DNS error, offline, etc.
+    const mockError = new ProgressEvent('error');
+
+    httpClient.get<Data[]>(testUrl).subscribe({
+      next: () => fail('should have failed with the network error'),
+      error: (error: HttpErrorResponse) => {
+        expect(error.error).toBe(mockError);
+        done();
+      },
+    });
+
+    const req = httpTestingController.expectOne(testUrl);
+
+    // Respond with mock error
+    req.error(mockError);
+  });
+
+  it('httpTestingController.verify should fail if HTTP response not simulated', () => {
+    // Sends request
+    httpClient.get('some/api').subscribe();
+
+    // verify() should fail because haven't handled the pending request.
+    expect(() => httpTestingController.verify()).toThrow();
+
+    // Now get and flush the request so that afterEach() doesn't fail
+    const req = httpTestingController.expectOne('some/api');
+    req.flush(null);
+  });
+
+  // Proves that verify in afterEach() really would catch error
+  // if test doesn't simulate the HTTP response.
+  //
+  // Must disable this test because can't catch an error in an afterEach().
+  // Uncomment if you want to confirm that afterEach() does the job.
+  // it('afterEach() should fail when HTTP response not simulated',() => {
+  //   // Sends request which is never handled by this test
+  //   httpClient.get('some/api').subscribe();
+  // });
+});
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
+  production: true
+};
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
 
 /*
@@ -856,8 +856,7 @@ can be found in the LICENSE file at https://angular.io/license
         }
       }
     }
-  },
-  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+  }
 }
 "><input type="hidden" name="project[files][package.json]" value="{
   &quot;name&quot;: &quot;angular.io-example&quot;,
@@ -874,37 +873,37 @@ can be found in the LICENSE file at https://angular.io/license
   },
   &quot;private&quot;: true,
   &quot;dependencies&quot;: {
-    &quot;@angular/animations&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/common&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/core&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/forms&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser-dynamic&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/router&quot;: &quot;~13.1.0&quot;,
-    &quot;angular-in-memory-web-api&quot;: &quot;~0.11.0&quot;,
-    &quot;rxjs&quot;: &quot;~7.4.0&quot;,
+    &quot;@angular/animations&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/common&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/core&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/forms&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/router&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.13.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.5.0&quot;,
     &quot;tslib&quot;: &quot;^2.3.0&quot;,
     &quot;zone.js&quot;: &quot;~0.11.4&quot;
   },
   &quot;devDependencies&quot;: {
-    &quot;@angular-devkit/build-angular&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler-cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@types/jasmine&quot;: &quot;~3.10.0&quot;,
-    &quot;@types/node&quot;: &quot;^12.11.1&quot;,
+    &quot;@angular-devkit/build-angular&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/cli&quot;: &quot;~14.0.0-rc.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@types/jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;@types/node&quot;: &quot;^16.11.35&quot;,
     &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
-    &quot;jasmine-core&quot;: &quot;~3.10.0&quot;,
+    &quot;jasmine-core&quot;: &quot;~4.1.0&quot;,
     &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
     &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
     &quot;karma&quot;: &quot;~6.3.0&quot;,
     &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
-    &quot;karma-coverage&quot;: &quot;~2.0.3&quot;,
-    &quot;karma-jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.2.0&quot;,
+    &quot;karma-jasmine&quot;: &quot;~5.0.0&quot;,
     &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
     &quot;protractor&quot;: &quot;~7.0.0&quot;,
-    &quot;ts-node&quot;: &quot;~10.1.0&quot;,
-    &quot;typescript&quot;: &quot;~4.5.2&quot;
+    &quot;ts-node&quot;: &quot;~10.8.0&quot;,
+    &quot;typescript&quot;: &quot;~4.7.2&quot;
   }
 }
 "><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
@@ -956,7 +955,7 @@ can be found in the LICENSE file at https://angular.io/license
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2017&quot;,
+    &quot;target&quot;: &quot;es2020&quot;,
     &quot;module&quot;: &quot;es2020&quot;,
     &quot;lib&quot;: [
       &quot;es2020&quot;,

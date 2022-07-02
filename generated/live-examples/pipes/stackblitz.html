@@ -1,5 +1,253 @@
 <html lang="en"><head></head><body>
-        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/app.component.html" target="_self"><input type="hidden" name="project[files][src/main.ts]" value="import { enableProdMode } from '@angular/core';
+        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/app.component.html" target="_self"><input type="hidden" name="project[files][angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;schematics&quot;: {
+        &quot;@schematics/angular:application&quot;: {
+          &quot;strict&quot;: true
+        }
+      },
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
+                }
+              ],
+              &quot;fileReplacements&quot;: [
+                {
+                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
+                }
+              ],
+              &quot;outputHashing&quot;: &quot;all&quot;
+            },
+            &quot;development&quot;: {
+              &quot;buildOptimizer&quot;: false,
+              &quot;optimization&quot;: false,
+              &quot;vendorChunk&quot;: true,
+              &quot;extractLicenses&quot;: false,
+              &quot;sourceMap&quot;: true,
+              &quot;namedChunks&quot;: true
+            }
+          },
+          &quot;defaultConfiguration&quot;: &quot;production&quot;
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            },
+            &quot;development&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
+            }
+          },
+          &quot;defaultConfiguration&quot;: &quot;development&quot;
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;main&quot;: &quot;src/test.ts&quot;,
+            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+"><input type="hidden" name="project[files][package.json]" value="{
+  &quot;name&quot;: &quot;angular.io-example&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;description&quot;: &quot;Example project from an angular.io guide.&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;scripts&quot;: {
+    &quot;ng&quot;: &quot;ng&quot;,
+    &quot;start&quot;: &quot;ng serve&quot;,
+    &quot;build&quot;: &quot;ng build&quot;,
+    &quot;watch&quot;: &quot;ng build --watch --configuration development&quot;,
+    &quot;test&quot;: &quot;ng test&quot;,
+    &quot;e2e&quot;: &quot;ng e2e&quot;
+  },
+  &quot;private&quot;: true,
+  &quot;dependencies&quot;: {
+    &quot;@angular/animations&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/common&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/core&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/forms&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/router&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.13.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.5.0&quot;,
+    &quot;tslib&quot;: &quot;^2.3.0&quot;,
+    &quot;zone.js&quot;: &quot;~0.11.4&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@angular-devkit/build-angular&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@angular/cli&quot;: &quot;~14.0.0-rc.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^14.0.0-rc.0&quot;,
+    &quot;@types/jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;@types/node&quot;: &quot;^16.11.35&quot;,
+    &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
+    &quot;jasmine-core&quot;: &quot;~4.1.0&quot;,
+    &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
+    &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
+    &quot;karma&quot;: &quot;~6.3.0&quot;,
+    &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.2.0&quot;,
+    &quot;karma-jasmine&quot;: &quot;~5.0.0&quot;,
+    &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
+    &quot;protractor&quot;: &quot;~7.0.0&quot;,
+    &quot;ts-node&quot;: &quot;~10.8.0&quot;,
+    &quot;typescript&quot;: &quot;~4.7.2&quot;
+  }
+}
+"><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;./out-tsc/app&quot;,
+    &quot;types&quot;: []
+  },
+  &quot;files&quot;: [
+    &quot;src/main.ts&quot;,
+    &quot;src/polyfills.ts&quot;
+  ],
+  &quot;include&quot;: [
+    &quot;src/**/*.d.ts&quot;
+  ],
+  &quot;exclude&quot;: [
+    &quot;src/test.ts&quot;,
+    &quot;src/**/*.spec.ts&quot;,
+    &quot;src/**/*-specs.ts&quot;,
+    &quot;src/**/*.avoid.ts&quot;,
+    &quot;src/**/*.0.ts&quot;,
+    &quot;src/**/*.1.ts&quot;,
+    &quot;src/**/*.1b.ts&quot;,
+    &quot;src/**/*.2.ts&quot;,
+    &quot;src/**/*.3.ts&quot;,
+    &quot;src/**/*.4.ts&quot;,
+    &quot;src/**/*.5.ts&quot;,
+    &quot;src/**/*.6.ts&quot;,
+    &quot;src/**/*.7.ts&quot;,
+    &quot;src/**/testing&quot;
+  ]
+}
+"><input type="hidden" name="project[files][tsconfig.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;noImplicitOverride&quot;: true,
+    &quot;noPropertyAccessFromIndexSignature&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;downlevelIteration&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;importHelpers&quot;: true,
+    &quot;target&quot;: &quot;es2020&quot;,
+    &quot;module&quot;: &quot;es2020&quot;,
+    &quot;lib&quot;: [
+      &quot;es2020&quot;,
+      &quot;dom&quot;
+    ]
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
+    &quot;strictInjectionParameters&quot;: true,
+    &quot;strictInputAccessModifiers&quot;: true,
+    &quot;strictTemplates&quot;: true
+  }
+}
+"><input type="hidden" name="project[files][src/index.html]" value="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <title>Pipes</title>
+    <base href=&quot;/&quot;>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/main.ts]" value="import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -76,6 +324,94 @@ import 'zone.js'; // Included with Angular CLI.
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #264D73;
+  font-size: 2.5rem;
+}
+h2, h3 {
+  color: #444;
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.3rem;
+}
+body {
+  padding: .5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+body, input[text] {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+a {
+  cursor: pointer;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color:  #42545C;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+input[type=&quot;text&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
 */"><input type="hidden" name="project[files][src/test.ts]" value="// This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/testing';
@@ -87,8 +423,8 @@ import {
 
 declare const require: {
   context(path: string, deep?: boolean, filter?: RegExp): {
-    keys(): string[];
     <T>(id: string): T;
+    keys(): string[];
   };
 };
 
@@ -101,14 +437,85 @@ getTestBed().initTestEnvironment(
 // Then we find all the tests.
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
-context.keys().map(context);
+context.keys().forEach(context);
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/app.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/app.component.html]" value="<h1 id=&quot;toc&quot;>Pipes</h1>
+<a href=&quot;#happy-birthday1&quot;>Happy Birthday v1</a>
+<a href=&quot;#birthday-date-pipe&quot;>Birthday DatePipe</a>
+<a href=&quot;#happy-birthday2&quot;>Happy Birthday v2</a>
+<a href=&quot;#birthday-pipe-chaining&quot;>Birthday Pipe Chaining</a>
+<a href=&quot;#power-booster&quot;>Power Booster custom pipe</a>
+<a href=&quot;#power-boost-calc&quot;>Power Boost Calculator custom pipe with params</a>
+<a href=&quot;#flying-heroes&quot;>Flying Heroes filter pipe (pure)</a>
+<a href=&quot;#flying-heroes-impure&quot;>Flying Heroes filter pipe (impure)</a>
+<a href=&quot;#hero-message&quot;>Async Hero Message and AsyncPipe</a>
+<a href=&quot;#hero-list&quot;>Hero List with caching FetchJsonPipe</a>
+<a href=&quot;#pipe-precedence&quot;>Pipes and Precedence</a>
+
+
+<hr>
+<h2 id=&quot;happy-birthday1&quot;>Hero Birthday v1</h2>
+<app-hero-birthday></app-hero-birthday>
+
+<hr>
+<h2 id=&quot;birthday-date-pipe&quot;>Birthday DatePipe</h2>
+<p>The hero's birthday is {{ birthday | date }}</p>
+
+<p>The hero's birthday is {{ birthday | date:&quot;MM/dd/yy&quot; }} </p>
+
+<hr>
+<h2 id=&quot;happy-birthday2&quot;>Hero Birthday v2</h2>
+<app-hero-birthday2></app-hero-birthday2>
+
+<hr>
+<h2 id=&quot;birthday-pipe-chaining&quot;>Birthday Pipe Chaining</h2>
+<p>
+  The chained hero's birthday is
+  {{ birthday | date | uppercase}}
+</p>
+
+<p>
+  The chained hero's birthday is
+  {{  birthday | date:'fullDate' | uppercase}}
+</p>
+<p>
+  The chained hero's birthday is
+  {{ ( birthday | date:'fullDate' ) | uppercase}}
+</p>
+<hr>
+<app-power-booster id=&quot;power-booster&quot;></app-power-booster>
+
+<hr>
+<app-power-boost-calculator id=&quot;power-boost-calc&quot;>loading</app-power-boost-calculator>
+
+<hr>
+<app-flying-heroes id=&quot;flying-heroes&quot;></app-flying-heroes>
+
+<hr>
+<app-flying-heroes-impure id=&quot;flying-heroes-impure&quot;></app-flying-heroes-impure>
+
+<hr>
+<!-- async examples at the top so can see them in action -->
+<app-hero-async-message id=&quot;hero-message&quot;></app-hero-async-message>
+
+<hr>
+<app-hero-list id=&quot;hero-list&quot;></app-hero-list>
+
+<hr>
+<app-precedence id=&quot;pipe-precedence&quot;></app-precedence>
+<hr>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/app.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -225,7 +632,80 @@ export class FetchJsonPipe implements PipeTransform {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/flying-heroes.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/flying-heroes-impure.component.html]" value="<h2>{{title}}</h2>
+
+<label for=&quot;hero-name&quot;>New hero: </label>
+<input type=&quot;text&quot;
+       id=&quot;hero-name&quot;
+       #box
+       (keyup.enter)=&quot;addHero(box.value); box.value=''&quot;
+       placeholder=&quot;hero name&quot;>
+<div>
+  <input id=&quot;can-fly&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;canFly&quot;>
+  <label for=&quot;can-fly&quot;>can fly</label>
+</div>
+
+<div>
+  <input id=&quot;mutate&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;mutate&quot;>Mutate array
+  <button type=&quot;button&quot; (click)=&quot;reset()&quot;>Reset</button>
+</div>
+
+<h3>Heroes who fly (piped)</h3>
+<div id=&quot;flyers&quot;>
+  <div *ngFor=&quot;let hero of (heroes | flyingHeroesImpure)&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+<h3>All Heroes (no pipe)</h3>
+<div id=&quot;all&quot;>
+  <div *ngFor=&quot;let hero of heroes&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/flying-heroes.component.html]" value="<h2>{{title}}</h2>
+<p>Create a new hero and press enter to add it to the list. </p>
+<label for=&quot;hero-name&quot;>New hero name: </label>
+<input type=&quot;text&quot; #box
+       id=&quot;hero-name&quot;
+       (keyup.enter)=&quot;addHero(box.value); box.value=''&quot;
+       placeholder=&quot;hero name&quot;>
+<div>
+  <input id=&quot;can-fly&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;canFly&quot;>
+  <label for=&quot;can-fly&quot;>Hero can fly</label>
+</div>
+<div>
+<input id=&quot;mutate&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;mutate&quot;>
+<label for=&quot;mutate&quot;>Mutate array</label>
+<button type=&quot;button&quot; (click)=&quot;reset()&quot;>Reset list of heroes</button>
+</div>
+
+<h3>Heroes who fly (piped)</h3>
+<div id=&quot;flyers&quot;>
+  <div *ngFor=&quot;let hero of (heroes | flyingHeroes)&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+<h3>All Heroes (no pipe)</h3>
+<div id=&quot;all&quot;>
+  <div *ngFor=&quot;let hero of heroes&quot;>
+    {{hero.name}}
+  </div>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/flying-heroes.component.ts]" value="import { Component } from '@angular/core';
 
 import { HEROES } from './heroes';
 
@@ -307,7 +787,7 @@ import { map, take } from 'rxjs/operators';
   template: `
     <h2>Async Hero Message and AsyncPipe</h2>
     <p>Message: {{ message$ | async }}</p>
-    <button (click)=&quot;resend()&quot;>Resend</button>`,
+    <button type=&quot;button&quot; (click)=&quot;resend()&quot;>Resend</button>`,
 })
 export class HeroAsyncMessageComponent {
   message$: Observable<string>;
@@ -367,7 +847,7 @@ can be found in the LICENSE file at https://angular.io/license
   selector: 'app-hero-birthday2',
   template: `
     <p>The hero's birthday is {{ birthday | date:format }}</p>
-    <button (click)=&quot;toggleFormat()&quot;>Toggle Format</button>
+    <button type=&quot;button&quot; (click)=&quot;toggleFormat()&quot;>Toggle Format</button>
   `
 })
 export class HeroBirthday2Component {
@@ -463,7 +943,22 @@ export class PowerBoosterComponent { }
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/app/precedence.component.ts]" value="import { Component } from '@angular/core';
+*/"><input type="hidden" name="project[files][src/app/precedence.component.html]" value="<h2>{{title}}</h2>
+
+<p>Basic uppercase pipe (no precedence considerations necessary): {{ 'text' | uppercase }}</p>
+<p>The following shows that a pipe has higher precedence than a ternary operator. If the pipe precedence were lower than the ternary operator precedence, the output would be in uppercase as in 'TRUE'. Instead &quot;true&quot; is lowercase: {{ true ? 'true' : 'false' | uppercase }}</p>
+<p>The following shows how parentheses help Angular evaluate the whole statement:
+<!-- use parentheses in the third operand so the pipe applies to the whole expression -->
+{{ (true ? 'true' : 'false') | uppercase }}
+</p>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/precedence.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-precedence',
@@ -479,7 +974,13 @@ export class PrecedenceComponent {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
+*/"><input type="hidden" name="project[files][src/assets/heroes.json]" value="[
+  {&quot;name&quot;: &quot;Windstorm&quot;, &quot;canFly&quot;: true},
+  {&quot;name&quot;: &quot;Bombasto&quot;,  &quot;canFly&quot;: false},
+  {&quot;name&quot;: &quot;Magneto&quot;,   &quot;canFly&quot;: false},
+  {&quot;name&quot;: &quot;Tornado&quot;,   &quot;canFly&quot;: true}
+]
+"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
   production: true
 };
 
@@ -510,521 +1011,7 @@ export const environment = {
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-h1 {
-  color: #264D73;
-  font-size: 2.5rem;
-}
-h2, h3 {
-  color: #444;
-  font-weight: lighter;
-}
-h3 {
-  font-size: 1.3rem;
-}
-body {
-  padding: .5rem;
-  max-width: 1000px;
-  margin: auto;
-}
-@media (min-width: 600px) {
-  body {
-    padding: 2rem;
-  }
-}
-body, input[text] {
-  color: #333;
-  font-family: Cambria, Georgia, serif;
-}
-a {
-  cursor: pointer;
-}
-button {
-  background-color: #eee;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: black;
-  font-size: 1.2rem;
-  padding: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-button:hover {
-  background-color: black;
-  color: white;
-}
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
-
-/* Navigation link styles */
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #e8e8e8;
-  color: #3d3d3d;
-  border-radius: 4px;
-}
-
-nav a:hover {
-  color: white;
-  background-color:  #42545C;
-}
-nav a.active {
-  background-color: black;
-  color: white;
-}
-hr {
-  margin: 1.5rem 0;
-}
-input[type=&quot;text&quot;] {
-  box-sizing: border-box;
-  width: 100%;
-  padding: .5rem;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/index.html]" value="<!DOCTYPE html>
-<html lang=&quot;en&quot;>
-  <head>
-    <title>Pipes</title>
-    <base href=&quot;/&quot;>
-    <meta charset=&quot;UTF-8&quot;>
-    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
-  </head>
-
-  <body>
-    <app-root></app-root>
-  </body>
-
-</html>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/app.component.html]" value="<a id=&quot;toc&quot;></a>
-<h1>Pipes</h1>
-<a href=&quot;#happy-birthday1&quot;>Happy Birthday v1</a>
-<a href=&quot;#birthday-date-pipe&quot;>Birthday DatePipe</a>
-<a href=&quot;#happy-birthday2&quot;>Happy Birthday v2</a>
-<a href=&quot;#birthday-pipe-chaining&quot;>Birthday Pipe Chaining</a>
-<a href=&quot;#power-booster&quot;>Power Booster custom pipe</a>
-<a href=&quot;#power-boost-calc&quot;>Power Boost Calculator custom pipe with params</a>
-<a href=&quot;#flying-heroes&quot;>Flying Heroes filter pipe (pure)</a>
-<a href=&quot;#flying-heroes-impure&quot;>Flying Heroes filter pipe (impure)</a>
-<a href=&quot;#hero-message&quot;>Async Hero Message and AsyncPipe</a>
-<a href=&quot;#hero-list&quot;>Hero List with caching FetchJsonPipe</a>
-<a href=&quot;#pipe-precedence&quot;>Pipes and Precedence</a>
-
-
-<hr>
-<a id=&quot;happy-birthday1&quot;></a>
-<h2>Hero Birthday v1</h2>
-<app-hero-birthday></app-hero-birthday>
-
-<hr>
-<a id=&quot;birthday-date-pipe&quot;></a>
-<h2>Birthday DatePipe</h2>
-<p>The hero's birthday is {{ birthday | date }}</p>
-
-<p>The hero's birthday is {{ birthday | date:&quot;MM/dd/yy&quot; }} </p>
-
-<hr>
-<a id=&quot;happy-birthday2&quot;></a>
-<h2>Hero Birthday v2</h2>
-<app-hero-birthday2></app-hero-birthday2>
-
-<hr>
-<a id=&quot;birthday-pipe-chaining&quot;></a>
-<h2>Birthday Pipe Chaining</h2>
-<p>
-  The chained hero's birthday is
-  {{ birthday | date | uppercase}}
-</p>
-
-<p>
-  The chained hero's birthday is
-  {{  birthday | date:'fullDate' | uppercase}}
-</p>
-<p>
-  The chained hero's birthday is
-  {{ ( birthday | date:'fullDate' ) | uppercase}}
-</p>
-<hr>
-<a id=&quot;power-booster&quot;></a>
-<app-power-booster></app-power-booster>
-
-<hr>
-<a id=&quot;power-boost-calc&quot;></a>
-<app-power-boost-calculator>loading</app-power-boost-calculator>
-
-<hr>
-<a id=&quot;flying-heroes&quot;></a>
-<app-flying-heroes></app-flying-heroes>
-
-<hr>
-<a id=&quot;flying-heroes-impure&quot;></a>
-<app-flying-heroes-impure></app-flying-heroes-impure>
-
-<hr>
-<a id=&quot;hero-message&quot;></a>
-<!-- async examples at the top so can see them in action -->
-<app-hero-async-message></app-hero-async-message>
-
-<hr>
-<a id=&quot;hero-list&quot;></a>
-<app-hero-list></app-hero-list>
-
-<hr>
-<a id=&quot;pipe-precedence&quot;></a>
-<app-precedence></app-precedence>
-<hr>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/flying-heroes-impure.component.html]" value="<h2>{{title}}</h2>
-
-<label for=&quot;hero-name&quot;>New hero: </label>
-<input type=&quot;text&quot;
-       id=&quot;hero-name&quot;
-       #box
-       (keyup.enter)=&quot;addHero(box.value); box.value=''&quot;
-       placeholder=&quot;hero name&quot;>
-<div>
-  <input id=&quot;can-fly&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;canFly&quot;>
-  <label for=&quot;can-fly&quot;>can fly</label>
-</div>
-
-<div>
-  <input id=&quot;mutate&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;mutate&quot;>Mutate array
-  <button (click)=&quot;reset()&quot;>Reset</button>
-</div>
-
-<h3>Heroes who fly (piped)</h3>
-<div id=&quot;flyers&quot;>
-  <div *ngFor=&quot;let hero of (heroes | flyingHeroesImpure)&quot;>
-    {{hero.name}}
-  </div>
-</div>
-
-<h3>All Heroes (no pipe)</h3>
-<div id=&quot;all&quot;>
-  <div *ngFor=&quot;let hero of heroes&quot;>
-    {{hero.name}}
-  </div>
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/flying-heroes.component.html]" value="<h2>{{title}}</h2>
-<p>Create a new hero and press enter to add it to the list. </p>
-<label for=&quot;hero-name&quot;>New hero name: </label>
-<input type=&quot;text&quot; #box
-       id=&quot;hero-name&quot;
-       (keyup.enter)=&quot;addHero(box.value); box.value=''&quot;
-       placeholder=&quot;hero name&quot;>
-<div>
-  <input id=&quot;can-fly&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;canFly&quot;>
-  <label for=&quot;can-fly&quot;>Hero can fly</label>
-</div>
-<div>
-<input id=&quot;mutate&quot; type=&quot;checkbox&quot; [(ngModel)]=&quot;mutate&quot;>
-<label for=&quot;mutate&quot;>Mutate array</label>
-<button (click)=&quot;reset()&quot;>Reset list of heroes</button>
-</div>
-
-<h3>Heroes who fly (piped)</h3>
-<div id=&quot;flyers&quot;>
-  <div *ngFor=&quot;let hero of (heroes | flyingHeroes)&quot;>
-    {{hero.name}}
-  </div>
-</div>
-
-<h3>All Heroes (no pipe)</h3>
-<div id=&quot;all&quot;>
-  <div *ngFor=&quot;let hero of heroes&quot;>
-    {{hero.name}}
-  </div>
-</div>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/app/precedence.component.html]" value="<h2>{{title}}</h2>
-
-<p>Basic uppercase pipe (no precedence considerations necessary): {{ 'text' | uppercase }}</p>
-<p>The following shows that a pipe has higher precedence than a ternary operator. If the pipe precedence were lower than the ternary operator precedence, the output would be in uppercase as in 'TRUE'. Instead &quot;true&quot; is lowercase: {{ true ? 'true' : 'false' | uppercase }}</p>
-<p>The following shows how parentheses help Angular evaluate the whole statement:
-<!-- use parentheses in the third operand so the pipe applies to the whole expression -->
-{{ (true ? 'true' : 'false') | uppercase }}
-</p>
-
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][angular.json]" value="{
-  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
-  &quot;version&quot;: 1,
-  &quot;newProjectRoot&quot;: &quot;projects&quot;,
-  &quot;projects&quot;: {
-    &quot;angular.io-example&quot;: {
-      &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {
-        &quot;@schematics/angular:application&quot;: {
-          &quot;strict&quot;: true
-        }
-      },
-      &quot;root&quot;: &quot;&quot;,
-      &quot;sourceRoot&quot;: &quot;src&quot;,
-      &quot;prefix&quot;: &quot;app&quot;,
-      &quot;architect&quot;: {
-        &quot;build&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
-          &quot;options&quot;: {
-            &quot;outputPath&quot;: &quot;dist&quot;,
-            &quot;index&quot;: &quot;src/index.html&quot;,
-            &quot;main&quot;: &quot;src/main.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
-            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
-            &quot;assets&quot;: [
-              &quot;src/favicon.ico&quot;,
-              &quot;src/assets&quot;
-            ],
-            &quot;styles&quot;: [
-              &quot;src/styles.css&quot;
-            ],
-            &quot;scripts&quot;: []
-          },
-          &quot;configurations&quot;: {
-            &quot;production&quot;: {
-              &quot;budgets&quot;: [
-                {
-                  &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
-                  &quot;maximumError&quot;: &quot;1mb&quot;
-                },
-                {
-                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
-                  &quot;maximumError&quot;: &quot;4kb&quot;
-                }
-              ],
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
-                }
-              ],
-              &quot;outputHashing&quot;: &quot;all&quot;
-            },
-            &quot;development&quot;: {
-              &quot;buildOptimizer&quot;: false,
-              &quot;optimization&quot;: false,
-              &quot;vendorChunk&quot;: true,
-              &quot;extractLicenses&quot;: false,
-              &quot;sourceMap&quot;: true,
-              &quot;namedChunks&quot;: true
-            }
-          },
-          &quot;defaultConfiguration&quot;: &quot;production&quot;
-        },
-        &quot;serve&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
-          &quot;configurations&quot;: {
-            &quot;production&quot;: {
-              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
-            },
-            &quot;development&quot;: {
-              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
-            }
-          },
-          &quot;defaultConfiguration&quot;: &quot;development&quot;
-        },
-        &quot;extract-i18n&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          }
-        },
-        &quot;test&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
-          &quot;options&quot;: {
-            &quot;main&quot;: &quot;src/test.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
-            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
-            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
-            &quot;assets&quot;: [
-              &quot;src/favicon.ico&quot;,
-              &quot;src/assets&quot;
-            ],
-            &quot;styles&quot;: [
-              &quot;src/styles.css&quot;
-            ],
-            &quot;scripts&quot;: []
-          }
-        },
-        &quot;e2e&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
-          &quot;options&quot;: {
-            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
-            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
-          },
-          &quot;configurations&quot;: {
-            &quot;production&quot;: {
-              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
-            }
-          }
-        }
-      }
-    }
-  },
-  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
-}
-"><input type="hidden" name="project[files][package.json]" value="{
-  &quot;name&quot;: &quot;angular.io-example&quot;,
-  &quot;version&quot;: &quot;0.0.0&quot;,
-  &quot;description&quot;: &quot;Example project from an angular.io guide.&quot;,
-  &quot;license&quot;: &quot;MIT&quot;,
-  &quot;scripts&quot;: {
-    &quot;ng&quot;: &quot;ng&quot;,
-    &quot;start&quot;: &quot;ng serve&quot;,
-    &quot;build&quot;: &quot;ng build&quot;,
-    &quot;watch&quot;: &quot;ng build --watch --configuration development&quot;,
-    &quot;test&quot;: &quot;ng test&quot;,
-    &quot;e2e&quot;: &quot;ng e2e&quot;
-  },
-  &quot;private&quot;: true,
-  &quot;dependencies&quot;: {
-    &quot;@angular/animations&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/common&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/core&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/forms&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/platform-browser-dynamic&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/router&quot;: &quot;~13.1.0&quot;,
-    &quot;angular-in-memory-web-api&quot;: &quot;~0.11.0&quot;,
-    &quot;rxjs&quot;: &quot;~7.4.0&quot;,
-    &quot;tslib&quot;: &quot;^2.3.0&quot;,
-    &quot;zone.js&quot;: &quot;~0.11.4&quot;
-  },
-  &quot;devDependencies&quot;: {
-    &quot;@angular-devkit/build-angular&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@angular/compiler-cli&quot;: &quot;~13.1.0&quot;,
-    &quot;@types/jasmine&quot;: &quot;~3.10.0&quot;,
-    &quot;@types/node&quot;: &quot;^12.11.1&quot;,
-    &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
-    &quot;jasmine-core&quot;: &quot;~3.10.0&quot;,
-    &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
-    &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
-    &quot;karma&quot;: &quot;~6.3.0&quot;,
-    &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
-    &quot;karma-coverage&quot;: &quot;~2.0.3&quot;,
-    &quot;karma-jasmine&quot;: &quot;~4.0.0&quot;,
-    &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
-    &quot;protractor&quot;: &quot;~7.0.0&quot;,
-    &quot;ts-node&quot;: &quot;~10.1.0&quot;,
-    &quot;typescript&quot;: &quot;~4.5.2&quot;
-  }
-}
-"><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
-{
-  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
-  &quot;compilerOptions&quot;: {
-    &quot;outDir&quot;: &quot;./out-tsc/app&quot;,
-    &quot;types&quot;: []
-  },
-  &quot;files&quot;: [
-    &quot;src/main.ts&quot;,
-    &quot;src/polyfills.ts&quot;
-  ],
-  &quot;include&quot;: [
-    &quot;src/**/*.d.ts&quot;
-  ],
-  &quot;exclude&quot;: [
-    &quot;src/test.ts&quot;,
-    &quot;src/**/*.spec.ts&quot;,
-    &quot;src/**/*-specs.ts&quot;,
-    &quot;src/**/*.avoid.ts&quot;,
-    &quot;src/**/*.0.ts&quot;,
-    &quot;src/**/*.1.ts&quot;,
-    &quot;src/**/*.1b.ts&quot;,
-    &quot;src/**/*.2.ts&quot;,
-    &quot;src/**/*.3.ts&quot;,
-    &quot;src/**/*.4.ts&quot;,
-    &quot;src/**/*.5.ts&quot;,
-    &quot;src/**/*.6.ts&quot;,
-    &quot;src/**/*.7.ts&quot;,
-    &quot;src/**/testing&quot;
-  ]
-}
-"><input type="hidden" name="project[files][tsconfig.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
-{
-  &quot;compileOnSave&quot;: false,
-  &quot;compilerOptions&quot;: {
-    &quot;baseUrl&quot;: &quot;./&quot;,
-    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
-    &quot;forceConsistentCasingInFileNames&quot;: true,
-    &quot;strict&quot;: true,
-    &quot;noImplicitOverride&quot;: true,
-    &quot;noPropertyAccessFromIndexSignature&quot;: true,
-    &quot;noImplicitReturns&quot;: true,
-    &quot;noFallthroughCasesInSwitch&quot;: true,
-    &quot;sourceMap&quot;: true,
-    &quot;declaration&quot;: false,
-    &quot;downlevelIteration&quot;: true,
-    &quot;experimentalDecorators&quot;: true,
-    &quot;moduleResolution&quot;: &quot;node&quot;,
-    &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2017&quot;,
-    &quot;module&quot;: &quot;es2020&quot;,
-    &quot;lib&quot;: [
-      &quot;es2020&quot;,
-      &quot;dom&quot;
-    ]
-  },
-  &quot;angularCompilerOptions&quot;: {
-    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
-    &quot;strictInjectionParameters&quot;: true,
-    &quot;strictInputAccessModifiers&quot;: true,
-    &quot;strictTemplates&quot;: true
-  }
-}
-"><input type="hidden" name="project[files][src/assets/heroes.json]" value="[
-  {&quot;name&quot;: &quot;Windstorm&quot;, &quot;canFly&quot;: true},
-  {&quot;name&quot;: &quot;Bombasto&quot;,  &quot;canFly&quot;: false},
-  {&quot;name&quot;: &quot;Magneto&quot;,   &quot;canFly&quot;: false},
-  {&quot;name&quot;: &quot;Tornado&quot;,   &quot;canFly&quot;: true}
-]
-"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="pipe"><input type="hidden" name="project[description]" value="Angular Example - Pipes"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
+*/"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="pipe"><input type="hidden" name="project[description]" value="Angular Example - Pipes"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

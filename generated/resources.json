@@ -23,7 +23,8 @@
             "desc": "A showcase of web apps built with Angular.",
             "descCn": "展示了基于 Angular 构建的 Web 应用程序。",
             "title": "Made with Angular",
-            "url": "https://www.madewithangular.com/"
+            "url": "https://www.madewithangular.com/",
+            "titleCn": "基于 Angular 的作品"
           },
           "angular-subreddit": {
             "desc": "An Angular-dedicated subreddit.",
@@ -42,27 +43,36 @@
             "desc": "Peer-reviewed Angular articles and tutorials.",
             "descCn": "同行评审过的 Angular 文章和教程。",
             "url": "https://indepth.dev/angular/",
-            "title": "Angular inDepth"
+            "title": "Angular inDepth",
+            "titleCn": "Angular 深度研究"
           },
           "angular-nation": {
             "desc": "Angular Nation is a free private network created for Angular developers to network, collaborate, and ask questions.",
             "url": "https://www.angularnation.net/",
-            "title": "Angular Nation"
+            "title": "Angular Nation",
+            "descCn": "Angular Nation 是一个免费的专用网络，为 Angular 开发人员创建的网络、协作和提问。",
+            "titleCn": "Angular 国度"
           },
           "angular-builders": {
             "desc": "A collection of Angular builders for your Angular projects",
             "url": "https://angular-builders.dev/",
-            "title": "Angular Builders"
+            "title": "Angular Builders",
+            "descCn": "适用于你的 Angular 项目的 Angular 构建器集合",
+            "titleCn": "Angular 构建器"
           },
           "butter-cms": {
             "desc": "Add API Based CMS to your Angular app",
             "url": "https://github.com/ButterCMS/buttercms-angular-tutorial",
-            "title": "API Based CMS with Butter"
+            "title": "API Based CMS with Butter",
+            "descCn": "将基于 API 的 CMS 添加到你的 Angular 应用程序",
+            "titleCn": "使用 Butter 的基于 API 的 CMS"
           },
           "angular-community-meetup": {
             "desc": "Come learn technical skills and network at this monthly, multi-series, multi-event, multi-timezone online meetup.",
             "url": "https://angularcommunity.net",
-            "title": "Angular Community Meetup"
+            "title": "Angular Community Meetup",
+            "descCn": "快来在这个每月一次的、多系列、多事件、多时区的在线聚会上学习技术技能和人脉。",
+            "titleCn": "Angular 社区聚会"
           }
         }
       },
@@ -81,7 +91,9 @@
             "desc": "ng-conf's official all-Angular podcast.",
             "logo": "",
             "title": "The Angular Show",
-            "url": "https://www.spreaker.com/show/angular-show"
+            "url": "https://www.spreaker.com/show/angular-show",
+            "descCn": "ng-conf 的官方全 Angular 播客。",
+            "titleCn": "Angular 秀"
           },
           "angular-air": {
             "desc": "Weekly video podcast hosted by Jeff Whelpley with all the latest and greatest happenings in the wild world of Angular.",
@@ -94,7 +106,8 @@
             "desc": "Podcast for those who want to know more about Angular 🚀",
             "logo": "",
             "title": "Angular Rocks",
-            "url": "https://angularrocks.com"
+            "url": "https://angularrocks.com",
+            "descCn": "面向那些想了解更多关于 Angular 的人的播客 🚀"
           },
           "happy-angular": {
             "desc": "A weekly German podcast for Angular on the go",
@@ -149,6 +162,14 @@
             "logo": "",
             "title": "NativeScript",
             "url": "https://docs.nativescript.org/angular/start/introduction"
+          },
+          "angular-miniprogram": {
+            "desc": "MiniProgram Platform for Angular.",
+            "logo": "",
+            "title": "MiniProgram",
+            "url": "https://github.com/wszgrcy/angular-miniprogram",
+            "descCn": "Angular 小程序平台。",
+            "titleCn": "小程序"
           }
         }
       },
@@ -177,7 +198,8 @@
           "rx-angular": {
             "desc": "RxAngular is a reactive library that provides extensions for developing high performant and scalable applications. It addresses the issues of local state management, rendering performance, and reactive architecture.",
             "title": "rx-angular",
-            "url": "https://rx-angular.io"
+            "url": "https://rx-angular.io",
+            "descCn": "RxAngular 是一个响应式库，为开发高性能和可扩展应用程序提供了扩展。它解决了本地状态管理、渲染性能和响应式架构的问题。"
           },
           "ngxs": {
             "desc": "NGXS is a state management pattern + library for Angular. NGXS is modeled after the CQRS pattern popularly implemented in libraries like Redux and NgRx but reduces boilerplate by using modern TypeScript features such as classes and decorators.",
@@ -223,7 +245,8 @@
             "desc": "ButterCMS is a headless CMS that lets you manage content using our dashboard and integrate it into your Angular Application",
             "logo": "https://buttercms.com/static/v2/images/logo.fb7c1035e94d.svg",
             "title": "ButterCMS",
-            "url": "https://buttercms.com/docs/api-client/angular"
+            "url": "https://buttercms.com/docs/api-client/angular",
+            "descCn": "ButterCMS 是一个无头 CMS，可让你使用我们的仪表板管理内容并将其集成到你的 Angular 应用程序"
           }
         }
       },
@@ -276,7 +299,8 @@
             "logo": "",
             "rev": true,
             "title": "UI Bakery",
-            "url": "https://uibakery.io/"
+            "url": "https://uibakery.io/",
+            "titleCn": "UI 面包店"
           },
           "b1": {
             "desc": "Server-side Rendering for Angular apps.",
@@ -323,12 +347,15 @@
             "desc": "A command line tool to prerender Angular Apps that uses Angular Universal but also supports Scully plugins.",
             "logo": "https://repository-images.githubusercontent.com/142886533/bd323700-e8ff-11e9-9645-75bc009ee359",
             "title": "angular-prerender",
-            "url": "https://github.com/chrisguttandin/angular-prerender"
+            "url": "https://github.com/chrisguttandin/angular-prerender",
+            "descCn": "一种预渲染 Angular 应用程序的命令行工具，它使用 Angular Universal 但也支持 Scully 插件。",
+            "titleCn": "Angular 预渲染"
           },
           "nx": {
-            "desc": "Nx (Nrwl Extensions for Angular) is an open source toolkit built on top of Angular CLI to help enterprise teams develop Angular at scale.",
-            "descCn": "Nx（用于 Angular 的 Nrwl 扩展）是一个基于 Angular CLI 构建的开源工具包，可帮助企业团队大规模开发 Angular。",
-            "title": "Nx",
+            "desc": "Nx is an open source build system featuring a lot of monorepo features that help enterprise teams develop Angular at scale.",
+            "descCn": "Nx 是一个基于 Angular CLI 构建的开源工具包，可帮助企业团队大规模开发 Angular。",
+            "title": "Nx - Smart, Fast and Extensible Build System",
+            "titleCn": "Nx - 智能、快速、可扩展的构建体系",
             "logo": "https://nrwl.io/assets/nx-logo.png",
             "url": "https://nrwl.io/nx"
           },
@@ -343,7 +370,8 @@
             "desc": "A library for testing RxJS observables that offers an alternative to Marble Tests.",
             "logo": "",
             "title": "observer-spy",
-            "url": "https://github.com/hirezio/observer-spy"
+            "url": "https://github.com/hirezio/observer-spy",
+            "descCn": "一个用于测试 RxJS observables 的库，它提供了 Marble Tests 的替代方案。"
           },
           "scully": {
             "desc": "Scully (Jamstack Toolchain for Angular) makes building, testing, and deploying Jamstack apps extremely simple.",
@@ -356,7 +384,8 @@
             "desc": "A testing library for creating mock services, components, directives, pipes and modules out of annoying dependencies in unit tests.",
             "title": "ng-mocks",
             "logo": "",
-            "url": "https://github.com/ike18t/ng-mocks#readme"
+            "url": "https://github.com/ike18t/ng-mocks#readme",
+            "descCn": "一个测试库，用于从单元测试中烦人的依赖项中创建模拟服务、组件、指令、管道和模块。"
           }
         }
       },
@@ -459,13 +488,17 @@
             "desc": "Free components, templates & plugins for the latest Bootstrap 5 styled in accordance with Material Design 2.0 (guidelines introduced in 2020)",
             "logo": "",
             "title": "Angular & Material Design 2.0 for Bootstrap 5",
-            "url": "https://mdbootstrap.com/docs/b5/angular/"
+            "url": "https://mdbootstrap.com/docs/b5/angular/",
+            "descCn": "根据 Material Design 2.0 风格的最新 Bootstrap 5 的免费组件、模板和插件（2020 年推出的指南）",
+            "titleCn": "Bootstrap 5 的 Angular 和 Material Design 2.0"
           },
           "mdb4": {
             "desc": "Free components, templates & plugins for the latest Bootstrap 4 styled in accordance with Material Design (guidelines introduced in 2015)",
             "logo": "",
             "title": "Angular & Material Design for Bootstrap 4",
-            "url": "https://mdbootstrap.com/docs/angular/"
+            "url": "https://mdbootstrap.com/docs/angular/",
+            "descCn": "根据 Material Design 风格的最新 Bootstrap 4 的免费组件、模板和插件（2015 年推出的指南）",
+            "titleCn": "Bootstrap 4 的 Angular 和 Material 设计"
           },
           "mcc": {
             "desc": "Material components made by the community that includes Color Picker, Timer Picker, Speed Dial and Scrollspy",
@@ -589,7 +622,7 @@
           },
           "jigsaw": {
             "desc": "Jigsaw provides a set of web components based on Angular. It is supporting the development of all applications of Big Data Product of ZTE (https://www.zte.com.cn).",
-            "descCn": "Jigsaw 提供了一组基于 Angular 的 Web 组件。它支持中兴通讯大数据产品（ <https://www.zte.com.cn> ）的所有应用程序的开发。",
+            "descCn": "Jigsaw 提供了一组基于 Angular 的 Web 组件。它支持中兴通讯大数据产品（<https://www.zte.com.cn>）的所有应用程序的开发。",
             "title": "Awade Jigsaw (Chinese)",
             "titleCn": "Awade Jigsaw（中文）",
             "url": "https://jigsaw-zte.gitee.io"
@@ -611,7 +644,41 @@
           "taiga-ui": {
             "desc": "Taiga UI is fully-treeshakable Angular UI Kit consisting of multiple base libraries and several add-ons. We have 130+ components, 100+ directives, dozens of tokens, utils and tools. They are easily customizable and well engineered.",
             "title": "Taiga UI",
-            "url": "https://taiga-ui.dev"
+            "url": "https://taiga-ui.dev",
+            "descCn": "Taiga UI 是完全可treeshakable 的 Angular UI 工具包，由多个基础库和几个附加组件组成。我们有 130 多个组件、100 多个指令、数十个标记、工具和工具。它们易于定制并且设计精良。"
+          },
+          "coreui-angular": {
+            "desc": "Open Source UI Components library for creating modern, beautiful, and responsive applications in half the time with high-performing and easy-to-customize UI components.",
+            "title": "CoreUI for Angular",
+            "url": "https://coreui.io/angular",
+            "descCn": "开源 UI 组件库，使用高性能且易于自定义的 UI 组件在一半的时间创建现代、美观和响应式应用程序。"
+          },
+          "poui": {
+            "desc": "PO UI, Brazilian UI Components, focused on ease and productivity to Angular applications.",
+            "rev": true,
+            "title": "PO UI",
+            "url": "https://po-ui.io",
+            "descCn": "PO UI，巴西 UI 组件，专注于 Angular 应用程序的易用性和生产力。"
+          },
+          "ngx-gantt": {
+            "desc": "A modern and powerful gantt chart component for Angular",
+            "title": "Angular Gantt Chart Component",
+            "url": "https://github.com/worktile/ngx-gantt",
+            "descCn": "用于 Angular 的现代且强大的甘特图组件",
+            "titleCn": "Angular 甘特图组件"
+          },
+          "ngx-youi": {
+            "desc": "NGX-YOUI is an Angular UI Library that can be highly customized with content and styles. You can easily integrate with other CSS frameworks and UI Library, such as Tailwind, Bootstrap, PrimeNG, Angular Material etc.",
+            "title": "NGX-YOUI",
+            "url": "https://ngx-youi.github.io/NGX-YOUI/",
+            "descCn": "NGX-YOUI 是一个 Angular UI 库，可以用内容和样式进行高度自定义。你可以轻松与其他 CSS 框架和 UI 库集成，例如 Tailwind、Bootstrap、PrimeNG、Angular Material 等。"
+          },
+          "ngx-cookie-service": {
+            "desc": "NGX Cookie Service is an Angular Library that can be used to read, set and delete browser cookies",
+            "title": "NGX Cookie Service",
+            "url": "https://github.com/stevermeister/ngx-cookie-service",
+            "descCn": "NGX Cookie 服务是一个 Angular 库，可用于读取、设置和删除浏览器 Cookie",
+            "titleCn": "NGX Cookie 服务"
           }
         }
       }
@@ -711,30 +778,47 @@
           "reactive-state-for-angular-with-ngrx": {
             "desc": "Learn how to build a Reactive Application with Ngrx and Angular",
             "title": "Reactive State for Angular with NgRx",
-            "url": "https://bpbonline.com/products/reactive-state-for-angular-with-ngrx"
+            "url": "https://bpbonline.com/products/reactive-state-for-angular-with-ngrx",
+            "descCn": "了解如何使用 Ngrx 和 Angular 构建响应式应用程序",
+            "titleCn": "使用 NgRx 的 Angular 的响应式状态"
           },
           "ngrx-reactive-state-management": {
             "title": "NgRx: Reactive State Management for Angular",
             "desc": "Comprehensive learning resource on building Angular apps with NgRx",
             "url": "https://gumroad.com/l/angular-ngrx-book",
-            "logo": ""
+            "logo": "",
+            "titleCn": "NgRx：Angular 的响应式状态管理",
+            "descCn": "有关使用 NgRx 构建 Angular 应用程序的综合学习资源"
           },
           "testing-angular-guide": {
             "title": "Testing Angular",
             "desc": "A Guide to Robust Angular Applications (free online book and e-book)",
             "url": "https://testing-angular.com",
-            "logo": ""
+            "logo": "",
+            "titleCn": "测试 Angular",
+            "descCn": "强大的 Angular 应用程序指南（免费的在线书和电子书）"
           },
           "butter-cms": {
             "title": "How to integrate ButterCMS into Angular 2+ App",
             "desc": "Integrate a Headless CMS into your Angular App, create blog posts and pages",
             "url": "https://medium.com/orlyknop/how-to-integrate-buttercms-into-angular-2-app-a1baaa51402",
-            "logo": ""
+            "logo": "",
+            "titleCn": "如何将 ButterCMS 集成到 Angular 2+ 应用程序中",
+            "descCn": "将 Headless CMS 集成到你的 Angular 应用程序中，创建博客文章和页面"
           },
           "angular-projects": {
             "title": "Angular Projects - Second Edition",
             "desc": "Build modern web apps by exploring Angular with 10 different projects and cutting-edge technologies",
-            "url": "https://www.packtpub.com/product/angular-projects-second-edition/9781800205260"
+            "url": "https://www.packtpub.com/product/angular-projects-second-edition/9781800205260",
+            "titleCn": "Angular 项目 - 第二版",
+            "descCn": "通过使用 10 种不同的项目和前沿技术探索 Angular 来构建现代 Web 应用程序"
+          },
+          "rangle-angular-training-book": {
+            "title": "Rangle’s Angular Training Book",
+            "desc": "It's a free book, drawn from years of collective experience and aligned with the best practices of modern software development. The book covers the most important Angular topics, from getting started with the Angular toolchain to writing Angular applications in a scalable and maintainable manner.",
+            "url": "https://angular-training-guide.rangle.io/",
+            "titleCn": "Rangle 的 Angular 培训书",
+            "descCn": "这是一本免费的书，来自多年的集体经验，并与现代软件开发的最佳实践保持一致。本书涵盖了最重要的 Angular 主题，从 Angular 工具链入门到以可扩展和可维护的方式编写 Angular 应用程序。"
           }
         }
       },
@@ -768,6 +852,13 @@
             "title": "Academia Binaria (español)",
             "titleCn": "Binaria 学院（español）",
             "url": "https://academia-binaria.com/"
+          },
+          "-KLIxHwg-glQLXni1hvA": {
+            "desc": "How to write cost effective Angular tests without wasting time on slow and brittle techniques. This masterclass will show you the most effective testing strategies that will accelerate your learning and start you off on the right track. Brought to you by Shai Reznik (HiRez.io) totally free of charge.",
+            "title": "Angular FREE Testing Masterclass - Cost Effective Angular Testing",
+            "url": "https://hirez.link/aio-cost-effective-angular-testing",
+            "descCn": "如何编写具有成本效益的 Angular 测试，而不把时间浪费在缓慢而脆弱的技术上。本次大师班将向你展示最有效的测试策略，这些策略将加速你的学习并让你走上正确的轨道。由 Shai Reznik (HiRez.io) 完全免费提供给你。",
+            "titleCn": "Angular 免费测试大师班 - 具有成本效益的 Angular 测试"
           },
           "-KN3uNQvxifu26D6WKJW": {
             "category": "Education",
@@ -826,7 +917,7 @@
             "desc": "French language Angular content.",
             "descCn": "法语 Angular 内容。",
             "title": "Learn Angular (francais)",
-            "titleCn": "学习 Angular （法语）",
+            "titleCn": "学习 Angular（法语）",
             "url": "https://www.learn-angular.fr/"
           },
           "upgrading-ajs": {
@@ -846,7 +937,8 @@
           "angular-pro-screencast": {
             "desc": "Youtube Channel. Online videos in English and Russian providing in-depth coverage of the Angular advanced topics.",
             "title": "Angular Pro Screencast",
-            "url": "https://www.youtube.com/playlist?list=PLLf-VBOaoVk1E9fTBZdq1CfnRa2TtL_Kb"
+            "url": "https://www.youtube.com/playlist?list=PLLf-VBOaoVk1E9fTBZdq1CfnRa2TtL_Kb",
+            "descCn": "Youtube 频道。英语和俄语的在线视频，提供了对 Angular 高级主题的深入报道。"
           },
           "willh-angular-zero": {
             "desc": "Online video course in Chinese for newbies who need to learning from the scratch in Chinese.  It's covering Angular, Angular CLI, TypeScript, VSCode, and some must known knowledge of Angular development.",
@@ -890,7 +982,9 @@
           "architect-angular-nation": {
             "desc": "Whether you're already an architect or you'd like to become one, come learn how to keep your apps clean and fast (especially at the enterprise level). Four weeks of training includes live office hours every week with an Angular GDE, diversity discounts, and scholarships available!",
             "title": "Angular Architect Training",
-            "url": "https://www.angularnation.net/"
+            "url": "https://www.angularnation.net/",
+            "descCn": "无论你已经是一名架构师，还是想成为一名架构师，都来了解如何保持你的应用程序干净快速（尤其是在企业级别）。为期四周的培训包括每周的实时办公时间（包括 Angular GDE）、多样性折扣和提供奖学金！",
+            "titleCn": "Angular 架构师培训"
           }
         }
       },
@@ -902,6 +996,18 @@
             "descCn": "为私人团体和公共在线讲师指导的 Angular 课程提供量身定制的由讲师指导的 Angular 培训。",
             "title": "Webucator",
             "url": "https://www.webucator.com/webdev-training/angular-training"
+          },
+          "decoded-frontend": {
+            "desc": "YouTube Channel about Angular & Web Development",
+            "title": "Decoded Frontend",
+            "url": "https://www.youtube.com/DecodedFrontend"
+          },
+          "angular-university": {
+            "desc": "A website to learn and keep up with the Angular ecosystem",
+            "title": "Angular University",
+            "url": "https://angular-university.io/",
+            "descCn": "一个学习和跟上 Angular 生态系统的网站",
+            "titleCn": "Angular 大学"
           },
           "-acceleb": {
             "desc": "Customized, Instructor-Led Angular Training",
@@ -1007,7 +1113,7 @@
             "desc": "Angular trainings delivered by Human Coders (France)",
             "descCn": "由人类编码员提供的 Angular 培训（法国）",
             "title": "Formation Angular (French)",
-            "titleCn": "编队 Angular （法语）",
+            "titleCn": "编队 Angular（法语）",
             "url": "https://www.humancoders.com/formations/angular"
           },
           "wao": {
