@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1658044580427,
+  "timestamp": 1659870171829,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -2794,7 +2794,7 @@
     "/generated/images/marketing/home/responsive-framework.svg": "464305c2e23be8cfa677aa7c5b34e923c17c9591",
     "/generated/images/marketing/home/speed-performance.svg": "d67c709de15f5fb41617b1831f1c518e3ca2db74",
     "/generated/images/translations/cn/mail-dev-rel.gif": "37548a380a03319e2675ccec5de5314597c62f93",
-    "/generated/navigation.json": "60f75ce7ee97b0dec4f09ce1fa565201ce172a86",
+    "/generated/navigation.json": "c00928dec9be8ba2a4383ac1426d0d9ab6d78fc5",
     "/generated/resources.json": "d13fa3e230dea4be64b4c73f79946c51097b08db",
     "/index.html": "44d7bd05d1d52d63ef1aa0aebd4abdace7603e81",
     "/light-theme.css": "a7d9f26f07fa4061f737f2f7eeb2dae4f406dc65",

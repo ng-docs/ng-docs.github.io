@@ -1857,6 +1857,13 @@
       "url": "https://material.angular.cn"
     },
     {
+      "titleCn": "RxJS 中文版",
+      "title": "RxJS 中文版",
+      "tooltipCn": "RxJS 中文文档",
+      "tooltip": "RxJS 中文文档",
+      "url": "https://rxjs.tech"
+    },
+    {
       "titleCn": "ng-zorro 组件库",
       "title": "ng-zorro 组件库",
       "tooltipCn": "Ant Design 的 Angular 实现，服务于企业级后台产品。",
@@ -2112,12 +2119,12 @@
     "prerelease": [
       "local"
     ],
-    "build": "sha.d008323f5e",
+    "build": "sha.cf7bfdbbfe",
     "version": "14.1.0-local",
     "codeName": "snapshot",
     "isSnapshot": true,
-    "full": "14.1.0-local+sha.d008323f5e",
+    "full": "14.1.0-local+sha.cf7bfdbbfe",
     "branch": "master",
-    "commitSHA": "d008323f5ef3130540f745588eb8ba506df58453"
+    "commitSHA": "cf7bfdbbfe7895aac3e6afb6f4bf90f7129fcb0c"
   }
 }
