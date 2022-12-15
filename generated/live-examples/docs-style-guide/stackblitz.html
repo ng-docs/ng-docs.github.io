@@ -6,11 +6,6 @@
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {
-        &quot;@schematics/angular:application&quot;: {
-          &quot;strict&quot;: true
-        }
-      },
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -21,7 +16,7 @@
             &quot;outputPath&quot;: &quot;dist&quot;,
             &quot;index&quot;: &quot;src/index.html&quot;,
             &quot;main&quot;: &quot;src/main.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;polyfills&quot;: [&quot;zone.js&quot;],
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
@@ -44,12 +39,6 @@
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
                   &quot;maximumWarning&quot;: &quot;2kb&quot;,
                   &quot;maximumError&quot;: &quot;4kb&quot;
-                }
-              ],
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
                 }
               ],
               &quot;outputHashing&quot;: &quot;all&quot;
@@ -86,10 +75,8 @@
         &quot;test&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
           &quot;options&quot;: {
-            &quot;main&quot;: &quot;src/test.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;polyfills&quot;: [&quot;zone.js&quot;, &quot;zone.js/testing&quot;],
             &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
-            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -131,37 +118,37 @@
   },
   &quot;private&quot;: true,
   &quot;dependencies&quot;: {
-    &quot;@angular/animations&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/common&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/compiler&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/core&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/forms&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/platform-browser&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/platform-browser-dynamic&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/router&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;angular-in-memory-web-api&quot;: &quot;~0.13.0&quot;,
+    &quot;@angular/animations&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/common&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/compiler&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/core&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/forms&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/router&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.14.0&quot;,
     &quot;rxjs&quot;: &quot;~7.5.0&quot;,
     &quot;tslib&quot;: &quot;^2.3.0&quot;,
     &quot;zone.js&quot;: &quot;~0.11.4&quot;
   },
   &quot;devDependencies&quot;: {
-    &quot;@angular-devkit/build-angular&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@angular/cli&quot;: &quot;~14.0.0-rc.0&quot;,
-    &quot;@angular/compiler-cli&quot;: &quot;^14.0.0-rc.0&quot;,
-    &quot;@types/jasmine&quot;: &quot;~4.0.0&quot;,
+    &quot;@angular-devkit/build-angular&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/cli&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@types/jasmine&quot;: &quot;~4.3.0&quot;,
     &quot;@types/node&quot;: &quot;^16.11.35&quot;,
     &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
-    &quot;jasmine-core&quot;: &quot;~4.1.0&quot;,
-    &quot;jasmine-marbles&quot;: &quot;~0.8.3&quot;,
+    &quot;jasmine-core&quot;: &quot;~4.4.0&quot;,
+    &quot;jasmine-marbles&quot;: &quot;~0.9.2&quot;,
     &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
-    &quot;karma&quot;: &quot;~6.3.0&quot;,
+    &quot;karma&quot;: &quot;~6.4.0&quot;,
     &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
     &quot;karma-coverage&quot;: &quot;~2.2.0&quot;,
-    &quot;karma-jasmine&quot;: &quot;~5.0.0&quot;,
-    &quot;karma-jasmine-html-reporter&quot;: &quot;~1.7.0&quot;,
+    &quot;karma-jasmine&quot;: &quot;~5.1.0&quot;,
+    &quot;karma-jasmine-html-reporter&quot;: &quot;~2.0.0&quot;,
     &quot;protractor&quot;: &quot;~7.0.0&quot;,
-    &quot;ts-node&quot;: &quot;~10.8.0&quot;,
-    &quot;typescript&quot;: &quot;~4.7.2&quot;
+    &quot;ts-node&quot;: &quot;~10.9.0&quot;,
+    &quot;typescript&quot;: &quot;~4.8.0&quot;
   }
 }
 "><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
@@ -172,8 +159,7 @@
     &quot;types&quot;: []
   },
   &quot;files&quot;: [
-    &quot;src/main.ts&quot;,
-    &quot;src/polyfills.ts&quot;
+    &quot;src/main.ts&quot;
   ],
   &quot;include&quot;: [
     &quot;src/**/*.d.ts&quot;
@@ -213,10 +199,11 @@
     &quot;experimentalDecorators&quot;: true,
     &quot;moduleResolution&quot;: &quot;node&quot;,
     &quot;importHelpers&quot;: true,
-    &quot;target&quot;: &quot;es2020&quot;,
-    &quot;module&quot;: &quot;es2020&quot;,
+    &quot;useDefineForClassFields&quot;: false,
+    &quot;target&quot;: &quot;ES2022&quot;,
+    &quot;module&quot;: &quot;ES2022&quot;,
     &quot;lib&quot;: [
-      &quot;es2020&quot;,
+      &quot;ES2022&quot;,
       &quot;dom&quot;
     ]
   },
@@ -247,77 +234,12 @@
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->"><input type="hidden" name="project[files][src/main.ts]" value="import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+-->"><input type="hidden" name="project[files][src/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
 
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/polyfills.ts]" value="/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
- * automatically update themselves. This includes recent versions of Safari, Chrome (including
- * Opera), Edge on the desktop, and iOS and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
-
-/***************************************************************************************************
- * BROWSER POLYFILLS
- */
-
-/**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
- * requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
- * specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
-
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
-import 'zone.js'; // Included with Angular CLI.
-
-/***************************************************************************************************
- * APPLICATION IMPORTS
- */
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
 
 
 /*
@@ -406,38 +328,6 @@ input[type=&quot;text&quot;] {
   width: 100%;
   padding: .5rem;
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/test.ts]" value="// This file is required by karma.conf.js and loads recursively all the .spec and framework files
-
-import 'zone.js/testing';
-import { getTestBed } from '@angular/core/testing';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
-
-declare const require: {
-  context(path: string, deep?: boolean, filter?: RegExp): {
-    <T>(id: string): T;
-    keys(): string[];
-  };
-};
-
-// First, initialize the Angular testing environment.
-getTestBed().initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting(),
-);
-
-// Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
-// And load the modules.
-context.keys().forEach(context);
 
 
 /*
@@ -615,37 +505,6 @@ export class NotGreatComponent {
     // things could be better here...
   }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/environments/environment.prod.ts]" value="export const environment = {
-  production: true
-};
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/"><input type="hidden" name="project[files][src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
-};
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
 
 /*

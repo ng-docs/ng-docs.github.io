@@ -450,10 +450,34 @@
         "securityRisk": false
       },
       {
+        "name": "httpfeature",
+        "title": "HttpFeature",
+        "path": "api/common/http/HttpFeature",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "httpfeaturekind",
+        "title": "HttpFeatureKind",
+        "path": "api/common/http/HttpFeatureKind",
+        "docType": "enum",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "httphandler",
         "title": "HttpHandler",
         "path": "api/common/http/HttpHandler",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "httphandlerfn",
+        "title": "HttpHandlerFn",
+        "path": "api/common/http/HttpHandlerFn",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
@@ -478,6 +502,14 @@
         "title": "HttpInterceptor",
         "path": "api/common/http/HttpInterceptor",
         "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "httpinterceptorfn",
+        "title": "HttpInterceptorFn",
+        "path": "api/common/http/HttpInterceptorFn",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
@@ -610,6 +642,62 @@
         "securityRisk": false
       },
       {
+        "name": "providehttpclient",
+        "title": "provideHttpClient",
+        "path": "api/common/http/provideHttpClient",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withinterceptors",
+        "title": "withInterceptors",
+        "path": "api/common/http/withInterceptors",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withinterceptorsfromdi",
+        "title": "withInterceptorsFromDi",
+        "path": "api/common/http/withInterceptorsFromDi",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withjsonpsupport",
+        "title": "withJsonpSupport",
+        "path": "api/common/http/withJsonpSupport",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withnoxsrfprotection",
+        "title": "withNoXsrfProtection",
+        "path": "api/common/http/withNoXsrfProtection",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withrequestsmadeviaparent",
+        "title": "withRequestsMadeViaParent",
+        "path": "api/common/http/withRequestsMadeViaParent",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withxsrfconfiguration",
+        "title": "withXsrfConfiguration",
+        "path": "api/common/http/withXsrfConfiguration",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "xhrfactory",
         "title": "XhrFactory",
         "path": "api/common/http/XhrFactory",
@@ -637,6 +725,14 @@
         "title": "HttpTestingController",
         "path": "api/common/http/testing/HttpTestingController",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "providehttpclienttesting",
+        "title": "provideHttpClientTesting",
+        "path": "api/common/http/testing/provideHttpClientTesting",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -696,11 +792,19 @@
         "securityRisk": false
       },
       {
+        "name": "date_pipe_default_options",
+        "title": "DATE_PIPE_DEFAULT_OPTIONS",
+        "path": "api/common/DATE_PIPE_DEFAULT_OPTIONS",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "date_pipe_default_timezone",
         "title": "DATE_PIPE_DEFAULT_TIMEZONE",
         "path": "api/common/DATE_PIPE_DEFAULT_TIMEZONE",
         "docType": "const",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -708,6 +812,14 @@
         "title": "DatePipe",
         "path": "api/common/DatePipe",
         "docType": "pipe",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "datepipeconfig",
+        "title": "DatePipeConfig",
+        "path": "api/common/DatePipeConfig",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -968,6 +1080,46 @@
         "securityRisk": false
       },
       {
+        "name": "image_config",
+        "title": "IMAGE_CONFIG",
+        "path": "api/common/IMAGE_CONFIG",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "image_loader",
+        "title": "IMAGE_LOADER",
+        "path": "api/common/IMAGE_LOADER",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "imageconfig",
+        "title": "ImageConfig",
+        "path": "api/common/ImageConfig",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "imageloader",
+        "title": "ImageLoader",
+        "path": "api/common/ImageLoader",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "imageloaderconfig",
+        "title": "ImageLoaderConfig",
+        "path": "api/common/ImageLoaderConfig",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "isplatformbrowser",
         "title": "isPlatformBrowser",
         "path": "api/common/isPlatformBrowser",
@@ -1088,6 +1240,14 @@
         "securityRisk": false
       },
       {
+        "name": "ngfor",
+        "title": "NgFor",
+        "path": "api/common/NgFor",
+        "docType": "directive",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "ngforof",
         "title": "NgForOf",
         "path": "api/common/NgForOf",
@@ -1132,6 +1292,14 @@
         "title": "NgLocalization",
         "path": "api/common/NgLocalization",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "ngoptimizedimage",
+        "title": "NgOptimizedImage",
+        "path": "api/common/NgOptimizedImage",
+        "docType": "directive",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1248,6 +1416,46 @@
         "securityRisk": false
       },
       {
+        "name": "preconnect_check_blocklist",
+        "title": "PRECONNECT_CHECK_BLOCKLIST",
+        "path": "api/common/PRECONNECT_CHECK_BLOCKLIST",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "providecloudflareloader",
+        "title": "provideCloudflareLoader",
+        "path": "api/common/provideCloudflareLoader",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "providecloudinaryloader",
+        "title": "provideCloudinaryLoader",
+        "path": "api/common/provideCloudinaryLoader",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "provideimagekitloader",
+        "title": "provideImageKitLoader",
+        "path": "api/common/provideImageKitLoader",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "provideimgixloader",
+        "title": "provideImgixLoader",
+        "path": "api/common/provideImgixLoader",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "registerlocaledata",
         "title": "registerLocaleData",
         "path": "api/common/registerLocaleData",
@@ -1355,6 +1563,14 @@
         "title": "MockPlatformLocationConfig",
         "path": "api/common/testing/MockPlatformLocationConfig",
         "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "providelocationmocks",
+        "title": "provideLocationMocks",
+        "path": "api/common/testing/provideLocationMocks",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -1589,6 +1805,14 @@
         "securityRisk": false
       },
       {
+        "name": "bootstrapoptions",
+        "title": "BootstrapOptions",
+        "path": "api/core/BootstrapOptions",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "changedetectionstrategy",
         "title": "ChangeDetectionStrategy",
         "path": "api/core/ChangeDetectionStrategy",
@@ -1677,6 +1901,14 @@
         "securityRisk": false
       },
       {
+        "name": "componentmirror",
+        "title": "ComponentMirror",
+        "path": "api/core/ComponentMirror",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "componentref",
         "title": "ComponentRef",
         "path": "api/core/ComponentRef",
@@ -1717,6 +1949,14 @@
         "securityRisk": false
       },
       {
+        "name": "createcomponent",
+        "title": "createComponent",
+        "path": "api/core/createComponent",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "createenvironmentinjector",
         "title": "createEnvironmentInjector",
         "path": "api/core/createEnvironmentInjector",
@@ -1725,11 +1965,19 @@
         "securityRisk": false
       },
       {
+        "name": "createngmodule",
+        "title": "createNgModule",
+        "path": "api/core/createNgModule",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "createngmoduleref",
         "title": "createNgModuleRef",
         "path": "api/core/createNgModuleRef",
-        "docType": "function",
-        "stability": "stable",
+        "docType": "const",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -1877,6 +2125,14 @@
         "securityRisk": false
       },
       {
+        "name": "environmentproviders",
+        "title": "EnvironmentProviders",
+        "path": "api/core/EnvironmentProviders",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "errorhandler",
         "title": "ErrorHandler",
         "path": "api/core/ErrorHandler",
@@ -2008,8 +2264,8 @@
         "name": "importedngmoduleproviders",
         "title": "ImportedNgModuleProviders",
         "path": "api/core/ImportedNgModuleProviders",
-        "docType": "interface",
-        "stability": "stable",
+        "docType": "type-alias",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2073,7 +2329,7 @@
         "title": "InjectFlags",
         "path": "api/core/InjectFlags",
         "docType": "enum",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -2081,6 +2337,14 @@
         "title": "InjectionToken",
         "path": "api/core/InjectionToken",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "injectoptions",
+        "title": "InjectOptions",
+        "path": "api/core/InjectOptions",
+        "docType": "interface",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2209,6 +2473,14 @@
         "title": "LOCALE_ID",
         "path": "api/core/LOCALE_ID",
         "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "makeenvironmentproviders",
+        "title": "makeEnvironmentProviders",
+        "path": "api/core/makeEnvironmentProviders",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2425,6 +2697,14 @@
         "title": "QueryList",
         "path": "api/core/QueryList",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "reflectcomponenttype",
+        "title": "reflectComponentType",
+        "path": "api/core/reflectComponentType",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -2910,7 +3190,7 @@
         "name": "gettestbed",
         "title": "getTestBed",
         "path": "api/core/testing/getTestBed",
-        "docType": "const",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3169,6 +3449,14 @@
         "securityRisk": false
       },
       {
+        "name": "controlconfig",
+        "title": "ControlConfig",
+        "path": "api/forms/ControlConfig",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "controlcontainer",
         "title": "ControlContainer",
         "path": "api/forms/ControlContainer",
@@ -3317,6 +3605,38 @@
         "title": "FormsModule",
         "path": "api/forms/FormsModule",
         "docType": "ngmodule",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "isformarray",
+        "title": "isFormArray",
+        "path": "api/forms/isFormArray",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "isformcontrol",
+        "title": "isFormControl",
+        "path": "api/forms/isFormControl",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "isformgroup",
+        "title": "isFormGroup",
+        "path": "api/forms/isFormGroup",
+        "docType": "const",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "isformrecord",
+        "title": "isFormRecord",
+        "path": "api/forms/isFormRecord",
+        "docType": "const",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3505,6 +3825,14 @@
         "securityRisk": false
       },
       {
+        "name": "setdisabledstateoption",
+        "title": "SetDisabledStateOption",
+        "path": "api/forms/SetDisabledStateOption",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "untypedformarray",
         "title": "UntypedFormArray",
         "path": "api/forms/UntypedFormArray",
@@ -3658,7 +3986,7 @@
         "title": "BrowserTransferStateModule",
         "path": "api/platform-browser/BrowserTransferStateModule",
         "docType": "ngmodule",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -3666,6 +3994,14 @@
         "title": "By",
         "path": "api/platform-browser/By",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "createapplication",
+        "title": "createApplication",
+        "path": "api/platform-browser/createApplication",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -3899,6 +4235,22 @@
         "docType": "ngmodule",
         "stability": "stable",
         "securityRisk": false
+      },
+      {
+        "name": "provideanimations",
+        "title": "provideAnimations",
+        "path": "api/platform-browser/animations/provideAnimations",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "providenoopanimations",
+        "title": "provideNoopAnimations",
+        "path": "api/platform-browser/animations/provideNoopAnimations",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
       }
     ]
   },
@@ -4069,7 +4421,7 @@
         "title": "ServerTransferStateModule",
         "path": "api/platform-server/ServerTransferStateModule",
         "docType": "ngmodule",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       }
     ]
@@ -4165,6 +4517,22 @@
         "securityRisk": false
       },
       {
+        "name": "canactivatechildfn",
+        "title": "CanActivateChildFn",
+        "path": "api/router/CanActivateChildFn",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "canactivatefn",
+        "title": "CanActivateFn",
+        "path": "api/router/CanActivateFn",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "candeactivate",
         "title": "CanDeactivate",
         "path": "api/router/CanDeactivate",
@@ -4173,10 +4541,42 @@
         "securityRisk": false
       },
       {
+        "name": "candeactivatefn",
+        "title": "CanDeactivateFn",
+        "path": "api/router/CanDeactivateFn",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "canload",
         "title": "CanLoad",
         "path": "api/router/CanLoad",
         "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "canloadfn",
+        "title": "CanLoadFn",
+        "path": "api/router/CanLoadFn",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "canmatch",
+        "title": "CanMatch",
+        "path": "api/router/CanMatch",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "canmatchfn",
+        "title": "CanMatchFn",
+        "path": "api/router/CanMatchFn",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4229,10 +4629,34 @@
         "securityRisk": false
       },
       {
+        "name": "debugtracingfeature",
+        "title": "DebugTracingFeature",
+        "path": "api/router/DebugTracingFeature",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "defaultexport",
+        "title": "DefaultExport",
+        "path": "api/router/DefaultExport",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "defaulttitlestrategy",
         "title": "DefaultTitleStrategy",
         "path": "api/router/DefaultTitleStrategy",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "defaulturlmatcher",
+        "title": "defaultUrlMatcher",
+        "path": "api/router/defaultUrlMatcher",
+        "docType": "function",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4248,6 +4672,22 @@
         "name": "detachedroutehandle",
         "title": "DetachedRouteHandle",
         "path": "api/router/DetachedRouteHandle",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "disabledinitialnavigationfeature",
+        "title": "DisabledInitialNavigationFeature",
+        "path": "api/router/DisabledInitialNavigationFeature",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "enabledblockinginitialnavigationfeature",
+        "title": "EnabledBlockingInitialNavigationFeature",
+        "path": "api/router/EnabledBlockingInitialNavigationFeature",
         "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
@@ -4301,6 +4741,30 @@
         "securityRisk": false
       },
       {
+        "name": "initialnavigationfeature",
+        "title": "InitialNavigationFeature",
+        "path": "api/router/InitialNavigationFeature",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "inmemoryscrollingfeature",
+        "title": "InMemoryScrollingFeature",
+        "path": "api/router/InMemoryScrollingFeature",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "inmemoryscrollingoptions",
+        "title": "InMemoryScrollingOptions",
+        "path": "api/router/InMemoryScrollingOptions",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "isactivematchoptions",
         "title": "IsActiveMatchOptions",
         "path": "api/router/IsActiveMatchOptions",
@@ -4345,6 +4809,14 @@
         "title": "NavigationCancel",
         "path": "api/router/NavigationCancel",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "navigationcancellationcode",
+        "title": "NavigationCancellationCode",
+        "path": "api/router/NavigationCancellationCode",
+        "docType": "enum",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4421,6 +4893,14 @@
         "securityRisk": false
       },
       {
+        "name": "preloadingfeature",
+        "title": "PreloadingFeature",
+        "path": "api/router/PreloadingFeature",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "preloadingstrategy",
         "title": "PreloadingStrategy",
         "path": "api/router/PreloadingStrategy",
@@ -4437,11 +4917,19 @@
         "securityRisk": false
       },
       {
+        "name": "providerouter",
+        "title": "provideRouter",
+        "path": "api/router/provideRouter",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "provideroutes",
         "title": "provideRoutes",
         "path": "api/router/provideRoutes",
         "docType": "function",
-        "stability": "stable",
+        "stability": "deprecated",
         "securityRisk": false
       },
       {
@@ -4473,6 +4961,14 @@
         "title": "ResolveEnd",
         "path": "api/router/ResolveEnd",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "resolvefn",
+        "title": "ResolveFn",
+        "path": "api/router/ResolveFn",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4533,6 +5029,22 @@
         "securityRisk": false
       },
       {
+        "name": "routerconfigoptions",
+        "title": "RouterConfigOptions",
+        "path": "api/router/RouterConfigOptions",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "routerconfigurationfeature",
+        "title": "RouterConfigurationFeature",
+        "path": "api/router/RouterConfigurationFeature",
+        "docType": "type-alias",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
         "name": "routereusestrategy",
         "title": "RouteReuseStrategy",
         "path": "api/router/RouteReuseStrategy",
@@ -4545,6 +5057,22 @@
         "title": "RouterEvent",
         "path": "api/router/RouterEvent",
         "docType": "class",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "routerfeature",
+        "title": "RouterFeature",
+        "path": "api/router/RouterFeature",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "routerfeatures",
+        "title": "RouterFeatures",
+        "path": "api/router/RouterFeatures",
+        "docType": "type-alias",
         "stability": "stable",
         "securityRisk": false
       },
@@ -4731,6 +5259,54 @@
         "docType": "class",
         "stability": "stable",
         "securityRisk": false
+      },
+      {
+        "name": "withdebugtracing",
+        "title": "withDebugTracing",
+        "path": "api/router/withDebugTracing",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withdisabledinitialnavigation",
+        "title": "withDisabledInitialNavigation",
+        "path": "api/router/withDisabledInitialNavigation",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withenabledblockinginitialnavigation",
+        "title": "withEnabledBlockingInitialNavigation",
+        "path": "api/router/withEnabledBlockingInitialNavigation",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withinmemoryscrolling",
+        "title": "withInMemoryScrolling",
+        "path": "api/router/withInMemoryScrolling",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withpreloading",
+        "title": "withPreloading",
+        "path": "api/router/withPreloading",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
+      },
+      {
+        "name": "withrouterconfig",
+        "title": "withRouterConfig",
+        "path": "api/router/withRouterConfig",
+        "docType": "function",
+        "stability": "stable",
+        "securityRisk": false
       }
     ]
   },
@@ -4793,6 +5369,14 @@
     "title": "service-worker",
     "path": "api/service-worker",
     "items": [
+      {
+        "name": "nonewversiondetectedevent",
+        "title": "NoNewVersionDetectedEvent",
+        "path": "api/service-worker/NoNewVersionDetectedEvent",
+        "docType": "interface",
+        "stability": "stable",
+        "securityRisk": false
+      },
       {
         "name": "serviceworkermodule",
         "title": "ServiceWorkerModule",

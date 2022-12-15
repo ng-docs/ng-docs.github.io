@@ -109,6 +109,22 @@
             "url": "https://angularrocks.com",
             "descCn": "面向那些想了解更多关于 Angular 的人的播客 🚀"
           },
+          "angular-master-podcast": {
+            "desc": "Listen / Code / Repeat. Everything you need to fall in love with Angular for a long time.",
+            "logo": "https://ng-poland.pl/images/podcast/angular-master-podcast-logo.png",
+            "title": "Angular Master Podcast",
+            "url": "https://anchor.fm/angular-master/",
+            "descCn": "听/编码/重复。长时间爱上 Angular 所需的一切。",
+            "titleCn": "Angular 大师播客"
+          },
+          "javascript-master-podcast": {
+            "desc": "Listen / Code / Repeat. Everything you need to know to become an informed JavaScript developer.",
+            "logo": "https://ng-poland.pl/images/podcast/javascript-master-podcast-logo.png",
+            "title": "JavaScript Master Podcast",
+            "url": "https://anchor.fm/javascript-master/",
+            "descCn": "听/编码/重复。要成为一名消息灵通的 JavaScript 开发人员，你需要了解的一切。",
+            "titleCn": "JavaScript 大师播客"
+          },
           "happy-angular": {
             "desc": "A weekly German podcast for Angular on the go",
             "descCn": "德国的 Angular 每周播客",
@@ -161,7 +177,7 @@
             "descCn": "NativeScript 能让你使用 Angular 和 TypeScript 构建跨平台、本机 iOS 和 Android 应用程序。通过 JavaScript 以及对 NPM、CocoaPods 和 Gradle 中包的复用，可 100％访问原生 API。开源并得到 Telerik 的支持。",
             "logo": "",
             "title": "NativeScript",
-            "url": "https://docs.nativescript.org/angular/start/introduction"
+            "url": "https://docs.nativescript.org/tutorial/angular.html"
           },
           "angular-miniprogram": {
             "desc": "MiniProgram Platform for Angular.",
@@ -286,7 +302,7 @@
             "descCn": "Amexio Canvas 是一个拖放式环境，用于创建完全响应式的 Web 和智能设备的 HTML5 / Angular 应用程序。代码将由 Canvas 自动生成并进行热部署以进行实时测试。开箱即用的 50 多种 Material Design Theme 支持。可以将你的代码提交到 GitHub 公共或私有存储库。",
             "title": "Amexio Canvas Web Based Drag and Drop IDE by MetaMagic",
             "titleCn": "MetaMagic 的 Amexio Canvas 是基于 Web 的拖放式 IDE",
-            "url": "https://amexio.tech/"
+            "url": "https://api.amexio.org/"
           }
         }
       },
@@ -819,6 +835,13 @@
             "url": "https://angular-training-guide.rangle.io/",
             "titleCn": "Rangle 的 Angular 培训书",
             "descCn": "这是一本免费的书，来自多年的集体经验，并与现代软件开发的最佳实践保持一致。本书涵盖了最重要的 Angular 主题，从 Angular 工具链入门到以可扩展和可维护的方式编写 Angular 应用程序。"
+          },
+          "angular-from-scratch": {
+            "title": "Angular from Scratch",
+            "desc": "Learn Angular from Scratch, building a sales application",
+            "url": "https://leanpub.com/book-angular",
+            "titleCn": "从头开始 Angular",
+            "descCn": "从头开始学习 Angular，构建销售应用程序"
           }
         }
       },
@@ -985,6 +1008,13 @@
             "url": "https://www.angularnation.net/",
             "descCn": "无论你已经是一名架构师，还是想成为一名架构师，都来了解如何保持你的应用程序干净快速（尤其是在企业级别）。为期四周的培训包括每周的实时办公时间（包括 Angular GDE）、多样性折扣和提供奖学金！",
             "titleCn": "Angular 架构师培训"
+          },
+          "platzi": {
+            "desc": "An online education platform with a complete path in Angular and TypeScript from zero to advanced. Platzi helps students from all over the world acquire new, in-demand skills.",
+            "title": "Platzi (Español)",
+            "url": "https://platzi.com/angular-io",
+            "descCn": "一个在线教育平台，在 Angular 和 TypeScript 中提供从零到高级的完整路径。 Platzi 帮助来自世界各地的学生获得新的、急需的技能。",
+            "titleCn": "普拉齐（西班牙语）"
           }
         }
       },
@@ -1008,6 +1038,13 @@
             "url": "https://angular-university.io/",
             "descCn": "一个学习和跟上 Angular 生态系统的网站",
             "titleCn": "Angular 大学"
+          },
+          "angular-master-dev": {
+            "desc": "Angular Architecture: Strategic Design with Nx - Online Video Course",
+            "title": "Angular Master",
+            "url": "https://angularmaster.dev/",
+            "descCn": "Angular 架构：使用 Nx 的战略设计 - 在线视频课程",
+            "titleCn": "Angular 大师"
           },
           "-acceleb": {
             "desc": "Customized, Instructor-Led Angular Training",

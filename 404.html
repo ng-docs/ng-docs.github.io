@@ -40,7 +40,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
 
-  <!-- Google Analytics -->
+  <!-- Legacy Google Analytics -->
   <script>
     // Note this is a customised version of the GA tracking snippet
     // See the comments below for more info
@@ -59,41 +59,8 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'assets/js/analytics.js', 'ga');
   </script>
-  <!-- End Google Analytics -->
-
-  <script>
-    // Report fatal errors to Google Analytics
-    window.onerror = function () {
-      ga('send', 'exception', { exDescription: formatError.apply(null, arguments), exFatal: true });
-
-      function formatError(msg, url, line, col, e) {
-        var stack;
-        msg = msg.replace(/^Error: /, '');
-        if (e && e.stack) {
-          stack = e.stack
-            // strip the leading "Error: " from the stack trace
-            .replace(/^Error: /, '')
-            // strip the message from the stack trace, if present
-            .replace(msg + '\n', '')
-            // strip leading spaces
-            .replace(/^ +/gm, '')
-            // strip all leading "at " for each frame
-            .replace(/^at /gm, '')
-            // replace long urls with just the last segment: `filename:line:column`
-            .replace(/(?: \(|@)http.+\/([^/)]+)\)?(?:\n|$)/gm, '@$1\n')
-            // replace "eval code" in Edge
-            .replace(/ *\(eval code(:\d+:\d+)\)(?:\n|$)/gm, '@???$1\n')
-        } else {
-          line = line || '?';
-          col = col || '?';
-          stack = url + ':' + line + ':' + col;
-        }
-        return (msg + '\n' + stack).slice(0, 150);
-      }
-    };
-  </script>
-
-<link rel="stylesheet" href="styles.e61673655a477d51.css"></head>
+  <!-- End Legacy Google Analytics -->
+<link rel="stylesheet" href="styles.1bcda6d92f4b3bdd.css"></head>
 
 <body>
 
@@ -112,6 +79,6 @@
     </h2>
   </noscript>
 
-<script src="runtime.fc315e599c5632ea.js" type="module"></script><script src="polyfills.3f1609d1b9bf25d2.js" type="module"></script><script src="main.99abfd221bdf2493.js" type="module"></script></body>
+<script src="runtime.e1510fae0e772f1e.js" type="module"></script><script src="polyfills.ed08fdac4b920dd0.js" type="module"></script><script src="main.d82f7d32c658a2cc.js" type="module"></script></body>
 
 </html>

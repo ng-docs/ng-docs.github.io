@@ -71,7 +71,7 @@
     },
     {
       "titleCn": "快速上手",
-      "title": "Getting Started",
+      "title": "Getting started",
       "tooltipCn": "设置你的环境并学习基本概念",
       "tooltip": "Set up your environment and learn basic concepts",
       "children": [
@@ -105,14 +105,14 @@
             {
               "url": "start/start-data",
               "titleCn": "管理数据",
-              "title": "Managing Data",
+              "title": "Managing data",
               "tooltipCn": "通过 HTTP 使用服务和访问外部数据。",
               "tooltip": "Use services and access external data via HTTP."
             },
             {
               "url": "start/start-forms",
               "titleCn": "使用表单进行用户输入",
-              "title": "Using Forms for User Input",
+              "title": "Using forms for user input",
               "tooltipCn": "了解如何使用表单从用户那里获取和管理数据。",
               "tooltip": "Learn about fetching and managing data from users with forms."
             },
@@ -163,28 +163,28 @@
             {
               "url": "guide/lifecycle-hooks",
               "titleCn": "组件生命周期",
-              "title": "Component Lifecycle",
+              "title": "Component lifecycle",
               "tooltipCn": "Angular 在创建、更改和销毁指令和组件时调用的一些生命周期钩子方法。",
               "tooltip": "Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them."
             },
             {
               "url": "guide/view-encapsulation",
               "titleCn": "视图封装",
-              "title": "View Encapsulation",
+              "title": "View encapsulation",
               "tooltipCn": "描述如何将组件 CSS 样式封装到组件的视图中。",
               "tooltip": "Describes how component CSS styles are encapsulated into a component's view."
             },
             {
               "url": "guide/component-interaction",
               "titleCn": "组件交互",
-              "title": "Component Interaction",
+              "title": "Component interaction",
               "tooltipCn": "在不同的指令和组件之间共享信息。",
               "tooltip": "Share information between different directives and components."
             },
             {
               "url": "guide/component-styles",
               "titleCn": "组件样式",
-              "title": "Component Styles",
+              "title": "Component styles",
               "tooltipCn": "添加专属于某个组件的 CSS 样式。",
               "tooltip": "Add CSS styles that are specific to a component."
             },
@@ -198,21 +198,21 @@
             {
               "url": "guide/content-projection",
               "titleCn": "内容投影",
-              "title": "Content Projection",
+              "title": "Content projection",
               "tooltipCn": "了解如何使用 Angular 的内容投影特性创建可复用组件。",
               "tooltip": "Learn how to create reusable components using Angular's content projection feature."
             },
             {
               "url": "guide/dynamic-component-loader",
               "titleCn": "动态组件",
-              "title": "Dynamic Components",
+              "title": "Dynamic components",
               "tooltipCn": "动态加载组件。",
               "tooltip": "Load components dynamically."
             },
             {
               "url": "guide/elements",
               "titleCn": "Angular 元素",
-              "title": "Angular Elements",
+              "title": "Angular elements",
               "tooltipCn": "将组件转换为自定义元素。",
               "tooltip": "Convert components to Custom Elements."
             }
@@ -363,38 +363,66 @@
             {
               "url": "guide/attribute-directives",
               "titleCn": "属性型指令",
-              "title": "Attribute Directives",
+              "title": "Attribute directives",
               "tooltipCn": "属性型指令将行为附加到元素。",
               "tooltip": "Attribute directives attach behavior to elements."
             },
             {
               "url": "guide/structural-directives",
               "titleCn": "结构型指令",
-              "title": "Structural Directives",
+              "title": "Structural directives",
               "tooltipCn": "结构型指令操纵页面的布局。",
               "tooltip": "Structural directives manipulate the layout of the page."
+            },
+            {
+              "url": "guide/directive-composition-api",
+              "title": "Directive composition API",
+              "tooltip": "Apply directive to host elements.",
+              "titleCn": "指令组合 API",
+              "tooltipCn": "将指令应用于宿主元素。"
             }
           ]
         },
         {
           "titleCn": "依赖注入",
-          "title": "Dependency Injection",
+          "title": "Dependency injection",
           "tooltipCn": "依赖注入：创建并注入各种服务。",
-          "tooltip": "Dependency Injection: creating and injecting services",
+          "tooltip": "Dependency injection: creating and injecting services",
           "children": [
+            {
+              "url": "guide/dependency-injection-overview",
+              "title": "Dependency injection in Angular",
+              "tooltip": "Dependency injection is a design pattern in which a class requests dependencies from external sources.",
+              "titleCn": "Angular 中的依赖注入",
+              "tooltipCn": "依赖注入是一种设计模式，在这种设计模式中，类会从外部源请求依赖项。"
+            },
             {
               "url": "guide/dependency-injection",
               "titleCn": "Angular 依赖注入",
-              "title": "Angular Dependency Injection",
+              "title": "Understanding dependency injection",
               "tooltipCn": "Angular 的依赖注入系统能够为 Angular 创建的类创建并交付它们所依赖的服务。",
               "tooltip": "Angular's dependency injection system creates and delivers dependent services to Angular-created classes."
             },
             {
+              "url": "guide/creating-injectable-service",
+              "title": "Creating an injectable service",
+              "tooltip": "Example of creating an injectable service.",
+              "titleCn": "创建可注入服务",
+              "tooltipCn": "创建可注入服务的示例。"
+            },
+            {
               "url": "guide/dependency-injection-providers",
               "titleCn": "DI 提供者",
-              "title": "DI Providers",
+              "title": "Defining dependency providers",
               "tooltipCn": "关于不同类型的提供者的更多信息。",
-              "tooltip": "More about the different kinds of providers."
+              "tooltip": "A provider factory function is a plain function that Angular can call to create a dependency."
+            },
+            {
+              "url": "guide/hierarchical-dependency-injection",
+              "title": "Hierarchical injectors",
+              "tooltip": "Hierarchical dependency injection enables you to share dependencies between different parts of the application only when and if you need to.",
+              "titleCn": "多级注入器",
+              "tooltipCn": "多级依赖注入使你仅当需要时才在应用程序的不同部分之间共享依赖项。"
             }
           ]
         }
@@ -414,6 +442,13 @@
           "tooltip": "A list of developer guides for building Angular applications."
         },
         {
+          "url": "guide/standalone-components",
+          "title": "Standalone components",
+          "tooltip": "Standalone components, directives, and pipes",
+          "titleCn": "独立组件",
+          "tooltipCn": "独立组件、指令和管道"
+        },
+        {
           "title": "Change detection",
           "tooltip": "Learn how Angular updates the view based on data changes and how to keep your application fast",
           "children": [
@@ -427,21 +462,21 @@
             {
               "url": "guide/change-detection-zone-pollution",
               "titleCn": "区域 (Zone) 污染",
-              "title": "Zone Pollution",
+              "title": "Zone pollution",
               "tooltipCn": "解释 Zone.js 的工作原理以及可能会减慢应用程序速度的常见陷阱",
               "tooltip": "Explains how Zone.js works and what are the common pitfalls that can slow an application down"
             },
             {
               "url": "guide/change-detection-slow-computations",
               "titleCn": "慢速计算",
-              "title": "Slow Computations",
+              "title": "Slow computations",
               "tooltipCn": "了解如何通过发现和优化慢速计算来使你的应用程序更快",
               "tooltip": "Learn how to make your application faster by discovering and optimizing slow calculations"
             },
             {
               "url": "guide/change-detection-skipping-subtrees",
               "titleCn": "跳过组件子树",
-              "title": "Skipping Component Subtrees",
+              "title": "Skipping component subtrees",
               "tooltipCn": "了解如何使用 OnPush 变更检测策略跳过组件子树中的变更检测",
               "tooltip": "Learn how to skip change detection in component subtrees using OnPush change detection strategy"
             }
@@ -451,7 +486,7 @@
         },
         {
           "titleCn": "路由与导航",
-          "title": "Routing and Navigation",
+          "title": "Routing and navigation",
           "tooltipCn": "学习如何使用 Angular 路由器在多个视图之间建立应用内导航。",
           "tooltip": "Learn how to use Angular Router to build in-app navigation between views.",
           "children": [
@@ -472,21 +507,21 @@
             {
               "url": "guide/router-tutorial",
               "titleCn": "教程：在单页面应用中导航",
-              "title": "Tutorial: Routing in Single-page Applications",
+              "title": "Tutorial: routing in single-page applications",
               "tooltipCn": "涵盖与 Angular 路由有关的许多模式的教程。",
               "tooltip": "A tutorial that covers many patterns associated with Angular routing."
             },
             {
               "url": "guide/routing-with-urlmatcher",
               "titleCn": "教程：创建自定义路由匹配器",
-              "title": "Tutorial: Creating custom route matches",
+              "title": "Tutorial: creating custom route matches",
               "tooltipCn": "了解如何使用 Angular 路由器创建自定义 URL 匹配器。",
               "tooltip": "Learn how to create a custom URL matcher with the Angular router."
             },
             {
               "url": "guide/router-tutorial-toh",
               "titleCn": "教程：为英雄之旅添加路由支持",
-              "title": "Tutorial: Adding routing to Tour of Heroes",
+              "title": "Tutorial: adding routing to Tour of Heroes",
               "tooltipCn": "探索如何使用 Angular 的路由器。基于英雄之旅示例。",
               "tooltip": "Explore how to use Angular's router. Based on the Tour of Heroes example."
             },
@@ -515,13 +550,13 @@
             {
               "url": "guide/reactive-forms",
               "titleCn": "响应式表单",
-              "title": "Reactive Forms",
+              "title": "Reactive forms",
               "tooltipCn": "使用 FormBuilder、表单组和数组创建响应式表单。",
               "tooltip": "Create a reactive form using FormBuilder, groups, and arrays."
             },
             {
               "url": "guide/typed-forms",
-              "title": "Strictly Typed Reactive Forms In Depth",
+              "title": "Strictly typed reactive forms in depth",
               "tooltip": "A deep-dive into the reactive forms types.",
               "titleCn": "深度严格类型的响应式表单",
               "tooltipCn": "深入了解响应式表单类型。"
@@ -536,7 +571,7 @@
             {
               "url": "guide/dynamic-form",
               "titleCn": "构建动态表单",
-              "title": "Building Dynamic Forms",
+              "title": "Building dynamic forms",
               "tooltipCn": "使用 FormGroup 创建动态表单模板。",
               "tooltip": "Create dynamic form templates using FormGroup."
             }
@@ -545,9 +580,16 @@
         {
           "url": "guide/http",
           "titleCn": "HTTP 客户端",
-          "title": "HTTP Client",
+          "title": "HTTP client",
           "tooltipCn": "使用 HTTP 与远程服务器通信。",
           "tooltip": "Use HTTP to talk to a remote server."
+        },
+        {
+          "url": "guide/image-directive",
+          "title": "Image optimization",
+          "tooltip": "Performant images with the Angular image directive.",
+          "titleCn": "图片优化",
+          "tooltipCn": "使用 Angular 图片指令的高性能图片。"
         },
         {
           "titleCn": "测试",
@@ -558,63 +600,63 @@
             {
               "url": "guide/testing",
               "titleCn": "测试介绍",
-              "title": "Intro to Testing",
+              "title": "Intro to testing",
               "tooltipCn": "Angular 应用测试简介。",
               "tooltip": "Introduction to testing an Angular app."
             },
             {
               "url": "guide/testing-code-coverage",
               "titleCn": "代码覆盖率",
-              "title": "Code Coverage",
+              "title": "Code coverage",
               "tooltipCn": "确定测试了多少代码。",
               "tooltip": "Determine how much of your code is tested."
             },
             {
               "url": "guide/testing-services",
               "titleCn": "测试服务",
-              "title": "Testing Services",
+              "title": "Testing services",
               "tooltipCn": "如何测试服务。",
               "tooltip": "How to test services."
             },
             {
               "url": "guide/testing-components-basics",
               "titleCn": "测试组件的基础知识",
-              "title": "Basics of Testing Components",
+              "title": "Basics of testing components",
               "tooltipCn": "如何测试组件的基础知识。",
               "tooltip": "The fundamentals of how to test components."
             },
             {
               "url": "guide/testing-components-scenarios",
               "titleCn": "组件测试场景",
-              "title": "Component Testing Scenarios",
+              "title": "Component testing scenarios",
               "tooltipCn": "用于测试组件的用例。",
               "tooltip": "Use cases for testing components."
             },
             {
               "url": "guide/testing-attribute-directives",
               "titleCn": "测试属性型指令",
-              "title": "Testing Attribute Directives",
+              "title": "Testing attribute directives",
               "tooltipCn": "如何测试属性型指令。",
               "tooltip": "How to test attribute directives."
             },
             {
               "url": "guide/testing-pipes",
               "titleCn": "测试管道",
-              "title": "Testing Pipes",
+              "title": "Testing pipes",
               "tooltipCn": "为管道编写测试。",
               "tooltip": "Writing tests for pipes."
             },
             {
               "url": "guide/test-debugging",
               "titleCn": "调试测试代码",
-              "title": "Debugging Tests",
+              "title": "Debugging tests",
               "tooltipCn": "如何调试测试代码。",
               "tooltip": "How to debug tests."
             },
             {
               "url": "guide/testing-utility-apis",
               "titleCn": "测试工具 API",
-              "title": "Testing Utility APIs",
+              "title": "Testing utility APIs",
               "tooltipCn": "各种 Angular 测试实用工具的特性。",
               "tooltip": "Features of the Angular testing utilities."
             }
@@ -779,7 +821,7 @@
             {
               "url": "guide/route-animations",
               "titleCn": "路由转场动画",
-              "title": "Route Transition Animations",
+              "title": "Route transition animations",
               "tooltipCn": "为路由提供转场动画。",
               "tooltip": "Animate route transitions."
             }
@@ -801,42 +843,42 @@
             {
               "url": "guide/service-worker-getting-started",
               "titleCn": "入门",
-              "title": "Getting Started",
+              "title": "Getting started",
               "tooltipCn": "在 CLI 项目中启用 Service Worker 并观察浏览器中的行为。",
               "tooltip": "Enabling the service worker in a CLI project and observing behavior in the browser."
             },
             {
               "url": "guide/app-shell",
               "titleCn": "应用外壳",
-              "title": "App Shell",
+              "title": "App shell",
               "tooltipCn": "快速渲染应用的一部分以改善启动体验。",
               "tooltip": "Render a portion of your app quickly to improve the startup experience."
             },
             {
               "url": "guide/service-worker-communications",
               "titleCn": "Service Worker 通信",
-              "title": "Service Worker Communication",
+              "title": "Service worker communication",
               "tooltipCn": "使你能够与 Angular Service Worker 交互的服务。",
               "tooltip": "Services that enable you to interact with an Angular service worker."
             },
             {
               "url": "guide/service-worker-notifications",
               "titleCn": "Service Worker 通知",
-              "title": "Service Worker Notifications",
+              "title": "Service worker notifications",
               "tooltipCn": "配置 Service Worker 通知行为。",
               "tooltip": "Configuring service worker notification behavior."
             },
             {
               "url": "guide/service-worker-devops",
               "titleCn": "生产环境下的 Service Worker ",
-              "title": "Service Worker in Production",
+              "title": "Service worker in production",
               "tooltipCn": "运行带有 Service Worker 的应用、管理应用的更新、调试以及杀死应用。",
               "tooltip": "Running apps with service workers, managing app update, debugging, and killing apps."
             },
             {
               "url": "guide/service-worker-config",
               "titleCn": "Service Worker 配置",
-              "title": "Service Worker Configuration",
+              "title": "Service worker configuration",
               "tooltipCn": "配置 Service Worker 的缓存行为。",
               "tooltip": "Configuring service worker caching behavior."
             }
@@ -852,7 +894,7 @@
         {
           "url": "guide/universal",
           "titleCn": "服务端渲染",
-          "title": "Server-side Rendering",
+          "title": "Server-side rendering",
           "tooltipCn": "使用 Angular Universal 在服务器端渲染 HTML。",
           "tooltip": "Render HTML server-side with Angular Universal."
         },
@@ -867,7 +909,7 @@
     },
     {
       "titleCn": "最佳实践",
-      "title": "Best Practices",
+      "title": "Best practices",
       "tooltipCn": "了解如何构建健壮、可扩展的应用。",
       "tooltip": "Learn how to build robust, scalable applications.",
       "children": [
@@ -888,28 +930,28 @@
         {
           "url": "guide/updating",
           "titleCn": "保持最新",
-          "title": "Keeping Up-to-Date",
+          "title": "Keeping up-to-date",
           "tooltipCn": "有关将 Angular 应用和库更新到最新版本的信息。",
           "tooltip": "Information about updating Angular applications and libraries to the latest version."
         },
         {
           "url": "guide/property-binding-best-practices",
           "titleCn": "属性绑定的最佳实践",
-          "title": "Property Binding Best Practices",
+          "title": "Property binding best practices",
           "tooltipCn": "如何有效地使用属性绑定。",
           "tooltip": "Use property binding efficiently."
         },
         {
           "url": "guide/lazy-loading-ngmodules",
           "titleCn": "惰性加载特性模块",
-          "title": "Lazy Loading Feature Modules",
+          "title": "Lazy loading feature modules",
           "tooltipCn": "惰性加载模块以加速你的应用。",
           "tooltip": "Lazy load modules to speed up your apps."
         },
         {
           "url": "guide/lightweight-injection-tokens",
           "titleCn": "为库准备的轻量级注入令牌",
-          "title": "Lightweight Injection Tokens for Libraries",
+          "title": "Lightweight injection tokens for libraries",
           "tooltipCn": "通过使用轻量级注入令牌设计库服务来优化客户端应用的大小。",
           "tooltip": "Optimize client app size by designing library services with lightweight injection tokens."
         }
@@ -917,13 +959,13 @@
     },
     {
       "titleCn": "Angular 工具",
-      "title": "Angular Tools",
+      "title": "Angular tools",
       "tooltipCn": "一些帮助你构建 Angular 应用的工具。",
       "tooltip": "Tools to help you build your Angular applications.",
       "children": [
         {
           "titleCn": "开发工作流",
-          "title": "Dev Workflow",
+          "title": "Development workflow",
           "tooltipCn": "构建和部署信息。",
           "tooltip": "Build, and deployment information.",
           "children": [
@@ -936,35 +978,35 @@
             },
             {
               "titleCn": "AOT 编译器",
-              "title": "AOT Compiler",
+              "title": "AOT compiler",
               "tooltipCn": "了解预先编译。",
               "tooltip": "Understanding ahead-of-time compilation.",
               "children": [
                 {
                   "url": "guide/aot-compiler",
                   "titleCn": "预先编译",
-                  "title": "Ahead-of-Time Compilation",
+                  "title": "Ahead-of-Time compilation",
                   "tooltipCn": "了解为什么以及如何使用 Ahead-of-Time (AOT) 编译器。",
                   "tooltip": "Learn why and how to use the Ahead-of-Time (AOT) compiler."
                 },
                 {
                   "url": "guide/angular-compiler-options",
                   "titleCn": "Angular 编译器选项",
-                  "title": "Angular Compiler Options",
+                  "title": "Angular compiler options",
                   "tooltipCn": "配置 AOT 编译。",
                   "tooltip": "Configuring AOT compilation."
                 },
                 {
                   "url": "guide/aot-metadata-errors",
                   "titleCn": "AOT 元数据错误",
-                  "title": "AOT Metadata Errors",
+                  "title": "AOT metadata errors",
                   "tooltipCn": "AOT 编译故障排除。",
                   "tooltip": "Troubleshooting AOT compilation."
                 },
                 {
                   "url": "guide/template-typecheck",
                   "titleCn": "模板类型检查",
-                  "title": "Template Type-checking",
+                  "title": "Template type-checking",
                   "tooltipCn": "Angular 中的模板类型检查。",
                   "tooltip": "Template type-checking in Angular."
                 }
@@ -973,7 +1015,7 @@
             {
               "url": "guide/build",
               "titleCn": "构建与本地服务器",
-              "title": "Building & Serving",
+              "title": "Building & serving",
               "tooltipCn": "构建与启动 Angular 开发服务器。",
               "tooltip": "Building and serving Angular apps."
             }
@@ -982,14 +1024,14 @@
         {
           "url": "guide/cli-builder",
           "titleCn": "CLI 构建器",
-          "title": "CLI Builders",
+          "title": "CLI builders",
           "tooltipCn": "使用构建器自定义 Angular CLI。",
           "tooltip": "Using builders to customize Angular CLI."
         },
         {
           "url": "guide/language-service",
           "titleCn": "语言服务",
-          "title": "Language Service",
+          "title": "Language service",
           "tooltipCn": "使用 Angular 语言服务来加快开发时间。",
           "tooltip": "Use Angular Language Service to speed up dev time."
         },
@@ -1016,14 +1058,14 @@
             {
               "url": "guide/schematics-authoring",
               "titleCn": "创作原理图",
-              "title": "Authoring Schematics",
+              "title": "Authoring schematics",
               "tooltipCn": "了解原理图的结构。",
               "tooltip": "Understand the structure of a schematic."
             },
             {
               "url": "guide/schematics-for-libraries",
               "titleCn": "库的原理图",
-              "title": "Schematics for Libraries",
+              "title": "Schematics for libraries",
               "tooltipCn": "使用原理图将你的库与 Angular CLI 集成。",
               "tooltip": "Use schematics to integrate your library with the Angular CLI."
             }
@@ -1053,49 +1095,49 @@
             {
               "url": "tutorial/toh-pt0",
               "titleCn": "创建项目",
-              "title": "Create a Project",
+              "title": "Create a project",
               "tooltipCn": "创建应用外壳",
               "tooltip": "Creating the application shell"
             },
             {
               "url": "tutorial/toh-pt1",
               "titleCn": "1. 英雄编辑器",
-              "title": "1. The Hero Editor",
+              "title": "1. The hero editor",
               "tooltipCn": "第 1 部分：构建一个简单的编辑器",
               "tooltip": "Part 1: Build a simple editor"
             },
             {
               "url": "tutorial/toh-pt2",
               "titleCn": "2. 显示列表",
-              "title": "2. Display a List",
+              "title": "2. Display a list",
               "tooltipCn": "第 2 部分：构建一个包含英雄列表的主从信息页面。",
               "tooltip": "Part 2: Build a master/detail page with a list of heroes."
             },
             {
               "url": "tutorial/toh-pt3",
               "titleCn": "3. 创建特性组件",
-              "title": "3. Create a Feature Component",
+              "title": "3. Create a feature component",
               "tooltipCn": "第 3 部分：将主/详细视图重构为单独的组件。",
               "tooltip": "Part 3: Refactor the master/detail views into separate components."
             },
             {
               "url": "tutorial/toh-pt4",
               "titleCn": "4. 添加服务",
-              "title": "4. Add Services",
+              "title": "4. Add services",
               "tooltipCn": "第 4 部分：创建一个可复用的服务来管理英雄数据。",
               "tooltip": "Part 4: Create a reusable service to manage hero data."
             },
             {
               "url": "tutorial/toh-pt5",
               "titleCn": "5. 添加导航",
-              "title": "5. Add Navigation",
+              "title": "5. Add navigation",
               "tooltipCn": "第 5 部分：添加 Angular 路由器并在视图之间导航。",
               "tooltip": "Part 5: Add the Angular router and navigate among the views."
             },
             {
               "url": "tutorial/toh-pt6",
               "titleCn": "6. 从服务器获取数据",
-              "title": "6. Get Data from a Server",
+              "title": "6. Get data from a server",
               "tooltipCn": "第 6 部分：使用 HTTP 检索和保存英雄数据。",
               "tooltip": "Part 6: Use HTTP to retrieve and save hero data."
             }
@@ -1104,7 +1146,7 @@
         {
           "url": "guide/forms",
           "titleCn": "构建模板驱动表单",
-          "title": "Building a Template-driven Form",
+          "title": "Building a template-driven form",
           "tooltipCn": "使用指令和 Angular 模板语法创建模板驱动表单。",
           "tooltip": "Create a template-driven form using directives and Angular template syntax."
         },
@@ -1117,28 +1159,28 @@
             {
               "url": "guide/libraries",
               "titleCn": "库概览",
-              "title": "Libraries Overview",
+              "title": "Libraries overview",
               "tooltipCn": "了解如何以及何时使用或创建库。",
               "tooltip": "Understand how and when to use or create libraries."
             },
             {
               "url": "guide/using-libraries",
               "titleCn": "使用已发布的库",
-              "title": "Using Published Libraries",
+              "title": "Using published libraries",
               "tooltipCn": "将已发布的库集成到应用中。",
               "tooltip": "Integrate published libraries into an app."
             },
             {
               "url": "guide/creating-libraries",
               "titleCn": "创建库",
-              "title": "Creating Libraries",
+              "title": "Creating libraries",
               "tooltipCn": "通过创建、发布和使用你自己的库来扩展 Angular。",
               "tooltip": "Extend Angular by creating, publishing, and using your own libraries."
             },
             {
               "url": "guide/angular-package-format",
               "titleCn": "Angular 包格式",
-              "title": "Angular Package Format",
+              "title": "Angular package format",
               "tooltipCn": "关于 Angular 包格式的信息",
               "tooltip": "Information about the Angular Package Format."
             }
@@ -1147,31 +1189,15 @@
       ]
     },
     {
-      "title": "Feature preview",
-      "tooltip": "Angular preview features and APIs",
-      "children": [
-        {
-          "url": "guide/standalone-components",
-          "title": "Standalone components",
-          "tooltip": "Standalone components, directives and pipes",
-          "titleCn": "独立组件",
-          "tooltipCn": "独立组件、指令和管道"
-        }
-      ],
-      "titleCn": "特性预览",
-      "tooltipCn": "Angular 预览特性和 API"
-    },
-    {
-      "title": "Release Information",
-      "tooltipCn": "Angular 的版本发布实践、更新和升级。",
+      "title": "Updates and releases",
       "tooltip": "Angular release practices, updating, and upgrading.",
       "children": [
         {
-          "url": "guide/releases",
+          "url": "guide/update-to-version-15",
           "titleCn": "发布实践",
-          "title": "Release Practices",
+          "title": "Update Angular to the latest version",
           "tooltipCn": "Angular 的版本控制、发布、支持和弃用策略及实践。",
-          "tooltip": "Angular versioning, release, support, and deprecation policies and practices."
+          "tooltip": "Update your Angular application to the latest version."
         },
         {
           "url": "guide/roadmap",
@@ -1181,18 +1207,18 @@
           "tooltip": "Roadmap of the Angular team."
         },
         {
-          "url": "guide/browser-support",
-          "titleCn": "浏览器支持",
-          "title": "Browser Support",
-          "tooltipCn": "浏览器支持和 polyfills 指南。",
-          "tooltip": "Browser support and polyfills guide."
+          "url": "guide/releases",
+          "title": "Release practices",
+          "tooltip": "Angular versioning, release, support, and deprecation policies and practices.",
+          "titleCn": "发布实践",
+          "tooltipCn": "Angular 版本控制、版本、支持和弃用策略和实践。"
         },
         {
-          "url": "guide/update-to-latest-version",
-          "titleCn": "升级到最新版",
-          "title": "Update to Version 13",
-          "tooltipCn": "支持将你的应用升级到最新版本",
-          "tooltip": "Support to update your application to version 13"
+          "url": "guide/browser-support",
+          "titleCn": "浏览器支持",
+          "title": "Browser support",
+          "tooltipCn": "浏览器支持和 polyfills 指南。",
+          "tooltip": "Browser support and polyfills guide."
         },
         {
           "url": "guide/deprecations",
@@ -1210,35 +1236,36 @@
             {
               "url": "guide/upgrade",
               "titleCn": "升级说明",
-              "title": "Upgrading Instructions",
+              "title": "Upgrade instructions",
               "tooltipCn": "将 AngularJS 应用增量式的升级到 Angular。",
               "tooltip": "Incrementally upgrade an AngularJS application to Angular."
             },
             {
               "url": "guide/upgrade-setup",
               "titleCn": "搭建升级环境",
-              "title": "Setup for Upgrading from AngularJS",
+              "title": "Setup for upgrading from AngularJS",
               "tooltipCn": "使用来自 Angular QuickStart 种子的代码作为从 AngularJS 升级的一部分。",
               "tooltip": "Use code from the Angular QuickStart seed as part of upgrading from AngularJS."
             },
             {
               "url": "guide/upgrade-performance",
               "titleCn": "更关注性能的升级方式",
-              "title": "Upgrading for Performance",
+              "title": "Upgrading for performance",
               "tooltipCn": "以更灵活的方式从 AngularJS 升级到 Angular。",
               "tooltip": "Upgrade from AngularJS to Angular in a more flexible way."
             },
             {
               "url": "guide/ajs-quick-reference",
               "titleCn": "AngularJS 与 Angular 的概念对照",
-              "title": "AngularJS-Angular Concepts",
+              "title": "AngularJS to Angular concepts",
               "tooltipCn": "学习如何把 AngularJS 的概念映射到 Angular 中。",
               "tooltip": "Learn how AngularJS concepts and techniques map to Angular."
             }
           ]
         }
       ],
-      "titleCn": "版本发布信息"
+      "titleCn": "版本发布信息",
+      "tooltipCn": "Angular 发布实践、更新和升级。"
     },
     {
       "titleCn": "参考手册",
@@ -1248,48 +1275,41 @@
       "children": [
         {
           "titleCn": "概念参考手册",
-          "title": "Conceptual Reference",
+          "title": "Conceptual reference",
           "tooltipCn": "解释 Angular 特性如何工作的参考文档。",
           "tooltip": "Reference documentation that explains how Angular features work.",
           "children": [
             {
               "titleCn": "Angular 概念",
-              "title": "Angular Concepts",
+              "title": "Angular concepts",
               "tooltipCn": "介绍 Angular 应用的基本概念。",
               "tooltip": "Introduction to basic concepts for Angular applications.",
               "children": [
                 {
                   "url": "guide/architecture",
                   "titleCn": "基本概念介绍",
-                  "title": "Intro to Basic Concepts",
+                  "title": "Intro to basic concepts",
                   "tooltipCn": "Angular 应用的基本构建块。",
                   "tooltip": "Basic building blocks of Angular applications."
                 },
                 {
                   "url": "guide/architecture-modules",
                   "titleCn": "模块介绍",
-                  "title": "Intro to Modules",
+                  "title": "Intro to modules",
                   "tooltipCn": "关于 NgModules。",
                   "tooltip": "About NgModules."
                 },
                 {
                   "url": "guide/architecture-components",
                   "titleCn": "组件介绍",
-                  "title": "Intro to Components",
+                  "title": "Intro to components",
                   "tooltipCn": "关于组件、模板和视图。",
                   "tooltip": "About Components, Templates, and Views."
                 },
                 {
-                  "url": "guide/architecture-services",
-                  "titleCn": "服务和 DI 简介",
-                  "title": "Intro to Services and DI",
-                  "tooltipCn": "关于服务和依赖注入。",
-                  "tooltip": "About services and dependency injection."
-                },
-                {
                   "url": "guide/architecture-next-steps",
                   "titleCn": "下一步",
-                  "title": "Next Steps",
+                  "title": "Next steps",
                   "tooltipCn": "超越基础。",
                   "tooltip": "Beyond the basics."
                 },
@@ -1325,28 +1345,28 @@
                 {
                   "url": "guide/file-structure",
                   "titleCn": "项目文件结构",
-                  "title": "Project File Structure",
+                  "title": "Project file structure",
                   "tooltipCn": "Angular 工作区在文件系统上的外观。",
                   "tooltip": "How your Angular workspace looks on your filesystem."
                 },
                 {
                   "url": "guide/workspace-config",
                   "titleCn": "工作区配置",
-                  "title": "Workspace Configuration",
+                  "title": "Workspace configuration",
                   "tooltipCn": "“angular.json” 文件包含工作区和项目的 Angular CLI 命令默认配置。",
                   "tooltip": "The \"angular.json\" file contains workspace and project configuration defaults for Angular CLI commands."
                 },
                 {
                   "url": "guide/npm-packages",
                   "titleCn": "npm 依赖项",
-                  "title": "npm Dependencies",
+                  "title": "npm dependencies",
                   "tooltipCn": "开发时和运行时所需的 npm 包的描述。",
                   "tooltip": "Description of npm packages required at development time and at runtime."
                 },
                 {
                   "url": "guide/typescript-configuration",
                   "titleCn": "TypeScript 配置",
-                  "title": "TypeScript Configuration",
+                  "title": "TypeScript configuration",
                   "tooltipCn": "Angular 开发人员的 TypeScript 配置。",
                   "tooltip": "TypeScript configuration for Angular developers."
                 },
@@ -1369,7 +1389,7 @@
                 {
                   "url": "guide/ngmodules",
                   "titleCn": "NgModules 介绍",
-                  "title": "NgModules Introduction",
+                  "title": "NgModules introduction",
                   "tooltipCn": "使用 NgModules 使你的应用更高效。",
                   "tooltip": "Use NgModules to make your apps efficient."
                 },
@@ -1383,49 +1403,49 @@
                 {
                   "url": "guide/bootstrapping",
                   "titleCn": "使用根模块启动应用",
-                  "title": "Launching Apps with a Root Module",
+                  "title": "Launching apps with a root module",
                   "tooltipCn": "告诉 Angular 如何在根模块 “AppModule” 中构建和引导应用。",
                   "tooltip": "Tell Angular how to construct and bootstrap the app in the root \"AppModule\"."
                 },
                 {
                   "url": "guide/frequent-ngmodules",
                   "titleCn": "常用的 NgModule",
-                  "title": "Frequently Used NgModules",
+                  "title": "Frequently used NgModules",
                   "tooltipCn": "介绍最常用的 NgModules。",
                   "tooltip": "Introduction to the most frequently used NgModules."
                 },
                 {
                   "url": "guide/module-types",
                   "titleCn": "特性模块的类型",
-                  "title": "Types of Feature Modules",
+                  "title": "Types of feature modules",
                   "tooltipCn": "不同类型特性模块的描述。",
                   "tooltip": "Description of the different types of feature modules."
                 },
                 {
                   "url": "guide/entry-components",
                   "titleCn": "入口组件",
-                  "title": "Entry Components",
+                  "title": "Entry components",
                   "tooltipCn": "关于 Angular 中的入口组件的一切。",
                   "tooltip": "All about entry components in Angular."
                 },
                 {
                   "url": "guide/feature-modules",
                   "titleCn": "特性模块",
-                  "title": "Feature Modules",
+                  "title": "Feature modules",
                   "tooltipCn": "创建特性模块来组织你的代码。",
                   "tooltip": "Create feature modules to organize your code."
                 },
                 {
                   "url": "guide/providers",
                   "titleCn": "提供依赖",
-                  "title": "Providing Dependencies",
+                  "title": "Providing dependencies",
                   "tooltipCn": "为 NgModules 提供依赖。",
                   "tooltip": "Providing dependencies to NgModules."
                 },
                 {
                   "url": "guide/singleton-services",
                   "titleCn": "单例服务",
-                  "title": "Singleton Services",
+                  "title": "Singleton services",
                   "tooltipCn": "创建单例服务。",
                   "tooltip": "Creating singleton services."
                 },
@@ -1461,14 +1481,14 @@
                 {
                   "url": "guide/observables",
                   "titleCn": "Observable 概览",
-                  "title": "Observables Overview",
+                  "title": "Observables overview",
                   "tooltipCn": "使用 observable 同步或异步传递值。",
                   "tooltip": "Using observables to pass values synchronously or asynchronously."
                 },
                 {
                   "url": "guide/rx-library",
                   "titleCn": "RxJS 库",
-                  "title": "The RxJS Library",
+                  "title": "The RxJS library",
                   "tooltipCn": "一个使用 observable 来编写异步或基于回调的代码的响应式编程库。",
                   "tooltip": "A library for reactive programming using observables to compose asynchronous or callback-based code."
                 },
@@ -1482,14 +1502,14 @@
                 {
                   "url": "guide/practical-observable-usage",
                   "titleCn": "实际运用",
-                  "title": "Practical Usage",
+                  "title": "Practical usage",
                   "tooltipCn": "一些 Observable 特别有用的领域。",
                   "tooltip": "Domains in which observables are particularly useful."
                 },
                 {
                   "url": "guide/comparing-observables",
                   "titleCn": "与其他技术的比较",
-                  "title": "Compare to Other Techniques",
+                  "title": "Compare to other techniques",
                   "tooltipCn": "Observable、Promise 和其他消息传递技术的比较。",
                   "tooltip": "How observables compare to promises and other message passing techniques."
                 }
@@ -1502,16 +1522,9 @@
               "tooltip": "Using dependency injection in Angular.",
               "children": [
                 {
-                  "url": "guide/hierarchical-dependency-injection",
-                  "titleCn": "分层注入器",
-                  "title": "Hierarchical Injectors",
-                  "tooltipCn": "注入器树与组件树平行，并支持嵌套依赖。",
-                  "tooltip": "An injector tree parallels the component tree and supports nested dependencies."
-                },
-                {
                   "url": "guide/dependency-injection-in-action",
                   "titleCn": "DI 实战",
-                  "title": "DI in Action",
+                  "title": "DI in action",
                   "tooltipCn": "依赖注入技巧。",
                   "tooltip": "Techniques for dependency injection."
                 }
@@ -1531,13 +1544,6 @@
               "tooltipCn": "CLI 工具、命令和语法的介绍。",
               "tooltip": "An introduction to the CLI tool, commands, and syntax.",
               "url": "cli"
-            },
-            {
-              "titleCn": "使用情况分析",
-              "title": "Usage Analytics",
-              "tooltipCn": "供管理员使用，从用户那里收集使用情况分析的指南。",
-              "tooltip": "For administrators, guide to gathering usage analytics from your users.",
-              "url": "cli/usage-analytics-gathering"
             },
             {
               "url": "cli/add",
@@ -1615,14 +1621,14 @@
         },
         {
           "titleCn": "API 参考手册",
-          "title": "API Reference",
+          "title": "API reference",
           "tooltipCn": "Angular 包、类、接口和其他类型的详细信息。",
           "tooltip": "Details of the Angular packages, classes, interfaces, and other types.",
           "url": "api"
         },
         {
           "titleCn": "报错参考手册",
-          "title": "Error Reference",
+          "title": "Error reference",
           "tooltipCn": "Angular 可能抛出的错误的详细信息。",
           "tooltip": "Details of the errors that can be thrown by Angular.",
           "children": [
@@ -1636,6 +1642,16 @@
               "url": "errors/NG0100",
               "title": "NG0100: Expression Changed After Checked\n\n检查后表达式又变化了",
               "tooltip": "Expression Changed After Checked\n\n检查后表达式又变化了"
+            },
+            {
+              "url": "errors/NG01003",
+              "title": "NG01003: Wrong Async Validator Return Type",
+              "tooltip": "Wrong Async Validator Return Type"
+            },
+            {
+              "url": "errors/NG01203",
+              "title": "NG01203: Missing value accessor",
+              "tooltip": "Missing value accessor"
             },
             {
               "url": "errors/NG0200",
@@ -1653,6 +1669,11 @@
               "tooltip": "`inject()` must be called from an injection context\n\n`inject()` 只能在注入上下文中调用"
             },
             {
+              "url": "errors/NG02200",
+              "title": "NG02200: Missing Iterable Differ\n\n缺少可迭代的差异比较器",
+              "tooltip": "Missing Iterable Differ\n\n缺少可迭代的差异比较器"
+            },
+            {
               "url": "errors/NG0300",
               "title": "NG0300: Selector Collision\n\n选择器冲突",
               "tooltip": "Selector Collision\n\n选择器冲突"
@@ -1666,6 +1687,11 @@
               "url": "errors/NG0302",
               "title": "NG0302: Pipe Not Found\n\n管道未找到",
               "tooltip": "Pipe Not Found\n\n管道未找到"
+            },
+            {
+              "url": "errors/NG0910",
+              "title": "NG0910: Unsafe bindings on an iframe element",
+              "tooltip": "Unsafe bindings on an iframe element"
             },
             {
               "url": "errors/NG1001",
@@ -1715,7 +1741,7 @@
           ]
         },
         {
-          "title": "Extended Diagnostic Reference",
+          "title": "Extended diagnostic reference",
           "tooltip": "Details of extended diagnostics that can be emitted by the Angular compiler",
           "children": [
             {
@@ -1749,89 +1775,182 @@
         {
           "url": "guide/glossary",
           "titleCn": "Angular 术语表",
-          "title": "Angular Glossary",
+          "title": "Angular glossary",
           "tooltipCn": "Angular 词汇表中最重要单词的简要定义。",
           "tooltip": "Brief definitions of the most important words in the Angular vocabulary."
         },
         {
           "titleCn": "Angular 样式和用法",
-          "title": "Angular Style and Usage",
+          "title": "Angular coding style",
           "tooltipCn": "Angular 语法、编码和文档样式的摘要。",
           "tooltip": "Summaries of Angular syntax, coding, and doc styles.",
           "children": [
             {
               "url": "guide/cheatsheet",
               "titleCn": "速查表",
-              "title": "Quick Reference",
+              "title": "Quick reference",
               "tooltipCn": "常见 Angular 编码技术的快速指南。",
               "tooltip": "A quick guide to common Angular coding techniques."
             },
             {
               "url": "guide/styleguide",
               "titleCn": "代码风格指南",
-              "title": "Coding Style Guide",
+              "title": "Coding style guide",
               "tooltipCn": "编写 Angular 代码的指南。",
               "tooltip": "Guidelines for writing Angular code."
             }
           ]
+        }
+      ]
+    },
+    {
+      "titleCn": "内容贡献者指南",
+      "title": "Documentation contributors guide",
+      "tooltipCn": "描述如何为 Angular 文档做出贡献。",
+      "tooltip": "Describes how to contribute to the Angular documentation.",
+      "children": [
+        {
+          "url": "guide/contributors-guide-overview",
+          "titleCn": "概览",
+          "title": "Overview",
+          "tooltipCn": "概述了如何为 Angular 的文档做出贡献。",
+          "tooltip": "Provides an overview of how to contribute to Angular's documentation."
         },
         {
-          "titleCn": "内容贡献者指南",
-          "title": "Content Contributor's Guide",
-          "tooltipCn": "描述如何为 Angular 文档做出贡献。",
-          "tooltip": "Describes how to contribute to the Angular documentation.",
+          "title": "Common documentation maintenance tasks",
+          "tooltip": "Describes the Angular documentation maintenance tasks.",
           "children": [
             {
-              "url": "guide/contributors-guide-overview",
-              "titleCn": "概览",
+              "url": "guide/doc-tasks",
               "title": "Overview",
-              "tooltipCn": "概述了如何为 Angular 的文档做出贡献。",
-              "tooltip": "Provides an overview of how to contribute to Angular's documentation."
+              "tooltip": "Overview of common tasks used to maintain angular.io.",
+              "titleCn": "概览",
+              "tooltipCn": "用于维护 angular.io 的常见任务的概览。"
             },
             {
               "url": "guide/reviewing-content",
               "titleCn": "查看内容",
-              "title": "Reviewing content",
+              "title": "Review documentation",
               "tooltipCn": "通过查看主题的准确性来使 Angular 内容保持最新。",
               "tooltip": "Keep Angular content up-to-date by reviewing topics for accuracy."
             },
             {
               "url": "guide/updating-search-keywords",
               "titleCn": "更新搜索关键字",
-              "title": "Updating search keywords",
+              "title": "Update search keywords",
               "tooltipCn": "通过添加额外的搜索关键字帮助用户找到他们需要的内容。",
               "tooltip": "Help users find the content they need by adding additional search keywords."
-            },
-            {
-              "url": "guide/updating-content-github-ui",
-              "titleCn": "使用 GitHub UI 更新内容",
-              "title": "Updating content using GitHub UI",
-              "tooltipCn": "通过 GitHub 用户界面更新浏览器中的主题。",
-              "tooltip": "Update topics in the browser through the GitHub user interface."
-            },
-            {
-              "url": "guide/docs-style-guide",
-              "titleCn": "文档风格指南",
-              "title": "Documentation Style Guide",
-              "tooltipCn": "给文档作者的风格指南。",
-              "tooltip": "Style guide for documentation authors."
-            },
-            {
-              "url": "guide/localizing-angular",
-              "titleCn": "Angular 文档本地化指南",
-              "title": "Angular doc localization guidelines",
-              "tooltipCn": "了解本地化 Angular 文档的指南。",
-              "tooltip": "Learn about the guidelines for localizing Angular documentation."
-            },
-            {
-              "url": "guide/localized-documentation",
-              "titleCn": "本地化文档",
-              "title": "Localized documentation",
-              "tooltipCn": "Angular 文档的本地化版本列表",
-              "tooltip": "A list of localized versions of the Angular documentation",
-              "hidden": true
             }
-          ]
+          ],
+          "titleCn": "通用文档维护任务",
+          "tooltipCn": "描述 Angular 文档维护任务。"
+        },
+        {
+          "title": "Documentation editing workflow",
+          "tooltip": "Describes the documentation editing processes in detail.",
+          "children": [
+            {
+              "url": "guide/doc-update-overview",
+              "title": "Overview",
+              "tooltip": "An overview of documentation authoring process.",
+              "titleCn": "概览",
+              "tooltipCn": "文档创作过程的概览。"
+            },
+            {
+              "url": "guide/doc-prepare-to-edit",
+              "title": "Prepare to edit documentation",
+              "tooltip": "Set up your development system to edit angular.io.",
+              "titleCn": "准备编辑文档",
+              "tooltipCn": "设置你的开发系统以编辑 angular.io。"
+            },
+            {
+              "url": "guide/doc-select-issue",
+              "titleCn": "使用 GitHub UI 更新内容",
+              "title": "Select a documentation issue",
+              "tooltipCn": "通过 GitHub 用户界面更新浏览器中的主题。",
+              "tooltip": "The procedures used to identify and select a documentation issue."
+            },
+            {
+              "url": "guide/doc-update-start",
+              "title": "Start to edit a documentation topic",
+              "tooltip": "The procedures used to start editing a documentation topic.",
+              "titleCn": "开始编辑文档主题",
+              "tooltipCn": "用于开始编辑文档主题的过程。"
+            },
+            {
+              "url": "guide/doc-editing",
+              "title": "Make and save changes to a documentation topic",
+              "tooltip": "Making and saving changes to a documentation topic.",
+              "titleCn": "对文档主题进行更改并保存",
+              "tooltipCn": "对文档主题进行更改并保存。"
+            },
+            {
+              "url": "guide/docs-lint-errors",
+              "title": "Resolve documentation linter messages",
+              "tooltip": "More information about documentation lint errors.",
+              "titleCn": "解析文档 linter 消息",
+              "tooltipCn": "有关文档 lint 错误的更多信息。"
+            },
+            {
+              "url": "guide/doc-build-test",
+              "title": "Build and test documentation",
+              "tooltip": "Building and testing documentation.",
+              "titleCn": "构建和测试文档",
+              "tooltipCn": "构建和测试文档。"
+            },
+            {
+              "url": "guide/doc-pr-prep",
+              "title": "Prepare documentation for a pull request",
+              "tooltip": "Preparing documentation for a pull request.",
+              "titleCn": "为Pull Request 准备文档",
+              "tooltipCn": "为Pull Request 准备文档。"
+            },
+            {
+              "url": "guide/doc-pr-open",
+              "title": "Open a documentation pull request",
+              "tooltip": "Opening a documentation pull request.",
+              "titleCn": "打开文档Pull Request",
+              "tooltipCn": "打开文档Pull Request。"
+            },
+            {
+              "url": "guide/doc-pr-update",
+              "title": "Update a documentation pull request in progress",
+              "tooltip": "Updating a documentation pull request in progress.",
+              "titleCn": "更新正在进行的文档Pull Request",
+              "tooltipCn": "正在更新文档Pull Request。"
+            },
+            {
+              "url": "guide/doc-edit-finish",
+              "title": "Finish up a documentation pull request",
+              "tooltip": "Finishing up a documentation pull request.",
+              "titleCn": "完成文档Pull Request",
+              "tooltipCn": "完成文档Pull Request。"
+            }
+          ],
+          "titleCn": "文档编辑工作流",
+          "tooltipCn": "详细描述了文档编辑过程。"
+        },
+        {
+          "url": "guide/docs-style-guide",
+          "titleCn": "文档风格指南",
+          "title": "Documentation style guide",
+          "tooltipCn": "给文档作者的风格指南。",
+          "tooltip": "Style guide for documentation authors."
+        },
+        {
+          "url": "guide/localizing-angular",
+          "titleCn": "Angular 文档本地化指南",
+          "title": "Angular doc localization guidelines",
+          "tooltipCn": "了解本地化 Angular 文档的指南。",
+          "tooltip": "Learn about the guidelines for localizing Angular documentation."
+        },
+        {
+          "url": "guide/localized-documentation",
+          "titleCn": "本地化文档",
+          "title": "Localized documentation",
+          "tooltipCn": "Angular 文档的本地化版本列表",
+          "tooltip": "A list of localized versions of the Angular documentation",
+          "hidden": true
         }
       ]
     },
@@ -1914,14 +2033,14 @@
         {
           "url": "resources",
           "titleCn": "资源列表",
-          "title": "Resource Listing",
+          "title": "Resource listing",
           "tooltipCn": "来自网络的 Angular 工具、培训和博客。",
           "tooltip": "Angular tools, training, and blogs from around the web."
         },
         {
           "url": "presskit",
           "titleCn": "宣传资料",
-          "title": "Press Kit",
+          "title": "Press kit",
           "tooltipCn": "媒体联系人、徽标和品牌。",
           "tooltip": "Press contacts, logos, and branding."
         },
@@ -1931,13 +2050,6 @@
           "title": "Blog",
           "tooltipCn": "Angular 官方博客",
           "tooltip": "Angular Blog"
-        },
-        {
-          "url": "analytics",
-          "titleCn": "使用情况分析",
-          "title": "Usage Analytics",
-          "tooltipCn": "Angular 使用情况分析",
-          "tooltip": "Angular Usage Analytics"
         }
       ]
     },
@@ -1974,7 +2086,7 @@
           "tooltip": "Post issues and suggestions on github."
         },
         {
-          "url": "https://github.com/angular/code-of-conduct/blob/master/CODE_OF_CONDUCT.md",
+          "url": "https://github.com/angular/code-of-conduct/blob/main/CODE_OF_CONDUCT.md",
           "titleCn": "行为守则",
           "title": "Code of Conduct",
           "tooltipCn": "互相尊重。",
@@ -2028,12 +2140,12 @@
       "title": "Languages",
       "children": [
         {
-          "titleCn": "Español",
+          "titleCn": "西班牙语",
           "title": "Español",
           "url": "http://docs.angular.lat/"
         },
         {
-          "titleCn": "English Version",
+          "titleCn": "英文版",
           "title": "English Version",
           "url": "https://angular.io/"
         },
@@ -2061,6 +2173,10 @@
     }
   ],
   "docVersions": [
+    {
+      "title": "v14",
+      "url": "https://v14.angular.cn/"
+    },
     {
       "title": "v13",
       "url": "https://v13.angular.cn/"
@@ -2107,24 +2223,7 @@
     }
   ],
   "__versionInfo": {
-    "options": {
-      "loose": false,
-      "includePrerelease": false
-    },
-    "loose": false,
-    "raw": "14.1.0-next.0",
-    "major": 14,
-    "minor": 1,
-    "patch": 0,
-    "prerelease": [
-      "local"
-    ],
-    "build": "sha.207aa2228d",
-    "version": "14.1.0-local",
-    "codeName": "snapshot",
-    "isSnapshot": true,
-    "full": "14.1.0-local+sha.207aa2228d",
-    "branch": "master",
-    "commitSHA": "207aa2228dde490b580543d8c7c8822784c0783b"
+    "major": 15,
+    "full": "15.0.2-local+sha.undefined"
   }
 }
