@@ -1780,9 +1780,9 @@
           "tooltip": "Brief definitions of the most important words in the Angular vocabulary."
         },
         {
-          "titleCn": "Angular 样式和用法",
+          "titleCn": "Angular 风格和用法",
           "title": "Angular coding style",
-          "tooltipCn": "Angular 语法、编码和文档样式的摘要。",
+          "tooltipCn": "Angular 语法、编码和文档风格的摘要。",
           "tooltip": "Summaries of Angular syntax, coding, and doc styles.",
           "children": [
             {
@@ -2224,6 +2224,6 @@
   ],
   "__versionInfo": {
     "major": 15,
-    "full": "15.0.2-local+sha.undefined"
+    "full": "15.0.2-local+sha.ecab3f3040"
   }
 }
