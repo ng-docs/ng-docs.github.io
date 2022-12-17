@@ -1645,13 +1645,13 @@
             },
             {
               "url": "errors/NG01003",
-              "title": "NG01003: Wrong Async Validator Return Type",
-              "tooltip": "Wrong Async Validator Return Type"
+              "title": "NG01003: Wrong Async Validator Return Type\n\n错误的异步验证器返回类型",
+              "tooltip": "Wrong Async Validator Return Type\n\n错误的异步验证器返回类型"
             },
             {
               "url": "errors/NG01203",
-              "title": "NG01203: Missing value accessor",
-              "tooltip": "Missing value accessor"
+              "title": "NG01203: Missing value accessor\n\n缺少“值访问器（Value Accessor）”",
+              "tooltip": "Missing value accessor\n\n缺少“值访问器（Value Accessor）”"
             },
             {
               "url": "errors/NG0200",
@@ -1690,8 +1690,8 @@
             },
             {
               "url": "errors/NG0910",
-              "title": "NG0910: Unsafe bindings on an iframe element",
-              "tooltip": "Unsafe bindings on an iframe element"
+              "title": "NG0910: Unsafe bindings on an iframe element\n\n在 iframe 元素上的不安全绑定",
+              "tooltip": "Unsafe bindings on an iframe element\n\n在 iframe 元素上的不安全绑定"
             },
             {
               "url": "errors/NG1001",
@@ -2224,6 +2224,6 @@
   ],
   "__versionInfo": {
     "major": 15,
-    "full": "15.0.2-local+sha.fb54a15c48"
+    "full": "15.0.2-local+sha.56e304fe55"
   }
 }
