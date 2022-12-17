@@ -1650,8 +1650,8 @@
             },
             {
               "url": "errors/NG01203",
-              "title": "NG01203: Missing value accessor\n\n缺少“值访问器（Value Accessor）”",
-              "tooltip": "Missing value accessor\n\n缺少“值访问器（Value Accessor）”"
+              "title": "NG01203: Missing value accessor\n\n缺少“值访问器”",
+              "tooltip": "Missing value accessor\n\n缺少“值访问器”"
             },
             {
               "url": "errors/NG0200",
@@ -2224,6 +2224,6 @@
   ],
   "__versionInfo": {
     "major": 15,
-    "full": "15.0.2-local+sha.56e304fe55"
+    "full": "15.0.2-local+sha.5b4b431af3"
   }
 }
